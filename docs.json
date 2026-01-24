@@ -67,5 +67,11 @@
   "seo": {
     "indexing": "all"
   },
-  "description": "Distributed Network powered by Biodiversity, Trees & People 🏕️🌳"
+  "description": "Distributed Network powered by Biodiversity, Trees & People 🏕️🌳",
+  "appearance": {
+    "default": "system"
+  },
+  "fonts": {
+    "family": "Inter"
+  }
 }
