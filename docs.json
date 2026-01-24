@@ -16,6 +16,12 @@
         "pages": [
           "home/landing"
         ]
+      },
+      {
+        "tab": "Ecosystem Wiki"
+      },
+      {
+        "tab": "Kokonut Framework"
       }
     ]
   },
