@@ -3,9 +3,9 @@
   "theme": "mint",
   "name": "Kokonut Network",
   "colors": {
-    "primary": "#16A34A",
-    "light": "#07C983",
-    "dark": "#15803D"
+    "primary": "#009F4D",
+    "light": "#171717",
+    "dark": "#009F4D"
   },
   "favicon": "/favicon.svg",
   "navigation": {
@@ -28,7 +28,7 @@
     ]
   },
   "logo": {
-    "light": "/logo/kkn_logo.png",
+    "light": "/logo/light.svg",
     "dark": "/logo/dark.svg"
   },
   "navbar": {
