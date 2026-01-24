@@ -82,8 +82,8 @@
     ],
     "primary": {
       "type": "button",
-      "label": "Dashboard",
-      "href": "https://dashboard.mintlify.com"
+      "label": "Let's Connect",
+      "href": "https://link.kokonut.network/meeting"
     }
   },
   "contextual": {
@@ -108,5 +108,6 @@
   },
   "seo": {
     "indexing": "all"
-  }
+  },
+  "description": "Distributed Network powered by Biodiversity, Trees & People 🏕️🌳"
 }
