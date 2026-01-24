@@ -12,7 +12,10 @@
     "tabs": [
       {
         "tab": "Home",
-        "icon": "tree-palm"
+        "icon": "tree-palm",
+        "pages": [
+          "home/landing"
+        ]
       }
     ]
   },
