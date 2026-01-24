@@ -18,10 +18,12 @@
         ]
       },
       {
-        "tab": "Ecosystem Wiki"
+        "tab": "Ecosystem Wiki",
+        "icon": "newspaper"
       },
       {
-        "tab": "Kokonut Framework"
+        "tab": "Kokonut Framework",
+        "icon": "puzzle"
       }
     ]
   },
