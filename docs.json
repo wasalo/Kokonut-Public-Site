@@ -100,9 +100,10 @@
   },
   "footer": {
     "socials": {
-      "x": "https://x.com/mintlify",
-      "github": "https://github.com/mintlify",
-      "linkedin": "https://linkedin.com/company/mintlify"
+      "x": "https://x.com/KokonutNetwork",
+      "github": "https://github.com/wasalo/Kokonut-Public-Site",
+      "linkedin": "https://www.linkedin.com/company/kokonutnetwork",
+      "discord": "https://link.kokonut.network/discord"
     }
   },
   "seo": {
