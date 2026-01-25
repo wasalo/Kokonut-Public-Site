@@ -20,9 +20,9 @@
       {
         "tab": "Ecosystem Wiki",
         "icon": "newspaper",
-        "dropdowns": [
+        "groups": [
           {
-            "dropdown": "Kokonut 101",
+            "group": "Kokonut 101",
             "icon": "book-open-reader",
             "pages": [
               "ecosystem-wiki/kokonut-101/kokonut-paper"
