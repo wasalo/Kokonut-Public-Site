@@ -4,7 +4,7 @@
   "name": "Kokonut Network",
   "colors": {
     "primary": "#009F4D",
-    "light": "#171717",
+    "light": "#ffffff",
     "dark": "#009F4D"
   },
   "favicon": "/favicon.svg",
