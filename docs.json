@@ -20,8 +20,14 @@
       {
         "tab": "Ecosystem Wiki",
         "icon": "newspaper",
-        "pages": [
-          "ecosystem-wiki/faq"
+        "groups": [
+          {
+            "group": "Kokonut 101",
+            "icon": "book-open-reader",
+            "pages": [
+              "ecosystem-wiki/faq"
+            ]
+          }
         ]
       },
       {
