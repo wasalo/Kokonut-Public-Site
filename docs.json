@@ -43,12 +43,7 @@
     "dark": "/logo/dark.svg"
   },
   "navbar": {
-    "links": [
-      {
-        "label": "Support",
-        "href": "mailto:hello@kokonut.network"
-      }
-    ],
+    "links": [],
     "primary": {
       "type": "button",
       "label": "Let's Connect",
