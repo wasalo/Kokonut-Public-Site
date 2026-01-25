@@ -1,43 +1,17 @@
-# Mintlify Starter Kit
+# Kokonut Ecosystem Knowledge Base
 
-Use the starter kit to get your docs deployed and ready to customize.
+### Agriculture for Communities
 
-Click the green **Use this template** button at the top of this repo to copy the Mintlify starter kit. The starter kit contains examples with
+> Kokonut Network is a Blockchain-based Cooperative powered by Trees & People 🏕️🌳
 
-- Guide pages
-- Navigation
-- Customizations
-- API reference pages
-- Use of popular components
+### **A vision of change**
 
-**[Follow the full quickstart guide](https://starter.mintlify.com/quickstart)**
+Kokonut Network was created to **reduce** the obstacles to agricultural **development** and rural project **funding** and democratize **investment** in [real-world projects](https://x.com/KokonutNetwork/status/1808493194142765556). We will use **blockchain** technology to [establish multiple plantations nationwide](https://link.kokonut.network/KKN-Seeds-Deck), which will benefit global **communities** and everyone in the network.
 
-## Development
+By focusing on Regenerative Agriculture, we are setting our projects toward long-term prosperity. This approach involves **restoring** degraded **soils** and nurturing the **land** to support **healthy** crops and stable **harvest** cycles, ensuring sustained success.
 
-Install the [Mintlify CLI](https://www.npmjs.com/package/mint) to preview your documentation changes locally. To install, use the following command:
+### **Mission approach powered by people & trees**
 
-```
-npm i -g mint
-```
+Kokonut Framework is the set of tools and processes that creates a trust layer that allows organizations to fund, manage, and improve Syntropic Farms. At the same time, it measures & verifies the levels of Risks & Compliance with the Governance Structure.
 
-Run the following command at the root of your documentation, where your `docs.json` is located:
-
-```
-mint dev
-```
-
-View your local preview at `http://localhost:3000`.
-
-## Publishing changes
-
-Install our GitHub app from your [dashboard](https://dashboard.mintlify.com/settings/organization/github-app) to propagate changes from your repo to your deployment. Changes are deployed to production automatically after pushing to the default branch.
-
-## Need help?
-
-### Troubleshooting
-
-- If your dev environment isn't running: Run `mint update` to ensure you have the most recent version of the CLI.
-- If a page loads as a 404: Make sure you are running in a folder with a valid `docs.json`.
-
-### Resources
-- [Mintlify documentation](https://mintlify.com/docs)
+Syntropic farming is a proven business with many potential benefits. From providing a reliable source of income for farmers to supplying a wide range of products for consumers, this industry has a lot to offer. Not only does it provide a steady source of income, but it also helps to strengthen the local economy and promote sustainable development.
