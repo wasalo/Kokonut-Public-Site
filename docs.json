@@ -19,7 +19,10 @@
       },
       {
         "tab": "Ecosystem Wiki",
-        "icon": "newspaper"
+        "icon": "newspaper",
+        "pages": [
+          "ecosystem-wiki/faq"
+        ]
       },
       {
         "tab": "Kokonut Framework",
