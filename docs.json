@@ -27,6 +27,8 @@
             "icon": "book-open-reader",
             "pages": [
               "ecosystem-wiki/kokonut-101/executive-summary",
+              "ecosystem-wiki/kokonut-101/problem",
+              "ecosystem-wiki/kokonut-101/solution",
               "ecosystem-wiki/kokonut-101/kokonut-vision"
             ]
           }
