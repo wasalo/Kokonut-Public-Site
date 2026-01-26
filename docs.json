@@ -22,6 +22,7 @@
         "icon": "newspaper",
         "pages": [
           "ecosystem-wiki/faq",
+          "ecosystem-wiki/open-collaboration-invitation",
           {
             "group": "Kokonut 101",
             "icon": "book-open-reader",
