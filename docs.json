@@ -53,7 +53,8 @@
             "group": "The Kokonut DAO",
             "pages": [
               "ecosystem-wiki/the-kokonut-dao/dao-layers",
-              "ecosystem-wiki/the-kokonut-dao/dao-instances"
+              "ecosystem-wiki/the-kokonut-dao/dao-instances",
+              "ecosystem-wiki/the-kokonut-dao/kokonut-moloch-dao"
             ]
           }
         ]
