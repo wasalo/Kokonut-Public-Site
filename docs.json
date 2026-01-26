@@ -52,7 +52,8 @@
           {
             "group": "The Kokonut DAO",
             "pages": [
-              "ecosystem-wiki/the-kokonut-dao/dao-layers"
+              "ecosystem-wiki/the-kokonut-dao/dao-layers",
+              "ecosystem-wiki/the-kokonut-dao/dao-instances"
             ]
           }
         ]
