@@ -68,7 +68,14 @@
         "tab": "Kokonut Framework",
         "icon": "puzzle",
         "pages": [
-          "kokonut-framework/Introduction"
+          "kokonut-framework/Introduction",
+          {
+            "group": "Framework Components",
+            "icon": "puzzle-piece",
+            "pages": [
+              "kokonut-framework/framework-components/common-data-schema"
+            ]
+          }
         ]
       }
     ]
