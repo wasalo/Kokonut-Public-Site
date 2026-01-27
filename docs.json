@@ -74,16 +74,16 @@
             "icon": "puzzle-piece",
             "pages": [
               "kokonut-framework/framework-components/common-data-schema",
-              "kokonut-framework/framework-components/pillars-of-value",
-              {
-                "group": "Framework Features",
-                "icon": "chart-pie-simple",
-                "pages": [
-                  "kokonut-framework/framework-components/framework-features/methodology-positive-impact",
-                  "kokonut-framework/framework-components/framework-features/5-principles-of-regeneration",
-                  "kokonut-framework/framework-components/framework-features/8-forms-of-capital-formation"
-                ]
-              }
+              "kokonut-framework/framework-components/pillars-of-value"
+            ]
+          },
+          {
+            "group": "Framework Features",
+            "icon": "chart-pie-simple",
+            "pages": [
+              "kokonut-framework/framework-components/framework-features/methodology-positive-impact",
+              "kokonut-framework/framework-components/framework-features/5-principles-of-regeneration",
+              "kokonut-framework/framework-components/framework-features/8-forms-of-capital-formation"
             ]
           }
         ]
