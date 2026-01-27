@@ -73,7 +73,8 @@
             "group": "Framework Components",
             "icon": "puzzle-piece",
             "pages": [
-              "kokonut-framework/framework-components/common-data-schema"
+              "kokonut-framework/framework-components/common-data-schema",
+              "kokonut-framework/framework-components/pillars-of-value"
             ]
           }
         ]
