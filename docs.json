@@ -86,6 +86,13 @@
               "kokonut-framework/framework-components/framework-features/8-forms-of-capital",
               "kokonut-framework/framework-features/Sustainable-Development-Goals"
             ]
+          },
+          {
+            "group": "Framework Add-ons",
+            "icon": "plug-circle-plus",
+            "pages": [
+              "kokonut-framework/framework-add-ons/ecological-impact-frameworks"
+            ]
           }
         ]
       }
