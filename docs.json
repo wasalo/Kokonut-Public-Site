@@ -31,7 +31,14 @@
               "ecosystem-wiki/kokonut-101/problem",
               "ecosystem-wiki/kokonut-101/solution",
               "ecosystem-wiki/kokonut-101/kokonut-vision",
-              "ecosystem-wiki/kokonut-101/manifesto"
+              "ecosystem-wiki/kokonut-101/manifesto",
+              {
+                "group": "Agricultural Technology",
+                "icon": "satellite",
+                "pages": [
+                  "ecosystem-wiki/kokonut-101/agricultural-technology/measurement-reporting-and-verification"
+                ]
+              }
             ]
           },
           {
