@@ -99,7 +99,10 @@
             "group": "Development Phases",
             "icon": "hammer-brush",
             "pages": [
-              "kokonut-framework/development-phases/phase-i"
+              "kokonut-framework/development-phases/phase-i",
+              "kokonut-framework/development-phases/phase-ii",
+              "kokonut-framework/development-phases/phase-iii",
+              "kokonut-framework/development-phases/phase-iv"
             ]
           }
         ]
