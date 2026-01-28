@@ -34,39 +34,42 @@ Also, through the use of drones, we will fulfill multiple functions, such as map
 
 ### Vegetation & Environment Indices
 
-[**NDVI**](https://gisgeography.com/ndvi-normalized-difference-vegetation-index/) (Normalized Difference Vegetation Index)
+<Tabs>
+  <Tab title="NDVI">
+    **Normalized Difference Vegetation Index**
 
-It is the most common vegetation index in remote sensing. We will use it throughout the crop production season, except when vegetation and its canopy are too sparse, as its spectral reflectance is too low.
+    It is the most common vegetation index in remote sensing. We will use it throughout the crop production season, except when vegetation and its canopy are too sparse, as its spectral reflectance is too low.
 
-> ```
-> Fórmula: NDVI = (NIR – RED) / (NIR + RED)
-> ```
+    > ```
+    > Fórmula: NDVI = (NIR – RED) / (NIR + RED)
+    > ```
+  </Tab>
+  <Tab title="ReCl">
+    The [ReCl](https://www.livestocking.net/vegetation-indices-use-in-farming) vegetation index responds to the chlorophyll content in leaves, which is nourished by nitrogen. ReCl reflects the photosynthetic activity of vegetation. We will use it during the active development phase of the vegetation.
 
-[**ReCl**](https://www.livestocking.net/vegetation-indices-use-in-farming)
+    > ```
+    > Fórmula: ReCI = (NIR / RED) – 1
+    > ```
+  </Tab>
+  <Tab title="NDRE">
+    It combines the spectral bands of near-infrared (NIR) and a specific band for the narrow range between visible red and the transition zone (the so-called red-edge region). We will use this index to monitor crops that have reached the maturity phase.
 
-The ReCl vegetation index responds to the chlorophyll content in leaves, which is nourished by nitrogen. ReCl reflects the photosynthetic activity of vegetation. We will use it during the active development phase of the vegetation.
+    > ```
+    > Fórmula: NDRE = (NIR – RED EDGE) / (NIR + RED EDGE)
+    > ```
+  </Tab>
+  <Tab title="MSAVI">
+    [MSAVI](https://www.usgs.gov/landsat-missions/landsat-modified-soil-adjusted-vegetation-index)
 
-> ```
-> Fórmula: ReCI = (NIR / RED) – 1
-> ```
+    It is designed to mitigate the effects of soil on crop monitoring results. Therefore, we will apply it when NDVI cannot provide accurate values, especially with a high percentage of bare soil, sparse vegetation, or low chlorophyll content in plants. We will implement it at the beginning of the crop production season when seedlings begin to establish.
 
-[**NDRE**](https://naldc.nal.usda.gov/download/4190/PDF)
+    > ```
+    > Fórmula: MSAVI = (2 * Band 4 + 1 – sqrt ((2 * Band 4 + 1)2 – 8 * (Band 4 – Band 3))) / 2
+    > ```
+  </Tab>
+</Tabs>
 
-It combines the spectral bands of near-infrared (NIR) and a specific band for the narrow range between visible red and the transition zone (the so-called red-edge region). We will use this index to monitor crops that have reached the maturity phase.
-
-> ```
-> Fórmula: NDRE = (NIR – RED EDGE) / (NIR + RED EDGE)
-> ```
-
-[**MSAVI**](https://www.usgs.gov/landsat-missions/landsat-modified-soil-adjusted-vegetation-index)
-
-It is designed to mitigate the effects of soil on crop monitoring results. Therefore, we will apply it when NDVI cannot provide accurate values, especially with a high percentage of bare soil, sparse vegetation, or low chlorophyll content in plants. We will implement it at the beginning of the crop production season when seedlings begin to establish.
-
-> ```
-> Fórmula: MSAVI = (2 * Band 4 + 1 – sqrt ((2 * Band 4 + 1)2 – 8 * (Band 4 – Band 3))) / 2
-> ```
-
-## Annual Reports
+## Holistic Annual Reports
 
 1. Environmental Impact: Annual carbon sequestration rates, changes in local biodiversity indices.
 2. Economic Impact: GDP contribution, changes in average household income.
