@@ -98,7 +98,9 @@
           {
             "group": "Development Phases",
             "icon": "hammer-brush",
-            "pages": []
+            "pages": [
+              "kokonut-framework/development-phases/phase-i"
+            ]
           }
         ]
       }
