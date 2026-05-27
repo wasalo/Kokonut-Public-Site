@@ -21,8 +21,6 @@
         "tab": "Ecosystem Wiki",
         "icon": "newspaper",
         "pages": [
-          "ecosystem-wiki/faq",
-          "ecosystem-wiki/open-collaboration-invitation",
           {
             "group": "Kokonut 101",
             "icon": "book-open-reader",
@@ -34,6 +32,8 @@
               "ecosystem-wiki/kokonut-101/manifesto"
             ]
           },
+          "ecosystem-wiki/open-collaboration-invitation",
+          "ecosystem-wiki/faq",
           {
             "group": "Kokonut Farms",
             "icon": "seedling",
@@ -60,6 +60,7 @@
               "ecosystem-wiki/the-kokonut-dao/dao-layers",
               "ecosystem-wiki/the-kokonut-dao/dao-instances",
               "ecosystem-wiki/the-kokonut-dao/kokonut-moloch-dao",
+              "ecosystem-wiki/the-kokonut-dao/kokonut-guilds-dao",
               "ecosystem-wiki/the-kokonut-dao/governance-framework"
             ]
           }
@@ -131,7 +132,8 @@
      "perplexity",
      "mcp",
      "cursor",
-     "vscode"
+    "vscode",
+    "grok"
    ]
   },
   "footer": {
@@ -151,5 +153,8 @@
   },
   "fonts": {
     "family": "Inter"
+  },
+  "markdown": {
+    "schema": false
   }
 }
