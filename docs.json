@@ -108,6 +108,18 @@
             ]
           }
         ]
+      },
+      {
+        "tab": "Builders",
+        "icon": "hammer-brush",
+        "versions": [
+          {
+            "version": "0.1",
+            "pages": [
+              "build-with-kokonut"
+            ]
+          }
+        ]
       }
     ]
   },

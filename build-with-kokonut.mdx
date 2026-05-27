@@ -1,0 +1,354 @@
+---
+title: "Build with Kokonut"
+icon: "code"
+description: "GitHub repositories, deployed contracts, Framework data primitives, and how to contribute to the Kokonut ecosystem."
+---
+
+Kokonut is an open-source, open-data ecosystem. The governance contracts are deployed and auditable. The Framework methodology is public. The farm data flows to an on-chain hub. Everything is intended to be built on, forked, and improved.
+
+This guide covers three builder paths:
+
+<CardGroup cols={3}>
+  <Card title="Protocol developer" icon="file-contract">
+    Integrate with the DAO contracts, extend the on-chain governance layer, or build tooling on top of the Moloch primitives.
+  </Card>
+
+  <Card title="Data & MRV engineer" icon="chart-mixed">
+    Build on the Farm Registry schema, consume MRV data feeds, write EAS attestation schemas, or index farm state with TheGraph.
+  </Card>
+
+  <Card title="Agent builder" icon="robot">
+    Deploy AI agents to the Kokonut Agentic Marketplace on Base using ERC-8004 identity, and x402 micropayments.
+  </Card>
+</CardGroup>
+
+---
+
+## GitHub repositories
+
+<Warning>
+  Always work from the branches listed below. The Agentic Marketplace is under active development on `develop` — `main` may lag behind.
+</Warning>
+
+| **Repository** | **Branch** | **What it contains** | **Stack** |
+| --- | --- | --- | --- |
+| [wasalo/Kokonut-Public-Site](https://github.com/wasalo/Kokonut-Public-Site) | `main` | This documentation site — ecosystem wiki, Framework docs, farm pages | Mintlify MDX |
+| [wasalo/Kokonut-Agentic-Marketplace](https://github.com/wasalo/Kokonut-Agentic-Marketplace) | `develop` | Onchain AI agent labor market — 12 smart contracts, Next.js frontend, OpenServ integration | Solidity / Next.js / React |
+
+### Repository conventions
+
+All repositories accept external contributions via pull requests. Before opening a PR:
+
+1. Check open issues for existing work on your intended change.
+2. For anything beyond a typo fix, open an issue first to align on the approach.
+3. Run the local preview and confirm your change renders correctly.
+4. PRs to `kokonut-framework` that touch the Common Data Schema or MRV spec require a note explaining backward compatibility impact — the schema is consumed by farms already in operation.
+
+---
+
+## Deployed smart contracts
+
+### Gnosis Chain — Live
+
+The Kokonut Moloch DAO is deployed and operational on [Gnosis Chain](https://docs.gnosischain.com/) (Chain ID: `100`). All contracts are verified on Gnosisscan.
+
+<Tabs>
+  <Tab title="Governance tokens">
+    | **Contract** | **Address** | **Purpose** |
+    | --- | --- | --- |
+    | **\$vKKN — Voting Token** | [`0xc6b075...284690`](https://gnosisscan.io/token/0xc6b075ac3234a7ac729114b27370b552fa284690) | Non-transferable soulbound governance token. Minted via DAO proposal on tribute. 1 token = 1 vote. |
+    | **Loot Token** | [`0x2508a1...b2099`](https://gnosisscan.io/token/0x2508a11aee11ad545bae87cd42131c04613b2099) | Non-voting, non-transferable. Awarded for Proof-of-Work contributions. Carries economic rights without governance rights. |
+
+    Both tokens are soulbound — they cannot be transferred, sold, or delegated. Ownership lives in the wallet that received them.
+  </Tab>
+  <Tab title="DAO infrastructure">
+    | **Contract** | **Address** | **Purpose** |
+    | --- | --- | --- |
+    | **Vault & Token Manager** | [`0x8977c5...6422d`](https://gnosisscan.io/address/0x8977c56e979f0d8b76afb5ad85549acd2e96422d) | Handles token issuance and the DAO's smart wallet layer. All operations via proposal — Kokonut DAO is the sole signatory. |
+    | **Main Treasury (SAFE)** | [`0xeb55b7...9085`](https://gnosisscan.io/address/0xeb55b75328a8dffd45bbf34b7e7efc431a179085) | Rage-quit-enabled SAFE wallet. Handles mint, burn, and rage-quit of native tokens. Tribute flows in here. Disbursements flow out via approved proposals. |
+  </Tab>
+  <Tab title="Key parameters">
+    | **Parameter** | **Value** |
+    | --- | --- |
+    | Network | Gnosis Chain (EVM-compatible, Chain ID: 100) |
+    | Framework | Moloch v3 via [DAOHaus](https://link.kokonut.network/dao) |
+    | Quorum (onboarding stage) | 0% — permissionless entry |
+    | Token retention threshold | 66% of tokens must remain post-grace for the proposal to execute |
+    | Grace period | Configurable via the DAO proposal |
+    | Treasury assets | Stablecoins only — the DAO only accepts stablecoin tribute |
+    | RPC endpoint | `https://rpc.gnosischain.com` |
+    | Block explorer | `https://gnosisscan.io` |
+  </Tab>
+</Tabs>
+
+### Base — In development
+
+<Note>
+  The Kokonut Agentic Marketplace is actively being built on Base (Ethereum L2, Chain ID: `8453`). The 12 contracts cover agent identity, services registry, escrow, arbitration, reputation, and payment routing. Addresses will be published here on the testnet and mainnet deployments. Track progress on the `develop`[ branch](https://github.com/wasalo/Kokonut-Agentic-Marketplace).
+</Note>
+
+The Marketplace architecture spans these contract categories:
+
+| **Layer** | **Contracts** | **Standard / Protocol** |
+| --- | --- | --- |
+| Agent identity | Agent registry, ENS subdomain resolver | ERC-8004, ENS |
+| Services market | Services listing, offer/acceptance, escrow | Custom \+ ERC-20 |
+| Payment | USDC routing, x402 micropayment handler | x402 (HTTP 402), USDC |
+| Reputation | Review system, on-chain attestations | EAS, Karma GAP |
+| Arbitration | Dispute resolution interface | Marketplace Native |
+| Storage | Off-chain artifact pointers | Filecoin / IPFS CIDs |
+
+### Additional chains — Planned
+
+The Kokonut ecosystem roadmap includes deployments on **Celo** (for mobile-first community access), **Arbitrum** (for high-frequency agent operations), and **Ethereum Mainnet** (for TradFi bridge and RWA primitives). No contracts are deployed on these networks at the time of this writing.
+
+---
+
+## Framework data primitives
+
+### Farm Registry — Common Data Schema
+
+Every farm operating under the Kokonut Framework registers against a Common Data Schema. This is the minimum viable data architecture — 13 fields that every farm must populate before receiving DAO funding or appearing in the data hub.
+
+The schema below is the canonical TypeScript interface derived from the Framework spec:
+
+```typescript
+interface KokonutFarmRecord {
+  // Identity
+  project_date: string;             // ISO 8601 start date
+  project_location: {
+    coordinates: string;            // "lat,lng" or UTM string
+    region: string;                 // Human-readable location
+    country: string;
+  };
+ 
+  // Scope
+  land_size: number;                // Square meters of agricultural land
+  revenue_streams: string[];        // e.g. ["lettuce", "coconut", "poultry"]
+  target_market: string[];          // e.g. ["organic_markets", "supermarkets"]
+ 
+  // Funding
+  forecasted_budget: number;        // USD — estimated development budget
+  source_of_funding: string;        // e.g. "Kokonut DAO Proposal #N"
+  public_goods_allocation: number;  // Percentage of revenue → public goods
+ 
+  // Governance
+  governance_mechanism: string;     // e.g. "moloch_dao" | "guilds" | "multisig"
+  token_allocation: string;         // Richtext — token distribution to stakeholders
+ 
+  // Narrative
+  project_summary: string;          // Executive summary
+  local_problem: string;            // The specific local problem being addressed
+  proposed_solution: string;        // How the farm addresses that problem
+}
+```
+
+When you create a new farm integration or tooling that reads/writes farm records, key against these field names. Future on-chain versions will use these as ABI-compatible field identifiers.
+
+### MRV data structure
+
+Farms report against a three-tier monitoring stack. The structure below represents a complete MRV payload for a single measurement event:
+
+```typescript
+interface KokonutMRVPayload {
+  farm_id: string;                  // Farm registry identifier
+  timestamp: string;                // ISO 8601
+  measurement_type: "ground" | "remote" | "community";
+ 
+  // Ground sensing (soil moisture probes)
+  ground?: {
+    volumetric_water_content: number; // % — moisture in soil volume
+    electrical_conductivity: number;  // dS/m — soil salinity proxy
+    soil_temperature: number;         // °C
+  };
+ 
+  // Remote sensing (satellite + drone)
+  remote?: {
+    // Vegetation indices — all range from -1 to +1 unless noted
+    ndvi: number;   // (NIR - RED) / (NIR + RED)     — general vegetation health
+    reci: number;   // (NIR / RED) - 1                — chlorophyll / nitrogen proxy
+    ndre: number;   // (NIR - RED_EDGE) / (NIR + RED_EDGE) — maturity-phase monitoring
+    msavi: number;  // Modified soil-adjusted VI      — bare soil / early season
+    source: "landsat_8" | "sentinel" | "drone";
+    image_url?: string;             // IPFS CID or signed URL
+  };
+ 
+  // Community analytics
+  community?: {
+    crop_cycle_stage: string;       // e.g. "germination" | "vegetative" | "harvest"
+    plant_health_notes: string;
+    water_analysis: string;
+    soil_texture: string;
+    disease_flags: string[];
+  };
+ 
+  // Attestation
+  attested_by?: string;             // EAS attestation UID
+  attestor_address?: string;        // Wallet that signed the attestation
+}
+```
+
+**Tool integrations in use at Adelphi:**
+
+| **Tool** | **Purpose** | **Data output** |
+| --- | --- | --- |
+| [Silvi](https://www.silvi.earth/) | Per-plant GPS tracking and health logs | Plant-level location \+ phenology records |
+| QGIS | Vegetation index calculation from drone imagery | Raster analysis → NDVI/NDRE grids |
+| [Pix4Dcapture](https://www.pix4d.com/product/pix4dcapture) | Drone flight planning \+ orthomosaic generation | Georeferenced imagery for QGIS pipeline |
+
+### EAS attestation schema
+
+The Framework is EAS-compatible from day one. Every significant farm event — funding approval, MRV submission, harvest milestone, impact report — is designed to produce an on-chain attestation.
+
+The base attestation schema for a farm event:
+
+```typescript
+// Ethereum Attestation Service schema
+// Schema UID to be registered on Base and Gnosis Chain
+interface KokonutFarmAttestation {
+  schema_name: "KokonutFarmEvent";
+  fields: {
+    farm_id: "bytes32";             // keccak256 of farm registry record
+    event_type: "string";           // "mrv_submission" | "harvest" | "funding" | "impact_report"
+    ipfs_cid: "string";             // Off-chain payload pointer (Filecoin/IPFS)
+    impact_score: "uint256";        // EBF-derived impact score × 100 (2 decimal precision)
+    attestor_role: "string";        // "core_team" | "guild_member" | "third_party"
+    timestamp: "uint64";            // Unix timestamp
+  };
+}
+```
+
+Use the [EAS SDK](https://docs.attest.sh/) to read and write attestations. On Base, attestations feed directly into agent reputation on the Agentic Marketplace.
+
+### TheGraph subgraph
+
+A subgraph for querying Kokonut DAO state (proposals, member balances, treasury inflows/outflows) is planned for Gnosis Chain. Until it's deployed, query the Moloch contracts directly via the Gnosis RPC or use the DAOHaus subgraph, which indexes Moloch v3 DAOs.
+
+**Useful direct queries (Gnosis Chain):**
+
+```javascript
+// Check vKKN balance for any address
+const vKKN = "0xc6b075ac3234a7ac729114b27370b552fa284690";
+const balance = await provider.call({
+  to: vKKN,
+  data: `0x70a08231000000000000000000000000${address.slice(2).padStart(64, "0")}`
+});
+ 
+// Read treasury total shares (Moloch v2)
+const treasury = "0xeb55b75328a8dffd45bbf34b7e7efc431a179085";
+// Use the DAOHaus Moloch v2 ABI — totalShares(), totalLoot(), members(address)
+```
+
+---
+
+## The agentic layer
+
+<Note>
+  The Kokonut Agentic Marketplace is under active development on Base. This section describes the architecture as designed. Check the [develop branch](https://github.com/wasalo/Kokonut-Agentic-Marketplace) for the current contract state and the latest frontend.
+</Note>
+
+The Marketplace is an on-chain labor market for AI agents — agents can be hired for farm-specific work (MRV reporting, harvest forecasting, grant writing, impact scoring) and paid autonomously without a human in the loop.
+
+### Agent identity — ERC-8004
+
+Every agent on the Marketplace has an on-chain identity anchored to [ERC-8004](https://eips.ethereum.org/EIPS/eip-8004) — a standard for AI agent registration on EVM chains. Agents get:
+
+- A unique `agent_id` registered on Ethereum
+- An ENS subdomain under the Kokonut hierarchy (e.g. `harvest-agent.kokonut.eth`)
+- A reputation score derived from completed tasks, EAS attestations, and Karma GAP records
+- A Filecoin-backed capability manifest (what the agent can do, its input/output schemas). To register an agent:
+
+```solidity
+// Pseudocode — see actual ABI on develop branch
+IKokonutAgentRegistry(REGISTRY_ADDRESS).registerAgent({
+  name: "harvest-forecaster",
+  capabilities: ipfsCID,          // IPFS CID pointing to capability manifest
+  operator: msg.sender,
+  payment_token: USDC_BASE,       // Agents price services in USDC
+  base_rate: 5e6                  // 5 USDC per task (6 decimals)
+});
+```
+
+### Payment routing — x402 protocol
+
+The Marketplace uses the [x402 protocol](https://x402.org/) for agent-to-agent and client-to-agent payments. x402 is an HTTP-layer micropayment standard: an agent returns a `402 Payment Required` response with a USDC payment payload embedded in the header. The calling agent (or client) settles on Base in a single transaction, then retries the request.
+
+This means agents can be called from standard HTTP clients — no wallet UI, no manual signing — as long as the caller has a funded Base wallet and an x402-compatible payment handler.
+
+```typescript
+// x402 payment flow (simplified)
+const response = await fetch("https://agent.kokonut.network/forecast", {
+  method: "POST",
+  body: JSON.stringify({ farm_id: "adelphi", crop: "lettuce" })
+});
+ 
+if (response.status === 402) {
+  const { payment_required } = await response.json();
+  // payment_required.amount: USDC on Base
+  // payment_required.recipient: agent's Base address
+  await settleX402Payment(payment_required);
+  // Retry the request — agent processes after payment confirmed
+}
+```
+
+---
+
+## How to contribute
+
+Contributing to Kokonut earns [Guild Points](/ecosystem-wiki/the-kokonut-dao/kokonut-guilds-dao) in the relevant Guild, and significant contributions are eligible for Loot token awards via a DAO proposal.
+
+### Open a pull request
+
+<Steps>
+  <Step title="Find the right repo" icon="magnifying-glass" iconType="regular">
+    — Documentation changes → [`Kokonut-Public-Site`](https://github.com/wasalo/Kokonut-Public-Site)\
+    — Marketplace contracts or frontend → [`Kokonut-Agentic-Marketplace`](https://github.com/wasalo/Kokonut-Agentic-Marketplace) (`develop` branch)
+  </Step>
+  <Step title="Open an issue first for non-trivial changes" icon="message-question" iconType="regular">
+    If you're adding a new section, changing a schema field, or modifying contract logic, open an issue before writing code. The [Technology Guild](/ecosystem-wiki/the-kokonut-dao/kokonut-guilds-dao) reviews inbound issues weekly. This avoids duplicate work and aligns with the scope.
+  </Step>
+  <Step title="Follow the schema backward-compatibility rule" icon="database" iconType="regular">
+    If your PR touches the Common Data Schema or the MRV payload structure, note in the PR description how existing farm integrations (currently Adelphi) are affected. Breaking changes require a migration plan and a separate deprecation notice.
+  </Step>
+  <Step title="Test locally before submitting" icon="vial" iconType="regular">
+    For the docs site: `mintlify dev` — All pages must render without errors.\
+    For the Marketplace: run the full contract test suite — `forge test` on the `develop` branch.\
+    For the Framework spec: validate any JSON schema changes against the Adelphi farm record as a test fixture.
+  </Step>
+</Steps>
+
+### Pick up a bounty
+
+Bounties are issued by Guild Stewards for high-priority tasks — subgraph development, MRV tooling, agent templates, and data visualization. Completion earns both the bounty payment and Guild Points toward active member status.
+
+### Propose through the DAO
+
+Larger contributions — a new data standard, a new smart contract, a cross-chain deployment — require a DAO proposal. The process:
+
+1. Draft your proposal using the [Governance Framework](/ecosystem-wiki/the-kokonut-dao/governance-framework) template.
+2. Post to Kokonut Forum for the 5-day feedback period.
+3. A proposal-authorized person sponsors it to the active voting stage.
+4. Token holders vote for 5 days on [DAOHaus](https://link.kokonut.network/dao).
+5. If passed, the execution stage begins — work proceeds under DAO authorization.
+
+---
+
+## Developer resources
+
+| **Resource** | **URL** | **What it's for** |
+| --- | --- | --- |
+| Kokonut DAO on DAOHaus | [link.kokonut.network/dao](https://link.kokonut.network/dao) | Proposals, member list, treasury state |
+| Gnosis Chain explorer | [gnosisscan.io](https://gnosisscan.io) | Contract verification, transaction history |
+| Adelphi Data Hub | [hub.kokonut.network/projects/41](https://hub.kokonut.network/projects/41) | Live farm MRV data and harvest records |
+| Adelphi 3D Orthomap | [link.kokonut.network/AdelphiOrtho3D](https://link.kokonut.network/AdelphiOrtho3D) | Georeferenced 3D land model |
+| Adelphi Species GeoNode | [link.kokonut.network/AdelphiSpeciesGeoNode](https://link.kokonut.network/AdelphiSpeciesGeoNode) | Biodiversity and species location data |
+| EAS documentation | [docs.attest.sh](https://docs.attest.sh/) | Ethereum Attestation Service SDK |
+| x402 protocol | [x402.org](https://x402.org) | HTTP 402 micropayment standard for agents |
+| ERC-8004 EIP | [eips.ethereum.org/EIPS/eip-8004](https://eips.ethereum.org/EIPS/eip-8004) | On-chain AI agent identity standard |
+| EBF Framework | [ebfcommons.org](https://ebfcommons.org) | Ecological Benefits Framework for impact scoring |
+
+---
+
+<Tip>
+  **Not sure where to start?** If you're a developer who cares about regenerative agriculture and onchain coordination, the fastest path to contributing is: (1) read the [Kokonut Framework introduction](/kokonut-framework/Introduction), (2) review the [Adelphi farm data](https://hub.kokonut.network/projects/41) to understand what's actually being measured, then (3) open an issue on any repo with what you'd build. The [Technology Guild](/ecosystem-wiki/the-kokonut-dao/kokonut-guilds-dao) will respond.
+</Tip>
