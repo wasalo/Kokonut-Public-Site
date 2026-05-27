@@ -32,8 +32,6 @@
               "ecosystem-wiki/kokonut-101/manifesto"
             ]
           },
-          "ecosystem-wiki/open-collaboration-invitation",
-          "ecosystem-wiki/faq",
           {
             "group": "Kokonut Farms",
             "icon": "seedling",
@@ -63,7 +61,10 @@
               "ecosystem-wiki/the-kokonut-dao/kokonut-guilds-dao",
               "ecosystem-wiki/the-kokonut-dao/governance-framework"
             ]
-          }
+          },
+          "ecosystem-wiki/open-collaboration-invitation",
+          "ecosystem-wiki/glossary",
+          "ecosystem-wiki/faq"
         ]
       },
       {
