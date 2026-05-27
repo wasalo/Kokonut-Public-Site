@@ -117,7 +117,8 @@
           {
             "version": "0.1",
             "pages": [
-              "build-with-kokonut"
+              "build-with-kokonut",
+              "kokonut-x-ai-agents"
             ]
           }
         ]

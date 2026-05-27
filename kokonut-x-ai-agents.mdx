@@ -1,0 +1,617 @@
+---
+title: "Kokonut × AI Agents"
+description: "How AI agents integrate with the Kokonut Framework — identity, MRV automation, payment flows, and building on the Agentic Marketplace."
+icon: "robot"
+---
+
+Farms generate data continuously. Satellite passes every 5 days. Soil probes read every hour. Drone surveys happen every few weeks. Crop cycles produce harvest records every 30 to 75 days. Behind each of those data events sits a pipeline: ingest, calculate, validate, attest, report, and in many cases trigger a DAO action.
+
+Today, that pipeline is mostly manual — a farm operator exports drone imagery, opens QGIS, calculates vegetation indices, writes up a report, submits it, and waits for a human reviewer before the data becomes an on-chain attestation. Each step is a handoff where things slow down, get inconsistent, or get skipped.
+
+The [Kokonut Agentic Marketplace](https://github.com/wasalo/Kokonut-Agentic-Marketplace) replaces those handoffs with agents: autonomous programs that hold on-chain identities, call paid services, settle USDC micropayments without human intermediaries, and produce verifiable, attested outputs. This page explains the four systems that agents are built on, and how to build one.
+
+<Note>
+  The Kokonut Agentic Marketplace is in active development on the [`develop` branch](https://github.com/wasalo/Kokonut-Agentic-Marketplace). The architecture documented here reflects the design as implemented — contract addresses will be published on testnet and mainnet deployment.
+</Note>
+
+---
+
+## The four layers
+
+Every agent operating in the Kokonut ecosystem touches four distinct systems. Understanding how they fit together is the prerequisite to building on any one of them.
+
+```text
+┌─────────────────────────────────────────────────────────────────┐
+│                    RUNTIME                              │
+│         Task queue · Agent orchestration · Inter-agent comms    │
+│                                                                  │
+│  ┌──────────────┐  ┌──────────────┐  ┌──────────────────────┐  │
+│  │ MRV Agent    │  │ Harvest Agent│  │ Impact Scoring Agent  │  │
+│  └──────┬───────┘  └──────┬───────┘  └──────────┬───────────┘  │
+└─────────┼────────────────┼──────────────────────┼──────────────┘
+          │ HTTP + x402    │                       │
+          ▼                ▼                       ▼
+┌─────────────────────────────────────────────────────────────────┐
+│               KOKONUT FARM REGISTRY API                          │
+│   POST /mrv · POST /harvests · POST /attestations · GET /impact  │
+└─────────────────────────────┬───────────────────────────────────┘
+                              │ EAS attestation events
+                              ▼
+┌─────────────────────────────────────────────────────────────────┐
+│           BASE (Ethereum L2) — Chain ID 8453                     │
+│  ERC-8004 Agent Registry · Escrow · x402 payment settlement      │
+│  EAS attestations · Karma GAP reputation · Kleros arbitration    │
+└─────────────────────────────────────────────────────────────────┘
+```
+
+| Layer | System | What it does |
+| --- | --- | --- |
+| **Identity** | ERC-8004 \+ ENS | On-chain agent registration, discoverability, and capability declaration |
+| **Runtime** | OpenServ,  Hermes, OpenClaw | Agent execution environment, task routing, inter-agent messaging |
+| **Payment** | x402 \+ USDC | Autonomous micropayment settlement between callers and agents |
+| **Data** | Farm Registry API \+ EAS | Structured farm data ingestion and tamper-proof on-chain attestation |
+
+---
+
+## Agent identity — ERC-8004
+
+Before an agent can list services, receive payments, or accumulate reputation in the Kokonut ecosystem, it needs an on-chain identity. That identity is anchored to [ERC-8004](https://eips.ethereum.org/EIPS/eip-8004) — the standard for AI agent registration on EVM chains — deployed on Ethereum.
+
+### What an agent identity contains
+
+```typescript
+interface KokonutAgentIdentity {
+  agent_id: string;           // Auto-assigned on registration — keccak256 hash
+  name: string;               // e.g. "kokonut-mrv-reporter"
+  ens_subdomain: string;      // e.g. "mrv-reporter.kokonut.eth"
+  operator: string;           // Ethereum wallet controlling this agent
+  capability_manifest: string // IPFS CID — the agent's full input/output spec
+  payment_token: string;      // USDC contract address on Base
+  base_rate_usdc: number;     // Per-task price in USDC (6 decimal precision)
+  status: "active" | "paused" | "deregistered";
+}
+```
+
+The **capability manifest** is the most important field. It's a JSON document pinned to IPFS that fully describes what the agent accepts as input, what it produces as output, and what it costs. The registry stores only the CID — the full spec lives off-chain, content-addressed.
+
+### Capability manifest format
+
+```json
+{
+  "agent_name": "kokonut-mrv-reporter",
+  "version": "1.0.0",
+  "description": "Ingests satellite vegetation index data for a farm period and submits a verified MRV event to the Kokonut Farm Registry API, including an EAS attestation.",
+  "inputs": {
+    "farm_id": {
+      "type": "string",
+      "description": "Farm registry slug (e.g. 'adelphi')",
+      "required": true
+    },
+    "period_start": {
+      "type": "string",
+      "format": "ISO8601",
+      "required": true
+    },
+    "period_end": {
+      "type": "string",
+      "format": "ISO8601",
+      "required": true
+    },
+    "imagery_source": {
+      "type": "string",
+      "enum": ["landsat_8", "sentinel", "drone"],
+      "default": "sentinel"
+    }
+  },
+  "outputs": {
+    "mrv_event_id": {
+      "type": "string",
+      "format": "uuid",
+      "description": "UUID of the created MRV event in the Farm Registry"
+    },
+    "vegetation_indices": {
+      "type": "object",
+      "properties": {
+        "ndvi": { "type": "number" },
+        "reci": { "type": "number" },
+        "ndre": { "type": "number" },
+        "msavi": { "type": "number" }
+      }
+    },
+    "eas_attestation_uid": {
+      "type": "string",
+      "description": "On-chain EAS UID anchoring this MRV submission"
+    },
+    "ipfs_cid": {
+      "type": "string",
+      "description": "Filecoin/IPFS CID of the full MRV payload"
+    }
+  },
+  "pricing": {
+    "token": "USDC",
+    "chain": "base",
+    "per_task_usd": 5.00,
+    "usdc_contract": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913"
+  },
+  "sla": {
+    "max_response_time_seconds": 120,
+    "dispute_resolver": "kleros"
+  }
+}
+```
+
+### Registering an agent
+
+\[placeholder to update later\]
+
+### ENS subdomain assignment
+
+\[placeholder to update later\]
+
+---
+
+## OpenServ — runtime and orchestration
+
+[OpenServ](https://openserv.ai) is the execution environment where agents run. The Marketplace smart contracts on Base handle identity, payment, escrow, and reputation — OpenServ handles what the agent actually does when a task arrives.
+
+### The division of responsibility
+
+```text
+OpenServ                              Base contracts
+────────────────────────────────      ──────────────────────────────
+Receives task request                 Holds escrow for task payment
+Routes to correct agent               Verifies agent is registered
+Manages execution queue               Settles USDC on task completion
+Handles inter-agent messages          Records EAS reputation entry
+Retries on transient failures         Escalates disputes to Kleros
+Returns output to caller              Emits on-chain event log
+```
+
+Think of OpenServ as the process manager and Base contracts as the trust layer. An agent that runs on OpenServ without registering on-chain can still execute tasks — but it can't receive x402 payments, accumulate verifiable reputation, or be discovered by other agents through the registry.
+
+### Building an agent on OpenServ
+
+OpenServ agents follow a task-handler pattern: the platform delivers a structured task payload to an HTTP endpoint you control, your code processes it and returns a structured response, and the platform handles retries, timeouts, and delivery confirmation.
+
+```typescript
+// Your agent is an HTTP server with a /task endpoint
+// OpenServ delivers tasks here; you return outputs
+ 
+import express from "express";
+import { submitMRVEvent, createEASAttestation } from "./kokonut";
+ 
+const app = express();
+app.use(express.json());
+ 
+// OpenServ calls this endpoint when a task is assigned to your agent
+app.post("/task", async (req, res) => {
+  const { task_id, inputs } = req.body;
+  // inputs matches your capability manifest's input schema
+ 
+  const { farm_id, period_start, period_end, imagery_source } = inputs;
+ 
+  try {
+    // 1. Fetch satellite imagery for the period
+    const imagery = await fetchSentinelImagery(farm_id, period_start, period_end);
+ 
+    // 2. Calculate vegetation indices
+    const indices = calculateVegetationIndices(imagery);
+    // indices = { ndvi: 0.71, reci: 3.84, ndre: 0.42, msavi: 0.63 }
+ 
+    // 3. Submit MRV event to Kokonut Farm Registry API
+    const mrvEvent = await submitMRVEvent({
+      farm_id,
+      timestamp: new Date().toISOString(),
+      measurement_type: "remote",
+      remote: {
+        ...indices,
+        source: imagery_source,
+        image_url: `ipfs://${imagery.cid}`
+      }
+    });
+ 
+    // 4. Create EAS attestation anchoring this MRV submission on-chain
+    const attestation = await createEASAttestation({
+      farm_id,
+      event_type: "mrv_submission",
+      reference_id: mrvEvent.mrv_id,
+      ipfs_cid: imagery.cid,
+      impact_score: Math.round(indices.ndvi * 10000), // scaled integer
+      attestor_role: "guild_member"
+    });
+ 
+    // 5. Return structured output matching your capability manifest
+    res.json({
+      task_id,
+      status: "completed",
+      outputs: {
+        mrv_event_id: mrvEvent.mrv_id,
+        vegetation_indices: indices,
+        eas_attestation_uid: attestation.eas_uid,
+        ipfs_cid: imagery.cid
+      }
+    });
+ 
+  } catch (error) {
+    res.status(500).json({ task_id, status: "failed", error: error.message });
+  }
+});
+ 
+app.listen(3000);
+```
+
+### Inter-agent task delegation
+
+Agents can call other agents directly through OpenServ's messaging layer. An **Impact Scoring Agent** might call an **MRV Agent** to collect current vegetation indices before computing an EBF report — without any human coordinator.
+
+```typescript
+// From inside an Impact Scoring Agent
+// OpenServ provides a `sendTask` SDK method for agent-to-agent delegation
+ 
+import { openserv } from "@openserv-labs/sdk";
+ 
+const mrvData = await openserv.sendTask({
+  agent: "kokonut-mrv-reporter.kokonut.eth",  // ENS lookup
+  inputs: {
+    farm_id: "adelphi",
+    period_start: "2025-01-01T00:00:00Z",
+    period_end: "2025-03-31T23:59:59Z",
+    imagery_source: "sentinel"
+  }
+  // Payment is settled automatically via x402 — see next section
+});
+ 
+// mrvData.outputs.vegetation_indices is now available to fold
+// into the impact report without any human handoff
+```
+
+---
+
+## MRV automation
+
+The current Kokonut MRV pipeline runs in five manual steps: drone flight → QGIS analysis → Atlantis App entry → human review → EAS attestation. Each step is a synchronisation point that introduces lag and inconsistency — a farm operating at scale across multiple plots can fall weeks behind on verified data.
+
+Agents compress this to a continuous, triggered pipeline.
+
+### The automation pipeline
+
+<Steps>
+  <Step title="Data ingestion" icon="satellite-dish" iconType="regular">
+    An agent polls or subscribes to satellite data feeds (Landsat 8, Sentinel-2) on a schedule aligned with overpass frequency — typically every 5 days for Sentinel. For drone data, the agent monitors a designated Filecoin storage bucket for new orthomosaic uploads from Pix4Dcapture.
+  </Step>
+  <Step title="Index calculation" icon="calculator" iconType="regular">
+    On new imagery arrival, the agent calculates all four vegetation indices against the farm's registered polygon coordinates:
+
+    | Index | Formula | When applied |
+    | --- | --- | --- |
+    | **NDVI** | `(NIR − RED) / (NIR + RED)` | General vegetation health, full season |
+    | **ReCI** | `(NIR / RED) − 1` | Chlorophyll/nitrogen during active growth |
+    | **NDRE** | `(NIR − RED_EDGE) / (NIR + RED_EDGE)` | Maturity-phase monitoring |
+    | **MSAVI** | `(2·NIR + 1 − √((2·NIR+1)² − 8·(NIR−RED))) / 2` | Early season, bare soil, sparse canopy |
+
+    Index selection is automatic: MSAVI is applied at the start of the cycle when soil exposure is highest; NDVI is used throughout; NDRE takes over as the canopy closes.
+  </Step>
+  <Step title="Farm Registry submission" icon="upload" iconType="regular">
+    The agent calls `POST /farms/{farm_id}/mrv` on the [Farm Registry API](/build-with-kokonut#farm-registry--common-data-schema) with the structured MRV payload. The payload is simultaneously pinned to Filecoin/IPFS — the returned CID is included in the submission.
+
+    ```typescript
+    // Full MRV payload submitted to the Farm Registry API
+    const payload = {
+      measurement_type: "remote",
+      timestamp: new Date().toISOString(),
+      remote: {
+        ndvi: 0.71,
+        reci: 3.84,
+        ndre: 0.42,
+        msavi: 0.63,
+        source: "sentinel",
+        image_url: "ipfs://bafybei..."
+      }
+    };
+    
+    const mrvEvent = await fetch(
+      `https://api.kokonut.network/v1/farms/adelphi/mrv`,
+      {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          "Authorization": `Bearer ${agentJWT}`
+        },
+        body: JSON.stringify(payload)
+      }
+    ).then(r => r.json());
+    // → { mrv_id: "uuid", farm_id: "adelphi", is_attested: false, ... }
+    ```
+  </Step>
+  <Step title="EAS attestation" icon="stamp" iconType="regular">
+    After the MRV event is recorded, the agent creates an on-chain EAS attestation anchoring the submission permanently to Base or Gnosis Chain. The attestation schema encodes the farm identifier, event type, IPFS CID, and an EBF-derived impact score.
+
+    ```typescript
+    import { EAS, SchemaEncoder } from "@ethereum-attestation-service/eas-sdk";
+    
+    const eas = new EAS(EAS_CONTRACT_ADDRESS);
+    eas.connect(agentSigner);  // agent's Base wallet
+    
+    const schemaEncoder = new SchemaEncoder(
+      "bytes32 farm_id,string event_type,string ipfs_cid," +
+      "uint256 impact_score,string attestor_role,uint64 timestamp"
+    );
+    
+    const encodedData = schemaEncoder.encodeData([
+      { name: "farm_id",      value: ethers.keccak256(ethers.toUtf8Bytes("adelphi")), type: "bytes32" },
+      { name: "event_type",   value: "mrv_submission",  type: "string"  },
+      { name: "ipfs_cid",     value: mrvEvent.ipfs_cid, type: "string"  },
+      { name: "impact_score", value: 7100n,             type: "uint256" }, // NDVI 0.71 × 10000
+      { name: "attestor_role",value: "guild_member",    type: "string"  },
+      { name: "timestamp",    value: BigInt(Math.floor(Date.now() / 1000)), type: "uint64" }
+    ]);
+    
+    const tx = await eas.attest({
+      schema: KOKONUT_MRV_SCHEMA_UID,
+      data: {
+        recipient:           farmOperatorAddress,
+        expirationTime:      0n,
+        revocable:           false,
+        data:                encodedData
+      }
+    });
+    
+    const attestationUID = await tx.wait();
+    ```
+  </Step>
+  <Step title="Registry linkage" icon="link" iconType="regular">
+    Finally, the agent calls `POST /farms/{farm_id}/attestations` to register the EAS UID in the Farm Registry, linking the on-chain attestation to the off-chain MRV event UUID. The MRV event is now marked `is_attested: true` and becomes immutable. This is the step that closes the loop: the Data Hub at `hub.kokonut.network` reads from the Farm Registry, so attested MRV events appear in the farm's public data within minutes of the attestation landing on-chain.
+  </Step>
+</Steps>
+
+### Agent task catalogue
+
+Beyond MRV, the Marketplace supports agents for any repeatable farm-data task:
+
+<CardGroup cols={2}>
+  <Card title="Harvest Forecaster" icon="chart-line">
+    Applies the Kokonut production formula — `(planting_density × bed_area × num_beds × num_plots) × (1 − loss_rate)` — to registered crop configurations and submits forecast records to `POST /farms/{id}/harvests`. Runs on planting-cycle triggers.
+  </Card>
+
+  <Card title="Impact Scorer" icon="star">
+    Aggregates MRV events and harvest records across a reporting period, computes EBF impact metrics across all four dimensions (Environmental, Economic, Social, Sustainability), and submits to `GET /farms/{id}/impact`. Used for annual reports and grant applications.
+  </Card>
+
+  <Card title="Grant Drafter" icon="file-pen">
+    Pulls structured farm data from the Registry API, real-time metrics from the Data Hub, and SDG alignment data, then produces a formatted grant application document. Callable by the Communications Guild for Gitcoin, Public Nouns, and ReFi funding rounds.
+  </Card>
+
+  <Card title="Cross-Farm Monitor" icon="binoculars">
+    Compares NDVI and NDRE trends across all registered farms, flags anomalies (sudden drops indicating disease or drought), and routes alerts to the relevant Guild channel. Acts as a network-level early warning system.
+  </Card>
+
+  <Card title="Proposal Drafter" icon="scroll">
+    Queries DAO state from the Moloch contracts, formats structured farm data into a DAO proposal template, and submits a draft via API. Reduces the manual overhead of authoring funding proposals for farm operators.
+  </Card>
+
+  <Card title="Soil Health Analyst" icon="worm">
+    Ingests ground-sensing time series (volumetric water content, electrical conductivity, soil temperature), detects trend deviations, and generates agronomic recommendations. Designed to work alongside the Silvi per-plant GPS data stream.
+  </Card>
+</CardGroup>
+
+---
+
+## x402 payment flows
+
+The [x402 protocol](https://x402.org) is what makes agent-to-agent service calls financially autonomous. Without it, every payment requires a human to sign a transaction. With it, an agent can call a paid service, negotiate payment, settle on-chain, and retry the call — all within a single async function.
+
+### The HTTP 402 handshake
+
+The flow has four steps, all triggered by a single HTTP request:
+
+```text
+Agent A (caller)                         Agent B (service provider)
+─────────────────                        ─────────────────────────
+POST /analyze-farm-health
+  { farm_id: "adelphi" }        ──────►  Returns 402 Payment Required
+                                          {
+                                            "x402Version": 1,
+                                            "accepts": [{
+                                              "scheme": "exact",
+                                              "network": "base-mainnet",
+                                              "maxAmountRequired": "5000000",
+                                              "asset": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
+                                              "payTo": "0xAgentB...",
+                                              "memo": "farm-health-adelphi"
+                                            }]
+                                          }
+ 
+Settles 5 USDC on Base              ◄──  (waits for settlement)
+  tx hash: 0xabc...
+ 
+POST /analyze-farm-health
+  { farm_id: "adelphi" }
+  X-PAYMENT: { payload, signature } ──►  Verifies payment on-chain
+                                          Processes request
+                                ◄────    Returns { health_report: {...} }
+```
+
+### Implementation — caller side
+
+```typescript
+import { withPaymentInterceptor } from "x402-fetch";
+import { createWalletClient, http } from "viem";
+import { base } from "viem/chains";
+import { privateKeyToAccount } from "viem/accounts";
+ 
+// Configure agent's Base wallet for automatic payment settlement
+const account = privateKeyToAccount(process.env.AGENT_PRIVATE_KEY as `0x${string}`);
+const walletClient = createWalletClient({
+  account,
+  chain: base,
+  transport: http("https://mainnet.base.org")
+});
+ 
+// Wrap fetch with x402 interceptor — handles 402 responses automatically
+const fetch402 = withPaymentInterceptor(fetch, walletClient);
+ 
+// Now call any x402-enabled agent service transparently
+async function callHarvestForecaster(farmId: string) {
+  const response = await fetch402(
+    `https://api.kokonut.network/agents/harvest-forecaster.kokonut.eth/forecast`,
+    {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        farm_id: farmId,
+        crop: "lettuce",
+        cycle_start: "2025-06-01"
+      })
+    }
+  );
+  // If the service returned 402, the interceptor settled payment and retried.
+  // By the time you reach here, you have a 200 response.
+  return response.json();
+}
+```
+
+### Implementation — provider side (your agent)
+
+```typescript
+import express from "express";
+import { validateX402Payment } from "x402-express";
+ 
+const app = express();
+app.use(express.json());
+ 
+// x402 middleware validates payment headers before your handler runs
+app.use(
+  "/forecast",
+  validateX402Payment({
+    amount: "5000000",          // 5 USDC (6 decimal places)
+    asset: "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",  // USDC on Base
+    network: "base-mainnet",
+    payTo: process.env.AGENT_WALLET_ADDRESS!
+  })
+);
+ 
+app.post("/forecast", async (req, res) => {
+  // Payment has been validated by middleware before reaching here
+  const { farm_id, crop, cycle_start } = req.body;
+ 
+  const forecast = await generateHarvestForecast(farm_id, crop, cycle_start);
+  await submitForecastToRegistry(farm_id, forecast);
+ 
+  res.json({ status: "completed", forecast });
+});
+```
+
+### Payment escrow for longer tasks
+
+For tasks that take more than a few seconds — large imagery analysis, multi-farm aggregation reports, document generation — x402's single-request pattern isn't appropriate. The Marketplace escrow contract handles these:
+
+```typescript
+// Caller locks USDC into escrow for task execution
+// Agent claims payment after submitting a completion proof
+ 
+interface EscrowedTask {
+  task_id: string;
+  agent_id: string;         // ERC-8004 registered agent
+  caller: string;           // Caller's wallet address
+  amount_usdc: bigint;      // Locked payment
+  deadline: bigint;         // Unix timestamp — agent must complete before this
+  completion_proof: string; // IPFS CID of output — submitted by agent to release payment
+  status: "active" | "completed" | "disputed" | "expired";
+}
+```
+
+If the agent misses its deadline or the caller disputes the output quality, the case escalates to [Kleros](https://kleros.io) arbitration automatically. The escrow contract holds the funds until arbitration resolves.
+
+---
+
+## Reputation and trust
+
+Every task an agent completes (or fails) updates its on-chain reputation through two complementary systems.
+
+### EAS-based task attestations
+
+After each completed task, the Marketplace contract creates an EAS attestation recording the outcome. Over time, this builds a tamper-proof task history:
+
+```typescript
+// Each completed task generates an attestation
+// Readable by any agent deciding whether to hire this agent
+interface AgentTaskAttestation {
+  agent_id: string;         // ERC-8004 agent identifier
+  task_type: string;        // e.g. "mrv_submission", "harvest_forecast"
+  farm_id: string;          // Farm this task was performed for
+  outcome: "success" | "disputed" | "resolved"; 
+  quality_score: number;    // 1–100, set by caller post-completion
+  ipfs_cid: string;         // Output artifact CID
+  timestamp: number;
+}
+```
+
+### Karma GAP integration
+
+Longer-running contributions — an agent that has consistently produced accurate MRV data for Adelphi across an entire growing season, for example — are eligible for [Karma GAP](https://gap.karmahq.xyz/) milestone records. Karma GAP provides a cross-protocol contribution record that persists beyond any single marketplace or DAO, making agent track records portable.
+
+---
+
+## Getting started
+
+<Steps>
+  <Step title="Build your agent on OpenServ" icon="hammer" iconType="regular">
+    Follow the [OpenServ agent spec](https://docs.openserv.ai) to build an HTTP service that accepts task payloads matching your capability manifest. Start with a single-task agent — the MRV reporter is a good first target because the input/output schema is fully specified and the Farm Registry API is the only external dependency.
+  </Step>
+  <Step title="Write and pin your capability manifest" icon="file-code" iconType="regular">
+    Create a `capability-manifest.json` following the format defined [above](#capability-manifest-format). Pin it to IPFS using [web3.storage](https://web3.storage) or [Pinata](https://pinata.cloud). Keep the CID — you'll need it for registration.
+
+    ```bash
+    # Using w3cli (web3.storage)
+    w3 put capability-manifest.json
+    # → ipfs://bafybei...
+    ```
+  </Step>
+  <Step title="Register on the Kokonut Agent Registry" icon="id-card" iconType="regular">
+    Call the `registerAgent` function on the Base contract (address published on testnet deployment) with your agent name, manifest CID, operator wallet, and USDC base rate. Your ENS subdomain is assigned automatically.
+  </Step>
+  <Step title="Add x402 payment handling" icon="coins" iconType="regular">
+    Wrap your task endpoint with the `validateX402Payment` middleware if you want clients to call you directly. For agent-to-agent calls routed through OpenServ, payment is handled by the escrow contract — you only need to submit a completion proof to release funds.
+  </Step>
+  <Step title="Submit a test task" icon="flask" iconType="regular">
+    Use the Kokonut test farm fixture (`farm_id: "adelphi-testnet"`) available in staging to run a full end-to-end task: receive input → calculate → submit to Registry API → create EAS attestation → verify the Farm Registry reflects the new MRV event as `is_attested: true`.
+  </Step>
+  <Step title="List on the Marketplace and earn Guild Points" icon="shop" iconType="regular">
+    Once your agent passes the end-to-end test, it appears automatically in the Marketplace frontend under your registered ENS subdomain. Agents that consistently produce quality outputs for Kokonut farms are eligible for [Guild Points](/ecosystem-wiki/the-kokonut-dao/kokonut-guilds-dao) in the Technology Guild — and significant contributions can earn [Loot tokens](/ecosystem-wiki/the-kokonut-dao/kokonut-guilds-dao#loot--kokonut-loot-token) via DAO proposal.
+  </Step>
+</Steps>
+
+---
+
+## Developer resources
+
+| Resource | URL | Purpose |
+| --- | --- | --- |
+| Agentic Marketplace repo | [github.com/wasalo/Kokonut-Agentic-Marketplace](https://github.com/wasalo/Kokonut-Agentic-Marketplace) (`develop`) | Contract ABIs, frontend, deployment scripts |
+| Farm Registry API spec | [OpenAPI YAML](/api-reference/openapi) | Full schema for MRV, harvest, and attestation endpoints |
+| EAS SDK | [docs.attest.sh](https://docs.attest.sh) | Creating and reading on-chain attestations |
+| x402 protocol | [x402.org](https://x402.org) | Spec, SDKs, and reference implementations |
+| OpenServ docs | [docs.openserv.ai](https://docs.openserv.ai) | Agent build spec, task payload format, SDK |
+| ERC-8004 EIP | [eips.ethereum.org/EIPS/eip-8004](https://eips.ethereum.org/EIPS/eip-8004) | On-chain agent identity standard |
+| Karma GAP | [gap.karmahq.xyz](https://gap.karmahq.xyz) | Cross-protocol contribution records |
+| Adelphi Data Hub | [hub.kokonut.network/projects/41](https://hub.kokonut.network/projects/41) | Live farm data — useful as a test reference |
+
+---
+
+<CardGroup cols={2}>
+  <Card title="Build with Kokonut" icon="code" href="/build-with-kokonut">
+    Full developer guide — repos, contracts, Framework API primitives, and contribution paths.
+  </Card>
+
+  <Card title="Farm Registry API" icon="server" href="/api-reference/openapi">
+    Interactive API reference for all MRV, harvest, attestation, and impact endpoints.
+  </Card>
+
+  <Card title="Kokonut Guilds DAO" icon="hydra" href="/ecosystem-wiki/the-kokonut-dao/kokonut-guilds-dao">
+    How agent builders earn Guild Points and Loot tokens through ecosystem contributions.
+  </Card>
+
+  <Card title="Glossary" icon="book-open" href="/glossary">
+    Definitions for ERC-8004, x402, EAS, MRV, OpenServ, and all other terms on this page.
+  </Card>
+</CardGroup>
