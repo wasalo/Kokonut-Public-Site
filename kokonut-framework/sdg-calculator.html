@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kokonut SDG Impact Calculator</title>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --g50:#EAF3DE; --g100:#C0DD97; --g200:#97C459; --g400:#639922;
+    --g600:#3B6D11; --g800:#27500A;
+    --t600:#0F6E56;
+    --a600:#854F0B;
+    --bg:#ffffff; --bg2:#f9fafb; --bg3:#f3f4f6;
+    --border:#e5e7eb; --border2:#d1d5db;
+    --text:#111827; --text2:#6b7280; --text3:#9ca3af;
+    --radius:8px; --radius-sm:6px;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg:#1a1a1a; --bg2:#242424; --bg3:#2e2e2e;
+      --border:#333; --border2:#444;
+      --text:#f0f0f0; --text2:#aaa; --text3:#777;
+    }
+  }
+
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Inter", "Segoe UI", sans-serif;
+    font-size: 14px;
+    color: var(--text);
+    background: var(--bg);
+    padding: 1.25rem;
+    line-height: 1.5;
+  }
+
+  h1 { font-size: 15px; font-weight: 600; margin-bottom: 3px; }
+  .subtitle { font-size: 12px; color: var(--text2); margin-bottom: 1rem; }
+
+  .adelphi-btn {
+    display: inline-flex; align-items: center; gap: 5px;
+    font-size: 12px; padding: 4px 10px;
+    border: 0.5px solid var(--border2); border-radius: 20px;
+    background: var(--bg2); cursor: pointer; color: var(--text2);
+    margin-bottom: 1.25rem;
+  }
+  .adelphi-btn:hover { background: var(--g50); border-color: var(--g400); color: var(--g800); }
+
+  .grid2 { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 10px; }
+  .grid1 { margin-bottom: 10px; }
+
+  .block {
+    background: var(--bg2); border: 0.5px solid var(--border);
+    border-radius: var(--radius); padding: .875rem;
+  }
+  .block label {
+    display: block; font-size: 11px; font-weight: 600;
+    color: var(--text3); text-transform: uppercase;
+    letter-spacing: .06em; margin-bottom: 9px;
+  }
+
+  .slider-row { display: flex; align-items: center; gap: 10px; }
+  .slider-row input[type=range] {
+    flex: 1; accent-color: var(--g400);
+    height: 4px; cursor: pointer;
+  }
+  .slider-val { font-size: 13px; font-weight: 500; min-width: 56px; text-align: right; }
+
+  .seg { display: flex; gap: 4px; }
+  .seg-btn {
+    flex: 1; padding: 6px 4px; font-size: 11px; font-weight: 500;
+    border: 0.5px solid var(--border2); border-radius: var(--radius-sm);
+    background: var(--bg); cursor: pointer; color: var(--text2);
+    text-align: center; line-height: 1.4; transition: all .12s;
+  }
+  .seg-btn small { display: block; font-weight: 400; font-size: 10px; opacity: .75; }
+  .seg-btn.on { background: var(--g50); border-color: var(--g400); color: var(--g800); }
+
+  .checks { display: grid; grid-template-columns: 1fr 1fr; gap: 5px; }
+  .chk { display: flex; align-items: center; gap: 7px; cursor: pointer; padding: 2px 0; }
+  .chk input { accent-color: var(--g400); width: 14px; height: 14px; cursor: pointer; }
+  .chk span { font-size: 12px; color: var(--text2); }
+
+  .divider { border: none; border-top: 0.5px solid var(--border); margin: 1.1rem 0; }
+  .section-label {
+    font-size: 11px; font-weight: 600; color: var(--text3);
+    text-transform: uppercase; letter-spacing: .06em; margin-bottom: 9px;
+  }
+
+  .metrics { display: grid; grid-template-columns: repeat(3,1fr); gap: 8px; margin-bottom: 1.1rem; }
+  .metric {
+    background: var(--bg2); border-radius: var(--radius); padding: .75rem;
+    border: 0.5px solid var(--border);
+  }
+  .metric-label { font-size: 11px; color: var(--text2); margin-bottom: 3px; }
+  .metric-val { font-size: 21px; font-weight: 600; color: var(--text); line-height: 1; }
+  .metric-unit { font-size: 10px; color: var(--text3); margin-top: 3px; }
+  .metric-sub  { font-size: 10px; color: var(--g600); margin-top: 3px; }
+
+  .sdg-grid {
+    display: grid;
+    grid-template-columns: repeat(6,1fr);
+    gap: 7px; margin-bottom: 1.1rem;
+  }
+  .sdg-card {
+    background: var(--bg2); border: 0.5px solid var(--border);
+    border-radius: var(--radius-sm); padding: .625rem .5rem;
+    position: relative; overflow: hidden;
+  }
+  .sdg-num  { font-size: 10px; font-weight: 600; color: var(--text3); margin-bottom: 2px; }
+  .sdg-name { font-size: 10px; font-weight: 500; color: var(--text); line-height: 1.3; margin-bottom: 6px; min-height: 28px; }
+  .sdg-score { font-size: 17px; font-weight: 600; color: var(--text); }
+  .sdg-score-lbl { font-size: 9px; color: var(--text3); }
+  .sdg-bar-bg { position: absolute; bottom: 0; left: 0; right: 0; height: 3px; background: var(--border); }
+  .sdg-bar { position: absolute; bottom: 0; left: 0; height: 3px; transition: width .45s cubic-bezier(.4,0,.2,1); }
+
+  .note {
+    background: var(--bg3); border-radius: var(--radius-sm);
+    padding: .75rem; font-size: 11px; color: var(--text2); line-height: 1.6;
+  }
+  .note strong { color: var(--text); }
+
+  @media (max-width: 540px) {
+    .grid2 { grid-template-columns: 1fr; }
+    .metrics { grid-template-columns: 1fr; }
+    .sdg-grid { grid-template-columns: repeat(3,1fr); }
+  }
+</style>
+</head>
+<body>
+
+<h1>Kokonut Framework — SDG Impact Calculator</h1>
+<p class="subtitle">Estimates carbon sequestration, employment, and SDG contribution scores based on Kokonut MRV methodology and Adelphi farm data.</p>
+
+<button class="adelphi-btn" onclick="loadAdelphi()">&#127807; Load Adelphi values</button>
+
+<div class="grid2">
+  <div class="block">
+    <label>Land size (m²)</label>
+    <div class="slider-row">
+      <input type="range" id="land" min="500" max="50000" step="100" value="5000" oninput="update()">
+      <span class="slider-val" id="land-out">5,000</span>
+    </div>
+  </div>
+  <div class="block">
+    <label>Number of workers</label>
+    <div class="slider-row">
+      <input type="range" id="workers" min="1" max="30" step="1" value="3" oninput="update()">
+      <span class="slider-val" id="workers-out">3</span>
+    </div>
+  </div>
+  <div class="block">
+    <label>Crop mix</label>
+    <div class="seg" id="crop-seg">
+      <button class="seg-btn on" data-val="short" onclick="pickCrop(this)">Short cycle<small>veg only</small></button>
+      <button class="seg-btn" data-val="medium" onclick="pickCrop(this)">S + M<small>+ fruit</small></button>
+      <button class="seg-btn" data-val="full" onclick="pickCrop(this)">Full mix<small>+ trees</small></button>
+    </div>
+  </div>
+  <div class="block">
+    <label>Location type</label>
+    <div class="seg" id="loc-seg">
+      <button class="seg-btn on" data-val="rural" onclick="pickLoc(this)">Rural</button>
+      <button class="seg-btn" data-val="periurban" onclick="pickLoc(this)">Peri-urban</button>
+      <button class="seg-btn" data-val="urban" onclick="pickLoc(this)">Urban</button>
+    </div>
+  </div>
+</div>
+
+<div class="block grid1">
+  <label>Additional factors</label>
+  <div class="checks">
+    <label class="chk"><input type="checkbox" id="chk-women" onchange="update()"><span>Women in leadership</span></label>
+    <label class="chk"><input type="checkbox" id="chk-org"   onchange="update()"><span>Pursuing organic certification</span></label>
+    <label class="chk"><input type="checkbox" id="chk-biochar" onchange="update()"><span>Biochar soil treatment</span></label>
+    <label class="chk"><input type="checkbox" id="chk-nursery" onchange="update()"><span>Native species nursery</span></label>
+  </div>
+</div>
+
+<hr class="divider">
+<div class="section-label">Estimated annual outputs</div>
+
+<div class="metrics">
+  <div class="metric">
+    <div class="metric-label">Carbon sequestered</div>
+    <div class="metric-val" id="out-carbon">—</div>
+    <div class="metric-unit">metric tons CO&#8322;e / yr</div>
+    <div class="metric-sub" id="out-carbon-range"></div>
+  </div>
+  <div class="metric">
+    <div class="metric-label">Employment supported</div>
+    <div class="metric-val" id="out-jobs">—</div>
+    <div class="metric-unit">full-time positions</div>
+    <div class="metric-sub" id="out-jobs-sub"></div>
+  </div>
+  <div class="metric">
+    <div class="metric-label">Est. annual revenue</div>
+    <div class="metric-val" id="out-rev">—</div>
+    <div class="metric-unit">USD gross</div>
+    <div class="metric-sub" id="out-pg"></div>
+  </div>
+</div>
+
+<hr class="divider">
+<div class="section-label">SDG contribution scores</div>
+<div class="sdg-grid" id="sdg-grid"></div>
+
+<div class="note" id="note-text"></div>
+
+<script>
+var cropVal = 'short', locVal = 'rural';
+
+var ACRE_M2 = 4046.86;
+var CARBON_RATES = { short: 0.4, medium: 0.7, full: 1.2 };
+var LOC_MULT    = { rural: 1.0, periurban: 0.85, urban: 0.65 };
+var REV_PER_M2  = { short: 18.5, medium: 14.3, full: 11.2 };
+
+var SDG_DEFS = [
+  { num: 1,  name: 'No poverty',     color: '#639922', key: 'sdg1'  },
+  { num: 2,  name: 'Zero hunger',    color: '#97C459', key: 'sdg2'  },
+  { num: 5,  name: 'Gender equality',color: '#D4537E', key: 'sdg5'  },
+  { num: 8,  name: 'Decent work',    color: '#0F6E56', key: 'sdg8'  },
+  { num: 13, name: 'Climate action', color: '#185FA5', key: 'sdg13' },
+  { num: 15, name: 'Life on land',   color: '#3B6D11', key: 'sdg15' }
+];
+
+function pickCrop(el) {
+  document.querySelectorAll('#crop-seg .seg-btn').forEach(function(b) { b.classList.remove('on'); });
+  el.classList.add('on');
+  cropVal = el.dataset.val;
+  update();
+}
+
+function pickLoc(el) {
+  document.querySelectorAll('#loc-seg .seg-btn').forEach(function(b) { b.classList.remove('on'); });
+  el.classList.add('on');
+  locVal = el.dataset.val;
+  update();
+}
+
+function loadAdelphi() {
+  document.getElementById('land').value = 15725;
+  document.getElementById('workers').value = 7;
+  document.querySelectorAll('#crop-seg .seg-btn').forEach(function(b) {
+    b.classList.toggle('on', b.dataset.val === 'full');
+  });
+  document.querySelectorAll('#loc-seg .seg-btn').forEach(function(b) {
+    b.classList.toggle('on', b.dataset.val === 'rural');
+  });
+  cropVal = 'full'; locVal = 'rural';
+  document.getElementById('chk-women').checked   = true;
+  document.getElementById('chk-biochar').checked = true;
+  document.getElementById('chk-nursery').checked = true;
+  document.getElementById('chk-org').checked     = true;
+  update();
+}
+
+function calc(land, workers, crop, loc, women, organic, biochar, nursery) {
+  var acres   = land / ACRE_M2;
+  var rate    = CARBON_RATES[crop];
+  var lm      = LOC_MULT[loc];
+  var bcBoost = biochar ? 1.18 : 1.0;
+
+  var carbonMin = +(acres * rate * 0.75 * bcBoost).toFixed(2);
+  var carbonMid = +(acres * rate        * bcBoost).toFixed(2);
+  var carbonMax = +(acres * rate * 1.15 * bcBoost).toFixed(2);
+
+  var cropDiv = { short: 1, medium: 2, full: 3 }[crop];
+  var labourRate = crop === 'full' ? 2.8 : crop === 'medium' ? 2.2 : 1.6;
+  var jobsFromLand = (land / 10000) * labourRate * lm;
+  var jobsTotal = Math.max(workers, Math.round(jobsFromLand * 10) / 10);
+
+  var revenue = Math.round(land * REV_PER_M2[crop] * lm);
+  var pg      = Math.round(revenue * 0.10);
+
+  var revScore = Math.min(100, Math.round((revenue / 150000) * 100));
+  var sdg1  = Math.min(100, Math.round(((jobsTotal / 10) * 50) + (revScore * 0.5)));
+  var sdg2  = Math.min(100, Math.round((cropDiv / 3) * 60 + Math.min(40, (land / 30000) * 40) + (organic ? 10 : 0)));
+  var sdg5  = women ? 85 : 25;
+  var locBonus = { rural: 20, periurban: 10, urban: 0 }[loc];
+  var sdg8  = Math.min(100, Math.round((Math.min(jobsTotal, 15) / 15) * 60 + locBonus + (workers >= 3 ? 10 : 0) + (organic ? 10 : 0)));
+  var sdg13 = Math.min(100, Math.round((carbonMid / 10) * 100 * (biochar ? 1.1 : 1.0)));
+  var sdg15 = Math.min(100, Math.round((cropDiv / 3) * 40 + (nursery ? 30 : 0) + (biochar ? 20 : 0) + Math.min(10, land / 3000)));
+
+  return { carbonMin: carbonMin, carbonMid: carbonMid, carbonMax: carbonMax,
+           jobsTotal: jobsTotal, revenue: revenue, pg: pg,
+           sdg1: sdg1, sdg2: sdg2, sdg5: sdg5, sdg8: sdg8, sdg13: sdg13, sdg15: sdg15 };
+}
+
+function fmt(n) {
+  return n.toLocaleString('en-US', { maximumFractionDigits: 0 });
+}
+
+function update() {
+  var land    = +document.getElementById('land').value;
+  var workers = +document.getElementById('workers').value;
+  var women   = document.getElementById('chk-women').checked;
+  var organic = document.getElementById('chk-org').checked;
+  var biochar = document.getElementById('chk-biochar').checked;
+  var nursery = document.getElementById('chk-nursery').checked;
+
+  document.getElementById('land-out').textContent    = fmt(land);
+  document.getElementById('workers-out').textContent = workers;
+
+  var s = calc(land, workers, cropVal, locVal, women, organic, biochar, nursery);
+
+  document.getElementById('out-carbon').textContent      = s.carbonMid.toFixed(1);
+  document.getElementById('out-carbon-range').textContent = 'range: ' + s.carbonMin.toFixed(1) + ' – ' + s.carbonMax.toFixed(1) + ' t';
+  document.getElementById('out-jobs').textContent        = s.jobsTotal.toFixed(1);
+  document.getElementById('out-jobs-sub').textContent    = locVal + ' community';
+  document.getElementById('out-rev').textContent         = '$' + fmt(s.revenue);
+  document.getElementById('out-pg').textContent          = '$' + fmt(s.pg) + ' to public goods (10%)';
+
+  var grid = document.getElementById('sdg-grid');
+  grid.innerHTML = '';
+  SDG_DEFS.forEach(function(def) {
+    var score = s[def.key];
+    var card  = document.createElement('div');
+    card.className = 'sdg-card';
+    card.innerHTML =
+      '<div class="sdg-num">SDG ' + def.num + '</div>' +
+      '<div class="sdg-name">' + def.name + '</div>' +
+      '<div class="sdg-score">' + score + '<span class="sdg-score-lbl">/100</span></div>' +
+      '<div class="sdg-bar-bg"></div>' +
+      '<div class="sdg-bar" style="width:' + score + '%;background:' + def.color + '"></div>';
+    grid.appendChild(card);
+  });
+
+  var avg = Math.round((s.sdg1 + s.sdg2 + s.sdg5 + s.sdg8 + s.sdg13 + s.sdg15) / 6);
+  document.getElementById('note-text').innerHTML =
+    '<strong>About these estimates</strong> — ' +
+    'Carbon uses 0.4–1.2 t CO&#8322;e/acre/yr for regenerative agriculture (Kokonut MRV methodology). ' +
+    'Biochar adds ~18%. Revenue per m&#178; derived from Adelphi data: lettuce ~$26.65, passion fruit ~$2.20, coconut ~$0.97. ' +
+    'SDG scores are indicative — not a certified impact assessment. ' +
+    'Average SDG score: <strong style="color:' + (avg >= 60 ? '#3B6D11' : '#854F0B') + '">' + avg + '/100</strong>.';
+}
+
+update();
+</script>
+</body>
+</html>
