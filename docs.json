@@ -74,6 +74,7 @@
         "pages": [
           "kokonut-framework/Introduction",
           "kokonut-framework/why-syntropic-farming",
+          "kokonut-framework/impact-calculator",
           {
             "group": "Framework Components",
             "icon": "puzzle-piece",
