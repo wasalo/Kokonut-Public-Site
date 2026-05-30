@@ -3,119 +3,229 @@ title: "Measurement, Reporting & Verification"
 icon: "magnifying-glass-chart"
 ---
 
-We monitor the farms using remote sensing technologies (drones and satellite photos), and through satellite monitoring combined with climatic data, we will analyze the health of vegetation and crops. For satellite monitoring, we will implement images from [Landsat 8](https://www.usgs.gov/landsat-missions/landsat-8) and [Sentinel](https://sentinels.copernicus.eu/web/sentinel/home) satellites combined with advanced analysis tools.
+Impact claims without evidence are marketing. MRV — Measurement, Reporting, and Verification — is the system that converts farm activity into verifiable, tamper-proof records that anyone can audit. It is the trust layer of the Kokonut Framework: the reason a grant reviewer, a DAO member, or a data scientist can look at Adelphi's output numbers and trust them, rather than taking the Core Team's word for it.
 
-Also, through the use of drones, we will fulfill multiple functions, such as mapping different areas, analyzing vegetation indices, and monitoring crops and diseases. This will result in a reduction in production costs, increased efficiency and productivity, time savings, and better management decisions.
+Every significant farm event in the Kokonut Network — an MRV submission, a harvest milestone, a funding approval, an impact report — is designed to produce an on-chain [EAS attestation](https://docs.attest.sh/): a cryptographically signed, permanent record anchored to Gnosis Chain or Base. The data pipeline runs from soil probe to satellite imagery to the [Farm Registry API](/build-with-kokonut#framework-data-primitives) to an immutable on-chain record, queryable by anyone.
 
-## On The Ground Sensing
+At [Adelphi](/ecosystem-wiki/kokonut-farms/adelphi/summary), this pipeline is live. Farm data flows to [hub.kokonut.network/projects/41](https://hub.kokonut.network/projects/41) in real time.
+
+---
+
+## The three-tier monitoring stack
+
+Kokonut's MRV methodology operates across three complementary sensing tiers. Each one captures what the others cannot — satellite imagery misses ground-level soil chemistry; soil probes miss landscape-scale vegetation patterns; community analytics capture agronomic judgment that sensors cannot encode.
+
+### On the ground sensing
 
 <Tabs>
   <Tab title="Soil Moisture Probes">
-    - **Volumetric Water Content**: Determines the amount of water present in the soil in relation to its total volume, providing an accurate measurement of moisture levels in the various soil layers.
-    - **Electrical Conductivity**: Measures the soil’s ability to conduct electricity, which is an important indicator for assessing soil salinity and nutrient availability.
-    - **Soil Temperature**: Records the soil temperature, a crucial factor that influences the biological and chemical processes affecting plant growth and development.
+    Soil moisture probes are installed across the farm to provide continuous subsurface readings across three dimensions:
+
+    - **Volumetric Water Content (VWC):** Determines the amount of water present in the soil relative to its total volume — providing accurate measurement of moisture levels across different soil layers and flagging irrigation needs before they become visible above ground.
+    - **Electrical Conductivity (EC):** Measures the soil's ability to conduct electricity, the primary proxy for soil salinity and nutrient availability. Rising EC over time indicates salt accumulation; declining EC after biochar application indicates improving nutrient retention.
+    - **Soil Temperature:** Records soil temperature in °C — a critical variable for biological and chemical processes affecting plant growth, germination timing, and microbial activity in the root zone.
+
+    Probe readings feed directly into the `ground` field of each MRV payload submitted to the Farm Registry API.
   </Tab>
-  <Tab title="Community-based Analytics">
-    - Crop Cycle
-    - Plant Analysis
-    - Water Analysis
-    - Soil Texture
-    - Diseases
+  <Tab title="Community Analytics">
+    Farm operators and community members log field observations on a regular cadence. These analytics capture agronomic judgment that sensor data cannot — the qualitative texture of healthy vs. stressed plants, early disease identification, and crop cycle stage assessments that inform planting and harvest decisions. Logged categories:
+
+    - **Crop Cycle Stage:** `germination` → `seedling` → `vegetative` → `flowering` → `fruiting` → `harvest` → `post_harvest`
+    - **Plant Health Notes:** Field observations on vigor, color, uniformity, and stress indicators
+    - **Water Analysis:** pH, turbidity, and contamination assessment of irrigation sources
+    - **Soil Texture:** Tactile field assessment of structure, drainage, and organic matter presence
+    - **Disease Flags:** Any pests or diseases identified — logged and timestamped for trend analysis
+
+    Community analytics are logged via third-party attestation of field reports.
   </Tab>
   <Tab title="Technologies & Digital Tools">
-    - [Silvi](https://www.silvi.earth/) for Individual Plants GPS & Health Tracking
-    - [Atlantis App](https://apps.apple.com/in/app/impact-miner/id6448894610) for Data Collection, Project Management & 3rd Party Attestations
-    - QGIS for analyzing vegetation indices
-    - [Pix4Dcapture](https://www.pix4d.com/product/pix4dcapture) for drone flight planning
+    | **Tool** | **Purpose** | **Data output** |
+    | --- | --- | --- |
+    | [Silvi](https://www.silvi.earth/) | Per-plant GPS tracking and health logs | Plant-level location \+ phenology records — every tree individually registered |
+    | [Atlantis App](https://apps.apple.com/in/app/impact-miner/id6448894610) | Field data collection, project management, and third-party attestations | Structured field reports with photo evidence, timestamped and attestable |
+    | QGIS | Vegetation index calculation from drone orthomosaics | Raster analysis → NDVI/NDRE/MSAVI grid outputs for the farm polygon |
+    | [Pix4Dcapture](https://www.pix4d.com/product/pix4dcapture) | Drone flight planning and orthomosaic generation | Georeferenced imagery for QGIS pipeline — inputs to remote sensing indices |
   </Tab>
 </Tabs>
 
-## Remote Sensing
+### Remote sensing
 
-### Vegetation & Environment Indices
+Satellite imagery from [Landsat 8](https://www.usgs.gov/landsat-missions/landsat-8) and [Sentinel](https://sentinels.copernicus.eu/web/sentinel/home) provides landscape-scale vegetation health data at regular intervals — Sentinel overpasses every 5 days at 10m resolution. Drone surveys with [Pix4Dcapture](https://www.pix4d.com/product/pix4dcapture) supplement satellite passes at higher spatial resolution for specific plots.
+
+#### Vegetation index selection guide
+
+Four indices are used, each suited to a specific crop condition. Index selection is not arbitrary — applying the wrong index at the wrong crop stage produces misleading readings.
+
+| **Index** | **Formula** | **When to apply** |
+| --- | --- | --- |
+| **NDVI** | `(NIR − RED) / (NIR + RED)` | Throughout the production season as the primary vegetation health baseline. The most widely used index in remote sensing — accurate when canopy cover is established. Avoid during early establishment when bare soil exposure is high. |
+| **ReCI** | `(NIR / RED) − 1` | During the active vegetative development phase. Responds directly to chlorophyll concentration — a proxy for nitrogen availability. Use when growth rate and leaf color are the key monitoring variables. |
+| **NDRE** | `(NIR − RED_EDGE) / (NIR + RED_EDGE)` | During the crop maturity phase, when the canopy is closed and NDVI begins to saturate. More sensitive than NDVI to chlorophyll variation in dense, closed-canopy crops. |
+| **MSAVI** | `(2 × Band4 + 1 − √((2 × Band4 + 1)² − 8 × (Band4 − Band3))) / 2` | At the beginning of the crop production season when seedlings are establishing and bare soil exposure is highest. Designed specifically to minimize soil background interference on crop health readings. |
 
 <Tabs>
   <Tab title="NDVI">
-    **Normalized Difference Vegetation Index**
+    **Normalized Difference Vegetation Index:** The most common vegetation index in remote sensing. Applied throughout the crop production season as the baseline health indicator.
 
-    It is the most common vegetation index in remote sensing. We will use it throughout the crop production season, except when vegetation and its canopy are too sparse, as its spectral reflectance is too low.
+    > ```text
+    > Formula: NDVI = (NIR – RED) / (NIR + RED)
+    > ```
 
-    > ```
-    > Fórmula: NDVI = (NIR – RED) / (NIR + RED)
-    > ```
+    Values range from −1 to \+1. Dense, healthy vegetation approaches \+1. Bare soil clusters near 0. Water bodies are negative. A declining NDVI trend over successive satellite passes is an early warning of drought stress, disease, or nutrient deficiency — before visible symptoms appear.
   </Tab>
-  <Tab title="ReCl">
-    The [ReCl](https://www.livestocking.net/vegetation-indices-use-in-farming) vegetation index responds to the chlorophyll content in leaves, which is nourished by nitrogen. ReCl reflects the photosynthetic activity of vegetation. We will use it during the active development phase of the vegetation.
+  <Tab title="ReCI">
+    **Red-Edge Chlorophyll Index** responds directly to chlorophyll concentration in plant leaves — the primary proxy for nitrogen availability and photosynthetic capacity. Applied during the active vegetative development phase.
 
+    > ```text
+    > Formula: ReCI = (NIR / RED) – 1
     > ```
-    > Fórmula: ReCI = (NIR / RED) – 1
-    > ```
+
+    Also referenced as **ReCl**. High ReCI values indicate sufficient nitrogen; declining values signal nutrient stress before it becomes visible. Particularly useful for monitoring the lettuce and passion fruit crops at Adelphi during their peak growth windows.
   </Tab>
   <Tab title="NDRE">
-    It combines the spectral bands of near-infrared (NIR) and a specific band for the narrow range between visible red and the transition zone (the so-called red-edge region). We will use this index to monitor crops that have reached the maturity phase.
+    **Normalized Difference Red-Edge Index** combines near-infrared (NIR) and the red-edge spectral band — the narrow transition zone between visible red and NIR wavelengths. More sensitive than NDVI to chlorophyll variation in dense, mature canopies.
 
+    > ```text
+    > Formula: NDRE = (NIR – RED_EDGE) / (NIR + RED_EDGE)
     > ```
-    > Fórmula: NDRE = (NIR – RED EDGE) / (NIR + RED EDGE)
-    > ```
+
+    Applied specifically for crops that have reached the maturity phase, where NDVI saturates and loses resolution. Used for monitoring coconut and long-cycle agroforestry species at Adelphi once canopy closure is established.
   </Tab>
   <Tab title="MSAVI">
-    [MSAVI](https://www.usgs.gov/landsat-missions/landsat-modified-soil-adjusted-vegetation-index)
+    **Modified Soil-Adjusted Vegetation Index** Designed to mitigate the spectral interference of bare soil on crop health measurements. Applied at the beginning of the crop production season — when seedlings are establishing and bare soil percentage is highest — and during sparse-vegetation periods when NDVI produces unreliable readings.
 
-    It is designed to mitigate the effects of soil on crop monitoring results. Therefore, we will apply it when NDVI cannot provide accurate values, especially with a high percentage of bare soil, sparse vegetation, or low chlorophyll content in plants. We will implement it at the beginning of the crop production season when seedlings begin to establish.
+    > ```text
+    > Formula: MSAVI = (2 × Band4 + 1 – √((2 × Band4 + 1)² – 8 × (Band4 – Band3))) / 2
+    > ```
 
-    > ```
-    > Fórmula: MSAVI = (2 * Band 4 + 1 – sqrt ((2 * Band 4 + 1)2 – 8 * (Band 4 – Band 3))) / 2
-    > ```
+    Applied in the earliest phase of each planting cycle, transitioning to NDVI once canopy cover reaches approximately 30% of the plot area.
   </Tab>
 </Tabs>
 
-## Ecological Impact Tracking and Measurement
+---
 
-We track and report on the environmental and social impacts of our project using the [EBF Framework](https://ebfcommons.org/) for Environmental & Social Impact Reports.
+## From measurement to verification — the EAS pipeline
 
-We employ several eco-friendly practices to reduce greenhouse gas emissions and enhance carbon sequestration.
+Collecting data is a measurement. Submitting it to the Farm Registry is reporting. Making it verifiable means anchoring it on-chain so that no party — including Kokonut Network itself — can retroactively alter what was recorded.
 
-### **Impact Areas**
+Every MRV submission follows this pipeline:
+
+<Steps>
+  <Step title="Data collected" icon="satellite-dish" iconType="regular">
+    Ground probe readings, satellite vegetation indices, and community field logs are assembled into a structured MRV payload matching the `KokonutMRVPayload` schema — `farm_id`, `timestamp`, `measurement_type`, and the relevant tier object (`ground`, `remote`, or `community`).
+  </Step>
+  <Step title="Payload pinned to IPFS" icon="database" iconType="regular">
+    The full MRV payload is pinned to Filecoin/IPFS before submission. The returned content identifier (CID) is immutable — the same data will always produce the same CID, and the CID cannot be generated from different data. This is the content address that the on-chain attestation will reference.
+  </Step>
+  <Step title="Submitted to Farm Registry API" icon="upload" iconType="regular">
+    The payload is submitted to `POST /farms/{farm_id}/mrv` on the [Farm Registry API](/build-with-kokonut#framework-data-primitives). The API returns a `mrv_id` UUID and sets `is_attested: false` — The event is recorded but not yet verified.
+
+    ```typescript
+    // MRV payload structure
+    {
+      farm_id: "adelphi",
+      timestamp: "2025-06-01T09:00:00Z",
+      measurement_type: "remote",
+      remote: {
+        ndvi: 0.71,
+        reci: 3.84,
+        ndre: 0.42,
+        msavi: 0.63,
+        source: "sentinel",
+        image_url: "ipfs://bafybei..."
+      }
+    }
+    ```
+  </Step>
+  <Step title="EAS attestation created on-chain" icon="stamp" iconType="regular">
+    After the MRV event is recorded, an [EAS attestation](https://docs.attest.sh/) is created on Gnosis Chain or Base — encoding the `farm_id`, `event_type`, `ipfs_cid`, `impact_score`, `attestor_role`, and `timestamp`. The attestation is cryptographically signed by the attestor wallet and anchored permanently on-chain. The attestation UID is then submitted to `POST /farms/{farm_id}/attestations`, linking the on-chain record to the Farm Registry event. The MRV event is updated to `is_attested: true` and becomes immutable.
+  </Step>
+  <Step title="Data appears on the Data Hub" icon="chart-line" iconType="regular">
+    Once attested, the MRV event appears in the farm's public record at [hub.kokonut.network/projects/41](https://hub.kokonut.network/projects/41) — queryable by anyone, traceable to the on-chain attestation, and permanently part of the farm's verifiable impact history.
+  </Step>
+</Steps>
+
+<Note>
+  The [Kokonut × AI Agents](/kokonut-x-ai-agents) page documents how this pipeline is being automated — AI agents ingesting satellite data, calculating vegetation indices, submitting to the Farm Registry API, and creating EAS attestations automatically on each Sentinel overpass cycle, removing the manual bottlenecks that currently limit MRV frequency.
+</Note>
+
+---
+
+## Ecological impact tracking
+
+Kokonut tracks and reports on environmental and social impacts using the [EBF Framework](https://ebfcommons.org/) for Environmental and Social Impact Reports. Impact is measured across four GHG and ecological dimensions, with methodologies specific to Kokonut's farm operations.
 
 <Tabs>
-  <Tab title="Methane (CH4)">
-    **Methodology**
+  <Tab title="Methane (CH₄)">
+    **Why it matters:** Methane has approximately 80 times the warming potential of CO₂ over 20 years. Agricultural methane sources include livestock digestion and poorly managed manure. **Kokonut methodology:**
 
-    - Using seaweed-based organic fertilizers
-    - Collaborating with local farmers to incorporate seaweed in cow feed
+    - Using seaweed-based organic fertilizers (seaweed supplementation has shown significant methane reduction in ruminant digestion)
+    - Collaborating with local farmers to incorporate seaweed into cow feed as a methane-reduction intervention
+    - Free-range poultry management at Adelphi — poultry manure is processed into humic acids and organic urea rather than stored in anaerobic conditions that produce methane
   </Tab>
-  <Tab title="Nitrous oxide (N2O)">
-    **Methodology**
+  <Tab title="Nitrous Oxide (N₂O)">
+    **Why it matters:** Nitrous oxide has approximately 270 times the warming potential of CO₂ and is primarily emitted from synthetic nitrogen fertilizers applied to agricultural soils. **Kokonut methodology:**
 
-    - Using 100% organic, in-house produced fertilizers
-    - Implementing manure management strategies
-    - Employing cover crops and crop rotation
-    - Adopting no-till or reduced tillage practices (syntropic planting)
-    - Integrating trees and agroforestry
+    - Using 100% organic, in-house produced fertilizers — eliminating synthetic nitrogen application entirely
+    - Implementing manure management strategies that process organic waste into stable humic acids rather than allowing nitrogen volatilization
+    - Employing cover crops and crop rotation to build soil nitrogen naturally through legume fixation
+    - Adopting no-till or reduced tillage practices via syntropic planting — minimizing soil disturbance that releases stored nitrogen
+    - Integrating trees and agroforestry to create closed-loop nutrient cycles within the farm system
   </Tab>
   <Tab title="Carbon Sequestration">
-    **Methodology**
+    **Why it matters:** Regenerative agriculture is one of the most scalable carbon drawdown mechanisms available — improving soil organic matter traps atmospheric CO₂ in a stable form that persists for decades. **Kokonut methodology:**
 
-    - Implementing regenerative agriculture practices (estimated 0.4-1.2 metric tons of carbon per acre per year)
-    - Creating food forests
-    - Tracking land productivity and organic produce yield
+    - Implementing regenerative agriculture practices — estimated sequestration of **0.4–1.2 metric tons of CO₂e per acre per year** under Kokonut's Framework
+    - Biochar application at Adelphi: bamboo-derived biochar is produced via pyrolysis on-site and incorporated into soil across all crop beds, creating stable carbon storage that persists for centuries while improving water and nutrient retention
+    - Creating multi-strata food forests — long-cycle coconut and agroforestry species accumulate carbon in woody biomass above ground and in root systems below
+    - Tracking land productivity and organic produce yield as proxies for ecosystem carbon health
+
+    Carbon sequestration performance is evaluated using the [CRISP framework](/kokonut-framework/framework-add-ons/ecological-impact-frameworks) for carbon credit risk assessment across five dimensions: Carbon Yield Risk, Climate Catastrophe Risk, Policy and Legal Risk, Financial Risk, and Project Developer Risk.
   </Tab>
   <Tab title="Ocean Impact">
-    **Methodology**
+    **Why it matters:** Agricultural runoff is one of the primary drivers of coastal water degradation, algal blooms, and marine dead zones. Kokonut farms operate near coastal watersheds in the Dominican Republic, making marine impact a relevant reporting dimension. **Kokonut methodology:**
 
-    - Collecting seaweed for fertilizer production
-    - Organizing beach cleanups
-    - Restoring marine habitats by reducing oceanic trash
+    - Collecting seaweed along coastal areas for use as organic fertilizer — simultaneously reducing coastal accumulation and replacing synthetic inputs on farms
+    - Organizing periodic beach and coastal cleanup activities in partnership with local communities — reducing terrestrial plastic waste from entering marine systems
+    - Restoring marine habitats adjacent to farm watersheds by reducing oceanic trash accumulation
+
+    > This holistic approach connects farm-level practices to watershed-level ecological health — recognizing that what happens on the land directly affects the marine systems downstream.
   </Tab>
 </Tabs>
 
-> This holistic approach minimizes agricultural carbon footprint, promoting soil health, biodiversity, and restoration of marine ecosystems.
+---
 
-## Holistic Annual Reports
+## Annual reporting
 
-1. Environmental Impact: Annual carbon sequestration rates, changes in local biodiversity indices.
-2. Economic Impact: GDP contribution, changes in average household income.
-3. Social Impact: Changes in community well-being indices, education rates, and health outcomes.
-4. Sustainability: Annual sustainability audit measuring progress across all 8 forms of capital.
+MRV data aggregates into annual impact reports across four dimensions, aligned with the [EBF Framework](https://ebfcommons.org/) and queryable via the Farm Registry API's `/impact` endpoint.
 
-**This information enables more efficient and sustainable management of irrigation and nutrients, improving both crop yields and the conservation of natural resources.**
+| **Dimension** | **What is measured** | **Key metrics** |
+| --- | --- | --- |
+| **Environmental** | Ecological health and carbon performance | Annual carbon sequestration rates (t CO₂e/acre), NDVI averages across the growing season, changes in local biodiversity indices, MRV event count |
+| **Economic** | Financial impact on farmers and communities | Gross revenue, public goods allocation distributed (10% of revenue), jobs created and sustained, household income changes |
+| **Social** | Community wellbeing and capacity | Community workshops held, participants trained, women in leadership roles, educational program reach |
+| **Sustainability** | Long-term resilience across all 8 forms of capital | Annual sustainability audit across Natural, Financial, Social, Human, Material, Intellectual, Cultural, and Health capital; organic certification status; SDG attestations |
+
+Annual reports for [Adelphi](/ecosystem-wiki/kokonut-farms/adelphi/summary) are published to [hub.kokonut.network/projects/41](https://hub.kokonut.network/projects/41). Historical MRV records, harvest forecasts, and aggregated impact metrics are all publicly available and traceable to their on-chain EAS attestations.
+
+**This information enables more efficient and sustainable management of irrigation and nutrients — improving both crop yields and the conservation of natural resources across every farm in the network.**
+
+---
+
+<CardGroup cols={2}>
+  <Card title="Kokonut × AI Agents" icon="robot" href="/kokonut-x-ai-agents">
+    How AI agents automate the MRV pipeline — from satellite ingestion to EAS attestation — removing the manual bottlenecks that limit reporting frequency.
+  </Card>
+
+  <Card title="Ecological Impact Frameworks" icon="leaf-heart" href="/kokonut-framework/framework-add-ons/ecological-impact-frameworks">
+    The EBF Framework and CRISP carbon risk scoring methodology that underpin Kokonut's annual impact reports.
+  </Card>
+
+  <Card title="Build with Kokonut" icon="code" href="/build-with-kokonut">
+    The Farm Registry API — MRV payload schema, attestation endpoint, and impact aggregation queries for developers and the Impact Guild.
+  </Card>
+
+  <Card title="Adelphi Data Hub" icon="chart-line" href="https://hub.kokonut.network/projects/41">
+    Live MRV data, harvest records, and impact metrics for Adelphi — the canonical reference implementation of this entire methodology.
+  </Card>
+</CardGroup>
