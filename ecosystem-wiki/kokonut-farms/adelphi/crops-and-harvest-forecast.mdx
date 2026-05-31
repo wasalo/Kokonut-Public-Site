@@ -3,121 +3,238 @@ title: "Crops & Harvest Forecast"
 icon: "dragon"
 ---
 
-1. **Short cycle:** Lettuce, broccoli, spinach, tomatoes, arugula, and other minor crops.
-2. **Medium cycle:** [Indian Yam](https://www.gbif.org/species/2755239), [Passion Fruit](https://www.gbif.org/species/2874190)
-3. **Long cycle:** Coconut
+## Revenue summary at a glance
 
-> **Total Production Formula** = `(Planting Density per m²) × (Bed Area in m²) × (Number of Beds per Plot of Land) × (Number of Plots of Land) × (1 - Loss Rate)`
+| **Crop** | **Cycle** | **Plots** | **Annual production** | **Annual revenue** |
+| --- | --- | --- | --- | --- |
+| Lettuce | Short (5 harvests/yr) | 10 | 48,450 units | \$133,237.50 |
+| Passion fruit | Medium (annual) | 8 | 47,600 fruits · 3,661 nets | \$11,019.00 |
+| Coconut | Long (perennial) | 8 | 6,144 coconuts | \$4,853.76 |
+| Poultry eggs | Continuous | — | ~36,500 eggs/yr | Additional revenue stream |
+| **Total projected** |  |  |  | **~\$149,110.26 / yr** |
 
-## Short Cycle
+<sup>10% of gross revenue — ~\$14,911/yr — is allocated to public goods activities per the Kokonut Common Data Schema. Actuals are tracked at hub.kokonut.network/projects/41. Exchange rates and final amounts are subject to change.</sup>
 
-### Lettuce Production Forecast for 10 Plots of Land
+---
 
-The total lettuce production is calculated using the following formula
+## Crop mix overview
 
-```Lettuce Lettuce Production Variables Formula
-Planting Density: 12 lettuces/m²
+Adelphi's three-cycle production model ensures revenue flows at different timescales — short-cycle vegetables generate cash from the first harvest, medium-cycle fruits compound over the growing season, and long-cycle coconut trees build a permanent income base.
 
-Bed Area: 25 m².
+| **Cycle** | **Crops** | **First harvest** | **Revenue character** |
+| --- | --- | --- | --- |
+| **Short** | Lettuce, broccoli, spinach, tomatoes, arugula, and other minor crops | 30–75 days after planting | High-frequency, recurring cash flow |
+| **Medium** | [Indian Yam](https://www.gbif.org/species/2755239), [Passion Fruit](https://www.gbif.org/species/2874190) | 6–12 months | Seasonal, compounding per plant as the plantation matures |
+| **Long** | Coconut | 3–5 years (then 20-year production life) | Perennial anchor income; permanent once established |
 
-Number of Beds per Plot of Land: 19
+This staggered structure is central to the [syntropic farming](/kokonut-framework/why-syntropic-farming) methodology — species at different successional stages occupying the same land simultaneously, each supporting the others' growth while generating independent revenue.
 
-Number of Plots of Land: Defined based on the cultivated area.
+---
 
-Loss Rate: 15% (0.85)
+## Total production formula
+
+All crop forecasts derive from the same base formula:
+
+```text
+Total Production = (Planting Density per m²)
+                 × (Bed Area in m²)
+                 × (Number of Beds per Plot)
+                 × (Number of Plots)
+                 × (1 − Loss Rate)
 ```
 
-**Applied Example**
+The **loss rate** accounts for crop management variability, climate conditions, soil health fluctuations, and pest pressure. The figures below use a **15% loss rate (0.85 multiplier)** as the planning baseline — consistent with conservative regenerative agriculture projections. Actual rates are tracked per harvest in the [Data Hub](https://hub.kokonut.network/projects/41) and used to refine future forecasts.
 
-- **Lettuce per bed:**`12 lettuces/m² * 25 m²` = 300 lettuces/bed.
-- **Lettuce per plot of land:**`300 lettuces/bed * 19 beds/plot of land` = 5,700 lettuces/plot of land.
-- **Lettuce in 10 plots of land:**`5,700 * 10` = 57,000 lettuces before loss adjustment.
-- **Applying a 15% loss:**`57,000 * 0.85` = **48,450 effective lettuces.**
+---
 
-**Production Time**
+## Short cycle — Lettuce
 
-The lettuce production cycle depends on the cultivated variety:
+### Production variables
 
-- **Loose-leaf lettuce:** 30 to 45 days.
-- **Head lettuce (Iceberg, Romaine, etc.):** 60 to 75 days.
+```text
+Planting Density:            12 lettuces / m²
+Bed Area:                    25 m²
+Number of Beds per Plot:     19
+Number of Plots:             10
+Loss Rate:                   15% (multiplier: 0.85)
+Harvests per year:           5 (conservative planning basis)
+Theoretical maximum:         8–10 cycles/yr for fast-growing loose-leaf varieties
+```
 
-> With fast-growing varieties, up to **8-10 cycles per year** can be achieved.
+<Note>
+  The annual projection uses **5 harvests per year** as the conservative planning figure. Fast-growing loose-leaf varieties can theoretically achieve 8–10 cycles per year, but the revenue forecast is based on 5 to account for planting preparation, soil recovery periods, and seasonal variability. Any harvests above 5 represent upside beyond the projection.
+</Note>
 
-**Additional Considerations**
+### Applied example
 
-- The loss rate may vary depending on crop management and climate conditions.
-- Factors such as soil health, irrigation, and pest control affect final production.
-- Keeping production records is recommended to refine future loss projections.
+- **Lettuce per bed:** `12 lettuces/m² × 25 m²` = **300 lettuces/bed**
+- **Lettuce per plot:** `300 lettuces/bed × 19 beds/plot` = **5,700 lettuces/plot**
+- **Lettuce across 10 plots:** `5,700 × 10` = **57,000 lettuces** before loss adjustment
+- **Applying 15% loss:** `57,000 × 0.85` = **48,450 effective lettuces per harvest**
 
-**Selling Price**
+### Production time by variety
 
-Each lettuce will be sold wholesale in the range of **\$0.55 - \$0.63 per unit.**
+| **Variety** | **Days to harvest** |
+| --- | --- |
+| Loose-leaf lettuce | 30–45 days |
+| Head lettuce (Iceberg, Romaine, etc.) | 60–75 days |
 
-**Estimated Total Revenue per Harvest:**
+### Selling price
 
-- **Minimum:** `48,450 lettuces × $0.55` = **\$26,647.50**
-- **Maximum:** `48,450 lettuces × $0.63` = **\$30,523.50**
+Each lettuce is sold wholesale at **0.63 per unit**.
 
-**Annual Revenue Projection for Lettuce**
+### Revenue per harvest
 
-- Revenue per harvest: **\$26,647.50**
-- Number of harvests per year: **5.**
+|  | Calculation | Result |
+| --- | --- | --- |
+| **Minimum** | `48,450 × $0.55` | **\$26,647.50** |
+| **Maximum** | `48,450 × $0.63` | **\$30,523.50** |
 
-**Annual Forecast:**`Total annual revenue = $26,647.50 USD/harvest × 5 harvests= 133,237.50 USD`
+### Annual revenue projection
 
-## Medium Cycle
+```text
+Annual revenue = $26,647.50 per harvest × 5 harvests = $133,237.50
+```
 
-### Passion Fruit Production Forecast for 8 Plots of Land
+### Additional considerations
 
-```Passion Passion Fruit Production Variables Formula
-Area per plot of land: 629 m²
+- The loss rate may vary with crop management quality, irrigation consistency, and climate conditions.
+- Soil health, pest control, and drainage all materially affect final effective production — tracked per cycle via community analytics in the [MRV stack](/ecosystem-wiki/kokonut-farms/measurement-reporting-and-verification).
+- Keeping production records per harvest is recommended to refine loss projections over time; actuals are logged to the [Data Hub](https://hub.kokonut.network/projects/41).
 
-Planting spacing: 3x3 meters (9 m²/plant)
+---
 
-Plants per plot of land: 70
+## Medium cycle — Passion fruit
 
-Plants in 8 plots of land: 560
+### Production variables
 
+```text
+Area per plot:               629 m²
+Planting spacing:            3 × 3 meters (9 m²/plant)
+Plants per plot:             70
+Total plants (8 plots):      560
 Annual production per plant: 100 passion fruits
-
-Loss Rate: 15% (0.85)
-
-Annual production per plant with Loss Rate: 85 passion fruits
-
-Selling price per net: $3.01 (each net contains an average of 13 passion fruits)
+Loss Rate:                   15% (multiplier: 0.85)
+Net annual production/plant: 85 passion fruits
+Selling price per net:       $3.01 (average 13 passion fruits per net)
 ```
 
-**Annual Revenue Calculation**
+### Applied example
 
-- **Total annual production:**`85 passion fruits/plant × 560 plants`_= 47,600 passion fruits_
-- **Number of nets to be produced:**`47,600 passion fruits ÷ 13 passion fruits/net`_= 3,661 nets_
-- **Total annual revenue:**`3,661 nets × 3.01 USD/net`_= 11,019 USD_
+- **Total annual production:** `85 passion fruits/plant × 560 plants` = **47,600 passion fruits**
+- **Number of nets produced:** `47,600 ÷ 13 passion fruits/net` = **3,661 nets**
+- **Total annual revenue:** `3,661 nets × $3.01/net` = **\$11,019.61**
 
-## Long Cycle
+### Revenue characteristics
 
-### Coconut Production for 8 Plots of Land
+Passion fruit is a medium-cycle crop that reaches full productive yield in its first growing season and compounds as plants mature. Unlike the lettuce short cycle — which resets with each planting — passion fruit vines build productive capacity over successive seasons, meaning the 85-fruit-per-plant figure is a baseline that improves as the plantation establishes.
 
-```Coconut Coconut Production Variables Formula
-Area per plot of land: 629 m²
+The net-based selling format (\$3.01 per net of 13 fruits) is the wholesale structure used in the Dominican Republic organic markets. Individual or retail pricing above this baseline is achievable through direct community sales and the organic certification distribution channels being developed.
 
-Planting spacing: 7x7 meters (49 m²/plant)
+### Annual revenue projection
 
-Plants per plot of land: 12
-
-Plants in 8 plots of land: 96
-
-Annual production per plant: 75 coconuts
-
-Loss Rate: 15% (0.85)
-
-Annual production per plant with Loss Rate: 64 coconuts
-
-Selling price per coconut: 0.79 USD
+```text
+Annual revenue = 3,661 nets × $3.01/net = $11,019.61
 ```
 
-**Annual Revenue Calculation**
+---
 
-- **Total annual production:**`64 coconuts/plant × 96 plants`_= 6,144 coconuts_
-- **Total annual revenue:**`6,144 coconuts × 0.79 USD/coconut`_= 4,853.76 USD_
+## Long cycle — Coconut
 
-> **Disclaimer**: These are purely informational purpose statistics in USD, exchange rate and final amounts are subject to change, actual amounts can be found at [Kokonut Adelphi Data Hub](https://hub.kokonut.network/projects/41)
+### Production variables
+
+```text
+Area per plot:               629 m²
+Planting spacing:            7 × 7 meters (49 m²/plant)
+Plants per plot:             12
+Total plants (8 plots):      96
+Annual production per plant: 75 coconuts (at full maturity)
+Loss Rate:                   15% (multiplier: 0.85)
+Net annual production/plant: 64 coconuts
+Selling price per coconut:   $0.79
+First harvest timeline:      3–5 years from planting
+Production life:             Up to 20 years under optimal conditions
+```
+
+### Applied example
+
+- **Total annual production:** `64 coconuts/plant × 96 plants` = **6,144 coconuts**
+- **Total annual revenue:** `6,144 × $0.79/coconut` = **\$4,853.76**
+
+### Revenue characteristics and timeline
+
+The coconut is the long-term anchor of Adelphi's revenue model — and of the Kokonut Network's cooperative structure itself. Each \$vKKN governance token is backed 1:1 by a real coconut tree, which means the 96 trees at Adelphi directly underpin the token legitimacy of DAO members who funded this farm.
+
+Coconuts do not generate revenue immediately. The first harvest typically arrives 3–5 years after planting, with full productive yield developing over the following seasons. This delayed payback is offset by the short and medium-cycle crops that generate revenue from year one — the staggered structure exists specifically to bridge the coconut's establishment period with immediate cash flow.
+
+Once established, coconut trees produce for **up to 20 years** under optimal conditions. When they end their productive life, they are replanted — restarting the production cycle and continuing the cooperative indefinitely. This is the origin of the Kokonut Network's "no expiration date" model.
+
+**Additional value streams beyond fresh coconut:**
+
+- Coconut oil, milk, and water (processing derivatives)
+- Coconut husks → on-site fertilizer (closing the nutrient cycle)
+- Harvested wood → furniture and construction materials
+
+### Annual revenue projection
+
+```text
+Annual revenue = 6,144 coconuts × $0.79/coconut = $4,853.76
+```
+
+---
+
+## Combined revenue and public goods allocation
+
+```text
+Lettuce (short cycle):        $133,237.50 / yr
+Passion fruit (medium cycle):  $11,019.61 / yr
+Coconut (long cycle):           $4,853.76 / yr
+─────────────────────────────────────────────
+Total projected gross revenue: $149,110.87 / yr
+ 
+Public goods allocation (10%):  $14,911.09 / yr
+  → Community workshops
+  → Free seedling distribution for neighbors
+  → Endangered species nursery operations
+  → Educational programming at the farm gazebo
+ 
+Net operating revenue (90%):   $134,199.78 / yr
+```
+
+<Tip>
+  The [SDG Impact Calculator](/kokonut-framework/impact-calculator) uses these revenue figures as its calibration data. Enter Adelphi's parameters — 15,725 m², full crop mix, rural location, women in leadership, biochar, native species nursery — to see the estimated SDG scores and carbon sequestration outputs that correspond to this forecast.
+</Tip>
+
+---
+
+<Note>
+  These figures are presented in USD for informational purposes. Exchange rates and final amounts are subject to change. Actuals — recorded per harvest, per cycle, per crop — are published in real time at [hub.kokonut.network/projects/41](https://hub.kokonut.network/projects/41). The projections on this page use the conservative 15% loss rate; actual performance may be higher or lower depending on seasonal conditions, soil health, and crop management quality.
+</Note>
+
+---
+
+<CardGroup cols={2}>
+  <Card title="Crops, Biodiversity & Infrastructure" icon="puzzle" href="/ecosystem-wiki/kokonut-farms/adelphi/crops-biodiversity-and-infrastructure">
+    The physical production system behind these numbers — how the beds, plots, poultry system, and soil regeneration techniques produce the yields forecast here.
+  </Card>
+
+  <Card title="SDG Impact Calculator" icon="calculator" href="/kokonut-framework/impact-calculator">
+    Enter Adelphi's parameters and see the estimated SDG scores, carbon sequestration, and employment figures derived from this harvest forecast data.
+  </Card>
+
+  <Card title="MRV — Measurement & Verification" icon="magnifying-glass-chart" href="/ecosystem-wiki/kokonut-farms/measurement-reporting-and-verification">
+    How every harvest cycle is measured, recorded, and attested on-chain — turning these projections into verified, auditable impact data.
+  </Card>
+
+  <Card title="Adelphi Data Hub" icon="chart-line" href="https://hub.kokonut.network/projects/41">
+    The live source of truth — actual harvest records, MRV events, and revenue actuals for every crop cycle since Adelphi began production.
+  </Card>
+
+  <Card title="Sustainable Development Goals" icon="recycle" href="/ecosystem-wiki/kokonut-farms/adelphi/sustainable-development-goals">
+    How the revenue and employment generated by this forecast map to Adelphi's five SDG commitments — No Poverty, Zero Hunger, Gender Equality, Decent Work, and Life on Land.
+  </Card>
+
+  <Card title="Adelphi Executive Summary" icon="note" href="/ecosystem-wiki/kokonut-farms/adelphi/summary">
+    The full Adelphi overview — project context, founders, framework phase status, and all key facts in one place.
+  </Card>
+</CardGroup>
