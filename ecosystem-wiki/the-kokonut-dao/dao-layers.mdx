@@ -1,24 +1,171 @@
 ---
-title: "DAO Layers"
+title: "DAO Architecture"
 icon: "layer-group"
+description: "The five-layer structure and two deployed governance instances that make Kokonut Network a resilient, community-governed cooperative."
 ---
 
-![KKN Info](/images/KKN_info.png)
+The Kokonut DAO is not a single contract or a single governance system. It is an architecture — a layered stack that separates capital, governance, execution, and production into distinct zones, with two deployed governance instances operating at different levels of the stack simultaneously.
 
-> Our DAO Thesis is powered by 5 Layers that aim to provide stability to the network ⚖️🧬
+Understanding this architecture is the prerequisite for understanding how any individual part of the Kokonut Network works — from how a farm gets funded to how a contributor earns a stake to how impact data flows on-chain.
 
-#### Governance Layer
+<Frame>
+  ![Kokonut Network DAO architecture — showing the five layers from governance through production and how they interrelate](/images/KKN_info.png)
+</Frame>
 
-This layer is composed of Kokonut DAO members. They oversee and vote on proposals that benefit the Kokonut Ecosystem. Anyone who holds at least one Kokonut DAO token can participate in DAO governance.
+> Our DAO thesis is powered by **5 layers** that provide stability to the network ⚖️🧬
 
-#### Logic Layer
+---
 
-This layer is where the [DAO Treasury](https://link.kokonut.network/treasury), list of token holders, funding, and membership proposals live securely.
+## The five layers
 
-#### Execution Layer
+The five layers describe how value, authority, and information flow through the network — from the community members who govern it down to the land that produces it. Each layer has a distinct role; none can operate without the others.
 
-After approval by Kokonut DAO members, this layer functions as the body responsible for executing the budget and work plan. It comprises the [Core Team](https://kokonut.network/about), Kokonut DAO Contributors, and Global & Local Partners.
+### Governance Layer
 
-#### Production Layer
+**Who:** Kokonut DAO token holders — anyone who holds at least one \$vKKN governance token.
 
-This is where the magic happens! In this layer, we bring our mission to life: producing and distributing Coconuts and derivative products globally. Kokonut V1 is our first commercial-grade farm to be funded via Kokonut DAO.
+**What it does:** Oversees and votes on proposals that benefit the Kokonut ecosystem. This is where collective decision-making happens: farm funding, governance parameter changes, Guild bounty approvals, partnership ratifications, and token minting/burning. Every significant action in the network requires a proposal to pass through this layer.
+
+**How it works:** 1 \$vKKN = 1 vote on all on-chain proposals via [DAOHaus](https://link.kokonut.network/dao). Proposals pass after a 5-day active voting window, subject to a 66% token retention threshold post-grace period. DAO members hold 99.99% of all voting power. The Core Team holds 0%.
+
+### Logic Layer
+
+**Who:** The smart contracts and data structures that encode the DAO's rules.
+
+**What it does:** This is where the [DAO treasury](https://link.kokonut.network/treasury), the list of token holders, funding proposals, and membership records live — secured on Gnosis Chain with no administrator keys. The Logic Layer executes what the Governance Layer votes on: minting tokens, disbursing funds, processing rage-quits, and enforcing the governance parameters the community has set.
+
+**How it works:** Four verified contracts on Gnosis Chain handle all operations — the \$vKKN voting token, Loot token, Vault Manager, and the rage-quit-enabled SAFE treasury. See [Kokonut Moloch DAO](/ecosystem-wiki/the-kokonut-dao/kokonut-moloch-dao) for all contract addresses and ABI references.
+
+### Execution Layer
+
+**Who:** The [Core Team](https://kokonut.network/about), Kokonut DAO contributors, Guild members, and global and local partners.
+
+**What it does:** After a proposal passes the Governance Layer and is executed by the Logic Layer, this layer carries out the actual work. If the Governance Layer approves a farm funding proposal, the Execution Layer deploys the capital, supervises the build, manages the MRV pipeline, and ensures deliverables are met. If a Guild bounty is approved, the Execution Layer does the work the bounty specifies.
+
+**How it works:** The [Kokonut Guilds](/ecosystem-wiki/the-kokonut-dao/kokonut-guilds-dao) are the primary operational body in the Execution Layer — six domain-specific contributor groups (Technology, Impact, Communications, Governance, Finance, Community & Partnerships) that handle day-to-day work on contribution-weighted Guild Points rather than token-weighted votes. Guild work that reaches proposal level flows back up through the Logic and Governance Layers for treasury disbursement.
+
+### Production Layer
+
+**Who:** Farmers, farm operators, and the communities running Kokonut Network farms.
+
+**What it does:** This is where the network's mission becomes physical reality — producing and distributing coconuts, organic vegetables, and derivative products. The Production Layer is what the entire stack exists to serve: the land, the people tending it, and the communities surrounding it.
+
+**How it works:** Every farm in the Production Layer operates under the [Kokonut Framework](/kokonut-framework/Introduction) — the 13-field Common Data Schema, four development phases, MRV monitoring, and EAS attestation pipeline. [Adelphi](/ecosystem-wiki/kokonut-farms/adelphi/summary) is the first operational farm in the Production Layer: 15,725 m² in Monte Plata, Dominican Republic, producing live data at [hub.kokonut.network/projects/41](https://hub.kokonut.network/projects/41).
+
+### Infrastructure Layer
+
+**Who:** AI agents, the Farm Registry API, TheGraph indexers, EAS attestation nodes.
+
+**What it does:** The infrastructure layer is the data and automation backbone that connects the Production Layer to the Logic Layer without requiring human intermediaries for every operation. Farm MRV data, harvest records, and impact attestations flow upward through this layer; funding disbursements and governance signals flow downward.
+
+**How it works:** The [Kokonut Agentic Marketplace](/kokonut-x-ai-agents) — currently in development on Base — is the primary component of the Infrastructure Layer. AI agents registered with [ERC-8004](https://eips.ethereum.org/EIPS/eip-8004) identities autonomously handle satellite MRV ingestion, vegetation index calculation, Farm Registry API submissions, and on-chain EAS attestation creation. The [Farm Registry API](/build-with-kokonut#framework-data-primitives) provides the structured data interface between farm operations and on-chain governance.
+
+<Note>
+  The Infrastructure Layer is the fifth layer referenced in the DAO thesis — added as the network matured from a farming cooperative into a network that requires verifiable, automated data flows at scale. It was not present in the original four-layer description.
+</Note>
+
+---
+
+## How the layers flow together
+
+```text
+┌──────────────────────────────────────────────────┐
+│           GOVERNANCE LAYER                        │
+│   $vKKN holders · 1 token = 1 vote · DAOHaus     │
+│   99.99% voting power held by DAO members        │
+└────────────────────┬─────────────────────────────┘
+                     │ votes execute →
+┌────────────────────▼─────────────────────────────┐
+│              LOGIC LAYER                          │
+│   Gnosis Chain contracts · SAFE treasury         │
+│   Token minting · Rage-quit · Proposal execution │
+└────────────────────┬─────────────────────────────┘
+                     │ funds + mandates →
+┌────────────────────▼─────────────────────────────┐
+│             EXECUTION LAYER                       │
+│   Kokonut Guilds · Core Team · Partners          │
+│   Contribution-weighted · Guild Points           │
+└────────────────────┬─────────────────────────────┘
+                     │ operates + monitors →
+┌────────────────────▼─────────────────────────────┐
+│             PRODUCTION LAYER                      │
+│   Adelphi + future farms · Framework operations  │
+│   Coconuts · Vegetables · Community programs     │
+└────────────────────┬─────────────────────────────┘
+                     │ data flows up →
+┌────────────────────▼─────────────────────────────┐
+│          INFRASTRUCTURE LAYER                     │
+│   Farm Registry API · AI Agents · EAS · TheGraph │
+│   Automated MRV → on-chain attestations          │
+└──────────────────────────────────────────────────┘
+         (Infrastructure feeds back to Logic Layer)
+```
+
+Revenue and impact data flow upward from Production through Infrastructure to Logic. Capital and governance decisions flow downward from Governance through Logic to Execution to Production. The Infrastructure Layer automates the data flows that would otherwise require constant human intermediation at scale.
+
+---
+
+## Deployed governance instances
+
+Kokonut Network fully embodies the spirit of a DAO — but recognizes that no single governance mechanism can solve the full complexity of coordinating capital, operations, ecological data, and community benefit simultaneously. That is why the network deploys **two complementary governance instances**, each optimized for a different coordination challenge.
+
+> Building a resilient hyperstructure requires embracing a variety of governance mechanisms without relying on a single token or a single point of failure.
+
+### The two instances side by side
+
+|  | **Kokonut Moloch DAO** | **Kokonut Guilds DAO** |
+| --- | --- | --- |
+| **Primary role** | Treasury governance and capital allocation | Operational execution and contribution tracking |
+| **Membership basis** | Token-weighted (1 \$vKKN = 1 vote) | Contribution-weighted (Guild Points) |
+| **Entry path** | Tribute stablecoins → DAO proposal → \$vKKN minted | Complete a Guild task → earn Guild Points |
+| **Capital required** | Yes — stablecoin tribute | No — work earns points |
+| **Scope of decisions** | Treasury disbursements, token minting, and major governance changes | Domain-specific operations, bounty programs, Framework standards |
+| **Exit mechanism** | Rage-quit — proportional treasury share at any time | No locked capital — Guild Points are reputation, not stake |
+| **On-chain location** | Gnosis Chain (live) | On-chain reputation tracking (in development) |
+| **Governance layer** | Logic Layer \+ Governance Layer | Execution Layer |
+
+### Kokonut Moloch DAO
+
+The Kokonut Moloch DAO exists to expand and scale the ecosystem by funding, overseeing, and governing projects approved by the community. It is the on-chain treasury and voting mechanism that gives capital contributors governance rights, protects them with rage-quit, and ensures no individual — including the Core Team — can direct funds unilaterally.
+
+Every farm funding proposal, Guild bounty above \$500, framework upgrade, and ecosystem partnership requires a Moloch DAO vote to release treasury funds. The 99.99%/0% voting split between DAO members and Core Team is enforced at the contract level.
+
+[→ Dive into Kokonut Moloch DAO](/ecosystem-wiki/the-kokonut-dao/kokonut-moloch-dao)
+
+### Kokonut Guilds DAO
+
+Kokonut Guilds are the operational intelligence of the network — the mechanism through which contributors earn influence and ownership through verifiable work rather than capital. Six domain-specific bodies (Technology, Impact, Communications, Governance, Finance, and Community & Partnerships) operate with autonomy over their domains while remaining accountable to the Moloch DAO for treasury disbursements.
+
+Guilds use contribution-weighted Guild Points as the unit of influence — earned through bounties, MRV submissions, authored proposals, and peer endorsements. Significant Guild contributions are eligible for Loot token awards via Moloch DAO proposal, giving contributors a real economic stake without requiring a capital tribute.
+
+[→ Dive into Kokonut Guilds DAO](/ecosystem-wiki/the-kokonut-dao/kokonut-guilds-dao)
+
+---
+
+## Why two instances, not one
+
+The Moloch DAO and the Guilds DAO solve different coordination failures that a single mechanism cannot address simultaneously:
+
+A pure token-weighted DAO concentrates governance in the hands of the wealthiest contributors — excluding the farmers, developers, and researchers who create the most operational value but may have the least capital. A pure contribution-weighted system has no capital protection mechanism — contributors can't rage-quit to recover their stake if the DAO makes decisions they disagree with.
+
+Kokonut runs both. Capital contributors get Moloch DAO governance rights, rage-quit protection, and treasury transparency. Contributors without capital get Guild Points, domain-specific governance rights, and a path to Loot token ownership through work. The two instances are designed to complement rather than compete — Guilds propose, Moloch decides on capital; Guilds execute, Moloch verifies through on-chain attestations.
+
+---
+
+<CardGroup cols={2}>
+  <Card title="Kokonut Moloch DAO" icon="dragon" href="/ecosystem-wiki/the-kokonut-dao/kokonut-moloch-dao">
+    Token mechanics, contract addresses, voting power distribution, and how to become a DAO member through the tribute process.
+  </Card>
+
+  <Card title="Kokonut Guilds DAO" icon="hydra" href="/ecosystem-wiki/the-kokonut-dao/kokonut-guilds-dao">
+    The six Guilds, how merit-based membership works, Guild Points, and how contributors earn Loot tokens through verifiable work.
+  </Card>
+
+  <Card title="Governance Framework" icon="scale-balanced" href="/ecosystem-wiki/the-kokonut-dao/governance-framework">
+    The full proposal process — drafting, voting, execution — and how the Logic Layer enforces what the Governance Layer decides.
+  </Card>
+
+  <Card title="Build with Kokonut" icon="code" href="/build-with-kokonut">
+    The Infrastructure Layer in technical detail — Farm Registry API, agent identity, EAS attestation schema, and how to build on the network.
+  </Card>
+</CardGroup>
