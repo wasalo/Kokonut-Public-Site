@@ -3,74 +3,175 @@ title: "Introduction"
 icon: "scroll"
 ---
 
-**The Kokonut Framework is a modular trust layer that enables capital allocation, farm operations, and continuous improvement in syntropic agriculture, with built-in risk and governance monitoring.**
+**The Kokonut Framework is a modular trust layer that enables capital allocation, farm operations, and continuous improvement in syntropic agriculture — with built-in risk measurement, governance monitoring, and on-chain verification at every stage.**
+
+Without a standardized framework, every new farm reinvents the coordination logic from scratch. The DAO can't compare farms for funding decisions. Impact claims can't be verified. MRV data can't be aggregated across sites. The Framework exists to solve all of this simultaneously — making farms comparable, fundable, governable, and verifiable under the same system, regardless of location, crop mix, or governance structure.
+
+The Framework is open source at [wasalo/kokonut-framework](https://github.com/wasalo/kokonut-framework). It is currently deployed on [Adelphi](/ecosystem-wiki/kokonut-farms/adelphi/summary) — Kokonut Network's first live syntropic farm in Monte Plata, Dominican Republic, where its outputs are publicly verifiable at [hub.kokonut.network/projects/41](https://hub.kokonut.network/projects/41).
+
+---
+
+## Framework at a glance
+
+<div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(140px, 1fr))", gap: "1px", background: "#e5e7eb", border: "1px solid #e5e7eb", borderRadius: "12px", overflow: "hidden", margin: "0 0 1.5rem" }}>
+  <div style={{ background: "white", padding: "1rem", textAlign: "center" }}>
+    <div style={{ fontSize: "1.4rem", fontWeight: "700", color: "#009F4D", lineHeight: 1 }}>13</div>
+    <div style={{ fontSize: "0.72rem", color: "#6b7280", marginTop: "4px", fontWeight: "500" }}>Common Data Schema fields</div>
+  </div>
+
+  <div style={{ background: "white", padding: "1rem", textAlign: "center" }}>
+    <div style={{ fontSize: "1.4rem", fontWeight: "700", color: "#009F4D", lineHeight: 1 }}>4</div>
+    <div style={{ fontSize: "0.72rem", color: "#6b7280", marginTop: "4px", fontWeight: "500" }}>Development phases</div>
+  </div>
+
+  <div style={{ background: "white", padding: "1rem", textAlign: "center" }}>
+    <div style={{ fontSize: "1.4rem", fontWeight: "700", color: "#009F4D", lineHeight: 1 }}>5</div>
+    <div style={{ fontSize: "0.72rem", color: "#6b7280", marginTop: "4px", fontWeight: "500" }}>Regeneration principles</div>
+  </div>
+
+  <div style={{ background: "white", padding: "1rem", textAlign: "center" }}>
+    <div style={{ fontSize: "1.4rem", fontWeight: "700", color: "#009F4D", lineHeight: 1 }}>8</div>
+    <div style={{ fontSize: "0.72rem", color: "#6b7280", marginTop: "4px", fontWeight: "500" }}>Forms of capital measured</div>
+  </div>
+
+  <div style={{ background: "white", padding: "1rem", textAlign: "center" }}>
+    <div style={{ fontSize: "1.4rem", fontWeight: "700", color: "#009F4D", lineHeight: 1 }}>5</div>
+    <div style={{ fontSize: "0.72rem", color: "#6b7280", marginTop: "4px", fontWeight: "500" }}>UN SDGs addressed</div>
+  </div>
+
+  <div style={{ background: "white", padding: "1rem", textAlign: "center" }}>
+    <div style={{ fontSize: "1.4rem", fontWeight: "700", color: "#009F4D", lineHeight: 1 }}>EAS</div>
+    <div style={{ fontSize: "0.72rem", color: "#6b7280", marginTop: "4px", fontWeight: "500" }}>On-chain attestation standard</div>
+  </div>
+</div>
+
+---
 
 ## Pillars of the Kokonut Framework
 
-### **Stakeholder Sense-Making**
+The Framework is organized into three operational pillars that together form a complete lifecycle — from the moment a farm enters the network to the point at which its ecological performance generates institutional capital.
 
-This is the _entry point_ to the system.
+### Stakeholder Sense-Making
 
-- You start with a **Common Data Schema (What / How / Why)**
-- This feeds into **Needs & Wants**, which then map to **Pillars of Value**
-- Governance primitives are layered in:
-  - **Compliance**
-  - **Oversight**
-  - **Ownership**
-- Outputs include:
-  - **Land-based Research**
-  - **Roadmap Development**
-- Everything is made **attestation-ready** (EAS-compatible), signaling verifiability from day one
+This is the _entry point_ to the system — the pillar that establishes shared understanding and legitimacy before any capital or operations move.
 
-<Tip>
-  This pillar establishes _shared understanding + legitimacy_ before capital or operations move.
-</Tip>
+Every farm starts with the [**Common Data Schema**](/kokonut-framework/framework-components/common-data-schema) — 13 fields covering project date, land size, location, governance mechanism, revenue streams, token allocation, public goods allocation, and narrative context. This schema is the minimum viable onboarding contract between a farm and the network: once populated, a farm can be evaluated by DAO token holders, queried by the Data Hub, and attested on-chain via [EAS](https://docs.attest.sh/).
 
-### **On-Ground Solution Variables**
+From the schema, the system maps to **Needs & Wants** → [**Pillars of Value**](/kokonut-framework/framework-components/pillars-of-value) → governance primitives. Three governance primitives layer in:
 
-This is where the framework becomes **farm-specific but standardized**.
-
-- The **Framework Logic** and **Specification** are applied
-- Multiple farms (Bob’s, Alice’s, Jose’s) can coexist under the same logic
-- Each farm produces:
-  - **Outcomes-based Natural Assets**
-- These feed into a **Market-Agnostic Engine**
-- Resulting in **Stability & Sustainability**
+- **Compliance** — does the farm meet the Framework standards?
+- **Oversight** — is the farm operating within its approved parameters?
+- **Ownership** — who holds governance rights over the farm's output? Outputs include land-based research and roadmap development. Everything is **attestation-ready** — EAS-compatible from day one, meaning every milestone can be anchored on-chain as a tamper-proof, publicly queryable record. This is what distinguishes Framework-compliant farms from farms that claim regenerative practices: the claims are verifiable, not declarative.
 
 <Tip>
-  This shows how Kokonut avoids one-off projects and instead enables **repeatable, composable implementations**.
+  This pillar establishes _shared understanding \+ legitimacy_ before capital or operations move. It feeds directly into the second pillar, which applies the Framework's logic to specific farm conditions.
 </Tip>
 
-### **Operational Variables**
+### On-Ground Solution Variables
 
-This is where **data becomes capital-relevant**.
+This is where the Framework becomes **farm-specific but standardized** — the pillar that makes replication possible without rigidity.
 
-- Farm-specific data flows through a **Data Oracle**
-- That informs:
-  - **Risk & Reward**
-  - **Profit & Loss**
-  - **Risk Profiles**
-- This directly impacts:
-  - **Capital Flow**
-  - **Treasury**
-  - **Growth Verticals**
-- Ecological outputs become:
-  - **Ecological Benefits**
-  - **RWA Primitives**
-  - **TradFi Leverage Eligibility**
+The **Framework Logic** and **Specification** (the 13-field schema \+ [four development phases](/kokonut-framework/development-phases/phase-i)) are applied to a specific site. Multiple farms — each with its own land, founders, crops, and community context — can coexist under the same logic. Bob's farm, Alice's farm, Adelphi: each one is unique at the operational level but produces the same structured data outputs that the DAO and the Data Hub can read.
+
+Each farm produces **Outcomes-based Natural Assets** — the documented, measured, attested outputs of regenerative land use. These feed into a **Market-Agnostic Engine**: the Framework does not prescribe which distribution channels, tokens, or financial instruments a farm must use. A farm can sell to local organic markets, distribute through national supermarkets, or tokenize its harvest forecast on-chain — the Framework works across all of them because its outputs are structured data, not market-specific contracts.
+
+The result is **Stability and Sustainability** — a farm operating under the Framework has predictable reporting requirements, a governance structure that DAO members can evaluate, and an impact record that accumulates across phases.
 
 <Tip>
-  This is the clearest articulation of how **ecological performance turns into financial and institutional relevance**.
+  This pillar shows how Kokonut avoids one-off projects and instead enables **repeatable, composable implementations**. The same Framework logic that governs Adelphi in Monte Plata can govern the next farm in Celo, without rebuilding the coordination infrastructure.
 </Tip>
 
-## What the Framework Clearly Achieves
+### Operational Variables
 
-- Separates **sense-making**, **implementation**, and **capital operations**
-- Makes ecology **measurable, governable, and financeable**
-- Avoids single points of failure (markets, tokens, or tools)
-- Bridges:
-  - ReFi ↔ RWAs
-  - DAOs ↔ Farms
-  - Ecology ↔ Balance sheets
+This is where **data becomes capital-relevant** — the pillar that converts ecological performance into financial and institutional outputs.
+
+Farm-specific data flows through a **Data Oracle** — the [Farm Registry API](/build-with-kokonut#framework-data-primitives) and [MRV stack](/ecosystem-wiki/kokonut-farms/measurement-reporting-and-verification) that aggregates satellite vegetation indices, soil probe readings, harvest records, and community analytics into a structured, queryable data layer. That data informs:
+
+- **Risk & Reward** — using the [CRISP framework](/kokonut-framework/framework-add-ons/ecological-impact-frameworks) to score carbon delivery risk across five dimensions
+- **Profit & Loss** — harvest forecast actuals vs. projections, tracked per cycle
+- **Risk Profiles** — per-farm performance benchmarks that inform DAO funding decisions for future farms. This data directly impacts:
+- **Capital Flow** — DAO treasury disbursements are milestone-gated against verified MRV data
+- **Treasury** — the [Kokonut DAO treasury](https://link.kokonut.network/treasury) holds stablecoin reserves backed by productive farmland performance
+- **Growth Verticals** — new farms, new chains, new agent integrations, new market channels. Ecological outputs become:
+- **Ecological Benefits** — reported via the [EBF Framework](https://ebfcommons.org/) across Environmental, Economic, Social, and Sustainability dimensions
+- **RWA Primitives** — EAS attestations anchoring farm events on-chain create the verifiable record that underpins real-world asset tokenization
+- **Traditional Finance Leverage Eligibility** — a farm with a two-year verified MRV record, on-chain attestations, and an EBF impact report is in a categorically different position for institutional capital access than a farm with only self-reported data The [Kokonut Agentic Marketplace](/kokonut-x-ai-agents) — currently in development on Base — is the Infrastructure Layer that automates this pillar at scale: AI agents handle satellite MRV ingestion, index calculation, Registry API submission, and EAS attestation creation, removing the human bottlenecks that limit how frequently and reliably this data pipeline runs.
+
+<Tip>
+  This is the clearest articulation of how **ecological performance turns into financial and institutional relevance**. It is the pillar that transforms a farming cooperative into a capital-efficient, institutionally legible asset network.
+</Tip>
+
+---
+
+## What the Framework achieves
+
+The Kokonut Framework does four things that no single component can do alone:
+
+It **separates sense-making, implementation, and capital operations** into distinct pillars — so that governance decisions are informed by real data, not projections; capital flows only to farms that meet the schema standard; and ecological performance is tracked independently of financial performance.
+
+It **makes ecology measurable, governable, and financeable** — by connecting the [MRV stack](/ecosystem-wiki/kokonut-farms/measurement-reporting-and-verification) to on-chain EAS attestations to the Farm Registry API to the DAO treasury. A DAO vote on farm funding is informed by the same satellite data that an institutional impact investor would use to evaluate the same farm.
+
+It **avoids single points of failure** — the Framework doesn't depend on a specific token, market, chain, or tool. It is designed to survive the failure of any one component without compromising the others.
+
+Not only that, but it **bridges four domains** that are normally siloed:
+
+```text
+ReFi  ↔  RWAs
+DAOs  ↔  Farms
+Ecology  ↔  Balance sheets
+On-chain  ↔  On-the-ground
+```
 
 The Kokonut Framework connects governance, ecological data, and capital flows through a modular architecture that turns on-the-ground regenerative work into verifiable, finance-ready outcomes.
+
+---
+
+## In practice — Adelphi
+
+Every component described on this page is currently deployed on [Adelphi](/ecosystem-wiki/kokonut-farms/adelphi/summary) — 15,725 m² of syntropic agriculture in Monte Plata, Dominican Republic.
+
+- **Common Data Schema:** Populated at farm registration with all 13 fields
+- **Development phases:** Currently in Phase II (Production & Regeneration), with Phase IV MRV running continuously
+- **MRV stack:** Landsat 8 \+ Sentinel satellite monitoring, soil probes, per-plant Silvi GPS tracking, Atlantis App community analytics
+- **EAS attestations:** Every MRV event and harvest milestone anchored on-chain
+- **Data Hub:** All data publicly queryable at [hub.kokonut.network/projects/41](https://hub.kokonut.network/projects/41)
+- **Impact reporting:** Annual EBF report across Environmental, Economic, Social, and Sustainability dimensions
+- **SDG alignment:** Five UN SDGs tracked and verified. Adelphi is the Framework's proof of concept. Everything in this tab describes what it is designed to do. Adelphi demonstrates that it works.
+
+---
+
+## Navigate the Framework
+
+<CardGroup cols={2}>
+  <Card title="Common Data Schema" icon="database" href="/kokonut-framework/framework-components/common-data-schema">
+    The 13 fields every farm must populate — the minimum viable onboarding contract between a farm and the network.
+  </Card>
+
+  <Card title="Pillars of Value" icon="square-poll-vertical" href="/kokonut-framework/framework-components/pillars-of-value">
+    The six dimensions of community impact that the Framework measures are What, Who, How Much, Contribution, Risk, and Public Goods.
+  </Card>
+
+  <Card title="5 Principles of Regeneration" icon="hand-holding-seedling" href="/kokonut-framework/framework-components/framework-features/5-principles-of-regeneration">
+    The agronomic operating principles every Kokonut farm implements — from cover crops and no-till to animal integration and perennial cultivation.
+  </Card>
+
+  <Card title="8 Forms of Capital" icon="water" href="/kokonut-framework/framework-components/framework-features/8-forms-of-capital">
+    The measurement framework across Natural, Financial, Social, Human, Material, Intellectual, Cultural, and Health capital.
+  </Card>
+
+  <Card title="Development Phases" icon="hammer-brush" href="/kokonut-framework/development-phases/phase-i">
+    The four-phase lifecycle every farm follows — Planning, Production, Consolidation, and continuous MRV.
+  </Card>
+
+  <Card title="Ecological Impact Frameworks" icon="leaf-heart" href="/kokonut-framework/framework-add-ons/ecological-impact-frameworks">
+    EBF and CRISP — the external standards Kokonut uses to make ecological impact claims verifiable and carbon risk assessable.
+  </Card>
+
+  <Card title="Why Syntropic Farming" icon="seedling" href="/kokonut-framework/why-syntropic-farming">
+    The agronomic foundation — why syntropic farming is the method around which the Framework is built.
+  </Card>
+
+  <Card title="SDG Alignment" icon="chart-network" href="/kokonut-framework/framework-features/Sustainable-Development-Goals">
+    How community-owned syntropic farms map to all 17 United Nations Sustainable Development Goals.
+  </Card>
+</CardGroup>
