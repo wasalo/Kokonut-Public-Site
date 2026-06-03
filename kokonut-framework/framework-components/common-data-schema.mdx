@@ -1,23 +1,198 @@
 ---
 title: "Common Data Schema"
-description: "Minimum Viable Data Architecture"
+description: "Minimum Viable Data Architecture — the 13 fields every Kokonut farm must populate before receiving DAO funding or appearing in the Data Hub."
 icon: "database"
 ---
 
-### Kokonut Farms Common Data Schema
+import SnippetIntro from '/snippets/snippet-intro.mdx';
 
-| **Name** | **Type** | **Content** |
-| --- | --- | --- |
-| Project Date | `Date` | Start Date |
-| Forecasted Budget | `Number` | Estimated Development Budget |
-| Land Size | `Number` | Size of Land for Agricultural Activities |
-| Project Location | `Coordinates` | Geographic coordinates or UTM (Universal Transverse Mercator) |
-| Source of Funding | `Text` | Funding Source for Project Development. |
-| Revenue Streams | `Multiselect` | Streams of revenue based on agricultural activities and Crop Selection. |
-| Governance Mechanism | `Single Select` | Type of governance that will govern the Development, Operations, and Beneficiaries of the project. |
-| Token Allocation | `Richtext` | Allocation of Governance Tokens or Loot Tokens for stakeholders if using a Blockchain-based Governance Mechanism. |
-| Public Goods Allocation | `Number` | Percentage of Revenue to be Allocated for Public Goods Activities. |
-| Project Summary | `Richtext` | Executive Summary of the project, which includes a blurb about the location, Size, Crop Selection, and Harvest Forecast. |
-| Local Problem | `Richtext` | The local problem the project is aiming to address by leveraging the Community Development features of the Framework. |
-| Proposed Solution | `Richtext` | The proposed solution and how exactly the development of the project is going to help ease & eradicate the pain points. |
-| Target Market | `Multiselect` | Selection of the target audience based on the crop selection, desired financial returns, quality of harvest, and project goals. |
+<SnippetIntro />
+
+---
+
+## What the schema powers
+
+The 13 fields below are not a form — they are the data contract between a farm and the Kokonut Network. Once populated, a farm record is consumed by five distinct systems simultaneously:
+
+| **Consumer** | **How it uses the schema** |
+| --- | --- |
+| **DAO token holders** | Evaluate farm proposals for funding — the schema provides the structured data that makes farms comparable across location, crop mix, and governance type |
+| **Farm Registry API** | `POST /farms` accepts all 13 fields; fields become the queryable record that the Data Hub indexes |
+| **Data Hub** | [hub.kokonut.network](https://hub.kokonut.network) indexes all schema fields and displays them as the farm's public profile |
+| **AI agents** | MRV agents, harvest forecasters, and grant drafters query the schema to understand which farm they're operating on |
+| **EAS attestations** | The `farm_id` — derived as `keccak256` of the farm record — is the identifier in every on-chain attestation anchoring farm events to Gnosis Chain or Base |
+
+Every farm that joins the Kokonut Network must populate all 13 required fields before a funding proposal can be submitted to the DAO. Partial schema records are not eligible for treasury disbursement.
+
+---
+
+## The 13-field canonical schema
+
+### Field reference
+
+| **Name** | **Type** | **Required** | **Content** |
+| --- | --- | --- | --- |
+| Project Date | `Date` | Yes | Project start date in ISO 8601 format (YYYY-MM-DD) |
+| Forecasted Budget | `Number` | Yes | Estimated total development budget in USD |
+| Land Size | `Number` | Yes | Total area of land dedicated to agricultural activities, in square metres |
+| Project Location | `Coordinates` | Yes | Geographic location — decimal lat/lng preferred (`"lat,lng"`), UTM accepted |
+| Source of Funding | `Text` | Yes | Funding source — reference DAO proposal number where applicable |
+| Revenue Streams | `Multiselect` | Yes | An array of revenue stream tags derived from crop selection and farm activities |
+| Governance Mechanism | `Single Select` | Yes | The governance structure that will govern development, operations, and beneficiaries |
+| Token Allocation | `Richtext` | Yes | Narrative description of how governance and loot tokens are distributed among stakeholders |
+| Public Goods Allocation | `Number` | Yes | Percentage of gross revenue allocated to public goods activities (0–100) |
+| Project Summary | `Richtext` | Yes | Executive summary including location, land size, crop selection, and harvest forecast |
+| Local Problem | `Richtext` | Yes | The specific local problem the project addresses through community development |
+| Proposed Solution | `Richtext` | Yes | How the farm's development will ease and address the stated local problem |
+| Target Market | `Multiselect` | Yes | Target distribution channels based on crop selection, financial goals, and project objectives |
+
+### Field type reference
+
+<Tabs>
+  <Tab title="Date">
+    **Format:** ISO 8601 — `YYYY-MM-DD` **Example:** `2024-01-15`
+
+    **Notes:** Represents the official project start date — typically the date the farm was registered with the Kokonut Network, not the date land was purchased or farming began. Used by the Farm Registry API as the `project_date` field.
+  </Tab>
+  <Tab title="Number">
+    **Forecasted Budget:** Positive integer or decimal, denominated in USD. Represents the estimated total development cost across all Framework phases, not just Phase I. Example: `85000` **Land Size:** Positive number in square metres (m²). Example: `15725`
+
+    **Public Goods Allocation:** Integer percentage between 0 and 100 inclusive. The Kokonut Framework minimum is 10%. Example: `10`
+  </Tab>
+  <Tab title="Coordinates">
+    **Preferred format:** Decimal latitude/longitude as a comma-separated string — `"lat,lng"` **Example:** `"18.938879,-69.735003"`
+
+    **Also accepted:** UTM (Universal Transverse Mercator) string for high-precision geospatial contexts.
+
+    **Note:** The human-readable display format (e.g. `18°56'19.7"N 69°44'06.0"W`) is used in documentation and map displays; the decimal format is used in the Farm Registry API and EAS attestations. Always store in decimal for API compatibility.
+
+    **Sub-fields required:** `coordinates` (string), `region` (human-readable municipality and province), `country` (full country name).
+  </Tab>
+  <Tab title="Text">
+    **Format:** Plain UTF-8 string, no length limit enforced at the schema level. **Source of Funding example:** `"Kokonut DAO Proposal #12 / Public Nouns Proposal #69"`
+
+    **Notes:** For Source of Funding, include the DAO proposal number wherever applicable so the funding source is traceable on-chain.
+  </Tab>
+  <Tab title="Multiselect">
+    **Format:** Array of lowercase, underscore-separated string tags. **Revenue Streams — common values:** `lettuce` · `passion_fruit` · `coconut` · `poultry_eggs` · `biochar` · `indian_yam` · `tomato` · `broccoli` · `spinach` · `arugula` · `native_plants`
+
+    **Target Market — common values:** `organic_markets` · `local_supermarkets` · `direct_community_sales` · `national_supermarkets` · `export`
+
+    **Notes:** Custom tags are permitted for crops or markets not in the common list — use the same lowercase underscore format. At least one value is required for both fields.
+  </Tab>
+  <Tab title="Single Select">
+    **Format:** One of the following enumerated values:
+
+    | **Value** | **Description** |
+    | --- | --- |
+    | `moloch_dao` | Moloch v3 DAO on Gnosis Chain via DAOHaus |
+    | `guilds` | Kokonut Guilds contribution-weighted governance |
+    | `multisig` | Multi-signature wallet with defined signatories |
+    | `cooperative` | Traditional cooperative governance structure |
+
+    **Notes:** Most Kokonut Network farms use `moloch_dao`. The value chosen here determines which governance documentation applies to the farm's proposal and oversight process.
+  </Tab>
+  <Tab title="Richtext">
+    **Format:** Markdown-compatible rich text. Supports headings, bullet lists, bold/italic, and inline links. No strict length limit, but the following guidance applies:
+
+    - **Token Allocation:** 1–3 paragraphs describing the distribution of \$vKKN and Loot tokens to stakeholders (farm operators, DAO members, community, public goods)
+    - **Project Summary:** 2–4 paragraphs covering location, size, crop selection, and harvest forecast headline numbers
+    - **Local Problem:** 2–4 paragraphs with specific community context — name the region, affected population, and the scale of the problem
+    - **Proposed Solution:** 2–4 paragraphs connecting crop choices, community programs, employment, and educational components to the stated problem
+  </Tab>
+</Tabs>
+
+---
+
+## TypeScript interface
+
+The canonical machine-readable representation of the Common Data Schema. All Farm Registry API endpoints and agent capability manifests key against these field names:
+
+```typescript
+interface KokonutFarmRecord {
+  // Identity
+  project_date: string;             // ISO 8601 — e.g. "2024-01-15"
+  project_location: {
+    coordinates: string;            // "lat,lng" decimal — e.g. "18.938879,-69.735003"
+    region: string;                 // Human-readable — e.g. "Gonzalo, Sabana Grande de Boyá, Monte Plata"
+    country: string;                // e.g. "Dominican Republic"
+  };
+ 
+  // Scope
+  land_size: number;                // Square metres — e.g. 15725
+  revenue_streams: string[];        // e.g. ["lettuce", "coconut", "passion_fruit", "poultry_eggs"]
+  target_market: string[];          // e.g. ["organic_markets", "local_supermarkets"]
+ 
+  // Funding
+  forecasted_budget: number;        // USD — e.g. 85000
+  source_of_funding: string;        // e.g. "Kokonut DAO Proposal #12 / Public Nouns Proposal #69"
+  public_goods_allocation: number;  // Percentage 0–100 — e.g. 10
+ 
+  // Governance
+  governance_mechanism: "moloch_dao" | "guilds" | "multisig" | "cooperative";
+  token_allocation: string;         // Richtext — distribution narrative
+ 
+  // Narrative
+  project_summary: string;          // Executive summary
+  local_problem: string;            // Community problem statement
+  proposed_solution: string;        // Solution narrative
+}
+```
+
+---
+
+## Adelphi — reference implementation
+
+The values below show how [Adelphi](/ecosystem-wiki/kokonut-farms/adelphi/summary) — Kokonut Network's first live farm populated the Common Data Schema. This is the canonical reference for any farm operator completing their first schema record.
+
+| **Field** | **Adelphi value** |
+| --- | --- |
+| Project Date | `2024-01-15` |
+| Forecasted Budget | `85000` (USD) |
+| Land Size | `15725` (m²) |
+| Project Location | `"18.938879,-69.735003"` · Gonzalo, Sabana Grande de Boyá, Monte Plata · Dominican Republic |
+| Source of Funding | `"Kokonut DAO Proposal #12 / Public Nouns Proposal #69"` |
+| Revenue Streams | `["lettuce", "passion_fruit", "coconut", "poultry_eggs", "indian_yam", "biochar", "native_plants"]` |
+| Governance Mechanism | `moloch_dao` |
+| Token Allocation | 70% DAO members · 20% farm operators (Hernández family) · 10% public goods fund |
+| Public Goods Allocation | `10` (%) |
+| Project Summary | 15,725 m² agro-ecological farm in Monte Plata, DR — organic vegetables, fruits, and coconut across three cycle lengths, women-led, Public Nouns funded |
+| Local Problem | Economic hardship, food insecurity, environmental degradation, and gender inequality in the Monte Plata rural community |
+| Proposed Solution | Regenerative agro-ecological production integrating soil restoration, biodiversity conservation, organic food production, and community education |
+| Target Market | `["organic_markets", "local_supermarkets", "direct_community_sales"]` |
+
+Live data for Adelphi's schema record is published at [hub.kokonut.network/projects/41](https://hub.kokonut.network/projects/41).
+
+---
+
+## Schema governance — backward compatibility
+
+The Common Data Schema is the root data contract of the Kokonut Network. Every farm currently operating, every agent currently deployed, and every attestation currently on-chain keys against the field names and types defined here.
+
+**Changing this schema requires a Framework Upgrade proposal (KFP)** — the highest-sensitivity proposal type in the governance framework. Any change that modifies an existing field name, type, or required status must include:
+
+1. A migration plan specifying how currently-registered farms update their records
+2. A dual-write period during which the Farm Registry API accepts both old and new formats
+3. A cutover date after which the old format is no longer accepted. Additive changes (new optional fields) are lower-sensitivity but still require a KFP. No schema change takes effect without a passed DAO vote.
+
+See the [Framework Upgrade proposal template](/ecosystem-wiki/the-kokonut-dao/proposal-templates#framework-upgrade-proposal) for the full change process, and the [Governance Framework](/ecosystem-wiki/the-kokonut-dao/governance-framework) for the voting mechanics.
+
+---
+
+<CardGroup cols={2}>
+  <Card title="Farm Registry API" icon="server" href="/build-with-kokonut#framework-data-primitives">
+    The developer-facing API that consumes this schema — POST /farms endpoint, MRV payload structure, and EAS attestation schema built on top of these 13 fields.
+  </Card>
+
+  <Card title="Pillars of Value" icon="square-poll-vertical" href="/kokonut-framework/framework-components/pillars-of-value">
+    The six community impact dimensions that the narrative fields (Local Problem, Proposed Solution, Project Summary) are designed to address.
+  </Card>
+
+  <Card title="Farm Funding Proposal Template" icon="seedling" href="/ecosystem-wiki/the-kokonut-dao/proposal-templates#farm-funding-proposal">
+    The KDP proposal template — Section E is a structured implementation of this schema for DAO funding proposals.
+  </Card>
+
+  <Card title="Adelphi Data Hub" icon="chart-line" href="https://hub.kokonut.network/projects/41">
+    The live schema record for Adelphi — every field populated, live MRV data attached, and harvest records tracking actuals against the forecasted budget.
+  </Card>
+</CardGroup>
