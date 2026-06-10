@@ -3,20 +3,131 @@ title: "PHASE I: Planning and Preparation"
 icon: "chalkboard-user"
 ---
 
+Phase I is the foundation of every Kokonut Framework farm. No planting happens, no capital is deployed, and no operations begin until Phase I is complete — because Phase I is what makes everything that follows legible to the DAO, verifiable by the MRV stack, and comparable across the network.
+
+**What Phase I produces:**
+
+- All 13 [Common Data Schema](/kokonut-framework/framework-components/common-data-schema) fields populated — the minimum viable data record that makes a farm eligible for DAO funding
+- A complete [Farm Funding proposal (KDP)](/ecosystem-wiki/the-kokonut-dao/proposal-templates#farm-funding-proposal) ready for submission to the DAO — the 5-step planning outputs map directly to the proposal's Section E content
+- An MRV baseline — pre-planting satellite imagery, soil probe installation, species mapping, and initial [CRISP](/kokonut-framework/framework-add-ons/ecological-impact-frameworks) and [EBF](/kokonut-framework/framework-add-ons/ecological-impact-frameworks) assessments that every subsequent measurement cycle is compared against
+- A site-specific crop plan, infrastructure design, and training program — the operational blueprint for Phase II **Typical duration:** 3–6 months from site assessment to Phase II readiness. [Adelphi](/ecosystem-wiki/kokonut-farms/adelphi/summary) completed Phase I in approximately 6 months — from initial site survey through the [Public Nouns Proposal #69](https://publicnouns.wtf/vote/69) that funded its critical infrastructure.
+
+---
+
 <Steps>
   <Step title="Data Collection and Diagnosis" icon="database" iconType="regular" stepNumber={1} titleSize="h3">
-    Gathering information on soil characteristics, climate, water availability, and local biodiversity. Additionally, an economic feasibility study and market demand analysis are conducted to ensure sustainable production.
+    Gathering comprehensive information about the site — soil characteristics, climate patterns, water availability, local biodiversity, and the social and economic context in which the farm will operate. This data is the evidence base for every decision that follows: crop selection, infrastructure placement, irrigation approach, and community program design. **What is collected:**
+
+    - **Soil:** Physical texture, organic matter content, pH, drainage characteristics, compaction depth, and initial microbial activity baseline — the starting point against which Phase IV MRV soil probe readings will measure improvement
+    - **Climate:** Rainfall patterns, temperature ranges, seasonal extremes, and drought frequency — determines crop selection, irrigation dependency, and syntropic strata design
+    - **Water:** Surface water availability, groundwater depth, irrigation source quality, and watershed position
+    - **Biodiversity:** Existing species inventory on and around the site — native species present, at-risk species that might be conserved, pest pressure patterns
+    - **Economic:** Market demand analysis for candidate crops, local price benchmarks, distribution channel access, and feasibility projections across all three cycle lengths
+
+    **Tools deployed at this stage:**
+
+    - [Pix4Dcapture](https://www.pix4d.com/product/pix4dcapture) for initial drone survey — produces the orthomosaic and 3D elevation model that establishes the site's topographic baseline
+    - QGIS for land analysis — plot mapping, slope assessment, drainage pattern analysis, and initial vegetation index baseline from pre-planting satellite imagery
+    - [Silvi](https://www.silvi.earth/) for initial GPS boundary and species registration — every notable existing tree or at-risk species registered before any ground preparation begins
+
+    **At Adelphi:** GPS coordinates documented (18°56'19.7"N 69°44'06.0"W), the [3D orthomap](https://link.kokonut.network/AdelphiOrtho3D) generated from initial drone survey, the [Species GeoNode](https://link.kokonut.network/AdelphiSpeciesGeoNode) established with all existing native species registered, and Monte Plata's tropical climate and red clay soil composition documented as the baseline for crop selection and soil preparation decisions.
+
+    **Common Data Schema fields populated:** `project_date`, `project_location`, `land_size`, `forecasted_budget` (initial estimate), `local_problem`, `proposed_solution`
   </Step>
   <Step title="Crop Selection" icon="seedling" iconType="regular" stepNumber={2} titleSize="h3">
-    Choosing the most suitable crops based on agro-ecological conditions, prioritizing species that enhance biodiversity, are resilient, and have high commercial demand.
+    Choosing the specific crops that will occupy each strata of the farm's syntropic structure — based on the data collected in Step 1 and the [5 Principles of Regeneration](/kokonut-framework/framework-components/framework-features/5-principles-of-regeneration). Crop selection is not simply a commercial decision: it determines the farm's biodiversity profile, the timeline of its revenue streams, the soil regeneration trajectory, and its long-term agroforestry structure. **Selection criteria:**
+
+    - **Agro-ecological fit:** Crops suited to the site's specific soil pH, drainage, temperature range, and rainfall patterns — not generic recommendations
+    - **Syntropic strata compatibility:** Each crop is placed in the appropriate successional layer (ground cover, low, medium, high canopy) to optimize species interactions and manage each other's growth
+    - **Revenue timeline balance:** At minimum one short-cycle crop (30–75 days to first harvest) to generate immediate cash flow while medium and long-cycle crops establish
+    - **Biodiversity enhancement:** Priority given to species that support pollinator populations, fix nitrogen, manage pest pressure naturally, or conserve at-risk native varieties
+    - **Community demand:** Crops for which local market demand exists — verified through the economic feasibility study in Step 1
+
+    **At Adelphi:** Three cycle lengths chosen based on Monte Plata conditions — lettuce (short cycle, 12 plants/m², 5 harvests/yr) for immediate cash flow; passion fruit and Indian yam (medium cycle) for seasonal compounding; coconut (long cycle, 7×7m spacing) as the permanent income anchor. Native and endangered fruit species added to the agroforestry zone for biodiversity and nursery propagation.
+
+    **Common Data Schema fields populated:** `revenue_streams`, `target_market`, `project_summary` (crop section)
   </Step>
   <Step title="Infrastructure Development" icon="hammer-brush" iconType="regular" stepNumber={3} titleSize="h3">
-    Constructing and adapting essential facilities such as the biofactory for bio-input production, efficient irrigation systems, sustainable electricity supply, and other key operational installations.
+    Constructing and adapting the essential physical infrastructure that the farm needs before operations can begin. Infrastructure at a Kokonut farm is not conventional agricultural infrastructure — it is designed around the closed-loop, syntropic methodology that eliminates external input dependency. **Core infrastructure components:**
+
+    - **Bio-input production facility (biofactory):** The on-site system for producing all fertility inputs — specifically, the biochar production station (bamboo or waste wood → controlled pyrolysis → biochar) and the poultry manure processing facility (manure → humic acids \+ organic urea). This is the infrastructure that makes external synthetic inputs unnecessary after establishment
+    - **Water management:** Terracing and drainage design to manage rainfall without erosion; ground cover planting (beard grass) along terrace edges; soil organic matter building as the primary water retention strategy — designed to reduce irrigation dependency rather than create it
+    - **Electricity and utilities:** Sustainable power supply for facilities, monitoring equipment, and the education center
+    - **Community infrastructure:** The education gazebo, multipurpose meeting and training space — built during Phase I because community programming begins as soon as the farm is operational
+
+    **At Adelphi:** The biofactory was the critical infrastructure funded by [Public Nouns Proposal #69](https://publicnouns.wtf/vote/69) — the bamboo pyrolysis station for biochar production, the poultry facility for 110 hens, the manure processing station, and the multipurpose education gazebo. Terracing with beard grass ground cover manages the site's sloped terrain. The MRV infrastructure was also installed during this phase: soil moisture probes placed across representative crop zones.
+
+    **MRV milestone:** Soil probes installed and baseline readings recorded before any soil amendment — establishing the pre-biochar electrical conductivity and volumetric water content baseline against which Phase II improvements will be measured.
   </Step>
   <Step title="Personnel Training" icon="hand-holding-hand" iconType="regular" stepNumber={4} titleSize="h3">
-    Implementing training programs on agro-ecological practices, bio-input production, sustainable soil management, and market strategies to empower the community.
+    Implementing training programs that prepare the farm's operators and community participants for the specific practices Phase II will require. Training at a Kokonut farm is not generic agriculture education — it is site-specific, methodology-specific, and community-specific. **Training curriculum:**
+
+    - **Agro-ecological practices:** Syntropic planting methodology, strata management, species interaction principles, and the [5 Principles of Regeneration](/kokonut-framework/framework-components/framework-features/5-principles-of-regeneration) as applied to the specific site and crop selection
+    - **Bio-input production:** Biochar production (bamboo selection, pyrolysis temperature and timing, mineral rock incorporation), humic acid extraction from poultry manure, organic urea production — the skills needed to operate the biofactory
+    - **Soil management:** Cover crop maintenance, terracing upkeep, erosion monitoring, and reading soil probe data as operational guidance
+    - **MRV operations:** Atlantis App field data logging, community analytics protocol, drone flight planning with Pix4Dcapture, and interpreting satellite vegetation index reports from QGIS
+    - **Market strategies:** Wholesale pricing, organic market relationships, harvest timing for market windows, and the 10% public goods allocation management
+
+    **At Adelphi:** Yanny and Neury Hernández and their core team completed training across all five areas before Phase II began — including hands-on biochar production, syntropic bed preparation, and the Atlantis App field data logging protocol that feeds the MRV pipeline.
+
+    **Framework connection:** Trained personnel are the human capital that the [8 Forms of Capital](/kokonut-framework/framework-components/framework-features/8-forms-of-capital) Human Capital dimension tracks — pre- and post-training skill assessments are the Phase I measurement for this capital form.
   </Step>
   <Step title="Soil Preparation" icon="farm" iconType="regular" stepNumber={5} titleSize="h3">
-    Applying regenerative techniques such as biochar incorporation, organic fertilizers, cover crops, and minimal tillage to improve soil fertility and microbiology.
+    Applying the initial soil regeneration treatments that will support the first crop plantings in Phase II. Soil preparation at a Kokonut farm is not conventional tillage — it is the first application of the closed-loop, no-till methodology that will compound in effectiveness over every subsequent cycle. **Core soil preparation techniques:**
+
+    - **Biochar incorporation:** Biochar produced in the Phase III biofactory is worked into all crop beds at the appropriate depth (minimum 6 inches). The mineral-rich rocks incorporated during biochar production enhance cation exchange capacity — measurable immediately via soil probe EC readings after application
+    - **Organic fertilizer application:** Initial application of humic acids and organic urea from the poultry system — establishing the biological fertility baseline before the first planting
+    - **Cover crop establishment:** Beard grass and other cover species planted along terrace edges and in pre-planting zones — establishing the living cover that [Principle 2](/kokonut-framework/framework-components/framework-features/5-principles-of-regeneration) requires from day one
+    - **Minimal tillage bed formation:** Beds formed without deep mechanical tillage — preserving existing soil biology while creating the physical structure needed for planting density targets
+
+    **At Adelphi:** Bamboo-derived biochar incorporated across all crop beds before first planting; beard grass established along all terraced edges; initial soil EC and VWC readings recorded post-biochar application to establish the amended baseline that Phase IV MRV will track over time. The pre- vs. post-biochar soil probe readings document the immediate impact of Phase I soil preparation.
+
+    **MRV milestone:** Post-preparation soil probe readings recorded — this is the starting point for the Phase IV continuous measurement cycle. Every subsequent EC and VWC reading will be compared to this Phase I baseline.
   </Step>
 </Steps>
+
+---
+
+## Phase I completion criteria
+
+Phase I is complete when all of the following are true:
+
+| **Criterion** | **How it's verified** |
+| --- | --- |
+| All 13 Common Data Schema fields populated | Farm record created in the Farm Registry API — `POST /farms` accepted |
+| KDP proposal drafted and submitted to Charmverse | Proposal number assigned by the Governance Guild |
+| KDP proposal passed DAO vote | On-chain execution on DAOHaus; first milestone disbursement processed |
+| Biofactory operational | Biochar produced and tested; poultry system established |
+| MRV baseline established | Pre-planting soil probe readings recorded; initial satellite imagery baseline logged; Species GeoNode populated |
+| Personnel training complete | Pre/post training assessments documented; Atlantis App access confirmed for all operators |
+| Soil preparation complete | Post-biochar soil probe readings recorded; cover crops established; bed formation complete |
+
+---
+
+## Advancing to Phase II
+
+Phase I completion triggers the advancement to [Phase II — Production and Regeneration](/kokonut-framework/development-phases/phase-ii). The Framework Phase status is updated via the Farm Registry API (`PATCH /farms/{farm_id}/status`) when all Phase I checklist items are marked complete.
+
+The advancement from Phase I to Phase II is also recorded as an EAS attestation on-chain — creating a permanent, verifiable record of when the farm transitioned from planning to active production.
+
+> Phase IV MRV begins running continuously from Phase I completion — not sequentially after Phase III. Soil probe readings, satellite monitoring, and community analytics are collected from the moment the farm begins operating, creating the longitudinal data record that compounds in value over time.
+
+---
+
+<CardGroup cols={2}>
+  <Card title="Common Data Schema" icon="database" href="/kokonut-framework/framework-components/common-data-schema">
+    The 13 fields populated during Phase I — the minimum viable data record that makes a farm eligible for DAO funding and visible in the Data Hub.
+  </Card>
+
+  <Card title="Farm Funding Proposal Template" icon="seedling" href="/ecosystem-wiki/the-kokonut-dao/proposal-templates#farm-funding-proposal">
+    The KDP template — Phase I deliverables map directly to Sections E, F, H, and I of the proposal that triggers DAO funding.
+  </Card>
+
+  <Card title="Phase II — Production and Regeneration" icon="recycle" href="/kokonut-framework/development-phases/phase-ii">
+    What happens after Phase I is complete — agro-ecological practice implementation, soil regeneration, and planting across all three crop cycle lengths.
+  </Card>
+
+  <Card title="MRV — Measurement & Verification" icon="magnifying-glass-chart" href="/ecosystem-wiki/kokonut-farms/measurement-reporting-and-verification">
+    The full MRV stack — including the baseline establishment process that Phase I initiates and Phase IV runs continuously.
+  </Card>
+</CardGroup>
