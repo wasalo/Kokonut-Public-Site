@@ -1,16 +1,202 @@
 ---
 title: "PHASE III: Consolidation and Expansion"
-icon: "group-arrows-rotate"
+icon: "chart-line-up"
+---
+
+Phase III is where the farm matures from a productive system into a self-sustaining institution. What [Phase II](/kokonut-framework/development-phases/phase-ii) built — the multi-strata production system, the continuous MRV data stream, the on-chain milestone record — Phase III consolidates, certifies, and expands.
+
+**When Phase III begins:** After Phase II completion criteria are met — minimum 3 verified harvest cycles, measurable soil improvement documented via MRV, first annual EBF report published, and all long-cycle crops established and healthy.
+
+**What Phase III delivers:**
+
+- **Organic certification** from the relevant national agricultural authority — unlocking premium market pricing and formal institutional distribution channels
+- **Expanded market reach** — from local organic markets into regional supermarkets, B2B partnerships, and eventually export channels
+- **A verified 2-year MRV track record** — the longitudinal dataset that transforms a productive farm into an institutionally legible asset
+- **Biodiversity replanting at scale** — the endangered species nursery operating at full propagation capacity, native species systematically deployed in agroforestry replanting cycles
+- **A train-the-trainer knowledge base** — documentation and instructors capable of replicating the farm model in other communities **The RWA pathway:** Phase III is when the Kokonut Framework's Operational Variables pillar becomes financially significant. A farm with organic certification, 2\+ years of satellite-verified MRV data, a clean CRISP risk profile, and an EBF-audited impact report is in a categorically different position for [TradFi leverage eligibility](/kokonut-framework/Introduction#operational-variables) than a farm with only Phase II-level evidence. Phase III is the preparation layer for institutional capital access — real-world asset tokenization, carbon credit issuance, and impact investment instruments all require the track record that Phase III establishes.
+
+**DAO governance role:** Phase III expansion activities — land acquisition proposals, new certification investments, market partnership ratifications — all require [DAO proposals](/ecosystem-wiki/the-kokonut-dao/proposal-templates). The Framework Upgrade proposal template (KFP) is used for operational changes; the Farm Funding proposal (KDP) handles expansion capital.
+
 ---
 
 <Steps>
-  <Step title="Harvesting" icon="salad" iconType="regular" stepNumber={1} titleSize="h3">
-    Efficient collection protocols are implemented to ensure product quality through best post-harvest practices and traceability.
+  <Step title="Harvesting Protocols and Post-Harvest Management" icon="scythe" iconType="regular">
+    Standardizing and systematizing the harvesting processes that Phase II validated — converting the operational knowledge accumulated during production cycles into documented, transferable protocols that ensure consistent quality, reduce post-harvest losses, and prepare the farm for certification audits. **Harvest protocol standardization:**
+
+    - Define and document crop-specific maturity indicators for each variety: visual color, texture, size benchmarks, and Brix readings for sugar content where applicable
+    - Establish harvesting schedules aligned with market demand timing — for short-cycle crops, coordinating the 5 annual lettuce cycles with organic market delivery windows; for medium-cycle passion fruit, timing net harvests for peak market pricing periods
+    - Standardize harvest team roles, tools, and handling procedures — minimizing physical damage during collection that reduces shelf life and sale price
+
+    **Quality control:**
+
+    - Implement grading standards at point of harvest: visual inspection protocols, size sorting for consistent net weights, and field rejection criteria for damaged or undersized product
+    - Document and analyze loss rates per cycle against the 15% planning baseline — systematically reducing losses toward the theoretical minimum as handling techniques improve
+    - Establish traceability records linking each batch to the specific plot, harvest date, and operator — required documentation for organic certification audits
+
+    **Post-harvest processing:**
+
+    - Appropriate storage conditions per crop type: temperature, humidity, and air circulation requirements for lettuce, passion fruit, and coconut
+    - Packaging standards for each distribution channel — nets for passion fruit wholesale, crates for lettuce to organic markets
+    - Cold chain relevance is scale-dependent: for community-scale farms like Adelphi supplying local organic markets and regional supermarkets, ambient-temperature quality handling is sufficient at Phase III. Cold chain infrastructure becomes relevant at Phase IV scale or when export channels require it.
+
+    **At Adelphi:** Phase III harvest protocols will formalize the 5-cycle lettuce schedule (30–75 days per cycle), standardize the 13-fruits-per-net passion fruit packaging format, and document the coconut harvest procedures — with traceability records required for the Ministry of Agriculture organic certification process.
+
+    **MRV connection:** Harvest records submitted to the Farm Registry API per cycle (`POST /farms/{farm_id}/harvests`) — each record attested on-chain, creating the verifiable production history that organic certification auditors and institutional investors review.
   </Step>
-  <Step title="Education and Go To Market Strategy" icon="store" iconType="regular" stepNumber={2} titleSize="h3">
-    Strategies are developed for fair and sustainable commercialization, including partnerships with local and international markets, organic certifications, and consumer education on the benefits of agro-ecological products.
+  <Step title="Organic Certification" icon="award" iconType="regular">
+    Pursuing and achieving official organic certification from the relevant national agricultural authority — the credential that unlocks premium market pricing, formal institutional distribution channels, and the quality signal that differentiates Kokonut produce in competitive markets. **Why certification comes before go-to-market:** Premium market channels — national supermarkets, export distributors, health food chains — require certified organic provenance as a prerequisite for supplier relationships. Go-to-market strategy in Phase III is built around what certification unlocks, not the other way around.
+
+    **The certification pathway:**
+
+    - **Internal audit:** Comprehensive review of all farm practices against the certification standard — input records (confirming zero synthetic inputs since Phase I), soil test results, harvest records, and traceability documentation. The Phase II MRV data stream — continuous soil probe readings, harvest logs, and community analytics — provides most of the evidence an auditor needs
+    - **Third-party inspection:** On-site inspection by a certifying body or Ministry representative — evaluating practices, reviewing documentation, and confirming that the farm's operations match its records
+    - **Certification issuance:** Upon successful inspection, the official organic certification is issued — typically a multi-year certificate subject to annual renewal inspections
+
+    **At Adelphi:** Organic certification application is in progress with the **Dominican Republic Ministry of Agriculture** (Ministerio de Agricultura). The Phase II MRV data — satellite vegetation indices confirming no synthetic input signatures, soil probe readings documenting chemical-free soil, and harvest records with full traceability — provides the documentation foundation for the certification audit. Once certified, Adelphi's produce will carry the Ministry seal, enabling formal national supermarket distribution relationships.
+
+    **Market value of certification:** Organic certification typically commands a 20–40% price premium over conventionally produced equivalents in Dominican Republic markets. For Adelphi's lettuce at current projections ($0.55–$0.63/unit), certification could push realized pricing to the upper end of the range and beyond — directly improving the ~\$133,237 annual lettuce revenue figure.
+
+    **MRV connection:** The Phase II MRV data record is the primary evidence base for certification. Certification status is updated in the Farm Registry and anchored as an EAS attestation — creating a verifiable, on-chain record of the farm's certified organic status.
   </Step>
-  <Step title="Biodiverse Replanting" icon="tree-deciduous" iconType="regular" stepNumber={3} titleSize="h3">
-    Strategic species are reintroduced to strengthen biodiversity, ensuring a balanced and productive ecosystem in the long term, and enhancing soil resilience and food security.
+  <Step title="Go-to-Market Strategy" icon="store" iconType="regular">
+    Developing and executing the market relationships that convert Phase II production capacity into sustained, growing revenue — using organic certification as the quality signal that enables access to premium channels beyond the initial local market. **Market channel development:**
+
+    | **Channel** | **Access requirement** | **At Adelphi** |
+    | --- | --- | --- |
+    | Local organic markets | Established relationships \+ consistent supply | Active from Phase II |
+    | Regional supermarkets | Consistent volume \+ quality documentation | Phase III target |
+    | National supermarkets | Organic certification \+ formal supplier agreement | Phase III target post-certification |
+    | Direct community sales | Farmer relationships | Active from Phase II |
+    | B2B (restaurants, hotels) | Quality \+ reliability \+ volume | Phase III expansion |
+    | Export | Organic certification \+ cold chain \+ customs documentation | Phase IV or beyond |
+
+    **Marketing and branding:**
+
+    - Develop Adelphi-specific brand identity that communicates the farm's regenerative practices, women-led model, and community benefit commitment — the story that differentiates Adelphi produce from conventionally farmed equivalents
+    - Document and communicate the farm's verified impact credentials: organic certification, EAS-attested MRV record, SDG alignment, and EBF impact report — the institutional-grade evidence that B2B buyers and supermarket sustainability teams increasingly require
+
+    **Pricing strategy:**
+
+    - Establish pricing at each channel that reflects the organic premium, the verified impact value, and the cost structure of syntropic production — not simply matching conventional market prices
+    - Build tiered pricing for institutional buyers who value the verified impact documentation (impact investors, sustainability-mandated procurement programs) vs. standard market buyers
+
+    **DAO governance role:** Market expansion beyond the farm's current community radius — formal supermarket supplier agreements, export licensing, or new distribution infrastructure — requires a DAO proposal for any associated capital deployment. The farm operator submits a KDP for review by DAO members before committing to distribution relationships that require treasury backing.
+
+    **At Adelphi:** Phase III go-to-market will formalize the organic market relationships established in Phase II, initiate the national supermarket supplier application process post-certification, and develop the Adelphi brand narrative around the founders' story, the women-led model, and the verified MRV track record.
+  </Step>
+  <Step title="Bio-Diverse Replanting and Continuous Improvement" icon="tree" iconType="regular">
+    Systematically deploying the biodiversity improvements and replanting cycles that ensure the farm's ecological and productive capacity continues to compound rather than stabilize — maintaining the regenerative trajectory that distinguishes syntropic farming from conventional production systems that plateau or decline. **Replanting schedule:**
+
+    - Document and maintain a multi-year replanting calendar for all crop types — coordinating short-cycle bed rotations (lettuce and vegetable replanting every 30–75 days), medium-cycle vine replacement schedules, and the long-cycle agroforestry replanting plan
+    - Plan coconut tree replanting for the 20-year production horizon: as individual trees reach the end of their productive life, they are replanted — maintaining the farm's productive capacity and the token backing of the \$vKKN governance tokens held by DAO members. This is the "no expiration date" mechanism at the heart of the Kokonut cooperative model
+
+    **Native species integration from the nursery:**
+
+    - The [endangered species nursery](/ecosystem-wiki/kokonut-farms/adelphi/crops-biodiversity-and-infrastructure) established in Phase I is the source of replanting material for Phase III agroforestry expansion — propagated plants that are GPS-tracked in Silvi from their nursery registration through their planting in the agroforestry zone
+    - Systematic deployment of nursery stock into replanting cycles ensures that biodiversity increases with each planting season rather than remaining static
+    - Continue free distribution of surplus nursery propagations to neighboring communities — extending biodiversity impact beyond the farm boundary as a public goods activity funded by the 10% revenue allocation
+
+    **Continuous improvement protocol:**
+
+    - Annual review of CRISP risk scores, EBF report findings, and MRV performance data — identifying the specific practices, plots, or crop combinations that are outperforming or underperforming projections
+    - DAO proposal process for any significant operational changes — new crop introductions, infrastructure upgrades, or methodology modifications require community governance approval before treasury funds are committed
+    - Contribution to the open-source [Kokonut Framework](https://github.com/wasalo/kokonut-framework) — operational learnings from Phase III (harvest protocol refinements, certification process documentation, market strategy outcomes) contributed back to the Framework for the benefit of future farms
+
+    **At Adelphi:** Phase III replanting will deploy the nursery's 12\+ endangered species into the expanding agroforestry zone, maintain the passion fruit vine replacement schedule as plants reach the end of their productive lifespan, and begin planning the first coconut tree replanting cycle for the trees planted at Phase II commencement.
+
+    **MRV connection:** Replanting events logged as farm events in the Farm Registry API and attested on-chain — creating a verifiable record of the farm's biodiversity expansion and long-cycle crop renewal that underpins the carbon sequestration projections in the annual EBF report.
+  </Step>
+  <Step title="Comprehensive Training and Education Programs" icon="chalkboard-user" iconType="regular">
+    Scaling the knowledge transfer that began in Phase I training into a systematic community education program — producing trained operators who can maintain the farm independently, community members who understand and benefit from regenerative practices, and potentially a train-the-trainer capability that enables the model to replicate beyond Adelphi. **Advanced agro-ecological training:**
+
+    - Phase III training builds on Phase I basics to cover advanced topics: complex syntropic strata management as the farm matures, organic certification compliance maintenance, CRISP and EBF data collection protocols, and Farm Registry API data submission
+    - Operators learn to interpret MRV outputs — reading NDVI trends, understanding soil probe readings as operational guidance, and using the Data Hub dashboard to identify early warning signs of crop stress before they become visible above ground
+
+    **Community education programs:**
+
+    - The Phase III education center (the multipurpose gazebo established in Phase I) operates at full capacity: regular scheduled workshops for farmers, community members, children, and the elderly; curriculum spanning organic farming principles, syntropic design, biochar production, and environmental stewardship
+    - School and youth partnerships: structured programs that integrate farm visits, hands-on growing activities, and ecological education into the learning experiences of children in the surrounding community
+    - Community health and nutrition education: connecting organic food production to dietary health outcomes for the community — supporting the Health capital dimension of the [8 Forms of Capital](/kokonut-framework/framework-components/framework-features/8-forms-of-capital) assessment
+
+    **Train-the-trainer:**
+
+    - Document the full Adelphi operational knowledge base in a format that another farm operator in another community could use to replicate Phase I through Phase III independently — contributing to the Kokonut Framework's replicability goal
+    - Identify and train community members who can lead workshops independently — reducing the founder-dependency risk that the CRISP Project Developer Risk factor assesses
+
+    **At Adelphi:** Phase III training will formalize the education gazebo's community program calendar, develop the school partnership program for children in the batey and Haty community, and document the Yanny and Neury Hernández operational knowledge base as a replicable training curriculum for future Kokonut farms.
+
+    **MRV connection:** Training participation records logged per session — the Human Capital measurement that contributes to the Social dimension of the annual EBF report.
   </Step>
 </Steps>
+
+---
+
+## The coconut replanting cycle — the cooperative's continuity mechanism
+
+Coconut trees produce for up to 20 years under optimal conditions. When they reach the end of their productive life, they don't represent the end of the farm — they represent the beginning of the next cycle.
+
+Phase III is when the replanting protocol for long-cycle crops is formally documented and scheduled. The coconut replanting cycle is the physical mechanism behind the Kokonut Network's most important claim: **the cooperative has no expiration date.**
+
+```text
+Phase II: Coconut trees planted (year 0)
+          │
+          ▼
+Phase III+: Trees reach full production (year 3–5)
+          │
+          ▼
+20-year productive life → consistent annual revenue
+          │
+          ▼
+End of productive life → replanting scheduled via DAO proposal
+          │
+          ▼
+New trees planted → 20-year production cycle restarts
+          │
+          └──────────────────────────────────────────────────►
+                    The cooperative continues indefinitely
+```
+
+Each \$vKKN governance token is backed 1:1 by a real coconut tree. When a tree is replanted, the token backing is maintained — the cooperative member's stake doesn't diminish as trees age, because the replanting cycle is governed by the same DAO proposal process that funded the original planting.
+
+---
+
+## Phase III completion criteria
+
+Phase III is complete when the farm demonstrates self-sustaining operations across all five consolidation dimensions:
+
+| **Criterion** | **How it's verified** |
+| --- | --- |
+| Organic certification achieved | Certification document issued by Ministry of Agriculture (DR) or relevant authority; status updated in Farm Registry and anchored as EAS attestation |
+| Premium market channels established | Formal supplier agreements with at least one regional supermarket or institutional buyer; first premium-priced delivery recorded and logged |
+| Full replanting schedule documented | Multi-year replanting calendar for all three cycle lengths published to Charmverse and linked from farm record in Data Hub |
+| Advanced training program operational | Education center running regular scheduled programs; participation records in Atlantis App; at least one trained community instructor beyond the founding team |
+| 3 consecutive annual EBF reports published | Environmental, Economic, Social, Sustainability reports for 3 successive years; all anchored as EAS attestations on Gnosis Chain |
+| CRISP Project Developer Risk downgraded | Third consecutive clean CRISP assessment demonstrating farm independence from founder involvement |
+
+---
+
+## Advancing to Phase IV
+
+Phase IV is not a sequential stage that begins after Phase III completes — it has been running continuously since Phase I. Phase IV represents the perpetual operations state: the farm is self-sustaining, certified, and continuously generating the MRV data stream that compounds in value with each passing year.
+
+> A farm that completes Phase III has everything it needs for institutional capital access: organic certification, 3\+ years of satellite-verified MRV data, a clean CRISP risk profile, 3 annual EBF reports, and an on-chain milestone record that any investor or grant reviewer can independently verify.
+
+---
+
+<CardGroup cols={2}>
+  <Card title="Phase II — Production and Regeneration" icon="recycle" href="/kokonut-framework/development-phases/phase-ii">
+    What Phase III builds on — the verified harvest record, soil improvement data, and established production system that make Phase III's consolidation activities possible.
+  </Card>
+
+  <Card title="Phase IV — Continuous MRV" icon="satellite-dish" href="/kokonut-framework/development-phases/phase-iv">
+    The perpetual operations state that Phase III prepares for — continuous satellite monitoring, annual EBF reporting, and the data accumulation that enables institutional capital.
+  </Card>
+
+  <Card title="Ecological Impact Frameworks" icon="leaf-heart" href="/kokonut-framework/framework-add-ons/ecological-impact-frameworks">
+    EBF and CRISP — the frameworks whose annual outputs Phase III is specifically designed to optimize, producing the 3-year verified impact record that enables the RWA pathway.
+  </Card>
+
+  <Card title="Adelphi — Crops, Biodiversity & Infrastructure" icon="puzzle" href="/ecosystem-wiki/kokonut-farms/adelphi/crops-biodiversity-and-infrastructure">
+    The physical infrastructure at Adelphi that Phase III will activate at scale — the education gazebo, the endangered species nursery, the biochar station, and the organic certification pathway.
+  </Card>
+</CardGroup>
