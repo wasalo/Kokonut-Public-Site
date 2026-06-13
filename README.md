@@ -166,6 +166,6 @@ Chain ID: `100` · RPC: `https://rpc.gnosischain.com` · Explorer: `https://gnos
 
 ## License
 
-This documentation is licensed under [MIT](LICENSE). The Kokonut Framework methodology is open-source at [wasalo/kokonut-framework](https://github.com/wasalo/kokonut-public-site).
+This documentation is licensed under [CC BY-SA 4.0](LICENSE). The Kokonut Framework methodology is open-source at [wasalo/kokonut-framework](https://github.com/wasalo/kokonut-public-site).
 
-Contributions to this repository are made under the same MIT license. By submitting a PR, you agree that your contribution can be distributed under the MIT license.
+Contributions to this repository are made under the same CC BY-SA 4.0 license. By submitting a PR, you agree that your contribution can be distributed under the CC BY-SA 4.0 license.
