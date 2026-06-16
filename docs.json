@@ -119,6 +119,7 @@
             "version": "0.1",
             "pages": [
               "build-with-kokonut",
+              "kokonut-intelligence",
               "kokonut-x-ai-agents"
             ]
           }
