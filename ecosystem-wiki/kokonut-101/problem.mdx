@@ -35,20 +35,34 @@ The global problem manifests the same way at the community level, regardless of 
 
 These pressures do not operate in isolation — they reinforce each other.
 
-```text
-No capital access
-      │
-      ▼
-No sustainable farm infrastructure
-      │
-      ▼
-Deforestation + soil depletion + food insecurity
-      │
-      ▼
-Deepening poverty + outmigration
-      │
-      ▼
-Less community capacity to farm → back to top
+```mermaid
+flowchart TD
+    F["Industrial food systems\n→ climate pressure"]
+    G["Concentrated coconut markets\n→ reduced farmer leverage"]
+
+    A["Limited access to capital\n→ land remains underused"]
+    B["Low investment in regeneration\n→ soil degradation + deforestation"]
+    C["Ecosystem stress\n→ biodiversity loss + water scarcity"]
+    D["Lower yields\n→ poverty + food insecurity"]
+    E["Youth migration\n→ farming knowledge gap"]
+
+    F -->|"increases climate risk"| C
+    G -->|"reduces local income potential"| A
+
+    A --> B
+    B --> C
+    C --> D
+    D --> E
+    E -->|"less local capacity to restore land"| A
+
+    style A fill:#fee2e2,stroke:#ef4444,color:#991b1b
+    style B fill:#fee2e2,stroke:#ef4444,color:#991b1b
+    style C fill:#fee2e2,stroke:#ef4444,color:#991b1b
+    style D fill:#fee2e2,stroke:#ef4444,color:#991b1b
+    style E fill:#fee2e2,stroke:#ef4444,color:#991b1b
+
+    style F fill:#fef3c7,stroke:#f59e0b,color:#92400e
+    style G fill:#fef3c7,stroke:#f59e0b,color:#92400e
 ```
 
 Regenerative agriculture — specifically, [syntropic farming](/kokonut-framework/why-syntropic-farming) — breaks this cycle by design. Syntropic farms improve soil with each season, require no synthetic inputs after establishment, and produce multiple revenue streams simultaneously across short, medium, and long crop cycles. The solution is agronomically proven. The missing piece is not the farming method. It is the coordination layer that connects capital to productive land and returns to the communities that tend it.

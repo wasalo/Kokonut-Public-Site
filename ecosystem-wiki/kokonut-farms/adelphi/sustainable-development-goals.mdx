@@ -172,6 +172,28 @@ By promoting women's active participation in sustainable production, education, 
 
 The five SDGs at Adelphi are not independent commitments — they form a reinforcing system where progress in one accelerates progress in others.
 
+```mermaid
+flowchart LR
+    S15["🌱 SDG 15\nHealthy soil"]
+    S2["🌾 SDG 2\nFood production capacity"]
+    S8["👷 SDG 8\nEmployment"]
+    S5["👩 SDG 5\nWomen's leadership"]
+    S1["💰 SDG 1\nReduced poverty\nhousehold income + food security"]
+
+    S15 -->|"regenerates land"| S2
+    S2 -->|"improves local food supply"| S1
+    S2 -->|"creates farm activity"| S8
+    S8 -->|"raises household income"| S1
+    S5 -->|"increases inclusive participation"| S8
+    S5 -->|"strengthens household resilience"| S1
+
+    style S15 fill:#d1fae5,stroke:#10b981,color:#065f46
+    style S2 fill:#ecfdf5,stroke:#10b981,color:#065f46
+    style S1 fill:#009F4D,stroke:#009F4D,color:#ffffff
+    style S8 fill:#dbeafe,stroke:#3b82f6,color:#1e40af
+    style S5 fill:#ede9fe,stroke:#8b5cf6,color:#4c1d95
+```
+
 ```text
 SDG 15 (healthy soil)
       │

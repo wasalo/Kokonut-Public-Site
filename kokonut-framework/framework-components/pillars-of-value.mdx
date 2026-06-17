@@ -157,15 +157,55 @@ The Pillars of Value define _what_ to evaluate. The [8 Forms of Capital](/kokonu
 
 Together, they form the complete impact evaluation framework:
 
-```text
-Pillars of Value          →    8 Forms of Capital
-──────────────────────────────────────────────────
-WHAT (outputs)            →    Natural + Financial capital
-WHO (beneficiaries)       →    Social + Human capital
-HOW MUCH (scale)          →    Financial + Material capital
-CONTRIBUTION (quality)    →    Intellectual + Cultural capital
-RISK (resilience)         →    All 8 forms (risk affects each)
-PUBLIC GOODS (community)  →    Social + Health capital
+```mermaid
+flowchart LR
+    subgraph PV["Pillars of Value"]
+        W["WHAT\nvalue created"]
+        WH["WHO\nstakeholders"]
+        HM["HOW MUCH\nscale + quantity"]
+        CO["CONTRIBUTION\ninputs + labor"]
+        RI["RISK\nuncertainty + exposure"]
+        PG["PUBLIC GOODS\nshared benefits"]
+    end
+
+    subgraph EF["Forms of Capital"]
+        ECO["Ecological\nNatural + Living"]
+        ECO2["Economic\nFinancial + Material"]
+        COM["Community\nSocial + Human"]
+        KNOW["Knowledge\nIntellectual + Cultural"]
+    end
+
+    W --> ECO
+    W --> ECO2
+
+    WH --> COM
+    WH --> KNOW
+
+    HM --> ECO2
+    HM --> ECO
+
+    CO --> COM
+    CO --> KNOW
+
+    RI --> ECO
+    RI --> ECO2
+    RI --> COM
+
+    PG --> ECO
+    PG --> COM
+    PG --> KNOW
+
+    style W fill:#d1fae5,stroke:#10b981,color:#065f46
+    style WH fill:#d1fae5,stroke:#10b981,color:#065f46
+    style HM fill:#d1fae5,stroke:#10b981,color:#065f46
+    style CO fill:#d1fae5,stroke:#10b981,color:#065f46
+    style RI fill:#fee2e2,stroke:#ef4444,color:#991b1b
+    style PG fill:#009F4D,stroke:#009F4D,color:#ffffff
+
+    style ECO fill:#ecfdf5,stroke:#10b981,color:#065f46
+    style ECO2 fill:#dbeafe,stroke:#3b82f6,color:#1e40af
+    style COM fill:#ede9fe,stroke:#8b5cf6,color:#4c1d95
+    style KNOW fill:#fef3c7,stroke:#f59e0b,color:#92400e
 ```
 
 A farm that completes both frameworks — all 6 pillars documented, and all 8 capital forms measured — has a complete, defensible impact case for DAO funding, grant applications, and institutional investor due diligence.
