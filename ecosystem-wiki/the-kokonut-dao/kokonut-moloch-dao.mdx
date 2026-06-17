@@ -91,30 +91,34 @@ Rage-quit is the capital protection mechanism that makes the Kokonut DAO fundame
 
 ```mermaid
 flowchart TD
-    A["Proposal passes"]
-    B["Grace period opens"]
-    C{"Members who disagree?"}
-    D["Rage-quit
-    → receive proportional treasury share
-    → tokens burned"]
-    E["Members who agree
-    → wait"]
-    F{"Token retention ≥ 66%?"}
-    G["Proposal executes ✅"]
-    H["Proposal does NOT execute ❌"]
+    A["Proposal approved by DAO"]
+    B["Grace period begins\nmembers can review final outcome"]
+    C{"Member wants to exit?"}
+
+    D["Rage-quit\nreceive proportional treasury share\ntokens are burned"]
+    E["Remain in DAO\nretain voting power"]
+
+    F{"Enough token power remains?"}
+    G["Execute proposal ✅"]
+    H["Block execution ❌"]
 
     A --> B
     B --> C
-    C -->|yes| D
-    C -->|no| E
+    C -->|"yes"| D
+    C -->|"no"| E
     D --> F
     E --> F
-    F -->|yes| G
-    F -->|no| H
+    F -->|"yes"| G
+    F -->|"no"| H
 
+    style A fill:#dbeafe,stroke:#3b82f6,color:#1e40af
+    style B fill:#fef3c7,stroke:#f59e0b,color:#92400e
+    style C fill:#ede9fe,stroke:#8b5cf6,color:#4c1d95
     style D fill:#fee2e2,stroke:#ef4444,color:#991b1b
-    style G fill:#d1fae5,stroke:#10b981,color:#065f46
-    style H fill:#fef3c7,stroke:#f59e0b,color:#92400e
+    style E fill:#d1fae5,stroke:#10b981,color:#065f46
+    style F fill:#ede9fe,stroke:#8b5cf6,color:#4c1d95
+    style G fill:#009F4D,stroke:#009F4D,color:#ffffff
+    style H fill:#fee2e2,stroke:#ef4444,color:#991b1b
 ```
 
 <Tip>

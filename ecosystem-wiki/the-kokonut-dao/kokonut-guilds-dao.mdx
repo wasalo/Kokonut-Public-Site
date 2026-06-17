@@ -123,33 +123,24 @@ Builds and maintains the relationships that grow the Kokonut Ecosystem — farme
 Guilds and the Moloch DAO operate at different layers of the governance stack, with deliberate separation of concerns.
 
 ```mermaid
-flowchart TB
-    subgraph MOLOCH["Kokonut Moloch DAO"]
-        direction LR
-        TREASURY["Treasury\n(SAFE wallet)"]
-        TOKENS["$vKKN holders\n99.99% voting power"]
-        RAGEQUIT["Rage-quit\nprotection"]
-    end
+flowchart TD
+    M["🏛️ Kokonut Moloch DAO\nTreasury · Token holders · Rage-quit\nApproves funding, priorities and scale"]
 
-    subgraph META["Meta-governance layer"]
-        STEWARDS["Guild Stewards\ncross-Guild deliberation"]
-    end
+    G["⚙️ Guild Layer\nTech · Impact · Comms · Governance · Finance · CPs\nCoordinates domain expertise and execution"]
 
-    subgraph GUILDS["Guild layer"]
-        direction LR
-        TECH["Technology"]
-        IMPACT["Impact"]
-        COMMS["Communications"]
-        GOV["Governance"]
-        FIN["Finance"]
-        CP["Community &\nPartnerships"]
-    end
+    W["🛠️ Work Execution\nTasks · milestones · partner coordination\nFarm operations · software · reporting"]
 
-    GUILDS -- "Proposals authored\nby Guild Stewards" --> META
-    META -- "Pre-Moloch consensus\nthen sponsored to vote" --> MOLOCH
-    MOLOCH -- "Treasury disbursement\non passed proposals" --> GUILDS
-    MOLOCH -- "Loot token awards\nfor significant contributions" --> GUILDS
-    GUILDS -- "Operational decisions\nwithin domain (no DAO vote needed)" --> GUILDS
+    C["📊 Contribution Accounting\nGuild Points · deliverables · work evidence\nUsed for rewards, trust and future proposals"]
+
+    M -->|"funding + strategic mandates"| G
+    G -->|"coordinates contributors"| W
+    W -->|"completed work + evidence"| C
+    C -->|"reports + funding proposals"| M
+
+    style M fill:#ede9fe,stroke:#8b5cf6,color:#4c1d95
+    style G fill:#d1fae5,stroke:#10b981,color:#065f46
+    style W fill:#fef3c7,stroke:#f59e0b,color:#92400e
+    style C fill:#dbeafe,stroke:#3b82f6,color:#1e40af
 ```
 
 The relationship works as follows:

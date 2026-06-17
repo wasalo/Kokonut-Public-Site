@@ -70,31 +70,32 @@ The five layers describe how value, authority, and information flow through the 
 
 ```mermaid
 flowchart TD
-G["🗳️ GOVERNANCE LAYER
-$vKKN holders · 1 token = 1 vote · DAOHaus
-99.99% voting power held by DAO members"]
+    subgraph DAO["DAO Coordination Stack"]
+        G["🗳️ Governance\n$vKKN holders\n1 token = 1 vote\nDAOHaus"]
+        L["⚙️ Logic\nGnosis Chain contracts\nSAFE treasury\nProposal execution"]
+        E["🔧 Execution\nKokonut Guilds\nCore Team + Partners\nGuild Points"]
+    end
 
-L["⚙️ LOGIC LAYER
-Gnosis Chain contracts · SAFE treasury
-Token minting · Rage-quit · Proposal execution"]
+    subgraph Field["Field Operations"]
+        P["🌱 Production\nAdelphi + future farms\nCoconuts · Vegetables\nCommunity programs"]
+    end
 
-E["🔧 EXECUTION LAYER
-Kokonut Guilds · Core Team · Partners
-Contribution-weighted · Guild Points"]
+    subgraph Data["Verification Infrastructure"]
+        I["🛰️ Infrastructure\nFarm Registry API\nAI Agents · EAS · The Graph\nMRV → attestations"]
+    end
 
-P["🌱 PRODUCTION LAYER
-Adelphi + future farms · Framework operations
-Coconuts · Vegetables · Community programs"]
+    G -->|"approves proposals"| L
+    L -->|"funds + mandates"| E
+    E -->|"implements work"| P
+    P -->|"field data + outcomes"| I
+    I -->|"verified events"| L
+    I -->|"evidence for governance"| G
 
-I["🛰️ INFRASTRUCTURE LAYER
-Farm Registry API · AI Agents · EAS · TheGraph
-Automated MRV → on-chain attestations"]
-
-G -->|"votes execute"| L
-L -->|"funds + mandates"| E
-E -->|"operates + monitors"| P
-P -->|"data flows up"| I
-I -->|"attested events feed back"| L
+    style G fill:#ede9fe,stroke:#8b5cf6,color:#4c1d95
+    style L fill:#dbeafe,stroke:#3b82f6,color:#1e40af
+    style E fill:#fef3c7,stroke:#f59e0b,color:#92400e
+    style P fill:#d1fae5,stroke:#10b981,color:#065f46
+    style I fill:#e0f2fe,stroke:#0284c7,color:#075985
 ```
 
 Revenue and impact data flow upward from Production through Infrastructure to Logic. Capital and governance decisions flow downward from Governance through Logic to Execution to Production. The Infrastructure Layer automates the data flows that would otherwise require constant human intermediation at scale.

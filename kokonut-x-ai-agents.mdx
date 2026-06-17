@@ -22,29 +22,46 @@ Every agent operating in the Kokonut ecosystem touches four distinct systems. Un
 
 ```mermaid
 flowchart TD
-    subgraph OS["RUNTIME"]
+    subgraph OS["Runtime"]
         direction LR
         MRV["MRV Agent"]
         HA["Harvest Agent"]
         ISA["Impact Scoring Agent"]
     end
 
-    API["KOKONUT FARM REGISTRY API
-    POST /mrv · POST /harvests
-    POST /attestations · GET /impact"]
+    API["Kokonut Farm Registry API\nMRV · Harvests · Attestations · Impact"]
 
-    subgraph BASE["BASE — Chain ID 8453"]
+    subgraph ETHEREUM["Ethereum Network — Chain ID 1"]
         direction LR
-        ERC["ERC-8004 Agent Registry"]
-        ESC["Escrow · x402 settlement"]
-        EAS["EAS attestations"]
-        KAR["Karma GAP reputation"]
+        ID["Agent Identity\nERC-8004 Registry"]
+        PAY["Payments\nx402 Settlement + Escrow"]
+        ATT["Verification\nEAS Attestations"]
+        REP["Reputation\nKarma GAP"]
+        DIS["Disputes\nArbitration"]
     end
 
-    MRV -->|"HTTP + x402"| API
-    HA -->|"HTTP + x402"| API
-    ISA -->|"HTTP + x402"| API
-    API -->|"EAS attestation events"| BASE
+    MRV -->|"submits field observations"| API
+    HA -->|"submits harvest records"| API
+    ISA -->|"requests verified impact data"| API
+
+    API -->|"checks agent identity"| ID
+    API -->|"requires payment"| PAY
+    API -->|"publishes verified events"| ATT
+    API -->|"updates project reputation"| REP
+    API -->|"escalates disputes"| DIS
+
+    PAY -->|"payment confirmed"| API
+    ATT -->|"impact evidence available"| ISA
+
+    style MRV fill:#d1fae5,stroke:#10b981,color:#065f46
+    style HA fill:#d1fae5,stroke:#10b981,color:#065f46
+    style ISA fill:#d1fae5,stroke:#10b981,color:#065f46
+    style API fill:#009F4D,stroke:#009F4D,color:#ffffff
+    style ID fill:#dbeafe,stroke:#3b82f6,color:#1e40af
+    style PAY fill:#fef3c7,stroke:#f59e0b,color:#92400e
+    style ATT fill:#ecfdf5,stroke:#10b981,color:#065f46
+    style REP fill:#ede9fe,stroke:#8b5cf6,color:#4c1d95
+    style DIS fill:#fee2e2,stroke:#ef4444,color:#991b1b
 ```
 
 | Layer | System | What it does |
