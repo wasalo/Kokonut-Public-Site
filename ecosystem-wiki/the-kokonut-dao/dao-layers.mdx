@@ -68,37 +68,33 @@ The five layers describe how value, authority, and information flow through the 
 
 ## How the layers flow together
 
-```text
-┌──────────────────────────────────────────────────┐
-│           GOVERNANCE LAYER                        │
-│   $vKKN holders · 1 token = 1 vote · DAOHaus     │
-│   99.99% voting power held by DAO members        │
-└────────────────────┬─────────────────────────────┘
-                     │ votes execute →
-┌────────────────────▼─────────────────────────────┐
-│              LOGIC LAYER                          │
-│   Gnosis Chain contracts · SAFE treasury         │
-│   Token minting · Rage-quit · Proposal execution │
-└────────────────────┬─────────────────────────────┘
-                     │ funds + mandates →
-┌────────────────────▼─────────────────────────────┐
-│             EXECUTION LAYER                       │
-│   Kokonut Guilds · Core Team · Partners          │
-│   Contribution-weighted · Guild Points           │
-└────────────────────┬─────────────────────────────┘
-                     │ operates + monitors →
-┌────────────────────▼─────────────────────────────┐
-│             PRODUCTION LAYER                      │
-│   Adelphi + future farms · Framework operations  │
-│   Coconuts · Vegetables · Community programs     │
-└────────────────────┬─────────────────────────────┘
-                     │ data flows up →
-┌────────────────────▼─────────────────────────────┐
-│          INFRASTRUCTURE LAYER                     │
-│   Farm Registry API · AI Agents · EAS · TheGraph │
-│   Automated MRV → on-chain attestations          │
-└──────────────────────────────────────────────────┘
-         (Infrastructure feeds back to Logic Layer)
+```mermaid
+flowchart TD
+G["🗳️ GOVERNANCE LAYER
+$vKKN holders · 1 token = 1 vote · DAOHaus
+99.99% voting power held by DAO members"]
+
+L["⚙️ LOGIC LAYER
+Gnosis Chain contracts · SAFE treasury
+Token minting · Rage-quit · Proposal execution"]
+
+E["🔧 EXECUTION LAYER
+Kokonut Guilds · Core Team · Partners
+Contribution-weighted · Guild Points"]
+
+P["🌱 PRODUCTION LAYER
+Adelphi + future farms · Framework operations
+Coconuts · Vegetables · Community programs"]
+
+I["🛰️ INFRASTRUCTURE LAYER
+Farm Registry API · AI Agents · EAS · TheGraph
+Automated MRV → on-chain attestations"]
+
+G -->|"votes execute"| L
+L -->|"funds + mandates"| E
+E -->|"operates + monitors"| P
+P -->|"data flows up"| I
+I -->|"attested events feed back"| L
 ```
 
 Revenue and impact data flow upward from Production through Infrastructure to Logic. Capital and governance decisions flow downward from Governance through Logic to Execution to Production. The Infrastructure Layer automates the data flows that would otherwise require constant human intermediation at scale.
