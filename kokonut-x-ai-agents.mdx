@@ -407,31 +407,20 @@ The [x402 protocol](https://x402.org) is what makes agent-to-agent service calls
 
 The flow has four steps, all triggered by a single HTTP request:
 
-```text
-Agent A (caller)                         Agent B (service provider)
-─────────────────                        ─────────────────────────
-POST /analyze-farm-health
-  { farm_id: "adelphi" }        ──────►  Returns 402 Payment Required
-                                          {
-                                            "x402Version": 1,
-                                            "accepts": [{
-                                              "scheme": "exact",
-                                              "network": "base-mainnet",
-                                              "maxAmountRequired": "5000000",
-                                              "asset": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
-                                              "payTo": "0xAgentB...",
-                                              "memo": "farm-health-adelphi"
-                                            }]
-                                          }
- 
-Settles 5 USDC on Base              ◄──  (waits for settlement)
-  tx hash: 0xabc...
- 
-POST /analyze-farm-health
-  { farm_id: "adelphi" }
-  X-PAYMENT: { payload, signature } ──►  Verifies payment on-chain
-                                          Processes request
-                                ◄────    Returns { health_report: {...} }
+```mermaid
+sequenceDiagram
+    participant Agent as AI Agent
+    participant FarmRegistryAPI as Farm Registry API
+    participant Base as Base Network
+
+    Agent->>FarmRegistryAPI: GET /farms/adelphi/health
+    FarmRegistryAPI-->>Agent: 402 Payment Required
+    Agent->>Base: Settle 5 USDC on Base
+    Base-->>Agent: Payment confirmed on-chain
+    Agent->>FarmRegistryAPI: GET /farms/adelphi/health with X-PAYMENT header
+    FarmRegistryAPI->>Base: Verify payment on-chain
+    Base-->>FarmRegistryAPI: Payment valid
+    FarmRegistryAPI-->>Agent: Return health report
 ```
 
 ### Implementation — caller side
