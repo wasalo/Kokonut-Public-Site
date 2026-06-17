@@ -89,6 +89,34 @@ Rage-quit is the capital protection mechanism that makes the Kokonut DAO fundame
 
 **The grace period protection:** Every passed proposal opens a grace period before execution. During this window, any member who disagrees with the outcome can rage-quit with their full proportional share — before the disbursement they voted against is executed. This makes it structurally impossible for a majority to trap a minority's capital.
 
+```mermaid
+flowchart TD
+    A["Proposal passes"]
+    B["Grace period opens"]
+    C{"Members who disagree?"}
+    D["Rage-quit
+    → receive proportional treasury share
+    → tokens burned"]
+    E["Members who agree
+    → wait"]
+    F{"Token retention ≥ 66%?"}
+    G["Proposal executes ✅"]
+    H["Proposal does NOT execute ❌"]
+
+    A --> B
+    B --> C
+    C -->|yes| D
+    C -->|no| E
+    D --> F
+    E --> F
+    F -->|yes| G
+    F -->|no| H
+
+    style D fill:#fee2e2,stroke:#ef4444,color:#991b1b
+    style G fill:#d1fae5,stroke:#10b981,color:#065f46
+    style H fill:#fef3c7,stroke:#f59e0b,color:#92400e
+```
+
 ```text
 Proposal passes
       │
