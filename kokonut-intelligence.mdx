@@ -8,28 +8,35 @@ Every number you see on the [Adelphi Data Hub](https://hub.kokonut.network/proje
 
 The Intelligence Layer is the canonical data backbone of the Kokonut Network — the infrastructure that sits between raw farm data (soil probes, satellite imagery, field worker logs) and the systems that consume it (the DAO, impact investors, carbon markets, AI agents). Where the rest of this documentation describes what Kokonut measures and why, this page describes how that measurement is implemented, stored, processed, and verified.
 
-```text
-Raw farm data (sensors, satellites, field workers, blockchain)
-      │
-      ▼
-┌─────────────────────────────────────┐
-│     KOKONUT INTELLIGENCE LAYER      │
-│                                     │
-│  PostgreSQL (canonical store)       │
-│  ClickHouse (analytical queries)    │
-│  Directus (governed API + admin UI) │
-│  Python services (intelligence)     │
-│  EAS on Celo (verification layer)   │
-└─────────────────────────────────────┘
-      │                    │
-      ▼                    ▼
-Data Hub             EAS attestations
-(hub.kokonut.network) (celoscan.io)
-      │                    │
-      ▼                    ▼
-DAO governance     Carbon markets
-AI agents          Impact investors
-EBF reports        Grant reviewers
+```mermaid
+flowchart TD
+    RAW["🌍 Raw farm data
+    sensors · satellites · field workers · blockchain"]
+
+    subgraph IL["KOKONUT INTELLIGENCE LAYER"]
+        PG["PostgreSQL\n(canonical store)"]
+        CH["ClickHouse\n(analytical queries)"]
+        DIR["Directus\n(governed API + admin UI)"]
+        PY["Python services\n(intelligence)"]
+        CELO["EAS on Celo\n(verification layer)"]
+    end
+
+    HUB["🖥️ Data Hub
+    hub.kokonut.network"]
+    ATTEST["🔐 EAS attestations
+    celoscan.io"]
+
+    RAW --> IL
+    IL --> HUB
+    IL --> ATTEST
+
+    HUB --> DAO["DAO governance"]
+    HUB --> AGENTS["AI agents"]
+    HUB --> EBF["EBF reports"]
+
+    ATTEST --> CARBON["Carbon markets"]
+    ATTEST --> IMPACT["Impact investors"]
+    ATTEST --> GRANTS["Grant reviewers"]
 ```
 
 **Repository:** [`wasalo/Kokonut-Intelligence`](https://github.com/wasalo/Kokonut-Intelligence) · Apache-2.0
@@ -124,14 +131,31 @@ python3 -m services.attestation \
 
 Every operational record — harvest, expense, soil observation, MRV event — follows the same governed lifecycle before it becomes eligible for attestation or dashboard publication:
 
-```text
-Field Worker creates record (draft)
-      ↓
-Supervisor submits for review (submitted)
-      ↓
-Manager / Finance verifies (verified)
-      ↓
-Published — available to dashboards, APIs, and attestation pipeline
+```mermaid
+flowchart LR
+    FW["👷 Field Worker
+    creates record"]
+    D["draft"]
+    S["submitted"]
+    V["verified"]
+    P["published"]
+    R["rejected"]
+
+    FW --> D
+    D --> S
+    S --> V
+    S --> R
+    R -->|rework| D
+    V --> P
+
+    P --> DASH["Dashboards · APIs"]
+    P --> PIPE["Attestation pipeline"]
+
+    style D fill:#f3f4f6,stroke:#d1d5db,color:#374151
+    style S fill:#fef3c7,stroke:#f59e0b,color:#92400e
+    style V fill:#dbeafe,stroke:#3b82f6,color:#1e40af
+    style P fill:#009F4D,stroke:#009F4D,color:#ffffff
+    style R fill:#fee2e2,stroke:#ef4444,color:#991b1b
 ```
 
 ### Fortune 500 Farm Scoring

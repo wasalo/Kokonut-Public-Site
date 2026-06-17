@@ -20,28 +20,31 @@ The [Kokonut Agentic Marketplace](https://github.com/wasalo/Kokonut-Agentic-Mark
 
 Every agent operating in the Kokonut ecosystem touches four distinct systems. Understanding how they fit together is the prerequisite to building on any one of them.
 
-```text
-┌─────────────────────────────────────────────────────────────────┐
-│                    RUNTIME                              │
-│         Task queue · Agent orchestration · Inter-agent comms    │
-│                                                                  │
-│  ┌──────────────┐  ┌──────────────┐  ┌──────────────────────┐  │
-│  │ MRV Agent    │  │ Harvest Agent│  │ Impact Scoring Agent  │  │
-│  └──────┬───────┘  └──────┬───────┘  └──────────┬───────────┘  │
-└─────────┼────────────────┼──────────────────────┼──────────────┘
-          │ HTTP + x402    │                       │
-          ▼                ▼                       ▼
-┌─────────────────────────────────────────────────────────────────┐
-│               KOKONUT FARM REGISTRY API                          │
-│   POST /mrv · POST /harvests · POST /attestations · GET /impact  │
-└─────────────────────────────┬───────────────────────────────────┘
-                              │ EAS attestation events
-                              ▼
-┌─────────────────────────────────────────────────────────────────┐
-│           BASE (Ethereum L2) — Chain ID 8453                     │
-│  ERC-8004 Agent Registry · Escrow · x402 payment settlement      │
-│  EAS attestations · Karma GAP reputation · Kleros arbitration    │
-└─────────────────────────────────────────────────────────────────┘
+```mermaid
+flowchart TD
+    subgraph OS["RUNTIME"]
+        direction LR
+        MRV["MRV Agent"]
+        HA["Harvest Agent"]
+        ISA["Impact Scoring Agent"]
+    end
+
+    API["KOKONUT FARM REGISTRY API
+    POST /mrv · POST /harvests
+    POST /attestations · GET /impact"]
+
+    subgraph BASE["BASE — Chain ID 8453"]
+        direction LR
+        ERC["ERC-8004 Agent Registry"]
+        ESC["Escrow · x402 settlement"]
+        EAS["EAS attestations"]
+        KAR["Karma GAP reputation"]
+    end
+
+    MRV -->|"HTTP + x402"| API
+    HA -->|"HTTP + x402"| API
+    ISA -->|"HTTP + x402"| API
+    API -->|"EAS attestation events"| BASE
 ```
 
 | Layer | System | What it does |
