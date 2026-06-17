@@ -117,19 +117,6 @@ flowchart TD
     style H fill:#fef3c7,stroke:#f59e0b,color:#92400e
 ```
 
-```text
-Proposal passes
-      │
-      ▼
-Grace period opens
-  ├── Members who disagree: rage-quit → receive proportional treasury share → tokens burned
-  └── Members who agree: wait
-      │
-      ▼
-Grace period closes
-  └── Proposal executes (if token retention threshold ≥ 66% remains)
-```
-
 <Tip>
   The 66% token retention threshold means a proposal only executes if at least 66% of the total \$vKKN supply remains in the DAO after the grace period. If rage-quits reduce the supply below 66%, the proposal is not executed — protecting the treasury against governance attacks that try to pass large disbursements while minority holders exit.
 </Tip>
