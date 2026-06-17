@@ -137,23 +137,36 @@ Coconut trees produce for up to 20 years under optimal conditions. When they rea
 
 Phase III is when the replanting protocol for long-cycle crops is formally documented and scheduled. The coconut replanting cycle is the physical mechanism behind the Kokonut Network's most important claim: **the cooperative has no expiration date.**
 
-```text
-Phase II: Coconut trees planted (year 0)
-          │
-          ▼
-Phase III+: Trees reach full production (year 3–5)
-          │
-          ▼
-20-year productive life → consistent annual revenue
-          │
-          ▼
-End of productive life → replanting scheduled via DAO proposal
-          │
-          ▼
-New trees planted → 20-year production cycle restarts
-          │
-          └──────────────────────────────────────────────────►
-                    The cooperative continues indefinitely
+```mermaid
+flowchart TD
+    subgraph Growth["Tree Growth"]
+        P1["Phase II\nCoconut trees planted\nYear 0"]
+        P2["Trees mature\nYears 1–3"]
+        P3["Full production reached\nYears 3–5"]
+    end
+
+    subgraph Production["Productive Cycle"]
+        P4["20-year productive life\n→ consistent annual revenue"]
+        P5["Revenue\n→ operations\n→ employment\n→ public goods"]
+    end
+
+    subgraph Renewal["Cooperative Renewal"]
+        P6["End of productive life\n→ replanting need identified"]
+        P7["DAO proposal\n→ approve next cycle"]
+        P8["New trees planted\n→ cycle restarts"]
+    end
+
+    P1 --> P2 --> P3 --> P4 --> P5 --> P6 --> P7 --> P8
+    P8 -->|"cooperative continues indefinitely"| P2
+
+    style P1 fill:#d1fae5,stroke:#10b981,color:#065f46
+    style P2 fill:#ecfdf5,stroke:#10b981,color:#065f46
+    style P3 fill:#fef3c7,stroke:#f59e0b,color:#78350f
+    style P4 fill:#fef3c7,stroke:#f59e0b,color:#78350f
+    style P5 fill:#dbeafe,stroke:#3b82f6,color:#1e3a8a
+    style P6 fill:#fee2e2,stroke:#ef4444,color:#7f1d1d
+    style P7 fill:#ede9fe,stroke:#8b5cf6,color:#4c1d95
+    style P8 fill:#009F4D,stroke:#009F4D,color:#ffffff
 ```
 
 Each \$vKKN governance token is backed 1:1 by a real coconut tree. When a tree is replanted, the token backing is maintained — the cooperative member's stake doesn't diminish as trees age, because the replanting cycle is governed by the same DAO proposal process that funded the original planting.

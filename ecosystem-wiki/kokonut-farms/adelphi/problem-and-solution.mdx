@@ -109,22 +109,49 @@ Adelphi is that systemic solution.
 
 These problems do not operate independently. They form a reinforcing cycle that requires all seven solutions to operate simultaneously — which is why Adelphi is designed as an integrated system, not a collection of separate interventions.
 
-```text
-Limited employment
-      │
-      ▼
-Reduced household income → food insecurity → poor nutrition
-      │
-      ▼
-Agricultural abandonment → deforestation → soil degradation
-      │
-      ▼
-Less productive land → less income → more abandonment
-      │
-Compounded by:
-Cultural disconnection (knowledge gap) +
-Lack of community spaces (coordination gap) +
-Gender barriers (leadership gap)
+```mermaid
+flowchart TD
+    subgraph SocialGaps["Social + Cultural Gaps"]
+        K["Cultural disconnection\n→ knowledge gap"]
+        L["Lack of community spaces\n→ coordination gap"]
+        M["Gender barriers\n→ leadership gap"]
+    end
+
+    subgraph Capacity["Community Capacity"]
+        N["Low community capacity\n→ weak local resilience"]
+    end
+
+    subgraph PovertyCycle["Poverty + Land Degradation Cycle"]
+        A["Limited employment"]
+        B["Reduced household income"]
+        C["Food insecurity\n→ poor nutrition"]
+        D["Agricultural abandonment\n→ deforestation\n→ soil degradation"]
+        E["Less productive land\n→ less income\n→ more abandonment"]
+    end
+
+    K --> N
+    L --> N
+    M --> N
+
+    N --> A
+    N --> D
+
+    A --> B
+    B --> C
+    C --> D
+    D --> E
+    E -->|"cycle reinforces itself"| A
+
+    style A fill:#fee2e2,stroke:#ef4444,color:#991b1b
+    style B fill:#fee2e2,stroke:#ef4444,color:#991b1b
+    style C fill:#fee2e2,stroke:#ef4444,color:#991b1b
+    style D fill:#fee2e2,stroke:#ef4444,color:#991b1b
+    style E fill:#fee2e2,stroke:#ef4444,color:#991b1b
+
+    style K fill:#fef3c7,stroke:#f59e0b,color:#92400e
+    style L fill:#fef3c7,stroke:#f59e0b,color:#92400e
+    style M fill:#fef3c7,stroke:#f59e0b,color:#92400e
+    style N fill:#ffedd5,stroke:#f97316,color:#7c2d12
 ```
 
 Each of Adelphi's seven solutions interrupts a different point in this cycle. Together they constitute a systemic response — not a single intervention that treats one symptom while the others continue.
