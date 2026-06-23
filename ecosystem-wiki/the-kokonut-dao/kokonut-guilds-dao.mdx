@@ -4,201 +4,404 @@ icon: "hydra"
 description: "Merit-based meta-governance powering the Kokonut operational layer ⚙️"
 ---
 
-> **Kokonut Guilds are the operational intelligence of the network.** Where the [Kokonut Moloch DAO](/ecosystem-wiki/the-kokonut-dao/kokonut-moloch-dao) holds the treasury and votes on what to fund, Guilds are the organized groups of contributors who actually do the work — and earn governance influence proportional to the value they create.
+# Kokonut Guilds turn useful work into governance standing.
 
-## What are Kokonut Guilds?
+Kokonut has two paths into the network.
 
-Guilds are domain-specific contributor bodies within the Kokonut Network. Each Guild owns a vertical of the ecosystem — technology, impact, communications, governance, and so on — and operates with autonomy over its domain while remaining accountable to the broader DAO.
+The **capital path** runs through the [Kokonut Moloch DAO](/ecosystem-wiki/the-kokonut-dao/kokonut-moloch-dao): members tribute stablecoins, receive `$vKKN`, vote on treasury decisions, and are protected by rage-quit.
 
-Unlike the Moloch DAO, where membership is token-weighted and requires a financial tribute, Guilds are **contribution-weighted**. You earn your way in through work, not capital.
+The **contribution path** runs through Kokonut Guilds: contributors ship useful work, earn non-transferable Guild Points, gain standing inside a domain, and can eventually help route work, funding requests, and proposals back to the Moloch DAO.
 
-This design solves a coordination problem that pure token governance struggles with: how do you give decision-making power to the people who understand a domain most deeply, without requiring them to be wealthy first?
+Guilds exist because the people who understand the work should help govern the work — even if they did not enter the DAO through capital.
 
-> Guilds are Kokonut's answer to the "skin in the game vs. expertise in the game" tension — contributors earn reputation through verifiable output, not financial commitment alone.
+<div style={{ display: "flex", gap: "12px", justifyContent: "center", flexWrap: "wrap", margin: "1.5rem 0 0.75rem" }}>
+  <a href="#choose-your-guild" style={{ display: "inline-flex", alignItems: "center", gap: "6px", background: "#009F4D", color: "#fff", padding: "10px 20px", borderRadius: "8px", fontWeight: "600", fontSize: "14px", textDecoration: "none" }}>
+    Choose Your Guild →
+  </a>
 
-## How Merit-based Membership works
+  <a href="https://link.kokonut.network/discord" style={{ display: "inline-flex", alignItems: "center", gap: "6px", border: "1.5px solid #009F4D", color: "#009F4D", padding: "10px 20px", borderRadius: "8px", fontWeight: "600", fontSize: "14px", textDecoration: "none", background: "transparent" }}>
+    Join the Discord
+  </a>
+</div>
 
-Guild membership follows a three-stage lifecycle powered by contribution tracking and on-chain reputation.
+<p style={{ textAlign: "center", fontSize: "13px", color: "#6b7280", marginTop: "0.25rem" }}>
+  No capital required to begin. Start with a task, contribution, review, report, dataset, proposal, or coordination role.
+</p>
+
+---
+
+## Guilds at a glance
+
+| Question | Answer |
+| --- | --- |
+| What are Guilds? | Domain-specific contributor groups responsible for executing Kokonut work. |
+| Who can start? | Anyone who can make a useful contribution. Formal membership is earned over time. |
+| What do Guilds govern? | Domain decisions, standards, bounty programs, task prioritization, and execution workflows. |
+| What are Guild Points? | Non-transferable reputation points tied to verified contributions in a specific Guild. |
+| Can points be bought? | No. Points are earned through work and cannot be transferred, delegated, or purchased. |
+| How do Guilds connect to the DAO? | Guilds coordinate work and can route proposals to the Moloch DAO when treasury funding or token recognition is needed. |
+| Can Guild contributors earn DAO stake? | Significant contributions can be recognized through Moloch DAO Loot awards, subject to proposal and vote. |
+
+<Note>
+  Guilds solve Kokonut's "expertise in the game" problem. The Moloch DAO protects treasury governance. Guilds make sure the people doing the work can shape how that work evolves.
+</Note>
+
+---
+
+## Why Guilds exist
+
+Token-weighted governance is useful for treasury control, but it is not enough to run a living ecosystem.
+
+A farm network needs people who can:
+
+- improve smart contracts and data pipelines,
+- validate the MRV methodology,
+- document farm activity,
+- write grants and proposals,
+- coordinate communities,
+- review budgets,
+- support farmers,
+- explain governance,
+- and turn real-world work into public evidence.
+
+The people best qualified to make those decisions are not always the people with the most capital. Guilds give Kokonut a way to recognize expertise, effort, and execution.
+
+> **Moloch governs the treasury. Guilds govern the work.**
+
+---
+
+## How merit-based membership works
 
 <Steps>
   <Step title="Contribute" icon="hammer" iconType="regular">
-    Anyone can contribute to a Guild without formal membership. Open bounties, ecosystem proposals, and collaborative tasks are visible to the public. Completing recognized work — a shipped feature, a published report, a funded proposal, a verified MRV submission — generates a **contribution record**.
+    Start by doing useful work. This can be a shipped feature, a pull request, an MRV submission, a field report, a proposal draft, a grant application, a documentation improvement, a design asset, a partner intro, or a community coordination task.
   </Step>
-  <Step title="Earn points" icon="trophy" iconType="regular">
-    Completed contributions are logged as **Guild Points** — a non-transferable, on-chain reputation score scoped to the Guild where the work happened. Points are the unit of influence inside a Guild. They cannot be bought, transferred, or delegated. Point sources include:
-
-    - Completed bounties and task completions
-    - Approved DAO proposals authored or co-authored
-    - Verified farm MRV submissions and attestations
-    - Peer endorsements from existing Guild members
-    - Participation in Guild governance (votes, reviews, deliberations)
+  <Step title="Create a contribution record" icon="clipboard-check" iconType="regular">
+    Recognized work becomes a contribution record. A good record explains what was done, who did it, which Guild it belongs to, what evidence supports it, and why it matters to Kokonut.
   </Step>
-  <Step title="Gain standing" icon="scale-balanced" iconType="regular">
-    Once a contributor crosses the Guild's minimum point threshold, they achieve **active member** status and receive:
-
-    - Voting rights within Guild-scoped decisions
-    - Access to Guild coordination channels and working documents
-    - Eligibility to author proposals that route through the Guild to the Moloch DAO
-    - Representation rights in cross-Guild meta-governance
+  <Step title="Earn Guild Points" icon="trophy" iconType="regular">
+    Completed contributions can earn Guild Points. Points are non-transferable reputation units scoped to the Guild where the work happened. They cannot be bought, sold, delegated, or moved across wallets.
+  </Step>
+  <Step title="Gain Guild standing" icon="scale-balanced" iconType="regular">
+    Once a contributor reaches the Guild's active threshold, they gain standing inside that Guild: voting rights on Guild-scoped decisions, access to working documents, and eligibility to help author proposals.
+  </Step>
+  <Step title="Route work to the DAO" icon="route" iconType="regular">
+    When Guild work needs treasury funding, token recognition, or DAO-wide approval, the Guild can route a proposal to the Moloch DAO. Token holders vote on capital allocation, while Guild contributors provide domain expertise and execution accountability.
   </Step>
 </Steps>
 
-### Membership tiers
+### Common contribution records
 
-| **Tier** | **Entry Criteria** | **Governance Rights** | **Notes** |
+| Contribution type | Example evidence | Likely Guild |
+| --- | --- | --- |
+| Code contribution | Pull request, deployed contract, test suite, API endpoint, dashboard | Technology Guild |
+| Impact work | MRV report, satellite analysis, EBF review, SDG mapping, field validation | Impact Guild |
+| Documentation | New docs page, page rewrite, contributor guide, educational asset | Communications Guild |
+| Governance work | Proposal template, review memo, forum summary, onboarding checklist | Governance Guild |
+| Financial work | Budget model, revenue forecast, treasury report, grant finance section | Finance Guild |
+| Partnerships | Farmer intro, partner MOU, event, local coordination, ecosystem relationship | Community & Partnerships Guild |
+
+---
+
+## Membership tiers
+
+| Tier | Entry criteria | Rights | What it means |
 | --- | --- | --- | --- |
-| **Contributor** | Complete any open Guild task | None — work earns points | Open to anyone |
-| **Member** | Reach the minimum point threshold for the Guild | Vote on Guild-internal decisions | Threshold set by each Guild |
-| **Steward** | Elected by Guild members | Represent the Guild in cross-Guild governance, co-sign proposals to Moloch DAO | Term-limited via Guild vote |
-| **Emeritus** | Former Steward with sustained contribution history | Advisory voice, no active voting weight | Reputation preserved on-chain |
+| Contributor | Complete an open task or recognized contribution | No formal voting rights yet | Open entry point for anyone who wants to help |
+| Member | Reach the Guild's minimum point threshold | Vote on Guild-internal decisions | Active contributor with domain standing |
+| Steward | Elected by Guild members | Represent the Guild in cross-Guild governance and co-sign proposals | Trusted coordinator for the Guild's domain |
+| Emeritus | Former Steward with sustained contribution history | Advisory voice, no active voting weight by default | Reputation is preserved, even if activity slows |
 
 <Note>
-  Point thresholds and steward term lengths are set by each Guild independently. Guilds may adjust these parameters via internal proposal, subject to a minimum notice period for affected members.
+  Each Guild can define its own point thresholds, review process, and Steward term lengths. Changes should happen through Guild proposals with enough notice for affected contributors.
 </Note>
 
-## The Guilds
+---
 
-### 🛠️ Technology Guild
+## Choose your Guild
 
-Responsible for the technical infrastructure of the Kokonut Ecosystem — smart contracts, data tooling, front-end interfaces, and the agentic layer.
+<CardGroup cols={2}>
+  <Card title="Technology Guild" icon="code">
+    For smart contracts, MRV data pipelines, APIs, indexers, dashboards, frontend interfaces, open-source tools, and AI agent integrations.
+  </Card>
 
-**Domain:** Smart contract development and auditing, frontend applications, MRV data pipelines, AI agent integrations, API, and indexer maintenance.
+  <Card title="Impact Guild" icon="satellite">
+    For MRV methodology, EBF reporting, CRISP carbon-risk scoring, SDG alignment, field validation, biodiversity evidence, and impact attestations.
+  </Card>
 
-**Key outputs:** Contract deployments across Base, Gnosis, Celo, and Arbitrum; the Kokonut Agentic Marketplace; farm data APIs; TheGraph subgraphs; open-source tooling for the Kokonut Framework.
+  <Card title="Communications Guild" icon="bullhorn">
+    For documentation, content strategy, social media, community updates, onboarding materials, grant storytelling, and public narrative.
+  </Card>
+
+  <Card title="Governance Guild" icon="scale-balanced">
+    For proposal review, governance amendments, member onboarding, dispute resolution, voting process design, and cross-Guild coordination.
+  </Card>
+
+  <Card title="Finance Guild" icon="coins">
+    For treasury reporting, farm financial modeling, budgets, grant finance, stablecoin strategy, tax/compliance support, and revenue forecasting.
+  </Card>
+
+  <Card title="Community & Partnerships Guild" icon="people-group">
+    For farmer onboarding, institutional partnerships, ReFi collaborations, local events, community relationships, and cooperative network development.
+  </Card>
+</CardGroup>
 
 ---
 
-### 🌱 Impact Guild
+## What each Guild produces
 
-Owns the ecological and social impact layer — ensuring that what gets reported in annual reports is rigorous, verifiable, and aligned with the EBF Framework and SDG commitments.
+### Technology Guild
 
-**Domain:** MRV methodology, EBF impact reporting, satellite and drone data validation, CRISP carbon risk scoring, SDG alignment assessment, third-party attestation coordination.
+**Purpose:** Build and maintain the technical infrastructure that makes Kokonut composable, auditable, and usable.
 
-**Key outputs:** Annual environmental and social impact reports, attestation workflows for on-chain MRV data, farm health dashboards, EBF compliance reviews.
+**Useful contributions include:**
 
----
+- Smart contract development and review
+- DAO tooling and proposal interfaces
+- Farm Registry APIs
+- MRV data pipelines
+- Data Hub improvements
+- Agentic Marketplace integrations
+- Frontend applications and dashboards
+- Open-source tooling for the Kokonut Framework
 
-### 📣 Communications Guild
-
-Manages the public narrative, educational content, and community growth of the Kokonut Network. The voice of the ecosystem outward.
-
-**Domain:** Social media, documentation, content strategy, community events, partnership communications, grant writing, ecosystem wiki maintenance.
-
-**Key outputs:** This documentation site, ecosystem updates, Twitter/X presence, Discord community health, governance newsletters, and onboarding materials.
-
----
-
-### ⚖️ Governance Guild
-
-Stewards the integrity of the DAO's governance processes — ensuring proposals are well-formed, quorum is met, frameworks evolve thoughtfully, and new contributors understand how decisions get made.
-
-**Domain:** Proposal review and formatting, governance framework amendments, onboarding new DAO members, cross-Guild coordination, and dispute resolution.
-
-**Key outputs:** Updated governance framework versions, proposal templates, member onboarding guides, arbitration case coordination, and meta-governance summaries.
+**Good first tasks:** fix docs links, improve schema examples, add API examples, test MRV payload formats, document deployed contracts, or build small dashboard components.
 
 ---
 
-### 💰 Finance Guild
+### Impact Guild
 
-Manages the financial health of the ecosystem — treasury reporting, budget proposals, financial modeling for farm projects, and DeFi/stablecoin strategy for the DAO vaults.
+**Purpose:** Protect the credibility of Kokonut's ecological and social impact claims.
 
-**Domain:** Treasury management, budget allocation, farm financial modeling, stablecoin strategy, ITBIS compliance for Dominican operations, and grant and investment pipeline.
+**Useful contributions include:**
 
-**Key outputs:** Monthly treasury reports, farm revenue forecasts, budget proposals, grant application financials, and partner financial diligence.
+- MRV methodology design
+- Satellite and drone data validation
+- Soil and biodiversity reporting
+- SDG alignment reviews
+- EBF and CRISP methodology work
+- Annual impact reports
+- Third-party attestation coordination
+- Adelphi and future farm impact dashboards
+
+**Good first tasks:** review SDG mappings, improve MRV documentation, validate a crop or biodiversity data point, propose an impact metric, or help turn field observations into structured evidence.
 
 ---
 
-### 🌍 Community & Partnerships Guild
+### Communications Guild
 
-Builds and maintains the relationships that grow the Kokonut Ecosystem — farmers, investors, public goods protocols, ReFi networks, and local cooperatives.
+**Purpose:** Make the Kokonut ecosystem understandable, discoverable, and easy to join.
 
-**Domain:** Farmer onboarding and support, institutional partnerships, local government relations, ReFi ecosystem collaboration, investor relations, and co-op network development.
+**Useful contributions include:**
 
-**Key outputs:** Farmer partnership agreements, MOU templates, grant applications, ReFi ecosystem integrations, and community events in the Dominican Republic.
+- Ecosystem documentation
+- Landing page and onboarding copy
+- Twitter/X and Discord updates
+- Grant narratives
+- Community education materials
+- Video scripts and explainers
+- Contributor guides
+- Public progress reports
+
+**Good first tasks:** improve a docs page, write a short contributor guide, turn a farm update into a social thread, create an onboarding checklist, or simplify a technical page for non-technical readers.
 
 ---
 
-## How Guilds relate to the Kokonut Moloch DAO
+### Governance Guild
 
-Guilds and the Moloch DAO operate at different layers of the governance stack, with deliberate separation of concerns.
+**Purpose:** Keep Kokonut's decision-making legible, fair, and operationally useful.
+
+**Useful contributions include:**
+
+- Proposal review and formatting
+- Governance Framework amendments
+- DAO onboarding guides
+- Cross-Guild coordination
+- Conflict and arbitration process design
+- Moloch proposal support
+- Vote summaries and decision logs
+- Governance parameter reviews
+
+**Good first tasks:** improve proposal templates, summarize a governance decision, review a draft proposal, map a decision process, or create a new contributor governance FAQ.
+
+---
+
+### Finance Guild
+
+**Purpose:** Help the DAO understand capital flows, farm economics, budgets, and funding decisions.
+
+**Useful contributions include:**
+
+- Treasury reporting
+- Farm revenue models
+- Budget reviews
+- Grant financial sections
+- Stablecoin strategy
+- Public goods allocation modeling
+- Dominican tax/compliance support
+- Partner financial diligence
+
+**Good first tasks:** review a harvest forecast, improve a budget table, model a farm revenue scenario, create a treasury reporting template, or document public-goods allocation logic.
+
+---
+
+### Community & Partnerships Guild
+
+**Purpose:** Build the relationships that allow Kokonut to grow beyond one farm.
+
+**Useful contributions include:**
+
+- Farmer onboarding
+- Partner discovery
+- Local government relationships
+- ReFi ecosystem integrations
+- Public goods protocol relationships
+- Community events in the Dominican Republic
+- MOU and partnership templates
+- New farm pipeline support
+
+**Good first tasks:** introduce a relevant partner, document a farmer onboarding need, draft an MOU template, coordinate a local event, or map potential future farms.
+
+---
+
+## How Guilds connect to Moloch DAO
+
+Guilds and Moloch are intentionally separate.
+
+Moloch protects the treasury. Guilds coordinate execution. This prevents every operational decision from becoming a full DAO vote while keeping capital allocation under token-holder governance.
 
 ```mermaid
 flowchart TD
-    M["🏛️ Kokonut Moloch DAO\nTreasury · Token holders · Rage-quit\nApproves funding, priorities and scale"]
+    A["Contributor does useful work"] --> B["Guild reviews contribution"]
+    B --> C["Guild Points recorded"]
+    C --> D["Contributor gains Guild standing"]
+    D --> E["Guild coordinates tasks and standards"]
+    E --> F{"Needs treasury funds or DAO recognition?"}
+    F -->|"No"| G["Guild executes internally"]
+    F -->|"Yes"| H["Guild authors Moloch proposal"]
+    H --> I["$vKKN holders vote"]
+    I --> J["Passed proposal funds work or awards Loot"]
+    J --> K["Work produces farm, software, MRV, or ecosystem outputs"]
+    K --> B
 
-    G["⚙️ Guild Layer\nTech · Impact · Comms · Governance · Finance · CPs\nCoordinates domain expertise and execution"]
-
-    W["🛠️ Work Execution\nTasks · milestones · partner coordination\nFarm operations · software · reporting"]
-
-    C["📊 Contribution Accounting\nGuild Points · deliverables · work evidence\nUsed for rewards, trust and future proposals"]
-
-    M -->|"funding + strategic mandates"| G
-    G -->|"coordinates contributors"| W
-    W -->|"completed work + evidence"| C
-    C -->|"reports + funding proposals"| M
-
-    style M fill:#ede9fe,stroke:#8b5cf6,color:#4c1d95
-    style G fill:#d1fae5,stroke:#10b981,color:#065f46
-    style W fill:#fef3c7,stroke:#f59e0b,color:#92400e
+    style A fill:#d1fae5,stroke:#10b981,color:#065f46
     style C fill:#dbeafe,stroke:#3b82f6,color:#1e40af
+    style H fill:#fef3c7,stroke:#f59e0b,color:#92400e
+    style I fill:#ede9fe,stroke:#8b5cf6,color:#4c1d95
 ```
 
-The relationship works as follows:
-
-**Guilds propose, Moloch decides on the treasury.** Work that requires disbursement from the [Kokonut DAO treasury](https://link.kokonut.network/treasury) must be submitted via a Moloch DAO proposal. Guilds author these proposals, but token holders vote on them. This keeps capital allocation democratic and permissionless.
-
-**Guilds decide within their domain without token votes.** Operational decisions — how to run a bounty program, which tools to adopt, how to structure an impact report — don't require a full DAO vote. Guild members handle these internally, reducing governance overhead on routine work.
-
-**Guild Stewards participate in meta-governance.** When decisions span multiple Guilds — a new Framework standard, an ecosystem-wide partnership, a cross-chain deployment — Stewards convene to deliberate. This is Kokonut's meta-governance layer: the place where operational intelligence informs strategic direction before it goes to a Moloch DAO vote.
-
-**Contribution in Guilds can earn Loot tokens.** Significant Guild contributions — major deliverables, shipped features, verified impact reports — can be recognized via a Moloch DAO [Loot token](https://gnosisscan.io/token/0x2508a11aee11ad545bae87cd42131c04613b2099) award. This bridges the merit-based Guild layer and the token-based Moloch layer, allowing contributors who don't have capital to still accumulate a stake in the DAO's future.
-
-| **Layer** | **Mechanism** | **What it governs** |
+| Layer | Mechanism | What it governs |
 | --- | --- | --- |
-| **Moloch DAO** | Token-weighted votes (1 vKKN = 1 vote) | Treasury allocation, DAO membership, rage-quit |
-| **Guilds** | Contribution-weighted points | Operational decisions, domain standards, bounty programs |
-| **Meta-governance** | Steward deliberation | Cross-Guild coordination, pre-Moloch consensus building |
+| Moloch DAO | Token-weighted votes, 1 `$vKKN` = 1 vote | Treasury allocation, DAO membership, rage-quit, token recognition |
+| Guilds | Contribution-weighted points | Operational decisions, domain standards, bounties, working groups |
+| Meta-governance | Steward deliberation | Cross-Guild coordination, pre-Moloch consensus, ecosystem-wide standards |
+| Production and MRV | Farm records, dashboards, attestations | Evidence that work happened and created value |
+
+<Note>
+  Guilds can propose. Moloch decides on treasury. This keeps execution fast while preserving capital accountability.
+</Note>
+
+---
+
+## How contributions can become Loot
+
+Guild Points are not the same as DAO Loot.
+
+Guild Points measure contribution history inside a Guild. They are non-transferable and domain-specific. DAO Loot is issued through the Moloch DAO and can recognize meaningful contributions to the broader network.
+
+A possible path looks like this:
+
+1. A contributor completes meaningful Guild work.
+2. The Guild records and reviews the contribution.
+3. The contributor gains points and standing.
+4. The Guild may recommend the contributor for DAO-level recognition.
+5. A Moloch proposal requests a Loot award.
+6. `$vKKN` holders vote.
+7. If passed, the contributor receives Loot recognition from the DAO.
 
 <Tip>
-  New to Kokonut and not sure which Guild to join? Start by reading the [open collaboration invitation](/ecosystem-wiki/open-collaboration-invitation) and drop into the [Discord](https://link.kokonut.network/discord) to find which Guild's active work aligns with your skills.
+  Loot is not automatic. It should be reserved for significant contributions that create durable value for the network, such as shipped infrastructure, verified impact reporting, farm onboarding, major grant support, or ecosystem coordination.
 </Tip>
+
+---
+
+## What is live vs. still developing
+
+| Area | Status | Notes |
+| --- | --- | --- |
+| Moloch DAO treasury governance | Live | Capital allocation and membership happen through the DAO layer. |
+| Guild model | Active / evolving | The structure is defined; operating processes can improve through contribution. |
+| Guild Points | Developing | Point thresholds, review rules, and on-chain reputation details should continue to mature. |
+| Loot recognition | Available through DAO proposals | Significant contribution recognition must still pass through Moloch governance. |
+| Farm evidence layer | Live at Adelphi | Adelphi farm records, MRV events, and Data Hub outputs give Guilds real work to coordinate around. |
+| Agentic Marketplace | Developing | Future automation can help Guilds scale MRV, reporting, and workflow coordination. |
+
+---
 
 ## Frequently asked questions
 
 <AccordionGroup>
-  <Accordion title="Can I be a member of more than one Guild?">
-    Yes. Guild membership is scoped per domain — your points and standing in the Technology Guild are independent of any points you earn in the Impact Guild. Many contributors participate in two or more Guilds, particularly where work overlaps (for example, a developer building MRV tooling may contribute meaningfully to both the Technology and Impact Guilds).
+  <Accordion title="Do I need to contribute capital to join a Guild?">
+    No. Guilds are the contribution path. You can begin by completing useful work, joining a working group, submitting a pull request, helping with MRV, improving documentation, or supporting community operations.
   </Accordion>
 
-  <Accordion title="What happens to my points if I stop contributing?">
-    Guild Points are non-expiring records of historical contribution. Your past work remains on-chain. However, Guilds may implement **activity windows** — a minimum contribution level over a rolling period — to determine who retains active voting rights. Inactive members retain their points and history but may be moved to observer status pending a return to active contribution.
+  <Accordion title="Can I be in more than one Guild?">
+    Yes. Guild standing is scoped by domain. Your Technology Guild contributions are separate from your Impact Guild contributions, but many contributors naturally work across multiple Guilds.
+  </Accordion>
+
+  <Accordion title="Can Guild Points be bought or transferred?">
+    No. Guild Points are non-transferable contribution records. They represent work, not capital.
+  </Accordion>
+
+  <Accordion title="What happens if I stop contributing?">
+    Your historical contribution record remains. Guilds may use activity windows to decide who retains active voting rights, but past work should remain visible as reputation history.
   </Accordion>
 
   <Accordion title="How are new Guilds formed?">
-    New Guilds can be proposed by any active Kokonut contributor. A formation proposal goes through the [Governance Guild](#️-governance-guild) for review, then to a Moloch DAO vote. A new Guild must demonstrate: a defined domain, at least three committed founding members, a proposed point system, and a clear relationship to the ecosystem's mission.
+    A new Guild can be proposed by active contributors. It should define a domain, founding members, point logic, Steward responsibilities, and relationship to the broader Kokonut mission before going to governance review and, when needed, Moloch DAO approval.
   </Accordion>
 
-  <Accordion title="How does Guild work connect to the Guild's Revenue Stream?">
-    The Kokonut  Liquidity Vacuum Mechanism creates a perpetual revenue stream routed to the Guilds. This means that as farms produce and the flywheel spins, Guild contributors have a sustainable funding pool to draw bounties and operational budgets from — independent of external grants or investor rounds.
+  <Accordion title="How do Guilds get funded?">
+    Guilds can request funding through Moloch proposals when work requires treasury support. Over time, farm revenue and the broader Kokonut flywheel can help create recurring budgets for Guild operations and bounties.
   </Accordion>
 </AccordionGroup>
 
 ---
 
+## Start contributing
+
 <CardGroup cols={2}>
+  <Card title="Open Collaboration Invitation" icon="telescope" href="/ecosystem-wiki/open-collaboration-invitation">
+    Start here if you want to understand the active contribution paths for agronomists, researchers, developers, DAO members, partners, and capital allocators.
+  </Card>
+
+  <Card title="Build with Kokonut" icon="code" href="/build-with-kokonut">
+    Technical contributors can explore the public docs, contracts, Farm Registry primitives, API ideas, and agent architecture.
+  </Card>
+
   <Card title="Kokonut Moloch DAO" icon="dragon" href="/ecosystem-wiki/the-kokonut-dao/kokonut-moloch-dao">
-    Understand how the treasury, token mechanics, and rage-quit work at the base layer.
+    Understand the treasury, `$vKKN`, Loot, rage-quit, and capital governance layer that Guild proposals connect into.
   </Card>
 
   <Card title="Governance Framework" icon="scale-balanced" href="/ecosystem-wiki/the-kokonut-dao/governance-framework">
-    Read the full proposal process, voting parameters, and amendment procedures.
+    Read the proposal process, voting flow, amendment procedures, and how decisions move through the DAO.
   </Card>
 
-  <Card title="Open Collaboration Invitation" icon="telescope" href="/ecosystem-wiki/open-collaboration-invitation">
-    Ready to contribute? Start here for context on how to plug in.
+  <Card title="Proposal Templates" icon="file-signature" href="/ecosystem-wiki/the-kokonut-dao/proposal-templates">
+    Use structured proposal formats when Guild work needs funding, recognition, or governance approval.
   </Card>
 
-  <Card title="Let's Connect" icon="calendar" href="https://link.kokonut.network/meeting">
-    Book a call with the Core Team to find the right Guild for your skills.
+  <Card title="Adelphi Farm" icon="seedling" href="/ecosystem-wiki/kokonut-farms/adelphi/summary">
+    See the live farm that creates real work for Guilds: MRV, reporting, infrastructure, community operations, and replication.
   </Card>
 </CardGroup>
+
+<div style={{ display: "flex", gap: "12px", justifyContent: "center", flexWrap: "wrap", margin: "2rem 0 0.75rem" }}>
+  <a href="https://link.kokonut.network/discord" style={{ display: "inline-flex", alignItems: "center", gap: "6px", background: "#009F4D", color: "#fff", padding: "10px 20px", borderRadius: "8px", fontWeight: "600", fontSize: "14px", textDecoration: "none" }}>
+    Join the Discord →
+  </a>
+
+  <a href="https://github.com/wasalo/Kokonut-Public-Site" style={{ display: "inline-flex", alignItems: "center", gap: "6px", border: "1.5px solid #009F4D", color: "#009F4D", padding: "10px 20px", borderRadius: "8px", fontWeight: "600", fontSize: "14px", textDecoration: "none", background: "transparent" }}>
+    Improve the Docs
+  </a>
+</div>
