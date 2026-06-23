@@ -1,168 +1,342 @@
 ---
 title: "Governance Framework"
 icon: "scale-balanced"
+description: "The operating rules for Kokonut decision-making: who can propose, who can vote, how proposals move from draft to execution, and what protections keep the DAO accountable."
 ---
 
-The Governance Framework is the operating manual for collective decision-making in the Kokonut Network. It defines who can propose, who can vote, where decisions happen, how long they take, and what a valid proposal must contain. Every farm funding decision, Guild bounty, framework upgrade, and ecosystem partnership passes through this framework — on-chain and off-chain — before any treasury funds move.
+# Kokonut governance turns community decisions into enforceable action.
 
-This document is a baseline established by the [Core Team](https://kokonut.network/about) to launch the ecosystem in a community-oriented direction while optimizing for efficiency and outcomes. It is deliberately designed to evolve: amendments are made through the same proposal process it describes.
+The Governance Framework is Kokonut Network's operating manual for collective decision-making. It defines who can propose, who can vote, where proposals are drafted, how long decisions take, what every proposal must include, and how treasury-affecting decisions become executable on-chain.
 
-> **Disclaimer:** This is a foundational framework of governance mechanics, not a comprehensive legal document. It serves as the baseline for developing the [Kokonut Framework](https://github.com/wasalo/kokonut-framework) and growing the ecosystem in a community-oriented way. It is subject to amendment via DAO proposal.
+Kokonut uses this framework so farm funding, Guild bounties, Framework upgrades, partnerships, and ecosystem decisions can move through a clear process instead of informal approval.
+
+<div style={{ display: "flex", gap: "12px", justifyContent: "center", flexWrap: "wrap", margin: "1.5rem 0 0.75rem" }}>
+  <a href="#proposal-lifecycle" style={{ display: "inline-flex", alignItems: "center", gap: "6px", background: "#009F4D", color: "#fff", padding: "10px 20px", borderRadius: "8px", fontWeight: "600", fontSize: "14px", textDecoration: "none" }}>
+    See the Proposal Lifecycle →
+  </a>
+
+  <a href="/ecosystem-wiki/the-kokonut-dao/proposal-templates" style={{ display: "inline-flex", alignItems: "center", gap: "6px", border: "1.5px solid #009F4D", color: "#009F4D", padding: "10px 20px", borderRadius: "8px", fontWeight: "600", fontSize: "14px", textDecoration: "none", background: "transparent" }}>
+    Use a Proposal Template
+  </a>
+</div>
+
+<Warning>
+  This framework is a governance operating manual, not a comprehensive legal document. It is the baseline for Kokonut Network decision-making and can be amended through the same proposal process it describes.
+</Warning>
 
 ---
 
-## Quick reference — key parameters
+## Governance at a glance
 
-| **Parameter** | **Designation** | **Notes** |
+| Question | Answer |
+| --- | --- |
+| What does this framework govern? | Farm funding, Guild bounties, Framework upgrades, partnerships, DAO amendments, and treasury-affecting decisions. |
+| Where are drafts written? | Kokonut Forum is the designated platform for drafting and feedback. |
+| Where are votes held? | [DAOHaus](https://link.kokonut.network/dao) for on-chain treasury-affecting proposals. |
+| Who can sponsor proposals? | Team Members and Guild Stewards who route-validated work from the Guild layer. |
+| Who can vote on-chain? | DAO Members holding at least one `$vKKN` token on the Gnosis Chain. |
+| How long does a proposal take? | Minimum 5-day drafting window \+ minimum 5-day voting window, before grace period and execution. |
+| What protects dissenting members? | Rage-quit during the grace period, plus a 66% token retention threshold for on-chain proposals. |
+| What must every proposal include? | Ten required fields: name, authors, team, draft start date, description, mission alignment, brand usage, financial implications, success metrics, and next steps. |
+
+<Note>
+  The Governance Framework is the process layer. The [Kokonut Moloch DAO](/ecosystem-wiki/the-kokonut-dao/kokonut-moloch-dao) is the on-chain execution layer. The [Kokonut Guilds DAO](/ecosystem-wiki/the-kokonut-dao/kokonut-guilds-dao) is the contribution and domain-expertise layer.
+</Note>
+
+---
+
+## Why this framework exists
+
+Kokonut Network coordinates real farms, real capital, real contributors, real community commitments, and real public-goods outcomes. That requires more than a chat vote or informal agreement.
+
+The Governance Framework exists to make sure every important decision has:
+
+<CardGroup cols={3}>
+  <Card title="Time to review" icon="clock">
+    Every proposal must remain in draft for at least 5 days before it can move to an active vote. This gives members time to ask questions, request edits, and surface risks.
+  </Card>
+
+  <Card title="Clear authorization" icon="signature">
+    Proposal-authorized people and Guild Stewards move proposals from draft to vote, making sponsorship visible and accountable.
+  </Card>
+
+  <Card title="Defined voting rules" icon="check-to-slot">
+    The framework separates off-chain coordination from on-chain treasury voting, so lightweight decisions and capital decisions use the right venue.
+  </Card>
+
+  <Card title="Treasury protection" icon="shield-check">
+    On-chain proposals include a grace period, rage-quit protection, and a 66% retention threshold before execution.
+  </Card>
+
+  <Card title="Measurable execution" icon="list-check">
+    Every proposal must define success metrics and next steps so the DAO can evaluate whether the work was completed.
+  </Card>
+
+  <Card title="Upgradeability" icon="arrows-rotate">
+    The framework itself can evolve, but only through the same proposal process it governs.
+  </Card>
+</CardGroup>
+
+---
+
+## Who can propose and who can vote
+
+Kokonut separates proposal sponsorship, domain contribution, and voting power so the system can recognize both capital and useful work.
+
+| Role | What they can do | Where they act |
 | --- | --- | --- |
-| Drafting platform | [Charmverse](https://charmverse.kokonut.network) | Where proposals are written, versioned, and discussed |
-| Voting platform (off-chain) | [Charmverse](https://charmverse.kokonut.network) | 1 person = 1 vote |
-| Voting platform (on-chain) | [DAOHaus](https://link.kokonut.network/dao) | 1 \$vKKN = 1 vote |
-| Minimum drafting duration | **5 days** | All vote-authorized members notified at start |
-| Voting duration | **5 days** | After drafting window closes |
-| Minimum total timeline | **10 days** | Before any proposal can execute |
-| Default voting options | **For / Against** | Unless the proposal requires others |
-| On-chain quorum (onboarding) | **0%** | Any participation = valid outcome. Permissionless entry by design. |
-| On-chain quorum (other types) | Varies by proposal type | Upgradable via DAO proposal |
-| Token retention threshold | **66%** | If rage-quits during grace period reduce supply below 66%, the proposal does not execute |
-| Proposal-authorized persons | [Team Members](https://kokonut.network/about) \+ Guild Stewards | Guild Stewards co-sign proposals flowing from the Guild layer |
-| Vote-authorized persons | [DAO Members](https://link.kokonut.network/members) | All \$vKKN token holders |
+| Proposal-authorized person | Draft and sponsor proposals into the active stage | Kokonut Forum → DAOHaus / Kokonut Forum |
+| Team Member | Sponsor proposals and steward early ecosystem direction | Governance and operations |
+| Guild Steward | Co-sign and route proposals that originate in a Guild | Guilds → Governance process |
+| DAO Member | Vote on on-chain proposals with `$vKKN` | DAOHaus |
+| Guild Contributor | Contribute useful work and earn Guild Points | Guilds and contribution records |
+| Wider community | Review, comment, join Discord, contribute to docs, and help improve proposal quality | Discord, Kokonut Forum, GitHub, Kokonut Hub |
+
+<Note>
+  Capital gives voting power through `$vKKN`. Contribution gives operational standing through Guild Points. Significant contribution can later be recognized through Loot, but only if approved through the Moloch DAO proposal process.
+</Note>
 
 ---
 
-## I. Definitions and Designations
+## Proposal lifecycle
 
-**A. Proposal-Authorized Person**
+Every Kokonut DAO proposal passes through three mandatory stages. No stage can be skipped.
 
-1. **Definition:** People recognized for making and sponsoring proposals to the active voting stage.
-2. **Designation:** [Team Members](https://kokonut.network/about) — and, in practice, [Guild Stewards](/ecosystem-wiki/the-kokonut-dao/kokonut-guilds-dao) co-signing proposals that originate in the Guild operational layer and require treasury disbursement. **B. Vote-Authorized Person**
-3. **Definition:** A person recognized to vote on proposals.
-4. **Designation:** [DAO Members](https://link.kokonut.network/members) — all holders of at least one \$vKKN token on Gnosis Chain. **C. Designated Drafting Platform**
-5. **Definition:** The platform where proposals are drafted, edited, versioned, and opened for community feedback before moving to a vote.
-6. **Designation:** [Charmverse](https://charmverse.kokonut.network) — the Kokonut community coordination hub where proposal drafts live, feedback threads run, and all vote-authorized people are notified when a new draft is posted. **D. Minimum Drafting Duration**
-7. **Definition:** The minimum time a proposal must be available for feedback before it can advance to the Active Stage.
-8. **Designation:** **5 days.** No proposal can be sponsored to the active voting stage before its 5-day drafting window has elapsed. This protects vote-authorized people from being surprised by proposals they haven't had time to review. **E. Designated Voting Platform**
-9. **Definition:** The platform where proposals are voted on.
-10. **Designation:**
-    - Off-chain: 1 person = 1 vote (used for lighter-weight coordination decisions)
-    - On-chain: [DAOHaus](https://link.kokonut.network/dao) — 1 \$vKKN = 1 vote (used for all treasury-affecting proposals) **F. Designated Voting Duration**
-11. **Definition:** The duration for which an active proposal may be voted on.
-12. **Designation:** **5 days.** Combined with the minimum drafting duration, no proposal that affects the treasury can be passed in fewer than 10 days from when it is first posted. **G. Designated Voting Method**
-13. **Definition:** The method for calculating or weighting votes.
-14. **Designation:**
-    - Off-chain (Charmverse): 1 person = 1 vote
-    - On-chain (DAOHaus): 1 [\$vKKN](https://gnosisscan.io/token/0xc6b075ac3234a7ac729114b27370b552fa284690) = 1 vote **H. Designated Voting Quorum**
-15. **Definition:** The minimum number of votes needed for the outcome to be considered legitimate.
-16. **Designation:**
-    - Off-chain: Varies by proposal type
-    - On-chain: **0% for the Onboarding Stage** — any level of participation produces a valid result. This is intentional: permissionless entry requires that new member proposals can pass even with low participation, ensuring no coordinated blocking of new members.
-    - All other on-chain proposal types: quorum is configurable and upgradable via DAO proposal. [See the Moloch DAO page](/ecosystem-wiki/the-kokonut-dao/kokonut-moloch-dao) for current parameters. **I. Designated Voting Retention**
-17. **Definition:** The percentage of tokens required to remain in the DAO after the grace period for a proposal to execute. If the total supply falls below this threshold through rage-quits, the proposal is not executed.
-18. **Designation:** **66%.** This is the protection against governance attacks: a majority cannot pass a large treasury disbursement and then simply allow minority holders to rage-quit — if enough members exit during the grace period to reduce supply below 66%, the proposal fails.
-    - _Token-based voting retention applies to on-chain proposals only._
-    - See [rage-quit mechanics](/ecosystem-wiki/the-kokonut-dao/kokonut-moloch-dao#how-rage-quit-works) for a full explanation of how the grace period and retention threshold interact. **J. Default Voting Options**
-19. **Definition:** The standard voting options are used unless a specific proposal requires alternatives.
-20. **Designation:** **"For"** and **"Against".**
-
----
-
-## II. Proposal Process
-
-**A. Preamble**
-
-> With this agreed-upon proposal process, any proposal-authorized person may draft and post a proposal for all vote-authorized people to vote on, in order to formally facilitate group decisions. This process may evolve over time and may eventually be further formalized through the establishment of bylaws or other operating agreements.
-
-**B. The three stages**
-
-Every Kokonut DAO proposal passes through three mandatory stages in sequence. No stage can be skipped.
+```mermaid
+flowchart TD
+    A["Draft posted in Kokonut Forum"] --> B["5-day minimum drafting window"]
+    B --> C["Feedback, edits, risk review"]
+    C --> D["Proposal-authorized sponsor advances proposal"]
+    D --> E{"Proposal type"}
+    E -->|"Off-chain coordination"| F["Kokonut Forum vote"]
+    E -->|"Treasury / token / on-chain action"| G["DAOHaus vote"]
+    F --> H["Vote closes"]
+    G --> H
+    H --> I{"Passed?"}
+    I -->|"No"| J["Revise and resubmit if useful"]
+    I -->|"Yes"| K["Grace period opens"]
+    K --> L{"Retention threshold met?"}
+    L -->|"No — below 66%"| M["Proposal does not execute"]
+    L -->|"Yes"| N["Proposal executes"]
+    N --> O["Team executes next steps"]
+    O --> P["Success metrics reported"]
+```
 
 <Steps>
   <Step title="Drafting Stage" icon="pen-to-square" iconType="regular">
-    The proposal is written and posted to [Charmverse](https://charmverse.kokonut.network) using the [Proposal Template](#iii-proposal-template) structure. All vote-authorized people are notified when the draft is posted. The proposal must remain in the Drafting Stage for a **minimum of 5 days** before it can advance. During this window, proposal-authorized and vote-authorized people can give feedback, request changes, and raise concerns. This is the primary mechanism for surfacing dissent before a binding vote.
+    The proposal is written in Kokonut Forum using the required ten-field structure. Vote-authorized members are notified when the draft is posted.
 
-    **A proposal advances to the Active Stage only when:**
-
-    - The 5-day minimum has elapsed
-    - A proposal-authorized person sponsors it to the active voting stage
+    The proposal must remain open for a **minimum of 5 days**. During this window, members and contributors can request clarification, challenge assumptions, suggest edits, and surface risks before a binding vote begins.
   </Step>
   <Step title="Active Stage" icon="check-to-slot" iconType="regular">
-    The proposal is posted to the designated voting platform ([DAOHaus](https://link.kokonut.network/dao) for on-chain proposals, [Charmverse](https://charmverse.kokonut.network) for off-chain), and voting opens. **For a proposal to pass, it must:**
+    A proposal-authorized person sponsors the proposal into the active stage after the drafting window closes.
 
-    - Remain active for the designated **5-day voting duration**
-    - Use the designated voting method (1 \$vKKN = 1 vote on-chain)
-    - Meet the designated voting quorum for its proposal type
-    - Receive a majority of votes in favor ("For")
+    - Off-chain coordination proposals can be voted on in Kokonut Forum.
+    - Treasury, token, or on-chain execution proposals move to [DAOHaus](https://link.kokonut.network/dao).
 
-    After the vote closes, a **grace period** opens before execution. Any DAO member who disagrees with the outcome can [rage-quit](/ecosystem-wiki/the-kokonut-dao/kokonut-moloch-dao#how-rage-quit-works) with their proportional treasury share during this window.
+    Active votes remain open for **5 days** and use the voting method assigned to the proposal type.
+  </Step>
+  <Step title="Grace Period" icon="hourglass-half" iconType="regular">
+    After an on-chain proposal passes, a grace period opens before execution. DAO members who disagree with the result can rage-quit before the proposal executes.
+
+    If rage-quits reduce `$vKKN` token retention below **66%**, the proposal does not execute and must be resubmitted.
   </Step>
   <Step title="Execution Stage" icon="rocket" iconType="regular">
-    Once the active voting period closes with a passing vote and the grace period elapses without the token retention threshold being breached, the proposal executes automatically via smart contract. Action items specified in the proposal may commence immediately under the authorization of the organization. No further approval is required — the on-chain execution is final.
+    Once the vote passes and the grace period closes without breaching the retention threshold, the proposal executes through the DAO.
 
-    If the grace period rage-quits reduce the total \$vKKN supply below **66%**, the proposal does not execute and must be resubmitted.
+    The proposal team then becomes responsible for the stated next steps, success metrics, reporting, and any follow-up documentation.
   </Step>
 </Steps>
 
-**Minimum end-to-end timeline:**
+---
+
+## Minimum timeline
+
+A proposal that affects the treasury cannot be rushed through in one meeting or private conversation.
 
 ```text
-Day 0:    Proposal posted to Charmverse (Drafting Stage opens)
-Day 1-5:  Community feedback window (minimum 5 days)
-Day 5:    Proposal-authorized person sponsors to DAOHaus
-Day 5-10: Active voting window (5 days)
-Day 10:   Vote closes → Grace period opens
-Day 10+:  Grace period → Execution (if retention threshold met)
+Day 0:    Proposal posted to Kokonut Forum
+Day 1-5:  Drafting and feedback window
+Day 5:    Proposal can be sponsored to active voting
+Day 5-10: Active voting window
+Day 10:   Vote closes; grace period opens for on-chain proposals
+Day 10+:  Execution only if the proposal passed and retention protections hold
 ```
 
----
-
-## III. Proposal Template
-
-Every proposal — regardless of type — must include all ten fields below. This is the canonical base specification. For type-specific implementations with pre-filled guidance, see the [Proposal Templates](/ecosystem-wiki/the-kokonut-dao/proposal-templates) page, which provides ready-to-use templates for Farm Funding (KDP), Guild Bounty (KBP), Framework Upgrade (KFP), and Partnership (KPP) proposals.
-
-**A. Proposal Name:** The proposal's name. May follow a codified naming scheme (e.g. KDP-007 for farm funding proposals) or be freeform. Proposal numbers in each series are assigned sequentially by the [Governance Guild](/ecosystem-wiki/the-kokonut-dao/kokonut-guilds-dao) when a draft is registered on Charmverse.
-
-**B. Proposal Author(s)** The person or people authoring the proposal — name, alias, and wallet address.
-
-**C. Proposal Team:** The people who will conduct the affairs detailed in the proposal if it passes. Distinct from the author(s) — a proposal may be authored by one person but executed by a team.
-
-**D. Draft Start Date:** The date the proposal draft was first posted to Charmverse. This is the start of the 5-day minimum drafting window.
-
-**E. Proposal Description** The main body of descriptive text explaining what the proposal is about — what action it requests, what it will produce, and why it is being submitted now.
-
-**F. Mission Alignment:** An explanation of why this proposal is in alignment with the mission and goals of the Kokonut Network. Proposals that cannot demonstrate mission alignment should not advance to a vote.
-
-**G. Brand Usage:** A description of whether and how the proposal involves usage of the Kokonut Network brand — name, logo, or associated marks. If no brand usage is involved, state that explicitly.
-
-**H. Financial Implications:** A description of any disbursements, costs, or budget impacts associated with the proposal. Any proposal that affects the treasury must reference the [Main Treasury](https://gnosisscan.io/address/0xeb55b75328a8dffd45bbf34b7e7efc431a179085) and specify exact amounts, conditions for disbursement, and the timeline for fund release.
-
-**I. Success Metrics:** A description of how the success of this proposal can be gauged — both during the Execution Stage and after it concludes. Metrics should be specific and verifiable where possible. Proposals without measurable success criteria are harder for the community to evaluate and hold accountable.
-
-**J. Next Steps:** An outline of the action items that follow from the proposal passing, including who is responsible for each. Proposals without a clear next steps section create ambiguity about who executes what after the vote.
+| Timeline rule | Why it matters |
+| --- | --- |
+| 5-day draft minimum | Prevents surprise proposals and gives members time to review. |
+| 5-day active vote | Gives vote-authorized members enough time to participate. |
+| Grace period | Gives dissenting members an exit path before execution. |
+| 66% retention threshold | Prevents a proposal from executing if too much capital exits during the grace period. |
 
 ---
 
-## IV. Miscellaneous
+## Voting methods and proposal venues
 
-**A. Amendments** Amendments to this Governance Framework can be made by including an edited version of this document in a DAO proposal, to be ratified by vote-authorized people. Any amendment must pass through the full three-stage proposal process.
+| Decision type | Drafting venue | Voting venue | Voting method | Notes |
+| --- | --- | --- | --- | --- |
+| Community coordination | Kokonut Forum | Kokonut Forum | 1 person = 1 vote | Useful for non-treasury, social, operational, or signaling decisions. |
+| Treasury disbursement | Kokonut Forum | DAOHaus | 1 `$vKKN` = 1 vote | Used when funds move from the DAO treasury. |
+| Membership onboarding | Kokonut Forum / DAOHaus proposal flow | DAOHaus | 1 `$vKKN` = 1 vote | Onboarding quorum is 0% by design; any participation produces a valid outcome. |
+| Token minting / Loot recognition | Kokonut Forum | DAOHaus | 1 `$vKKN` = 1 vote | Requires explicit proposal and DAO approval. |
+| Governance framework amendment | Kokonut Forum | DAOHaus if on-chain impact; Kokonut Forum if coordination-only | Depends on proposal scope | Must include the edited framework or exact amendment language. |
 
-**B. Revised Proposals.** If a proposal is rejected, it may be redrafted and resubmitted for another vote. There is no cooling-off period required between rejection and resubmission — but resubmissions should incorporate the feedback that led to rejection, or they are unlikely to pass.
+<Warning>
+  If a proposal moves treasury funds, mints tokens, awards Loot, changes DAO parameters, or affects on-chain execution, it should be treated as an on-chain governance proposal.
+</Warning>
 
 ---
+
+## Required proposal fields
+
+Every proposal must include the same ten base fields, regardless of proposal type.
+
+| Field | What to include | Why it matters |
+| --- | --- | --- |
+| Proposal Name | Short descriptive name, ideally with the correct proposal code | Makes the proposal easy to reference and archive |
+| Proposal Author(s) | Name, alias, and wallet address of the author(s) | Creates accountability |
+| Proposal Team | People responsible for execution if the proposal passes | Separates authorship from delivery responsibility |
+| Draft Start Date | Date the draft was first posted in Kokonut Forum | Starts the 5-day drafting window |
+| Proposal Description | What the proposal asks for, what it will produce, and why now | Gives voters the core decision context |
+| Mission Alignment | How the proposal advances Kokonut Network's mission | Filters proposals that are not strategically aligned |
+| Brand Usage | Whether the proposal uses Kokonut name, logo, or marks | Protects ecosystem reputation |
+| Financial Implications | Exact costs, amounts, treasury impact, disbursement conditions, and timeline | Required for responsible treasury governance |
+| Success Metrics | How the DAO will know if the proposal worked | Enables accountability after execution |
+| Next Steps | Who does what after approval | Reduces ambiguity after the vote passes |
+
+[Use a ready-made proposal template →](/ecosystem-wiki/the-kokonut-dao/proposal-templates)
+
+---
+
+## Proposal types
+
+<CardGroup cols={2}>
+  <Card title="Farm Funding Proposal" icon="seedling" href="/ecosystem-wiki/the-kokonut-dao/proposal-templates#farm-funding-proposal">
+    Request treasury funding for a new syntropic farm or a material expansion of an existing farm. Requires the strongest documentation: farm overview, crops, revenue model, public-goods allocation, local problem, solution, and MRV plan.
+  </Card>
+
+  <Card title="Guild Bounty Proposal" icon="trophy" href="/ecosystem-wiki/the-kokonut-dao/proposal-templates#guild-bounty-proposal">
+    Commission scoped work from contributors through a Guild Steward. Useful for development, MRV, documentation, governance, finance, partnerships, and other operational work.
+  </Card>
+
+  <Card title="Framework Upgrade Proposal" icon="puzzle" href="/ecosystem-wiki/the-kokonut-dao/proposal-templates#framework-upgrade-proposal">
+    Propose changes to the Kokonut Framework, Common Data Schema, MRV methodology, agent architecture, or documentation standards.
+  </Card>
+
+  <Card title="Partnership Proposal" icon="handshake" href="/ecosystem-wiki/the-kokonut-dao/proposal-templates#partnership-proposal">
+    Establish a formal relationship with an external organization, funder, farm operator, research partner, tool provider, or ecosystem collaborator.
+  </Card>
+</CardGroup>
+
+---
+
+## What makes a proposal strong
+
+A strong Kokonut proposal should be easy to inspect, hard to misunderstand, and possible to measure after execution.
+
+| Proposal quality | Strong version | Weak version |
+| --- | --- | --- |
+| Specific ask | Requests a defined amount, deliverable, team, and timeline | Asks for general support or vague approval |
+| Mission alignment | Explains how the work advances farms, Framework, DAO, MRV, Guilds, or public goods | Uses generic sustainability language |
+| Financial clarity | Includes exact amounts, wallet addresses, release conditions, and budget line items | Says funds will be used “as needed” |
+| Evidence | References data, prior work, farm records, GitHub issues, MRV outputs, or community feedback | Relies on trust or reputation alone |
+| Success metrics | Defines measurable outputs and reporting deadlines | Does not explain how success will be evaluated |
+| Next steps | Names owners and immediate actions after approval | Leaves execution unclear |
+
+<Note>
+  For farm funding proposals, the standard should be especially high. New farm proposals should include location, coordinates, land area, operator wallet, Framework phase, Data Hub link or plan, crop model, revenue streams, target markets, public-goods allocation, and local problem/solution context.
+</Note>
+
+---
+
+## Governance protections
+
+Kokonut governance is designed to reduce the need for personal trust.
+
+| Protection | What it prevents |
+| --- | --- |
+| Public drafting | Prevents decisions from being prepared privately without member awareness. |
+| Minimum review period | Prevents rushed votes. |
+| Proposal sponsorship | Prevents unvetted drafts from becoming active votes without accountability. |
+| On-chain execution | Prevents private wallet control over treasury actions. |
+| Rage-quit | Gives dissenting members an exit before execution. |
+| 66% retention threshold | Prevents proposals from executing if too much capital exits in protest. |
+| Required success metrics | Prevents proposals from passing without a way to judge completion. |
+| Amendment process | Prevents unilateral edits to governance rules. |
+
+---
+
+## Amendments and rejected proposals
+
+### Amendments
+
+This Governance Framework can evolve. Any amendment must include the exact proposed change and pass through the full proposal lifecycle.
+
+A strong amendment proposal should include:
+
+- the current text,
+- the proposed replacement text,
+- why the change is needed,
+- who is affected,
+- whether it changes treasury risk,
+- whether it changes rights or responsibilities,
+- and when the amendment becomes active.
+
+### Rejected proposals
+
+Rejected proposals may be revised and resubmitted. There is no required cooling-off period, but resubmissions should address the reasons the original proposal failed.
+
+A useful resubmission should include a short changelog explaining what changed since the previous version.
+
+---
+
+## Before you submit a proposal
+
+<Steps>
+  <Step title="Choose the right proposal type" icon="route" iconType="regular">
+    Farm Funding, Guild Bounty, Framework Upgrade, and Partnership proposals each need different supporting evidence. Start with the relevant template.
+  </Step>
+  <Step title="Write the ten required fields" icon="list-check" iconType="regular">
+    Do not skip mission alignment, financial implications, success metrics, or next steps. Those fields are what turn an idea into an accountable proposal.
+  </Step>
+  <Step title="Share the draft in Kokonut Forum" icon="comments" iconType="regular">
+    Open the proposal for the required 5-day drafting window. Treat feedback as part of the proposal process, not as a delay.
+  </Step>
+  <Step title="Route through the right steward" icon="people-arrows" iconType="regular">
+    Guild-originating work should involve the relevant Guild Steward. Treasury-affecting work should be prepared for on-chain voting.
+  </Step>
+  <Step title="Prepare for execution and reporting" icon="clipboard-check" iconType="regular">
+    Know who will execute the work, how funds will be used, when updates will be posted, and how success will be measured after approval.
+  </Step>
+</Steps>
+
+---
+
+## Next steps
 
 <CardGroup cols={2}>
   <Card title="Proposal Templates" icon="scroll" href="/ecosystem-wiki/the-kokonut-dao/proposal-templates">
-    Ready-to-use templates for the four Kokonut proposal types — Farm Funding (KDP), Guild Bounty (KBP), Framework Upgrade (KFP), and Partnership (KPP) — each built on the ten fields above.
+    Copy ready-to-use templates for Farm Funding, Guild Bounty, Framework Upgrade, and Partnership proposals.
   </Card>
 
   <Card title="Kokonut Moloch DAO" icon="dragon" href="/ecosystem-wiki/the-kokonut-dao/kokonut-moloch-dao">
-    The on-chain system that enforces what this framework describes — contract addresses, tribute process, rage-quit mechanics, and the 66% retention threshold explained.
+    Understand the on-chain system that enforces treasury execution, `$vKKN`, Loot, rage-quit, and the 66% retention threshold.
   </Card>
 
-  <Card title="Kokonut Guilds DAO" icon="hydra" href="/ecosystem-wiki/the-kokonut-dao/kokonut-guilds-dao">
-    How Guild Stewards co-author proposals, how Guild bounties flow through this framework, and how contributions earn the right to co-sign treasury proposals.
+  <Card title="Kokonut Guilds" icon="hydra" href="/ecosystem-wiki/the-kokonut-dao/kokonut-guilds-dao">
+    Learn how contributors earn Guild Points, gain standing, and route domain work into the DAO proposal process.
   </Card>
 
-  <Card title="Charmverse Workspace" icon="pen-to-square" href="https://link.kokonut.network/charmverse">
-    The designated drafting platform — where proposals are written, feedback is collected, and the 5-day window runs before any proposal can advance to a vote.
+  <Card title="DAO Layers" icon="layer-group" href="/ecosystem-wiki/the-kokonut-dao/dao-layers">
+    See how governance, logic, execution, production, and infrastructure layers work together across the full Kokonut DAO architecture.
+  </Card>
+
+  <Card title="Kokonut Forum" icon="pen-to-square" href="https://link.kokonut.network/charmverse">
+    Draft proposals, collect feedback, and run the required governance review window.
+  </Card>
+
+  <Card title="DAOHaus" icon="check-to-slot" href="https://link.kokonut.network/dao">
+    View the on-chain DAO where treasury-affecting proposals are voted on and executed.
   </Card>
 </CardGroup>
