@@ -1,23 +1,83 @@
 ---
 title: "Kokonut Moloch DAO"
-description: "The on-chain treasury, governance mechanics, and membership system powering the Kokonut Network cooperative on Gnosis Chain."
+description: "The capital governance engine of Kokonut Network: stablecoin tribute, soulbound membership tokens, treasury controls, rage-quit protection, and proposal execution on Gnosis Chain."
 icon: "dragon"
 ---
 
-The Kokonut Moloch DAO is the capital and governance engine of the Kokonut Network — the live, deployed system on Gnosis Chain that holds the treasury, governs farm funding, and protects every member's stake. It is the Logic and Governance Layer of the [DAO Architecture](/ecosystem-wiki/the-kokonut-dao/dao-layers): the contract layer that makes the network's commitments to community ownership and member protection enforceable on-chain rather than just aspirational.
+# Kokonut Moloch DAO is the treasury engine that makes community ownership enforceable.
 
-[Moloch DAOs](https://daohaus.mirror.xyz/U_JQtheSzdpRFqQwf9Ow3LgLNG0WMZ6ibAyrjWDu_fc) have no administrators and no trusted intermediaries. All decisions are made through proposals executed directly against the treasury or vaults. No individual — including the Kokonut Core Team — can move funds, mint tokens, or change governance parameters without a passed community vote.
+The Kokonut Moloch DAO is the capital and governance engine of Kokonut Network. It is the live on-chain system on Gnosis Chain that holds the treasury, governs farm funding, mints membership tokens, burns exiting shares, and protects every capital-contributing member through rage-quit.
+
+Kokonut does not ask members to trust an administrator, a company wallet, or the Core Team. Treasury actions require passed proposals. Membership is minted through DAO approval. Capital can exit through rage-quit. Governance rights are enforced by contracts instead of promises.
+
+<div style={{ display: "flex", gap: "12px", justifyContent: "center", flexWrap: "wrap", margin: "1.5rem 0 0.75rem" }}>
+  <a href="#how-membership-works" style={{ display: "inline-flex", alignItems: "center", gap: "6px", background: "#009F4D", color: "#fff", padding: "10px 20px", borderRadius: "8px", fontWeight: "600", fontSize: "14px", textDecoration: "none" }}>
+    See How Membership Works →
+  </a>
+
+  <a href="https://link.kokonut.network/dao" style={{ display: "inline-flex", alignItems: "center", gap: "6px", border: "1.5px solid #009F4D", color: "#009F4D", padding: "10px 20px", borderRadius: "8px", fontWeight: "600", fontSize: "14px", textDecoration: "none", background: "transparent" }}>
+    Open the DAO on DAOHaus
+  </a>
+</div>
+
+<p style={{ textAlign: "center", fontSize: "13px", color: "#6b7280", marginTop: "0.25rem" }}>
+  Capital contribution is one path into Kokonut. Contributors without capital can start through Guilds and earn standing through verified work.
+</p>
+
+---
+
+## DAO at a glance
+
+| Question | Answer |
+| --- | --- |
+| What does this DAO govern? | Treasury assets, membership, farm funding, Guild funding, partnerships, and governance upgrades. |
+| Where is it deployed? | [Gnosis Chain](https://docs.gnosischain.com/), Chain ID `100`. |
+| What assets does the treasury accept? | Stablecoins only. The treasury is not designed around speculative token price exposure. |
+| How do members join? | By submitting a membership proposal and tributing stablecoins to the treasury. |
+| What does a member receive? | Soulbound \$vKKN voting tokens. Each \$vKKN = 1 vote and is backed 1:1 by a real coconut tree. |
+| How are contributors without capital recognized? | Through Guild Points and potential Loot token awards via DAO proposal. |
+| What protects members? | Rage-quit: members can exit with their proportional treasury share. |
+| Who can move treasury funds? | Only the DAO through passed proposals. No individual can move funds unilaterally. |
+
+<Note>
+  The Moloch DAO is the capital path. The [Kokonut Guilds DAO](/ecosystem-wiki/the-kokonut-dao/kokonut-guilds-dao) is the contribution path. Together, they separate financial commitment from domain expertise so both capital and work can be recognized.
+</Note>
+
+---
+
+## Why Moloch?
+
+Kokonut uses the Moloch DAO pattern because it solves a specific governance problem: how can a group coordinate capital without trusting a central operator?
+
+Moloch DAOs have no administrators and no trusted intermediaries. Decisions are made through proposals that execute against treasury or vault contracts. No individual — including the Kokonut Core Team — can move funds, mint tokens, burn tokens, or change governance parameters without a passed community vote.
+
+<CardGroup cols={3}>
+  <Card title="No unilateral treasury control" icon="lock">
+    Treasury actions require proposals. The Main Treasury is controlled by DAO execution, not a private multisig controlled by the Core Team.
+  </Card>
+
+  <Card title="Membership by proposal" icon="user-plus">
+    New \$vKKN holders are admitted through the governance process. Stablecoin tribute enters the treasury only if the proposal passes.
+  </Card>
+
+  <Card title="Exit is built in" icon="door-open">
+    Members can rage-quit with their proportional share of the treasury if they disagree with the DAO's direction or a passed proposal.
+  </Card>
+</CardGroup>
 
 ---
 
 ## Core mechanics
 
-| **Mechanic** | **How it works at Kokonut** |
+| Mechanic | How it works at Kokonut |
 | --- | --- |
-| **Network Chain** | Deployed on [Gnosis Chain](https://docs.gnosischain.com/) — a highly secure, resilient, and decentralized EVM-compatible network. Chain ID: `100`. RPC: `https://rpc.gnosischain.com`. Block explorer: `https://gnosisscan.io`. |
-| **Rage-quit** | Any DAO member can withdraw their proportional share of the treasury at any time — including during the grace period after an unwanted proposal passes. This is the core capital protection mechanism. [See rage-quit mechanics →](#how-rage-quit-works) |
-| **Permissionless exit** | Contributors can enforce their governance rights by rage-quitting if they are uncomfortable with the direction the DAO is taking. No admin can freeze or confiscate your stake. Rage-quit burns your tokens and returns your treasury share. |
-| **Stablecoins only** | The Kokonut DAO treasury accepts **stablecoins only** as tribute. The treasury's value does not fluctuate with crypto market prices — it is backed by productive farmland and stablecoin reserves, not speculative token prices. |
+| Network chain | Deployed on [Gnosis Chain](https://docs.gnosischain.com/), an EVM-compatible network. Chain ID: `100`. RPC: `https://rpc.gnosischain.com`. Explorer: [Gnosisscan](https://gnosisscan.io). |
+| Stablecoin tribute | Membership tribute is paid in stablecoins. This reduces governance exposure to speculative crypto volatility and keeps the treasury oriented around productive deployment. |
+| Soulbound membership | \$vKKN and Loot are non-transferable. Governance and economic rights come from proposal approval, capital contribution, land stewardship, or verified work — not from buying tokens on a secondary market. |
+| Rage-quit | Members can exit with their proportional share of the treasury. This is the primary capital-protection mechanism. |
+| Grace period | After a proposal passes, a grace period opens before execution. Members who disagree can exit before the proposal executes. |
+| 66% retention threshold | If rage-quits reduce token retention below 66%, the proposal does not execute. This protects the treasury from governance attacks. |
+| Proposal execution | Treasury actions are executed through the DAO once the proposal process completes. No additional approval from the Core Team is required. |
 
 ---
 
@@ -25,153 +85,227 @@ The Kokonut Moloch DAO is the capital and governance engine of the Kokonut Netwo
 
 ### Tokens
 
-Both Kokonut DAO tokens are **soulbound** — permanently bound to the wallet that received them. They cannot be transferred, sold, delegated, or traded on the open market. Governance and economic rights at Kokonut flow from participation and contribution, not from purchasing power in secondary markets.
+Both Kokonut DAO tokens are **soulbound**. They cannot be transferred, sold, delegated, or traded on the open market.
 
-| **Token** | **Contract** | **Purpose** |
+| Token | Contract | Purpose |
 | --- | --- | --- |
-| **\$vKKN — Voting Token** | [`0xc6b075ac3234a7ac729114b27370b552fa284690`](https://gnosisscan.io/token/0xc6b075ac3234a7ac729114b27370b552fa284690) | Soulbound governance token. Minted via DAO proposal when a member tributes stablecoins. 1 token = 1 vote on all on-chain proposals. Each \$vKKN is backed 1:1 by a real coconut tree in a Kokonut Network farm. |
-| **Loot Token** | [`0x2508a11aee11ad545bae87cd42131c04613b2099`](https://gnosisscan.io/token/0x2508a11aee11ad545bae87cd42131c04613b2099) | Non-voting soulbound token. Awarded to land-owners, contributors, Core Team members, and partners who add verifiable value via DAO proposal. Carries economic rights (proportional treasury claim, rage-quit eligible) without governance voting rights. |
+| \$vKKN — Voting Token | [`0xc6b075ac3234a7ac729114b27370b552fa284690`](https://gnosisscan.io/token/0xc6b075ac3234a7ac729114b27370b552fa284690) | Soulbound governance token. Minted via DAO proposal when a member tributes stablecoins. 1 \$vKKN = 1 vote. Each \$vKKN is backed 1:1 by a real coconut tree in a Kokonut Network farm. |
+| Loot Token | [`0x2508a11aee11ad545bae87cd42131c04613b2099`](https://gnosisscan.io/token/0x2508a11aee11ad545bae87cd42131c04613b2099) | Non-voting soulbound token. Awarded to landowners, contributors, Core Team members, and partners who add verifiable value via DAO proposal. Carries economic rights and rage-quit eligibility without governance voting rights. |
 
 ### Infrastructure contracts
 
-| **Contract** | **Address** | **Purpose** |
+| Contract | Address | Purpose |
 | --- | --- | --- |
-| **Vault & Token Manager** | [`0x8977c56e979f0d8b76afb5ad85549acd2e96422d`](https://gnosisscan.io/address/0x8977c56e979f0d8b76afb5ad85549acd2e96422d) | Handles token issuance and DAO smart wallet operations. All operations require a passed proposal — Kokonut DAO is the sole signatory. No individual can operate this contract unilaterally. |
-| **Main Treasury (SAFE)** | [`0xeb55b75328a8dffd45bbf34b7e7efc431a179085`](https://gnosisscan.io/address/0xeb55b75328a8dffd45bbf34b7e7efc431a179085) | Rage-quit-enabled SAFE wallet. Handles tribute inflows, disbursement outflows, token minting and burning, and rage-quit exits. All treasury assets are stablecoins. The treasury is publicly auditable at [link.kokonut.network/treasury](https://link.kokonut.network/treasury). |
+| Vault & Token Manager | [`0x8977c56e979f0d8b76afb5ad85549acd2e96422d`](https://gnosisscan.io/address/0x8977c56e979f0d8b76afb5ad85549acd2e96422d) | Handles token issuance and DAO smart wallet operations. All operations require a passed proposal. Kokonut DAO is the sole signatory. |
+| Main Treasury SAFE | [`0xeb55b75328a8dffd45bbf34b7e7efc431a179085`](https://gnosisscan.io/address/0xeb55b75328a8dffd45bbf34b7e7efc431a179085) | Rage-quit-enabled SAFE wallet. Handles tribute inflows, disbursement outflows, token minting, token burning, and rage-quit exits. Public treasury view: [link.kokonut.network/treasury](https://link.kokonut.network/treasury). |
 
 ---
 
-## Becoming a member — the tribute process
+## How membership works
 
-Membership in the Kokonut Moloch DAO is open to anyone willing to tribute stablecoins to the treasury. The process follows the standard [Governance Framework](/ecosystem-wiki/the-kokonut-dao/governance-framework) proposal flow:
+Membership in the Kokonut Moloch DAO is open to anyone willing to contribute stablecoins to the treasury and pass the DAO's membership proposal process.
 
 <Steps>
   <Step title="Prepare your tribute" icon="coins" iconType="regular">
-    Decide how many \$vKKN tokens you want. Each token is backed 1:1 by a real coconut tree and grants 1 vote on all DAO proposals. The tribute amount (in stablecoins) is set by the current membership proposal parameters — [book a call](https://link.kokonut.network/meeting) with the Core Team to confirm the current rate before submitting. You will need a Web3 wallet (e.g. MetaMask) connected to Gnosis Chain (Chain ID: `100`) and stablecoins on Gnosis Chain to cover the tribute and gas.
+    Decide how many \$vKKN tokens you want to request. Each token is backed 1:1 by a real coconut tree and grants 1 vote on on-chain proposals.
+
+    You will need:
+
+    - A Web3 wallet connected to Gnosis Chain
+    - Stablecoins on Gnosis Chain for the tribute
+    - A small amount of xDAI for gas
+    - The current membership proposal parameters
+
+    [Book a call](https://link.kokonut.network/meeting) if you need help confirming the current tribute rate or proposal requirements before submitting.
   </Step>
-  <Step title="Submit a membership proposal on DAOHaus" icon="pen-to-square" iconType="regular">
-    Navigate to [link.kokonut.network/dao](https://link.kokonut.network/dao) and submit a membership proposal specifying your tribute amount. The proposal enters a 5-day drafting/feedback window on [Charmverse](https://link.kokonut.network/charmverse) before moving to an active vote. All vote-authorized members (existing \$vKKN holders) are notified when your proposal enters the drafting stage.
+  <Step title="Submit a membership proposal" icon="pen-to-square" iconType="regular">
+    Navigate to [link.kokonut.network/dao](https://link.kokonut.network/dao) and submit a membership proposal specifying your tribute amount and the \$vKKN you are requesting.
+
+    The proposal enters the broader Kokonut governance process: a drafting and feedback window, followed by on-chain voting on DAOHaus.
   </Step>
-  <Step title="Community votes" icon="check-to-slot" iconType="regular">
-    The active voting window runs for **5 days** on DAOHaus. Voting is on-chain: 1 \$vKKN = 1 vote. Quorum for new member onboarding is 0% — any level of participation produces a valid result. The proposal needs a majority "For" vote to pass.
+  <Step title="Community review and vote" icon="check-to-slot" iconType="regular">
+    Members review the proposal, discuss it, and vote on it. On-chain voting uses the rule: **1 \$vKKN = 1 vote**.
+
+    For onboarding proposals, quorum is intentionally permissionless: any level of participation produces a valid result, and the proposal needs a majority "For" vote to pass.
   </Step>
-  <Step title="Grace period" icon="hourglass-half" iconType="regular">
-    After the vote passes, a grace period opens before execution. Any existing member who disagrees with the new membership can [rage-quit](#how-rage-quit-works) during this window with their full proportional treasury share. This protects existing members from being diluted against their will.
+  <Step title="Grace period opens" icon="hourglass-half" iconType="regular">
+    After a membership proposal passes, the grace period begins before execution. Existing members who disagree with the new membership can rage-quit with their proportional treasury share before the proposal executes.
   </Step>
   <Step title="Tokens minted, membership confirmed" icon="hydra" iconType="regular">
-    After the grace period closes, the proposal executes: your stablecoin tribute flows into the treasury, and your \$vKKN tokens are minted to your wallet. You are now a Kokonut DAO member with:
+    Once the grace period closes and the proposal executes, your stablecoin tribute enters the treasury, and your \$vKKN tokens are minted to your wallet.
 
-    - Voting rights on all proposals
-    - Rage-quit protection on your stake
-    - Eligibility to sponsor proposals to the active voting stage
-    - Access to [Charmverse](https://link.kokonut.network/charmverse) governance coordination
-    - On-demand meeting access with the Core Team
+    You now have voting rights, eligibility for proposal sponsorship, rage-quit protection, access to DAO coordination, and visibility into farm funding and MRV data.
   </Step>
 </Steps>
 
 <Note>
-  Don't have capital to tribute? The [Kokonut Guilds DAO](/ecosystem-wiki/the-kokonut-dao/kokonut-guilds-dao) is the contribution path — earn Guild Points through verifiable work, then become eligible for Loot token awards via Moloch DAO proposal. Loot tokens carry economic rights (rage-quit eligible) without requiring a stablecoin tribute.
+  No capital? Start with Guilds. Contributors can complete useful work, earn Guild Points, and become eligible for Loot token awards through Moloch DAO proposals. Loot carries economic rights without requiring a stablecoin tribute.
 </Note>
+
+---
+
+## The membership flow
+
+```mermaid
+flowchart TD
+    A["Prospective member"] --> B["Prepare stablecoin tribute"]
+    B --> C["Submit membership proposal"]
+    C --> D["Drafting and feedback on Charmverse"]
+    D --> E["On-chain vote on DAOHaus"]
+    E --> F{"Proposal passes?"}
+    F -->|"No"| G["Proposal fails\ntribute not accepted"]
+    F -->|"Yes"| H["Grace period opens"]
+    H --> I{"Existing members rage-quit?"}
+    I -->|"Yes"| J["Members exit\nwith proportional treasury share"]
+    I -->|"No / threshold retained"| K["Proposal executes"]
+    J --> L{"66% retention met?"}
+    L -->|"No"| M["Execution blocked"]
+    L -->|"Yes"| K
+    K --> N["Stablecoins enter treasury"]
+    K --> O["\$vKKN minted"]
+    O --> P["Member gains voting rights"]
+```
 
 ---
 
 ## How rage-quit works
 
-Rage-quit is the capital protection mechanism that makes the Kokonut DAO fundamentally different from traditional investment structures. It cannot be disabled by an administrator or bypassed by a majority vote.
+Rage-quit is the capital-protection mechanism that sets the Kokonut DAO apart from traditional investment structures. It gives members an enforceable right of exit.
 
-**When you can rage-quit:** At any time — before a proposal, after a proposal passes (during the grace period before execution), or at any point during your membership. There is no lockup period.
-
-**What you receive:** A proportional share of **all assets** held in the treasury at the time of your exit — not just the asset you tributed. If the treasury holds USDC, DAI, and other stablecoins, your exit distributes proportionally across all of them.
-
-**What happens to your tokens:** Your \$vKKN tokens are burned on exit. The treasury's total share count decreases, maintaining the proportional claim of remaining members.
-
-**Does it affect past votes?** No. Your governance history stands. Rage-quitting is a clean economic exit — it does not retroactively alter any proposals you voted on or actions taken during your membership.
-
-**The grace period protection:** Every passed proposal opens a grace period before execution. During this window, any member who disagrees with the outcome can rage-quit with their full proportional share — before the disbursement they voted against is executed. This makes it structurally impossible for a majority to trap a minority's capital.
+| Question | Answer |
+| --- | --- |
+| When can a member rage-quit? | At any time, including during the grace period after a passed proposal and before execution. |
+| What does the member receive? | A proportional share of all assets held in the treasury at the time of exit. |
+| What happens to the member's tokens? | Their \$vKKN or Loot is burned, and the total share count decreases. |
+| Can an admin block it? | No. Rage-quit is a contract-level mechanism, not a Core Team permission. |
+| Does it erase governance history? | No. Past votes remain part of the DAO record. Rage-quit is an economic exit, not a history reset. |
 
 ```mermaid
 flowchart TD
-    A["Proposal approved by DAO"]
-    B["Grace period begins\nmembers can review final outcome"]
-    C{"Member wants to exit?"}
-
-    D["Rage-quit\nreceive proportional treasury share\ntokens are burned"]
-    E["Remain in DAO\nretain voting power"]
-
-    F{"Enough token power remains?"}
-    G["Execute proposal ✅"]
-    H["Block execution ❌"]
-
-    A --> B
-    B --> C
-    C -->|"yes"| D
-    C -->|"no"| E
-    D --> F
+    A["Proposal approved by DAO"] --> B["Grace period begins"]
+    B --> C{"Member wants to exit?"}
+    C -->|"Yes"| D["Rage-quit\nreceive proportional treasury share\ntokens are burned"]
+    C -->|"No"| E["Remain in DAO\nretain voting power"]
+    D --> F{"66% token retention met?"}
     E --> F
-    F -->|"yes"| G
-    F -->|"no"| H
-
-    style A fill:#dbeafe,stroke:#3b82f6,color:#1e40af
-    style B fill:#fef3c7,stroke:#f59e0b,color:#92400e
-    style C fill:#ede9fe,stroke:#8b5cf6,color:#4c1d95
-    style D fill:#fee2e2,stroke:#ef4444,color:#991b1b
-    style E fill:#d1fae5,stroke:#10b981,color:#065f46
-    style F fill:#ede9fe,stroke:#8b5cf6,color:#4c1d95
-    style G fill:#009F4D,stroke:#009F4D,color:#ffffff
-    style H fill:#fee2e2,stroke:#ef4444,color:#991b1b
+    F -->|"Yes"| G["Execute proposal"]
+    F -->|"No"| H["Block execution"]
 ```
 
 <Tip>
-  The 66% token retention threshold means a proposal only executes if at least 66% of the total \$vKKN supply remains in the DAO after the grace period. If rage-quits reduce the supply below 66%, the proposal is not executed — protecting the treasury against governance attacks that try to pass large disbursements while minority holders exit.
+  The 66% token-retention threshold means a proposal executes only if enough token power remains in the DAO after the grace period. If rage-quits reduce supply below the required threshold, the proposal is blocked and must be resubmitted.
 </Tip>
 
 ---
 
 ## Voting power distribution
 
-[DAO Members](https://link.kokonut.network/members) have total control over decisions. Kokonut DAO is a community-led organization — the voting power distribution reflects this structurally, not just aspirationally.
+Kokonut DAO is designed so members control the DAO structurally, not symbolically.
 
-| **Role** | **Voting power** | **Notes** |
+| Role | Voting power | Notes |
 | --- | --- | --- |
-| [DAO Members](https://link.kokonut.network/members) | **99.99%** | All \$vKKN holders collectively. Power grows with each new member tribute. |
-| [Core Team](https://kokonut.network/about) | **0%** | The Core Team holds no governance tokens. Cannot vote on or veto any proposal. |
+| [DAO Members](https://link.kokonut.network/members) | **99.99%** | All \$vKKN holders collectively. Voting power grows as new members tribute stablecoins and receive \$vKKN. |
+| [Core Team](https://kokonut.network/about) | **0%** | The Core Team holds no governance tokens and cannot vote on or veto proposals. |
 | [DAO Summoner](https://link3.to/wasabinetwork) | **0.0016%** | The wallet that initially deployed the DAO contracts. Symbolic founder position. |
 
-This distribution is enforced at the contract level — the Core Team's 0% voting power is not a policy that can be changed by a Core Team decision. Changing it would require a passed DAO proposal.
+This distribution is enforced at the contract level. The Core Team's 0% voting power is not a policy preference — it is a structural governance choice.
 
 ---
 
-## DAO membership utility
+## What \$vKKN holders can do
 
-What \$vKKN token holders can do with their membership:
-
-| **Utility** | **Description** | **Access** |
+| Utility | Description | Access |
 | --- | --- | --- |
-| **Governance voting** | 1 \$vKKN = 1 vote on all proposals: farm funding, bounties, partnerships, governance upgrades, token minting/burning | [DAOHaus](https://link.kokonut.network/dao) |
-| **Proposals sponsorship** | Any member with ≥1 \$vKKN can sponsor a drafted proposal to the active voting stage | [DAOHaus](https://link.kokonut.network/dao) |
-| **Rage-quit protection** | Exit at any time with proportional treasury share — including during grace period. No lockup, no admin override | [DAOHaus](https://link.kokonut.network/dao) |
-| **Loot token eligibility** | Significant Guild contributions can be recognized with Loot token awards via DAO proposal — giving contributors economic rights without requiring a tribute | [Kokonut Guilds](/ecosystem-wiki/the-kokonut-dao/kokonut-guilds-dao) |
-| **Proposal authorship** | Submit farm funding proposals, governance amendments, Guild bounties, and ecosystem partnerships via the full proposal template | [Proposal Templates](/ecosystem-wiki/the-kokonut-dao/proposal-templates) |
-| **Community coordination** | Charmverse workspace for governance forum, proposal drafts, bounty listings, and member collaboration | [Charmverse](https://link.kokonut.network/charmverse) |
-| **Farm data access** | Live MRV data, harvest records, and impact metrics for all farms the DAO has funded | [hub.kokonut.network](https://hub.kokonut.network/projects/41) |
-| **On-demand meetings** | DAO members can request direct meetings with Core Team members | [Meeting Calendar](https://link.kokonut.network/meeting) |
+| Governance voting | Vote on farm funding, bounties, partnerships, governance upgrades, token minting, and token burning. | [DAOHaus](https://link.kokonut.network/dao) |
+| Proposal sponsorship | Sponsor eligible draft proposals to the active voting stage. | [DAOHaus](https://link.kokonut.network/dao) |
+| Rage-quit protection | Exit with proportional treasury share, including during grace periods. | [DAOHaus](https://link.kokonut.network/dao) |
+| Proposal authorship | Submit farm funding, Guild bounty, Framework upgrade, and ecosystem partnership proposals. | [Proposal Templates](/ecosystem-wiki/the-kokonut-dao/proposal-templates) |
+| Community coordination | Participate in governance drafts, feedback, bounties, and member coordination. | [Charmverse](https://link.kokonut.network/charmverse) |
+| Farm data visibility | Inspect live MRV data, harvest records, and impact metrics for DAO-funded farms. | [Kokonut Hub](https://hub.kokonut.network/projects/41) |
+| Loot eligibility for contributors | Significant verified Guild contributions can be recognized with Loot through DAO proposal. | [Kokonut Guilds](/ecosystem-wiki/the-kokonut-dao/kokonut-guilds-dao) |
+| Member meetings | Request direct meetings with Core Team members. | [Meeting Calendar](https://link.kokonut.network/meeting) |
 
 ---
+
+## Capital path vs contribution path
+
+Kokonut separates two forms of commitment:
+
+| Path | How you enter | What you earn | Best for |
+| --- | --- | --- | --- |
+| Capital path | Stablecoin tribute through a Moloch membership proposal | \$vKKN voting power and rage-quit protected treasury claim | DAO members, capital allocators, farm funders, long-term governance participants |
+| Contribution path | Verified work through Guild tasks, bounties, research, MRV, development, governance, or partnerships | Guild Points and potential Loot awards through proposal | Builders, agronomists, researchers, operators, designers, writers, developers, and community organizers |
+
+Both paths are important. Capital funds the network. Contributors make the network real.
+
+---
+
+## What is live, and what is still developing
+
+| Component | Status | Notes |
+| --- | --- | --- |
+| Moloch DAO | Live | Deployed on Gnosis Chain with treasury, token, and membership contracts. |
+| \$vKKN and Loot | Live | Soulbound governance and non-voting economic rights tokens. |
+| Rage-quit | Live | Core Moloch protection mechanism for treasury exit. |
+| Charmverse \+ DAOHaus proposal flow | Live | Used for drafting, discussion, voting, and execution. |
+| Adelphi farm data | Live | Public farm records available through the Kokonut Hub. |
+| Guild contribution reputation | Developing | Contribution tracking, Guild Points, and stewardship workflows continue to mature. |
+| Agentic Marketplace | Developing | AI-assisted MRV, reporting, and coordination automation are being built to scale beyond one farm. |
+
+---
+
+## Trust checklist
+
+Before joining, a prospective member should be able to answer:
+
+- Do I understand that \$vKKN is soulbound and non-transferable?
+- Do I understand the current tribute rate and membership parameters?
+- Do I understand that stablecoin tribute enters the DAO treasury if the proposal passes?
+- Do I understand rage-quit and the 66% retention threshold?
+- Do I understand that DAO participation involves governance responsibility, not passive ownership?
+- Have I inspected the treasury, DAO page, and live farm data?
+- Have I considered whether the Guild contribution path is a better fit than the capital path?
+
+<Warning>
+  This page explains Kokonut DAO mechanics. It is not legal, tax, or financial advice. Membership involves governance responsibility and should be evaluated carefully before submitting a tribute proposal.
+</Warning>
+
+---
+
+## Next steps
 
 <CardGroup cols={2}>
   <Card title="DAO Architecture" icon="layer-group" href="/ecosystem-wiki/the-kokonut-dao/dao-layers">
-    How the Moloch DAO fits into the five-layer network stack — and how it relates to the Guilds DAO operational layer.
+    Understand how the Moloch DAO fits into the five-layer Kokonut Network stack: governance, logic, execution, production, and infrastructure.
   </Card>
 
   <Card title="Kokonut Guilds DAO" icon="hydra" href="/ecosystem-wiki/the-kokonut-dao/kokonut-guilds-dao">
-    The contribution path to membership — earn Guild Points through work, then Loot tokens through DAO proposal, without a capital tribute.
+    Start through contribution instead of capital. Earn Guild Points through useful work and become eligible for Loot through DAO proposal.
   </Card>
 
   <Card title="Governance Framework" icon="scale-balanced" href="/ecosystem-wiki/the-kokonut-dao/governance-framework">
-    The full proposal process — drafting, voting windows, quorum, retention threshold, and execution — that governs every action in this DAO.
+    Review drafting windows, voting duration, quorum, retention threshold, proposal stages, and execution rules.
   </Card>
 
   <Card title="Proposal Templates" icon="scroll" href="/ecosystem-wiki/the-kokonut-dao/proposal-templates">
-    Ready-to-use templates for farm funding, Guild bounties, framework upgrades, and partnerships — the four proposal types that move through this DAO.
+    Use ready-to-adapt templates for membership, farm funding, Guild bounties, Framework upgrades, and partnerships.
+  </Card>
+
+  <Card title="Adelphi Farm" icon="seedling" href="/ecosystem-wiki/kokonut-farms/adelphi/summary">
+    Inspect the first live farm the network is building around: 15,725 m², public MRV, and community-first regenerative production.
+  </Card>
+
+  <Card title="Live Farm Data" icon="chart-line" href="https://hub.kokonut.network/projects/41">
+    Explore harvest records, MRV events, farm milestones, and impact data connected to Adelphi.
   </Card>
 </CardGroup>
+
+<div style={{ display: "flex", gap: "12px", justifyContent: "center", flexWrap: "wrap", margin: "2rem 0 0.75rem" }}>
+  <a href="https://link.kokonut.network/dao" style={{ display: "inline-flex", alignItems: "center", gap: "6px", background: "#009F4D", color: "#fff", padding: "10px 20px", borderRadius: "8px", fontWeight: "600", fontSize: "14px", textDecoration: "none" }}>
+    Open DAO on DAOHaus →
+  </a>
+
+  <a href="https://link.kokonut.network/meeting" style={{ display: "inline-flex", alignItems: "center", gap: "6px", border: "1.5px solid #009F4D", color: "#009F4D", padding: "10px 20px", borderRadius: "8px", fontWeight: "600", fontSize: "14px", textDecoration: "none", background: "transparent" }}>
+    Book a DAO Walkthrough
+  </a>
+</div>
