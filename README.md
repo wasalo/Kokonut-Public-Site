@@ -1,171 +1,249 @@
-# Kokonut Network — Public Documentation Site
+# Kokonut Network — Public Knowledge Base
 
-This repository is the source for the **Kokonut Network public documentation site** — a Mintlify MDX site covering the full Kokonut ecosystem: the Kokonut DAO, the Kokonut Framework, the Adelphi farm, the Agentic Marketplace, and everything in between.
+Kokonut Network is a blockchain cooperative that connects Web3 communities, contributors, and capital allocators to live syntropic farms — starting with Adelphi, a regenerative farm in the Dominican Republic.
 
-> Kokonut Network is a blockchain-based cooperative that connects Web3 communities to syntropic farms, providing grassroots farmers with access to capital and governance tools while giving DAO members a stake in real-world regenerative agriculture.
+This repository powers the public Kokonut knowledge base at [kokonut.network](https://kokonut.network). It documents the Kokonut DAO, the Kokonut Framework, Adelphi farm, MRV methodology, Farm Registry API, AI agent infrastructure, contribution paths, and governance process.
 
-**The docs are live at:** [kokonut.network](https://kokonut.network)
+> Kokonut turns real farms into community-governed regenerative assets. The DAO coordinates capital, the Framework standardizes farm operations, MRV systems publish verifiable evidence, and contributors help replicate the model across new farms.
 
----
+## Start here
+
+| Reader | Start with | Why |
+| --- | --- | --- |
+| New to Kokonut | [`ecosystem-wiki/kokonut-101/executive-summary.mdx`](ecosystem-wiki/kokonut-101/executive-summary.mdx) | Understand the model, live proof, DAO, Framework, MRV, and contribution paths. |
+| Want to verify the farm | [`ecosystem-wiki/kokonut-farms/adelphi/summary.mdx`](ecosystem-wiki/kokonut-farms/adelphi/summary.mdx) | See Adelphi as the first live Kokonut farm. |
+| Want to understand impact evidence | [`ecosystem-wiki/kokonut-farms/measurement-reporting-and-verification.mdx`](ecosystem-wiki/kokonut-farms/measurement-reporting-and-verification.mdx) | Learn how farm activity becomes public evidence. |
+| Want to join governance | [`ecosystem-wiki/the-kokonut-dao/dao-layers.mdx`](ecosystem-wiki/the-kokonut-dao/dao-layers.mdx) | Understand capital governance, Guilds, proposals, and execution layers. |
+| Want to contribute without capital | [`ecosystem-wiki/the-kokonut-dao/kokonut-guilds-dao.mdx`](ecosystem-wiki/the-kokonut-dao/kokonut-guilds-dao.mdx) | Learn how useful work can earn Guild Points and governance standing. |
+| Want to build tools or agents | [`build-with-kokonut.mdx`](build-with-kokonut.mdx) | Use repos, contracts, APIs, and developer workflows. |
+| Need quick definitions | [`ecosystem-wiki/glossary.mdx`](ecosystem-wiki/glossary.mdx) | Search Kokonut, DAO, Web3, ReFi, agriculture, and MRV terms. |
 
 ## What this repository contains
 
 ```text
 Kokonut-Public-Site/
 │
-├── ecosystem-wiki/               # The main wiki — organized into four sections
-│   ├── kokonut-101/             # Executive summary, problem, solution, vision, manifesto
-│   ├── kokonut-farms/           # MRV methodology + all farm pages
-│   │   └── adelphi/             # Adelphi farm — summary, crops, SDGs, background story
-│   └── the-kokonut-dao/         # DAO architecture, Moloch DAO, Guilds, governance, proposals
+├── ecosystem-wiki/                      # Main Kokonut wiki
+│   ├── kokonut-101/                     # Executive summary, problem, solution, vision, manifesto
+│   ├── kokonut-farms/                   # MRV methodology and farm pages
+│   │   └── adelphi/                     # Adelphi farm case study
+│   ├── the-kokonut-dao/                 # DAO architecture, Moloch DAO, Guilds, governance, proposals
+│   ├── open-collaboration-invitation.mdx
+│   ├── faq.mdx
+│   └── glossary.mdx
 │
-├── kokonut-framework/            # The Kokonut Framework documentation
-│   ├── framework-components/    # Common Data Schema, Pillars of Value, 8 Forms, 5 Principles
-│   ├── development-phases/      # Phase I–IV documentation
-│   └── framework-add-ons/       # EBF + CRISP ecological impact frameworks
+├── kokonut-framework/                   # Kokonut Framework methodology
+│   ├── Introduction.mdx
+│   ├── why-syntropic-farming.mdx
+│   ├── impact-calculator.mdx
+│   ├── framework-components/            # Data schema, pillars, impact methodology
+│   ├── framework-add-ons/               # EBF + CRISP ecological frameworks
+│   └── development-phases/              # Phase I–IV documentation
 │
-├── api-reference/                # OpenAPI spec — Kokonut Farm Registry API
+├── api-reference/                       # OpenAPI spec for the Kokonut Farm Registry API
 │   └── kokonut-farm-registry.yaml
 │
-├── snippets/                     # Reusable MDX snippets
-├── images/                       # All site images
-├── docs.json                     # Mintlify navigation and site configuration
-└── README.md                     # This file
+├── snippets/                            # Reusable MDX snippets
+├── images/                              # Site image assets
+├── docs.json                            # Mintlify navigation and configuration
+└── README.md                            # Repository entry point
 ```
 
-**Key standalone pages:**
+## Live proof points
 
-- `build-with-kokonut.mdx` — Developer guide: repos, contracts, Farm Registry API, agent building
-- `kokonut-x-ai-agents.mdx` — AI Agents page: ERC-8004, OpenServ, MRV automation, x402 payments
-- `glossary.mdx` — 42-term glossary covering Web3, ReFi/Agri, and Kokonut-specific terms
+The documentation is built around Adelphi, Kokonut's first live farm implementation.
 
----
+| Proof point | Current documented value |
+| --- | --- |
+| Live farm site | Adelphi, Gonzalo, Monte Plata, Dominican Republic |
+| Total mapped farm area | 15,725 m² |
+| Agricultural area | 13,838 m² |
+| Jobs supported | 7 |
+| Free-range hens | 110 |
+| UN SDGs addressed | 5 |
+| Public goods funding | Public Nouns Proposal #69 |
+| Live farm data | [hub.kokonut.network/projects/41](https://hub.kokonut.network/projects/41) |
+
+## How Kokonut works
+
+```mermaid
+flowchart TD
+    A["DAO coordinates capital"] --> B["Framework standardizes farm operations"]
+    B --> C["Farms produce food, revenue, biodiversity, and public goods"]
+    C --> D["MRV turns farm activity into public evidence"]
+    D --> E["Kokonut Hub, EAS attestations, and reports make progress inspectable"]
+    E --> F["Contributors improve and replicate the model"]
+    F --> A
+```
+
+The core model has four parts:
+
+| Layer | What it does | Start here |
+| --- | --- | --- |
+| DAO | Coordinates treasury, membership, proposals, rage-quit, and capital governance. | [`the-kokonut-dao/dao-layers.mdx`](ecosystem-wiki/the-kokonut-dao/dao-layers.mdx) |
+| Framework | Standardizes how regenerative farms are designed, funded, measured, and replicated. | [`kokonut-framework/Introduction.mdx`](kokonut-framework/Introduction.mdx) |
+| Farms | Produce food, biodiversity, jobs, data, and public-goods value. | [`kokonut-farms/adelphi/summary.mdx`](ecosystem-wiki/kokonut-farms/adelphi/summary.mdx) |
+| MRV | Turns farm activity into structured evidence, public records, and impact reports. | [`measurement-reporting-and-verification.mdx`](ecosystem-wiki/kokonut-farms/measurement-reporting-and-verification.mdx) |
 
 ## Related repositories
 
-| Repository | Branch | What it contains |
+| Repository | Branch | Purpose |
 | --- | --- | --- |
-| [wasalo/Kokonut-Public-Site](https://github.com/wasalo/Kokonut-Public-Site) | `main` | This repo — the docs site |
-| [wasalo/Kokonut-Agentic-Marketplace](https://github.com/wasalo/Kokonut-Agentic-Marketplace) | `develop` | Onchain AI agent labor market — 12 smart contracts, Next.js frontend, OpenServ integration |
-| [wasalo/Kokonut-Intelligence](https://github.com/wasalo/Kokonut-Intelligence) | `main` | A repository for the Kokonut Intelligence Layer development |
-
----
+| [`wasalo/Kokonut-Public-Site`](https://github.com/wasalo/Kokonut-Public-Site) | `main` | Public Mintlify knowledge base and documentation site. |
+| [`wasalo/Kokonut-Agentic-Marketplace`](https://github.com/wasalo/Kokonut-Agentic-Marketplace) | `develop` | Onchain AI agent labor marketplace, smart contracts, frontend, and OpenServ integration. |
+| [`wasalo/Kokonut-Intelligence`](https://github.com/wasalo/Kokonut-Intelligence) | `main` | Intelligence layer development for Kokonut data, agents, and automation. |
 
 ## Local development
 
-This site is built on [Mintlify](https://mintlify.com). To run it locally:
+This site is built with [Mintlify](https://mintlify.com).
 
-**Prerequisites:** Node.js 18\+
+### Prerequisites
+
+- Node.js 18+
+- Git
+- Mintlify CLI
+
+### Run locally
 
 ```bash
-# Install the Mintlify CLI globally
+# Install the Mintlify CLI
 npm install -g mintlify
- 
-# Clone this repository
+
+# Clone the repository
 git clone https://github.com/wasalo/Kokonut-Public-Site.git
 cd Kokonut-Public-Site
- 
-# Start the local dev server
+
+# Start the local development server
 mintlify dev
 ```
 
-The site will be available at `http://localhost:3000`. Changes to any `.mdx` file hot-reload in the browser.
+The site will be available at:
 
-**Useful commands:**
-
-```bash
-mintlify dev          # Start local server (port 3000)
-mintlify check        # Validate navigation and links in docs.json
+```text
+http://localhost:3000
 ```
 
-### MDX parse rules — read before editing
+Changes to `.mdx` files hot-reload in the browser.
 
-Mintlify uses the Acorn MDX parser. A few patterns break silently or loudly:
+### Useful commands
 
-| ❌ Breaks | ✅ Use instead |
+```bash
+mintlify dev      # Start local server on port 3000
+mintlify check    # Validate navigation and links in docs.json
+```
+
+## MDX rules for Mintlify
+
+Mintlify uses an MDX parser, so small syntax choices can break the build. Follow these rules before editing.
+
+| Risky pattern | Safer pattern |
 | --- | --- |
-| Fenced code blocks inside `<Tab>` or `<Tabs>` | Move code outside the Tab, or use `~~~` tilde fences |
-| `{placeholder}` curly braces in content | Use `[placeholder]` square brackets |
-| Nested triple backticks | Use `~~~` tilde fences for inner examples |
-| `>=<=` Unicode operators in MDX expressions | Use ASCII `>=<=` |
+| Custom `<Table>` wrappers | Use standard Markdown tables. |
+| Fenced code blocks inside `<Tabs>` or `<Tab>` | Move code outside the tab, or use tilde fences. |
+| Nested triple backticks | Use `~~~` for inner code examples. |
+| Raw `{placeholder}` text in prose | Use `[placeholder]` instead. |
+| Unescaped `$vKKN` in MDX prose | Escape as `\$vKKN` when needed. |
+| Unsourced carbon, yield, revenue, or impact claims | Add source context, mark as forecast, or remove. |
+| Forecasts written as guarantees | Say forecast, estimate, projection, or assumption. |
+| Images without alt text | Use `<Frame>`, descriptive alt text, and a caption. |
 
----
+## Page structure conventions
+
+Most improved pages should follow this structure:
+
+1. Short frontmatter description.
+2. One clear H1 promise.
+3. One or two primary CTAs near the top.
+4. Proof before long explanation.
+5. A quick overview table or card group.
+6. Mechanism section explaining how the model works.
+7. Risk, limits, or verification section when claims involve money, impact, carbon, yield, governance, or tokens.
+8. Bottom `CardGroup` routing readers to related pages.
+
+Farm pages should also include:
+
+- SDG tags on relevant sections.
+- Clear separation between forecast and actuals.
+- Links to Kokonut Hub where live data is available.
+- MRV references for any impact claim.
+
+DAO pages should also include:
+
+- Capital path vs. contribution path when relevant.
+- Trust protections, such as proposal-based execution and rage-quit.
+- Live vs. developing status when governance tooling is still evolving.
 
 ## Contributing
 
-All three Kokonut repositories accept contributions via pull request. Contributions to this docs site earn **Guild Points** in the Communications Guild and are eligible for Loot token awards via DAO proposal.
+Contributions are welcome through GitHub pull requests.
 
-### Before you open a PR
+Docs contributions can earn Guild Points in the Communications Guild and may be eligible for Loot token recognition through DAO proposal, depending on scope and impact.
 
-1. **Check open issues** for existing work on your intended change.
-2. **Open an issue first** for anything beyond a typo fix — the Communications Guild reviews inbound issues and can align on scope before you write.
-3. **Run `mintlify dev`** locally and confirm your changes render without errors before submitting.
-4. **Schema backward-compatibility:** If your change touches the Common Data Schema page or the MRV payload documentation, note in your PR description how existing farm integrations (currently Adelphi) are affected. Breaking schema changes require a migration plan.
+### Before opening a pull request
+
+1. Check open issues for related work.
+2. Open an issue first for anything beyond a typo or small link fix.
+3. Run `mintlify dev` locally and confirm the page renders.
+4. Run `mintlify check` before submitting.
+5. For MRV, Common Data Schema, API, or farm-data changes, explain backward compatibility in the PR.
+6. For forecasts, impact claims, carbon claims, governance claims, or token claims, include source context and avoid guarantee language.
 
 ### Contribution paths
 
-**Docs improvements** — fix errors, improve clarity, add missing cross-links, update outdated figures:
+| Contribution | Examples | Likely review path |
+| --- | --- | --- |
+| Small docs fix | Typos, broken links, formatting, missing cross-links | Pull request review |
+| New docs page | New farm page, methodology page, DAO explainer, glossary expansion | Issue first, then PR |
+| Farm-data or MRV update | Schema, payload examples, impact methodology, evidence standards | Impact Guild + technical review |
+| Site architecture change | Navigation, docs.json, reusable snippets, major restructuring | Communications Guild + DAO proposal if material |
+| Bounty work | Defined documentation, design, data, or developer deliverable | Guild bounty process |
+| Major framework update | Methodology, governance process, API, or schema change | Framework Upgrade Proposal |
 
-```bash
-# Fork → branch → edit MDX → mintlify dev to preview → PR
-git checkout -b fix/my-improvement
-# ... edit ...
-git commit -m "fix: clarify biochar carbon sequestration figure on MRV page"
-git push origin fix/my-improvement
-# Open PR to main
-```
+## Proposal and governance routes
 
-**New pages** — propose new documentation pages via a GitHub issue first. New pages require a `docs.json` navigation entry and must follow the established page structure (intro paragraph, CardGroup at bottom, SDG tags on relevant sections for farm pages).
+Use these pages when a change needs coordination beyond a normal pull request.
 
-**Bounties** — open bounties for documentation tasks are listed. Completion earns both the bounty payment and Guild Points.
+| Need | Route |
+| --- | --- |
+| Fund a farm or infrastructure milestone | [`proposal-templates.mdx`](ecosystem-wiki/the-kokonut-dao/proposal-templates.mdx) → Farm Funding Proposal |
+| Create or complete a contributor bounty | [`proposal-templates.mdx`](ecosystem-wiki/the-kokonut-dao/proposal-templates.mdx) → Guild Bounty Proposal |
+| Change the Framework, schema, API, or methodology | [`proposal-templates.mdx`](ecosystem-wiki/the-kokonut-dao/proposal-templates.mdx) → Framework Upgrade Proposal |
+| Approve a partner or institutional collaboration | [`proposal-templates.mdx`](ecosystem-wiki/the-kokonut-dao/proposal-templates.mdx) → Partnership Proposal |
+| Understand drafting and voting rules | [`governance-framework.mdx`](ecosystem-wiki/the-kokonut-dao/governance-framework.mdx) |
 
-**DAO proposals** — larger contributions (new documentation sections, API reference updates, site architecture changes) require a [Framework Upgrade Proposal (KFP)](https://kokonut.network/ecosystem-wiki/the-kokonut-dao/proposal-templates) through the DAO.
+## Deployed contracts
 
-### Page structure conventions
-
-All pages in the improved docs follow these conventions:
-
-- **Intro paragraph** before any section heading — no page opens cold on a heading
-- **Stats strip** for pages that have headline numbers (farm pages, DAO pages)
-- **`<Frame>` wrapper \+ alt text \+ `<sup>` caption** on all images
-- **SDG tags** (inline badge divs) on relevant sections in Adelphi farm pages
-- **`<Steps>`** for sequential processes; **`<AccordionGroup>`** for expandable reference content
-- **`<Note>` / `<Tip>` / `<Warning>`** for callouts — never plain blockquotes for structured alerts
-- **CardGroup cols=**{2} at the bottom of every page for navigation
-
----
-
-## Deployed contracts (Gnosis Chain — live)
+Kokonut DAO contracts are live on Gnosis Chain.
 
 | Contract | Address | Purpose |
 | --- | --- | --- |
-| \$vKKN Voting Token | [`0xc6b075ac3234a7ac729114b27370b552fa284690`](https://gnosisscan.io/token/0xc6b075ac3234a7ac729114b27370b552fa284690) | Soulbound governance token |
-| Loot Token | [`0x2508a11aee11ad545bae87cd42131c04613b2099`](https://gnosisscan.io/token/0x2508a11aee11ad545bae87cd42131c04613b2099) | Non-voting economic rights token |
-| Vault & Token Manager | [`0x8977c56e979f0d8b76afb5ad85549acd2e96422d`](https://gnosisscan.io/address/0x8977c56e979f0d8b76afb5ad85549acd2e96422d) | Token issuance and smart wallet |
-| Main Treasury (SAFE) | [`0xeb55b75328a8dffd45bbf34b7e7efc431a179085`](https://gnosisscan.io/address/0xeb55b75328a8dffd45bbf34b7e7efc431a179085) | Rage-quit-enabled stablecoin treasury |
+| \$vKKN Voting Token | [`0xc6b075ac3234a7ac729114b27370b552fa284690`](https://gnosisscan.io/token/0xc6b075ac3234a7ac729114b27370b552fa284690) | Soulbound governance token. |
+| Loot Token | [`0x2508a11aee11ad545bae87cd42131c04613b2099`](https://gnosisscan.io/token/0x2508a11aee11ad545bae87cd42131c04613b2099) | Non-voting economic rights token. |
+| Vault & Token Manager | [`0x8977c56e979f0d8b76afb5ad85549acd2e96422d`](https://gnosisscan.io/address/0x8977c56e979f0d8b76afb5ad85549acd2e96422d) | Token issuance and smart wallet. |
+| Main Treasury SAFE | [`0xeb55b75328a8dffd45bbf34b7e7efc431a179085`](https://gnosisscan.io/address/0xeb55b75328a8dffd45bbf34b7e7efc431a179085) | Rage-quit-enabled stablecoin treasury. |
 
-Chain ID: `100` · RPC: `https://rpc.gnosischain.com` · Explorer: `https://gnosisscan.io`
-
----
+```text
+Chain ID: 100
+RPC: https://rpc.gnosischain.com
+Explorer: https://gnosisscan.io
+```
 
 ## Key links
 
-| Resource | URL |
+| Resource | Link |
 | --- | --- |
-| **Live docs** | [kokonut.network/docs](https://kokonut.network/docs) |
-| **Adelphi Data Hub** | [hub.kokonut.network/projects/41](https://hub.kokonut.network/projects/41) |
-| **Kokonut DAO (DAOHaus)** | [link.kokonut.network/dao](https://link.kokonut.network/dao) |
-| **Adelphi 3D Orthomap** | [link.kokonut.network/AdelphiOrtho3D](https://link.kokonut.network/AdelphiOrtho3D) |
-| **Adelphi Species GeoNode** | [link.kokonut.network/AdelphiSpeciesGeoNode](https://link.kokonut.network/AdelphiSpeciesGeoNode) |
-| **Treasury** | [link.kokonut.network/treasury](https://link.kokonut.network/treasury) |
-| **Discord** | [link.kokonut.network/discord](https://link.kokonut.network/discord) |
-| **Book a call** | [link.kokonut.network/meeting](https://link.kokonut.network/meeting) |
-| **Twitter / X** | [@KokonutNetwork](https://x.com/KokonutNetwork) |
-
----
+| Live docs | [kokonut.network](https://kokonut.network) |
+| Adelphi Data Hub | [hub.kokonut.network/projects/41](https://hub.kokonut.network/projects/41) |
+| Kokonut DAO | [link.kokonut.network/dao](https://link.kokonut.network/dao) |
+| Adelphi 3D Orthomap | [link.kokonut.network/AdelphiOrtho3D](https://link.kokonut.network/AdelphiOrtho3D) |
+| Adelphi Species GeoNode | [link.kokonut.network/AdelphiSpeciesGeoNode](https://link.kokonut.network/AdelphiSpeciesGeoNode) |
+| Treasury | [link.kokonut.network/treasury](https://link.kokonut.network/treasury) |
+| Discord | [link.kokonut.network/discord](https://link.kokonut.network/discord) |
+| Book a call | [link.kokonut.network/meeting](https://link.kokonut.network/meeting) |
+| X / Twitter | [@KokonutNetwork](https://x.com/KokonutNetwork) |
 
 ## License
 
-This documentation is licensed under [CC BY-SA 4.0](LICENSE). The Kokonut Framework methodology is open-source at [wasalo/kokonut-framework](https://github.com/wasalo/kokonut-public-site).
+This documentation is licensed under [CC BY-SA 4.0](LICENSE).
 
-Contributions to this repository are made under the same CC BY-SA 4.0 license. By submitting a PR, you agree that your contribution can be distributed under the CC BY-SA 4.0 license.
+By submitting a contribution, you agree that your contribution can be distributed under the same CC BY-SA 4.0 license.
