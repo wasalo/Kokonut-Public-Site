@@ -1,741 +1,805 @@
 ---
 title: "DAO Proposal Templates"
 icon: "scroll"
-description: "Ready-to-use proposal templates for farm funding, guild bounties, framework upgrades, and partnerships — each built on the Kokonut Governance Framework."
+description: "Copy-ready Kokonut DAO proposal templates for farm funding, Guild bounties, Framework upgrades, and partnerships — with guidance on when to use each one and what reviewers need to see."
 ---
 
-All Kokonut DAO proposals follow the ten-field template defined in the [Governance Framework](/ecosystem-wiki/the-kokonut-dao/governance-framework). Each proposal type extends the base template with fields specific to its domain.
+# Write proposals that the DAO can review, vote on, and execute.
 
-Before submitting any proposal:
+Kokonut proposals are not informal requests. They are the bridge between community intent and executable DAO action: treasury disbursements, farm launches, Guild bounties, Framework upgrades, partnerships, token recognition, and operational commitments.
 
-1. Copy the relevant template below
-2. Replace every `[PLACEHOLDER]` with real content
-3. Leave the template open for the mandatory **5-day drafting window** so vote-authorized members can give feedback
-4. After the drafting window closes, a proposal-authorized person sponsors it to the active voting stage on [DAOHaus](https://link.kokonut.network/dao)
+Use this page when you already know what you want to propose and need the correct structure. If you are still learning how governance works, start with the [Governance Framework](/ecosystem-wiki/the-kokonut-dao/governance-framework).
 
-<Tip>
-  Not sure which template to use? Farm operators and community members building new production sites use **Farm Funding**. Guild Stewards commissioning work from contributors use the **Guild Bounty**. Core Team or Technology Guild members proposing changes to the Framework spec use **Framework Upgrade**. Anyone proposing a formal relationship with an external organization uses **Partnership**.
-</Tip>
+<div style={{ display: "flex", gap: "12px", justifyContent: "center", flexWrap: "wrap", margin: "1.5rem 0 0.75rem" }}>
+  <a href="#choose-the-right-template" style={{ display: "inline-flex", alignItems: "center", gap: "6px", background: "#009F4D", color: "#fff", padding: "10px 20px", borderRadius: "8px", fontWeight: "600", fontSize: "14px", textDecoration: "none" }}>
+    Choose a Template →
+  </a>
+
+  <a href="#universal-proposal-checklist" style={{ display: "inline-flex", alignItems: "center", gap: "6px", border: "1.5px solid #009F4D", color: "#009F4D", padding: "10px 20px", borderRadius: "8px", fontWeight: "600", fontSize: "14px", textDecoration: "none", background: "transparent" }}>
+    Check Proposal Readiness
+  </a>
+</div>
+
+<p style={{ textAlign: "center", fontSize: "13px", color: "#6b7280", marginTop: "0.25rem" }}>
+  Every template below follows the ten required fields used across Kokonut governance.
+</p>
+
+<Warning>
+  These templates are governance tools, not legal, tax, financial, or investment advice. If a proposal creates legal obligations, external contracts, compliance exposure, or long-term partnership commitments, include appropriate review before asking the DAO to vote.
+</Warning>
+
+---
+
+## Proposal flow at a glance
+
+| Step | What happens | Minimum timing | Where it happens |
+| --- | --- | --- | --- |
+| 1. Choose a template | Select the correct proposal type and copy the template | Before drafting | This page |
+| 2. Draft proposal | Fill every required section with concrete details | Day 0 | Kokonut Forum / workspace |
+| 3. Review window | Members and Guilds comment, challenge assumptions, and request edits | 5 days minimum | Kokonut Forum / workspace |
+| 4. Sponsor proposal | A proposal-authorized person or Guild Steward advances the proposal | After drafting window | Kokonut Forum → DAOHaus if on-chain |
+| 5. Vote | DAO members vote according to the proposal type | 5 days minimum | DAOHaus for treasury / on-chain actions |
+| 6. Grace period | Members can rage-quit before execution if they disagree | After passed on-chain vote | Moloch DAO flow |
+| 7. Execute and report | Proposal team completes milestones and reports success metrics | After execution | Guilds, DAO, Data Hub, docs |
+
+<Note>
+  Treasury-moving, token-minting, Loot-awarding, membership, DAO-parameter, or on-chain execution proposals should go to [DAOHaus](https://link.kokonut.network/dao). Coordination-only decisions can remain in the forum if they do not require DAO execution.
+</Note>
+
+---
+
+## Choose the right template
 
 <CardGroup cols={2}>
   <Card title="Farm Funding" icon="seedling" href="#farm-funding-proposal">
-    Request a treasury disbursement to fund a new syntropic farm or farm expansion. Convention: KDP-N.
+    Request DAO treasury funding for a new syntropic farm, farm expansion, infrastructure buildout, or farm phase upgrade.
   </Card>
 
   <Card title="Guild Bounty" icon="trophy" href="#guild-bounty-proposal">
-    Commission scoped work from a contributor via a Guild Steward. Convention: KBP-N.
+    Request funding for scoped work completed by contributors through a Guild: code, research, MRV, docs, design, finance, governance, or operations.
   </Card>
 
   <Card title="Framework Upgrade" icon="puzzle" href="#framework-upgrade-proposal">
-    Propose a change to the Common Data Schema, MRV methodology, or other Framework component. Convention: KFP-N.
+    Propose a change to Kokonut's schemas, MRV methodology, governance parameters, development phases, or impact framework.
   </Card>
 
   <Card title="Partnership" icon="handshake" href="#partnership-proposal">
-    Establish a formal relationship with an external organization. Convention: KPP-N.
+    Formalize a relationship with an external organization, funder, protocol, research institution, cooperative, or ecosystem partner.
   </Card>
 </CardGroup>
+
+| If your proposal mainly asks for... | Use this template | Naming convention | Primary reviewer |
+| --- | --- | --- | --- |
+| Capital for land, crops, infrastructure, operators, or farm expansion | Farm Funding | `KDP-N` | Impact Guild \+ DAO |
+| Payment for scoped contributor work | Guild Bounty | `KBP-N` | Issuing Guild |
+| A change to schemas, MRV, APIs, governance rules, or Framework docs | Framework Upgrade | `KFP-N` | Technology Guild / Governance Guild / Impact Guild |
+| A formal external relationship, data-sharing agreement, co-funding, or brand relationship | Partnership | `KPP-N` | Community & Partnerships Guild |
+
+<Tip>
+  Proposal numbers are assigned when the Governance Guild registers the draft. Do not self-assign the final number before your draft is posted and logged.
+</Tip>
+
+---
+
+## Universal proposal checklist
+
+Before you submit any proposal, make sure it answers the reviewer's real questions.
+
+| Reviewer question | Your proposal must answer |
+| --- | --- |
+| What exactly are we approving? | Name the action, amount, scope, deliverables, responsible people, and timeline. |
+| Why should this happen now? | Explain the problem, opportunity, dependency, or risk that makes the proposal timely. |
+| Who is accountable? | List authors, team members, Guilds, operators, reviewers, and wallet addresses where relevant. |
+| What does the DAO pay for or commit to? | Include treasury amount, token effect, brand use, technical work, data access, or legal commitment. |
+| What proves success? | Define measurable milestones, acceptance criteria, reporting cadence, and evidence sources. |
+| What could go wrong? | Include risks, assumptions, out-of-scope items, revocation conditions, and dispute paths. |
+| What happens after the vote? | Add concrete next steps, owners, deadlines, and reporting obligations. |
+
+<Warning>
+  Vague proposals are expensive for the DAO to review. If your proposal cannot define its budget, success metrics, responsible team, acceptance criteria, and next step, it should stay in drafting.
+</Warning>
+
+---
+
+## The ten required fields
+
+Every Kokonut proposal uses the same ten-field base structure.
+
+| Field | Purpose |
+| --- | --- |
+| A. Proposal Name | Makes the proposal easy to reference and track. |
+| B. Proposal Author(s) | Identifies who is asking and who can answer questions. |
+| C. Proposal Team | Name the people responsible for execution and review. |
+| D. Draft Start Date | Starts the minimum 5-day drafting window. |
+| E. Proposal Description | Explains exactly what is being approved. |
+| F. Mission Alignment | Connects the proposal to Kokonut's purpose, farms, Framework, Guilds, or DAO. |
+| G. Brand Usage | Clarifies whether Kokonut identity, name, assets, or public channels are involved. |
+| H. Financial Implications | Shows treasury impact, payment schedule, ongoing costs, or financial return. |
+| I. Success Metrics | Defines how completion and impact will be judged. |
+| J. Next Steps | Converts approval into action with owners and deadlines. |
+
+---
+
+## What makes a proposal passable
+
+| Weak proposal | Strong proposal |
+| --- | --- |
+| "Fund our farm." | "Disburse \$18,000 in three milestones to install irrigation, prepare 2,000 m² of beds, and plant short-cycle crops by a specific date." |
+| "Build an MRV tool." | "Pay \$1,500 for an MRV agent proof of concept that converts three farm events into valid payloads and submits test records." |
+| "Partner with this project." | "Approve a 12-month co-funding partnership with named deliverables, value exchange, revocation conditions, and quarterly check-ins." |
+| "Improve the Framework." | "Add an optional `drone_imagery_cid` field to the MRV schema with a non-breaking migration plan and docs PR deadline." |
 
 ---
 
 ## Farm Funding Proposal
 
-Use this template when requesting a DAO treasury disbursement to fund a new syntropic farm or a material expansion of an existing one. Farm funding proposals carry the highest financial weight in the DAO and require the fullest documentation — the Common Data Schema fields are mandatory, not optional.
+Use this template for new farm launches, farm expansions, infrastructure upgrades, or major farm phase transitions.
 
-```markdown Farm Funding Proposal Template
+Farm funding proposals are highly sensitive because they move treasury capital into real-world operations. They should include land details, operator accountability, budget, disbursement milestones, MRV commitments, SDG alignment, and revenue assumptions.
+
+```markdown
 # [PROPOSAL NAME]
-# e.g. "KDP-007 · Adelphi Phase II Expansion — Coconut Long-Cycle Planting"
- 
+# Example: KDP-007 · Adelphi Phase II Expansion — Coconut Long-Cycle Planting
+
 ---
- 
+
 ## A. Proposal Name
 [Short, descriptive name. Convention: KDP-[number] · [Farm Name] — [Action]]
- 
+
 ## B. Proposal Author(s)
 - Name / alias:
 - Wallet address:
-- DAO member since:
- 
+- Role / relationship to farm:
+- Contact channel:
+
 ## C. Proposal Team
-List every person responsible for executing this proposal if passed:
-- [Name / alias] — [Role, e.g. Farm Operator, Technical Lead, Impact Reviewer]
-- [Name / alias] — [Role]
- 
+List every person responsible for execution, reporting, or review.
+
+| Person / wallet | Role | Responsibility |
+| --- | --- | --- |
+| [Name / alias] | Farm Operator | [Execution responsibility] |
+| [Name / alias] | Impact Reviewer | [MRV / SDG responsibility] |
+| [Name / alias] | Technical Contact | [Data Hub / Farm Registry responsibility] |
+
 ## D. Draft Start Date
 [YYYY-MM-DD]
- 
+
 ---
- 
+
 ## E. Proposal Description
- 
-### Farm Overview
-| Field                     | Value                                    |
-|---------------------------|------------------------------------------|
-| Farm ID                   | [url-safe slug, e.g. adelphi]            |
-| Project Start Date        | [YYYY-MM-DD]                             |
-| Location                  | [City, Province, Country]                |
-| Coordinates               | [lat,lng or UTM]                         |
-| Total Land Area           | [X m²]                                   |
-| Governance Mechanism      | [moloch_dao / guilds / multisig]         |
-| Operator Wallet           | [0x...]                                  |
-| Framework Phase Entering  | [phase_i / phase_ii / phase_iii]         |
-| Data Hub Link             | [hub.kokonut.network/projects/N or TBD]  |
- 
+
+### Farm overview
+
+| Field | Value |
+| --- | --- |
+| Farm ID | [url-safe slug, e.g. adelphi] |
+| Project start date | [YYYY-MM-DD] |
+| Location | [City, Province, Country] |
+| Coordinates | [lat,lng or UTM] |
+| Total land area | [X m²] |
+| Agricultural area | [X m²] |
+| Governance mechanism | [moloch_dao / guilds / multisig / other] |
+| Operator wallet | [0x...] |
+| Framework phase entering | [phase_i / phase_ii / phase_iii] |
+| Data Hub link | [hub.kokonut.network/projects/N or TBD] |
+
 ### What is being funded
-[2–4 paragraph narrative describing exactly what this funding enables. Be
-specific about physical deliverables: which crops are being planted, what
-infrastructure is being built, which personnel are being trained, and over
-what time period. Attach a site plan or orthomap if available.]
- 
+[2–4 paragraphs explaining exactly what the DAO is funding. Be specific about physical deliverables: crops, irrigation, nursery, biofactory, poultry, labor, tools, training, MRV onboarding, certification, or infrastructure.]
+
+### Budget and use of funds
+
+| Line item | Amount USD | Why it is required | Evidence / quote |
+| --- | ---: | --- | --- |
+| [Item] | $[N] | [Reason] | [Quote / invoice / estimate] |
+| [Item] | $[N] | [Reason] | [Quote / invoice / estimate] |
+| **Total requested** | **$[TOTAL]** |  |  |
+
 ### Crop and revenue plan
- 
-| Crop           | Cycle    | Planting Density | Plots | Effective Units/Cycle | Cycles/Year | Annual Revenue (USD) |
-|----------------|----------|------------------|-------|-----------------------|-------------|----------------------|
-| [Crop name]    | [short]  | [X /m²]          | [N]   | [N units]             | [N]         | $[N]                 |
-| [Crop name]    | [medium] | —                | [N]   | [N units]             | [N]         | $[N]                 |
-| [Crop name]    | [long]   | [X /m²]          | [N]   | [N units]             | [N]         | $[N]                 |
-| **Total**      |          |                  |       |                       |             | **$[TOTAL]**         |
- 
-Production formula: (planting_density × bed_area × num_beds × num_plots) × (1 − loss_rate)
- 
-### Revenue streams
-[List all revenue stream tags, e.g.: lettuce, passion_fruit, coconut, poultry_eggs, biochar]
- 
-### Target markets
-[List distribution channels, e.g.: organic_markets, local_supermarkets, direct_community_sales]
- 
+
+| Revenue stream | Cycle | Unit assumptions | Cycles / year | Forecast annual revenue USD |
+| --- | --- | --- | ---: | ---: |
+| [Crop / product] | [short / medium / long / continuous] | [Density, units, loss rate, price] | [N] | $[N] |
+| [Crop / product] | [short / medium / long / continuous] | [Density, units, loss rate, price] | [N] | $[N] |
+| **Total forecast** |  |  |  | **$[TOTAL]** |
+
+Forecast formula: [Include formula and assumptions. Clearly separate forecast from actuals.]
+
 ### Public goods allocation
-[X]% of gross revenue — [describe what public goods activities this funds:
-community workshops, free seedling distribution, endangered species nursery, etc.]
- 
+[X]% of gross revenue will support: [community workshops, free seedling distribution, local education, biodiversity nursery, open data, impact reporting, etc.]
+
 ### Local problem and solution
-**Problem:** [Describe the specific economic, food security, environmental, or social
-problem this farm addresses in its community. Be concrete — reference the local region,
-the people affected, and the scale of the problem.]
- 
-**Solution:** [Describe specifically how this farm addresses that problem. Connect
-crop choices, community programs, employment, and educational components to the
-problem statement.]
- 
+**Problem:** [Describe the specific local economic, food security, environmental, or social problem this farm addresses.]
+
+**Solution:** [Describe how the farm addresses it through crops, employment, biodiversity, education, MRV, and market access.]
+
+### MRV and data commitments
+- Farm Registry record: [existing link or TBD]
+- Data Hub reporting cadence: [monthly / quarterly / each harvest]
+- Required records: [harvests, plantings, soil observations, biodiversity records, events, attestations]
+- Responsible person / Guild: [name / Guild]
+
 ---
- 
+
 ## F. Mission Alignment
-[Explain how this farm advances Kokonut's core mission: reducing obstacles to
-agricultural development, democratizing investment in real-world projects, and
-building a regenerative, community-owned network. Reference specific Framework
-components this farm implements: e.g. Phase I planning, 5 Principles of
-Regeneration, SDG alignment, EBF impact tracking.]
- 
+[Explain how this farm advances Kokonut's mission: reducing obstacles to agricultural development, democratizing access to real-world regenerative projects, creating public goods, and building community-owned natural assets.]
+
+**Framework components implemented:**
+- [ ] 5 Principles of Regeneration
+- [ ] Common Data Schema
+- [ ] MRV methodology
+- [ ] SDG alignment
+- [ ] EBF / impact reporting
+- [ ] Public goods allocation
+
 **SDGs addressed:**
 - SDG [N]: [How this farm contributes]
 - SDG [N]: [How this farm contributes]
- 
+
 ---
- 
+
 ## G. Brand Usage
-[Describe how Kokonut Network branding will appear in connection with this farm:
-on-site signage, social media posts, grant applications, product labeling, etc.
-If no brand usage is planned, write "None at this time."]
- 
+[Describe how Kokonut Network branding will appear: on-site signage, public reports, social media, farm product labels, partner communications, grant applications, or documentation. If none, write "None at this time."]
+
 ---
- 
+
 ## H. Financial Implications
- 
+
 ### Total funding requested
-**$[AMOUNT] USD** (to be disbursed in stablecoins from the Kokonut DAO Treasury)
- 
+**$[AMOUNT] USD** to be disbursed in stablecoins from the Kokonut DAO Treasury.
+
 ### Disbursement schedule
- 
-| Milestone                          | Amount (USD) | Condition for release                                  |
-|------------------------------------|--------------|--------------------------------------------------------|
-| Phase I kickoff                    | $[N]         | Proposal passed + operator wallet verified             |
-| Infrastructure complete            | $[N]         | Photo evidence + Guild review submitted  |
-| First planting complete            | $[N]         | MRV event submitted + attested on-chain                |
-| First harvest recorded             | $[N]         | Harvest record submitted to Farm Registry API          |
-| [Additional milestone]             | $[N]         | [Condition]                                            |
-| **Total**                          | **$[TOTAL]** |                                                        |
- 
+
+| Milestone | Amount USD | Condition for release | Evidence required |
+| --- | ---: | --- | --- |
+| Kickoff | $[N] | Proposal passed + operator wallet verified | Wallet confirmation |
+| Infrastructure complete | $[N] | [Deliverable complete] | Photos, receipts, field record |
+| First planting complete | $[N] | MRV event submitted | Farm Registry / Data Hub record |
+| First harvest recorded | $[N] | Harvest record submitted | Harvest report |
+| **Total** | **$[TOTAL]** |  |  |
+
 ### Ongoing treasury impact
-[Describe the expected return to the treasury over time: projected annual revenue,
-public goods allocation amount in USD, timeline to first revenue generation.]
- 
+[Describe expected revenue, public goods allocation, timeline to first harvest, and whether any funds return to the DAO or are reinvested locally.]
+
 ### References
-- Treasury address: 0xeb55b75328a8dffd45bbf34b7e7efc431a179085
+- Treasury address: [DAO treasury address]
 - Farm Registry record: [link once created]
-- Forecasted budget supporting documents: [attach or link]
- 
+- Forecast documents: [link]
+- Budget evidence: [link]
+
 ---
- 
+
 ## I. Success Metrics
- 
+
 ### During execution
-- [ ] All milestones completed on schedule
-- [ ] MRV events submitted monthly from Phase II onward
-- [ ] Each MRV event attested on-chain within 72 hours of submission
-- [ ] Farm data live on Data Hub within 30 days of Phase I kickoff
-- [ ] Community training sessions: [N] sessions, [N] participants minimum
- 
-### After execution (12-month targets)
-| Metric                            | Target                          |
-|-----------------------------------|---------------------------------|
-| Gross annual revenue              | >= $[N] USD                     |
-| Public goods distributed          | >= $[N] USD                     |
-| Jobs created or sustained         | >= [N] positions                |
-| Carbon sequestered                | >= [N] metric tons CO2e         |
-| NDVI average (active season)      | >= [0.6 target or similar]      |
-| SDG impact attestations           | >= [N] on-chain attestations    |
- 
+- [ ] Milestone 1 completed by [YYYY-MM-DD]
+- [ ] Infrastructure installed and documented
+- [ ] MRV records submitted by [cadence]
+- [ ] Data Hub live within [N] days of kickoff
+- [ ] Community training sessions completed: [N] sessions, [N] participants
+
+### 12-month targets
+
+| Metric | Target |
+| --- | --- |
+| Gross revenue | >= $[N] USD |
+| Public goods distributed | >= $[N] USD |
+| Jobs created or sustained | >= [N] positions |
+| Harvest records submitted | >= [N] records |
+| SDG / MRV attestations | >= [N] attestations |
+| Biodiversity or soil indicators | [Target] |
+
 ---
- 
+
 ## J. Next Steps
- 
-| Action                                           | Owner                  | Deadline        |
-|--------------------------------------------------|------------------------|-----------------|
-| Drafting window open (5 days minimum)            | [Author name]          | [YYYY-MM-DD]    |
-| Incorporate feedback from draft review           | [Author name]          | [YYYY-MM-DD]    |
-| Sponsor to DAOHaus active voting stage           | [Proposal-auth person] | [YYYY-MM-DD]    |
-| Voting window (5 days)                           | DAO Members            | [YYYY-MM-DD]    |
-| If passed: create Farm Registry record           | [Technical contact]    | Within 7 days   |
-| If passed: publish Milestone 1 disbursement req  | [Operator wallet]      | Within 14 days  |
-| If passed: open MRV onboarding with Impact Guild | [Guild Steward]        | Within 30 days  |
+
+| Action | Owner | Deadline |
+| --- | --- | --- |
+| Drafting window open | [Author] | [YYYY-MM-DD] |
+| Incorporate feedback | [Author] | [YYYY-MM-DD] |
+| Impact Guild review | [Reviewer] | [YYYY-MM-DD] |
+| Sponsor to DAOHaus | [Proposal-authorized person] | [YYYY-MM-DD] |
+| Voting window | DAO Members | [YYYY-MM-DD] |
+| If passed: create / update Farm Registry record | [Technical contact] | Within 7 days |
+| If passed: first milestone request | [Farm operator] | Within 14 days |
+| If passed: MRV onboarding | [Impact Guild] | Within 30 days |
 ```
 
 ---
 
 ## Guild Bounty Proposal
 
-Use this template when a Guild Steward is requesting a DAO treasury disbursement to fund a scoped piece of work to be completed by a contributor. Bounties are the primary mechanism by which Guild members earn stablecoins for work that benefits the ecosystem.
+Use this template when a Guild Steward requests funding for scoped contributor work.
 
-Bounties under **500 and above** require this full proposal and a DAOHaus vote.
+Bounty proposals should be specific, testable, and reviewable. If reviewers cannot tell whether the work is complete, the bounty is not ready.
 
 ```markdown
 # [PROPOSAL NAME]
-# e.g. "KBP-014 · Technology Guild — MRV Agent Proof of Concept"
- 
+# Example: KBP-014 · Technology Guild — MRV Agent Proof of Concept
+
 ---
- 
+
 ## A. Proposal Name
 [Short, descriptive name. Convention: KBP-[number] · [Guild Name] — [Deliverable]]
- 
+
 ## B. Proposal Author(s)
 - Name / alias:
 - Wallet address:
-- Guild role: [Steward / Active Member]
- 
+- Guild role: [Steward / Member / Contributor]
+- Contact channel:
+
 ## C. Proposal Team
-- **Issuing Guild:** [Technology / Impact / Communications / Governance / Finance / Community & Partnerships]
-- **Guild Steward (sponsor):** [Name / alias + wallet]
-- **Intended contributor(s):** [Name / alias / "open for applications"]
- 
+| Role | Person / wallet | Responsibility |
+| --- | --- | --- |
+| Issuing Guild | [Technology / Impact / Communications / Governance / Finance / C&P] | [Domain owner] |
+| Guild Steward | [Name + wallet] | [Sponsor / reviewer] |
+| Intended contributor | [Name + wallet or TBD] | [Executor] |
+| Reviewer | [Name / Guild] | [Acceptance review] |
+
 ## D. Draft Start Date
 [YYYY-MM-DD]
- 
+
 ---
- 
+
 ## E. Proposal Description
- 
+
 ### Bounty summary
-| Field              | Value                                                   |
-|--------------------|---------------------------------------------------------|
-| Bounty Type        | [feature / research / content / audit / design / ops]   |
-| Skill required     | [e.g. Solidity, Python, technical writing, agronomy]    |
-| Estimated effort   | [e.g. ~20 hours over 2 weeks]                           |
-| Application open   | [Yes — link to bounty / No — pre-assigned]   |
-| Assigned to        | [Contributor name + wallet, or "TBD via application"]   |
- 
+
+| Field | Value |
+| --- | --- |
+| Bounty type | [feature / research / content / audit / design / ops / finance / governance] |
+| Skill required | [Solidity, Python, writing, agronomy, design, etc.] |
+| Estimated effort | [e.g. 20 hours over 2 weeks] |
+| Application open | [Yes / No] |
+| Assigned to | [Contributor name + wallet, or TBD] |
+| Work repository / workspace | [GitHub / Drive / Forum / other] |
+
 ### Background and context
-[2–3 paragraphs explaining why this work needs to happen now. What problem does it
-solve? What does the ecosystem currently lack that this bounty produces? Reference
-specific pages, contracts, or processes that this work improves.]
- 
+[2–3 paragraphs explaining why this work matters now. What ecosystem gap does it solve? Which farm, Guild, tool, page, proposal, or workflow depends on it?]
+
 ### Deliverable specification
- 
-This bounty is complete when all of the following are submitted and accepted:
- 
-| # | Deliverable                  | Format           | Acceptance criteria                                       |
-|---|------------------------------|------------------|-----------------------------------------------------------|
-| 1 | [Primary deliverable]        | [code/doc/report]| [Specific, testable criteria — not "looks good"]          |
-| 2 | [Secondary deliverable]      | [format]         | [Criteria]                                                |
-| 3 | [Documentation / write-up]   | MDX / Markdown   | Merged to relevant repo via reviewed PR                   |
- 
-### Technical requirements
-[If applicable: language, framework, chain, API version, test coverage requirement,
-PR review requirement, specific contracts or endpoints the work must integrate with.
-If not applicable, write "No specific technical requirements."]
- 
+
+| # | Deliverable | Format | Acceptance criteria |
+| --- | --- | --- | --- |
+| 1 | [Primary deliverable] | [Code / doc / report / design] | [Specific, testable criteria] |
+| 2 | [Secondary deliverable] | [Format] | [Specific criteria] |
+| 3 | Documentation / handoff | [MDX / Markdown / Loom / README] | [Merged / published / approved] |
+
 ### Out of scope
-[Explicitly state what this bounty does NOT cover, to prevent scope creep and
-disputes at review time. e.g. "This bounty covers the proof-of-concept only.
-Production deployment is a separate future bounty."]
- 
+[State what this bounty does not include. This prevents scope creep and payment disputes.]
+
+### Review process
+[Who reviews the work? What evidence must be submitted? How many revision rounds are included?]
+
 ---
- 
+
 ## F. Mission Alignment
-[Connect this bounty to a specific ecosystem gap or roadmap item. Reference the
-relevant Guild's domain. e.g. "This bounty advances the Technology Guild's
-responsibility to maintain the Kokonut Agentic Marketplace by building the first
-working MRV agent — a core piece of the automation layer that reduces manual farm
-reporting overhead."]
- 
+[Connect this bounty to a specific Guild responsibility, roadmap item, farm need, MRV need, governance need, or contributor onboarding gap.]
+
 ---
- 
+
 ## G. Brand Usage
-[Describe whether the deliverable will be published under the Kokonut brand:
-e.g. "The agent will be listed on the Marketplace under the Kokonut namespace at
-mrv-poc.kokonutnetwork.eth" or "This research report will be published on the Kokonut
-docs site and attributed to the Impact Guild."]
- 
+[Explain whether the output will be published under the Kokonut brand, included in official docs, posted publicly, used in grant materials, or kept internal.]
+
 ---
- 
+
 ## H. Financial Implications
- 
+
 ### Total bounty amount
-**$[AMOUNT] USD** (to be disbursed in stablecoins from the Kokonut DAO Treasury)
- 
+**$[AMOUNT] USD** to be paid in stablecoins from the Kokonut DAO Treasury.
+
 ### Payment schedule
- 
-| Milestone                          | Amount (USD) | Condition for payment                                |
-|------------------------------------|--------------|------------------------------------------------------|
-| Kickoff confirmation               | $[N]         | Contributor confirms acceptance + posts work plan    |
-| Mid-point check-in                 | $[N]         | Draft / WIP submitted for review       |
-| Final delivery                     | $[N]         | All deliverables accepted by Guild Steward           |
-| **Total**                          | **$[TOTAL]** |                                                      |
- 
-Payments are released by Guild Steward confirmation to the contributor's wallet
-following each milestone. Full payment is contingent on all deliverables meeting
-their acceptance criteria.
- 
+
+| Milestone | Amount USD | Condition for payment |
+| --- | ---: | --- |
+| Kickoff | $[N] | Contributor accepts scope and posts work plan |
+| Midpoint | $[N] | [Midpoint deliverable] accepted |
+| Final delivery | $[N] | All acceptance criteria met |
+| **Total** | **$[TOTAL]** |  |
+
 ### Dispute process
-If the contributor and Guild Steward cannot agree on whether a deliverable meets
-its acceptance criteria, the Governance Guild serves as the first escalation point.
-Unresolved disputes proceed to a full DAO vote.
- 
+If the contributor and Guild Steward disagree about completion, the Governance Guild is the first escalation point. Unresolved disputes can proceed to a DAO vote.
+
 ---
- 
+
 ## I. Success Metrics
- 
+
 ### During execution
-- [ ] Contributor submits work-plan within 3 days of kickoff payment
-- [ ] Mid-point check-in deliverable submitted on schedule
-- [ ] Final delivery submitted before deadline: [YYYY-MM-DD]
-- [ ] Deliverables pass all acceptance criteria on first or second review
- 
-### After delivery (30-day evaluation)
-| Metric                              | Target                                              |
-|-------------------------------------|-----------------------------------------------------|
-| [Primary deliverable utility]       | [e.g. MRV agent handles 3 consecutive test tasks]   |
-| [Adoption or usage metric]          | [e.g. Merged and linked from main docs within 30d]  |
-| [Quality / reliability metric]      | [e.g. Zero critical bugs filed within 30 days]      |
- 
+- [ ] Contributor submits work plan within [N] days
+- [ ] Midpoint check-in submitted on schedule
+- [ ] Final delivery submitted by [YYYY-MM-DD]
+- [ ] Deliverables pass review within [N] revision rounds
+
+### 30-day evaluation
+
+| Metric | Target |
+| --- | --- |
+| Primary deliverable utility | [Target] |
+| Adoption / usage | [Target] |
+| Quality / reliability | [Target] |
+| Documentation completeness | [Target] |
+
 ---
- 
+
 ## J. Next Steps
- 
-| Action                                          | Owner                   | Deadline        |
-|-------------------------------------------------|-------------------------|-----------------|
-| Drafting window open (5 days minimum)           | [Author]                | [YYYY-MM-DD]    |
-| Post bounty to applications board               | [Guild Steward]         | [YYYY-MM-DD]    |
-| Select contributor (if open application)        | [Guild Steward]         | [YYYY-MM-DD]    |
-| Sponsor to DAOHaus if >= $500                   | [Proposal-auth person]  | [YYYY-MM-DD]    |
-| Kickoff payment disbursed                       | [Guild Steward]         | On vote passing |
-| Work period                                     | [Contributor]           | [YYYY-MM-DD]    |
-| Final review and acceptance                     | [Guild Steward]         | [YYYY-MM-DD]    |
-| Final payment disbursed                         | [Guild Steward]         | On acceptance   |
-| Guild Points awarded to contributor             | [Guild Steward]         | Within 7 days   |
+
+| Action | Owner | Deadline |
+| --- | --- | --- |
+| Drafting window open | [Author] | [YYYY-MM-DD] |
+| Guild review | [Guild Steward] | [YYYY-MM-DD] |
+| Select contributor if open | [Guild Steward] | [YYYY-MM-DD] |
+| Sponsor to DAOHaus if treasury vote required | [Proposal-authorized person] | [YYYY-MM-DD] |
+| Kickoff payment | [Guild Steward / DAO] | After pass |
+| Work period | [Contributor] | [YYYY-MM-DD] |
+| Final review | [Reviewer] | [YYYY-MM-DD] |
+| Final payment | [Guild Steward / DAO] | On acceptance |
+| Guild Points awarded | [Guild Steward] | Within 7 days |
 ```
 
 ---
 
 ## Framework Upgrade Proposal
 
-Use this template when proposing a change to any component of the Kokonut Framework — the Common Data Schema, MRV methodology, development phases, regeneration principles, governance parameters, or ecological impact framework integrations.
+Use this template when changing the Kokonut Framework, Common Data Schema, MRV methodology, development phases, governance rules, impact reporting, or technical standards.
 
-Framework upgrades are the highest-sensitivity proposal type because they affect every farm currently operating under the Framework. **Any change that modifies an existing field name, type, or required status in the Common Data Schema requires a migration plan** — farms already running against the schema cannot be broken without a deprecation path.
+Framework upgrades are highly sensitive because they can affect every farm, every data pipeline, every MRV agent, and every future proposal that depends on the Framework.
 
 ```markdown
 # [PROPOSAL NAME]
-# e.g. "KFP-003 · Framework Upgrade — Add Drone Imagery CID to MRV Remote Sensing Schema"
- 
+# Example: KFP-003 · Framework Upgrade — Add Drone Imagery CID to MRV Remote Sensing Schema
+
 ---
- 
+
 ## A. Proposal Name
 [Short, descriptive name. Convention: KFP-[number] · Framework Upgrade — [Component]: [Change]]
- 
+
 ## B. Proposal Author(s)
 - Name / alias:
 - Wallet address:
-- Guild affiliation: [Technology / Impact / Governance / other]
- 
+- Guild affiliation:
+- Contact channel:
+
 ## C. Proposal Team
-List everyone involved in designing, reviewing, and implementing this change:
-- [Name] — [Role: e.g. Schema Author, Farm Operator Impact Reviewer, Documentation]
-- [Name] — [Role]
-- **Reviewing Guild:** [Guild responsible for technical review before DAO vote]
- 
+| Person / wallet | Role | Responsibility |
+| --- | --- | --- |
+| [Name] | Schema author | [Design / spec] |
+| [Name] | Technical reviewer | [API / agent review] |
+| [Name] | Impact reviewer | [MRV / SDG review] |
+| [Name] | Documentation owner | [Docs PR] |
+
 ## D. Draft Start Date
 [YYYY-MM-DD]
- 
+
 ---
- 
+
 ## E. Proposal Description
- 
+
 ### Change summary
-| Field                     | Value                                                                       |
-|---------------------------|-----------------------------------------------------------------------------|
-| Framework component       | [Common Data Schema / MRV Payload / Development Phases / Governance / EBF] |
-| Change type               | [additive / modification / deprecation / removal]                           |
-| Backward compatible       | [Yes / No / Partial — see migration plan]                                   |
-| Farms currently affected  | [List farm_ids or "All registered farms"]                                   |
-| Agents currently affected | [List agent names or "None" or "All MRV agents"]                            |
-| API version impact        | [None / Minor (new optional field) / Major (breaking change)]               |
- 
+
+| Field | Value |
+| --- | --- |
+| Framework component | [Common Data Schema / MRV Payload / Development Phases / Governance / EBF / Docs] |
+| Change type | [additive / modification / deprecation / removal] |
+| Backward compatible | [Yes / No / Partial] |
+| Farms affected | [List farm IDs or "All registered farms"] |
+| Agents affected | [List agent names or "None"] |
+| API version impact | [None / Minor / Major] |
+
 ### Current state
-[Describe exactly what the Framework says today. Quote the relevant field, rule,
-or section. If this is a schema change, paste the current field definition.
-If this is a process change, quote the current process language.]
- 
+[Describe what the Framework says today. Quote or link the current rule, field, schema, or process.]
+
 ~~~
-// Current field / rule / spec — paste verbatim
+// Current field / rule / process
+[Paste current definition]
 ~~~
- 
+
 ### Proposed change
-[Describe exactly what will change. If this is a schema change, show the before
-and after side by side. If this is a process change, show the old and new language.
-Be precise — ambiguous Framework changes cause disputes downstream.]
- 
+[Describe exactly what changes. If schema-related, show before and after. If process-related, show old and new language.]
+
 ~~~
 // Before
-"field_name": "type": "string", "required": true
- 
+[Current version]
+
 // After
-"field_name": "type": "string", "required": true
-"new_field":  "type": "number", "required": false, "description": "..."
+[Proposed version]
 ~~~
- 
+
 ### Rationale
-[Why is this change needed? Reference a specific farm operation, data quality
-issue, agent integration gap, or governance problem that the current Framework
-does not handle well. Concrete examples are required — abstract improvement
-rationale does not pass the drafting review.]
- 
-### Backward compatibility impact
-[Assess impact on:
-- Farms currently submitting data against the existing schema
-- The Farm Registry API (which endpoints are affected)
-- Deployed agents that consume or produce Framework-defined data
-- Third-party tools using the Framework (Silvi, Atlantis App, QGIS pipelines)
-- Existing EAS attestation schemas on Gnosis Chain or Base
- 
-If the change is additive with all new fields optional: state this clearly.
-If any existing field is renamed, retyped, or removed: a migration plan is
-required in the next section.]
- 
+[Explain why the change is needed. Reference a concrete data-quality issue, farm operation, MRV gap, agent integration, governance dispute, or documentation problem.]
+
+### Compatibility and migration impact
+Assess impact on:
+- Registered farms
+- Farm Registry API
+- Data Hub
+- MRV agents
+- EAS attestation schemas
+- Documentation
+- Partner tools
+
 ### Migration plan
-[Required if backward_compatible = No or Partial.]
- 
-| Phase              | Action                                        | Owner            | Timeline         |
-|--------------------|-----------------------------------------------|------------------|------------------|
-| Deprecation notice | Announce old field/rule as deprecated         | [Author]         | On proposal pass |
-| Dual-write period  | API accepts both old and new formats          | Technology Guild | [N weeks]        |
-| Farm migration     | Each farm updates their data submission       | Farm operators   | By [YYYY-MM-DD]  |
-| Agent migration    | Each agent updates capability manifest        | Agent operators  | By [YYYY-MM-DD]  |
-| Cutover            | Old format no longer accepted                 | Technology Guild | [YYYY-MM-DD]     |
- 
-Farms and agents that have not migrated by the cutover date will receive
-API validation errors. The Technology Guild is responsible for proactive
-outreach before cutover.
- 
+[Required if backward compatible = No or Partial.]
+
+| Phase | Action | Owner | Timeline |
+| --- | --- | --- | --- |
+| Deprecation notice | Announce old field / rule as deprecated | [Author] | On proposal pass |
+| Dual-write period | API accepts both formats | Technology Guild | [N weeks] |
+| Farm migration | Farm operators update submissions | Farm operators | By [YYYY-MM-DD] |
+| Agent migration | Agents update capability manifests | Agent operators | By [YYYY-MM-DD] |
+| Cutover | Old format no longer accepted | Technology Guild | [YYYY-MM-DD] |
+
 ---
- 
+
 ## F. Mission Alignment
-[Explain why this change makes the Kokonut Framework more modular, more accurate,
-more composable, or more scalable. Connect it to a specific Framework goal:
-making ecology measurable and financeable, enabling repeatable farm implementations,
-or improving governance integrity.]
- 
+[Explain how this change makes Kokonut more modular, measurable, composable, credible, or scalable.]
+
 ---
- 
+
 ## G. Brand Usage
-[Describe how this change affects Kokonut's public documentation, API reference,
-or technical communications. e.g. "The updated schema will be reflected in the
-Common Data Schema page, the OpenAPI spec, and the Build with Kokonut developer
-guide within 7 days of proposal passing."]
- 
+[Explain how public docs, API references, partner materials, dashboards, or communications must change.]
+
 ---
- 
+
 ## H. Financial Implications
- 
-### Treasury disbursement (if any)
+
+### Treasury disbursement
 **$[AMOUNT] USD** — or — **No treasury disbursement required.**
- 
-If funding is needed (e.g. for a bounty to implement the change):
- 
-| Work item                          | Amount (USD) | Assigned to                |
-|------------------------------------|--------------|----------------------------|
-| Schema implementation              | $[N]         | [Name / Technology Guild]  |
-| API update and testing             | $[N]         | [Name / Technology Guild]  |
-| Documentation update               | $[N]         | [Name / Comms Guild]       |
-| Farm operator migration support    | $[N]         | [Name / Impact Guild]      |
-| **Total**                          | **$[TOTAL]** |                            |
- 
+
+If funding is needed:
+
+| Work item | Amount USD | Assigned to |
+| --- | ---: | --- |
+| Implementation | $[N] | [Name / Guild] |
+| Testing | $[N] | [Name / Guild] |
+| Documentation | $[N] | [Name / Guild] |
+| Migration support | $[N] | [Name / Guild] |
+| **Total** | **$[TOTAL]** |  |
+
 ### Ongoing cost / savings
-[Describe any ongoing effect: e.g. "The new field reduces manual data cleaning
-effort by the Impact Guild, estimated at ~3 hours/month across all farms."]
- 
+[Describe ongoing effect: reduced manual work, higher data quality, new maintenance burden, partner dependency, or infrastructure cost.]
+
 ---
- 
+
 ## I. Success Metrics
- 
+
 ### During implementation
-- [ ] API update deployed to staging and tested against all four Farm Registry endpoints
-- [ ] At least one farm operator has submitted a test record against the new schema
-- [ ] At least one MRV agent has updated its capability manifest to the new spec
-- [ ] Documentation PRs merged to Kokonut-Public-Site and kokonut-framework
-- [ ] No open critical bugs 5 days after staging deployment
- 
-### Post-implementation (30 days)
-| Metric                                   | Target                                        |
-|------------------------------------------|-----------------------------------------------|
-| API error rate for affected endpoints    | <= baseline error rate (no regression)        |
-| Farms migrated (if migration required)   | 100% of registered farms                      |
-| Agents updated (if manifest change)      | 100% of affected agents                       |
-| Data quality improvement                 | [Specific measurable improvement]             |
- 
+- [ ] Spec approved and merged
+- [ ] API / tool update deployed to staging if needed
+- [ ] At least one test record validates against the new rule / schema
+- [ ] Documentation updated
+- [ ] No open critical bugs after [N] days
+
+### 30-day evaluation
+
+| Metric | Target |
+| --- | --- |
+| Affected farms migrated | [Target] |
+| Affected agents updated | [Target] |
+| Error rate / validation failures | <= baseline |
+| Data quality improvement | [Specific target] |
+
 ---
- 
+
 ## J. Next Steps
- 
-| Action                                                    | Owner                  | Deadline        |
-|-----------------------------------------------------------|------------------------|-----------------|
-| Drafting window open — notify all vote-authorized members | [Author]               | [YYYY-MM-DD]    |
-| Technology Guild technical review                         | [Guild Steward]        | [YYYY-MM-DD]    |
-| Farm operators notified of proposed change                | [Author / Comms Guild] | [YYYY-MM-DD]    |
-| Feedback incorporated                                     | [Author]               | [YYYY-MM-DD]    |
-| Sponsor to DAOHaus active voting stage                    | [Proposal-auth person] | [YYYY-MM-DD]    |
-| Voting window (5 days)                                    | DAO Members            | [YYYY-MM-DD]    |
-| If passed: deprecation notice issued                      | [Author]               | Within 48 hours |
-| If passed: API staging deployment                         | Technology Guild       | Within 7 days   |
-| If passed: documentation PRs merged                       | Comms Guild            | Within 7 days   |
-| If passed: cutover (if migration required)                | Technology Guild       | [YYYY-MM-DD]    |
+
+| Action | Owner | Deadline |
+| --- | --- | --- |
+| Draft posted | [Author] | [YYYY-MM-DD] |
+| Technical review | [Technology Guild] | [YYYY-MM-DD] |
+| Impact / governance review | [Relevant Guild] | [YYYY-MM-DD] |
+| Affected operators notified | [Author / Comms Guild] | [YYYY-MM-DD] |
+| Sponsor to vote | [Proposal-authorized person] | [YYYY-MM-DD] |
+| If passed: implementation begins | [Owner] | Within 7 days |
+| If passed: docs PR merged | [Owner] | Within 7 days |
+| If migration: cutover completed | [Owner] | [YYYY-MM-DD] |
 ```
 
 ---
 
 ## Partnership Proposal
 
-Use this template when proposing a formal relationship between Kokonut Network and an external organization — a Web3 protocol, a public goods funder, a research institution, a local cooperative, a farm operator network, or an ecosystem partner.
+Use this template when Kokonut creates a formal external relationship with a protocol, funder, research institution, local cooperative, farm operator network, public goods program, or ecosystem partner.
 
-A partnership proposal is required any time Kokonut Network will: (a) use another organization's brand or infrastructure in official communications, (b) grant access to DAO treasury funds or governance participation, (c) create a formal data-sharing or API integration agreement, or (d) make commitments on behalf of the DAO that persist beyond 90 days.
+A partnership proposal is required when Kokonut uses another organization's brand, makes commitments on behalf of the DAO, shares data, grants privileged access, receives or provides funds, or creates a relationship lasting more than 90 days.
 
 ```markdown
 # [PROPOSAL NAME]
-# e.g. "KPP-005 · Partnership — Public Nouns x Kokonut Network: Adelphi Phase III Co-Funding"
- 
+# Example: KPP-005 · Partnership — Public Nouns x Kokonut Network: Adelphi Phase III Co-Funding
+
 ---
- 
+
 ## A. Proposal Name
 [Short, descriptive name. Convention: KPP-[number] · Partnership — [Partner] x Kokonut: [Purpose]]
- 
+
 ## B. Proposal Author(s)
 - Name / alias:
 - Wallet address:
-- Relationship to partner (if any): [e.g. "No prior relationship" / "Community member of both"]
- 
+- Relationship to partner:
+- Contact channel:
+
 ## C. Proposal Team
-- **Lead negotiator:** [Name + wallet — the person who will manage this relationship]
-- **Community & Partnerships Guild Steward:** [Name + wallet]
-- **Legal reviewer (if applicable):** [Name or "None — no legal entity involved"]
-- **Technical contact (if integration required):** [Name + wallet]
- 
+| Role | Person / wallet | Responsibility |
+| --- | --- | --- |
+| Lead negotiator | [Name] | [Relationship owner] |
+| C&P Guild Steward | [Name] | [Guild sign-off] |
+| Legal reviewer if applicable | [Name or None] | [Legal / MOU review] |
+| Technical contact if applicable | [Name or None] | [Integration review] |
+
 ## D. Draft Start Date
 [YYYY-MM-DD]
- 
+
 ---
- 
+
 ## E. Proposal Description
- 
+
 ### Partner overview
-| Field                | Value                                                                              |
-|----------------------|------------------------------------------------------------------------------------|
-| Partner name         | [Full legal or DAO name]                                                           |
-| Partner type         | [protocol / institution / farm / ReFi ecosystem / public goods funder / coop]     |
-| Partner website      | [URL]                                                                              |
-| Partner wallet / ENS | [0x... or name.eth — if applicable]                                                |
-| Partner chain(s)     | [Chains the partner operates on, if relevant]                                      |
-| Partnership duration | [e.g. 12 months / indefinite / single-event]                                       |
-| Renewal mechanism    | [e.g. Automatic unless either party posts a termination proposal / Annual vote]    |
- 
+
+| Field | Value |
+| --- | --- |
+| Partner name | [Full name] |
+| Partner type | [protocol / institution / farm / funder / cooperative / DAO] |
+| Website | [URL] |
+| Wallet / ENS | [0x... or name.eth, if applicable] |
+| Chain(s) | [If relevant] |
+| Partnership duration | [12 months / single event / indefinite / other] |
+| Renewal mechanism | [Annual vote / automatic unless terminated / new proposal required] |
+
 ### What this partnership is
-[2–4 paragraph description of the relationship: who the partner is, what they
-do, and what this specific partnership entails. Explain how the two organizations
-met, what problem or opportunity this partnership addresses, and what
-the working relationship will look like day-to-day.]
- 
+[2–4 paragraphs explaining who the partner is, how the relationship started, what opportunity it creates, what each side will do, and what the working relationship looks like.]
+
 ### Value exchange
- 
-**What Kokonut Network provides:**
- 
-| Contribution                         | Description                                                      |
-|--------------------------------------|------------------------------------------------------------------|
-| [e.g. Ecosystem data access]         | [e.g. Read access to Farm Registry API for partner's indexer]    |
-| [e.g. Co-branding on farm materials] | [e.g. Partner logo on Adelphi educational materials]             |
-| [e.g. Treasury allocation]           | [$N USD from DAO treasury — requires milestone in Section H]     |
-| [e.g. DAO proposal co-sponsorship]   | [Kokonut will co-sponsor partner's onboarding proposal]          |
- 
-**What Kokonut Network receives:**
- 
-| Contribution                         | Description                                                      |
-|--------------------------------------|------------------------------------------------------------------|
-| [e.g. Grant funding]                 | [$N USD toward [specific farm or initiative]]                    |
-| [e.g. Technical integration]         | [e.g. Partner's oracle integrated into MRV pipeline]             |
-| [e.g. Community reach]               | [e.g. Exposure to partner's N-member community]                  |
-| [e.g. Research output]               | [e.g. Co-authored impact report published under both brands]     |
- 
-### Integration requirements (if technical)
-[If this partnership requires any technical work — API access, smart contract
-integration, data pipeline, agent registration — describe the scope here.
-Reference the relevant contracts or endpoints. If no technical integration
-is required, write "No technical integration required."]
- 
+
+**What Kokonut provides:**
+
+| Contribution | Description |
+| --- | --- |
+| [Contribution] | [Description] |
+| [Contribution] | [Description] |
+
+**What Kokonut receives:**
+
+| Contribution | Description |
+| --- | --- |
+| [Contribution] | [Description] |
+| [Contribution] | [Description] |
+
+### Integration requirements
+[If technical: describe API, smart contract, data, dashboard, agent, or attestation requirements. If none, write "No technical integration required."]
+
 ### Revocation conditions
-This partnership is terminated automatically if any of the following occur:
-- [ ] [e.g. Partner organization dissolves or ceases operations]
-- [ ] [e.g. Partner publicly acts against Kokonut's core values or manifesto]
-- [ ] [e.g. Partner fails to deliver their stated contributions within [N] days of agreed deadline]
-- [ ] A DAO vote passes a termination proposal at any time
- 
-Either party may initiate termination by posting a notice to Charmverse.
-Termination takes effect after a [14-day / 30-day] notice period unless
-the DAO votes to extend the relationship.
- 
+This partnership can be terminated if:
+- [ ] Partner fails to deliver agreed contributions
+- [ ] Partner misuses Kokonut brand or represents itself inaccurately
+- [ ] Partner acts against Kokonut's manifesto or community-first values
+- [ ] Technical or data-sharing risk becomes unacceptable
+- [ ] DAO passes a termination proposal
+
+Either party may initiate termination by posting notice to the designated governance venue. Termination takes effect after [14 / 30] days unless the DAO votes otherwise.
+
 ---
- 
+
 ## F. Mission Alignment
-[Explain how this partnership advances Kokonut's mission: reducing obstacles
-to agricultural development, democratizing investment in real-world projects,
-and building a regenerative community-owned network.
- 
+[Explain how the partnership advances Kokonut's mission, supports farms, strengthens public goods, improves infrastructure, expands capital access, or increases credible impact reporting.]
+
 Specifically address:
-- How this partner shares or complements Kokonut's values
-- Whether this partnership creates precedent for future similar partnerships
-- Any reputational considerations — does the partner's public positioning
-  align with Kokonut's community-first ethos?]
- 
+- Shared values
+- Expected benefits to farms and contributors
+- Precedent for future partnerships
+- Reputational risks
+
 ---
- 
+
 ## G. Brand Usage
- 
+
 ### Kokonut use of partner brand
-[Describe exactly where and how Kokonut will use the partner's name, logo, or
-assets: e.g. "Partner logo will appear on the Adelphi farm page, in the
-open-collaboration-invitation, and in co-authored grant applications.
-All usage is subject to partner's brand guidelines."]
- 
+[Where and how Kokonut may use partner name, logo, data, or public references.]
+
 ### Partner use of Kokonut brand
-[Describe exactly where and how the partner may use Kokonut's name, logo,
-or assets: e.g. "Partner may reference this partnership in their ecosystem
-announcements and grant applications. Partner may not represent themselves
-as a DAO member or governance participant unless separately onboarded."]
- 
+[Where and how partner may use Kokonut name, logo, data, or public references. State limits clearly.]
+
 ---
- 
+
 ## H. Financial Implications
- 
-### Treasury disbursement (if any)
+
+### Treasury disbursement
 **$[AMOUNT] USD** — or — **No treasury disbursement required.**
- 
-If Kokonut is providing treasury funds to the partner or to a shared initiative:
- 
-| Line item                           | Amount (USD) | Condition for release                              |
-|-------------------------------------|--------------|----------------------------------------------------|
-| [e.g. Joint farm funding tranche]   | $[N]         | [e.g. Partner delivers matching funds first]       |
-| [e.g. Integration development]      | $[N]         | [e.g. Technical milestone verified by Tech Guild]  |
-| [e.g. Co-branded event costs]       | $[N]         | [e.g. Event date confirmed + budget approved]      |
-| **Total**                           | **$[TOTAL]** |                                                    |
- 
-### Expected financial return to Kokonut
-[Describe any monetary or equivalent value expected to flow to the DAO or
-to farms as a result of this partnership: grant funding, revenue share,
-cost reduction, in-kind services with estimated USD value.]
- 
-### Jurisdiction note
-[If either party is a legal entity, note the jurisdiction and whether any
-formal legal agreement (MOU, contract) will accompany this proposal.
-e.g. "This proposal creates a DAO-to-DAO relationship with no formal legal
-agreement. No legal entity on either side." or "Partner is a registered
-nonprofit in [country]. A Memorandum of Understanding will be signed by
-the Kokonut Network Core Team alongside this DAO vote."]
- 
+
+If funds move:
+
+| Line item | Amount USD | Condition for release |
+| --- | ---: | --- |
+| [Line item] | $[N] | [Condition] |
+| [Line item] | $[N] | [Condition] |
+| **Total** | **$[TOTAL]** |  |
+
+### Expected value to Kokonut
+[Describe grant funding, revenue share, cost reduction, in-kind services, technical integrations, research outputs, community reach, or other measurable value.]
+
+### Jurisdiction / legal note
+[If any legal entity is involved, name jurisdiction and whether a contract, MOU, grant agreement, or data-sharing agreement will accompany the DAO vote.]
+
 ---
- 
+
 ## I. Success Metrics
- 
+
 ### During the partnership
-- [ ] Value exchange items delivered on the schedule agreed in Section E
-- [ ] No brand usage disputes or public misrepresentations by either party
-- [ ] Technical integration (if applicable) tested and live within [N] days
-- [ ] Quarterly check-in between lead negotiator and partner counterpart
- 
-### End-of-term evaluation (at renewal or termination)
-| Metric                                      | Target / Minimum                                             |
-|---------------------------------------------|--------------------------------------------------------------|
-| Kokonut contributions delivered             | 100% of commitments in Section E                             |
-| Partner contributions delivered             | 100% of commitments in Section E                             |
-| [Partnership-specific outcome metric]       | [e.g. >= $N in co-funding secured]                           |
-| [Community sentiment]                       | [e.g. No unresolved objections filed to Charmverse]          |
-| Renewal recommendation                      | Lead negotiator recommendation published before term end     |
- 
+- [ ] Value exchange items delivered on schedule
+- [ ] No unresolved brand usage disputes
+- [ ] Technical integration live by [date], if applicable
+- [ ] Quarterly check-ins completed
+- [ ] Public update posted by [cadence]
+
+### End-of-term evaluation
+
+| Metric | Target |
+| --- | --- |
+| Kokonut commitments delivered | 100% |
+| Partner commitments delivered | 100% |
+| Partnership-specific outcome | [Target] |
+| Community sentiment / objections | [Target] |
+| Renewal recommendation | Published before term end |
+
 ---
- 
+
 ## J. Next Steps
- 
-| Action                                                       | Owner                  | Deadline        |
-|--------------------------------------------------------------|------------------------|-----------------|
-| Drafting window open — notify all vote-authorized members    | [Author]               | [YYYY-MM-DD]    |
-| Partner reviews and acknowledges draft                       | [Lead negotiator]      | [YYYY-MM-DD]    |
-| Community & Partnerships Guild Steward sign-off              | [Guild Steward]        | [YYYY-MM-DD]    |
-| Legal review (if applicable)                                 | [Legal reviewer]       | [YYYY-MM-DD]    |
-| Feedback incorporated and draft finalized                    | [Author]               | [YYYY-MM-DD]    |
-| Sponsor to DAOHaus active voting stage                       | [Proposal-auth person] | [YYYY-MM-DD]    |
-| Voting window (5 days)                                       | DAO Members            | [YYYY-MM-DD]    |
-| If passed: formal agreement signed (if applicable)           | Core Team + Partner    | Within 14 days  |
-| If passed: technical integration kickoff (if applicable)     | Technology Guild       | Within 14 days  |
-| If passed: public announcement                               | Communications Guild   | Within 7 days   |
-| First quarterly check-in scheduled                          | Lead negotiator        | Within 30 days  |
+
+| Action | Owner | Deadline |
+| --- | --- | --- |
+| Draft posted | [Author] | [YYYY-MM-DD] |
+| Partner reviews draft | [Lead negotiator] | [YYYY-MM-DD] |
+| C&P Guild review | [Guild Steward] | [YYYY-MM-DD] |
+| Legal / technical review if needed | [Reviewer] | [YYYY-MM-DD] |
+| Feedback incorporated | [Author] | [YYYY-MM-DD] |
+| Sponsor to vote | [Proposal-authorized person] | [YYYY-MM-DD] |
+| If passed: agreement signed if applicable | [Owner] | Within 14 days |
+| If passed: public announcement | [Communications Guild] | Within 7 days |
+| First check-in scheduled | [Lead negotiator] | Within 30 days |
 ```
 
 ---
 
-## Quick reference — all proposal types
+## After your proposal passes
 
-| Field | Farm Funding | Guild Bounty | Framework Upgrade | Partnership |
-| --- | --- | --- | --- | --- |
-| **Naming convention** | KDP-N | KBP-N | KFP-N | KPP-N |
-| **Treasury disbursement** | Always | If \>= \$500 | Sometimes | Sometimes |
-| **Reviewing body** | Impact Guild \+ DAO | Issuing Guild | Technology Guild | C&P Guild |
-| **Sensitivity** | High — capital \+ operations | Medium | High — ecosystem-wide impact | Medium–High |
-| **Key extra fields** | Common Data Schema, disbursement milestones | Deliverable spec, acceptance criteria | Backward compat, migration plan | Value exchange, revocation conditions |
-| **Typical timeline** | 5d draft \+ 5d vote \+ execution | 5d draft \+ 5d vote (if \>= \$500) | 5d draft \+ 5d vote \+ migration | 5d draft \+ 5d vote \+ agreement |
+A passed proposal is not the end of governance. It creates responsibility.
+
+| Proposal type | First post-pass action | Ongoing reporting |
+| --- | --- | --- |
+| Farm Funding | Create or update Farm Registry / Data Hub records | Milestone reports, MRV events, harvest, and impact data |
+| Guild Bounty | Confirm contributor, payment wallet, and work plan | Deliverable reviews, Guild Points, final handoff |
+| Framework Upgrade | Open implementation and documentation PRs | Migration status, validation checks, operator support |
+| Partnership | Confirm written acknowledgment or agreement | Quarterly check-ins, value exchange updates, and renewal review |
 
 <Note>
-  Proposal numbers (KDP-N, KBP-N, etc.) are assigned sequentially by the [Governance Guild](/ecosystem-wiki/the-kokonut-dao/kokonut-guilds-dao) when a draft is posted to Charmverse. Do not self-assign a number before your draft is registered.
+  If a passed proposal cannot be executed as written, post an update immediately. Material changes to the budget, scope, timeline, or obligations may require an amended proposal.
 </Note>
 
 ---
 
+## Related governance pages
+
 <CardGroup cols={2}>
   <Card title="Governance Framework" icon="scale-balanced" href="/ecosystem-wiki/the-kokonut-dao/governance-framework">
-    The full proposal process, voting parameters, quorum rules, and amendment procedures on which these templates are based.
+    The full process for drafting, review, voting, grace period, execution, and governance protections.
   </Card>
 
-  <Card title="Workspace" icon="pen-to-square">
-    Where drafts are posted, feedback is collected, and the 5-day drafting window runs. Start here.
+  <Card title="Kokonut Moloch DAO" icon="dragon" href="/ecosystem-wiki/the-kokonut-dao/kokonut-moloch-dao">
+    The on-chain treasury engine where treasury moves and token proposals are executed.
   </Card>
 
-  <Card title="DAOHaus" icon="hydra" href="https://link.kokonut.network/dao">
-    The on-chain voting platform where active proposals go after the drafting window closes.
+  <Card title="Kokonut Guilds" icon="hydra" href="/ecosystem-wiki/the-kokonut-dao/kokonut-guilds-dao">
+    The contribution layer, where Guilds review work, issue bounties, and route proposals.
   </Card>
 
-  <Card title="Kokonut Guilds DAO" icon="users" href="/ecosystem-wiki/the-kokonut-dao/kokonut-guilds-dao">
-    Which Guild reviews which proposal type — and how completing a proposal earns Guild Points.
+  <Card title="Open Collaboration Invitation" icon="people-group" href="/ecosystem-wiki/open-collaboration-invitation">
+    Start contributing before you submit a formal proposal.
   </Card>
 </CardGroup>
+
+<div style={{ display: "flex", gap: "12px", justifyContent: "center", flexWrap: "wrap", margin: "2rem 0 0.75rem" }}>
+  <a href="#choose-the-right-template" style={{ display: "inline-flex", alignItems: "center", gap: "6px", background: "#009F4D", color: "#fff", padding: "10px 20px", borderRadius: "8px", fontWeight: "600", fontSize: "14px", textDecoration: "none" }}>
+    Choose a Template →
+  </a>
+
+  <a href="https://link.kokonut.network/dao" style={{ display: "inline-flex", alignItems: "center", gap: "6px", border: "1.5px solid #009F4D", color: "#009F4D", padding: "10px 20px", borderRadius: "8px", fontWeight: "600", fontSize: "14px", textDecoration: "none", background: "transparent" }}>
+    Open DAOHaus
+  </a>
+</div>
