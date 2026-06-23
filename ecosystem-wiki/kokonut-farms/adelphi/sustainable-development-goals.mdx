@@ -1,257 +1,379 @@
 ---
 title: "Sustainable Development Goals"
 icon: "recycle"
+description: "How Adelphi maps real farm activity to five SDGs through jobs, food production, women-led ownership, regenerative infrastructure, MRV, and annual impact reporting."
 ---
 
-Adelphi directly addresses five of the United Nations' 17 Sustainable Development Goals. These are not aspirational alignments — they are active, measurable commitments with specific outputs tracked through the Kokonut [MRV stack](/ecosystem-wiki/kokonut-farms/measurement-reporting-and-verification), anchored as on-chain [EAS attestations](https://docs.attest.sh/), and published to [hub.kokonut.network/projects/41](https://hub.kokonut.network/projects/41).
+# Adelphi's SDG alignment is not a label. It is an evidence system.
 
-Each SDG section below follows the same structure: what Adelphi does, the specific metrics it produces, how impact is measured, and which other SDGs that commitment reinforces. This follows the [Kokonut Framework SDG methodology](/kokonut-framework/framework-features/Sustainable-Development-Goals), which applies the [8 Forms of Capital](/kokonut-framework/framework-components/framework-features/8-forms-of-capital) and [EBF Framework](https://ebfcommons.org/) to make SDG claims verifiable rather than declarative.
+Adelphi directly addresses five Sustainable Development Goals through measurable farm operations, including local jobs, diversified food production, women-led ownership, regenerative land management, public goods allocation, and annual impact reporting.
+
+The purpose of this page is to show the connection between **farm activity → SDG outcome → evidence → reporting**. Each claim should be inspectable through the Kokonut [MRV methodology](/ecosystem-wiki/kokonut-farms/measurement-reporting-and-verification), the [Kokonut Hub](https://hub.kokonut.network/projects/41), farm records, and annual reporting cycles.
+
+<div style={{ display: "flex", gap: "12px", justifyContent: "center", flexWrap: "wrap", margin: "1.5rem 0 0.75rem" }}>
+  <a href="#impact-at-a-glance" style={{ display: "inline-flex", alignItems: "center", gap: "6px", background: "#009F4D", color: "#fff", padding: "10px 20px", borderRadius: "8px", fontWeight: "600", fontSize: "14px", textDecoration: "none" }}>
+    See the Impact Map →
+  </a>
+
+  <a href="https://hub.kokonut.network/projects/41" style={{ display: "inline-flex", alignItems: "center", gap: "6px", border: "1.5px solid #009F4D", color: "#009F4D", padding: "10px 20px", borderRadius: "8px", fontWeight: "600", fontSize: "14px", textDecoration: "none", background: "transparent" }}>
+    Explore Live Data
+  </a>
+</div>
+
+<p style={{ textAlign: "center", fontSize: "13px", color: "#6b7280", marginTop: "0.25rem" }}>
+  SDG claims become credible only when they are tied to farm records, MRV events, and annual reports.
+</p>
+
+---
+
+## Impact at a glance
+
+<div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(120px, 1fr))", gap: "1px", background: "#e5e7eb", border: "1px solid #e5e7eb", borderRadius: "12px", overflow: "hidden", margin: "1.5rem 0" }}>
+  <div style={{ background: "white", padding: "1rem", textAlign: "center" }}>
+    <div style={{ fontSize: "1.35rem", fontWeight: "700", color: "#009F4D", lineHeight: 1 }}>5</div>
+    <div style={{ fontSize: "0.72rem", color: "#6b7280", marginTop: "4px", fontWeight: "500" }}>primary SDGs</div>
+  </div>
+
+  <div style={{ background: "white", padding: "1rem", textAlign: "center" }}>
+    <div style={{ fontSize: "1.35rem", fontWeight: "700", color: "#009F4D", lineHeight: 1 }}>7</div>
+    <div style={{ fontSize: "0.72rem", color: "#6b7280", marginTop: "4px", fontWeight: "500" }}>jobs supported</div>
+  </div>
+
+  <div style={{ background: "white", padding: "1rem", textAlign: "center" }}>
+    <div style={{ fontSize: "1.35rem", fontWeight: "700", color: "#009F4D", lineHeight: 1 }}>4</div>
+    <div style={{ fontSize: "0.72rem", color: "#6b7280", marginTop: "4px", fontWeight: "500" }}>revenue streams</div>
+  </div>
+
+  <div style={{ background: "white", padding: "1rem", textAlign: "center" }}>
+    <div style={{ fontSize: "1.35rem", fontWeight: "700", color: "#009F4D", lineHeight: 1 }}>110</div>
+    <div style={{ fontSize: "0.72rem", color: "#6b7280", marginTop: "4px", fontWeight: "500" }}>free-range hens</div>
+  </div>
+
+  <div style={{ background: "white", padding: "1rem", textAlign: "center" }}>
+    <div style={{ fontSize: "1.35rem", fontWeight: "700", color: "#009F4D", lineHeight: 1 }}>12+</div>
+    <div style={{ fontSize: "0.72rem", color: "#6b7280", marginTop: "4px", fontWeight: "500" }}>at-risk species</div>
+  </div>
+
+  <div style={{ background: "white", padding: "1rem", textAlign: "center" }}>
+    <div style={{ fontSize: "1.35rem", fontWeight: "700", color: "#009F4D", lineHeight: 1 }}>10%</div>
+    <div style={{ fontSize: "0.72rem", color: "#6b7280", marginTop: "4px", fontWeight: "500" }}>public goods allocation</div>
+  </div>
+</div>
+
+| SDG | Adelphi contribution | Primary evidence |
+| --- | --- | --- |
+| SDG 1 — No Poverty | Jobs, farm revenue, public goods allocation, and local income resilience | Employment records, sales records, public goods allocation, annual income impact review |
+| SDG 2 — Zero Hunger | Diverse organic food production across short, medium, long, and continuous cycles | Harvest records, crop cycle data, egg records, distribution records |
+| SDG 5 — Gender Equality | Women-led ownership, management, decision-making, and community programming | Governance records, operator records, program records, leadership documentation |
+| SDG 8 — Decent Work | Seven documented jobs, training programs, and regenerative agriculture skill-building | Employment records, workshop attendance, role descriptions, training logs |
+| SDG 15 — Life on Land | Biodiversity nursery, biochar, syntropic plots, erosion control, vegetation monitoring | Species inventory, nursery logs, satellite indices, soil observations, MRV reports |
+
+<Note>
+  This page focuses on Adelphi's five primary SDGs. SDG 13 — Climate Action is treated as an important co-benefit through biochar, agroforestry, soil regeneration, and vegetation monitoring, but not as a primary SDG until the carbon methodology is fully operationalized and reported consistently.
+</Note>
+
+---
+
+## How SDG evidence flows
+
+```mermaid
+flowchart TD
+    A["Farm activity"] --> B["Structured field record"]
+    B --> C["Kokonut Hub"]
+    B --> D["MRV payload"]
+    D --> E["IPFS / Filecoin record"]
+    E --> F["Farm Registry event"]
+    F --> G["EAS attestation"]
+    C --> H["Annual SDG report"]
+    G --> H
+    H --> I["DAO members, grant reviewers, researchers, communities"]
+```
+
+SDG alignment is only useful when it can be verified. For Adelphi, that means each outcome should connect to one or more evidence sources: farm logs, harvest records, employment records, workshop attendance, nursery inventory, satellite vegetation indices, public Data Hub entries, and annual reports.
+
+[Read the full MRV methodology →](/ecosystem-wiki/kokonut-farms/measurement-reporting-and-verification)
 
 ---
 
 ## SDG 1 — No Poverty
 
-> _Eradicate extreme poverty for all people everywhere and ensure all people have equal rights to economic resources._
+> Eradicate extreme poverty for all people everywhere and ensure all people have equal rights to economic resources.
 
-**What Adelphi does:** This organic agricultural project contributes to poverty eradication by providing dignified, sustainable employment for local community members — improving income and quality of life for the families who participate in farm operations, training programs, and community activities.
+Adelphi contributes to poverty reduction by creating local employment, generating farm revenue, building community infrastructure, and allocating part of that revenue to public goods.
 
-**Specific metrics:**
-
-| **Indicator** | **Current figure** | **Data source** |
+| Indicator | Current figure or method | Evidence source |
 | --- | --- | --- |
-| Jobs supported | 7 full-time positions | [hub.kokonut.network/projects/41](https://hub.kokonut.network/projects/41) |
-| Projected gross annual revenue | ~\$149,110 | [Harvest Forecast](/ecosystem-wiki/kokonut-farms/adelphi/crops-and-harvest-forecast) |
-| Public goods allocation | ~\$14,911/yr (10% of revenue) | [Common Data Schema](/kokonut-framework/framework-components/common-data-schema) |
-| Revenue streams | 4 (lettuce, passion fruit, coconut, eggs) | [Crops & Harvest Forecast](/ecosystem-wiki/kokonut-farms/adelphi/crops-and-harvest-forecast) |
+| Jobs supported | 7 full-time positions | Kokonut Hub, farm employment records |
+| Projected gross annual crop revenue | ~\$149,110/yr forecast, before actuals | [Crops & Harvest Forecast](/ecosystem-wiki/kokonut-farms/adelphi/crops-and-harvest-forecast) |
+| Public goods allocation | 10% of farm revenue | Common Data Schema, revenue records |
+| Revenue streams | Lettuce, passion fruit, coconut, eggs | Harvest records, sales records |
 
-**Capital contributions:**
+### What this means
 
-- **Financial capital:** Direct employment income and revenue distribution within the local Monte Plata community
-- **Social capital:** Community-owned revenue model — 10% of all farm revenue routed to public goods activities for the surrounding community. **How it's measured:** Monthly revenue tracking from crop sales and poultry production. Annual household income impact assessment. Employment records are maintained and reported via the Atlantis App field data system.
+Poverty reduction at Adelphi is not treated as charity. It comes from productive assets, recurring work, local food production, and revenue that can circulate back into the community.
 
-**SDG interconnections:**
+### How it is measured
 
-- Contributes to **SDG 8** (Decent Work) by providing stable agricultural employment
-- Supported by **SDG 2** (Zero Hunger) — food security at the household level reduces expenditure that would otherwise reduce disposable income
-- Reinforced by **SDG 5** (Gender Equality) — women-led income generation strengthens the economic independence of the founding family and their community
+- Employment records and role descriptions
+- Monthly sales and revenue tracking
+- Public goods allocation records
+- Annual household income impact assessment
+- Kokonut Hub farm updates and reporting cycles
+
+### SDG interconnections
+
+- Reinforced by **SDG 8** because decent work is a direct income mechanism
+- Reinforced by **SDG 2** because local food production reduces household food pressure
+- Reinforced by **SDG 5** because women-led ownership strengthens household and community resilience
 
 ---
 
 ## SDG 2 — Zero Hunger
 
-> _End hunger, achieve food security and improved nutrition, and promote sustainable agriculture._
+> End hunger, achieve food security and improved nutrition, and promote sustainable agriculture.
 
-**What Adelphi does:** By focusing on the production of diverse organic foods across three crop cycle lengths, Adelphi enhances food security and provides nutritious food to the community year-round — reducing dependence on imported or processed products that are both less nutritious and more expensive.
+Adelphi contributes to food security through diversified organic production. The farm is designed around multiple crop timelines, so the system does not depend on a single harvest, market, or species.
 
-**Specific metrics:**
-
-| **Crop** | **Annual production** | **Cycle** |
+| Production stream | Annual production model | Cycle |
 | --- | --- | --- |
-| Lettuce (\+ broccoli, spinach, tomatoes, arugula) | 48,450 units × 5 harvests = 242,250 units/yr | Short (30–75 days) |
-| Passion fruit | 47,600 fruits · 3,661 nets/yr | Medium (seasonal) |
-| Coconut | 6,144 coconuts/yr | Long (perennial) |
-| Indian Yam | Additional medium-cycle food crop | Medium |
-| Free-range eggs | ~36,500 eggs/yr (100/day) | Continuous |
+| Lettuce plus companion vegetables | 48,450 units per harvest × 5 harvests = 242,250 units/yr forecast | Short cycle |
+| Passion fruit | 47,600 fruits · 3,661 nets/yr forecast | Medium cycle |
+| Coconut | 6,144 coconuts/yr forecast | Long cycle |
+| Indian yam | Additional medium-cycle food crop | Medium cycle |
+| Free-range eggs | ~36,500 eggs/yr at 100/day | Continuous |
 
-**Distribution channels:**
+### What this means
 
-- Organic markets — direct community access to fresh produce
-- Local supermarkets — broader regional food security contribution
-- On-site direct sales — lowest-friction access for immediate community **Capital contributions:**
-- **Living capital:** Diverse, resilient food production system with [syntropic multi-strata structure](/kokonut-framework/why-syntropic-farming) that is less susceptible to climate shocks than monoculture
-- **Cultural capital:** Preservation of native fruit varieties and traditional Dominican food crops through the endangered species nursery. **How it's measured:** Harvest records per crop per cycle, logged to the [Data Hub](https://hub.kokonut.network/projects/41). Community food access surveys conducted annually. Organic certification compliance, once achieved, tracks quality standards.
+Adelphi's contribution to food security is both local and systemic. Local communities gain access to fresh food, while the farm demonstrates how regenerative production can support revenue without relying on monoculture.
 
-**SDG interconnections:**
+### How it is measured
 
-- Supported by **SDG 15** (Life on Land) — healthy soil through biochar and syntropic farming directly enables diverse food production capacity
-- Contributes to **SDG 1** (No Poverty) — local food production reduces household food expenditure, improving disposable income
-- Reinforced by **SDG 8** (Decent Work) — the people producing this food have stable employment from the same operation
+- Harvest records per crop and cycle
+- Crop loss-rate tracking
+- Egg production logs
+- Distribution channel records
+- Organic certification milestones
+- Community food access surveys
+
+### SDG interconnections
+
+- Supported by **SDG 15** because healthy soil is the foundation of food production
+- Reinforces **SDG 1** because food access and income reduce household vulnerability
+- Reinforces **SDG 8** because producing food creates farm employment and training needs
 
 ---
 
 ## SDG 5 — Gender Equality
 
-> _Achieve gender equality and empower all women and girls._
+> Achieve gender equality and empower all women and girls.
 
-**What Adelphi does:** This project serves as a model for female leadership in agriculture, empowering women to manage resources, make decisions, and generate independent income. Founded and operated by sisters Yanny and Neury Hernández — both single mothers who transitioned from non-agricultural careers to build this farm — Adelphi demonstrates that women can lead every dimension of a regenerative agricultural enterprise: land ownership, production management, community programming, and financial decision-making.
+Adelphi is founded and operated by sisters Yanny and Neury Hernández. The project demonstrates women-led agricultural ownership, decision-making, production management, financial stewardship, and community programming.
 
-By promoting women's active participation in sustainable production, education, and environmental conservation, Adelphi strengthens the role of women in the local community and advances gender equality in a sector where they are structurally underrepresented.
-
-**Specific evidence:**
-
-| **Dimension** | **Evidence** |
+| Dimension | Evidence |
 | --- | --- |
 | Ownership | Land and project co-owned by Yanny and Neury Hernández |
-| Operational leadership | Both founders manage daily farm operations |
-| Financial management | Revenue, costs, and public goods allocation are managed by the founders |
-| Community programs | Founders design and lead all educational and community activities |
-| Governance | Farm registered under a women-led operator in the Kokonut DAO governance structure |
+| Operational leadership | Founders manage daily farm direction and project priorities |
+| Financial management | Revenue, costs, and community allocation decisions are managed by the operators |
+| Community programs | Founders design and host educational and community activities |
+| Governance | Farm operator records connect the project to the Kokonut governance layer |
 
-**Capital contributions:**
+### What this means
 
-- **Social capital:** Inclusive governance model — women hold all decision-making roles, demonstrating viability for other women in the region
-- **Experiential capital:** Equal access to skill development in regenerative agriculture, farm management, and cooperative governance. **How it's measured:** Governance records in the Kokonut DAO [Farm Registry](/build-with-kokonut#framework-data-primitives). Community survey tracking women's participation in farm programs annually. SDG 5 attestation created on-chain via EAS for each annual reporting cycle.
+Gender equality at Adelphi is not only about representation. It is control over land, operations, income, infrastructure, and community-facing education.
 
-**SDG interconnections:**
+### How it is measured
 
-- Directly reinforces **SDG 1** (No Poverty) — women's economic independence is the most durable pathway out of household poverty
-- Contributes to **SDG 8** (Decent Work) — women in leadership create the conditions for other women to access decent agricultural employment in the region
-- Connected to the [Kokonut Manifesto's](/ecosystem-wiki/kokonut-101/manifesto) Freedom of Access principle: anyone who adds value should receive governance rights and economic participation — regardless of gender
+- Operator records
+- Governance and farm registration records
+- Community program logs
+- Women's participation in training programs
+- Annual SDG 5 attestation or reporting entry
+
+### SDG interconnections
+
+- Reinforces **SDG 1** through women's economic independence
+- Reinforces **SDG 8** through women-led job creation and inclusive hiring
+- Reinforces Kokonut's broader governance principle: people who create value should have pathways to economic participation and standing
 
 ---
 
 ## SDG 8 — Decent Work and Economic Growth
 
-> _Promote sustained, inclusive and sustainable economic growth, full and productive employment, and decent work for all._
+> Promote sustained, inclusive and sustainable economic growth, full and productive employment, and decent work for all.
 
-**What Adelphi does:** Adelphi creates seven documented employment positions within the local community — with a deliberate focus on hiring women and training community members in agro-ecological skills that build long-term employability beyond any single farm.
+Adelphi supports seven documented jobs and builds practical skills in agro-ecological production, poultry management, nursery operations, biochar production, MRV data collection, and community education.
 
-**Specific metrics:**
-
-| **Indicator** | **Figure** |
+| Indicator | Current figure or status |
 | --- | --- |
 | Full-time positions | 7 |
-| Employment focus | Particularly, women in the Monte Plata rural community |
-| Training programs | Regular workshops at the on-site education gazebo |
-| Organic certification path | In progress — Ministry of Agriculture (DR) |
-| Market access upon certification | Premium organic market pricing and formal supermarket distribution |
+| Employment focus | Local rural community, with deliberate emphasis on women |
+| Training programs | Workshops and practical education at the on-site gazebo |
+| Organic certification | In progress with the Dominican Republic Ministry of Agriculture |
+| Market access goal | Organic markets, local supermarkets, direct community sales |
 
-**Work categories at Adelphi:**
+### Work categories at Adelphi
 
-- Crop management across short, medium, and long cycle beds
-- Poultry management (110 hens, daily egg collection, manure processing)
-- Nursery operations — propagation, GPS tracking, community distribution
-- Biochar production (bamboo harvest, pyrolysis, soil application)
-- Community education program delivery
-- MRV data collection and Atlantis App field logging, **Capital contributions:**
-- **Financial capital:** Sustainable agricultural employment model generating stable wages within the local economy
-- **Human capital:** Skills training through the [agro-ecological education center](/ecosystem-wiki/kokonut-farms/adelphi/crops-biodiversity-and-infrastructure) — building capabilities that transfer to other agricultural contexts **How it's measured:** Employment records maintained quarterly. Skills training participation is tracked per workshop session. Economic impact assessment included in annual EBF report. Organic certification status is tracked against Ministry of Agriculture milestones.
+- Crop management across short, medium, and long-cycle beds
+- Poultry management, daily egg collection, and manure processing
+- Nursery propagation and native species tracking
+- Biochar production and soil amendment workflows
+- Community education and workshop support
+- Field logging, farm records, and MRV data collection
 
-**SDG interconnections:**
+### How it is measured
 
-- Reinforces **SDG 1** (No Poverty) — employment income is the primary mechanism for poverty reduction
-- Enabled by **SDG 5** (Gender Equality) — women-led management creates the organizational culture that recruits and retains women workers
-- Supported by **SDG 15** (Life on Land) — regenerative farming creates more employment per hectare than extractive conventional agriculture
+- Employment records updated quarterly
+- Workshop attendance and skills-training logs
+- Organic certification status updates
+- Farm role documentation
+- Revenue and market-access records
+
+### SDG interconnections
+
+- Reinforces **SDG 1** because employment income is the main poverty-reduction mechanism
+- Reinforced by **SDG 5** because women-led operations shape who gets access to opportunity
+- Supported by **SDG 15** because regenerative agriculture can create skilled work around land restoration rather than extraction
 
 ---
 
 ## SDG 15 — Life on Land
 
-> _Protect, restore and promote sustainable use of terrestrial ecosystems, sustainably manage forests, combat desertification, halt and reverse land degradation, and halt biodiversity loss._
+> Protect, restore and promote sustainable use of terrestrial ecosystems, sustainably manage forests, combat desertification, halt and reverse land degradation, and halt biodiversity loss.
 
-**What Adelphi does:** With a focus on agro-biodiversity, regenerative soil techniques, and the complete elimination of chemical inputs, Adelphi promotes the conservation and sustainable use of terrestrial ecosystems — actively restoring the land while producing food and income for the community.
+Adelphi contributes to SDG 15 through agro-biodiversity, soil regeneration, organic input production, endangered species propagation, erosion control, syntropic plots, and vegetation monitoring.
 
-**Specific evidence:**
-
-| **Practice** | **Detail** | **Evidence** |
+| Practice | Detail | Evidence source |
 | --- | --- | --- |
-| Endangered species nursery | 12\+ at-risk native species propagated and distributed free to neighbors | [Crops & Biodiversity](/ecosystem-wiki/kokonut-farms/adelphi/crops-biodiversity-and-infrastructure) |
-| Biochar soil regeneration | All crop beds treated with on-site bamboo-derived biochar | [Infrastructure page](/ecosystem-wiki/kokonut-farms/adelphi/crops-biodiversity-and-infrastructure) |
-| Syntropic farming plots | 2 dedicated plots implementing the full four-strata syntropic method | [Why Syntropic Farming](/kokonut-framework/why-syntropic-farming) |
-| Erosion control | Beard grass ground cover system along all terraced edges | [Infrastructure page](/ecosystem-wiki/kokonut-farms/adelphi/crops-biodiversity-and-infrastructure) |
-| Native species distributed | Free propagated plants to visitors and neighboring communities | Background story |
-| Vegetation health monitoring | NDVI, NDRE, MSAVI satellite indices \+ per-plant Silvi GPS tracking | [MRV page](/ecosystem-wiki/kokonut-farms/measurement-reporting-and-verification) |
-| Carbon sequestration | 0.4–1.2 t CO₂e/acre/yr baseline \+ ~18% biochar uplift | [MRV — Carbon Sequestration tab](/ecosystem-wiki/kokonut-farms/measurement-reporting-and-verification) |
+| At-risk species nursery | 12\+ native or at-risk species propagated and distributed to neighbors | [Crops, Biodiversity & Infrastructure](/ecosystem-wiki/kokonut-farms/adelphi/crops-biodiversity-and-infrastructure) |
+| Biochar soil regeneration | Bamboo-derived biochar is produced and applied on-site | Infrastructure records, soil observations |
+| Syntropic farming plots | 2 dedicated plots implementing multi-strata syntropic design | Farm layout, field observations |
+| Erosion control | Beard grass ground cover along terraced edges | Field records, farm photos, MRV updates |
+| Per-plant tracking | Species registered through geospatial records | Silvi/GPS records, species data |
+| Vegetation monitoring | NDVI, NDRE, MSAVI, and other remote-sensing indicators | MRV stack, satellite records |
 
-**Species in the at-risk nursery** (partial list — full catalog at [AdelphiSpeciesGeoNode](https://link.kokonut.network/AdelphiSpeciesGeoNode)): Hispaniola palmetto · Native cacao · Guavaberry · Congo coffee tree · Jagua · Naseberry · Star Apple · Mammee Apple · Custard Apple · Cashew · Soursop · Lipsticktree
+### Species in the at-risk nursery
 
-**Capital contributions:**
+Partial list: Hispaniola palmetto · Native cacao · Guavaberry · Congo coffee tree · Jagua · Naseberry · Star Apple · Mammee Apple · Custard Apple · Cashew · Soursop · Lipsticktree.
 
-- **Living capital:** Active enhancement of biodiversity — the farm increases rather than depletes the ecological value of its land with each season
-- **Intellectual capital:** Documentation of native species propagation techniques and syntropic farming applications specific to Dominican Republic conditions — contributed back to the Kokonut Framework as open-source methodology. **How it's measured:** Quarterly biodiversity surveys tracking changes in local flora and fauna. Annual carbon sequestration rate calculated from satellite NDVI data and soil organic matter tests. Nursery species count and distribution records are maintained per season. All vegetation indices are archived via the MRV pipeline and attested on-chain.
+Full catalog: [AdelphiSpeciesGeoNode](https://link.kokonut.network/AdelphiSpeciesGeoNode)
 
-**SDG interconnections:**
+### How it is measured
 
-- Directly enables **SDG 2** (Zero Hunger) — soil health is the foundation of food production capacity; the land improves every season under syntropic methods
-- Contributes to **SDG 13** (Climate Action) — carbon sequestration through biochar, agroforestry, and syntropic farming; not an Adelphi primary SDG but a direct co-benefit
-- Supported by **SDG 1** (No Poverty) — free native plant distribution to neighbors extends the farm's biodiversity impact beyond its own boundary while strengthening community relationships
+- Nursery species count and propagation records
+- Plant distribution logs
+- Soil observations and organic input records
+- Satellite vegetation indices
+- Biodiversity surveys
+- Annual EBF and SDG reporting
+
+### SDG interconnections
+
+- Enables **SDG 2** because soil health supports food production
+- Supports **SDG 1** because local plant distribution and soil fertility strengthen community resilience
+- Contributes to **SDG 13** as a co-benefit through soil carbon, agroforestry, vegetation cover, and biochar
 
 ---
 
 ## How the five SDGs reinforce each other
 
-The five SDGs at Adelphi are not independent commitments — they form a reinforcing system where progress in one accelerates progress in others.
+The five SDGs at Adelphi are not independent commitments. They form a self-reinforcing system.
 
 ```mermaid
 flowchart LR
-    S15["🌱 SDG 15\nHealthy soil"]
-    S2["🌾 SDG 2\nFood production capacity"]
-    S8["👷 SDG 8\nEmployment"]
-    S5["👩 SDG 5\nWomen's leadership"]
-    S1["💰 SDG 1\nReduced poverty\nhousehold income + food security"]
+    S15["SDG 15\nHealthy soil + biodiversity"]
+    S2["SDG 2\nFood production capacity"]
+    S8["SDG 8\nDecent work"]
+    S5["SDG 5\nWomen's leadership"]
+    S1["SDG 1\nIncome + food security"]
 
-    S15 -->|"regenerates land"| S2
-    S2 -->|"improves local food supply"| S1
-    S2 -->|"creates farm activity"| S8
-    S8 -->|"raises household income"| S1
-    S5 -->|"increases inclusive participation"| S8
-    S5 -->|"strengthens household resilience"| S1
-
-    style S15 fill:#d1fae5,stroke:#10b981,color:#065f46
-    style S2 fill:#ecfdf5,stroke:#10b981,color:#065f46
-    style S1 fill:#009F4D,stroke:#009F4D,color:#ffffff
-    style S8 fill:#dbeafe,stroke:#3b82f6,color:#1e40af
-    style S5 fill:#ede9fe,stroke:#8b5cf6,color:#4c1d95
+    S15 -->|regenerates land| S2
+    S2 -->|improves local food supply| S1
+    S2 -->|creates farm activity| S8
+    S8 -->|raises household income| S1
+    S5 -->|increases inclusive participation| S8
+    S5 -->|strengthens household resilience| S1
+    S15 -->|creates restoration work| S8
 ```
 
-```text
-SDG 15 (healthy soil)
-      │
-      ▼
-SDG 2 (food production capacity)
-      │
-      ▼
-SDG 1 (household income + food security)
-      ▲                    ▲
-      │                    │
-SDG 8 (employment)    SDG 5 (women's leadership)
-      └──────────────────┘
-      (both reinforce SDG 1 and each other)
-```
-
-Soil health at SDG 15 is the ecological foundation. Healthy soil enables diverse food production (SDG 2), which enables household income (SDG 1). Women-led management (SDG 5) creates the organizational culture that recruits and retains women workers (SDG 8), and women's economic independence is the most durable pathway to household poverty reduction (SDG 1). The five SDGs close into a self-reinforcing loop — each one Adelphi strengthens makes the others more achievable.
+Healthy land enables diverse food production. Food production creates work. Work increases household income. Women-led ownership strengthens resilience and inclusion. The result is not five separate claims, but one integrated farm system.
 
 ---
 
 ## Annual SDG reporting
 
-SDG impact at Adelphi is reported annually through the [EBF Framework](https://ebfcommons.org/) across four dimensions:
+Adelphi's SDG reporting should be updated annually through the Kokonut Framework and the EBF impact lens.
 
-| **EBF dimension** | **SDGs covered** | **Key metrics reported** |
+| Reporting dimension | SDGs covered | Key metrics reported |
 | --- | --- | --- |
-| **Environmental** | SDG 15, SDG 2 (soil) | Carbon sequestration (t CO₂e/acre/yr), NDVI averages, biodiversity index changes, nursery species count |
-| **Economic** | SDG 1, SDG 8 | Gross revenue, public goods distributed (USD), jobs sustained, household income changes |
-| **Social** | SDG 5, SDG 8, SDG 1 | Women in leadership roles, training program participants, community programs held |
-| **Sustainability** | All five | Annual audit across all 8 forms of capital, organic certification status, SDG attestation count |
+| Environmental | SDG 15, SDG 2, SDG 13 co-benefits | Vegetation indices, biodiversity index changes, nursery species count, and soil observations |
+| Economic | SDG 1, SDG 8 | Gross revenue, public goods allocation, jobs sustained, and household income changes |
+| Social | SDG 5, SDG 8, SDG 1 | Women in leadership, training participants, and community programs held |
+| Sustainability | All five | Organic certification status, SDG attestation count, 8 Forms of Capital review |
 
-Reports are published to [hub.kokonut.network/projects/41](https://hub.kokonut.network/projects/41) and anchored as EAS attestations on Gnosis Chain — providing a tamper-proof, publicly queryable record of Adelphi's annual SDG performance.
+Reports should be published on the [Kokonut Hub](https://hub.kokonut.network/projects/41), anchored through EAS where applicable, and linked back to the relevant farm pages, so that every SDG claim has a clear evidence path.
 
-For the full Kokonut Network SDG alignment methodology — including all 17 SDGs, capital contribution frameworks, and interconnection analysis — see the [Framework SDG documentation](/kokonut-framework/framework-features/Sustainable-Development-Goals).
+<Warning>
+  Forecasts are planning assumptions, not guaranteed outcomes. SDG 1, 2, and 8 claims should be updated as actual harvest, revenue, employment, and distribution records are added to the Data Hub.
+</Warning>
 
 ---
 
+## What this page proves
+
 <CardGroup cols={2}>
-  <Card title="MRV — How is the impact verified" icon="magnifying-glass-chart" href="/ecosystem-wiki/kokonut-farms/measurement-reporting-and-verification">
-    The measurement and verification stack that turns SDG claims into on-chain verified records — satellite monitoring, soil probes, EAS attestations.
+  <Card title="SDGs are tied to real farm activity" icon="clipboard-check">
+    Jobs, crops, poultry, nursery work, soil practices, training programs, and governance records are the source of the claims.
   </Card>
 
-  <Card title="Framework SDG Methodology" icon="chart-network" href="/kokonut-framework/framework-features/Sustainable-Development-Goals">
-    The full Kokonut Framework SDG analysis — all 17 goals, capital contributions, and interconnections for community-owned syntropic farms.
+  <Card title="Impact can be inspected" icon="magnifying-glass-chart">
+    The MRV stack, Kokonut Hub, field logs, and annual reports create an evidence path for DAO members, grant reviewers, partners, and communities.
+  </Card>
+
+  <Card title="The SDGs reinforce each other" icon="arrows-rotate">
+    Soil regeneration supports food production; food production creates work; work reduces poverty; women-led ownership strengthens the whole system.
+  </Card>
+
+  <Card title="The model can be replicated" icon="seedling">
+    Adelphi's SDG evidence becomes a template other Kokonut farms can adapt, report against, and improve over time.
+  </Card>
+</CardGroup>
+
+---
+
+## Next steps
+
+<CardGroup cols={2}>
+  <Card title="MRV — How is the impact verified" icon="magnifying-glass-chart" href="/ecosystem-wiki/kokonut-farms/measurement-reporting-and-verification">
+    The measurement and verification stack that turns farm activity into public evidence, Data Hub records, and attestations.
   </Card>
 
   <Card title="Crops & Harvest Forecast" icon="dragon" href="/ecosystem-wiki/kokonut-farms/adelphi/crops-and-harvest-forecast">
-    The production numbers behind SDG 1, 2, and 8 — how \$149,110/yr in revenue and 48,450 lettuces per harvest translate into real economic and food security impact.
+    The forecast behind SDG 1, SDG 2, and SDG 8: crop cycles, production assumptions, revenue, and public goods allocation.
   </Card>
 
   <Card title="Crops, Biodiversity & Infrastructure" icon="puzzle" href="/ecosystem-wiki/kokonut-farms/adelphi/crops-biodiversity-and-infrastructure">
-    The physical evidence for SDG 15 — the 12\+ species nursery, biochar system, syntropic plots, and erosion control that make the biodiversity claims on this page verifiable.
+    The physical evidence behind SDG 15: nursery, biochar, syntropic plots, poultry system, training gazebo, and farm infrastructure.
   </Card>
 
   <Card title="Background Story" icon="rectangle-history" href="/ecosystem-wiki/kokonut-farms/adelphi/background-story">
-    The human story behind SDG 5 — how Yanny and Neury Hernández built Adelphi and what women-led agricultural leadership looks like in practice.
+    The human story behind SDG 5: Yanny and Neury Hernández, women-led land stewardship, and community-first agriculture.
   </Card>
 
-  <Card title="Adelphi Data Hub" icon="chart-line" href="https://hub.kokonut.network/projects/41">
-    Live SDG metrics — harvest records, employment data, and impact reports for every reporting cycle since Adelphi began production.
+  <Card title="Framework SDG Methodology" icon="chart-network" href="/kokonut-framework/framework-features/Sustainable-Development-Goals">
+    The broader Kokonut Framework method for mapping SDGs, 8 Forms of Capital, EBF, and ecosystem impact across all farms.
+  </Card>
+
+  <Card title="Open Collaboration" icon="telescope" href="/ecosystem-wiki/open-collaboration-invitation">
+    Help improve the SDG evidence model as an agronomist, researcher, MRV contributor, developer, DAO member, or impact reviewer.
   </Card>
 </CardGroup>
+
+<div style={{ display: "flex", gap: "12px", justifyContent: "center", flexWrap: "wrap", margin: "2rem 0 0.75rem" }}>
+  <a href="https://hub.kokonut.network/projects/41" style={{ display: "inline-flex", alignItems: "center", gap: "6px", background: "#009F4D", color: "#fff", padding: "10px 20px", borderRadius: "8px", fontWeight: "600", fontSize: "14px", textDecoration: "none" }}>
+    Explore Live Data →
+  </a>
+
+  <a href="/ecosystem-wiki/kokonut-farms/measurement-reporting-and-verification" style={{ display: "inline-flex", alignItems: "center", gap: "6px", border: "1.5px solid #009F4D", color: "#009F4D", padding: "10px 20px", borderRadius: "8px", fontWeight: "600", fontSize: "14px", textDecoration: "none", background: "transparent" }}>
+    Read the MRV Methodology
+  </a>
+</div>
