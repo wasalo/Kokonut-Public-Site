@@ -1,160 +1,272 @@
 ---
 title: "PHASE IV: Continuous Operations"
 icon: "microscope"
+description: "How Kokonut farms keep producing, reporting, attesting, improving, and building credibility after the initial development phases."
 ---
 
-Phase IV is not a stage that begins after Phase III. It is a perpetual operational state that runs continuously from the moment Phase I soil preparation begins — accumulating the longitudinal dataset that makes everything else in the Kokonut Framework financially and institutionally meaningful.
+# Phase IV is the evidence layer that never stops.
 
-**The critical distinction:** Phases I, II, and III are stages with defined start and end criteria. Phase IV has no end. It is the background operational layer that runs beneath all three stages and continues indefinitely after Phase III consolidation is complete. A farm never "finishes" Phase IV — it simply accumulates more evidence, more attestations, and more institutional credibility with each passing cycle.
+Phase IV is not a final stage after Phase III. It is the continuous operating state that runs beneath every Kokonut farm from the first baseline measurement onward.
 
-**What Phase IV is NOT:** A measurement methodology. The technical stack — satellite vegetation indices, soil probes, community analytics, the Farm Registry API, and EAS attestation pipeline — is documented on the [Measurement, Reporting & Verification](/ecosystem-wiki/kokonut-farms/measurement-reporting-and-verification) page. Phase IV is about _what that data produces over time_ — not the mechanics of how it's collected.
+Phases I, II, and III help a farm move from planning to production to consolidation. **Phase IV is what makes that journey legible over time:** harvest records, soil readings, field observations, satellite indices, public reports, EAS attestations, DAO feedback, and annual impact reviews.
 
-**What Phase IV produces:**
+<div style={{ display: "flex", gap: "12px", justifyContent: "center", flexWrap: "wrap", margin: "1.5rem 0 0.75rem" }}>
+  <a href="#what-phase-iv-produces" style={{ display: "inline-flex", alignItems: "center", gap: "6px", background: "#009F4D", color: "#fff", padding: "10px 20px", borderRadius: "8px", fontWeight: "600", fontSize: "14px", textDecoration: "none" }}>
+    See Phase IV Outputs →
+  </a>
 
-- A continuously growing, tamper-proof on-chain record of every significant farm event — from the first soil probe reading in Phase I to the 20th annual EBF report in perpetual operations
-- Annual [EBF Framework](https://ebfcommons.org/) impact reports that compound in credibility with each successive year — year three of verified data is qualitatively different from year one
-- Annual [CRISP](/kokonut-framework/framework-add-ons/ecological-impact-frameworks) risk assessments that systematically document declining risk as the farm matures and the operator track record accumulates
-- The institutional-grade evidence base that enables organic premium pricing, carbon credit issuance, RWA tokenization, and TradFi leverage eligibility — the Operational Variables outcomes described in the [Framework Introduction](/kokonut-framework/Introduction#operational-variables) At [Adelphi](/ecosystem-wiki/kokonut-farms/adelphi/summary), Phase IV has been running since Phase I completion. All data is publicly accessible at [hub.kokonut.network/projects/41](https://hub.kokonut.network/projects/41).
+  <a href="/ecosystem-wiki/kokonut-farms/measurement-reporting-and-verification" style={{ display: "inline-flex", alignItems: "center", gap: "6px", border: "1.5px solid #009F4D", color: "#009F4D", padding: "10px 20px", borderRadius: "8px", fontWeight: "600", fontSize: "14px", textDecoration: "none", background: "transparent" }}>
+    Read MRV Methodology
+  </a>
+</div>
+
+<p style={{ textAlign: "center", fontSize: "13px", color: "#6b7280", marginTop: "0.25rem" }}>
+  Phase IV does not certify claims by itself. It produces the longitudinal evidence that stronger claims, audits, DAO decisions, and partnerships can depend on.
+</p>
 
 ---
+
+## Phase IV at a glance
+
+| Question | Phase IV answer |
+| --- | --- |
+| What is it? | The continuous operations and evidence layer of the Kokonut Framework. |
+| When does it start? | As soon as baseline farm data begins in Phase I. |
+| When does it end? | It does not end while the farm remains active in the network. |
+| What does it produce? | Farm records, MRV events, harvest data, EAS attestations, reports, and governance feedback. |
+| Who uses it? | Farm operators, DAO members, Impact Guild contributors, grant reviewers, researchers, partners, and agent builders. |
+| What does it not guarantee? | Yields, prices, carbon credits, certification, institutional financing, or risk-free operations. |
+
+<Note>
+  Phase IV is different from the MRV technical stack. MRV explains how farm activity becomes evidence. Phase IV explains why that evidence becomes more valuable as it accumulates over months and years.
+</Note>
+
+---
+
+## What Phase IV produces
+
+Phase IV turns farm operations into a continuously improving evidence-based.
+
+<CardGroup cols={2}>
+  <Card title="Operational history" icon="timeline">
+    A growing record of harvests, planting cycles, soil readings, field observations, infrastructure milestones, and farm events.
+  </Card>
+
+  <Card title="Public evidence" icon="stamp">
+    Validated records can be published through IPFS/Filecoin, Farm Registry events, EAS attestations, and the public Kokonut Hub.
+  </Card>
+
+  <Card title="Annual impact reporting" icon="chart-line">
+    EBF-style reports, SDG summaries, and farm updates become more credible when they are backed by year-over-year data.
+  </Card>
+
+  <Card title="Risk interpretation" icon="shield-check">
+    CRISP-style reviews and operational risk assessments can improve as the farm builds a longer track record.
+  </Card>
+
+  <Card title="DAO feedback" icon="people-arrows">
+    DAO members and Guilds can use Phase IV evidence to evaluate proposals, milestone releases, method upgrades, and future farm funding.
+  </Card>
+
+  <Card title="Replication learning" icon="seedling">
+    Each farm creates lessons for the next farm: crop assumptions, loss rates, soil response, MRV gaps, training needs, and governance improvements.
+  </Card>
+</CardGroup>
+
+---
+
+## The Phase IV loop
+
+```mermaid
+flowchart TD
+    A["Farm activity"] --> B["Field record or sensor data"]
+    B --> C["Structured MRV payload"]
+    C --> D["IPFS / Filecoin record"]
+    D --> E["Farm Registry event"]
+    E --> F["EAS attestation"]
+    F --> G["Kokonut Hub"]
+    G --> H["Annual report + DAO review"]
+    H --> I["Operational improvements"]
+    I --> A
+
+    G --> J["Contributor and agent learning"]
+    J --> I
+```
+
+This loop matters because regenerative agriculture is not proven in a single event. It becomes more credible through repeated observation, reported outcomes, and visible adaptation.
+
+---
+
+## Phase IV has four operating functions
 
 <Steps>
-  <Step title="Continuous Data Collection" icon="database" iconType="regular">
-    The uninterrupted collection of farm data across all three sensing tiers — satellite, ground, and community — running on automatic cycles that require no manual triggering for the remote sensing layer. **The three-tier collection stack in continuous operation:**
+  <Step title="Continuous data collection" icon="database" iconType="regular">
+    Farm activity is recorded across remote sensing, field observations, per-plant records, harvest logs, soil data, and community reports.
 
-    | **Tier** | **Tool** | **Cadence** | **Data produced** |
-    | --- | --- | --- | --- |
-    | Remote sensing | Landsat 8 \+ Sentinel-2 | Every 5 days (Sentinel overpass) | NDVI, NDRE, MSAVI, ReCI indices across the farm polygon |
-    | Ground sensing | Soil moisture probes | Continuous | Volumetric water content, electrical conductivity, soil temperature |
-    | Per-plant | [Silvi](https://www.silvi.earth/) GPS | Per inspection cycle | Individual tree health logs, phenology records |
-    | Community analytics | [Atlantis App](https://apps.apple.com/in/app/impact-miner/id6448894610) | Per crop cycle \+ field visits | Crop stage, plant health flags, pest observations, water analysis |
-    | Harvest records | Farm Registry API | Per harvest event | Yield, loss rate, sale price, plot, operator |
-
-    **Agentic automation layer:** The [Kokonut Agentic Marketplace](/kokonut-x-ai-agents) — currently in development on Ethereum — is being built specifically to automate Phase IV's data collection pipeline. AI agents registered with [ERC-8004](https://eips.ethereum.org/EIPS/eip-8004) identities will handle satellite data ingestion, vegetation index calculation, Farm Registry API submission, and EAS attestation creation autonomously — removing the manual bottlenecks that currently limit collection frequency and reliability. Phase IV is where the agents run.
-
-    **At Adelphi:** All five sensing tiers are active. Satellite data flows from Sentinel-2 every 5 days; soil probes read continuously; 96 coconut trees and 560 passion fruit plants are individually registered in Silvi; field observations are logged per crop cycle via Atlantis App; harvest records are submitted per lettuce cycle (5/yr), per passion fruit season, and per coconut harvest.
-
-    **What accumulates:** Every data point is a row in the farm's longitudinal record. A farm with 365 days of soil probe readings has dramatically more useful data than one with 30 — the trends, the seasonal patterns, the response curves to biochar application and cover crop cycling — none of these are visible in short-run data.
-  </Step>
-  <Step title="Reporting and Transparency" icon="chart-line" iconType="regular">
-    Converting the continuous data stream into structured, accessible reports that serve DAO governance, community accountability, and institutional due diligence — at the right cadence for each audience. **The Kokonut reporting cadence:**
-
-    There are no formal "monthly" or "quarterly" reports in the Kokonut reporting architecture. The actual cadences are:
-
-    - **Real-time:** All farm data flows continuously to the [Data Hub](https://hub.kokonut.network/projects/41) — MRV events, harvest records, and attestations are visible as they occur. Any DAO member, grant reviewer, or community member can query the current farm state at any time
-    - **Per-harvest:** Crop cycle records submitted to the Farm Registry API after each harvest event — the economic data layer that tracks actual yield vs. projected, loss rates, and sale prices per cycle
-    - **Annual:** The EBF Framework impact report across four dimensions (Environmental, Economic, Social, Sustainability) — the formal accountability document that institutional partners, grant funders, and DAO members use for annual review
-
-    **Transparency by design:** Kokonut's reporting architecture is not a separate reporting process that happens alongside operations — it IS operations. Harvest records are submitted at harvest time. MRV events are submitted at measurement time. EAS attestations are created as events occur. There is no end-of-year data assembly exercise because the data was captured in real time throughout the year.
-
-    **Report audiences:**
-
-    | **Audience** | **Primary report type** | **Access** |
+    | Evidence source | What it can show | Typical use |
     | --- | --- | --- |
-    | DAO members | Real-time Data Hub \+ Annual EBF report | [hub.kokonut.network](https://hub.kokonut.network/projects/41) |
-    | Community | Annual EBF report \+ public goods distribution summary | Data Hub (public) |
-    | Grant partners | Annual EBF report \+ CRISP assessment | Data Hub \+ EAS attestation UIDs |
-    | Institutional investors | Full longitudinal MRV record \+ 3-year EBF history | Data Hub API \+ Gnosisscan |
-    | Regulatory bodies | Organic certification compliance documentation | Ministry of Agriculture DR |
+    | Satellite indices | Vegetation trends, canopy change, and farm polygon health | Ecological monitoring and anomaly detection |
+    | Soil observations | Moisture, electrical conductivity, temperature, and organic matter indicators | Soil health and irrigation decisions |
+    | Per-plant records | Planting location, species, inspection notes, survival status | Agroforestry and tree-backed asset records |
+    | Field observations | Pest pressure, water issues, crop condition, labor notes | Operational learning and early warnings |
+    | Harvest records | Yield, loss rate, sale price, crop cycle, plot, operator | Forecast comparison and revenue reporting |
 
-    **At Adelphi:** Annual EBF reports are published to the Data Hub and anchored as EAS attestations on Gnosis Chain. Each attestation UID provides a permanent, immutable reference to the report — any party can independently verify the report's existence, timestamp, and content hash without trusting Kokonut's word for it.
+    At Adelphi, this includes satellite monitoring, Silvi plant records, field observations, and harvest records routed into Kokonut's public data infrastructure.
   </Step>
-  <Step title="Verification and On-Chain Attestation" icon="stamp" iconType="regular">
-    Anchoring every significant farm event as a cryptographically signed, on-chain EAS attestation — converting self-reported farm data into tamper-proof, independently verifiable records. **The EAS attestation pipeline in continuous operation:**
+  <Step title="Reporting and transparency" icon="chart-line" iconType="regular">
+    Phase IV turns operational data into reporting that different audiences can inspect.
 
-    Every MRV event that passes validation in the Farm Registry API triggers an EAS attestation on Gnosis Chain (or Base for agent-generated attestations). The attestation encodes: `farm_id`, `event_type`, `ipfs_cid` (the content address of the full data payload on Filecoin/IPFS), `impact_score`, `attestor_role`, and `timestamp`. Once anchored, the record is immutable — neither Kokonut nor any other party can alter what was attested.
-
-    **What gets attested in Phase IV:**
-
-    | **Event type** | **Attestation trigger** | **Verification value** |
+    | Cadence | Report type | Primary audience |
     | --- | --- | --- |
-    | MRV data submission | Each validated MRV payload accepted by Farm Registry | Proves data was submitted at a specific time with specific content |
-    | Harvest record | Each harvest cycle logged and validated | Proves production at a specific volume on a specific date |
-    | Annual EBF report | Report published to Data Hub | Proves impact claims were made at a specific time, immutably |
-    | CRISP assessment | Annual risk scoring complete | Proves risk profile at a specific point in time |
-    | Phase milestone | Phase transition or certification event | Proves operational milestones occurred — independent of self-reporting |
+    | Real-time / event-based | Kokonut Hub records, MRV events, harvest logs | DAO members, contributors, reviewers |
+    | Per harvest | Yield, loss rate, sale price, market notes | Farm operators, Finance Guild, DAO reviewers |
+    | Annual | EBF-style impact report and SDG summary | DAO, grant partners, communities, funders |
+    | Periodic / as needed | CRISP-style risk review, methodology update notes | Impact Guild, partners, capital allocators |
 
-    **Carbon credits and RWA primitives:** Phase IV's continuous attestation record is the foundation for carbon credit issuance and real-world asset tokenization. Kokonut has not yet issued carbon credits — this is a Phase IV capability that the MRV record progressively enables as it accumulates depth and credibility. A farm with 3\+ years of satellite-verified, EAS-attested MRV data meets the evidence standard that carbon market standards (Verra, Gold Standard) require. The attestation record is the prerequisite, not the output.
-
-    **Third-party verification:** EAS attestations are self-sovereign — they can be created by any authorized attestor wallet, not only by Kokonut. The [Atlantis App](https://apps.apple.com/in/app/impact-miner/id6448894610) supports third-party attestation of field reports, enabling independent community members or Guild members to co-sign field observations. This multi-attestor model reduces the single-point trust dependency on Kokonut as the sole data provider.
+    The goal is not to create reports after the fact. The goal is to make reporting a byproduct of operations.
   </Step>
-  <Step title="Governance Feedback and Continuous Improvement" icon="arrows-rotate" iconType="regular">
-    Closing the loop between Phase IV data and the governance, operational, and methodological decisions that improve the farm — and the network — over time. **The Kokonut-specific feedback loop:**
+  <Step title="Verification and attestation" icon="stamp" iconType="regular">
+    Validated farm records can be anchored through the Kokonut MRV pipeline.
 
-    **DAO governance:** Phase IV MRV data is the primary evidence base for DAO voting decisions. When a new farm funding proposal (KDP) is evaluated, DAO members compare it to Adelphi's verified track record — actual yield vs. projected, actual loss rates, CRISP score trajectory, EBF report quality. Phase IV data makes the DAO smarter with each passing cycle.
+    | Event type | Verification value |
+    | --- | --- |
+    | MRV submission | Proves that a structured evidence payload existed at a specific time. |
+    | Harvest record | Connects production claims to crop, quantity, timing, and price data. |
+    | Annual report | Anchors impact claims to a published record and reporting period. |
+    | Phase milestone | Documents that a farm reached a defined operational threshold. |
+    | Risk assessment | Records the farm's risk profile at a specific point in time. |
 
-    **Impact Guild review:** The [Impact Guild](/ecosystem-wiki/the-kokonut-dao/kokonut-guilds-dao) reviews each annual EBF report and CRISP assessment, identifies methodology gaps or improvement opportunities, and submits Framework Upgrade proposals (KFP) when changes to the measurement or reporting methodology are warranted. Phase IV data is the Guild's primary working material.
+    Attestation does not make a claim automatically true. It makes the claim traceable, timestamped, and easier to audit.
+  </Step>
+  <Step title="Governance feedback and improvement" icon="arrows-rotate" iconType="regular">
+    Phase IV evidence feeds decisions across the DAO, Guilds, farm operators, and future farm proposals.
 
-    **Community feedback integration:** Farm workers, operators, and community members provide qualitative field observations via Atlantis App that complement the quantitative satellite and probe data. Community-reported anomalies — unusual pest pressure, unexpected plant stress, irregular rainfall impacts — are the early warning signals that satellite imagery may not capture at its 10m resolution. This community sensing tier is a feedback loop that improves the farm's operational responsiveness.
-
-    **Agent learning loop:** As the [Kokonut Agentic Marketplace](/kokonut-x-ai-agents) matures, AI agents will use accumulated Phase IV data to improve their forecasting models. An agent that has processed 3 years of Adelphi's harvest records, NDVI trends, and soil probe readings produces materially better yield forecasts than one with 3 months of data. Phase IV's continuous data accumulation is the training data that makes agents more capable over time.
-
-    **Methodology contribution:** Operational learnings from Phase IV — what NDVI thresholds correlate with actual plant stress at Adelphi, which biochar application rates produce the strongest EC improvement, how the syntropic strata structure affects MSAVI readings during establishment — are contributed back to the open-source [Kokonut Framework](https://github.com/wasalo/kokonut-framework) as methodology refinements that benefit every subsequent farm.
+    | Feedback user | How Phase IV helps |
+    | --- | --- |
+    | Farm operators | Improve irrigation, crop planning, pest response, labor planning, and harvest timing. |
+    | DAO members | Compare proposals against actual farm performance and evidence of milestones. |
+    | Impact Guild | Review reporting quality, MRV gaps, SDG claims, and methodology upgrades. |
+    | Finance Guild | Compare forecasts against actual revenue, loss rates, costs, and cash-flow timing. |
+    | Technology Guild | Improve data schemas, dashboards, APIs, and agent workflows. |
+    | New farms | Learn from validated assumptions before requesting funding. |
   </Step>
 </Steps>
 
 ---
 
-## Why time is the most valuable variable in Phase IV
+## Why time is the most valuable variable
 
-The compounding value of the MRV record is not linear — it is exponential with time. A farm with 12 months of data has a baseline. A farm with 36 months of data has seasonal patterns, trend lines, and the ability to distinguish weather anomalies from structural farm health changes. A farm with 60 months of data has the longitudinal record that institutional capital requires.
+A farm with one month of data has observations. A farm with one year of data has a baseline. A farm with three years of data can begin showing patterns. A farm with five years of data can show whether production, soil, biodiversity, market access, and governance systems are actually compounding.
 
-```text
-Year 1:   Baseline established. MRV cadence confirmed.
-          EBF report #1: limited comparison value.
-          CRISP: higher Project Developer Risk (new operator).
-          Carbon credits: not yet eligible (insufficient track record).
- 
-Year 2:   First seasonal cycle comparison available.
-          EBF report #2: year-over-year improvement documented.
-          CRISP: Project Developer Risk declining (proven track record).
-          Institutional: first conversations with impact investors possible.
- 
-Year 3:   Meaningful trend data. Soil improvement documented across 3 years.
-          EBF report #3: 3-year verified impact record.
-          CRISP: full risk profile matured — carbon credit eligibility opens.
-          RWA: tokenization and TradFi leverage instruments become viable.
- 
-Year 5+:  Coconut trees reaching first harvest.
-          Full three-cycle model at maximum production.
-          Replanting cycle beginning for first medium-cycle crops.
-          Institutional capital access fully unlocked.
-```
-
-This is why Phase IV has no end. Every year of continued operation makes the farm more credible, more legible to capital, and more valuable to the network as a reference implementation for future farms.
-
----
-
-## Phase IV and the institutional capital pathway
-
-A farm that has completed Phase III and is running Phase IV continuously is positioned for the capital outcomes described in the [Framework Introduction's Operational Variables pillar](/kokonut-framework/Introduction#operational-variables):
-
-| **Capital instrument** | **Phase IV prerequisite** | **Status at Adelphi** |
+| Time horizon | What becomes possible | What still requires caution |
 | --- | --- | --- |
-| Organic certification premium pricing | Certification active \+ harvest records proving consistent quality | In progress (Phase III) |
-| Carbon credit issuance | 3\+ years satellite-verified MRV \+ CRISP assessment \+ standard-specific documentation | Requires continued Phase IV accumulation |
-| RWA token backing | Verified production record \+ on-chain attestation history | EAS attestation pipeline active |
-| Impact investment eligibility | 3 annual EBF reports \+ clean CRISP profile | Year 1 EBF report in progress |
-| TradFi leverage (institutional debt) | 5\+ year production track record \+ certified organic \+ clean financials | Long-term Phase IV pathway |
+| 0–6 months | Baseline data, early soil observations, and first operating records | Too early for strong trend claims |
+| 6–12 months | First annual report, initial harvest comparison, first SDG evidence map | Limited year-over-year comparison |
+| 12–36 months | Seasonal patterns, operator track record, forecast-vs-actual analysis | Carbon, RWA, and financing claims still need external standards and review |
+| 36\+ months | Stronger institutional due diligence record and better replication benchmarks | Still subject to farm, market, legal, governance, and weather risk |
+| 60\+ months | Long-cycle crops and multi-year operational credibility become more visible | Continued maintenance, replanting, and data quality remain essential |
 
-None of these instruments are available at Phase I or Phase II. They become available progressively as the Phase IV record deepens. The Kokonut Framework's claim that syntropic farming can bridge ecology and balance sheets — that on-the-ground regeneration can become institutionally legible capital — is only demonstrable through the accumulation that Phase IV enables.
+<Warning>
+  Phase IV can support institutional conversations, but it does not automatically unlock organic premiums, carbon credits, RWA tokenization, or debt financing. Those outcomes require additional verification, certification, market demand assessment, legal review, partner due diligence, and DAO approval, where relevant.
+</Warning>
 
 ---
+
+## Phase IV and the capital pathway
+
+Phase IV is the evidence base that can make a farm more legible to partners over time.
+
+| Possible pathway | Phase IV evidence needed | Claim status |
+| --- | --- | --- |
+| Organic premium pricing | Certification status, quality records, buyer relationships, harvest history | Conditional on certification and market access |
+| Carbon credit exploration | Multi-year soil and vegetation data, standard-specific methodology, third-party verification | Not automatic; requires external standards |
+| RWA primitives | Accurate plant records, governance approvals, legal review, and attestation history | Conditional and jurisdiction-sensitive |
+| Impact investment | Multi-year EBF reports, financial records, risk review, and transparent governance | Depends on partner diligence |
+| Institutional debt | Long-term production history, clean financials, market contracts, and legal structure | Long-term possibility, not Phase I/II outcome |
+
+This framing is important: **Phase IV is a prerequisite layer, not a promise of financing.**
+
+---
+
+## How Phase IV connects to the other phases
+
+| Framework phase | Relationship to Phase IV |
+| --- | --- |
+| Phase I — Foundation | Creates the baseline: farm schema, site diagnosis, soil preparation, crop plan, and MRV setup. |
+| Phase II — Production | Produces the first real harvest and operational data that tests assumptions against reality. |
+| Phase III — Consolidation | Uses repeated production and reporting to mature markets, training, certification, and resilience. |
+| Phase IV — Continuous Operations | Keeps the farm accountable and useful as a long-term reference implementation. |
+
+Phase IV is active throughout all phases, but it becomes more valuable as the farm continues to operate.
+
+---
+
+## What Phase IV does not guarantee
+
+Phase IV reduces uncertainty by creating better records, but it does not remove uncertainty.
+
+| Risk | Why it still matters |
+| --- | --- |
+| Weather and climate risk | Rainfall, drought, storms, and temperature anomalies can affect performance. |
+| Execution risk | Farm outcomes still depend on operators, labor, maintenance, training, and decision quality. |
+| Market risk | Prices, buyers, transport, certification, and demand can change. |
+| Data-quality risk | Bad inputs, missing records, sensor failure, or inconsistent field logs weaken conclusions. |
+| Governance risk | DAO decisions, funding timing, and proposal quality still affect execution. |
+| Carbon and impact-claim risk | Strong claims require methodology, measurement, reporting periods, and verification. |
+| Legal and regulatory risk | RWA, carbon, lending, and certification pathways depend on jurisdiction and partner review. |
+
+---
+
+## Phase IV reviewer checklist
+
+Before using Phase IV data to support a proposal, report, partnership, or public claim, reviewers should ask:
+
+- Is the farm record complete and tied to the Common Data Schema?
+- Are forecasts separated from actual harvest records?
+- Are SDG claims tied to measurable farm activity?
+- Are carbon and climate claims clearly labeled as estimated, measured, or verified?
+- Are EAS attestations linked to full payloads, not just summary claims?
+- Is the reporting period clearly stated?
+- Are missing data, sensor gaps, or field uncertainties disclosed?
+- Has the relevant Guild reviewed the claim or methodology?
+- Does the proposed next step require DAO approval?
+
+---
+
+## Next steps
 
 <CardGroup cols={2}>
-  <Card title="MRV — The Technical Stack" icon="magnifying-glass-chart" href="/ecosystem-wiki/kokonut-farms/measurement-reporting-and-verification">
-    The full measurement methodology Phase IV runs on — satellite indices, soil probes, EAS attestation pipeline, and the Farm Registry API that ingests all data.
+  <Card title="MRV — the technical stack" icon="magnifying-glass-chart" href="/ecosystem-wiki/kokonut-farms/measurement-reporting-and-verification">
+    Learn how farm activity becomes structured evidence, IPFS records, Farm Registry events, EAS attestations, Data Hub entries, and annual reports.
   </Card>
 
-  <Card title="Kokonut × AI Agents" icon="robot" href="/kokonut-x-ai-agents">
-    The Agentic Marketplace being built to automate Phase IV's data collection and reporting pipeline — removing the manual bottlenecks that limit collection frequency.
+  <Card title="Phase III — consolidation" icon="chart-line-up" href="/kokonut-framework/development-phases/phase-iii">
+    See the stage that strengthens certification, markets, training, biodiversity, replanting, and institutional readiness.
   </Card>
 
   <Card title="Ecological Impact Frameworks" icon="leaf-heart" href="/kokonut-framework/framework-add-ons/ecological-impact-frameworks">
-    EBF and CRISP — the annual reporting frameworks whose outputs Phase IV continuously produces, and whose compounding track record enables the institutional capital pathway.
+    Understand how EBF and CRISP help interpret impact evidence and risk context.
   </Card>
 
-  <Card title="Phase III — Consolidation and Expansion" icon="chart-line-up" href="/kokonut-framework/development-phases/phase-iii">
-    What precedes perpetual Phase IV operations — the harvest protocols, organic certification, market expansion, and replanting cycles that Phase III establishes.
+  <Card title="Kokonut × AI Agents" icon="robot" href="/kokonut-x-ai-agents">
+    Explore how agents can help automate data collection, reporting, forecasting, and attestation workflows.
+  </Card>
+
+  <Card title="Common Data Schema" icon="table-columns" href="/kokonut-framework/framework-components/common-data-schema">
+    Review the baseline farm record that Phase IV evidence builds upon.
+  </Card>
+
+  <Card title="Adelphi Farm Summary" icon="seedling" href="/ecosystem-wiki/kokonut-farms/adelphi/summary">
+    See Phase IV in context through Kokonut's first live farm reference implementation.
   </Card>
 </CardGroup>
+
+<div style={{ display: "flex", gap: "12px", justifyContent: "center", flexWrap: "wrap", margin: "2rem 0 0.75rem" }}>
+  <a href="/ecosystem-wiki/kokonut-farms/measurement-reporting-and-verification" style={{ display: "inline-flex", alignItems: "center", gap: "6px", background: "#009F4D", color: "#fff", padding: "10px 20px", borderRadius: "8px", fontWeight: "600", fontSize: "14px", textDecoration: "none" }}>
+    Read MRV Methodology →
+  </a>
+
+  <a href="https://hub.kokonut.network/projects/41" style={{ display: "inline-flex", alignItems: "center", gap: "6px", border: "1.5px solid #009F4D", color: "#009F4D", padding: "10px 20px", borderRadius: "8px", fontWeight: "600", fontSize: "14px", textDecoration: "none", background: "transparent" }}>
+    Explore Adelphi Data
+  </a>
+</div>
