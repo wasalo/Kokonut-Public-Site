@@ -1,167 +1,396 @@
 ---
 title: "8 Forms of Capital"
 icon: "water"
+description: "How Kokonut measures value beyond revenue: natural, financial, social, human, material, intellectual, cultural, and health capital."
 ---
 
-The 8 Forms of Capital is a regenerative economics framework — developed by Gregory Landua and Ethan Roland in their work on regenerative enterprise — that expands the conventional definition of capital beyond money to include all the forms of value that healthy communities and ecosystems generate and depend on.
+# The 8 Forms of Capital help Kokonut measure what money alone cannot see.
 
-Kokonut uses the 8 Forms as the measurement architecture for annual impact reporting: where the [Pillars of Value](/kokonut-framework/framework-components/pillars-of-value) define _what_ to evaluate, the 8 Forms define _how_ to measure value creation across every dimension of farm impact. Together they form the complete impact assessment framework that undergirds every Kokonut farm's annual [EBF report](https://ebfcommons.org/).
+A regenerative farm creates more than revenue. It can restore soil, strengthen local relationships, train people, preserve culture, build public knowledge, produce food, and create infrastructure that continues to serve the community after the harvest is sold.
 
-The eight forms are assessed annually at every Kokonut farm and published to the [Data Hub](https://hub.kokonut.network). The EBF Framework's four reporting dimensions map directly to these eight capital forms:
+Kokonut uses the **8 Forms of Capital** as a value-accounting lens for farm proposals, annual impact reports, MRV workflows, and DAO review. The goal is simple: make every form of value visible enough to discuss, fund, improve, and verify.
 
-| **EBF Dimension** | **Capital forms** |
+<div style={{ display: "flex", gap: "12px", justifyContent: "center", flexWrap: "wrap", margin: "1.5rem 0 0.75rem" }}>
+  <a href="#the-eight-forms" style={{ display: "inline-flex", alignItems: "center", gap: "6px", background: "#009F4D", color: "#fff", padding: "10px 20px", borderRadius: "8px", fontWeight: "600", fontSize: "14px", textDecoration: "none" }}>
+    See the 8 Forms →
+  </a>
+
+  <a href="#how-value-becomes-evidence" style={{ display: "inline-flex", alignItems: "center", gap: "6px", border: "1.5px solid #009F4D", color: "#009F4D", padding: "10px 20px", borderRadius: "8px", fontWeight: "600", fontSize: "14px", textDecoration: "none", background: "transparent" }}>
+    See How Value Is Verified
+  </a>
+</div>
+
+<p style={{ textAlign: "center", fontSize: "13px", color: "#6b7280", marginTop: "0.25rem" }}>
+  Use this page when reviewing farm proposals, writing annual impact reports, or translating farm activity into MRV evidence.
+</p>
+
+---
+
+## Why this matters
+
+Most agricultural finance sees farms through one narrow lens: money in, money out. Kokonut needs a broader lens because regenerative farms are designed to compound multiple kinds of value at once.
+
+| Without the 8 Forms | With the 8 Forms |
 | --- | --- |
-| Environmental Impact | Natural Capital |
-| Economic Impact | Financial Capital |
-| Social Impact | Social \+ Human Capital |
-| Sustainability Audit | All 8 forms |
+| A farm is judged mostly by revenue. | A farm is assessed across ecological, economic, social, cultural, and knowledge value. |
+| Public goods are treated as side effects. | Public goods become part of the value model. |
+| Impact claims stay vague. | Claims are tied to evidence, metrics, and reporting cycles. |
+| DAO reviewers only see the budget. | DAO reviewers can compare risks, benefits, and community outcomes. |
+| Replication is difficult. | New farms can learn from comparable value records. |
+
+<Note>
+  The 8 Forms do not replace financial analysis. They expand it. A farm still needs budgets, revenue assumptions, execution capacity, and risk controls — but those are not the only forms of value that matter.
+</Note>
 
 ---
 
-## Implementation and Measurement Strategies
+## Where this fits in the Kokonut Framework
 
-<Tabs>
-  <Tab title="Natural">
-    **What it is:** The ecological health of land, water, air, biodiversity, and ecosystem services — the living foundation that all other capital forms depend on. **Implementation**
+```mermaid
+flowchart TD
+    A["Farm proposal"] --> B["Pillars of Value"]
+    B --> C["8 Forms of Capital"]
+    C --> D["Common Data Schema"]
+    D --> E["MRV workflow"]
+    E --> F["Data Hub + EAS attestations"]
+    F --> G["Annual impact report"]
+    G --> H["DAO learning + future proposals"]
+```
 
-    - Conduct soil and biodiversity baseline assessments before planting — at Kokonut farms this uses the [MRV ground sensing stack](/ecosystem-wiki/kokonut-farms/measurement-reporting-and-verification): soil moisture probes measuring volumetric water content, electrical conductivity, and soil temperature across crop beds
-    - Build soil organic matter through [syntropic farming methodology](/kokonut-framework/why-syntropic-farming): biochar incorporation, year-round cover crops, closed-loop poultry manure cycling, and multi-strata perennial planting — not drip irrigation or synthetic mulch, which create input dependency rather than self-regulating soil health
-    - Implement phased planting across all three cycle lengths: at [Adelphi](/ecosystem-wiki/kokonut-farms/adelphi/summary), 96 coconut trees across 8 plots (long cycle), 560 passion fruit plants across 8 plots (medium cycle), and lettuce across 10 plots (short cycle) — calibrated to the specific 15,725 m² site
+The relationship is:
 
-    **Measurement**
-
-    - Annual soil quality tests via ground probes: organic matter accumulation, nutrient availability (EC readings), and microbial activity indicators — all published to the [Data Hub](https://hub.kokonut.network/projects/41)
-    - Quarterly biodiversity surveys tracking changes in local flora and fauna; species count in the endangered species nursery maintained as a living catalog; per-plant health logged via [Silvi](https://www.silvi.earth/) GPS
-    - Satellite vegetation monitoring on each Sentinel overpass: NDVI (general health), NDRE (maturity phase), MSAVI (early season) — processed via QGIS and logged to the MRV pipeline
-  </Tab>
-  <Tab title="Financial">
-    **What it is:** Monetary resources, revenue streams, investment flows, and the financial mechanisms that enable farms to operate, scale, and distribute value — including the governance structures that determine who controls capital allocation. **Implementation**
-
-    - Fund farms through the [Kokonut DAO](/ecosystem-wiki/the-kokonut-dao/dao-layers) treasury mechanism: stablecoin tribute → DAO proposal → on-chain vote → milestone-gated disbursements anchored to EAS-attested MRV data. This replaces grant and microloan dependency with a community-governed, rage-quit-protected capital allocation system
-    - Establish transparent financial management through on-chain treasury: all inflows and outflows visible on [Gnosisscan](https://gnosisscan.io/address/0xeb55b75328a8dffd45bbf34b7e7efc431a179085) in real time; no admin can move funds without a passed DAO proposal
-    - Allocate **10% of gross revenue** to the public goods fund — at [Adelphi](/ecosystem-wiki/kokonut-farms/adelphi/crops-and-harvest-forecast), approximately **\$14,911/yr** at current projections — supporting community workshops, free native seedling distribution, and the education gazebo
-
-    **Measurement**
-
-    - Monthly revenue tracking from crop sales (lettuce, passion fruit, coconut) and poultry production (eggs), published per cycle to the [Data Hub](https://hub.kokonut.network/projects/41)
-    - Quarterly financial reports including gross revenue, public goods distribution amount, and treasury balance — all on-chain and auditable via [DAOHaus](https://link.kokonut.network/dao)
-    - Annual impact report detailing public goods fund deployment: number of workshops, seedlings distributed, participants trained, and community programs funded
-  </Tab>
-  <Tab title="Social">
-    **What it is:** The relationships, networks, trust, and coordination mechanisms within and around the farm community — the social fabric that enables collective action, shared governance, and community resilience. **Implementation**
-
-    - Build community governance through the [Kokonut Guilds DAO](/ecosystem-wiki/the-kokonut-dao/kokonut-guilds-dao): six domain-specific contributor bodies (Technology, Impact, Communications, Governance, Finance, Community & Partnerships) that coordinate farm operations, impact reporting, and ecosystem development through contribution-weighted Guild Points rather than capital-weighted voting
-    - Form community advisory relationships with local stakeholders — at Adelphi, Yanny and Neury Hernández actively engage the batey and Haty community near Gonzalo, organizing weekend programs for children, the elderly, and neighboring farmers
-    - Develop regular community events: workshops at the education gazebo, weekend recreational and educational programs, and the free distribution of native seedlings that builds ongoing relationships with neighbors
-
-    **Measurement**
-
-    - Quarterly employment reports: number of positions, wage levels, and job satisfaction — logged via Atlantis App and published to the [Data Hub](https://hub.kokonut.network/projects/41)
-    - Annual community surveys assessing project perception, community cohesion, and awareness of the farm's public goods programs
-    - Guild Points accumulation tracked per contributor and per Guild — a quantitative measure of social capital building within the Kokonut Network ecosystem; Guild membership and contribution history published via [Charmverse](https://link.kokonut.network/charmverse)
-  </Tab>
-  <Tab title="Human">
-    **What it is:** The knowledge, skills, health, and capabilities of the people who operate and benefit from the farm — the human capacity that enables both agricultural excellence and community leadership. **Implementation**
-
-    - Develop training through the [Kokonut Framework's four development phases](/kokonut-framework/development-phases/phase-i): Phase I includes mandatory personnel training in agro-ecological practices, bio-input production, sustainable soil management, and market strategies — customized to the specific farm's crop selection and community context
-    - Operate the on-site agro-ecological education center: at Adelphi, a multipurpose gazebo serves as dining area, meeting room, and training facility — hosting regular workshops on organic farming, agroforestry design, biochar production, ecological regeneration, and poultry management
-    - Partner with local schools and community organizations to integrate agricultural education into the surrounding community — not just the farm's workforce
-
-    **Measurement**
-
-    - Pre- and post-training assessments to measure skill acquisition per workshop cohort
-    - Track number of participants in educational programs by session, topic, and community of origin — logged via Atlantis App field data
-    - Annual mentorship and training assessment: skill transfer rates, program satisfaction, and participant follow-on agricultural activity in their own communities
-  </Tab>
-  <Tab title="Material">
-    **What it is:** Physical infrastructure, tools, equipment, and built assets that enable farm operations and community benefit — the material foundation of a working agricultural system. **Implementation**
-
-    - Build essential farm infrastructure through DAO-funded capital deployment: at Adelphi, [Public Nouns Proposal #69](https://publicnouns.wtf/vote/69) funded the critical infrastructure — production beds, the on-site biochar production system, the poultry facility for 110 hens, the multipurpose education gazebo, and the endangered species nursery
-    - Develop efficient, syntropic-aligned water management: terraced terrain with beard grass ground cover rather than energy-intensive drip irrigation; soil organic matter building as the primary water retention strategy
-    - Establish on-site biological input production: the biochar production station (bamboo → pyrolysis → biochar), the poultry manure processing system (manure → humic acids \+ organic urea), and the nursery propagation infrastructure
-
-    **Measurement**
-
-    - Quarterly progress reports on infrastructure: build completion status, maintenance requirements, and operational capacity relative to the farm's development phase
-    - Annual assessment of infrastructure condition and expansion needs — tied to the [Framework Phase](/kokonut-framework/development-phases/phase-i) the farm is currently in
-    - Track utilization of community facilities: workshop attendance at the education gazebo, nursery propagation output per season, poultry facility egg production records
-  </Tab>
-  <Tab title="Intellectual">
-    **What it is:** Knowledge systems, research outputs, documented methodologies, and the shared information infrastructure that allows the network to learn, improve, and replicate — including open-source tools and data. **Implementation**
-
-    - Maintain and improve the open-source Kokonut knowledge infrastructure: [wasalo/Kokonut-Public-Site](https://github.com/wasalo/Kokonut-Public-Site) (this documentation), [wasalo/kokonut-framework](https://github.com/wasalo/kokonut-framework) (Framework spec and methodology), and [wasalo/Kokonut-Agentic-Marketplace](https://github.com/wasalo/Kokonut-Agentic-Marketplace) (onchain agent infrastructure) — all open source and forkable by any community
-    - Document and share operational knowledge through the [Farm Registry API](/build-with-kokonut#framework-data-primitives): MRV data, harvest records, and impact metrics accumulated at Adelphi become the training data and reference implementation for every subsequent Kokonut farm
-    - Develop the [Kokonut Agentic Marketplace](/kokonut-x-ai-agents) as an intellectual capital multiplier: AI agents that automate MRV reporting, harvest forecasting, and impact scoring accumulate operational knowledge that improves with each farm cycle
-
-    **Measurement**
-
-    - Number of open-source contributions per quarter: pull requests, documentation improvements, schema updates, and agent deployments — tracked via GitHub repository activity
-    - Data Hub usage metrics: number of farm records indexed, MRV events attested, and API queries per month — measuring intellectual capital accessibility
-    - Knowledge replication rate: how many new farms have successfully used the Framework documentation to independently complete Phase I planning — the ultimate measure of intellectual capital quality
-  </Tab>
-  <Tab title="Cultural">
-    **What it is:** The traditions, stories, practices, and values that connect communities to their land, their history, and each other — the cultural continuity that gives regenerative agriculture its deepest meaning. **Implementation**
-
-    - Preserve and celebrate the founders' stories: at Adelphi, [Yanny and Neury Hernández's journey](/ecosystem-wiki/kokonut-farms/adelphi/background-story) — from pharmaceutical and manicurist careers in the city to building a regenerative farm on land their grandparents farmed — is documented as a public good, demonstrating that the reconnection to traditional land stewardship is possible and viable
-    - Conserve native and heritage crop varieties through the endangered species nursery: 12\+ at-risk native species from the Dominican Republic — including native cacao, guavaberry, Congo coffee tree, Hispaniola palmetto — are propagated and distributed free to neighboring communities, preserving the agrobiological heritage of the region
-    - Design community programs that reconnect younger generations to agricultural knowledge: weekend programs at Adelphi invite children from the batey and Haty community to participate in educational, recreational, and farming activities — transmitting knowledge that would otherwise be lost as rural communities urbanize
-
-    **Measurement**
-
-    - Number of heritage variety propagations per season: species count in the nursery, seedlings distributed to community members, and recipients' planting follow-through rates
-    - Community program participation: attendance at weekend events, age distribution of participants, and feedback from community members on cultural relevance and value
-    - Documentation completeness: the founders' story, traditional farming practices, and indigenous species knowledge archived in the public documentation and Data Hub — permanently accessible to future farm operators
-  </Tab>
-  <Tab title="Health">
-    **What it is:** The physical and mental wellbeing of the people in and around the farm — directly supported by access to clean, nutritious food, safe working conditions, and the restorative connection to nature that farming communities provide. **Implementation**
-
-    - Produce organic, chemical-free food as the primary health capital contribution: at Adelphi, the complete elimination of synthetic pesticides and fertilizers means that every vegetable, fruit, and egg produced is free of the chemical residues that persist in conventionally farmed food — directly improving the health of both farm workers and consumers
-    - Expand community protein access through the poultry system: 110 free-range hens producing approximately **100 eggs per day** make locally produced protein consistently available to the Monte Plata community — at lower cost and higher nutritional quality than processed or imported alternatives
-    - Implement comprehensive occupational health and safety protocols for farm contributors: ergonomic farming practices, training in safe biochar production (pyrolysis involves high heat), and proper protective equipment for poultry management and soil work
-
-    **Measurement**
-
-    - Annual community health metrics: access to fresh organic produce, consumption of locally produced food, and reported reduction in synthetic food additive exposure — tracked via community surveys
-    - Farm worker health outcomes: occupational injury rates, illness incidence, and access to occupational health resources — reported annually in the EBF impact report
-    - Egg and produce quality testing: periodic nutritional content analysis confirming that Adelphi's organic production delivers measurably superior nutritional profiles compared to conventional alternatives
-  </Tab>
-</Tabs>
+| Framework element | Job |
+| --- | --- |
+| **Pillars of Value** | Define what the DAO should evaluate. |
+| **8 Forms of Capital** | Define how value is categorized and measured. |
+| **Common Data Schema** | Captures the baseline farm record needed for comparison. |
+| **MRV workflow** | Turns farm activity into structured evidence. |
+| **Annual impact report** | Summarizes what changed across the year. |
 
 ---
 
-## How the 8 Forms map to annual reporting
+## The eight forms
 
-Every Kokonut farm's annual [EBF Framework](https://ebfcommons.org/) impact report is organized around the 8 Forms of Capital — each form contributing to one or more of the four EBF reporting dimensions:
-
-| **Capital form** | **EBF dimension** | **Primary metrics at Adelphi** |
+| Capital form | Plain meaning | Kokonut question |
 | --- | --- | --- |
-| **Natural** | Environmental | Carbon sequestration (t CO₂e/acre/yr), NDVI average, biodiversity index, species count |
-| **Financial** | Economic |  |
-| **Social** | Social | Guild Points accumulated, community programs held, workshop attendance |
-| **Human** | Social | Training participants, skills assessments, mentorship pairs |
-| **Material** | Sustainability | Infrastructure completion status, facility utilization rates |
-| **Intellectual** | Sustainability | Open-source contributions, API usage, knowledge replication rate |
-| **Cultural** | Sustainability | Heritage species preserved, community programs, founders' story documented |
-| **Health** | Sustainability | Organic food access, worker health incidents, nutritional quality audits |
-
-Annual reports for Adelphi are published to [hub.kokonut.network/projects/41](https://hub.kokonut.network/projects/41) and anchored as EAS attestations on Gnosis Chain — making the 8 Forms assessment not just claimed, but cryptographically verifiable.
+| **Natural** | Soil, water, biodiversity, vegetation, carbon, and ecosystem health | Is the land becoming healthier over time? |
+| **Financial** | Revenue, treasury, funding, costs, and public goods allocation | Can the farm sustain operations and distribute value responsibly? |
+| **Social** | Trust, relationships, coordination, participation, and community networks | Is the farm strengthening local and network relationships? |
+| **Human** | Skills, knowledge, safety, training, and leadership capacity | Are people gaining the capability to operate and replicate regeneration? |
+| **Material** | Infrastructure, tools, equipment, built assets, and physical systems | Does the farm have the physical base to keep working? |
+| **Intellectual** | Data, documentation, methods, open-source tools, and research | Is the network learning in a way others can reuse? |
+| **Cultural** | Stories, traditions, local identity, land memory, and heritage species | Is the farm preserving and renewing cultural connection to land? |
+| **Health** | Food quality, worker wellbeing, community nutrition, and safe conditions | Is the farm supporting healthier people and safer work? |
 
 ---
+
+## 1. Natural Capital
+
+Natural Capital is the ecological foundation of the farm: soil health, water retention, biodiversity, vegetation, habitat, and ecosystem resilience.
+
+**How Kokonut farms build it**
+
+- Use syntropic planting, cover crops, perennial roots, biodiversity corridors, and the propagation of native species.
+- Reduce dependency on synthetic inputs by producing organic amendments and bio-inputs on-site.
+- Monitor vegetation health, soil conditions, biodiversity changes, and land-use patterns over time.
+
+**Adelphi example**
+
+Adelphi uses syntropic plots, a biodiversity nursery, at-risk species propagation, biochar, vegetative cover, and satellite vegetation monitoring to make Natural Capital visible.
+
+**Evidence to track**
+
+| Evidence | Possible source |
+| --- | --- |
+| Soil moisture, temperature, and electrical conductivity | Ground sensors or field measurements |
+| Vegetation health | NDVI, NDRE, MSAVI, satellite analysis |
+| Species count and nursery inventory | Field logs, Silvi records, biodiversity surveys |
+| Cover crop and living-root continuity | Farm observations and geospatial records |
+| Biochar and organic input use | Biofactory logs and MRV events |
+
+<Warning>
+  Carbon and biodiversity outcomes should be treated as estimates until supported by a clear methodology, measurement period, and MRV evidence.
+</Warning>
+
+---
+
+## 2. Financial Capital
+
+Financial Capital is the monetary layer that lets farms operate, pay people, maintain infrastructure, reinvest, and support public goods.
+
+**How Kokonut farms build it**
+
+- Use DAO-governed capital allocation instead of opaque grant or loan dependency.
+- Track crop revenue, egg production, treasury movement, public goods allocations, and operating costs.
+- Route funding decisions through proposals, community review, and on-chain execution.
+
+**Adelphi example**
+
+Adelphi’s forecast includes short-cycle crops, medium-cycle crops, long-cycle coconut production, and poultry as recurring production streams. The allocation of public goods is modeled as 10% of gross revenue once revenue is realized.
+
+**Evidence to track**
+
+| Evidence | Possible source |
+| --- | --- |
+| Revenue by crop and cycle | Harvest records, sales records, Data Hub |
+| Treasury inflows and outflows | DAO records, Gnosis Chain, Safe transactions |
+| Public goods allocation | Proposal reports, impact reports, and accounting records |
+| Budget vs. actuals | Farm operations reports |
+| Forecast revisions | Harvest forecast updates and MRV actuals |
+
+<Note>
+  Forecasts are planning tools, not guaranteed outcomes. Financial Capital should separate projected revenue from verified actuals.
+</Note>
+
+---
+
+## 3. Social Capital
+
+Social Capital is the trust and coordination capacity around the farm: local relationships, contributor networks, governance participation, and community engagement.
+
+**How Kokonut farms build it**
+
+- Create community programs, workshops, open documentation, and local participation pathways.
+- Use Guilds to coordinate contributions across technology, impact, governance, communications, finance, and partnerships.
+- Track participation, relationships, and contribution records over time.
+
+**Adelphi example**
+
+Adelphi connects Yanny and Neury’s local land stewardship with nearby communities, weekend programming, educational visits, and Kokonut’s broader contributor network.
+
+**Evidence to track**
+
+| Evidence | Possible source |
+| --- | --- |
+| Community events held | Event logs and attendance records |
+| Workshop participation | Training records and surveys |
+| Guild contribution records | Charmverse, Guild Points, proposal histories |
+| Community feedback | Interviews and annual surveys |
+| Local stakeholder relationships | Partnership records and farm reports |
+
+---
+
+## 4. Human Capital
+
+Human Capital is the capability of people: skills, training, safety, leadership, and practical knowledge.
+
+**How Kokonut farms build it**
+
+- Train farm teams in syntropic farming, bio-input production, soil management, poultry systems, data collection, and market strategy.
+- Build repeatable training materials that new farms can reuse.
+- Improve local capacity to operate regenerative systems without forever relying on external experts.
+
+**Adelphi example**
+
+Adelphi’s gazebo functions as a training and community education space for agroecology, native species, biochar, poultry management, and farm operations.
+
+**Evidence to track**
+
+| Evidence | Possible source |
+| --- | --- |
+| Training sessions completed | Attendance logs |
+| Skills gained | Pre/post assessments |
+| Safety practices | Farm safety records |
+| Mentorship activity | Training reports |
+| Follow-on community activity | Participant follow-up surveys |
+
+---
+
+## 5. Material Capital
+
+Material Capital is the physical infrastructure that enables the farm to operate: land improvements, tools, buildings, water systems, nursery facilities, poultry infrastructure, and monitoring equipment.
+
+**How Kokonut farms build it**
+
+- Fund critical farm infrastructure through transparent proposals.
+- Track construction, maintenance, utilization, and upgrades across development phases.
+- Connect infrastructure to production, education, MRV, and community benefit.
+
+**Adelphi example**
+
+Adelphi includes production beds, syntropic plots, nursery and biofactory infrastructure, a poultry system, an education gazebo, mapped farm zones, and geospatial monitoring.
+
+**Evidence to track**
+
+| Evidence | Possible source |
+| --- | --- |
+| Infrastructure completion | Milestone reports and photos |
+| Facility utilization | Event logs, production records |
+| Maintenance needs | Operations reports |
+| Equipment status | Inventory records |
+| Infrastructure-linked outputs | Harvests, eggs, seedlings, trainings |
+
+---
+
+## 6. Intellectual Capital
+
+Intellectual Capital is the knowledge that helps the network improve: data, documentation, methodologies, open-source code, agent workflows, research, and lessons learned.
+
+**How Kokonut farms build it**
+
+- Publish documentation, farm data, MRV workflows, schema updates, proposal templates, and operational lessons.
+- Build open-source tools that future farms can reuse.
+- Use AI agents and the Intelligence Layer to help coordinate reporting, forecasting, verification, and learning.
+
+**Adelphi example**
+
+Adelphi is the reference implementation for the Kokonut Framework: farm data, forecasts, infrastructure records, MRV events, and lessons learned from Adelphi inform future farm replication.
+
+**Evidence to track**
+
+| Evidence | Possible source |
+| --- | --- |
+| Documentation improvements | GitHub commits and pull requests |
+| Farm data published | Data Hub records and API usage |
+| MRV events generated | Registry events and EAS attestations |
+| Agent workflows deployed | Agent logs and tool documentation |
+| Framework reuse | New farm onboarding records |
+
+---
+
+## 7. Cultural Capital
+
+Cultural Capital is the value carried by stories, traditions, local identity, land memory, heritage crops, and intergenerational knowledge.
+
+**How Kokonut farms build it**
+
+- Document founder stories, local history, and community relationships.
+- Preserve native species and heritage crops.
+- Create programs that reconnect children, elders, farmers, and contributors to land-based knowledge.
+
+**Adelphi example**
+
+Adelphi’s story begins with Yanny and Neury Hernández returning to land connected to family memory, then turning that land into a regenerative farm and community learning space.
+
+**Evidence to track**
+
+| Evidence | Possible source |
+| --- | --- |
+| Founder and community stories | Public documentation |
+| Heritage species preserved | Nursery inventory and field logs |
+| Seedlings distributed | Distribution records |
+| Cultural events or programs | Attendance logs and photos |
+| Local knowledge documented | Interviews and reports |
+
+---
+
+## 8. Health Capital
+
+Health Capital is the well-being of people connected to the farm: workers, consumers, families, nearby communities, and contributors.
+
+**How Kokonut farms build it**
+
+- Produce food through organic and regenerative practices.
+- Improve access to fresh local produce and protein.
+- Maintain safe working conditions and training for farm activities.
+- Track health-related claims carefully and avoid unsupported medical or nutrition claims.
+
+**Adelphi example**
+
+Adelphi produces vegetables, fruits, and eggs through a system designed around soil health, biodiversity, poultry integration, and reduced dependence on synthetic inputs.
+
+**Evidence to track**
+
+| Evidence | Possible source |
+| --- | --- |
+| Food produced locally | Harvest and sales records |
+| Egg production | Poultry records |
+| Worker safety | Incident reports and safety logs |
+| Community food access | Distribution and sales records |
+| Health-related outcomes | Surveys or third-party analysis, when available |
+
+<Warning>
+  Health claims require caution. Kokonut can document food access, production methods, and safety practices, but should avoid claiming superior nutrition or medical outcomes unless supported by testing and credible methodology.
+</Warning>
+
+---
+
+## How value becomes evidence
+
+The 8 Forms are only useful if each claim can be connected to evidence. Kokonut uses the MRV workflow to move from farm activity to public records.
+
+```mermaid
+flowchart LR
+    A["Farm activity"] --> B["Capital form"]
+    B --> C["Metric or observation"]
+    C --> D["MRV payload"]
+    D --> E["IPFS / Filecoin record"]
+    E --> F["Farm Registry event"]
+    F --> G["EAS attestation"]
+    G --> H["Data Hub + annual impact report"]
+```
+
+| Capital form | Example claim | Evidence standard |
+| --- | --- | --- |
+| Natural | Soil and biodiversity are improving | Soil data, field logs, satellite indices, species records |
+| Financial | Farm revenue supports operations and public goods | Sales records, treasury transactions, budget reports |
+| Social | Community participation is increasing | Event attendance, surveys, Guild contribution records |
+| Human | Training increases local capacity | Workshop logs, skills assessments, mentorship records |
+| Material | Infrastructure improves production capacity | Build milestones, usage records, maintenance reports |
+| Intellectual | Knowledge is reusable by future farms | Documentation, open-source activity, API/data usage |
+| Cultural | Heritage species and stories are preserved | Nursery records, story documentation, seedling distribution |
+| Health | Local food access improves | Harvest records, distribution data, safety logs |
+
+---
+
+## How DAO reviewers can use the 8 Forms
+
+When reviewing a proposal, ask:
+
+| Question | Why it matters |
+| --- | --- |
+| Which forms of capital does this proposal affect? | Prevents the DAO from only reviewing the budget. |
+| Which claims are estimates, and which are already measured? | Reduces overclaiming and greenwashing risk. |
+| What evidence will be collected? | Connects the proposal to MRV. |
+| Who is responsible for reporting? | Makes accountability clear. |
+| How will results be published? | Ensures value is legible to the network. |
+| What could fail? | Keeps risk visible before funds are allocated. |
+
+<Note>
+  A strong proposal does not need to maximize all eight forms at once. It should be clear about which forms it affects, how those effects will be measured, and what evidence will be available after execution.
+</Note>
+
+---
+
+## What this framework does not guarantee
+
+The 8 Forms make value easier to see, but they do not remove risk.
+
+| Risk | What to do about it |
+| --- | --- |
+| Agricultural risk | Track weather, crop cycles, pest pressure, soil health, and execution milestones. |
+| Market risk | Separate projected revenue from actual sales and update forecasts after each cycle. |
+| Governance risk | Require clear proposals, accountability, reporting, and community review. |
+| Data-quality risk | Define who collects data, when it is collected, and how it is verified. |
+| Carbon-claim risk | Treat climate benefits as co-benefits until methodology and verification support stronger claims. |
+| Health-claim risk | Avoid medical or nutrition claims unless supported by testing and credible evidence. |
+
+---
+
+## Next steps
 
 <CardGroup cols={2}>
   <Card title="Pillars of Value" icon="square-poll-vertical" href="/kokonut-framework/framework-components/pillars-of-value">
-    The six evaluation dimensions that the 8 Forms measure — Pillars define what to assess, 8 Forms define how to measure it across capital dimensions.
+    Understand the DAO's six evaluation questions before applying the 8 Forms as measurement categories.
   </Card>
 
-  <Card title="Ecological Impact Frameworks" icon="leaf-heart" href="/kokonut-framework/framework-add-ons/ecological-impact-frameworks">
-    EBF and CRISP — the external standards that structure how the 8 Forms of Capital translate into annual impact reports and carbon risk assessments.
+  <Card title="Common Data Schema" icon="database" href="/kokonut-framework/framework-components/common-data-schema">
+    See the farm record that makes farms comparable, fundable, governable, and verifiable.
   </Card>
 
-  <Card title="MRV — Measurement & Verification" icon="magnifying-glass-chart" href="/ecosystem-wiki/kokonut-farms/measurement-reporting-and-verification">
-    The measurement infrastructure that produces the data behind Natural, Financial, and Social capital assessments — satellite monitoring, soil probes, and on-chain EAS attestations.
+  <Card title="MRV Methodology" icon="magnifying-glass-chart" href="/ecosystem-wiki/kokonut-farms/measurement-reporting-and-verification">
+    Learn how farm activity becomes structured evidence, public records, and annual impact reporting.
   </Card>
 
-  <Card title="Adelphi Data Hub" icon="chart-line" href="https://hub.kokonut.network/projects/41">
-    The live source for all 8 capital form metrics at Adelphi — harvest records, MRV events, employment data, and the annual EBF impact report.
+  <Card title="Adelphi Farm Summary" icon="seedling" href="/ecosystem-wiki/kokonut-farms/adelphi/summary">
+    See the first Kokonut farm where the Framework is being applied on real land.
+  </Card>
+
+  <Card title="Proposal Templates" icon="file-signature" href="/ecosystem-wiki/the-kokonut-dao/proposal-templates">
+    Use the 8 Forms to write clearer farm funding, bounty, Framework upgrade, or partnership proposals.
+  </Card>
+
+  <Card title="Positive Impact Methodology" icon="arrows-spin" href="/kokonut-framework/framework-components/framework-features/methodology-positive-impact">
+    See how farm practices create circular impact loops that can be measured and improved.
   </Card>
 </CardGroup>
