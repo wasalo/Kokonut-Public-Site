@@ -1,231 +1,370 @@
 ---
 title: "Pillars of Value"
 icon: "square-poll-vertical"
+description: "The six questions Kokonut uses to evaluate whether a farm creates real community, ecological, financial, and public goods value."
 ---
 
-The Pillars of Value are the six evaluation dimensions that the Kokonut Framework uses to assess every farm — at proposal time, during operations, and in annual impact reporting. They are the lens through which the DAO answers one fundamental question before funding anything: _does this farm create genuine, lasting value for its community and ecosystem, or just financial return for its funders?_
+# The Pillars of Value help the DAO decide what is worth funding.
 
-The six pillars work alongside the [Common Data Schema](/kokonut-framework/framework-components/common-data-schema): the schema provides the structured data fields, and the pillars provide the evaluation framework that interprets that data. A farm that populates the schema but cannot answer all six pillars clearly is not ready for a funding proposal.
+A farm proposal can look promising on paper and still fail to create durable community value. The **Pillars of Value** are Kokonut's evaluation lens for separating short-term financial return from deeper, lasting value.
 
-**When the pillars are applied:**
+They help DAO members, Guild Stewards, grant reviewers, farm operators, and contributors answer one question before funding, operating, or reporting on a farm:
 
-- **Proposal evaluation** — DAO token holders and Guild Stewards review all six pillars before voting on a farm funding proposal (KDP)
-- **Phase I planning** — the [first development phase](/kokonut-framework/development-phases/phase-i) requires pillar documentation as part of the farm's initial data collection and diagnosis
-- **Annual impact reporting** — each pillar maps to one or more dimensions of the [EBF Framework](https://ebfcommons.org/) annual report
-- **Grant applications** — the pillars are the primary structure for external grant proposals (Public Nouns, Gitcoin, ReFi ecosystem partners)
+> Does this farm create genuine value for people, land, governance, and public goods — or only revenue for funders?
 
----
+<div style={{ display: "flex", gap: "12px", justifyContent: "center", flexWrap: "wrap", margin: "1.5rem 0 0.75rem" }}>
+  <a href="#the-six-pillars" style={{ display: "inline-flex", alignItems: "center", gap: "6px", background: "#009F4D", color: "#fff", padding: "10px 20px", borderRadius: "8px", fontWeight: "600", fontSize: "14px", textDecoration: "none" }}>
+    See the Six Pillars →
+  </a>
 
-## 6 Dimensions of Community Impact
+  <a href="#proposal-readiness-check" style={{ display: "inline-flex", alignItems: "center", gap: "6px", border: "1.5px solid #009F4D", color: "#009F4D", padding: "10px 20px", borderRadius: "8px", fontWeight: "600", fontSize: "14px", textDecoration: "none", background: "transparent" }}>
+    Check Proposal Readiness
+  </a>
+</div>
 
-<AccordionGroup>
-  <Accordion title="WHAT — Objective, goals, and benefits">
-    **What's the objective of the project, its goals, and what benefits are exactly being enabled with the deployment of the farm?** This pillar establishes the farm's reason for existing — beyond financial return. It asks what specific agricultural, ecological, and community outcomes the farm is designed to produce, and how those outcomes connect to the Kokonut Network's mission of reducing obstacles to agricultural development and democratizing investment in real-world projects.
+<p style={{ textAlign: "center", fontSize: "13px", color: "#6b7280", marginTop: "0.25rem" }}>
+  Use this page when reviewing farm proposals, preparing a Kokonut Development Proposal, writing grants, or translating farm activity into annual impact reports.
+</p>
 
-    **Common Data Schema connection:** `project_summary` and `revenue_streams` These are the primary schema fields that answer this pillar. The summary covers the what; the revenue stream tags define the crop-level objectives.
+<div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(120px, 1fr))", gap: "1px", background: "#e5e7eb", border: "1px solid #e5e7eb", borderRadius: "12px", overflow: "hidden", margin: "1.5rem 0" }}>
+  <div style={{ background: "white", padding: "1rem", textAlign: "center" }}>
+    <div style={{ fontSize: "1.4rem", fontWeight: "700", color: "#009F4D", lineHeight: 1 }}>6</div>
+    <div style={{ fontSize: "0.72rem", color: "#6b7280", marginTop: "4px", fontWeight: "500" }}>value questions</div>
+  </div>
 
-    **What a strong WHAT answer includes:**
+  <div style={{ background: "white", padding: "1rem", textAlign: "center" }}>
+    <div style={{ fontSize: "1.4rem", fontWeight: "700", color: "#009F4D", lineHeight: 1 }}>13</div>
+    <div style={{ fontSize: "0.72rem", color: "#6b7280", marginTop: "4px", fontWeight: "500" }}>schema fields</div>
+  </div>
 
-    - The specific crop mix and why it was chosen for this land and community
-    - The ecological restoration goals (soil regeneration, biodiversity, carbon sequestration)
-    - The community development outcomes (employment, food access, education)
-    - The production framework (which [Framework phases](/kokonut-framework/development-phases/phase-i) are planned and over what timeline)
+  <div style={{ background: "white", padding: "1rem", textAlign: "center" }}>
+    <div style={{ fontSize: "1.4rem", fontWeight: "700", color: "#009F4D", lineHeight: 1 }}>8</div>
+    <div style={{ fontSize: "0.72rem", color: "#6b7280", marginTop: "4px", fontWeight: "500" }}>forms of capital</div>
+  </div>
 
-    **Adelphi answer:** Establish a 15,725 m² regenerative agro-ecological production model integrating soil restoration, biodiversity conservation, and organic food production — while promoting environmental education and commercialization in local markets. Crop mix spans three cycle lengths (lettuce short-cycle, passion fruit medium-cycle, coconut long-cycle) to generate revenue at multiple timescales while building long-term agroforestry structure.
-  </Accordion>
+  <div style={{ background: "white", padding: "1rem", textAlign: "center" }}>
+    <div style={{ fontSize: "1.4rem", fontWeight: "700", color: "#009F4D", lineHeight: 1 }}>MRV</div>
+    <div style={{ fontSize: "0.72rem", color: "#6b7280", marginTop: "4px", fontWeight: "500" }}>evidence layer</div>
+  </div>
 
-  <Accordion title="WHO — Direct and indirect beneficiaries">
-    **Who are the direct and indirect beneficiaries of the development, growth, and success of the project?** This pillar maps the full circle of people whose lives the farm affects — not just the operators and investors, but the surrounding community, the local market customers, the neighboring farmers who receive free native seedlings, and the DAO members who hold \$vKKN tokens backed by the farm's trees.
+  <div style={{ background: "white", padding: "1rem", textAlign: "center" }}>
+    <div style={{ fontSize: "1.4rem", fontWeight: "700", color: "#009F4D", lineHeight: 1 }}>DAO</div>
+    <div style={{ fontSize: "0.72rem", color: "#6b7280", marginTop: "4px", fontWeight: "500" }}>review process</div>
+  </div>
+</div>
 
-    **Common Data Schema connection:** `target_market` and `local_problem` together define the beneficiary landscape — who the farm sells to and who the farm exists to serve.
-
-    **Beneficiary categories to document:**
-
-    - **Direct operators:** Farm founders and employees — their employment, income, and ownership stake
-    - **Local community:** Neighbors, the batey community, children, and the elderly participating in educational programs
-    - **Market consumers:** Organic market customers and supermarket buyers who access healthier, locally produced food
-    - **DAO members:** Token holders whose \$vKKN are backed 1:1 by the farm's trees
-    - **Future farms:** The network benefits from each farm's MRV data, methodology learnings, and replicable model
-
-    **Adelphi answer:** Direct — Yanny and Neury Hernández (founders), 7 community employees, the batey and Haty community near Gonzalo. Indirect — Monte Plata organic market customers, Kokonut DAO token holders, neighboring communities receiving free native seedlings from the nursery, and future Kokonut Network farms that will build on Adelphi's Framework implementation.
-  </Accordion>
-
-  <Accordion title="HOW MUCH — Quantitative impact">
-    **How many people are going to be impacted by the development of the project, and at what scale?** This pillar converts qualitative impact claims into numbers. A farm that says "it will help the community" without quantification cannot be evaluated or compared to another farm. The HOW MUCH pillar requires specific, verifiable figures — and those figures become the baseline for annual impact reporting.
-
-    **Common Data Schema connection:** `forecasted_budget`, `land_size`, and `public_goods_allocation` provide the quantitative foundation. The [Crops & Harvest Forecast](/ecosystem-wiki/kokonut-farms/adelphi/crops-and-harvest-forecast) page adds the production formula outputs.
-
-    **Key metrics to quantify:**
-
-    - Number of full-time positions created and sustained
-    - Projected annual gross revenue and net operating revenue
-    - Public goods allocation in USD (not just percentage)
-    - Number of community members directly served (training participants, food access beneficiaries)
-    - Land area under regenerative management (m²)
-    - Carbon sequestration estimate (metric tons CO₂e/acre/yr)
-    - Number of at-risk species conserved or propagated
-
-    **Adelphi answer:**
-
-    - 7 full-time positions supported
-    - ~\$149,110 projected annual gross revenue
-    - ~\$14,911/yr allocated to public goods (10%)
-    - 15,725 m² total area, 13,838 m² agricultural
-    - 12\+ endangered species in the conservation nursery
-    - 0.4–1.2 t CO₂e/acre/yr carbon sequestration \+ ~18% biochar boost
-    - 110 hens producing ~100 eggs/day
-
-    These figures are tracked in the [Data Hub](https://hub.kokonut.network/projects/41) and updated with each harvest cycle.
-  </Accordion>
-
-  <Accordion title="CONTRIBUTION — Tangible ecosystem contributions">
-    **What are the tangible contributions being enabled by the development of the project?** This pillar documents what the farm adds to the world that wouldn't exist without it — going beyond revenue and employment to capture the ecological, social, and cultural contributions that don't appear on a balance sheet. Contribution is evaluated qualitatively (what kinds of value), not just quantitatively (how much value).
-
-    **Common Data Schema connection:** `proposed_solution` is the primary schema field for this pillar — it describes the contributions the farm makes in response to the documented local problem.
-
-    **Contribution categories at Kokonut farms:**
-
-    - **Ecological:** Soil regeneration, carbon sequestration, biodiversity restoration, watershed protection
-    - **Economic:** Employment, income diversification, local market development, reduction of food import dependency
-    - **Social:** Community education programs, knowledge transfer to younger generations, gathering spaces for the elderly and children
-    - **Cultural:** Preservation of native species and traditional food varieties, reconnection of urban-raised families to land stewardship
-    - **Governance:** Demonstration of community-owned, women-led cooperative agriculture as a replicable model
-
-    **Adelphi answer:** Biochar soil regeneration across all beds; free distribution of 12\+ endangered native species to neighboring communities; regular community workshops at the on-site education gazebo; weekend programs reconnecting children and elderly to land stewardship; women-led governance model demonstrating agricultural ownership for women in rural Dominican Republic.
-  </Accordion>
-
-  <Accordion title="RISK — Risks and mitigation">
-    **What are the risks associated with the development of the project, and how are they going to be mitigated?** This pillar requires honest documentation of what could go wrong — agronomically, financially, operationally, and climatically — and what specific measures are in place to mitigate each risk. A proposal that cannot articulate its risks clearly has not been designed thoughtfully enough to receive DAO funding.
-
-    **Risk assessment tools Kokonut uses:**
-
-    The [CRISP framework](/kokonut-framework/framework-add-ons/ecological-impact-frameworks) scores five carbon-specific risk dimensions: Carbon Yield Risk, Climate Catastrophe Risk, Policy and Legal Risk, Financial Risk, and Project Developer Risk. The [EBF Framework](https://ebfcommons.org/) adds ecological risk dimensions across air, water, soil, biodiversity, and equity.
-
-    **Risk categories to document:**
-
-    - **Agronomic:** Crop failure, pest/disease pressure, soil quality challenges — mitigated by syntropic multi-strata diversity and the MRV early warning system
-    - **Climate:** Drought, flooding, extreme weather — mitigated by soil organic matter water retention, syntropic structure, and drought-resilient crop selection
-    - **Financial:** Revenue shortfall, exchange rate volatility, market access — mitigated by multi-crop diversification, stablecoin-only treasury, and 10% public goods buffer
-    - **Operational:** Key person dependency, knowledge gaps — mitigated by community training programs and Framework documentation
-    - **Governance:** DAO proposal failure, funding delays — mitigated by milestone-gated disbursements and the Guilds' coordination layer
-
-    **Adelphi answer:** Primary risks include the 3–5 year delayed payback on coconut long-cycle crops (mitigated by short-cycle lettuce generating revenue from year one), tropical weather variability (mitigated by syntropic soil water retention and beard grass erosion control), and certification timeline uncertainty (mitigated by organic market sales that don't require formal certification initially). CRISP risk assessment is conducted annually and included in the EBF impact report.
-  </Accordion>
-
-  <Accordion title="PUBLIC GOODS — Community benefit allocation">
-    **What are the public goods that are going to be funded via the project's revenue allocation?** This pillar documents the specific public goods activities that receive a defined percentage of the farm's gross revenue — ensuring that community benefit is built into the financial model as a first-class commitment, not an afterthought.
-
-    **Common Data Schema connection:** `public_goods_allocation` (Number, 0–100%) is the schema field that captures the percentage. The Kokonut Framework minimum standard is **10%** of gross revenue.
-
-    **What public goods funding covers at Kokonut farms:**
-
-    - Community workshops and agro-ecological training sessions
-    - Free native and endangered plant seedlings were distributed to neighboring communities
-    - Endangered species nursery operations
-    - Weekend educational and recreational programs for children and the elderly
-    - Maintenance of shared community spaces (the education gazebo)
-    - Environmental restoration activities beyond farm boundaries
-
-    **Adelphi answer:**
-
-    - Allocation: 10% of gross revenue = **~\$14,911/yr** at current projections
-    - Activities: Regular community workshops on organic farming; free distribution of propagated native species (12\+ at-risk varieties); weekend programs for the batey and Haty community; maintenance of the multipurpose education gazebo and biodiversity nursery
-    - Reporting: Public goods distribution is tracked as a separate line item in the annual EBF impact report and published to the [Data Hub](https://hub.kokonut.network/projects/41)
-
-    **SDG alignment:** The public goods pillar directly addresses SDG 1 (No Poverty), SDG 4 (Quality Education), SDG 5 (Gender Equality), and SDG 15 (Life on Land) through non-commercial community investment.
-  </Accordion>
-</AccordionGroup>
+<Warning>
+  The Pillars of Value are an evaluation framework, not a guarantee of financial return, carbon credit issuance, farm performance, or funding approval. A farm still needs complete data, clear budgets, realistic assumptions, local execution capacity, and MRV evidence.
+</Warning>
 
 ---
 
-## Quick reference
+## What the pillars do
 
-| **Pillar** | **Core question** | **Schema field(s)** | **Primary SDG(s)** |
+The pillars convert a farm story into a reviewable case for community funding.
+
+| Without the pillars | With the pillars |
+| --- | --- |
+| A proposal says the farm will “help the community.” | The proposal names who benefits, how much, and how outcomes will be measured. |
+| Revenue is treated as the main proof of value. | Revenue is evaluated alongside ecology, jobs, training, public goods, and risk. |
+| Risks are minimized or hidden. | Risks are documented before funding and tied to mitigation plans. |
+| Impact is described after the fact. | Impact categories are defined at the time of proposal and tracked through MRV. |
+| Each farm is a one-off story. | Farms become comparable through shared schema fields, pillars, and capital forms. |
+
+<Note>
+  The Common Data Schema provides the farm record. The Pillars of Value interpret that record. The 8 Forms of Capital help measure the value created. MRV turns operational activity into evidence.
+</Note>
+
+---
+
+## When the pillars are applied
+
+| Moment | How the pillars are used | Main reviewer |
+| --- | --- | --- |
+| Farm discovery | Decide whether a farm is worth deeper review | Farm operator, Impact Guild |
+| Proposal drafting | Structure the value case for a Kokonut Development Proposal | Proposal author, Guild Stewards |
+| DAO review | Help members evaluate whether treasury support is justified | DAO members |
+| Phase I planning | Convert the approved thesis into baseline data and diagnostics | Farm team, Impact Guild |
+| Operations | Track whether the farm is delivering what it promised | Farm operators, contributors |
+| Annual reporting | Translate farm activity into impact reporting and EBF-style evidence | Impact Guild, MRV contributors |
+| Grant applications | Explain value creation to external partners and grant reviewers | Governance, Finance, Partnerships |
+
+---
+
+## The six pillars
+
+| Pillar | Core question | What reviewers need to see | Main schema connection |
 | --- | --- | --- | --- |
-| WHAT | What does this farm produce and why? | `project_summary`, `revenue_streams` | SDG 2, 15 |
-| WHO | Who benefits, directly and indirectly? | `target_market`, `local_problem` | SDG 1, 5 |
-| HOW MUCH | At what quantified scale? | `forecasted_budget`, `land_size`, `public_goods_allocation` | SDG 1, 8 |
-| CONTRIBUTION | What does it add to the world? | `proposed_solution` | SDG 1, 2, 8, 15 |
-| RISK | What could fail, and how is it mitigated? | (CRISP \+ EBF assessment) | SDG 13 |
-| PUBLIC GOODS | What is the community benefit commitment? | `public_goods_allocation` | SDG 1, 4, 5 |
+| **WHAT** | What value is the farm designed to create? | Clear objectives, crop mix, ecological goals, community outcomes | `project_summary`, `revenue_streams` |
+| **WHO** | Who benefits directly and indirectly? | Operators, workers, neighbors, markets, DAO members, future farms | `target_market`, `local_problem` |
+| **HOW MUCH** | At what scale will value be created? | Quantified land, jobs, revenue, public goods, training, biodiversity, harvests | `land_size`, `forecasted_budget`, `public_goods_allocation` |
+| **CONTRIBUTION** | What tangible contributions does the farm add? | Ecological, economic, social, cultural, governance, and knowledge outputs | `proposed_solution` |
+| **RISK** | What could fail, and how will it be mitigated? | Agronomic, climate, market, governance, operational, data, and financial risks | Risk assessment, CRISP, EBF, milestones |
+| **PUBLIC GOODS** | What community benefit is built into the model? | Allocation percentage, activities, beneficiaries, reporting path | `public_goods_allocation` |
+
+---
+
+## 1. WHAT — objective, goals, and benefits
+
+**Core question:** What is the farm trying to produce, restore, teach, or prove?
+
+This pillar establishes the farm's reason for existing beyond financial return. A strong answer explains what agricultural, ecological, economic, and community outcomes the farm is designed to produce.
+
+### A strong WHAT answer includes
+
+- Crop mix and why it fits the land, climate, community, and market
+- Ecological restoration goals such as soil regeneration, biodiversity, water retention, or native species propagation
+- Community development goals such as jobs, food access, training, or local ownership
+- Development phase and expected timeline
+- How the farm supports the Kokonut mission
+
+### Adelphi example
+
+Adelphi establishes a **15,725 m² regenerative agro-ecological production model** in Monte Plata, Dominican Republic. It combines short-cycle lettuce, medium-cycle passion fruit, long-cycle coconut, native species conservation, organic education, and market access into one working farm system.
+
+[See Adelphi Summary →](/ecosystem-wiki/kokonut-farms/adelphi/summary)
+
+---
+
+## 2. WHO — direct and indirect beneficiaries
+
+**Core question:** Who is affected if the farm succeeds?
+
+This pillar maps the full circle of stakeholders: not only farm founders and investors, but workers, neighboring communities, market customers, learners, DAO members, local ecosystems, and future farms that will reuse the methodology.
+
+### Beneficiary categories to document
+
+| Beneficiary | What to document |
+| --- | --- |
+| Farm operators | Founders, managers, ownership, responsibilities, and income model |
+| Workers | Jobs created, training, wages, safety, continuity |
+| Local community | Nearby families, children, elders, schools, visitors, partner organizations |
+| Market customers | Buyers, local consumers, organic markets, supermarkets, and restaurants |
+| DAO members | Governance rights, exposure, reporting rights, treasury implications |
+| Future farms | Lessons, reusable data, templates, MRV records, methodology improvements |
+| Ecosystems | Soil, water, biodiversity, local species, carbon co-benefits |
+
+### Adelphi example
+
+Adelphi directly supports Yanny and Neury Hernández, seven community jobs, and the batey and Haty communities near Gonzalo. Indirect beneficiaries include Monte Plata organic market customers, DAO members, neighboring communities receiving native seedlings, and future Kokonut farms that learn from Adelphi's implementation.
+
+---
+
+## 3. HOW MUCH — quantitative impact
+
+**Core question:** At what scale will the farm create value?
+
+This pillar turns broad impact claims into numbers. A proposal that says “we will create jobs” or “restore land” is not enough; reviewers need measurable baselines, forecast assumptions, and actuals that can be tracked over time.
+
+### Metrics to quantify
+
+| Metric | Why it matters | Evidence source |
+| --- | --- | --- |
+| Land under management | Shows physical scope | Common Data Schema, GPS records |
+| Agricultural area | Shows a productive area | Farm mapping, Silvi, Data Hub |
+| Jobs | Shows livelihood impact | Payroll, field logs, and DAO reports |
+| Projected revenue | Shows financial viability | Harvest forecast, market assumptions |
+| Public goods allocation | Shows community commitment | Proposal, revenue records, reports |
+| Training participants | Shows human capital growth | Attendance logs, event reports |
+| Species conserved | Shows biodiversity contribution | Nursery inventory, field records |
+| Harvests | Shows production reality | Kokonut Hub, MRV events |
+| Climate co-benefits | Shows possible carbon/soil value | Soil tests, vegetation indices, methodology |
+
+<Warning>
+  Forecasts are planning assumptions. They should be compared against actual harvests, sales, costs, weather conditions, and MRV records before being treated as performance claims.
+</Warning>
+
+### Adelphi example
+
+Current Adelphi planning metrics include a total area of 15,725 m², 13,838 m² of agricultural area, 7 jobs, 110 hens producing about 100 eggs per day, 12\+ at-risk native species, and projected annual gross revenue based on crop forecasts.
+
+[Read the harvest forecast →](/ecosystem-wiki/kokonut-farms/adelphi/crops-and-harvest-forecast)
+
+---
+
+## 4. CONTRIBUTION — tangible ecosystem contributions
+
+**Core question:** What does the farm add that would not exist without it?
+
+Contribution captures value that does not always appear on a balance sheet: ecological restoration, community learning, cultural continuity, shared tools, local infrastructure, open data, and governance capacity.
+
+### Contribution categories
+
+| Category | Examples |
+| --- | --- |
+| Ecological | Soil regeneration, biodiversity restoration, watershed protection, and native species propagation |
+| Economic | Jobs, local market development, diversified income, and reduced input dependency |
+| Social | Community workshops, gathering spaces, educational programs, and knowledge transfer |
+| Cultural | Native food varieties, land stewardship stories, and intergenerational learning |
+| Governance | Community-owned agriculture, transparent funding, DAO reporting, proposal accountability |
+| Knowledge | Farm records, open-source documentation, MRV data, implementation lessons |
+
+### Adelphi example
+
+Adelphi contributes biochar soil regeneration, free native seedling distribution, community workshops, weekend education programs, a women-led farm governance story, and a reference implementation for future Kokonut farms.
+
+---
+
+## 5. RISK — risks and mitigation
+
+**Core question:** What could fail, and what has the farm designed to reduce that risk?
+
+A strong proposal does not hide uncertainty. It identifies risks early and provides reviewers with a practical mitigation plan.
+
+| Risk category | What can go wrong | Mitigation examples |
+| --- | --- | --- |
+| Agronomic | Crop failure, pests, disease, and low soil fertility | Crop diversity, syntropic design, soil monitoring, bioinputs |
+| Climate | Drought, flooding, storms, and heat stress | Soil cover, water retention, resilient crop selection, monitoring |
+| Market | Lower prices, weak demand, buyer concentration | Multiple revenue streams, local sales, organic channels |
+| Operational | Key-person dependency, labor gaps, training gaps | Guild support, documentation, training, phased milestones |
+| Financial | Revenue shortfall, cost overruns, liquidity constraints | Milestone-gated funding, conservative forecasts, transparent reporting |
+| Governance | Proposal delays, unclear accountability, and weak reporting | Required proposal fields, DAO review, Guild oversight |
+| Data quality | Incomplete records, weak MRV, unverifiable claims | Farm Registry payloads, Data Hub, EAS attestations, field logs |
+
+<Note>
+  CRISP and EBF can support risk and impact assessment, but farms should avoid treating carbon or ecological claims as verified until the methodology, field data, and reporting process support them.
+</Note>
+
+### Adelphi example
+
+Adelphi's risks include delayed long-cycle coconut revenue, weather variability, certification timelines, market access, and execution complexity. Its mitigations include short-cycle lettuce revenue, multi-crop diversification, syntropic soil cover, on-site bioinputs, poultry integration, and public MRV records.
+
+---
+
+## 6. PUBLIC GOODS — community benefit allocation
+
+**Core question:** What community benefit is built into the revenue model?
+
+Kokonut farms should not treat public benefit as an afterthought. The public goods pillar documents which community activities are funded, who they serve, and how they are reported.
+
+### Public goods funding can support
+
+- Community workshops and agro-ecological training
+- Free native and endangered seedling distribution
+- Endangered species nursery operations
+- Educational programs for children, elders, and nearby communities
+- Maintenance of shared community spaces
+- Environmental restoration beyond the farm boundary
+- Open documentation, data, and methodology improvements
+
+### Adelphi example
+
+Adelphi allocates **10% of gross revenue** toward public goods, including workshops, native species distribution, education programs, the gazebo, and biodiversity nursery operations. These activities should be reported separately from commercial revenue and tied to the Data Hub or annual impact reporting.
+
+---
+
+## How the pillars connect to the Framework
+
+```mermaid
+flowchart TD
+    A["Common Data Schema"] --> B["Pillars of Value"]
+    B --> C["8 Forms of Capital"]
+    C --> D["MRV records"]
+    D --> E["Data Hub + EAS attestations"]
+    E --> F["DAO review + annual reporting"]
+    F --> G["Better farm decisions"]
+    G --> B
+
+    B --> H["Farm funding proposals"]
+    B --> I["Grant applications"]
+    B --> J["Phase planning"]
+    B --> K["Impact reports"]
+```
+
+| Framework component | Role |
+| --- | --- |
+| Common Data Schema | Provides the required farm record and baseline data |
+| Pillars of Value | Interprets whether the farm creates broad, durable value |
+| 8 Forms of Capital | Measures value across natural, financial, social, human, material, intellectual, cultural, and health capital |
+| MRV workflow | Turns activity into structured evidence and public records |
+| DAO governance | Decides whether the value case justifies funding, execution, or continued support |
 
 ---
 
 ## Relationship to the 8 Forms of Capital
 
-The Pillars of Value define _what_ to evaluate. The [8 Forms of Capital](/kokonut-framework/framework-components/framework-features/8-forms-of-capital) define _how_ to measure it — providing a structured measurement and implementation methodology across Natural, Financial, Social, Human, Material, Intellectual, Cultural, and Health capital.
+The Pillars of Value define **what** to evaluate. The 8 Forms of Capital define **how** to measure the value that appears across a farm system.
 
-Together, they form the complete impact evaluation framework:
+| Pillar | Capital forms are most often involved |
+| --- | --- |
+| WHAT | Natural, Financial, Material, Health |
+| WHO | Social, Human, Cultural, Health |
+| HOW MUCH | Financial, Material, Natural, Human |
+| CONTRIBUTION | Natural, Social, Human, Cultural, Intellectual |
+| RISK | All capital forms, depending on exposure |
+| PUBLIC GOODS | Social, Human, Cultural, Natural, Intellectual |
 
-```mermaid
-flowchart LR
-    subgraph PV["Pillars of Value"]
-        W["WHAT\nvalue created"]
-        WH["WHO\nstakeholders"]
-        HM["HOW MUCH\nscale + quantity"]
-        CO["CONTRIBUTION\ninputs + labor"]
-        RI["RISK\nuncertainty + exposure"]
-        PG["PUBLIC GOODS\nshared benefits"]
-    end
-
-    subgraph EF["Forms of Capital"]
-        ECO["Ecological\nNatural + Living"]
-        ECO2["Economic\nFinancial + Material"]
-        COM["Community\nSocial + Human"]
-        KNOW["Knowledge\nIntellectual + Cultural"]
-    end
-
-    W --> ECO
-    W --> ECO2
-
-    WH --> COM
-    WH --> KNOW
-
-    HM --> ECO2
-    HM --> ECO
-
-    CO --> COM
-    CO --> KNOW
-
-    RI --> ECO
-    RI --> ECO2
-    RI --> COM
-
-    PG --> ECO
-    PG --> COM
-    PG --> KNOW
-
-    style W fill:#d1fae5,stroke:#10b981,color:#065f46
-    style WH fill:#d1fae5,stroke:#10b981,color:#065f46
-    style HM fill:#d1fae5,stroke:#10b981,color:#065f46
-    style CO fill:#d1fae5,stroke:#10b981,color:#065f46
-    style RI fill:#fee2e2,stroke:#ef4444,color:#991b1b
-    style PG fill:#009F4D,stroke:#009F4D,color:#ffffff
-
-    style ECO fill:#ecfdf5,stroke:#10b981,color:#065f46
-    style ECO2 fill:#dbeafe,stroke:#3b82f6,color:#1e40af
-    style COM fill:#ede9fe,stroke:#8b5cf6,color:#4c1d95
-    style KNOW fill:#fef3c7,stroke:#f59e0b,color:#92400e
-```
-
-A farm that completes both frameworks — all 6 pillars documented, and all 8 capital forms measured — has a complete, defensible impact case for DAO funding, grant applications, and institutional investor due diligence.
+[Read the 8 Forms of Capital →](/kokonut-framework/framework-components/framework-features/8-forms-of-capital)
 
 ---
 
+## Proposal readiness check
+
+A farm is not ready for a DAO funding proposal until it can answer every pillar with enough specificity for review.
+
+| Readiness question | Ready when... |
+| --- | --- |
+| WHAT is clear? | The farm explains what it will produce, restore, teach, or prove. |
+| WHO is clear? | Direct and indirect beneficiaries are named. |
+| HOW MUCH is clear? | Land, jobs, revenue, public goods, and impact baselines are quantified. |
+| Is the contribution clear? | The farm explains what it adds beyond private revenue. |
+| Is RISK clear? | Risks are named with practical mitigations. |
+| Are public goods clear? | Allocation percentage, activities, beneficiaries, and the reporting process are defined. |
+| Is the evidence path clear? | The proposal explains how progress will be tracked through MRV, Data Hub, reports, or attestations. |
+| Is accountability clear? | Responsible people, Guilds, milestones, and reporting duties are named. |
+
+<Warning>
+  If any pillar is vague, the proposal should remain in drafting. A weak pillar is usually a sign that the farm needs more discovery, budgeting, stakeholder mapping, or MRV planning before asking the DAO for support.
+</Warning>
+
+---
+
+## Common weak answers and stronger alternatives
+
+| Weak answer | Stronger answer |
+| --- | --- |
+| “The farm will help the community.” | “The farm will create seven jobs, host monthly workshops, distribute native seedlings, and allocate 10% of gross revenue to public goods.” |
+| “We will grow organic food.” | “The crop plan includes short-cycle lettuce, medium-cycle passion fruit, long-cycle coconut, and free-range eggs with harvest records published to the Data Hub.” |
+| “The farm will restore nature.” | “Restoration will be tracked through soil monitoring, ground cover, biodiversity inventory, and vegetation indices.” |
+| “Risks are low.” | “Primary risks are weather, certification delays, market access, and long-cycle payback; each has a mitigation plan.” |
+| “Impact will be reported.” | “Farm activity will be logged as structured records, connected to MRV events, and included in annual impact reporting.” |
+
+---
+
+## Next steps
+
 <CardGroup cols={2}>
   <Card title="Common Data Schema" icon="database" href="/kokonut-framework/framework-components/common-data-schema">
-    The 13 fields that provide the structured data behind each pillar — every pillar maps to one or more schema fields.
+    The 13 fields every farm needs before it can be funded, governed, verified, or compared.
   </Card>
 
   <Card title="8 Forms of Capital" icon="water" href="/kokonut-framework/framework-components/framework-features/8-forms-of-capital">
-    The measurement framework that turns pillar assessments into quantifiable, auditable capital-level metrics across eight dimensions.
+    The measurement framework that turns broad value into capital-level metrics.
   </Card>
 
-  <Card title="Farm Funding Proposal Template" icon="seedling" href="/ecosystem-wiki/the-kokonut-dao/proposal-templates#farm-funding-proposal">
-    The KDP template — Section E through Section I maps directly to these six pillars. Each proposal must answer all six to be ready for a DAO vote.
+  <Card title="MRV Methodology" icon="magnifying-glass-chart" href="/ecosystem-wiki/kokonut-farms/measurement-reporting-and-verification">
+    How farm activity becomes structured evidence, public records, and impact reports.
+  </Card>
+
+  <Card title="Proposal Templates" icon="file-signature" href="/ecosystem-wiki/the-kokonut-dao/proposal-templates">
+    Use the Farm Funding template to turn these six pillars into a reviewable DAO proposal.
+  </Card>
+
+  <Card title="Adelphi Farm Summary" icon="seedling" href="/ecosystem-wiki/kokonut-farms/adelphi/summary">
+    See how the pillars show up in Kokonut's first live farm implementation.
   </Card>
 
   <Card title="Ecological Impact Frameworks" icon="leaf-heart" href="/kokonut-framework/framework-add-ons/ecological-impact-frameworks">
-    CRISP and EBF — the external risk and impact assessment tools that underpin the RISK pillar and the annual impact reporting that verifies the other five.
+    Explore CRISP and EBF as supporting frameworks for risk and impact reporting.
   </Card>
 </CardGroup>
+
+<div style={{ display: "flex", gap: "12px", justifyContent: "center", flexWrap: "wrap", margin: "2rem 0 0.75rem" }}>
+  <a href="/ecosystem-wiki/the-kokonut-dao/proposal-templates#farm-funding-proposal" style={{ display: "inline-flex", alignItems: "center", gap: "6px", background: "#009F4D", color: "#fff", padding: "10px 20px", borderRadius: "8px", fontWeight: "600", fontSize: "14px", textDecoration: "none" }}>
+    Draft a Farm Funding Proposal →
+  </a>
+
+  <a href="/ecosystem-wiki/kokonut-farms/adelphi/summary" style={{ display: "inline-flex", alignItems: "center", gap: "6px", border: "1.5px solid #009F4D", color: "#009F4D", padding: "10px 20px", borderRadius: "8px", fontWeight: "600", fontSize: "14px", textDecoration: "none", background: "transparent" }}>
+    See Adelphi Example
+  </a>
+</div>
