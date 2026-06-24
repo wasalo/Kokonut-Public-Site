@@ -1,141 +1,270 @@
 ---
 title: "Ecological Impact Frameworks"
-description: "The EBF and CRISP frameworks that Kokonut uses for annual impact reporting and carbon risk assessment — and how they integrate with the Kokonut MRV pipeline."
+description: "How Kokonut uses EBF and CRISP to turn farm data into ecological impact reports, carbon-risk assessments, and DAO-ready evidence."
 icon: "leaf-heart"
 ---
 
-Kokonut uses two complementary external frameworks to structure its annual impact reporting and carbon risk assessment. Together they answer two questions every DAO member, grant reviewer, and institutional partner needs answered about any Kokonut farm:
+# Ecological impact needs both evidence and risk context.
 
-- **EBF (Ecological Benefits Framework):** _What ecological and community benefits does this farm produce, and how are they measured?_
-- **CRISP (Carbon Risk Identification and Scoring Principles):** _What risks threaten this farm's ability to deliver those benefits, and how severe are they?_ EBF provides the impact reporting architecture. CRISP provides the risk assessment methodology. Used together, they form a complete, externally auditable impact profile for every Kokonut farm — grounded in the data collected by the [MRV stack](/ecosystem-wiki/kokonut-farms/measurement-reporting-and-verification) and anchored as on-chain [EAS attestations](https://docs.attest.sh/).
+Kokonut uses **EBF** and **CRISP** to help DAO members, farm operators, Impact Guild contributors, grant reviewers, and institutional partners interpret the evidence produced by the MRV workflow.
 
-**Where these frameworks appear in the Kokonut workflow:**
+These frameworks do two different jobs:
 
-| **Stage** | **Framework** | **Who produces it** | **Where it's published** |
-| --- | --- | --- | --- |
-| Continuous | MRV data collection | Impact Guild \+ agents | [Data Hub](https://hub.kokonut.network/projects/41) |
-| Annual | EBF impact report | Impact Guild | Data Hub \+ EAS attestation on Gnosis Chain |
-| Annual | CRISP risk assessment | Impact Guild \+ Technology Guild | Data Hub \+ included in EBF report |
-| Ongoing | SDG attestations | EAS-anchored per dimension | Gnosis Chain |
+- **EBF** explains the ecological, economic, social, and sustainability value a farm produces.
+- **CRISP** explains which risks could prevent the projected carbon or ecological outcomes from being achieved.
 
-At [Adelphi](/ecosystem-wiki/kokonut-farms/adelphi/summary), both frameworks are active: the annual EBF report documents impact across four dimensions; CRISP scoring is conducted annually to assess the five carbon delivery risk factors.
+Together, they help Kokonut move from broad regenerative claims to a clearer impact profile: **what happened, what evidence supports it, what remains uncertain, and what should be reviewed next.**
+
+<div style={{ display: "flex", gap: "12px", justifyContent: "center", flexWrap: "wrap", margin: "1.5rem 0 0.75rem" }}>
+  <a href="#ebf-and-crisp-at-a-glance" style={{ display: "inline-flex", alignItems: "center", gap: "6px", background: "#009F4D", color: "#fff", padding: "10px 20px", borderRadius: "8px", fontWeight: "600", fontSize: "14px", textDecoration: "none" }}>
+    Compare EBF and CRISP →
+  </a>
+
+  <a href="/ecosystem-wiki/kokonut-farms/measurement-reporting-and-verification" style={{ display: "inline-flex", alignItems: "center", gap: "6px", border: "1.5px solid #009F4D", color: "#009F4D", padding: "10px 20px", borderRadius: "8px", fontWeight: "600", fontSize: "14px", textDecoration: "none", background: "transparent" }}>
+    Read MRV Methodology
+  </a>
+</div>
+
+<p style={{ textAlign: "center", fontSize: "13px", color: "#6b7280", marginTop: "0.25rem" }}>
+  Use this page when preparing annual impact reports, reviewing farm proposals, assessing carbon-risk claims, or explaining Kokonut impact to partners.
+</p>
+
+<Warning>
+  EBF and CRISP help structure impact and risk analysis. They do not automatically certify a farm, guarantee carbon-credit issuance, guarantee financial returns, or replace MRV evidence, legal review, agronomic review, or DAO governance.
+</Warning>
 
 ---
 
-## Ecological Benefits Framework (EBF)
+## EBF and CRISP at a glance
 
-### What is EBF?
-
-The Ecological Benefits Framework is a new paradigm in impact assessment — a foundational architecture designed to radically transform global carbon and ecological benefits markets by increasing transparency, trust, quality, and equity, and by accelerating the coordinated delivery of positive financial and environmental impacts.
-
-EBF was developed to move beyond carbon-only accounting. Carbon markets serve valuable roles — but when considered holistically, carbon is part of larger natural systems that include air, water, soil, biodiversity, and equity. EBF provides a shared framework that captures all of these dimensions, allowing public and private sectors to coordinate on ecological impact in a common language.
-
-By developing a shared framework, EBF aligns financial markets, UN agencies, NGOs, companies, and philanthropic interests around a shared pathway for accelerated ecological solutions.
-
-### Why the world needs a common ecological framework
-
-We need to move out of the Age of Extraction and enter the Age of Regeneration. Over the past 12,000 years, human history has borne witness to the unyielding pursuit of resources through extractive, one-way practices. The repercussions are everywhere: biodiversity collapse, species loss, water scarcity, barren topsoils, unbreathable air, climate change, and worsening living conditions for hundreds of millions of people.
-
-A common framework for ecological benefits doesn't replace market mechanisms — it makes them capable of capturing the full value of what regenerative systems produce. Without it, a syntropic farm that sequesters carbon, restores soil, increases biodiversity, employs local women, and feeds a community can only capture value from the carbon component. EBF provides the architecture to make all of those benefits financially and institutionally legible.
-
-### EBF is not a data standard or a certification
-
-Neither. It is a set of definitions and agreements — a playbook. The Bluetooth analogy: Bluetooth is a wireless communication protocol that allows any Bluetooth-enabled device to communicate with any other, regardless of manufacturer, brand, or model. EBF is the ecological equivalent — a shared protocol that allows any farm, market, institution, or NGO to communicate ecological benefits in a format that any other participant can read and verify, regardless of which specific measurement tools or reporting systems they use.
-
-### EBF does not replace carbon markets
-
-No. It expands them. The compliance and voluntary carbon markets serve valuable roles in helping organizations reach sustainability objectives, from ESG to compliance to business goals, while contributing to climate action. Carbon is part of the picture — but air quality, biodiversity, water quality, soil health, and community equity are the rest. EBF provides the architecture to capture the full picture, making carbon markets more accurate, not obsolete.
-
-### The four EBF reporting dimensions
-
-Every Kokonut farm's annual EBF report is organized around four dimensions — each corresponding to specific capital forms in the [8 Forms of Capital](/kokonut-framework/framework-components/framework-features/8-forms-of-capital) framework:
-
-| **EBF Dimension** | **What it measures** | **Capital forms** | **At Adelphi** |
+| Framework | Full name | Core question | Kokonut use |
 | --- | --- | --- | --- |
-| **Environmental Impact** | Ecological health and carbon performance | Natural Capital | Annual carbon sequestration (t CO₂e/acre/yr), NDVI averages, biodiversity index changes |
-| **Economic Impact** | Financial impact on farmers and communities | Financial Capital | Gross revenue, public goods distributed, jobs created and sustained |
-| **Social Impact** | Community wellbeing and capacity | Social \+ Human Capital | Workshops held, participants trained, women in leadership |
-| **Sustainability** | Long-term resilience across all 8 capital forms | All 8 forms | Annual audit across all capital dimensions; organic certification status; SDG attestation count |
+| **EBF** | Ecological Benefits Framework | What ecological and community benefits did the farm create? | Annual impact reporting across ecological, economic, social, and sustainability dimensions |
+| **CRISP** | Carbon Risk Identification and Scoring Principles | What could prevent projected carbon or ecological benefits from being delivered? | Annual risk review for carbon-delivery, climate, policy, financial, and operator risk |
+| **MRV** | Measurement, Reporting, and Verification | What evidence supports the claim? | Continuous data pipeline that produces records for EBF reports and CRISP scoring |
 
-### How Kokonut produces its EBF report
+<Note>
+  Think of MRV as the evidence layer, EBF as the impact interpretation layer, and CRISP as the risk interpretation layer.
+</Note>
 
-The EBF annual report for each Kokonut farm is produced by the [Impact Guild](/ecosystem-wiki/the-kokonut-dao/kokonut-guilds-dao) using data collected through the three-tier [MRV stack](/ecosystem-wiki/kokonut-farms/measurement-reporting-and-verification):
+---
 
-1. **Environmental data** comes from satellite vegetation indices (NDVI, NDRE, MSAVI) processed from Landsat 8 and Sentinel imagery, plus soil probe readings (volumetric water content, electrical conductivity, soil temperature)
-2. **Economic data** comes from harvest records logged per cycle via Atlantis App and the Farm Registry API `/harvests` endpoint
-3. **Social data** comes from employment records, training participation logs, and community program attendance — logged via Atlantis App
-4. **Sustainability data** comes from the full 8 Forms of Capital annual audit, species counts in the nursery, and organic certification status The completed report is published to the [Data Hub](https://hub.kokonut.network/projects/41) and anchored as an EAS attestation on Gnosis Chain — making the report not just published, but cryptographically verifiable.
+## Where these frameworks fit in Kokonut
+
+```mermaid
+flowchart TD
+    A["Farm activity\nharvest · soil · satellite · field log · training"] --> B["MRV payload\nstructured evidence"]
+    B --> C["IPFS / Filecoin record"]
+    C --> D["Farm Registry event"]
+    D --> E["EAS attestation"]
+    E --> F["Data Hub"]
+
+    F --> G["EBF annual impact report\nwhat value was created"]
+    F --> H["CRISP risk assessment\nwhat could prevent delivery"]
+
+    G --> I["DAO review"]
+    H --> I
+    I --> J["Funding decisions · partner reports · future proposals"]
+```
+
+Kokonut does not use EBF or CRISP as replacements for farm data. It uses them to interpret farm data that has already been collected, structured, published, and anchored through the MRV pipeline.
+
+| Stage | Output | Primary owner | Where it appears |
+| --- | --- | --- | --- |
+| Continuous farm activity | Field logs, harvest records, soil readings, satellite indices, training records | Farm team, Impact Guild, agents | Kokonut Hub, Farm Registry, MRV records |
+| Continuous MRV | Structured evidence payloads and attestations | Impact Guild, Technology Guild | IPFS/Filecoin, Farm Registry, EAS, Data Hub |
+| Annual EBF report | Impact profile across ecological, economic, social, and sustainability dimensions | Impact Guild | Data Hub, annual report, EAS summary attestation |
+| Annual CRISP review | Risk scoring and mitigation notes | Impact Guild, Technology Guild, DAO reviewers | Data Hub, EBF report appendix, proposal review context |
+| DAO learning | Updated assumptions for future farms and proposals | DAO members, Guilds | Governance forum, proposal templates, Framework updates |
+
+---
+
+## EBF — Ecological Benefits Framework
+
+### What EBF does
+
+EBF gives Kokonut a shared language for describing value that carbon-only accounting often misses.
+
+A regenerative farm may improve soil health, protect biodiversity, train local workers, expand community food access, generate revenue, preserve cultural knowledge, and distribute public goods. EBF helps organize those benefits into a reportable structure so they can be discussed, compared, funded, and improved.
+
+### What EBF does not do
+
+EBF is not a sensor, a database, a farm registry, a carbon credit standard, or an automatic certification.
+
+It is an interpretation framework. It requires evidence from MRV, financial records, field observations, community logs, and DAO reporting before any impact claim can be considered credible.
+
+### EBF reporting dimensions
+
+| EBF dimension | What it asks | Example Kokonut evidence | Related capital forms |
+| --- | --- | --- | --- |
+| **Environmental impact** | Is the land improving? | Vegetation indices, soil readings, biodiversity records, nursery species counts, land-use records | Natural Capital |
+| **Economic impact** | Is the farm creating durable economic value? | Harvest records, revenue actuals, public goods allocation, jobs created, infrastructure deployed | Financial \+ Material Capital |
+| **Social impact** | Is the community gaining capacity and benefit? | Training logs, employment records, community events, participation records, leadership roles | Social \+ Human Capital |
+| **Sustainability** | Can the system keep improving over time? | Multi-year MRV trend, risk controls, organic certification status, governance records, SDG evidence | All 8 Forms of Capital |
+
+### How Kokonut produces an EBF report
+
+An EBF report should be assembled from evidence, not written as a promotional summary.
+
+| Evidence source | What it contributes |
+| --- | --- |
+| Farm Registry records | Farm identity, location, land size, infrastructure, production zones, operators |
+| Satellite and remote sensing | Vegetation-health trends, land-cover signals, ecological-change indicators |
+| Soil and field observations | Soil moisture, electrical conductivity, temperature, crop condition, operator notes |
+| Harvest records | Production actuals, crop cycles, losses, revenue assumptions, and forecast comparison |
+| Community records | Employment, training, participation, public goods activities, local engagement |
+| DAO records | Funding decisions, proposal commitments, governance actions, and reporting obligations |
+| EAS attestations | Public evidence anchors for important measurement, reporting, and governance events |
+
+<Info>
+  Strong EBF reporting separates actuals from forecasts. A projected benefit can guide planning, but it should not be described as delivered impact until it is supported by evidence.
+</Info>
 
 ---
 
 ## CRISP — Carbon Risk Identification and Scoring Principles
 
-### What is CRISP?
+### What CRISP does
 
-CRISP is an open, Creative Commons-licensed framework for assessing the risks associated with financing science-based carbon credit projects, with a specific focus on the risk of non-delivery of forward carbon credit units. It was developed to bring transparency and consistency to the carbon market due diligence process.
+CRISP helps Kokonut evaluate the risk associated with carbon-delivery and ecological-delivery claims.
 
-**CRISP objective:** _Capture the risks of non-delivery of forward carbon credit units — providing all stakeholders with the information needed to make informed decisions while supporting global climate action initiatives._
+This matters because a farm may have a promising regeneration thesis but still face weather risk, methodological risk, operator risk, financial risk, regulatory risk, and data quality risk.
 
-CRISP is not a pass/fail certification. It is a scoring framework that quantifies the probability and severity of delivery failure across five risk dimensions — giving DAO members, institutional investors, and grant reviewers a structured, comparable basis for evaluating carbon credit projects.
+CRISP makes those risks visible before claims are overused in proposals, partner materials, or public impact reports.
 
-### The five CRISP risk factors
+### What CRISP does not do
 
-| **Risk factor** | **What it assesses** | **At Adelphi** |
+CRISP is not a pass/fail certification, not a guarantee of carbon delivery, and not a replacement for scientific carbon methodology.
+
+It is a risk-scoring and due diligence framework. It helps reviewers ask better questions about whether projected benefits are likely to be delivered and verified.
+
+### Five CRISP risk factors
+
+| Risk factor | What it reviews | Kokonut evidence to inspect |
 | --- | --- | --- |
-| **1. Carbon Yield Risk** | Will the land actually sequester the projected carbon volumes? Is the baseline methodology defensible? | Satellite NDVI/NDRE monitoring per overpass provides continuous vegetation performance data; biochar incorporation is documented and quantified |
-| **2. Climate Catastrophe Risk** | What is the probability of drought, fire, flood, or extreme weather events destroying sequestered carbon? | Monte Plata's tropical climate; syntropic soil water retention as drought mitigation; beard grass erosion control on terraced terrain |
-| **3. Policy and Legal Risk** | Are there regulatory or legal changes that could invalidate the project or its credits? | Dominican Republic agricultural policy environment; DAO governance structure provides distributed governance that doesn't depend on any single jurisdiction |
-| **4. Financial Risk** | Does the project have sufficient capital reserves to survive revenue shortfalls, cost overruns, or market disruptions? | DAO stablecoin-only treasury with rage-quit protection; multi-cycle crop mix prevents single-crop revenue dependency; 10% public goods allocation creates reserve discipline |
-| **5. Project Developer Risk** | Does the operating team have the capability, experience, and commitment to deliver on the project's carbon claims? | Yanny and Neury Hernández as founding operators; Kokonut Impact Guild providing technical oversight; on-chain EAS attestations creating accountability |
+| **Carbon yield risk** | Whether projected sequestration or carbon benefit assumptions are plausible | Baseline methodology, vegetation trends, soil data, biochar records, species mix, reporting period |
+| **Climate catastrophe risk** | Whether drought, flood, fire, storms, or erosion could damage the system | Local climate data, water infrastructure, ground cover, erosion controls, disaster history |
+| **Policy and legal risk** | Whether rules, land tenure, certification, or jurisdictional issues could disrupt claims | Land records, legal review, certification status, DAO proposal terms, compliance notes |
+| **Financial risk** | Whether the farm can survive cost overruns, price changes, delays, or revenue shortfalls | Budget, reserves, crop diversification, revenue actuals, buyer relationships, treasury records |
+| **Project developer risk** | Whether operators and supporting Guilds can execute the plan | Operator track record, field updates, milestone completion, support structure, reporting discipline |
 
 ### When Kokonut applies CRISP
 
-CRISP assessment is conducted annually as part of the EBF reporting cycle — not as a one-time evaluation at project launch. This matters because carbon delivery risk changes over time: a farm in Phase I has different Climate Catastrophe Risk than a farm in Phase III with established root systems; a farm with two years of verified MRV data has lower Project Developer Risk than a farm with none.
+CRISP should be applied repeatedly, not once.
 
-For Kokonut farms, the CRISP scores from each annual cycle:
-
-- Feed into the Operational Variables pillar of the [Framework Introduction](/kokonut-framework/Introduction#operational-variables) — as the "Risk Profiles" that inform capital allocation decisions
-- Provide the risk context for any carbon credit or RWA primitive the farm produces
-- Are included in the annual EBF report published to the Data Hub A farm that consistently scores low across all five CRISP dimensions — through verified MRV data, proven operator track record, and demonstrated financial resilience — is in a qualitatively different position for institutional capital access than a farm with only self-reported claims.
+| Moment | Why CRISP matters |
+| --- | --- |
+| Proposal review | Helps DAO members see whether projected benefits are realistic enough to fund |
+| Phase I baseline | Establishes early risk assumptions before operations scale |
+| Annual reporting | Updates risk scores using real MRV data and farm performance |
+| Major expansion | Reviews whether new land, crops, infrastructure, or markets change delivery risk |
+| Partner reporting | Gives grant reviewers and institutional partners a structured risk context |
 
 ---
 
 ## How EBF and CRISP work together
 
-EBF and CRISP answer the same fundamental investment question from opposite angles:
+EBF and CRISP answer different sides of the same trust question.
 
 ```text
-EBF asks:   What ecological and community value does this farm produce?
-CRISP asks: What is the probability that those claims are accurate and deliverable?
- 
-Combined:   A farm's verified impact (EBF) + its risk-adjusted delivery
-            probability (CRISP) = a complete, auditable impact profile
-            that institutional capital can act on.
+EBF asks:   What value did the farm create?
+CRISP asks: What risks affect the farm's ability to keep delivering that value?
+MRV asks:   What evidence supports the answer?
 ```
 
-For a Kokonut DAO member evaluating a Farm Funding proposal (KDP), both assessments are relevant:
+A strong Kokonut impact profile includes all three:
 
-- The EBF report tells you what the farm has produced and is projected to produce
-- The CRISP score tells you how much to weight those projections given the risk environment For a grant reviewer from Public Nouns, Gitcoin, or a ReFi institutional partner, the combination provides the structured due diligence basis that replaces subjective impact claims with audited, risk-adjusted evidence.
-
-Both frameworks are anchored in the same underlying data — the MRV pipeline that runs continuously at every Kokonut farm and produces on-chain EAS attestations for every significant measurement event. The frameworks are the interpretation layer; the MRV data is the evidence.
+| Layer | Without it | With it |
+| --- | --- | --- |
+| MRV | Claims remain self-reported | Claims are tied to inspectable records |
+| EBF | Value is reduced to revenue or carbon | Multiple forms of ecological and community value are visible |
+| CRISP | Risk is ignored or hidden | Delivery uncertainty is named, scored, and mitigated |
 
 ---
 
-<CardGroup cols={2}>
-  <Card title="EBF Framework" icon="globe" href="https://ebfcommons.org/">
-    The official Ecological Benefits Framework — definitions, agreements, and the full playbook for ecological benefit accounting across air, water, soil, biodiversity, and equity.
-  </Card>
+## How this applies to Adelphi
 
-  <Card title="MRV — Measurement & Verification" icon="magnifying-glass-chart" href="/ecosystem-wiki/kokonut-farms/measurement-reporting-and-verification">
-    The data pipeline that produces the evidence behind every EBF dimension and CRISP risk factor — satellite monitoring, soil probes, community analytics, and on-chain EAS attestations.
+At Adelphi, the EBF and CRISP workflow should help reviewers connect farm activity to evidence and risk.
+
+| Adelphi activity | EBF relevance | CRISP relevance | Evidence to inspect |
+| --- | --- | --- | --- |
+| Syntropic plots | Environmental impact, sustainability | Carbon yield, climate risk | Satellite indices, field observations, crop logs |
+| Nursery and at-risk species | Environmental impact, social impact | Project developer risk | Species inventory, distribution records, field updates |
+| Biofactory and biochar | Environmental impact, sustainability | Carbon yield, methodology risk | Input logs, soil data, biochar production records |
+| Poultry loop | Economic impact, sustainability | Financial and operator risk | Egg records, manure processing logs, feed records |
+| Training gazebo | Social impact, human capital | Project developer risk | Workshop records, attendance logs, community reports |
+| Public goods allocation | Economic impact, social impact | Financial risk | Revenue actuals, allocation reports, DAO records |
+
+<Warning>
+  Adelphi can serve as a reference implementation, but each new farm still needs its own baseline, local risk review, MRV setup, operator assessment, and DAO-approved proposal.
+</Warning>
+
+---
+
+## Reviewer checklist
+
+Use this checklist before treating an EBF or CRISP output as decision-ready.
+
+- Has the farm completed a baseline record through the Common Data Schema?
+- Are claims separated into actuals, forecasts, estimates, and assumptions?
+- Is each impact claim tied to a measurable source?
+- Are carbon and climate claims backed by methodology, reporting period, and evidence?
+- Are risks scored, explained, and paired with mitigation plans?
+- Are uncertainty and data gaps visible to DAO members?
+- Is the output published where reviewers can inspect it?
+- Are important records anchored through EAS or another verifiable public evidence layer?
+
+---
+
+## What this page does not guarantee
+
+These frameworks improve reporting quality, but they do not remove execution risk.
+
+| Risk | Why it still matters |
+| --- | --- |
+| Agricultural risk | Weather, pests, soil conditions, irrigation failures, and labor constraints can affect outcomes |
+| Market risk | Prices, buyers, certification, and logistics can change revenue assumptions |
+| Methodology risk | Carbon and ecological claims require defensible measurement methods |
+| Data-quality risk | Missing or inconsistent records weaken reporting credibility |
+| Governance risk | DAO decisions, proposal quality, and contributor coordination affect implementation |
+| Legal and policy risk | Land, certification, environmental, or carbon-credit rules can change |
+
+---
+
+## Next steps
+
+<CardGroup cols={2}>
+  <Card title="MRV — Evidence Layer" icon="magnifying-glass-chart" href="/ecosystem-wiki/kokonut-farms/measurement-reporting-and-verification">
+    See how farm activity becomes structured payloads, IPFS records, EAS attestations, Data Hub entries, and annual impact reports.
   </Card>
 
   <Card title="8 Forms of Capital" icon="water" href="/kokonut-framework/framework-components/framework-features/8-forms-of-capital">
-    The capital measurement framework that maps to EBF's four reporting dimensions — Natural, Financial, Social, Human, Material, Intellectual, Cultural, and Health capital.
+    Understand the value categories Kokonut uses before translating farm activity into EBF-style reports.
   </Card>
 
-  <Card title="Adelphi Data Hub" icon="chart-line" href="https://hub.kokonut.network/projects/41">
-    Where Adelphi's annual EBF reports and CRISP assessments are published — alongside the MRV data and harvest records that underpin both frameworks.
+  <Card title="Pillars of Value" icon="square-poll-vertical" href="/kokonut-framework/framework-components/pillars-of-value">
+    Use the six evaluation questions that help DAO members decide whether a farm is worth funding.
+  </Card>
+
+  <Card title="Common Data Schema" icon="database" href="/kokonut-framework/framework-components/common-data-schema">
+    Start with the farm record that makes proposals, MRV, EBF reports, and CRISP scoring comparable.
+  </Card>
+
+  <Card title="Adelphi Farm Summary" icon="seedling" href="/ecosystem-wiki/kokonut-farms/adelphi/summary">
+    See the live reference farm where Kokonut applies the Framework, MRV, SDG reporting, and farm-level evidence.
+  </Card>
+
+  <Card title="Proposal Templates" icon="file-lines" href="/ecosystem-wiki/the-kokonut-dao/proposal-templates">
+    Turn impact and risk assumptions into a DAO-reviewable proposal with evidence, budget, milestones, and next steps.
   </Card>
 </CardGroup>
+
+<div style={{ display: "flex", gap: "12px", justifyContent: "center", flexWrap: "wrap", margin: "2rem 0 0.75rem" }}>
+  <a href="/ecosystem-wiki/kokonut-farms/measurement-reporting-and-verification" style={{ display: "inline-flex", alignItems: "center", gap: "6px", background: "#009F4D", color: "#fff", padding: "10px 20px", borderRadius: "8px", fontWeight: "600", fontSize: "14px", textDecoration: "none" }}>
+    Read MRV Methodology →
+  </a>
+
+  <a href="https://hub.kokonut.network/projects/41" style={{ display: "inline-flex", alignItems: "center", gap: "6px", border: "1.5px solid #009F4D", color: "#009F4D", padding: "10px 20px", borderRadius: "8px", fontWeight: "600", fontSize: "14px", textDecoration: "none", background: "transparent" }}>
+    Explore Adelphi Data
+  </a>
+</div>
