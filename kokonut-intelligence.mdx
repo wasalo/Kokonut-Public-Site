@@ -1,515 +1,387 @@
 ---
 title: "Kokonut Intelligence"
-description: "The open-source canonical data backbone of the Kokonut Network — ingesting farm operations, environmental measurements, financial performance, and Web3 activity into a governed, analytically queryable, and cryptographically verifiable system."
+description: "The data, analytics, verification, and agent-access layer that turns farm activity into governed records, public dashboards, attestations, reports, and decision support."
 icon: "brain-circuit"
 ---
 
-Every number you see on the [Adelphi Data Hub](https://hub.kokonut.network/projects/41), every MRV attestation anchored on-chain, every EBF impact report, and every farm score the DAO uses to evaluate funding proposals flows through one system: the **Kokonut Intelligence Layer**.
+# Kokonut Intelligence turns farm activity into decision-ready evidence.
 
-The Intelligence Layer is the canonical data backbone of the Kokonut Network — the infrastructure that sits between raw farm data (soil probes, satellite imagery, field worker logs) and the systems that consume it (the DAO, impact investors, carbon markets, AI agents). Where the rest of this documentation describes what Kokonut measures and why, this page describes how that measurement is implemented, stored, processed, and verified.
+Every harvest record, soil reading, satellite observation, expense entry, MRV event, EAS attestation, Data Hub metric, and AI-agent output needs a single trusted place to be structured, queryable, and reviewable.
+
+**Kokonut Intelligence** is that layer. It sits between real-world farm activity and the systems that depend on it: farm operators, DAO reviewers, grant funders, impact analysts, public dashboards, AI agents, and future partner integrations.
+
+<div style={{ display: "flex", gap: "12px", justifyContent: "center", flexWrap: "wrap", margin: "1.5rem 0 0.75rem" }}>
+  <a href="#how-it-works" style={{ display: "inline-flex", alignItems: "center", gap: "6px", background: "#009F4D", color: "#fff", padding: "10px 20px", borderRadius: "8px", fontWeight: "600", fontSize: "14px", textDecoration: "none" }}>
+    See How It Works →
+  </a>
+
+  <a href="https://github.com/wasalo/Kokonut-Intelligence" style={{ display: "inline-flex", alignItems: "center", gap: "6px", border: "1.5px solid #009F4D", color: "#009F4D", padding: "10px 20px", borderRadius: "8px", fontWeight: "600", fontSize: "14px", textDecoration: "none", background: "transparent" }}>
+    Open the Repository
+  </a>
+</div>
+
+<p style={{ textAlign: "center", fontSize: "13px", color: "#6b7280", marginTop: "0.25rem" }}>
+  Built for farm operators, DAO reviewers, data contributors, developers, MRV analysts, and agent builders.
+</p>
+
+<Note>
+  Kokonut Intelligence is not a replacement for MRV methodology. MRV defines how farm activity becomes evidence. Kokonut Intelligence implements the data infrastructure that stores, validates, analyzes, attests to, and exposes evidence.
+</Note>
+
+---
+
+## Intelligence at a glance
+
+| Question | Short answer |
+| --- | --- |
+| What is it? | The canonical data and analytics backbone for Kokonut farms. |
+| What does it store? | Farm registry records, operations, harvests, expenses, sales, soil data, remote sensing, MRV events, attestations, partner data, and agent logs. |
+| What does it power? | Data Hub dashboards, MRV workflows, EAS attestations, EBF reports, CRISP risk analysis, farm scoring, forecasts, and AI-agent workflows. |
+| Who uses it? | Farm operators, DAO members, Guild contributors, grant reviewers, partners, developers, and agents. |
+| What is live? | Repository architecture, local stack, canonical schemas, farm/MRV data model, Directus, ClickHouse, PostgreSQL, Metabase, Celo EAS integration, and developer quickstart. |
+| What should be treated carefully? | Forecasts, scores, carbon or biodiversity-credit claims, institutional-readiness language, and partner-facing outputs until supported by verified records and external due diligence. |
+
+---
+
+## Why this layer exists
+
+Regenerative farms generate many kinds of records. Without a governed intelligence layer, those records become fragmented across spreadsheets, screenshots, wallets, dashboards, reports, sensors, notebooks, and chat messages.
+
+Kokonut Intelligence gives the network a shared source of truth.
+
+| Without Kokonut Intelligence | With Kokonut Intelligence |
+| --- | --- |
+| Farm data is scattered across tools | Farm data is structured into canonical records |
+| Impact claims depend on narrative | Claims can reference MRV events, evidence CIDs, and attestations |
+| DAO reviewers inspect one-off documents | Reviewers query consistent data across farms |
+| Agents need direct database or manual access | Agents use scoped access, manifests, and audit logs |
+| Forecasts are hard to compare with actuals | Forecasts can be checked against harvests, losses, sales, and MRV records |
+| Annual reports are manually assembled | Reports can be generated from governed snapshots |
+
+---
+
+## How it works
 
 ```mermaid
 flowchart TD
-    RAW["🌍 Raw farm data
-    sensors · satellites · field workers · blockchain"]
-
-    subgraph IL["KOKONUT INTELLIGENCE LAYER"]
-        PG["PostgreSQL\n(canonical store)"]
-        CH["ClickHouse\n(analytical queries)"]
-        DIR["Directus\n(governed API + admin UI)"]
-        PY["Python services\n(intelligence)"]
-        CELO["EAS on Celo\n(verification layer)"]
-    end
-
-    HUB["🖥️ Data Hub
-    hub.kokonut.network"]
-    ATTEST["🔐 EAS attestations
-    celoscan.io"]
-
-    RAW --> IL
-    IL --> HUB
-    IL --> ATTEST
-
-    HUB --> DAO["DAO governance"]
-    HUB --> AGENTS["AI agents"]
-    HUB --> EBF["EBF reports"]
-
-    ATTEST --> CARBON["Carbon markets"]
-    ATTEST --> IMPACT["Impact investors"]
-    ATTEST --> GRANTS["Grant reviewers"]
+    A["Farm activity\nharvest · expense · soil · weather · field log"] --> B["Structured record\nCommon Data Schema + MRV payloads"]
+    B --> C["Kokonut Intelligence\nPostgreSQL · Directus · ClickHouse"]
+    C --> D["Review lifecycle\ndraft → submitted → verified → published"]
+    D --> E["Data Hub + APIs\nqueryable public and partner views"]
+    D --> F["Evidence layer\nIPFS/Filecoin + EAS attestations"]
+    D --> G["Analytics\nforecasts · scores · reports · alerts"]
+    E --> H["DAO and partner decisions"]
+    F --> H
+    G --> H
+    C --> I["AI agents\nscoped access + audit logs"]
+    I --> B
 ```
 
-**Repository:** [`wasalo/Kokonut-Intelligence`](https://github.com/wasalo/Kokonut-Intelligence) · Apache-2.0
+The core idea is simple: **farm events should become structured records before they become public claims.**
+
+That means every important claim should be traceable back to:
+
+- a farm ID
+- a timestamp
+- a source or operator
+- a record type
+- a review status
+- a payload or evidence file
+- An attestation or report reference when applicable
 
 ---
 
 ## Architecture
 
-The Intelligence Layer is a six-layer stack, each layer optimized for a distinct role:
+Kokonut Intelligence is a six-layer stack. Each layer has a specific job.
 
-| **Layer** | **Technology** | **Role** |
+| Layer | Technology | Role |
 | --- | --- | --- |
-| **Canonical core** | PostgreSQL 14 \+ PostGIS 3.4 \+ Directus 11.17 | Schema authority, REST/GraphQL API, role-based permissions, data entry UI, workflow engine |
-| **Analytics** | ClickHouse 25.3 | Time-series analysis, high-volume event queries, sensor aggregations, dual-write target for all operational events |
-| **BI** | Metabase | Internal operational dashboards, aggregate reporting, ad-hoc analysis |
-| **Intelligence** | Python services | Farm scoring, revenue forecasting, ecological analytics, opportunity mapping |
-| **Verification** | EAS on Celo \+ offchain signed claims | On-chain attestations for MRV, impact, financial, harvest, and compliance records |
-| **Blockchain** | RPC \+ Subgraphs \+ Foundry | On-chain data ingestion (wallet activity, attestations), KokonutResolver smart contract |
+| Canonical core | PostgreSQL, PostGIS, Directus | Source-of-truth records, APIs, role permissions, admin UI, workflows |
+| Analytics | ClickHouse | Time-series analysis, sensor aggregation, event queries, performance reporting |
+| BI | Metabase | Internal dashboards, operational summaries, and ad-hoc analysis |
+| Intelligence services | Python | Forecasting, scoring, ecological analytics, opportunity maps, report generation |
+| Verification | EAS on Celo, off-chain signed claims | Attestations for MRV, impact, harvest, financial, and compliance records |
+| Blockchain ingestion | RPC, subgraphs, Foundry | Wallet activity, attestations, treasury events, DAO data, resolver contracts |
 
-<Note>
-  **Chain clarification — Gnosis vs. Celo:** The Kokonut Network operates across two chains for different purposes. [Gnosis Chain](/build-with-kokonut#deployed-smart-contracts) hosts the Moloch DAO governance contracts — \$vKKN tokens, the treasury, and proposal execution. **Celo** hosts the EAS attestation contracts for farm data verification — MRV claims, impact records, harvest proofs, and compliance audits. These are complementary, not competing: governance capital lives on Gnosis; verifiable farm evidence lives on Celo.
-</Note>
+<Info>
+  **Chain clarification:** Gnosis Chain hosts Kokonut DAO governance contracts and treasury execution. Celo hosts farm-data attestations through EAS. Governance capital and farm evidence are connected, but they are not on the same layer.
+</Info>
 
 ---
 
-## How it connects to the Kokonut stack
+## What it implements from the Knowledge Base
 
-The Intelligence Layer is the implementation behind the concepts documented elsewhere in this Knowledge Base:
-
-| **What the KB describes** | **What the Intelligence Layer implements** |
+| Knowledge Base concept | Intelligence implementation |
 | --- | --- |
-| [Common Data Schema](/kokonut-framework/framework-components/common-data-schema) — 13 fields every farm populates | `farm_registry_record` table in PostgreSQL; `services/registry/` validates and stores the schema |
-| [MRV three-tier sensing stack](/ecosystem-wiki/kokonut-farms/measurement-reporting-and-verification) | `remote_sensing_observation`, `sensor_reading`, and community-entered records in Directus, dual-written to ClickHouse |
-| [EAS attestations](/build-with-kokonut#eas-attestation-schema) | 5 registered schemas on Celo mainnet via the `KokonutResolver` attester-gating contract |
-| [Data Hub](https://hub.kokonut.network/projects/41) — live farm data | Powered by Directus API \+ ClickHouse analytical layer |
-| [EBF annual impact reports](/kokonut-framework/framework-add-ons/ecological-impact-frameworks) | Generated by `services/analytics/ecology.py` and `services/fortune500/` with hash-verified snapshots |
-| [CRISP risk scoring](/kokonut-framework/framework-add-ons/ecological-impact-frameworks) | Embedded in the Governance (15%) and Ecological (25%) pillars of the Fortune 500 Farm Score |
-| [8 Forms of Capital](/kokonut-framework/framework-components/framework-features/8-forms-of-capital) | Mapped to the 17 computed metrics engine: Natural→soil carbon delta; Financial→NOI; Social→governance events; Intellectual→metric definitions |
-| [AI Agents](/kokonut-x-ai-agents) | `agent_identity`, `agent_capability_manifest`, and `agent_task` tables; MCP integration with scoped tokens; agent action audit logging |
+| Common Data Schema | `farm_registry_record` and validation services for the 13-field farm record |
+| MRV workflow | Remote sensing, sensor readings, field observations, MRV events, evidence payloads, and attestation requests |
+| Data Hub | Directus and ClickHouse-backed APIs that expose farm data and metrics |
+| EAS attestations | Celo schemas, attestation records, resolver-gated publishing, onchain/offchain modes |
+| EBF reports | Generated snapshots based on verified ecological and operational records |
+| CRISP review | Risk factors derived from ecological, governance, and evidence-quality data |
+| 8 Forms of Capital | Metrics that classify farm value across natural, financial, social, human, material, intellectual, cultural, and health capital |
+| AI agents | Agent identity, capability manifests, scoped tokens, agent tasks, and action logs |
 
 ---
 
-## Capabilities
+## Core capabilities
 
-### Multi-source data ingestion
+<CardGroup cols={2}>
+  <Card title="Multi-source ingestion" icon="diagram-project">
+    Pull farm records from field logs, Directus entries, sensors, weather APIs, satellite imagery, blockchain data, and attestation indexes.
+  </Card>
 
-The ingestion layer pulls operational, environmental, and financial data from six source categories and dual-writes to both PostgreSQL (operational truth) and ClickHouse (analytical performance):
+  <Card title="Governed farm records" icon="database">
+    Store farm registry entries, crop cycles, harvests, expenses, sales, losses, MRV events, soil readings, and partner data with clear lifecycle states.
+  </Card>
 
-<Tabs>
-  <Tab title="Environmental">
-    | **Source** | **Service** | **Data** |
-    | --- | --- | --- |
-    | OpenWeatherMap API | `services/ingestion/weather.py` | Temperature, precipitation, humidity, wind, cloud cover → `weather_observation` |
-    | Sentinel-2, Landsat, drone, MODIS | `services/ingestion/remote_sensing.py` | NDVI, NDRE, EVI, SAVI, canopy cover → `remote_sensing_observation` |
-    | IoT soil probes | `services/ingestion/sensor_ingester.py` | Soil moisture, temperature, humidity, rainfall, pH with quality flagging → `sensor_reading` |
-    | Anomaly detection | `services/ingestion/anomaly_detector.py` | Threshold-based alerts → `sensor_alert` \+ automatic MRV claims |
-    | All sensor data flows to ClickHouse `sensor_readings` for time-series analysis alongside PostgreSQL storage. |  |  |
-  </Tab>
-  <Tab title="Financial & Market">
-    | **Source** | **Service** | **Data** |
-    | --- | --- | --- |
-    | World Bank Pink Sheet | `services/ingestion/market_data.py` | Coffee, cocoa, palm oil, rice, maize, sugar, tea, banana benchmark prices → `price_observation` |
-    | Farm operations (Directus) | Direct entry via admin UI | Activities, harvests, expenses, sales, losses, labor → structured operational records |
-    | Auto-calculations | Directus lifecycle hooks | NOI, loss rate, operating margin, net amount, labor cost computed on data change |
-  </Tab>
-  <Tab title="Web3 & Attestations">
-    | **Source** | **Service** | **Data** |
-    | --- | --- | --- |
-    | Ethereum, Optimism, Base, Arbitrum, Celo RPC | `services/ingestion/rpc_indexer.py` | Wallet balances, transfers, contract interactions → `wallet_activity_event` |
-    | EAS GraphQL API (Celo, Optimism, Base) | `services/ingestion/eas_indexer.py` | Onchain and offchain attestation records → `attestation_record` \+ `attestation_schema` |
-    | Kokonut DAO (Gnosis Chain) | Subgraph (planned) | Proposals, votes, treasury inflows/outflows, member activity |
-  </Tab>
-</Tabs>
+  <Card title="Verification pipeline" icon="stamp">
+    Convert eligible records into evidence payloads, IPFS/Filecoin references, Celo EAS attestations, public dashboards, and annual reports.
+  </Card>
 
-### Farm Registry and MRV canonical store
+  <Card title="Analytics and forecasting" icon="chart-line">
+    Generate farm scores, revenue forecasts, loss-rate analysis, ecological trends, opportunity maps, and metric snapshots.
+  </Card>
 
-The Intelligence Layer is the canonical implementation of the [Kokonut Common Data Schema](/kokonut-framework/framework-components/common-data-schema). Every farm that joins the network creates a `farm_registry_record` in PostgreSQL — all 13 required fields validated against the schema before the record is accepted.
+  <Card title="Partner dashboards" icon="users-viewfinder">
+    Expose buyer, funder, vendor, operator, and internal dashboards with role-based and row-level data controls.
+  </Card>
 
-MRV data from the [three-tier sensing stack](/ecosystem-wiki/kokonut-farms/measurement-reporting-and-verification) flows into the Intelligence Layer as `mrv_event` records, each linked to the farm registry entry via `farm_id`:
+  <Card title="Agent access" icon="robot">
+    Let AI agents read canonical data and write verified outputs through scoped access, MCP integration, and full audit logging.
+  </Card>
+</CardGroup>
 
-```python
-# Print a Common Data Schema example
-python3 -m services.registry --example-farm-record
- 
-# Prepare EAS attestation metadata from an MRV event
-python3 -m services.attestation \
-  --subject-type mrv_event \
-  --subject-id UUID \
-  --event-type mrv_submission \
-  --payload-file payload.json
-```
+---
 
-Every operational record — harvest, expense, soil observation, MRV event — follows the same governed lifecycle before it becomes eligible for attestation or dashboard publication:
+## Record lifecycle
+
+Every operational record should pass through a review flow before it becomes trusted enough for dashboards, reports, or attestations.
 
 ```mermaid
 flowchart LR
-    FW["👷 Field Worker
-    creates record"]
-    D["draft"]
-    S["submitted"]
-    V["verified"]
-    P["published"]
-    R["rejected"]
-
-    FW --> D
-    D --> S
-    S --> V
-    S --> R
-    R -->|rework| D
-    V --> P
-
-    P --> DASH["Dashboards · APIs"]
-    P --> PIPE["Attestation pipeline"]
-
-    style D fill:#f3f4f6,stroke:#d1d5db,color:#374151
-    style S fill:#fef3c7,stroke:#f59e0b,color:#92400e
-    style V fill:#dbeafe,stroke:#3b82f6,color:#1e40af
-    style P fill:#009F4D,stroke:#009F4D,color:#ffffff
-    style R fill:#fee2e2,stroke:#ef4444,color:#991b1b
+    A["Field worker or integration\ncreates record"] --> B["draft"]
+    B --> C["submitted"]
+    C --> D["verified"]
+    C --> E["rejected"]
+    E -->|rework| B
+    D --> F["published"]
+    F --> G["dashboards + APIs"]
+    F --> H["attestation pipeline"]
+    F --> I["reports + analytics"]
 ```
 
-### Fortune 500 Farm Scoring
-
-The most significant new intelligence capability not covered elsewhere in the Knowledge Base. Every farm registered in the Intelligence Layer receives a **Fortune 500 Farm Score** — a weighted composite metric that ranks farm performance across four pillars, calibrated for institutional audiences including carbon markets, impact investors, and DAO funding committees.
-
-| **Pillar** | **Weight** | **Metrics included** |
-| --- | --- | --- |
-| **Financial** | 45% | NOI, operating margin, revenue per hectare, loss rate, cost per hectare |
-| **Ecological** | 25% | NDVI average, soil organic matter, remote sensing data completeness |
-| **Governance** | 15% | EAS attestation count, governance events, treasury events, metric definition completeness |
-| **Growth** | 15% | Yield improvement trend, revenue growth rate, data completeness over time |
-
-**Score tiers:**
-
-| **Tier** | **Score range** | **What it means** |
-| --- | --- | --- |
-| 🏆 Platinum | 800–1000 | Institutional-grade — eligible for carbon credit programs and TradFi leverage instruments |
-| 🥇 Gold | 600–799 | Strong performer — attractive to impact investors, eligible for DAO expansion proposals |
-| 🥈 Silver | 400–599 | Established operations — MRV baseline complete, improvement trajectory confirmed |
-| 🥉 Bronze | 200–399 | Early production — Phase II complete, first annual EBF report published |
-| 🌱 Developing | 0–199 | Phase I or early Phase II — building the MRV record that subsequent tiers require |
-
-The CRISP carbon delivery risk factors from the [Ecological Impact Frameworks](/kokonut-framework/framework-add-ons/ecological-impact-frameworks) page are embedded in the Ecological and Governance pillars — a farm's CRISP assessment directly influences its score.
-
-```python
-# Score a specific farm
-python3 -m services.fortune500.cli --location-id <location-id>
- 
-# Rank all registered farms
-python3 -m services.fortune500.cli --all
-```
-
-### Ecological analytics
-
-The ecological analytics service computes soil and biodiversity performance from the MRV data record — producing the verifiable numbers that appear in EBF annual reports:
-
-- **Soil carbon delta:** Latest − baseline soil organic carbon in tonnes per hectare. The quantifiable sequestration output that carbon credit programs require.
-- **Biodiversity index:** Shannon diversity index (H') — measures both species richness and distribution evenness. A farm with 10 species evenly distributed scores higher than one dominated by a single species, even with the same species count.
-- **NDVI vegetation index trends:** Time-series analysis from the remote sensing record, showing vegetation health improvement or degradation across seasons.
-- **Water resilience scoring:** Rainfall pattern analysis, drought event frequency, and soil moisture retention trends.
-- **Intervention impact tracking:** Before/after comparison for specific practices — biochar application, cover crop establishment, animal integration — isolating the measurable impact of each intervention.
-
-```python
-# NDVI vegetation index trends over time
-python3 -m services.analytics --ndvi-trends --location-id UUID
- 
-# Shannon biodiversity index analysis
-python3 -m services.analytics --crop-diversity --location-id UUID
- 
-# Soil carbon delta (baseline vs. latest)
-python3 -m services.analytics --ecology --location-id UUID
- 
-# Intervention impact — before/after biochar application
-python3 -m services.analytics --intervention-impact --location-id UUID
-```
-
-### Revenue Multiplier Opportunity Map
-
-A 10-dimension analysis that identifies and quantifies the largest revenue uplift opportunities for each farm — giving farm operators and DAO members a structured basis for prioritizing next investments. Each dimension is scored with a USD impact estimate and confidence level:
-
-| **Dimension** | **What it identifies** |
+| Status | Meaning |
 | --- | --- |
-| 1. Crop mix optimization | Revenue gain from adjusting which crops occupy which plots |
-| 2. Loss-rate reduction | Revenue recovered if post-harvest loss rates hit the benchmark |
-| 3. Buyer / channel selection | Premium available from switching to higher-value distribution channels |
-| 4. Value-added processing | Revenue from processing raw outputs (coconut oil, dried fruit, biochar) rather than selling fresh |
-| 5. Web3-funded replication | Revenue from a DAO-funded adjacent plot using the same Framework |
-| 6. Bioinput production | Revenue from selling surplus biochar, humic acids, or organic inputs to neighboring farms |
-| 7. Public-goods funding loops | Grant and public goods revenue unlocked by verified impact attestations |
-| 8. Ecological verification | Carbon credit and biodiversity credit revenue from verified ecological data |
-| 9. Partner sponsorship | Sponsorship revenue from buyers, funders, or vendors with brand alignment |
-| 10. Regional farm clusters | Revenue from coordinated multi-farm operations sharing logistics and market access |
-
-```python
-# Run the full Revenue Multiplier analysis for a farm
-python3 -m services.revenue_multiplier.cli --location-id UUID
- 
-# Focus on a specific dimension
-python3 -m services.revenue_multiplier.cli --location-id UUID --dimension ecological_verification
-```
-
-### Revenue forecasting
-
-Monte Carlo simulation-based time-series projections across revenue, NOI, yield, and cash flow — with configurable confidence intervals (70%–95%) and per-cycle outputs that connect directly to the [Crops & Harvest Forecast](/ecosystem-wiki/kokonut-farms/adelphi/crops-and-harvest-forecast) methodology:
-
-- Scenario-based projections (optimistic / base / conservative) with sensitivity analysis
-- Carbon sequestration estimation in both tonnes CO₂e and USD value
-- Biodiversity credit value from species observation counts
-- Retained value projection from historical reinvestment rates
-
-```python
-# Run 12-month forecast with 2000 Monte Carlo simulations
-python3 -m services.forecast.cli \
-  --location-id <location-id> \
-  --months 12 \
-  --simulations 2000
-```
-
-### Governed metrics engine
-
-50\+ version-controlled metric definitions, computed on-demand or in batch, with source lineage stored per result:
-
-| **Metric** | **Calculator** | **Description** |
-| --- | --- | --- |
-| Crop NOI | Auto (Directus hook) | Net revenue minus direct costs minus allocated shared costs |
-| Loss Rate | Auto (Directus hook) | Loss amount as percentage of total harvest |
-| Operating Margin | Auto (Directus hook) | NOI as percentage of net revenue |
-| Soil Carbon Delta | `soil_carbon_delta` | Latest − baseline soil organic carbon (tonnes/ha) |
-| Biodiversity Delta | `biodiversity_delta` | Species count change \+ Shannon index delta |
-| Attestation Coverage | `attestation_coverage` | Published attestations ÷ eligible records × 100 |
-| Value Flowed | `value_flowed` | Sum of verified, non-excluded value flow events (USD) |
-| Wallet Retention | `wallet_retention` | Percentage of wallets active in both measurement periods |
-
-```python
-# Compute all metrics for a location
-python3 -m services.metrics --compute --all --location-id UUID
- 
-# Compute all metrics for all registered farms
-python3 -m services.metrics --compute --all-locations
- 
-# List all registered metric definitions
-python3 -m services.metrics --list
-```
+| Draft | A record exists but is not ready for review. |
+| Submitted | A field worker, integration, or supervisor has submitted it for review. |
+| Verified | A manager, finance reviewer, analyst, or authorized process has approved it. |
+| Published | The record can be used in dashboards, reports, API responses, or attestations. |
+| Rejected | The record needs correction before it can become evidence. |
 
 ---
 
-## EAS attestation layer — Celo
+## Farm scoring and opportunity mapping
 
-The Intelligence Layer's verification layer is built on [Ethereum Attestation Service (EAS)](https://docs.attest.sh/) deployed on **Celo mainnet** — not Gnosis Chain, which hosts the Moloch DAO governance contracts. Celo provides low-cost, EVM-compatible attestations optimized for the high-frequency farm verification use case.
+Kokonut Intelligence can help rank and compare farms, but scores should be treated as **decision support**, not automatic certification.
 
-### Deployed contracts on Celo
-
-| **Contract** | **Address** | **Explorer** |
+| Tool | What it helps with | Trust requirement |
 | --- | --- | --- |
-| **EAS v1.3.0** | [`0x72E1d8ccf5299fb36fEfD8CC4394B8ef7e98Af92`](https://celoscan.io/address/0x72E1d8ccf5299fb36fEfD8CC4394B8ef7e98Af92) | celoscan.io |
-| **SchemaRegistry** | [`0x5ece93bE4BDCF293Ed61FA78698B594F2135AF34`](https://celoscan.io/address/0x5ece93bE4BDCF293Ed61FA78698B594F2135AF34) | celoscan.io |
-| **KokonutResolver** | [`0x6E1502c7a14b45aba5FC420dC92C1E3b38BD79Ad`](https://celoscan.io/address/0x6E1502c7a14b45aba5FC420dC92C1E3b38BD79Ad) | celoscan.io |
+| Farm score | Compare financial, ecological, governance, and growth performance | Requires clean records, transparent weights, and reviewable metric definitions |
+| Revenue multiplier map | Identify possible revenue-uplift opportunities | Requires market assumptions, operator review, and actuals tracking |
+| Revenue forecast | Model scenarios across revenue, NOI, yield, and cash flow | Requires forecast-vs-actual comparison and sensitivity analysis |
+| Ecological analytics | Track soil, vegetation, biodiversity, and water indicators | Requires baselines, consistent measurement periods, and MRV methodology |
+| Governed metrics engine | Version and compute metrics across farms | Requires source lineage and change governance |
 
-The `KokonutResolver` is a custom attester-gating smart contract — only wallets authorized by the Kokonut multisig can create attestations. Resolver ownership has been transferred to the Kokonut multisig: `0x03779B674CbCBfc0B801c4cAc9DFaC8aACbbD5c5`.
+<Warning>
+  Scores, forecasts, carbon estimates, biodiversity-credit assumptions, and institutional-readiness labels are not guarantees. They are planning and reviewing tools until supported by verified records, external standards, partner due diligence, and any required third-party validation.
+</Warning>
 
-**Authorized attesters:**
+---
 
-- Deployer wallet: `0x3394C45b5938127EB56603A6051dF26CFAF08C26`
-- Kokonut multisig: `0x03779B674CbCBfc0B801c4cAc9DFaC8aACbbD5c5`
+## EAS attestation layer on Celo
+
+Kokonut Intelligence uses EAS on Celo for farm-data attestations. This separates **governance execution** from **farm evidence**:
+
+| Chain | Kokonut role |
+| --- | --- |
+| Gnosis Chain | DAO governance, treasury, membership, proposal execution |
+| Celo | Farm evidence, MRV attestations, impact records, harvest proofs, compliance records |
+
+### Celo contracts
+
+| Contract | Address |
+| --- | --- |
+| EAS v1.3.0 | `0x72E1d8ccf5299fb36fEfD8CC4394B8ef7e98Af92` |
+| SchemaRegistry | `0x5ece93bE4BDCF293Ed61FA78698B594F2135AF34` |
+| KokonutResolver | `0x6E1502c7a14b45aba5FC420dC92C1E3b38BD79Ad` |
+| Kokonut multisig | `0x03779B674CbCBfc0B801c4cAc9DFaC8aACbbD5c5` |
 
 ### Registered schemas
 
-Five schemas are registered on Celo, each covering a distinct farm verification domain:
+| Schema | Use case |
+| --- | --- |
+| `kokonut-mrv` | MRV claims: location, crop, quantity, evidence CID |
+| `kokonut-impact` | Environmental impact: soil carbon, biodiversity index, vegetation indicators |
+| `kokonut-financial` | Financial summaries: NOI, revenue, costs, farm score snapshots |
+| `kokonut-harvest` | Harvest verification: quantity, quality grade, date, operator |
+| `kokonut-compliance` | Partner compliance: audit trails and contractual adherence |
 
-| **Schema** | **UID** | **Use case** |
-| --- | --- | --- |
-| `kokonut-mrv` | [`0x93af67b8197dda513fa968e597e1c9a2c0d0607d656659f153dc1b065a100e54`](https://celoscan.io/address/0x5ece93bE4BDCF293Ed61FA78698B594F2135AF34) | MRV claims — location, crop, quantity, evidence CID |
-| `kokonut-impact` | [`0xb99bb4b2a55218b8f4df1f0bd4c39400711809f13ef5d150d2903648c6590dfe`](https://celoscan.io/address/0x5ece93bE4BDCF293Ed61FA78698B594F2135AF34) | Environmental impact — soil carbon, biodiversity index, NDVI |
-| `kokonut-financial` | [`0x75b42beb85dd852134dfaff3de41b8dc361ed0cb2bf93ce3009c8ec082de905b`](https://celoscan.io/address/0x5ece93bE4BDCF293Ed61FA78698B594F2135AF34) | Financial summaries — NOI, revenue, costs, Fortune 500 score |
-| `kokonut-harvest` | [`0xb359f9756e3cb3597e4048dccae2842083359906fbae8dc8c0e9af8ac1b3ccff`](https://celoscan.io/address/0x5ece93bE4BDCF293Ed61FA78698B594F2135AF34) | Harvest verification — quantity, quality grade, date, operator |
-| `kokonut-compliance` | [`0x59632edcf1d04be0c2dcfd572282bbd4dac518e7a92872ec45ade29876ef95f5`](https://celoscan.io/address/0x5ece93bE4BDCF293Ed61FA78698B594F2135AF34) | Partner compliance — audit trails, contractual adherence |
-
-### Onchain and offchain attestations
-
-The Intelligence Layer supports two attestation modes depending on frequency and cost requirements:
-
-**Onchain attestations** — for high-stakes, permanent records (annual EBF reports, certified harvest milestones, Fortune 500 score snapshots):
-
-```python
-# Create an onchain MRV attestation on Celo
-python3 -m services.attestation.cli attest \
-  --schema 0x93af67b8197dda513fa968e597e1c9a2c0d0607d656659f153dc1b065a100e54 \
-  --recipient 0xRECIPIENT \
-  --data '[{"name":"locationId","type":"string","value":"adelphi"}]' \
-  --chain celo
-```
-
-**Offchain attestations (EIP-712 signed)** — for high-frequency workflows (per-harvest records, weekly soil probe summaries, community field observation logs) where gas cost would make onchain attestation prohibitive:
-
-```python
-# Create a gasless offchain attestation
-python3 -m services.attestation.cli offchain-attest \
-  --schema 0x93af67b8197dda513fa968e597e1c9a2c0d0607d656659f153dc1b065a100e54 \
-  --recipient 0xRECIPIENT \
-  --data '[{"name":"locationId","type":"string","value":"adelphi"}]' \
-  --chain celo
-```
-
-**Private data** — for sensitive financial records or partner-specific information, the Intelligence Layer stores offchain data with onchain hashes only, with selective disclosure support and full ZK proof capability as a future layer.
+<Note>
+  Sensitive data should not be pushed publicly by default. Kokonut Intelligence supports off-chain records, onchain hashes, selective disclosure, and future privacy-preserving proof layers for records that should not be fully public.
+</Note>
 
 ---
 
 ## Roles and access
 
-Six roles govern data entry, approval, and analysis across all farm records:
+The Intelligence Layer should make data useful without making every user an administrator.
 
-| **Role** | **Access level** | **Primary responsibilities** |
+| Role | Access level | Main responsibility |
 | --- | --- | --- |
-| **Administrator** | Full | Platform configuration, all permissions, schema management |
-| **Field Worker** | Create/read own location | Data entry — activities, harvests, expenses, sales, losses, field notes. Records always start as `draft`. |
-| **Supervisor** | Read all, submit | Submits draft records for approval; can read data from all locations |
-| **Manager** | Approve all operational | Approves and verifies all operational records across all locations |
-| **Finance** | Approve expenses and revenue | Approves expense claims, verifies sales transactions, approves revenue events |
-| **Analyst** | Read verified/published | Read-only access to verified and published data; primary audience for dashboards and forecasts |
+| Administrator | Full access | Platform configuration, schemas, permissions, infrastructure operations |
+| Field Worker | Create and read your own location records | Activities, harvests, expenses, sales, losses, field notes |
+| Supervisor | Read and submit | Review drafts and submit records for verification |
+| Manager | Approve operational records | Verify operations, field data, crop records, and milestones |
+| Finance | Approve financial records | Verify expenses, sales, payments, and revenue events |
+| Analyst | Read verified and published data | Dashboards, metrics, forecasts, reports, and DAO review support |
+| Agent | Scoped access only | Read or write specific records through capability manifests and audit logs |
 
 ---
 
-## Partner dashboards
+## Builder quickstart
 
-Four partner-facing dashboard templates with row-level security — each partner sees only their own data:
+<Steps>
+  <Step title="Clone the repository">
+    ```bash
+    git clone https://github.com/wasalo/Kokonut-Intelligence.git
+    cd Kokonut-Intelligence
+    ```
+  </Step>
+  <Step title="Configure environment variables">
+    ```bash
+    cp .env.example .env
+    # Edit .env with database passwords and API keys
+    ```
+  </Step>
+  <Step title="Start local services">
+    ```bash
+    docker compose up -d
+    docker compose ps
+    ```
+  </Step>
+  <Step title="Seed schemas and demo data">
+    ```bash
+    ./scripts/seed.sh
+    ./scripts/seed-pilot.sh
+    ```
+  </Step>
+  <Step title="Open local tools">
+    ```bash
+    open http://localhost:8055  # Directus
+    open http://localhost:3001  # Metabase
+    ```
+  </Step>
+</Steps>
 
-| **Partner type** | **Dashboard** | **Key data surfaces** |
+### Local service endpoints
+
+| Service | URL | Purpose |
 | --- | --- | --- |
-| **Buyer** | `partner-buyer` | Production summary, upcoming harvests, quality grades, revenue trends |
-| **Funder** | `partner-funder` | NOI trends, cost breakdown, forecasts, impact attestations, ecological outcomes, Fortune 500 score |
-| **Vendor** | `partner-vendor` | Purchase history, payment status, input demand forecasts |
-| **Operator** | `partner-operator` | Operations overview, live sensor readings, weather, crop cycles, active alerts |
-
-Internal Metabase dashboards cover five operational views: farm operations, crop NOI analysis, expense tracker, harvest/sales trends, and loss rate analysis.
-
----
-
-## SDKs and developer access
-
-### Python and JavaScript/TypeScript SDKs
-
-Typed clients covering the full Intelligence Layer API — CRUD operations, auth, aggregations, and EAS attestation workflows:
-
-```bash
-# Python SDK
-cd sdk/python && pip install -e .
- 
-# JavaScript/TypeScript SDK
-cd sdk/javascript && npm install && npm run build
-```
-
-See `sdk/python/examples/` and `sdk/javascript/examples/` for usage patterns covering all major operations.
-
-### MCP integration for AI agents
-
-The Intelligence Layer exposes an MCP (Model Context Protocol) integration with scoped tokens and full audit logging — allowing AI agents from the [Kokonut Agentic Marketplace](/kokonut-x-ai-agents) to read canonical farm data and write verified outputs (MRV submissions, attestation requests, agent task records) without requiring direct database access.
-
-Every agent action is logged to `agent_action_log` with user, timestamp, and action type — maintaining the governance accountability layer even for automated operations.
-
-### Data export
-
-```python
-# Export farm records to CSV
-python3 -m services.export.exporter \
-  --collection farm_registry_record \
-  --format csv \
-  --output exports/
- 
-# Export sensor time-series from ClickHouse
-python3 -m services.export.exporter \
-  --collection sensor_readings \
-  --format parquet \
-  --source clickhouse \
-  --output exports/
- 
-# Generate a hash-verified farm summary report
-python3 -m services.export.report_generator \
-  --type farm_summary \
-  --location-id UUID
-```
-
-All report snapshots include SHA-256 integrity verification — the same hash is stored in the Intelligence Layer database, making it possible to independently verify that a report has not been altered after generation.
-
----
-
-## Quick start
-
-**Prerequisites:** Docker \+ Docker Compose
-
-```bash
-# 1. Clone and configure
-git clone https://github.com/wasalo/Kokonut-Intelligence.git
-cd Kokonut-Intelligence
-cp .env.example .env
-# Edit .env with your database passwords and API keys
- 
-# 2. Start all services
-docker compose up -d
- 
-# 3. Verify everything is running
-docker compose ps
- 
-# 4. Apply schemas and seed base data
-./scripts/seed.sh
- 
-# 5. Access the admin UI (Directus)
-open http://localhost:8055
- 
-# 6. Access BI dashboards (Metabase)
-open http://localhost:3001
- 
-# 7. (Optional) Load the pilot farm seed data (Kokonut Demo Farm)
-./scripts/seed-pilot.sh
-```
-
-**Service endpoints:**
-
-| **Service** | **URL** | **Purpose** |
-| --- | --- | --- |
-| Directus | `http://localhost:8055` | Schema management, API, admin UI, primary data entry |
-| Metabase | `http://localhost:3001` | Internal BI dashboards |
+| Directus | `http://localhost:8055` | Schema management, admin UI, API, primary data entry |
+| Metabase | `http://localhost:3001` | Internal dashboards and BI |
 | ClickHouse HTTP | `http://localhost:8123` | Analytical queries |
-| PostgreSQL | `localhost:5432` | Canonical data store (direct access) |
-
-**Developer sandbox** (pre-seeded with Kokonut Demo Farm data and mock API keys):
-
-```bash
-docker compose -f docker-compose.yml -f docker-compose.sandbox.yml up -d
-./scripts/sandbox-setup.sh
-open docs/sandbox.md  # Hello-world tutorial
-```
+| PostgreSQL | `localhost:5432` | Canonical data store |
 
 ---
 
-## Internal documentation
+## What to build first
 
-The repository ships with a full `docs/` directory covering every subsystem:
+<CardGroup cols={2}>
+  <Card title="Improve farm data quality" icon="database">
+    Add validation rules, import tools, field-worker UX improvements, or better error messages for farm records.
+  </Card>
 
-| **Document** | **Description** |
+  <Card title="Build MRV tooling" icon="satellite-dish">
+    Create ingestion, QA, visualization, or attestation workflows for satellite, sensor, drone, or field-observation data.
+  </Card>
+
+  <Card title="Create analytics modules" icon="chart-simple">
+    Improve loss-rate analysis, farm scoring, ecological trends, forecast-vs-actual tracking, or revenue opportunity maps.
+  </Card>
+
+  <Card title="Design agent workflows" icon="robot">
+    Build agents that read canonical data, produce bounded outputs, submit MRV events, and leave full action logs.
+  </Card>
+
+  <Card title="Improve dashboards" icon="chart-pie">
+    Build clearer dashboards for operators, DAO reviewers, buyers, funders, vendors, or public visitors.
+  </Card>
+
+  <Card title="Strengthen privacy and access" icon="shield-halved">
+    Improve scoped permissions, selective disclosure, partner dashboards, private data handling, and audit trails.
+  </Card>
+</CardGroup>
+
+---
+
+## Claim safety rules
+
+Use Kokonut Intelligence outputs carefully.
+
+| Claim type | Safe framing |
 | --- | --- |
-| `docs/architecture.md` | System overview, data flow diagrams, security model |
-| `docs/data-dictionary.md` | All 50\+ tables, fields, governed metrics, and their relationships |
-| `docs/api-reference.md` | REST/GraphQL/ClickHouse API reference |
-| `docs/openapi.yaml` | Full OpenAPI 3.0 specification |
-| `docs/attestation-guide.md` | EAS on Celo — schemas, onchain/offchain attestation, private data, CLI |
-| `docs/agent-access.md` | MCP integration, agent-scoped tokens, audit logging |
-| `docs/deployment.md` | Docker setup, environment variables, backup procedures |
-| `docs/sandbox.md` | Developer quickstart with hello-world tutorial |
+| Forecasts | Scenario estimates that should be compared against actuals. |
+| Farm scores | Decision-support signals based on metric weights and available data. |
+| Carbon outcomes | Climate co-benefits are not verified through approved methodology and third-party standards. |
+| Biodiversity claims | Evidence-backed observations, species records, and trends, not automatic credits. |
+| Financial performance | Records and projections, not guaranteed returns. |
+| Institutional readiness | A review pathway that requires due diligence, not a status the system grants by itself. |
 
 ---
+
+## Internal documentation map
+
+The repository includes deeper documentation for each subsystem.
+
+| Document | What it covers |
+| --- | --- |
+| `docs/architecture.md` | System overview, data flows, security model |
+| `docs/data-dictionary.md` | Tables, fields, metrics, and relationships |
+| `docs/api-reference.md` | REST, GraphQL, and ClickHouse API reference |
+| `docs/openapi.yaml` | OpenAPI 3.0 specification |
+| `docs/attestation-guide.md` | EAS on Celo, schemas, attestation modes, private data, CLI |
+| `docs/agent-access.md` | MCP integration, scoped tokens, and audit logging |
+| `docs/deployment.md` | Docker setup, environment variables, and backup procedures |
+| `docs/sandbox.md` | Developer quickstart and hello-world tutorial |
+
+---
+
+## Next steps
 
 <CardGroup cols={2}>
   <Card title="Build with Kokonut" icon="code" href="/build-with-kokonut">
-    GitHub repositories, Gnosis Chain DAO contracts, Farm Registry API schema, and the Agentic Marketplace architecture — the full developer picture of what the Intelligence Layer connects to.
+    Repositories, contracts, schemas, MRV primitives, contribution rules, and builder paths.
   </Card>
 
-  <Card title="MRV — Measurement & Verification" icon="magnifying-glass-chart" href="/ecosystem-wiki/kokonut-farms/measurement-reporting-and-verification">
-    The three-tier sensing methodology that feeds data into the Intelligence Layer — satellite vegetation indices, soil probes, community analytics, and the EAS attestation pipeline.
-  </Card>
-
-  <Card title="Kokonut × AI Agents" icon="robot" href="/kokonut-x-ai-agents">
-    The Agentic Marketplace agents that read canonical data from and write verified outputs to the Intelligence Layer — automating the MRV pipeline through MCP integration.
-  </Card>
-
-  <Card title="Ecological Impact Frameworks" icon="leaf-heart" href="/kokonut-framework/framework-add-ons/ecological-impact-frameworks">
-    EBF and CRISP — the reporting standards whose annual outputs the Intelligence Layer's ecology analytics and Fortune 500 scoring pipeline produce.
+  <Card title="MRV Methodology" icon="magnifying-glass-chart" href="/ecosystem-wiki/kokonut-farms/measurement-reporting-and-verification">
+    How farm activity becomes structured evidence, public records, attestations, dashboards, and annual reports.
   </Card>
 
   <Card title="Common Data Schema" icon="database" href="/kokonut-framework/framework-components/common-data-schema">
-    The 13-field canonical schema whose PostgreSQL implementation — `farm_registry_record` — lives in the Intelligence Layer as the farm network's source of truth.
+    The 13-field farm record that makes farms comparable, fundable, governable, and verifiable.
+  </Card>
+
+  <Card title="Kokonut × AI Agents" icon="robot" href="/kokonut-x-ai-agents">
+    Agent identity, scoped access, MCP integration, x402 payments, and verifiable agent outputs.
+  </Card>
+
+  <Card title="Ecological Impact Frameworks" icon="leaf-heart" href="/kokonut-framework/framework-add-ons/ecological-impact-frameworks">
+    How EBF and CRISP interpret verified farm data for reporting and risk review.
   </Card>
 
   <Card title="Adelphi Data Hub" icon="chart-line" href="https://hub.kokonut.network/projects/41">
-    The live interface for Adelphi's Intelligence Layer data — harvest records, MRV events, ecological metrics, and EAS attestation UIDs, all powered by this system.
+    Explore live farm data, MRV events, harvest records, and impact metrics for Kokonut's reference farm.
   </Card>
 </CardGroup>
