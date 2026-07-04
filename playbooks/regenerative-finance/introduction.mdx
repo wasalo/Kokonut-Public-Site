@@ -1,0 +1,60 @@
+---
+title: "Introduction"
+---
+
+## Playbook Intro
+
+Regenerative agriculture projects usually face two disconnected problems at once: farmers need patient capital and trustworthy sales channels, and funders (DAOs, grant programs, impact investors) need proof that money produced real ecological and social outcomes rather than a nice pitch deck.
+
+Kokonut Network was built to close that gap in the Dominican Republic by fusing a working farm with a Web3 coordination and verification stack, so that funding, farming, and proof of impact happen within a single connected loop rather than three disconnected processes (source: Problem Statement; Our Solution).
+
+This playbook exists to make that model **legible and repeatable**. It walks through how Kokonut's DAO, Common Data Schema, MRV pipeline, and Guild structure work together, using the flagship Kokonut Adelphi farm as the live case study, so a different community can adopt the same coordination pattern without having to independently invent DAO tooling, an impact-measurement framework, and a farm-funding process from zero.
+
+### Target Audience
+
+This playbook is designed for:
+
+- **Local ReFi leaders and regenerative-agriculture practitioners** who have (or can access) land and farming know-how but lack a funding and verification pipeline.
+- **DAOs and Web3-native communities** — especially those already comfortable with Moloch-style governance, EAS attestations, or Gnosis Safe treasuries — looking for a concrete regenerative-agriculture use case to fund or replicate.
+- **Cooperatives and community organizations** in Latin America and the Caribbean (or similar contexts) that want a proof-first way to demonstrate impact to grant funders without building custom MRV tooling.
+- **ReFi builders and open-source contributors** who want to extend, fork, or integrate with Kokonut's already-open repositories (Common Data Schema, Kokonut Intelligence, the emerging Agentic Marketplace).
+
+**What you'd need to replicate this:** access to land (owned, leased, or in cooperative trust), at least one person willing to do the on-the-ground farm-operator role, basic comfort with a multisig wallet and a DAO voting interface, and enough patience to run field data collection consistently — the MRV pipeline is only as good as the soil-probe and photo-log discipline behind it (source: Measurement, Reporting & Verification).
+
+Kokonut's own tooling (schema, contracts, dashboards) is largely open-source, which lowers the technical lift considerably (source: Build with Kokonut).
+
+---
+
+## 📚 Playbook Description
+
+### Overview
+
+Kokonut Network's stated objective is to prove that regenerative farms can be **funded transparently, operated profitably, and verified on-chain** at the same time — not sequentially, and not as separate workstreams (source: Kokonut Vision; Our Solution).
+
+For local communities, the relevance is direct: it offers a funding pathway that doesn't require pre-existing institutional credibility, because the DAO, Guilds, and MRV pipeline generate that credibility as the farm operates.
+
+For the wider ReFi ecosystem, it offers a working example of "proof-first" grant qualification — mapping a real farm's documented assets against funder eligibility criteria instead of a speculative roadmap.
+
+### Impact
+
+- **Economic:** 7 direct jobs at Adelphi alone, a \$149,110/year revenue forecast across lettuce, passion fruit, coconut, and eggs, and a revenue split that returns 40% of farm value directly to the Hernández family as farm operators, rather than only to outside capital (confirmed by Kokonut Network, July 2026).
+- **Ecological:** Syntropic/agroforestry planting design, 12\+ native and at-risk species reintroduced through the farm nursery, and continuous satellite \+ soil monitoring (NDVI/NDRE/MSAVI indices) to track vegetation and soil trends over time rather than a one-time baseline (source: Adelphi Crops, Biodiversity & Infrastructure; Measurement, Reporting & Verification).
+- **Social:** SDG alignment centers on SDG 1 (No Poverty), SDG 2 (Zero Hunger), SDG 5 (Gender Equality), SDG 8 (Decent Work), and SDG 15 (Life on Land) as primary targets for Adelphi, with a broader 17-SDG map at the Framework level covering secondary contributions (source: Adelphi SDGs; Framework SDGs).
+- **Public goods:** 40% of Adelphi's forecast revenue is routed to Kokonut's public-goods fund by design, not as an afterthought bolted onto a for-profit model.
+
+### Innovation Highlight
+
+What differentiates Kokonut from a generic "ReFi farm" pitch is that each piece reinforces the others instead of standing alone:
+
+- **The Kokonut Framework** — a four-phase, repeatable methodology (not just a manifesto) with a shared 13-field Common Data Schema, so a second or third farm doesn't require reinventing how data is structured (source: Kokonut Framework Introduction; Common Data Schema).
+- **A live farm as proof, not a whitepaper promise** — Kokonut Adelphi is operating and reporting real numbers today, which is unusual in a ReFi space where many projects fund infrastructure before anything is growing (source: Adelphi Executive Summary).
+- **The Guild contribution system** — governance work is organized into 6 functional Guilds (Technology, Impact, Communications, Governance, Finance, Community & Partnerships) with a tiered contributor path (Contributor → Member → Steward → Emeritus), which turns "DAO participation" into defined, ownable work rather than token-weighted voting (source: Kokonut Guilds).
+- **On-chain MRV with a real attestation trail** — field and satellite data flow into IPFS-anchored payloads and get attested on-chain via EAS on Celo, giving funders a verifiable trail instead of a self-reported PDF (source: Measurement, Reporting & Verification; Kokonut Intelligence GitHub README).
+
+## Local Context
+
+Kokonut is deliberately rooted in the Dominican Republic's specific conditions: it works with smallholder-scale plots (Adelphi is 15,725 m², not an industrial plantation), uses crops already viable in Monte Plata's climate (coconut, passion fruit, lettuce), and frames its founders' story — Yanny and Neury Hernández converting family land into Adelphi — as a locally credible entry point rather than an externally imposed model (source: Background Story).
+
+The seven challenges the Adelphi page documents — land-use pressure, water access, market access for smallholders, youth outmigration from rural areas, limited access to capital, climate vulnerability, and knowledge/technology gaps — are framed as Dominican-specific but are common across much of the Caribbean and Central America (source: Problem & Solution, Adelphi).
+
+**What would need adapting elsewhere:** the crop mix and syntropic planting design are climate- and market-specific and would need to be redesigned for a different agroecological zone; the DAO/legal wrapper would need review against local cooperative, securities, and tax law outside the DR (see Regulatory Compliance below — this is a genuine open question even for the DR context); and the "proof-first" grant-qualification approach depends on funders who value documented outcomes over pitch polish, which isn't universal across all funding programs.

@@ -120,7 +120,22 @@
             "pages": [
               "build-with-kokonut",
               "kokonut-intelligence",
-              "kokonut-x-ai-agents"
+              "kokonut-x-ai-agents",
+              {
+                "group": "Playbooks",
+                "pages": [
+                  {
+                    "group": "Regenerative Finance",
+                    "pages": [
+                      "playbooks/regenerative-finance/summary",
+                      "playbooks/regenerative-finance/introduction",
+                      "playbooks/regenerative-finance/business-model-and-legal",
+                      "playbooks/regenerative-finance/how-it-works",
+                      "playbooks/regenerative-finance/case-studies"
+                    ]
+                  }
+                ]
+              }
             ]
           }
         ]
@@ -149,7 +164,11 @@
      "mcp",
      "cursor",
     "vscode",
-    "grok"
+    "grok",
+    "download-pdf",
+    "download-spec",
+    "aistudio",
+    "add-mcp"
    ]
   },
   "footer": {
