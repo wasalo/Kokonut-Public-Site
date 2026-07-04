@@ -1,5 +1,6 @@
 ---
 title: "How It Works"
+icon: "3"
 ---
 
 ## Implementation Process
@@ -16,10 +17,10 @@ flowchart LR
     Terra["🌴 Kokonut Terra Viva<br/>50,000 m², land signed"] -.entering.-> A
 ```
 
-- **Phase I — Planning & Preparation:** site assessment, baseline data capture, syntropic planting design, DAO proposal drafting and community funding vote (source: Phase I).
-- **Phase II — Production & Regeneration:** active planting, infrastructure build-out, first harvests, and the start of continuous MRV data capture — **this is where Kokonut Adelphi is today** (source: Phase II; Adelphi Executive Summary).
-- **Phase III — Consolidation & Expansion:** scaling production, formalizing market/sales channels, and preparing the farm's data and track record for replication or follow-on funding (source: Phase III).
-- **Phase IV — Continuous Operations:** steady-state farming with ongoing MRV, reporting, and reinvestment — feeding data back into governance and into the next farm's Phase I planning (source: Phase IV).
+- **[Phase I — Planning & Preparation](/kokonut-framework/development-phases/phase-i):** site assessment, baseline data capture, syntropic planting design, DAO proposal drafting and community funding vote.
+- **[Phase II — Production & Regeneration](/kokonut-framework/development-phases/phase-ii):** active planting, infrastructure build-out, first harvests, and the start of continuous MRV data capture — **this is where Kokonut Adelphi is today**.
+- **[Phase III — Consolidation & Expansion](/kokonut-framework/development-phases/phase-iii):** scaling production, formalizing market/sales channels, and preparing the farm's data and track record for replication or follow-on funding.
+- **[Phase IV — Continuous Operations](/kokonut-framework/development-phases/phase-iv):** steady-state farming with ongoing MRV, reporting, and reinvestment — feeding data back into governance and into the next farm's Phase I planning.
 
 ## Technology Solutions Used
 
@@ -56,9 +57,9 @@ flowchart LR
     G --> H["DAO, Guild & grant reporting"]
 ```
 
-Kokonut Intelligence layers a scoring system on top of this pipeline: a **Fortune 500 Farm Score** weights Financial performance (45%), Ecological outcomes (25%), Governance health (15%), and Growth trajectory (15%) into a single composite score, with tiers from Developing up through Bronze, Silver, Gold, and Platinum (800\+) (source: Kokonut Intelligence GitHub README).
+[Kokonut Intelligence](/kokonut-intelligence) layers a scoring system on top of this pipeline: a **Fortune 500 Farm Score** weights Financial performance (45%), Ecological outcomes (25%), Governance health (15%), and Growth trajectory (15%) into a single composite score, with tiers from Developing up through Bronze, Silver, Gold, and Platinum (800\+).
 
-It also runs Monte Carlo simulations for revenue forecasting and a Shannon diversity index for biodiversity scoring, and ships with a "Revenue Multiplier Opportunity Map" across 10 dimensions to surface where a given farm's income could grow (source: Kokonut Intelligence GitHub README).
+It also runs Monte Carlo simulations for revenue forecasting and a Shannon diversity index for biodiversity scoring, and ships with a "Revenue Multiplier Opportunity Map" across 10 dimensions to surface where a given farm's income could grow.
 
 Worth flagging for accuracy: the open-source repo's seed/demo dataset uses a fictitious "Kokonut Adelphi Demo Farm", purely to test the platform.
 
@@ -75,17 +76,15 @@ flowchart LR
     E -.66% retention threshold blocks execution.-> F
 ```
 
-- **DAO members (\$vKKN holders):** vote on proposals, hold non-transferable governance shares, and can rage-quit (exit with their proportional treasury share) if they disagree with a passed decision they didn't support (source: Kokonut Moloch DAO).
-- **Guilds (Technology, Impact, Communications, Governance, Finance, Community & Partnerships)** own specific domains of ongoing work; contributors progress through Contributor → Member → Steward → Emeritus tiers based on accumulated contribution (source: Kokonut Guilds).
-- **Farm operators:** run day-to-day operations on the ground — at Adelphi, this is the Hernández family — and receive 40% of farm revenue in recognition of that operating role (confirmed by Kokonut Network, July 2026).
-- **Community leaders / Stewards:** senior Guild members who mentor newer contributors and hold more governance weight in their domain as they accumulate track record (source: Kokonut Guilds).
+- **[DAO members](/ecosystem-wiki/the-kokonut-dao/dao-layers) (\$vKKN holders):** vote on proposals, hold non-transferable governance shares, and can rage-quit (exit with their proportional treasury share) if they disagree with a passed decision they didn't support.
+- **[Guilds](/ecosystem-wiki/the-kokonut-dao/kokonut-guilds-dao) (Technology, Impact, Communications, Governance, Finance, Community & Partnerships)** own specific domains of ongoing work; contributors progress through Contributor → Member → Steward → Emeritus tiers based on accumulated contribution.
+- **Farm operators:** run day-to-day operations on the ground — at Adelphi, this is the Hernández family — and receive 40% of farm revenue in recognition of that operating role.
+- **Community leaders / Stewards:** senior Guild members who mentor newer contributors and hold more governance weight in their domain as they accumulate track record.
 
 ## Tips & Best Practices
 
-Patterns pulled directly from how Kokonut's own docs frame their challenges:
-
-- **Separate forecasts from actuals, explicitly.** Every revenue and impact figure in Kokonut's own documentation is labeled as a forecast until harvested/measured — worth carrying into any pitch or grant application so funders aren't misled about what's realized vs. projected (source: Adelphi Crops & Harvest Forecast).
-- **Use a short-cycle crop to bridge long-cycle ones.** Coconut takes years to mature; lettuce doesn't. Pairing them is what keeps the farm's cash flow alive during the wait (source: Background Story).
-- **Don't let governance tokens double as your treasury's volatility risk.** Kokonut's stablecoin-tribute design is a direct response to this common DAO failure mode (source: Kokonut Moloch DAO).
-- **Build the data schema before you need to compare two farms.** The Common Data Schema exists precisely so that a second farm's data is comparable to Adelphi's from day one, instead of requiring a retroactive cleanup (source: Common Data Schema).
-- **Don't claim infrastructure is "live" before it's deployed.** The docs are careful to separate what's live (Gnosis DAO, Celo attestations) from what's in development (the Base-based Agentic Marketplace) — a discipline worth keeping in any external-facing version of this playbook (source: FAQ; Build with Kokonut).
+- **Separate forecasts from actuals, explicitly.** Every revenue and impact figure in Kokonut's own documentation is labeled as a forecast until harvested/measured — worth carrying into any pitch or grant application so funders aren't misled about what's realized vs. projected.
+- **Use a short-cycle crop to bridge long-cycle ones.** Coconut takes years to mature; lettuce doesn't. Pairing them is what keeps the farm's cash flow alive during the wait.
+- **Don't let governance tokens double as your treasury's volatility risk.** Kokonut's stablecoin-tribute design is a direct response to this common DAO failure mode.
+- **Build the data schema before you need to compare two farms.** The Common Data Schema exists precisely so that a second farm's data is comparable to Adelphi's from day one, instead of requiring a retroactive cleanup.
+- **Don't claim infrastructure is "live" before it's deployed.** The docs are careful to separate what's live (Gnosis DAO, Celo attestations) from what's in development (the Ethereum-based Agentic Marketplace) — a discipline worth keeping in any external-facing version of this playbook.
