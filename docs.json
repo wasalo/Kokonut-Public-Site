@@ -133,7 +133,8 @@
                       "playbooks/regenerative-finance/how-it-works",
                       "playbooks/regenerative-finance/regenerative-and-technical-alignment",
                       "playbooks/regenerative-finance/case-studies"
-                    ]
+                    ],
+                    "icon": "recycle"
                   }
                 ]
               }
