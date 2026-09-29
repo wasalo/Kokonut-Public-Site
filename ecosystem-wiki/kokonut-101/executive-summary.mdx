@@ -1,244 +1,319 @@
 ---
 title: "Executive Summary"
 icon: "newspaper"
-description: "A concise orientation to Kokonut Network: the cooperative model, live farm proof, DAO governance, Framework, MRV stack, and contribution paths."
+description: "A concise orientation to Kokonut Network: live farm proof, multi-layer coordination, the Kokonut Framework, MRV, open infrastructure, and ways to participate."
 ---
 
-# Kokonut Network turns real farms into community-governed regenerative assets.
+# Kokonut is open coordination infrastructure for regenerative agriculture.
 
-Kokonut Network is a blockchain cooperative connecting Web3 communities, contributors, and capital allocators to live syntropic farms — starting with [Adelphi](/ecosystem-wiki/kokonut-farms/adelphi/summary), a working regenerative farm in the Dominican Republic.
+Kokonut Network connects **locally operated regenerative farms** with capital governance, contributor coordination, shared implementation standards, public evidence, and open-source intelligence.
 
-The model is simple: the DAO coordinates capital, the Framework standardizes farm operations, MRV systems publish verifiable data, and contributors help replicate the model across new farms.
-
-<div style={{ display: "flex", gap: "12px", justifyContent: "center", flexWrap: "wrap", margin: "1.5rem 0 0.75rem" }}>
-  <a href="#choose-your-path-into-kokonut" style={{ display: "inline-flex", alignItems: "center", gap: "6px", background: "#009F4D", color: "#fff", padding: "10px 20px", borderRadius: "8px", fontWeight: "600", fontSize: "14px", textDecoration: "none" }}>
-    Choose Your Path →
-  </a>
-
-  <a href="https://hub.kokonut.network/projects/41" style={{ display: "inline-flex", alignItems: "center", gap: "6px", border: "1.5px solid #009F4D", color: "#009F4D", padding: "10px 20px", borderRadius: "8px", fontWeight: "600", fontSize: "14px", textDecoration: "none", background: "transparent" }}>
-    Explore Live Farm Data
-  </a>
-</div>
-
-<p style={{ textAlign: "center", fontSize: "13px", color: "#6b7280", marginTop: "0.25rem" }}>
-  Free to explore. No capital required to contribute. DAO walkthroughs are available for partners and capital allocators.
-</p>
-
----
-
-## TL;DR 🗒️
-
-- Kokonut Network is a **blockchain cooperative** connecting Web3 communities to real syntropic farms — starting in the Dominican Republic with [Adelphi](/ecosystem-wiki/kokonut-farms/adelphi/summary), our first live farm.
-- We address the [worldwide lack of funding for agricultural projects](https://youtu.be/ZjygLVUSq4s) by partnering with farmers, raising funds through the [Kokonut DAO](/ecosystem-wiki/the-kokonut-dao/dao-layers), and distributing rewards perpetually to the people and communities growing the network.
-- Every \$vKKN governance token is backed **1:1 by a real coconut tree**. The DAO has no admins — decisions happen through on-chain proposals, and rage-quit protects every capital-contributing member.
-- The [Kokonut Framework](/kokonut-framework/Introduction) is the repeatable piece: a modular trust layer covering farm funding, MRV, governance, and impact measurement so every new farm can launch without reinventing the coordination logic.
-- Contributors do not need capital to start. Through [Kokonut Guilds](/ecosystem-wiki/the-kokonut-dao/kokonut-guilds-dao), builders, researchers, agronomists, and organizers can earn Guild Points through verified work.
-
-<div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(120px, 1fr))", gap: "1px", background: "#e5e7eb", border: "1px solid #e5e7eb", borderRadius: "12px", overflow: "hidden", margin: "1.5rem 0" }}>
-  <div style={{ background: "white", padding: "1rem", textAlign: "center" }}>
-    <div style={{ fontSize: "1.35rem", fontWeight: "700", color: "#009F4D", lineHeight: 1 }}>15,725</div>
-    <div style={{ fontSize: "0.72rem", color: "#6b7280", marginTop: "4px", fontWeight: "500" }}>m² live farm</div>
-  </div>
-
-  <div style={{ background: "white", padding: "1rem", textAlign: "center" }}>
-    <div style={{ fontSize: "1.35rem", fontWeight: "700", color: "#009F4D", lineHeight: 1 }}>13,838</div>
-    <div style={{ fontSize: "0.72rem", color: "#6b7280", marginTop: "4px", fontWeight: "500" }}>m² agricultural</div>
-  </div>
-
-  <div style={{ background: "white", padding: "1rem", textAlign: "center" }}>
-    <div style={{ fontSize: "1.35rem", fontWeight: "700", color: "#009F4D", lineHeight: 1 }}>7</div>
-    <div style={{ fontSize: "0.72rem", color: "#6b7280", marginTop: "4px", fontWeight: "500" }}>jobs supported</div>
-  </div>
-
-  <div style={{ background: "white", padding: "1rem", textAlign: "center" }}>
-    <div style={{ fontSize: "1.35rem", fontWeight: "700", color: "#009F4D", lineHeight: 1 }}>110</div>
-    <div style={{ fontSize: "0.72rem", color: "#6b7280", marginTop: "4px", fontWeight: "500" }}>free-range hens</div>
-  </div>
-
-  <div style={{ background: "white", padding: "1rem", textAlign: "center" }}>
-    <div style={{ fontSize: "1.35rem", fontWeight: "700", color: "#009F4D", lineHeight: 1 }}>5</div>
-    <div style={{ fontSize: "0.72rem", color: "#6b7280", marginTop: "4px", fontWeight: "500" }}>UN SDGs addressed</div>
-  </div>
-
-  <div style={{ background: "white", padding: "1rem", textAlign: "center" }}>
-    <div style={{ fontSize: "1.35rem", fontWeight: "700", color: "#009F4D", lineHeight: 1 }}>PN #69</div>
-    <div style={{ fontSize: "0.72rem", color: "#6b7280", marginTop: "4px", fontWeight: "500" }}>public goods funded</div>
-  </div>
-</div>
-
----
-
-## Who this is for
+[Adelphi](/ecosystem-wiki/kokonut-farms/adelphi/summary), in Monte Plata, Dominican Republic, is the first live reference implementation. It gives the ecosystem a real place to test governance, farm-development methods, data structures, MRV, and community participation before those ideas are replicated elsewhere.
 
 <CardGroup cols={2}>
-  <Card title="Regenerative agriculture builders" icon="seedling">
-    Learn how Kokonut turns farm operations, syntropic agriculture, MRV, and community ownership into a repeatable farm development model.
+  <Card title="Start with the live farm" icon="seedling" href="https://hub.kokonut.network/projects/41">
+    Inspect Adelphi's public project records, farm activity, and MRV data before reading deeper into the model.
   </Card>
 
-  <Card title="ReFi and Web3 contributors" icon="network-wired">
-    See how DAO governance, EAS attestations, open-source infrastructure, Guild Points, and farm-backed tokens connect to real land.
-  </Card>
-
-  <Card title="Capital allocators and DAO members" icon="coins">
-    Understand how stablecoin tribute, \$vKKN, DAO proposals, rage-quit, treasury transparency, and farm-backed governance work.
-  </Card>
-
-  <Card title="Developers and AI agent builders" icon="robot">
-    Explore the Farm Registry primitives, MRV automation stack, EAS-compatible data flows, and the Kokonut Agentic Marketplace.
+  <Card title="Continue through Kokonut 101" icon="book-open-reader" href="/ecosystem-wiki/kokonut-101/problem">
+    Follow the problem, solution, vision, and manifesto that explain why the ecosystem is designed this way.
   </Card>
 </CardGroup>
 
+<Info>
+  **Kokonut separates proof from projection.** Documented farm state, measured activity, forecasts, and developing infrastructure are different things and should be read that way.
+</Info>
+
 ---
 
-## What we've built so far
+## Kokonut in one minute
 
-Kokonut Network is not a whitepaper project.
+- **Farm first:** Adelphi is a live syntropic farm with public records, operators, infrastructure, crops, poultry, and active MRV workflows.
+- **Different responsibilities use different coordination systems:** the Moloch DAO governs capital and treasury decisions; Guilds coordinate contribution; local operators run the farm; the Framework provides shared methodology.
+- **Evidence matters:** MRV connects field activity, remote sensing, farm records, and attestations to public reporting through the Kokonut Hub and related infrastructure.
+- **The Framework is reusable, not rigid:** new farms can share data structures, development phases, evidence standards, and coordination interfaces while adapting to local ecology, culture, operators, markets, and regulation.
+- **Participation is not limited to capital:** builders, researchers, agronomists, organizers, and other contributors can participate through useful work and Guild pathways.
+- **The technical layer is expanding:** Kokonut Intelligence is active infrastructure, while more advanced AI-agent automation remains in development.
 
-[Adelphi](/ecosystem-wiki/kokonut-farms/adelphi/summary) — our flagship syntropic farm in Gonzalo, Monte Plata, Dominican Republic — is already growing. It was funded through [Public Nouns Proposal #69](https://publicnouns.wtf/vote/69) and operates under the full Kokonut Framework: satellite MRV monitoring via Landsat 8 and Sentinel, soil moisture probes, per-plant GPS tracking through Silvi, and on-chain EAS attestations for major farm events.
+---
 
-Real-time harvest records and impact data are publicly available at [hub.kokonut.network/projects/41](https://hub.kokonut.network/projects/41). The numbers in this documentation are not pitch-deck placeholders — they come from a working farm, live operations, and recorded outputs.
+## Start with proof: Adelphi
+
+Kokonut is not beginning with a hypothetical farm.
+
+Adelphi is a working, women-led regenerative agriculture project in Gonzalo, Monte Plata, Dominican Republic. It is the first place where the Kokonut model is being applied in real conditions.
+
+<CardGroup cols={4}>
+  <Card title="15,725 m²" icon="map">
+    Total mapped farm area documented for Adelphi.
+  </Card>
+
+  <Card title="13,838 m²" icon="seedling">
+    Documented agricultural area within the site.
+  </Card>
+
+  <Card title="7 jobs" icon="people-group">
+    Jobs supported in the documented farm implementation.
+  </Card>
+
+  <Card title="110 hens" icon="egg">
+    Documented free-range poultry component.
+  </Card>
+</CardGroup>
+
+Adelphi was supported through [Public Nouns Proposal #69](https://publicnouns.wtf/vote/69) and is documented through the [Adelphi farm pages](/ecosystem-wiki/kokonut-farms/adelphi/summary), the Kokonut Framework, and the public [Kokonut Hub](https://hub.kokonut.network/projects/41).
 
 <Note>
-  Adelphi proves the model can work at the farm level. The next challenge is replication: more farms, more verified data, more contributors, and more community-owned regenerative production.
+  These numbers are **documented reference values**, not a live dashboard. Current farm records and MRV activity should be checked through the Kokonut Hub. Production and revenue estimates belong in the [crop and harvest forecast](/ecosystem-wiki/kokonut-farms/adelphi/crops-and-harvest-forecast) and should not be treated as achieved outcomes.
 </Note>
 
----
-
-## Why Kokonut Network? 🌴
-
-Grassroots farmers control less than 10% of the global coconut market — not because their land is unproductive, but because they lack access to capital, coordination tools, and transparent governance structures.
-
-Kokonut Network serves as the coordination layer that uses Web3 and open-source infrastructure to close this gap. The model has four interlocking parts:
-
 <CardGroup cols={2}>
-  <Card title="The Kokonut DAO" icon="hydra" href="/ecosystem-wiki/the-kokonut-dao/dao-layers">
-    Holds the treasury, governs farm funding decisions, mints and burns membership tokens, and distributes rewards. It runs through proposals, not administrators.
+  <Card title="Read the Adelphi overview" icon="trees" href="/ecosystem-wiki/kokonut-farms/adelphi/summary">
+    See the farm's operators, crops, biodiversity, infrastructure, MRV system, forecasts, and public records.
   </Card>
 
-  <Card title="The Kokonut Framework" icon="puzzle" href="/kokonut-framework/Introduction">
-    The modular blueprint every farm runs on: common data schema, development phases, regeneration principles, MRV, and impact measurement.
-  </Card>
-
-  <Card title="Adelphi Farm" icon="seedling" href="/ecosystem-wiki/kokonut-farms/adelphi/summary">
-    The living proof of concept: a women-led syntropic farm addressing five UN SDGs with public MRV records and community-first operations.
-  </Card>
-
-  <Card title="The Agentic Marketplace" icon="robot" href="/kokonut-x-ai-agents">
-    The emerging infrastructure layer where AI agents support MRV reporting, harvest forecasting, grant drafting, and impact scoring at scale.
+  <Card title="See how farm activity is verified" icon="badge-check" href="/ecosystem-wiki/kokonut-farms/measurement-reporting-and-verification">
+    Review the evidence layers, tools, records, and limitations behind Kokonut's MRV approach.
   </Card>
 </CardGroup>
 
-Our model has no expiration date. When coconut trees end their productive life, we replant them. The cooperative continues. The community owns the upside.
-
 ---
 
-## The Kokonut loop
+## How Kokonut fits together
+
+Kokonut treats regenerative agriculture as a coordination problem with several distinct responsibilities.
+
+The ecosystem does **not** depend on one DAO making every decision.
 
 ```mermaid
 flowchart TD
-    A["DAO members tribute stablecoins"] --> B["DAO funds approved farms"]
-    B --> C["Farms run the Kokonut Framework"]
-    C --> D["MRV data verifies progress"]
-    D --> E["Harvest, impact, and revenue are recorded"]
-    E --> F["Rewards flow to farmers, contributors, and communities"]
-    F --> G["Guilds improve the system"]
-    G --> H["The next farm launches faster"]
-    H --> C
+    PEOPLE["Community + Contributors"]
+
+    subgraph COORDINATION["Coordination Systems"]
+        CAPITAL["Moloch DAO<br/>Capital + Treasury"]
+        GUILDS["Guilds<br/>Contribution + Domains"]
+        FRAMEWORK["Kokonut Framework<br/>Shared Methodology"]
+    end
+
+    FARM["Local Farm Operators<br/>Real-world execution"]
+    MRV["MRV<br/>Evidence + Records"]
+    HUB["Kokonut Hub<br/>Public Data"]
+    KI["Kokonut Intelligence<br/>Analysis + Automation"]
+
+    PEOPLE --> CAPITAL
+    PEOPLE --> GUILDS
+
+    CAPITAL --> FARM
+    GUILDS --> FRAMEWORK
+    FRAMEWORK --> FARM
+
+    FARM --> MRV
+    MRV --> HUB
+    MRV --> KI
+
+    KI --> CAPITAL
+    KI --> GUILDS
+    KI --> FARM
 ```
 
-1. DAO members tribute stablecoins.
-2. The DAO funds farms through proposals.
-3. Farms run the Kokonut Framework.
-4. MRV data verifies farm progress.
-5. Harvest, revenue, and impact records flow back into the network.
-6. Guilds and contributors improve the system so the next farm can launch faster.
+| Layer | Primary role |
+| --- | --- |
+| **Moloch DAO** | Capital membership, treasury governance, proposals, voting, execution, and rage-quit protection |
+| **Guilds** | Contribution coordination, domain work, reputation, bounties, and contributor pathways |
+| **Kokonut Framework** | Shared farm-development methodology, data structures, development phases, and impact logic |
+| **Local farm operators** | Day-to-day agricultural decisions and real-world execution |
+| **MRV** | Measurement, reporting, verification, and evidence quality |
+| **Kokonut Hub** | Public-facing farm and project records |
+| **Kokonut Intelligence** | Data integration, analytics, synthesis, reporting, automation, and decision support |
+| **AI-agent infrastructure** | Developing automation for repeatable analytical and coordination tasks |
+
+> **The goal is interoperability, not uniformity.** Farms can share a common baseline without pretending every landscape, community, operator, market, or regulatory environment is the same.
 
 ---
 
-## Built to reduce trust gaps
+## One ecosystem, different coordination systems
 
-<CardGroup cols={3}>
-  <Card title="Public farm data" icon="satellite">
-    Adelphi publishes farm records, harvest activity, and impact data through the Kokonut Hub so visitors can inspect the work directly.
+Kokonut separates responsibilities because capital, contribution, farm operations, evidence, and technical infrastructure require different forms of accountability.
+
+<CardGroup cols={2}>
+  <Card title="Capital governance" icon="building-columns" href="/ecosystem-wiki/the-kokonut-dao/kokonut-moloch-dao">
+    Stablecoin contributors participate through the Moloch DAO. Treasury actions move through proposals, voting, execution rules, and rage-quit protections.
   </Card>
 
-  <Card title="On-chain governance" icon="shield-check">
-    Major treasury and membership decisions happen through DAO proposals, with rage-quit protection for capital-contributing members.
+  <Card title="Contribution governance" icon="users" href="/ecosystem-wiki/the-kokonut-dao/kokonut-guilds-dao">
+    Contributors can build standing through useful work, Guild participation, domain reputation, and approved contributor-recognition pathways.
   </Card>
 
-  <Card title="Contribution before capital" icon="hand-holding-seedling">
-    Builders, researchers, agronomists, and organizers can start through Guild work and earn Guild Points without contributing capital.
+  <Card title="Farm operations" icon="tractor">
+    Local operators remain responsible for real agricultural execution. Governance infrastructure does not replace field knowledge or day-to-day stewardship.
+  </Card>
+
+  <Card title="Shared methodology" icon="puzzle" href="/kokonut-framework/Introduction">
+    The Framework makes farms more interoperable through shared phases, data structures, regenerative principles, MRV, and impact methods.
   </Card>
 </CardGroup>
 
+This architecture is intentional: a living ecosystem contains different forms of knowledge, risk, responsibility, and value. Kokonut connects them without trying to collapse them into a single governance mechanism.
+
+---
+
+## What is live and what is still developing
+
+Transparency about maturity matters.
+
+| Component | Status | What that means |
+| --- | --- | --- |
+| **Adelphi Farm** | **Live** | Active reference farm in Monte Plata with public records and ongoing operations |
+| **Kokonut Moloch DAO** | **Live** | Governance, treasury, membership, token, proposal, and rage-quit infrastructure deployed on Gnosis Chain |
+| **Kokonut Framework** | **Live and evolving** | Public methodology already applied to Adelphi and continuously improved |
+| **MRV pipeline** | **Active and expanding** | Field, harvest, remote-sensing, and impact records support public verification; coverage and automation continue to improve |
+| **Kokonut Hub** | **Live** | Public-facing project and farm-data surface for Adelphi |
+| **Kokonut Intelligence** | **Active infrastructure** | Data, analytics, research, synthesis, scoring, and reporting infrastructure |
+| **AI-agent runtime and automation** | **Developing** | Task-specific automation for MRV, forecasting, reporting, scoring, identity, and payments is still being built |
+| **Multi-farm replication** | **Next frontier** | The next major test is applying the shared model to additional farms without rebuilding the entire coordination stack |
+
 <Note>
-  You can explore Kokonut before committing capital. Read the docs, inspect Adelphi's live farm data, join the community, or contribute through Guilds. Capital contributors receive rage-quit protection; non-capital contributors can earn Guild Points through verified work.
+  A documented concept is not the same as a deployed system. Kokonut documentation should keep those maturity levels explicit as the ecosystem evolves.
 </Note>
 
 ---
 
-## Why coconuts? 🥥
+## The Kokonut coordination loop
 
-Coconuts are one of the most versatile agricultural assets in the world. They produce food, drinks, oils, fiber, husks for fertilizer, and wood for furniture and construction. In a syntropic system, they are not only a crop — they are part of a living, regenerative structure that supports soil restoration, biodiversity, water retention, and long-term farm resilience.
+The core loop is designed to move **capital, work, evidence, and learning** through different parts of the ecosystem.
 
-Kokonut starts with coconut trees because they are productive, symbolic, durable, and naturally aligned with the cooperative model:
+```mermaid
+flowchart TD
+    A["Capital governance<br/>approves funding"] --> B["Local farm operators<br/>execute"]
+    B --> C["MRV records<br/>farm activity"]
+    C --> D["Hub + Intelligence<br/>structure evidence"]
+    D --> E["Governance + contributors<br/>review what happened"]
+    E --> F["Framework + Guilds<br/>improve methods and tools"]
+    F --> G["Next farm or next cycle<br/>starts with better infrastructure"]
+    G --> B
+```
 
-- **Long-term productive life:** trees compound value across years, not one harvest cycle.
-- **Multiple product streams:** coconut water, oil, food, fiber, husk, compost, and wood.
-- **Ecological fit:** coconut trees can be integrated into biodiverse syntropic systems.
-- **Clear token relationship:** every \$vKKN governance token is backed 1:1 by a real coconut tree.
-- **Perpetual renewal:** when a tree ends its productive life, the network replants.
+This is different from promising that one token, treasury, or automation system solves every problem.
 
-> **Coconut is a versatile fruit with compounding health, environmental, and biodiversity benefits — and a proven global market.**
+The intended feedback loop is:
+
+1. Capital decisions are made through the appropriate governance process.
+2. Farm operators execute in the real world.
+3. Farm activity becomes structured evidence.
+4. Evidence informs reporting, governance, contributor work, and operational decisions.
+5. The Framework, tools, and coordination processes improve.
+6. Future farm cycles begin with more reusable knowledge and infrastructure.
+
+Where farm revenue is involved, allocation depends on the approved economic and governance arrangements for that farm. Revenue forecasts are not guaranteed returns.
 
 ---
 
-## Kokonut Framework Holistic Impact
+## Why coconuts?
 
-<Frame>
-  ![Network Vs Foundation](/images/Network-vs-Foundation.png)
-</Frame>
+Coconut trees are one of Kokonut's long-cycle anchors inside diversified syntropic systems.
 
-We are building a [hybrid framework](/kokonut-framework/Introduction) that creates positive, community-centric impact — addressing systemic issues in underserved areas and enhancing climate resilience. Our approach focuses on sustainable solutions that improve daily lives and create incentives without deforestation.
+They matter for several reasons:
 
-Every component of the ecosystem is designed around the same core principle: the community is prioritized over capital. The [Kokonut Manifesto](/ecosystem-wiki/kokonut-101/manifesto) articulates this in full. The [Governance Framework](/ecosystem-wiki/the-kokonut-dao/governance-framework) operationalizes it.
+- **Long productive life:** coconut is a perennial crop rather than a single-season harvest.
+- **Multiple potential product streams:** water, food, oil, fiber, husk, compost inputs, and other processed products can create different market pathways.
+- **Syntropic compatibility:** coconut trees can be integrated into multi-strata, biodiverse production systems rather than isolated monocultures.
+- **Governance relationship:** Kokonut's current \$vKKN model uses a 1:1 relationship between governance tokens and coconut trees.
+- **Renewal principle:** the model is designed around replanting when trees reach the end of productive life rather than treating the underlying natural asset as disposable.
+
+Coconut is not the entire farm model. Adelphi combines long-cycle trees with shorter-cycle crops, passion fruit, poultry, biodiversity, soil regeneration, infrastructure, and community activity.
 
 ---
 
-## Choose your path into Kokonut
+## How people participate
+
+Kokonut has more than one entry path.
 
 <CardGroup cols={2}>
-  <Card title="Start with the full story" icon="book-open-reader" href="/ecosystem-wiki/kokonut-101/problem">
-    Continue through Kokonut 101: the problem, solution, manifesto, and why Web3 is part of the model.
+  <Card title="Explore and verify" icon="magnifying-glass-chart" href="https://hub.kokonut.network/projects/41">
+    Read the public documentation, inspect Adelphi records, review the MRV methodology, and examine governance before deciding how to participate.
   </Card>
 
-  <Card title="Inspect the live farm" icon="seedling" href="/ecosystem-wiki/kokonut-farms/adelphi/summary">
-    See Adelphi's crops, biodiversity, harvest forecasts, MRV methodology, SDG alignment, and live farm records.
+  <Card title="Contribute useful work" icon="hand-holding-seedling" href="/ecosystem-wiki/open-collaboration-invitation">
+    Agronomists, researchers, developers, designers, organizers, writers, analysts, and other contributors can enter through work rather than capital.
   </Card>
 
-  <Card title="Understand the DAO" icon="hydra" href="/ecosystem-wiki/the-kokonut-dao/dao-layers">
-    Learn how the treasury, tokens, governance, Guilds, rage-quit, and contributor pathways work together.
+  <Card title="Participate in capital governance" icon="coins" href="/ecosystem-wiki/the-kokonut-dao/dao-layers">
+    Understand the Moloch DAO, stablecoin tribute, \$vKKN, Loot, proposal flow, treasury protections, and rage-quit mechanics.
   </Card>
 
-  <Card title="Read the Framework" icon="puzzle" href="/kokonut-framework/Introduction">
-    Explore the modular trust layer every farm runs on — open source, composable, and designed to scale.
-  </Card>
-
-  <Card title="Contribute to the ecosystem" icon="telescope" href="/ecosystem-wiki/open-collaboration-invitation">
-    Plug in as an agronomist, developer, ReFi builder, researcher, DAO member, partner, or community organizer.
-  </Card>
-
-  <Card title="Build with Kokonut" icon="code" href="/build-with-kokonut">
-    Developers can use the public docs, deployed contracts, Farm Registry primitives, and AI agent architecture.
+  <Card title="Build infrastructure" icon="code" href="/build-with-kokonut">
+    Work with the public documentation, Framework, data structures, contracts, Kokonut Intelligence, MRV tooling, and agent architecture.
   </Card>
 </CardGroup>
 
-<div style={{ display: "flex", gap: "12px", justifyContent: "center", flexWrap: "wrap", margin: "2rem 0 0.75rem" }}>
-  <a href="https://link.kokonut.network/discord" style={{ display: "inline-flex", alignItems: "center", gap: "6px", background: "#009F4D", color: "#fff", padding: "10px 20px", borderRadius: "8px", fontWeight: "600", fontSize: "14px", textDecoration: "none" }}>
-    Join the Community →
-  </a>
+---
 
-  <a href="https://link.kokonut.network/meeting" style={{ display: "inline-flex", alignItems: "center", gap: "6px", border: "1.5px solid #009F4D", color: "#009F4D", padding: "10px 20px", borderRadius: "8px", fontWeight: "600", fontSize: "14px", textDecoration: "none", background: "transparent" }}>
-    Book a Walkthrough
-  </a>
-</div>
+## What Kokonut is not
+
+Understanding the boundaries is as important as understanding the ambition.
+
+<CardGroup cols={2}>
+  <Card title="Not one DAO for everything" icon="diagram-project">
+    The Moloch DAO is one coordination layer. Guilds, local operators, the Framework, MRV systems, and technical infrastructure have different roles.
+  </Card>
+
+  <Card title="Not a one-size-fits-all farm template" icon="leaf">
+    Shared standards make farms interoperable, but implementation must adapt to local ecology, culture, operators, markets, and regulation.
+  </Card>
+
+  <Card title="Not forecasts presented as facts" icon="calculator">
+    Production, revenue, carbon, and impact projections should be labeled as estimates until supported by measured outcomes.
+  </Card>
+
+  <Card title="Not a trust-me pitch" icon="eye">
+    The system is designed to be inspected through public documentation, farm records, governance records, deployed infrastructure, and open repositories.
+  </Card>
+</CardGroup>
+
+---
+
+## Who this overview is for
+
+<CardGroup cols={2}>
+  <Card title="Farmers and regenerative practitioners" icon="seedling">
+    Understand how Kokonut combines local farm operations with shared methods, data, funding coordination, and evidence.
+  </Card>
+
+  <Card title="Community and ReFi contributors" icon="people-group">
+    See how public-goods work, Guild coordination, governance, MRV, and regenerative production connect.
+  </Card>
+
+  <Card title="Capital allocators and governance participants" icon="building-columns">
+    Understand where treasury governance fits, what protections exist, and why capital is only one layer of the ecosystem.
+  </Card>
+
+  <Card title="Developers, researchers, and AI builders" icon="robot">
+    Explore Kokonut Intelligence, data schemas, MRV automation, public infrastructure, and developing agent workflows.
+  </Card>
+</CardGroup>
+
+---
+
+## Continue Kokonut 101
+
+The executive summary is the map. The next four pages go deeper into the reasoning behind it.
+
+<CardGroup cols={2}>
+  <Card title="1. The Problem" icon="circle-info" href="/ecosystem-wiki/kokonut-101/problem">
+    Why Kokonut treats agricultural undercapitalization as a coordination problem around land, capital, markets, evidence, and community power.
+  </Card>
+
+  <Card title="2. The Solution" icon="shield-check" href="/ecosystem-wiki/kokonut-101/solution">
+    How the different Kokonut coordination layers work together around real farms.
+  </Card>
+
+  <Card title="3. The Vision" icon="telescope" href="/ecosystem-wiki/kokonut-101/kokonut-vision">
+    The long-term direction: more regenerative farms, stronger local ownership, reusable infrastructure, and compounding community knowledge.
+  </Card>
+
+  <Card title="4. The Manifesto" icon="scroll-old" href="/ecosystem-wiki/kokonut-101/manifesto">
+    The values and commitments that define how Kokonut wants to grow.
+  </Card>
+</CardGroup>
+
+> **Kokonut begins with a real farm and builds outward from evidence.** Adelphi is the first reference implementation; the Framework, governance layers, MRV systems, contributor pathways, and intelligence infrastructure are designed to make the next implementation more transparent, interoperable, and easier to improve.
