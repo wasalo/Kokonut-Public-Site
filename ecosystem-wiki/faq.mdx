@@ -1,570 +1,1035 @@
 ---
 title: "Frequently Asked Questions"
 icon: "circle-question"
-description: "Clear answers about Kokonut Network: live farms, syntropic agriculture, DAO governance, tokens, Guilds, MRV, AI agents, participation paths, and common risks."
+description: "Clear answers about Kokonut Network: live farms, governance, Guilds, tokens, MRV, Kokonut Intelligence, AI agents, participation paths, forecasts, and common risks."
 ---
 
-# Answers for people trying to quickly understand Kokonut.
+# Answers for people trying to understand Kokonut quickly.
 
-Kokonut Network can be understood in one sentence:
+Kokonut is **open coordination infrastructure for regenerative agriculture**.
 
-> **A community-governed cooperative that funds real regenerative farms, verifies farm activity through public data, and lets people participate through capital, contribution, or building.**
+It connects locally operated farms with:
 
-Use this FAQ to answer the practical questions first: what Kokonut is, what is already live, how the DAO works, how impact is verified, how to contribute, and what risks or limitations you should understand before participating.
+- capital governance;
+- contributor coordination;
+- shared implementation methods;
+- public farm evidence;
+- open-source data infrastructure;
+- developing automation and AI-agent workflows.
 
-<div style={{ display: "flex", gap: "12px", justifyContent: "center", flexWrap: "wrap", margin: "1.5rem 0 0.75rem" }}>
-  <a href="#start-here" style={{ display: "inline-flex", alignItems: "center", gap: "6px", background: "#009F4D", color: "#fff", padding: "10px 20px", borderRadius: "8px", fontWeight: "600", fontSize: "14px", textDecoration: "none" }}>
-    Start With the Basics →
-  </a>
+Kokonut is **not one DAO controlling everything**.
 
-  <a href="#choose-your-path" style={{ display: "inline-flex", alignItems: "center", gap: "6px", border: "1.5px solid #009F4D", color: "#009F4D", padding: "10px 20px", borderRadius: "8px", fontWeight: "600", fontSize: "14px", textDecoration: "none", background: "transparent" }}>
-    Choose Your Path
-  </a>
-</div>
+Different responsibilities belong to different actors:
 
-<p style={{ textAlign: "center", fontSize: "13px", color: "#6b7280", marginTop: "0.25rem" }}>
-  Free to explore. No capital is required to contribute through Guilds. Capital contributors should review the DAO and rage-quit mechanics before joining.
-</p>
+- the **Moloch DAO** governs shared capital and DAO-level rights;
+- **Guilds** coordinate useful work and domain review;
+- **local farm operators** make day-to-day agricultural decisions;
+- the **Kokonut Framework** provides shared methodology and data structures;
+- **MRV, the Kokonut Hub, and Kokonut Intelligence** make farm activity easier to inspect;
+- contracts and agents support bounded execution and automation.
+
+> **The quickest way to evaluate Kokonut is to separate documented state, measured activity, forecasts, attestations, interpretations, and developing infrastructure instead of treating them as the same thing.**
+
+<CardGroup cols={2}>
+  <Card title="Start with Kokonut 101" icon="map" href="/ecosystem-wiki/kokonut-101/executive-summary">
+    Read the concise orientation to the live farm, coordination layers, Framework, MRV, and participation paths.
+  </Card>
+
+  <Card title="Inspect the live reference farm" icon="seedling" href="https://hub.kokonut.network/projects/41">
+    Use the Kokonut Hub for current published Adelphi records rather than relying only on static documentation.
+  </Card>
+
+  <Card title="Understand governance" icon="layer-group" href="/ecosystem-wiki/the-kokonut-dao/dao-layers">
+    See how capital, contribution, farm operations, methodology, evidence, and technical execution are separated.
+  </Card>
+
+  <Card title="Contribute without capital" icon="telescope" href="/ecosystem-wiki/open-collaboration-invitation">
+    Start with useful, reviewable work in agriculture, research, MRV, software, documentation, governance, finance, or partnerships.
+  </Card>
+</CardGroup>
+
+<Note>
+  This FAQ is an orientation layer. For legal, tax, investment, land-title, employment, securities, regulatory, or professional scientific questions, use qualified professional advice and the relevant primary records.
+</Note>
 
 ---
 
 ## FAQ at a glance
 
-| If you are wondering... | Start with this answer | Then read |
+| Question | Short answer | Go deeper |
 | --- | --- | --- |
-| What is Kokonut? | It is a blockchain cooperative that funds and verifies regenerative farms. | [Executive Summary](/ecosystem-wiki/kokonut-101/executive-summary) |
-| Is there a real farm? | Yes. Adelphi is Kokonut's first live farm in Monte Plata, Dominican Republic. | [Adelphi Summary](/ecosystem-wiki/kokonut-farms/adelphi/summary) |
-| How is impact verified? | Farm events become structured MRV records, IPFS/Filecoin evidence, EAS attestations, and Data Hub entries. | [MRV Methodology](/ecosystem-wiki/kokonut-farms/measurement-reporting-and-verification) |
-| How does governance work? | Moloch DAO governs treasury/capital; Guilds coordinate contribution and execution. | [DAO Architecture](/ecosystem-wiki/the-kokonut-dao/dao-layers) |
-| Do I need money to participate? | No. You can start through Guilds by contributing useful work. | [Kokonut Guilds DAO](/ecosystem-wiki/the-kokonut-dao/kokonut-guilds-dao) |
-| How do I become a DAO member? | Stablecoin tribute is proposed, voted on, and if approved mints soulbound \$vKKN. | [Kokonut Moloch DAO](/ecosystem-wiki/the-kokonut-dao/kokonut-moloch-dao) |
-| How do I make a proposal? | Use a template, draft in Kokonut Forum, collect feedback, then move to DAOHaus if sponsored. | [Proposal Templates](/ecosystem-wiki/the-kokonut-dao/proposal-templates) |
-
-<Note>
-  This FAQ is an orientation layer. For legal, tax, investment, land-title, or regulatory questions, consult qualified professionals. Kokonut documentation explains the model; it does not replace professional advice.
-</Note>
+| What is Kokonut? | Open coordination infrastructure for regenerative agriculture | [Executive Summary](/ecosystem-wiki/kokonut-101/executive-summary) |
+| Is there a real farm? | Yes. Adelphi is the first live reference farm | [Adelphi Overview](/ecosystem-wiki/kokonut-farms/adelphi/summary) |
+| Is Kokonut one DAO? | No. Moloch, Guilds, farm operators, Framework, MRV, and technical systems have different scopes | [DAO Architecture](/ecosystem-wiki/the-kokonut-dao/dao-layers) |
+| How are claims verified? | Through structured records, review, publication, evidence, and attestations where useful | [MRV](/ecosystem-wiki/kokonut-farms/measurement-reporting-and-verification) |
+| Can I contribute without money? | Yes | [Open Collaboration](/ecosystem-wiki/open-collaboration-invitation) |
+| What is \$vKKN? | Non-transferable Moloch voting token under the current docs | [Moloch DAO](/ecosystem-wiki/the-kokonut-dao/kokonut-moloch-dao) |
+| What is Loot? | Non-voting, non-transferable DAO recognition/economic-participation primitive under the current docs | [Moloch DAO](/ecosystem-wiki/the-kokonut-dao/kokonut-moloch-dao) |
+| Are Guild Points live? | The Guild model is active; Guild Points remain developing | [Kokonut Guilds](/ecosystem-wiki/the-kokonut-dao/kokonut-guilds-dao) |
+| Are forecasts actual revenue? | No | [Adelphi Forecast](/ecosystem-wiki/kokonut-farms/adelphi/crops-and-harvest-forecast) |
+| Are EAS attestations scientific certification? | No | [MRV](/ecosystem-wiki/kokonut-farms/measurement-reporting-and-verification) |
+| What is Kokonut Intelligence? | Active data, analytics, review, reporting, and attestation infrastructure | [Kokonut Intelligence](/kokonut-intelligence) |
+| Are autonomous AI agents already governing Kokonut? | No | [Kokonut × AI Agents](/kokonut-x-ai-agents) |
 
 ---
 
 ## Choose your path
 
 <CardGroup cols={3}>
-  <Card title="I want to understand the model" icon="map" href="/ecosystem-wiki/kokonut-101/executive-summary">
-    Start with the Executive Summary, then read the Problem, Solution, Vision, and Manifesto pages.
+  <Card title="Understand the ecosystem" icon="map" href="/ecosystem-wiki/kokonut-101/executive-summary">
+    Start with Kokonut 101 and the live-vs-developing map.
   </Card>
 
-  <Card title="I want to verify the farm" icon="seedling" href="/ecosystem-wiki/kokonut-farms/adelphi/summary">
-    Explore Adelphi, the first live Kokonut farm, including crops, infrastructure, MRV, SDGs, and harvest forecasts.
+  <Card title="Inspect Adelphi" icon="seedling" href="/ecosystem-wiki/kokonut-farms/adelphi/summary">
+    Review the first live reference farm, documented state, physical systems, forecasts, MRV, and SDG evidence.
   </Card>
 
-  <Card title="I want to contribute" icon="handshake-angle" href="/ecosystem-wiki/the-kokonut-dao/kokonut-guilds-dao">
-    Join through Guilds, complete useful work, earn Guild Points, and build standing without capital.
+  <Card title="Contribute useful work" icon="users" href="/ecosystem-wiki/open-collaboration-invitation">
+    Enter through work rather than capital.
   </Card>
 
-  <Card title="I want to join the DAO" icon="shield-check" href="/ecosystem-wiki/the-kokonut-dao/kokonut-moloch-dao">
-    Learn how stablecoin tribute, \$vKKN, Loot, proposals, rage-quit, and treasury protections work.
+  <Card title="Participate in capital governance" icon="building-columns" href="/ecosystem-wiki/the-kokonut-dao/kokonut-moloch-dao">
+    Understand membership, \$vKKN, Loot, proposals, treasury rules, and rage-quit.
   </Card>
 
-  <Card title="I want to build" icon="code" href="/build-with-kokonut">
-    Use the Framework, Farm Registry, MRV schema, contracts, APIs, and AI agent architecture.
+  <Card title="Build with Kokonut" icon="code" href="/build-with-kokonut">
+    Work with the public docs, Framework, data schemas, MRV tooling, governance infrastructure, and developing agent systems.
   </Card>
 
-  <Card title="I want to partner" icon="people-arrows" href="/ecosystem-wiki/open-collaboration-invitation">
-    Explore partnership paths for farmers, agronomists, researchers, funders, builders, and communities.
+  <Card title="Work with farm data" icon="database" href="/kokonut-intelligence">
+    Explore Kokonut Intelligence, canonical records, analytics, reporting, and Celo EAS infrastructure.
   </Card>
 </CardGroup>
 
 ---
 
-## Start here
+## Basics
 
 <AccordionGroup>
   <Accordion title="What is Kokonut Network?">
-    Kokonut Network is a community-governed cooperative that connects Web3 communities, contributors, and capital allocators to real syntropic farms.
+    Kokonut Network is **open coordination infrastructure for regenerative agriculture**.
 
-    The model has four moving parts:
+    The current ecosystem combines:
 
-    | Part | What it does |
+    | Layer | Role |
     | --- | --- |
-    | DAO | Coordinates capital, governance, proposals, and treasury decisions |
-    | Framework | Standardizes how farms are evaluated, funded, operated, and measured |
-    | MRV stack | Turns farm activity into public evidence and verifiable records |
-    | Guilds | Let contributors earn standing through useful work, not only capital |
+    | Moloch DAO | Capital membership, treasury governance, proposals, voting, execution rules, rage-quit |
+    | Guilds | Contribution coordination, domain work, review, proposal preparation |
+    | Local farms | Real-world agricultural execution |
+    | Kokonut Framework | Shared farm-development methodology, data structures, phases, regenerative principles |
+    | MRV | Evidence lifecycle for farm observations, measurements, claims, and reporting |
+    | Kokonut Hub | Public farm/project data surface |
+    | Kokonut Intelligence | Data, analytics, review, reporting, and attestation infrastructure |
+    | AI-agent layer | Developing automation for bounded analytical and coordination tasks |
 
-    Start with the [Executive Summary](/ecosystem-wiki/kokonut-101/executive-summary) for the full orientation.
+    Start with the [Executive Summary](/ecosystem-wiki/kokonut-101/executive-summary).
   </Accordion>
 
-  <Accordion title="What problem is Kokonut solving?">
-    Kokonut addresses the coordination gap around regenerative agriculture.
+  <Accordion title="Is Kokonut a DAO?">
+    Kokonut includes a live DAO, but **Kokonut is not one DAO governing everything**.
 
-    Many farm projects have land, local knowledge, community need, and ecological potential — but lack the repeatable system for funding, governance, operations, reporting, and trust. Kokonut builds that coordination layer so regenerative farms can be funded, monitored, improved, and replicated.
+    The Moloch DAO governs shared capital and DAO-level rights.
 
-    Read the [Problem](/ecosystem-wiki/kokonut-101/problem) and [Solution](/ecosystem-wiki/kokonut-101/solution) pages for the deeper thesis.
+    It does not automatically control:
+
+    - farm operations;
+    - scientific truth;
+    - Guild expertise;
+    - every Framework method;
+    - MRV review;
+    - all software decisions.
+
+    Read [DAO Architecture](/ecosystem-wiki/the-kokonut-dao/dao-layers).
+  </Accordion>
+
+  <Accordion title="What problem is Kokonut trying to solve?">
+    Kokonut focuses on coordination gaps around regenerative agriculture.
+
+    A farm can have land, local knowledge, ecological potential, and community value while still lacking:
+
+    - capital coordination;
+    - infrastructure;
+    - shared implementation methods;
+    - evidence;
+    - contributor coordination;
+    - market and reporting capacity;
+    - reusable learning.
+
+    Kokonut's response is to connect those functions without requiring one institution or token to control them all.
+
+    Read [The Problem](/ecosystem-wiki/kokonut-101/problem) and [The Solution](/ecosystem-wiki/kokonut-101/solution).
   </Accordion>
 
   <Accordion title="What is the Kokonut Framework?">
-    The Kokonut Framework is a repeatable operating system for launching and verifying Kokonut farms.
+    The Kokonut Framework is the **shared methodological baseline** for Kokonut farms.
 
-    It covers:
+    It includes areas such as:
 
-    - farm onboarding and due diligence;
-    - a shared data schema;
+    - the Common Data Schema;
     - development phases;
-    - regeneration principles;
-    - MRV reporting;
-    - public goods allocation;
-    - governance and proposal standards.
+    - regenerative principles;
+    - MRV expectations;
+    - value-accounting concepts;
+    - impact methods;
+    - documentation and governance interfaces.
 
-    The goal is to make each new farm easier to evaluate, fund, operate, verify, and replicate. Read the [Kokonut Framework introduction](/kokonut-framework/Introduction).
+    The Framework is intended to create **interoperability, not uniformity**.
+
+    A future farm should be able to reuse common structures without copying Adelphi's crops, operators, market, ecology, or local context.
+
+    Read the [Kokonut Framework](/kokonut-framework/Introduction).
   </Accordion>
 
   <Accordion title="What is syntropic farming?">
-    Syntropic farming is a regenerative agriculture methodology that designs farms as multi-layered living systems.
+    Syntropic farming is a regenerative agriculture approach built around diversity, succession, multiple vegetation layers, biomass, soil cover, and long-term ecological relationships.
 
-    Instead of growing a single crop in isolation, syntropic systems integrate ground cover, vegetables, fruits, trees, biomass, animals, shade, roots, and succession over time. The goal is to increase productivity while improving soil, biodiversity, water retention, and ecological resilience.
-
-    Kokonut uses syntropic farming because it aligns with the long-term cooperative model: short-cycle food crops, medium-cycle crops, and long-cycle coconut trees can work together rather than compete as isolated assets.
+    Kokonut uses syntropic principles as part of its agricultural methodology, but the Framework is broader than one farming technique.
 
     Read [Why Syntropic Farming](/kokonut-framework/why-syntropic-farming).
   </Accordion>
 
-  <Accordion title="What is the long-term plan?">
-    Kokonut starts with live farm proof, then expands through repeatable farm onboarding.
+  <Accordion title="What is live today, and what is still developing?">
+    The ecosystem is at different maturity levels.
 
-    The long-term plan is to grow a network of community-governed regenerative farms where:
+    | Component | Current status |
+    | --- | --- |
+    | Adelphi | **Live** reference farm |
+    | Kokonut Moloch DAO | **Live** on Gnosis Chain |
+    | Kokonut Framework | **Live and evolving** |
+    | Kokonut Hub | **Live** public data surface |
+    | MRV methodology | **Active and expanding** |
+    | Kokonut Intelligence | **Active infrastructure** |
+    | Guild coordination | **Active and evolving** |
+    | Guild Points | **Developing** |
+    | AI-agent automation | **Developing / expanding** |
+    | Agentic Marketplace | **In development** |
+    | Terra Viva | **Phase I — Planning & Preparation** as the next replication test |
 
-    - each farm follows the Kokonut Framework;
-    - DAO proposals coordinate capital and governance;
-    - Guilds coordinate contribution and execution;
-    - MRV turns farm work into public evidence;
-    - Revenue and public goods allocations compound over time;
-    - Lessons from one farm improve the next.
-
-    The first live proof is [Adelphi](/ecosystem-wiki/kokonut-farms/adelphi/summary).
+    A developing system should not be described as if it already has the authority or production maturity of a live contract or operating farm.
   </Accordion>
 </AccordionGroup>
 
 ---
 
-## Farms and real-world proof
+## Farms and real-world implementation
 
 <AccordionGroup>
   <Accordion title="What is Adelphi?">
-    Adelphi is Kokonut Network's first live syntropic farm, located in Gonzalo, Monte Plata, Dominican Republic.
+    Adelphi is Kokonut's **first live reference farm** in Gonzalo, Monte Plata, Dominican Republic.
 
-    It is a women-led project founded by sisters Yanny and Neury Hernández. The farm includes:
+    Current documented reference values include:
 
-    | Proof point | Current detail |
-    | --- | --- |
-    | Total area | 15,725 m² |
-    | Agricultural area | 13,838 m² |
-    | Production | Lettuce, passion fruit, coconut, Indian yams, free-range eggs, and other crops |
-    | Biodiversity | Native and at-risk species nursery |
-    | Community role | Education, training, employment, food access, and ecological restoration |
-    | Public data | Harvest records, MRV events, and impact metrics through Kokonut Hub |
+    | Reference | Documented value |
+    | --- | ---: |
+    | Total mapped area | **15,725 m²** |
+    | Agricultural area | **13,838 m²** |
+    | Jobs supported | **7** |
+    | Free-range hens | **110** |
 
-    Read the [Adelphi Summary](/ecosystem-wiki/kokonut-farms/adelphi/summary).
+    It is a women-led project founded by sisters **Yanny and Neury Hernández** and was supported by Public Nouns Proposal #69.
+
+    These are documented reference values, not a substitute for current farm records.
+
+    Use the [Kokonut Hub](https://hub.kokonut.network/projects/41) for current published data.
   </Accordion>
 
-  <Accordion title="Is Adelphi already funded?">
-    Adelphi received public goods funding through Public Nouns Proposal #69.
+  <Accordion title="What does Adelphi prove?">
+    Adelphi demonstrates that several Kokonut components can operate together in one real farm context:
 
-    That funding helped move the project from local vision into operational farm infrastructure, including production, monitoring, community benefit, and public evidence. Adelphi now serves as the first live proof of the Kokonut Framework.
+    - local farm operations;
+    - farm funding;
+    - Framework methods;
+    - crop and infrastructure systems;
+    - MRV;
+    - public records;
+    - governance;
+    - contributor coordination.
 
-    Read [Adelphi's Background Story](/ecosystem-wiki/kokonut-farms/adelphi/background-story) and [Problem & Solution](/ecosystem-wiki/kokonut-farms/adelphi/problem-and-solution).
+    Adelphi does **not** by itself prove:
+
+    - universal multi-farm scalability;
+    - guaranteed farm economics;
+    - biodiversity restoration;
+    - verified carbon outcomes;
+    - identical results at future farms;
+    - automatic community-level social impact.
+
+    Read the [Adelphi Overview](/ecosystem-wiki/kokonut-farms/adelphi/summary).
   </Accordion>
 
   <Accordion title="What does Adelphi produce?">
-    Adelphi is designed around diversified production timelines.
+    Adelphi uses diversified production across different timelines.
 
-    | Production type | Examples | Role |
-    | --- | --- | --- |
-    | Short-cycle crops | Lettuce and other vegetables | Near-term harvests and local food access |
-    | Medium-cycle crops | Passion fruit, Indian yams, and seasonal crops | Seasonal revenue and biodiversity |
-    | Long-cycle crops | Coconut trees and agroforestry species | Perennial anchor value |
-    | Continuous production | Free-range eggs | Daily food and revenue stream |
+    Current documentation includes:
+
+    - short-cycle vegetables such as lettuce;
+    - passion fruit and other medium-cycle crops;
+    - coconut and perennial agroforestry species;
+    - poultry eggs;
+    - nursery propagation;
+    - syntropic plots;
+    - biological inputs and biochar.
+
+    Production **forecasts** should not be confused with recorded harvest actuals.
 
     Read [Crops, Biodiversity & Infrastructure](/ecosystem-wiki/kokonut-farms/adelphi/crops-biodiversity-and-infrastructure) and [Crops & Harvest Forecast](/ecosystem-wiki/kokonut-farms/adelphi/crops-and-harvest-forecast).
   </Accordion>
 
-  <Accordion title="Can I inspect live farm data?">
-    Yes. Adelphi data is published through the Kokonut Hub.
+  <Accordion title="Are Adelphi's revenue numbers achieved revenue?">
+    No.
 
-    The Hub is where readers can view public farm information, including harvest records, farm milestones, MRV events, and impact metrics.
+    The crop page contains a **planning model**.
 
-    [Explore Adelphi live data →](https://hub.kokonut.network/projects/41)
+    Its combined crop figure is a steady-state gross-revenue scenario built from assumptions about:
+
+    - crop counts;
+    - yield;
+    - losses;
+    - prices;
+    - harvest frequency;
+    - crop maturity.
+
+    It is not:
+
+    - realized revenue;
+    - net income;
+    - profit;
+    - distributable DAO cash;
+    - guaranteed operator income.
+
+    Actuals should be compared against the forecast over time.
+
+    Read the [Forecast Model](/ecosystem-wiki/kokonut-farms/adelphi/crops-and-harvest-forecast).
   </Accordion>
 
-  <Accordion title="Can I visit the farm?">
-    Visits should be coordinated with the Kokonut team and local farm operators.
+  <Accordion title="Does every farm use the same revenue-sharing model?">
+    No universal revenue split should be assumed.
 
-    Before visiting, you can explore Adelphi remotely through the documentation, farm summary, geospatial records, and Kokonut Hub data. In-person visits should respect farm operations, local community priorities, safety, and visitor protocols.
+    Revenue allocation depends on the **approved economic and governance arrangements for the specific farm**.
 
-    [Book a call →](https://link.kokonut.network/meeting)
+    The repository currently documents conflicting historical Adelphi allocation models, which is why newer farm pages avoid presenting one percentage as a universal rule.
+
+    A current approved agreement or governance record should take precedence.
+  </Accordion>
+
+  <Accordion title="What is Terra Viva?">
+    Terra Viva is the **next documented replication test**, not an already operating extension of Adelphi.
+
+    Current Kokonut documentation describes roughly **50,000 m² of adjacent land under agreement** entering **Phase I — Planning & Preparation**.
+
+    It should be treated as planning-stage work until operating records show otherwise.
+  </Accordion>
+
+  <Accordion title="Can I visit Adelphi?">
+    Visits should be coordinated with the Kokonut team and the local farm operators.
+
+    The public documentation does not establish Adelphi as an unrestricted walk-in site.
+
+    A visit should respect:
+
+    - current farm operations;
+    - local operator priorities;
+    - safety;
+    - privacy;
+    - community context.
+
+    [Book a meeting →](https://link.kokonut.network/meeting)
   </Accordion>
 </AccordionGroup>
 
 ---
 
-## DAO, tokens, and treasury
+## Governance, \$vKKN, Loot, and rage-quit
 
 <AccordionGroup>
-  <Accordion title="What is a DAO?">
-    A DAO — Decentralized Autonomous Organization — is a community-governed structure where proposals, votes, treasury actions, and membership changes are enforced through smart contracts instead of a central administrator.
+  <Accordion title="What does the Moloch DAO govern?">
+    The Kokonut Moloch DAO is the **capital-governance layer**.
 
-    Kokonut uses a layered DAO architecture:
+    It covers areas such as:
 
-    | Layer | Purpose |
-    | --- | --- |
-    | Moloch DAO | Treasury, capital governance, \$vKKN, Loot, rage-quit, proposal execution |
-    | Guilds DAO | Contribution coordination, Guild Points, bounties, and operational work |
-    | Framework \+ MRV | Farm standards, data records, evidence, and verification |
+    - membership;
+    - treasury allocation;
+    - funded proposals;
+    - \$vKKN issuance;
+    - Loot issuance;
+    - DAO-level governance parameters;
+    - rage-quit protections.
 
-    Read the [DAO Architecture](/ecosystem-wiki/the-kokonut-dao/dao-layers).
-  </Accordion>
-
-  <Accordion title="Who controls Kokonut DAO?">
-    No individual controls the DAO treasury.
-
-    Kokonut's Moloch DAO is designed so that treasury movements, token minting, and major governance actions require proposals. The Core Team cannot unilaterally move DAO funds or mint governance tokens.
+    It does not automatically control farm operations, scientific review, or every Guild/Framework decision.
 
     Read [Kokonut Moloch DAO](/ecosystem-wiki/the-kokonut-dao/kokonut-moloch-dao).
   </Accordion>
 
-  <Accordion title="What is $vKKN?">
-    \$vKKN is Kokonut's soulbound voting token.
+  <Accordion title="Who controls the DAO treasury?">
+    The current architecture is designed so the Core Team does not have **unilateral authority over the DAO treasury**.
 
-    It is minted through DAO proposal approval when a member contributes stablecoins to the DAO treasury. \$vKKN is non-transferable and represents governance power inside the Moloch DAO.
+    DAO-level treasury actions are intended to follow the applicable governance and execution process.
 
-    In simple terms:
+    That statement should not be expanded into “no trusted role exists anywhere.”
 
-    | Token | What it means |
-    | --- | --- |
-    | \$vKKN | Voting rights and governance participation |
-    | Minting path | Stablecoin tribute approved by DAO proposal |
-    | Transferability | Soulbound / non-transferable |
-    | Voting | 1 \$vKKN = 1 vote |
+    Kokonut also has:
 
-    Read the [Moloch DAO page](/ecosystem-wiki/the-kokonut-dao/kokonut-moloch-dao) before attempting to join.
+    - farm accounts;
+    - technical systems;
+    - operational processes;
+    - legal/off-chain relationships;
+
+    that are not all identical to the Moloch treasury.
+  </Accordion>
+
+  <Accordion title="What is \$vKKN?">
+    \$vKKN is the current **non-transferable Moloch voting token**.
+
+    Under the current docs:
+
+    - 1 \$vKKN = 1 Moloch vote;
+    - issuance happens through approved DAO proposals;
+    - it is non-transferable / soulbound;
+    - it participates in the current Moloch governance model.
+
+    Kokonut documentation also relates \$vKKN issuance to coconut trees.
+
+    That relationship does **not** by itself create:
+
+    - legal title to land;
+    - ownership of an individual tree;
+    - authority over farm operators;
+    - guaranteed financial returns.
+
+    Read [Kokonut Moloch DAO](/ecosystem-wiki/the-kokonut-dao/kokonut-moloch-dao).
   </Accordion>
 
   <Accordion title="What is Loot?">
-    Loot is a soulbound economic-rights token that can be awarded by a DAO proposal.
+    Loot is the current **non-voting, non-transferable DAO token primitive** used for recognized participation / economic rights under the current model.
 
-    Unlike \$vKKN, Loot does not carry voting rights. It exists to recognize contributors, land partners, Core Team members, and ecosystem actors who create verifiable value but may not have contributed stablecoin capital.
+    Loot differs from \$vKKN because it does not carry Moloch voting power.
 
-    Loot helps connect the contribution path to the capital-governance layer.
+    Loot issuance still requires the applicable DAO proposal and approval process.
+
+    A contribution does not automatically become Loot.
   </Accordion>
 
-  <Accordion title="Do members own the land?">
+  <Accordion title="Do token holders own Adelphi or other farm land?">
     No.
 
-    DAO members do not own the physical land. Land ownership remains with the farm operators or partner entities. The DAO governs treasury decisions, farm funding proposals, token issuance, and ecosystem-level coordination.
+    Token ownership is not land title.
 
-    This distinction matters: Kokonut is not selling land titles. It coordinates community-governed participation in farm-backed production, public-goods funding, and regenerative infrastructure.
+    Local farm ownership, operating rights, legal agreements, and land records are separate from Moloch token rights.
+
+    A treasury vote can authorize capital.
+
+    It does not automatically transfer:
+
+    - land ownership;
+    - local farm authority;
+    - agronomic decision-making.
   </Accordion>
 
   <Accordion title="What is rage-quit?">
-    Rage-quit is a Moloch DAO protection mechanism that lets eligible members exit with their proportional share of rage-quit-enabled treasury assets.
+    Rage-quit is a Moloch exit mechanism for eligible members and eligible treasury assets under the applicable rules.
 
-    It matters because it gives capital-contributing members a way to leave if they strongly disagree with the DAO's direction. It is one of the trust protections that makes the DAO different from a normal donation pool or informal treasury.
+    It can allow an eligible member to burn applicable tokens and receive a proportional share of eligible treasury assets.
 
-    Read the [rage-quit section on the Moloch DAO page](/ecosystem-wiki/the-kokonut-dao/kokonut-moloch-dao#rage-quit-protection).
+    Rage-quit is **not a guarantee of recovering the original contribution value**.
+
+    Actual outcomes depend on:
+
+    - treasury composition;
+    - eligible assets;
+    - token supply;
+    - contract state;
+    - applicable governance rules.
+
+    Read the [Moloch DAO page](/ecosystem-wiki/the-kokonut-dao/kokonut-moloch-dao).
   </Accordion>
 
-  <Accordion title="What happens if the crypto market goes down?">
-    Kokonut is designed to reduce exposure to volatile crypto treasury assets by using stablecoin tribute for DAO membership.
+  <Accordion title="How do I become a Moloch DAO member?">
+    The current capital path uses a **membership proposal**.
 
-    That does not eliminate all risk. Farm operations, harvest forecasts, governance outcomes, stablecoin infrastructure, smart contracts, and market access all still carry risk. The important distinction is that Kokonut's core treasury model is not designed around speculation on volatile tokens.
+    A prospective member proposes a stablecoin tribute and requested \$vKKN amount under the current rules.
 
-    Review the DAO pages and proposal documentation before contributing capital.
+    Membership terms can change.
+
+    Do not rely on an old static tribute ratio, member percentage, or token supply.
+
+    Check the [live DAO](https://link.kokonut.network/dao) before acting.
+  </Accordion>
+
+  <Accordion title="Are \$vKKN and Loot transferable?">
+    Under the current core governance documentation, both are **non-transferable**.
+
+    If another page says otherwise, the live contracts and current Moloch documentation should be checked before relying on that older language.
   </Accordion>
 </AccordionGroup>
 
 ---
 
-## Contributing without capital
+## Guilds and contribution
 
 <AccordionGroup>
-  <Accordion title="Can I contribute without buying tokens?">
+  <Accordion title="Can I contribute without capital?">
     Yes.
 
-    The Guild path exists so that contributors can earn standing through useful work rather than capital. You can contribute through technology, impact, communications, governance, finance, partnerships, field reporting, documentation, research, or community coordination.
+    The contribution path exists so useful work does not require capital membership first.
 
-    Start with [Kokonut Guilds DAO](/ecosystem-wiki/the-kokonut-dao/kokonut-guilds-dao).
+    Common contribution areas include:
+
+    - agriculture;
+    - research;
+    - MRV;
+    - documentation;
+    - software;
+    - governance;
+    - finance;
+    - partnerships;
+    - community coordination.
+
+    Start with [Open Collaboration](/ecosystem-wiki/open-collaboration-invitation).
   </Accordion>
 
   <Accordion title="What are Kokonut Guilds?">
-    Kokonut Guilds are contribution-weighted working groups that coordinate execution.
+    Guilds are the **contribution-coordination layer**.
 
-    Current Guild areas include:
+    Current domains are:
 
-    | Guild | Examples of work |
+    | Guild | Main domain |
     | --- | --- |
-    | Technology | APIs, docs, dashboards, agent infrastructure, GitHub improvements |
-    | Impact | MRV, SDG reporting, EBF/CRISP, field evidence, research |
-    | Communications | Storytelling, grant updates, community education, public documentation |
-    | Governance | Proposal drafting, review, facilitation, process improvement |
-    | Finance | Forecasts, budgets, treasury analysis, and financial reporting |
-    | Community & Partnerships | Farmer onboarding, partner development, community calls, field relationships |
+    | Technology | Software, data, contracts, automation |
+    | Impact | MRV, ecology, evidence, sustainability |
+    | Communications | Documentation, education, public communication |
+    | Governance | Proposals, process, roles, accountability |
+    | Finance | Budgets, farm economics, treasury analysis |
+    | Community & Partnerships | Relationships, onboarding, partnerships |
 
-    Guilds help work move from vague interest into verifiable contribution records.
+    Guilds can coordinate domain work and review.
+
+    They do not have unilateral treasury authority.
+
+    Read [Kokonut Guilds](/ecosystem-wiki/the-kokonut-dao/kokonut-guilds-dao).
   </Accordion>
 
   <Accordion title="What are Guild Points?">
-    Guild Points are internal contribution records.
+    Guild Points are a **developing contribution-reputation mechanism**.
 
-    They recognize completed work, peer validation, bounties, research, documentation, MRV submissions, governance participation, and other useful contributions.
+    The design intent is that they represent reviewed, non-transferable, domain-specific contribution.
 
-    Guild Points are not the same as \$vKKN or Loot. They represent contributions standing inside Guilds. Significant contributions can later become eligible for Loot through a DAO proposal.
+    But the exact mechanics remain evolving, including areas such as:
+
+    - point values;
+    - thresholds;
+    - formal standing;
+    - voting weight;
+    - Steward selection;
+    - on-chain representation.
+
+    A contribution does **not** automatically create:
+
+    - Guild Points;
+    - payment;
+    - Loot;
+    - \$vKKN;
+    - employment;
+    - governance rights.
   </Accordion>
 
-  <Accordion title="How do I get started as a contributor?">
-    Use this path:
+  <Accordion title="How does contribution recognition work today?">
+    The most durable model is:
 
-    <Steps>
-      <Step title="Choose a Guild" icon="users" iconType="regular">
-        Pick the domain where you can create the most useful work: Technology, Impact, Communications, Governance, Finance, or Community & Partnerships.
-      </Step>
-      <Step title="Find a task" icon="list-check" iconType="regular">
-        Look for open bounties, documentation gaps, MRV needs, proposal support, farm research, or community coordination tasks.
-      </Step>
-      <Step title="Submit work" icon="paper-plane" iconType="regular">
-        Make the contribution inspectable: GitHub PR, document, report, dataset, proposal draft, design, meeting notes, or field record.
-      </Step>
-      <Step title="Get reviewed" icon="magnifying-glass" iconType="regular">
-        Guild members or relevant stewards review whether the work meets acceptance criteria.
-      </Step>
-      <Step title="Earn standing" icon="star" iconType="regular">
-        Completed contributions can earn Guild Points and may become eligible for broader DAO recognition.
-      </Step>
-    </Steps>
+    > **useful work → contribution record → domain review → accepted contribution history → recognition**
 
-    Join through the [Open Collaboration Invitation](/ecosystem-wiki/open-collaboration-invitation).
+    Significant contributions can later support a separate Loot proposal if appropriate.
+
+    The contribution record matters because it preserves:
+
+    - what was done;
+    - who did it;
+    - evidence;
+    - reviewer;
+    - status;
+    - dependencies;
+    - follow-up.
+  </Accordion>
+
+  <Accordion title="What is a Guild Steward?">
+    Steward is best understood as a **coordination function**, not automatic permanent authority.
+
+    Stewardship can include:
+
+    - maintaining work queues;
+    - helping contributors find tasks;
+    - review coordination;
+    - documenting decisions;
+    - routing mature work toward governance when needed.
+
+    Selection, term, rights, and removal should be explicitly documented by the relevant Guild process rather than assumed.
+  </Accordion>
+
+  <Accordion title="Can a Guild tell a farmer what to do?">
+    A Guild can provide expertise, research, tools, review, and recommendations.
+
+    It does not automatically replace local farm operators.
+
+    Routine decisions such as:
+
+    - crop timing;
+    - irrigation;
+    - maintenance;
+    - field response;
+    - labor coordination;
+
+    remain within the relevant farm-operating scope.
   </Accordion>
 </AccordionGroup>
 
 ---
 
-## Proposals and governance
+## Proposals and decision-making
 
 <AccordionGroup>
-  <Accordion title="How do proposals work?">
-    Kokonut proposals move through a governance lifecycle:
+  <Accordion title="Does every important decision require a DAO vote?">
+    No.
 
-    1. Draft the proposal using the correct template.
-    2. Share it for feedback in Charmverse.
-    3. Keep it open for the required review window.
-    4. If ready, a proposal-authorized person sponsors it.
-    5. DAO members vote through DAOHaus.
-    6. If passed, the proposal moves through grace/retention checks.
-    7. Approved actions are executed and reported.
+    Governance starts by asking:
+
+    > **Which authority actually owns this decision?**
+
+    Examples:
+
+    | Decision | Primary authority |
+    | --- | --- |
+    | DAO treasury spending | Moloch DAO |
+    | Routine irrigation timing | Farm operators |
+    | Guild contribution review | Relevant Guild/domain reviewers |
+    | Shared schema change | Framework + affected reviewers |
+    | High-impact ecological claim | MRV / qualified reviewers |
+    | Loot issuance | Moloch DAO |
 
     Read the [Governance Framework](/ecosystem-wiki/the-kokonut-dao/governance-framework).
   </Accordion>
 
-  <Accordion title="What proposal templates exist?">
-    Kokonut uses templates so proposals are easier to review, compare, and execute.
+  <Accordion title="How does a binding Moloch proposal work?">
+    The current governance process generally separates:
 
-    | Template | Use it for |
-    | --- | --- |
-    | Farm Funding | Funding a farm, infrastructure, land improvement, or operational deployment |
-    | Guild Bounty | Paying contributors for scoped work |
-    | Framework Upgrade | Changing schemas, standards, methods, or technical rules |
-    | Partnership | Formalizing collaboration, integrations, co-marketing, or institutional relationships |
+    1. decision routing;
+    2. drafting;
+    3. domain review;
+    4. authorized activation;
+    5. Moloch voting where required;
+    6. grace / retention checks;
+    7. transaction execution;
+    8. operational delivery;
+    9. evidence and acceptance;
+    10. closeout.
 
-    Use the [Proposal Templates](/ecosystem-wiki/the-kokonut-dao/proposal-templates) page before drafting.
+    **Passed**, **executed on-chain**, and **completed in the real world** are different statuses.
   </Accordion>
 
-  <Accordion title="Who can vote?">
-    Moloch DAO voting is tied to \$vKKN governance tokens.
+  <Accordion title="What are the current proposal timing rules?">
+    The current Governance Framework documents:
 
-    Guild participation is separate: contributors can earn Guild Points and participate in Guild-level coordination without holding \$vKKN. Some actions that affect the treasury, tokens, or formal DAO authority still require approval from the Moloch DAO.
+    - minimum **5-day** drafting baseline;
+    - **5-day** active Moloch voting baseline;
+    - grace after a passing on-chain proposal;
+    - current **66%** token-retention protection;
+    - **0%** onboarding quorum under the current membership framework.
+
+    These are current governance parameters, not permanent natural laws.
+
+    Verify live rules before a binding action.
+  </Accordion>
+
+  <Accordion title="What proposal templates exist?">
+    The current toolkit includes six families:
+
+    | Template | Use |
+    | --- | --- |
+    | Farm Funding | Shared capital for a defined farm milestone |
+    | Guild Bounty | Treasury-funded bounded contributor work |
+    | Framework / Methodology Change | Shared schemas, methods, MRV, interoperability |
+    | Partnership / External Commitment | Material commitments involving money, brand, data, access, or obligations |
+    | Moloch Membership / Token Action | Membership, \$vKKN, Loot, other Moloch token actions |
+    | Governance Amendment | Binding DAO rules and parameters |
+
+    Read [Proposal Templates](/ecosystem-wiki/the-kokonut-dao/proposal-templates).
   </Accordion>
 
   <Accordion title="What makes a proposal strong?">
-    A strong proposal is specific, measurable, accountable, and easy to verify.
+    A strong proposal clearly defines:
 
-    Include:
+    - authority requested;
+    - out-of-scope authority;
+    - evidence;
+    - budget;
+    - recipients;
+    - reviewers;
+    - execution owners;
+    - acceptance criteria;
+    - risks;
+    - dependencies;
+    - conflict-of-interest disclosures;
+    - material-change rules;
+    - closeout.
 
-    - the problem or opportunity;
-    - the exact ask;
-    - budget and milestone breakdown;
-    - responsible people or Guilds;
-    - evidence and links;
-    - risks and mitigations;
-    - success metrics;
-    - reporting plan;
-    - Next steps after approval.
-
-    Weak proposals usually fail because they are vague, hard to verify, lack budgets or accountability, or are unclear about what the DAO is approving.
+    A proposal should be **auditable before approval and closeable after execution**.
   </Accordion>
 </AccordionGroup>
 
 ---
 
-## MRV, data, and impact
+## MRV, evidence, and impact claims
 
 <AccordionGroup>
   <Accordion title="What is MRV?">
-    MRV means Measurement, Reporting, and Verification.
+    MRV means **Measurement, Reporting, and Verification**.
 
-    In Kokonut, MRV is the trust layer that turns farm activity into evidence. The pipeline is:
+    In Kokonut, it is the evidence layer that asks:
 
-    > **Farm activity → structured payload → IPFS/Filecoin record → Farm Registry event → EAS attestation → public Data Hub → annual impact report**
+    - what happened?
+    - where?
+    - when?
+    - how was it measured or reported?
+    - what source supports it?
+    - was it reviewed?
+    - was it published?
+    - was it attested?
+    - what can reasonably be concluded?
 
-    Read [Measurement, Reporting & Verification](/ecosystem-wiki/kokonut-farms/measurement-reporting-and-verification).
+    A useful shorthand is:
+
+    > **observe → structure → review → publish → attest when useful → interpret**
+
+    Read [MRV](/ecosystem-wiki/kokonut-farms/measurement-reporting-and-verification).
   </Accordion>
 
-  <Accordion title="What kind of farm data is tracked?">
-    Kokonut tracks data that helps answer practical trust questions:
+  <Accordion title="Does MRV prove a claim automatically?">
+    No.
 
-    | Question | Evidence examples |
-    | --- | --- |
-    | Is the farm real? | Geospatial records, farm registry, field logs, photos, hub profile |
-    | Is the land improving? | Vegetation indices, soil readings, field observations, and biodiversity records |
-    | Are harvest claims credible? | Crop cycles, harvest logs, forecast vs. actual data, sales records |
-    | Is the impact verifiable? | MRV events, IPFS evidence, EAS attestations, reports |
-    | Can the model scale? | Standardized schemas, reusable APIs, repeatable Framework processes |
+    A sensor reading, farm record, review state, EAS attestation, and impact conclusion are different things.
+
+    Strong claims still depend on:
+
+    - methodology;
+    - baseline;
+    - reporting period;
+    - evidence quality;
+    - reviewer competence;
+    - uncertainty;
+    - context.
+  </Accordion>
+
+  <Accordion title="What does 'verified' mean in Kokonut Intelligence?">
+    In the Kokonut Intelligence record lifecycle, **Verified** is an internal workflow state.
+
+    It means an authorized reviewer or process approved the record.
+
+    It does **not** automatically mean:
+
+    - independent scientific certification;
+    - regulatory approval;
+    - third-party audit;
+    - carbon-credit eligibility;
+    - external assurance.
+
+    The record lifecycle is:
+
+    **draft → submitted → verified / rejected → published**
+  </Accordion>
+
+  <Accordion title="What is an EAS attestation?">
+    EAS stands for **Ethereum Attestation Service**.
+
+    Kokonut uses attestations to improve provenance around important records.
+
+    An attestation can help show:
+
+    - who made or signed a claim;
+    - when it was recorded;
+    - which schema it used;
+    - which evidence reference it points to.
+
+    It does **not** make the underlying claim scientifically true merely because it is on-chain.
+  </Accordion>
+
+  <Accordion title="Is every farm record stored on-chain?">
+    No.
+
+    Not every sensor reading, photo, invoice, or field note needs an on-chain transaction.
+
+    Detailed evidence can remain:
+
+    - in governed databases;
+    - off-chain;
+    - in private storage;
+    - in IPFS/Filecoin evidence packages when useful.
+
+    Significant claims can be attested when public provenance adds value.
+
+    Sensitive evidence can remain off-chain with selective disclosure where appropriate.
   </Accordion>
 
   <Accordion title="How does Kokonut avoid greenwashing?">
-    Kokonut avoids greenwashing by making impact claims inspectable.
+    The documentation follows a **proof-before-claims** approach.
 
-    Instead of only publishing narrative updates, Kokonut uses farm records, remote sensing, field observations, harvest data, structured payloads, IPFS/Filecoin records, EAS attestations, and annual reporting.
+    Important distinctions include:
 
-    This does not mean every claim is automatically perfect. It means the system is designed to expose claims to review, correction, and improvement.
+    - documented state vs. forecast;
+    - measurement vs. interpretation;
+    - attestation vs. scientific verification;
+    - implemented practice vs. demonstrated ecological outcome;
+    - SDG alignment vs. verified impact.
+
+    A claim should become stronger only as the supporting evidence becomes stronger.
   </Accordion>
 
-  <Accordion title="How do SDGs fit into the model?">
-    SDGs are used as an impact translation layer, not as decorative labels.
+  <Accordion title="How do SDGs fit into Kokonut?">
+    The SDGs are an **evidence-mapping and interpretation layer**, not automatic impact certification.
 
-    Adelphi currently maps to five primary SDGs:
+    Adelphi currently uses five primary SDGs:
 
-    | SDG | Adelphi connection |
-    | --- | --- |
-    | SDG 1 — No Poverty | Jobs, income generation, and public goods allocation |
-    | SDG 2 — Zero Hunger | Organic food production and local food access |
-    | SDG 5 — Gender Equality | Women-led farm leadership and community participation |
-    | SDG 8 — Decent Work | Farm employment, training, productive enterprise |
-    | SDG 15 — Life on Land | Biodiversity, syntropic farming, soil, native species |
+    - SDG 1 — No Poverty;
+    - SDG 2 — Zero Hunger;
+    - SDG 5 — Gender Equality;
+    - SDG 8 — Decent Work and Economic Growth;
+    - SDG 15 — Life on Land.
 
-    Read [Adelphi Sustainable Development Goals](/ecosystem-wiki/kokonut-farms/adelphi/sustainable-development-goals).
+    The current farm pages distinguish:
+
+    **alignment → activity → measured outcome → impact interpretation**
+
+    Read [Adelphi SDGs](/ecosystem-wiki/kokonut-farms/adelphi/sustainable-development-goals).
+  </Accordion>
+
+  <Accordion title="Are carbon, biodiversity, or ecological-credit claims guaranteed?">
+    No.
+
+    Practices such as agroforestry, biochar, syntropic planting, ground cover, and biodiversity work can support ecological objectives.
+
+    But claims about:
+
+    - carbon sequestration;
+    - biodiversity recovery;
+    - ecological credits;
+    - soil improvement;
+    - erosion reduction;
+
+    require the appropriate evidence, methodology, reporting period, and any external standards or validation required by the claim.
   </Accordion>
 </AccordionGroup>
 
 ---
 
-## Technical and AI agents
+## Kokonut Intelligence, chains, and AI agents
 
 <AccordionGroup>
-  <Accordion title="What chains does Kokonut use?">
-    Kokonut uses different chains for different purposes.
+  <Accordion title="What is Kokonut Intelligence?">
+    Kokonut Intelligence is the **data, analytics, verification, and agent-access layer** of the ecosystem.
 
-    | Chain | Status | Role |
-    | --- | --- | --- |
-    | Gnosis Chain | Live | Moloch DAO, treasury, \$vKKN, Loot, governance contracts |
-    | Base | In development | Agentic Marketplace, AI agent identity, USDC payments, EAS records |
-    | Celo | Planned | Mobile-first community access |
-    | Arbitrum | Planned | Higher-frequency agent operations |
-    | Ethereum Mainnet | Planned | RWA / TradFi bridge and higher-level settlement primitives |
+    It structures information across:
 
-    Read [DAO Architecture](/ecosystem-wiki/the-kokonut-dao/dao-layers) and [Kokonut × AI Agents](/kokonut-x-ai-agents).
+    - farm operations;
+    - harvests;
+    - expenses;
+    - sales;
+    - soil data;
+    - remote sensing;
+    - MRV;
+    - attestations;
+    - partner data;
+    - agent logs.
+
+    It supports:
+
+    - review workflows;
+    - dashboards;
+    - forecasting;
+    - scoring;
+    - reports;
+    - EAS attestations;
+    - agent access.
+
+    Kokonut Intelligence does not replace MRV methodology.
+
+    MRV defines how evidence should be handled; Kokonut Intelligence implements data infrastructure around that process.
+
+    Read [Kokonut Intelligence](/kokonut-intelligence).
+  </Accordion>
+
+  <Accordion title="Which blockchains does Kokonut currently use?">
+    Current documentation separates chain roles.
+
+    | Chain | Current documented role |
+    | --- | --- |
+    | **Gnosis Chain** | Live Moloch governance, treasury, membership, \$vKKN, Loot, proposal execution |
+    | **Celo** | Kokonut Intelligence farm-data attestations through EAS |
+    | **Base** | Agentic Marketplace development; do not treat marketplace contracts as live unless deployment addresses are explicitly published |
+
+    Roadmap chains or older builder references should not be treated as active deployments unless current deployment evidence exists.
   </Accordion>
 
   <Accordion title="Can AI agents interact with Kokonut?">
-    Yes, this is part of the development of the Kokonut Agentic Marketplace architecture.
+    Yes, but the role is bounded.
 
-    AI agents can support tasks such as:
+    Useful agent workflows include:
 
-    - MRV data reporting
-    - satellite imagery analysis;
+    - MRV draft preparation;
+    - data-quality checks;
     - harvest forecasting;
-    - impact scoring;
-    - grant drafting;
-    - anomaly detection;
-    - cross-farm reporting;
-    - DAO workflow automation.
+    - forecast-vs-actual analysis;
+    - proposal formatting;
+    - report drafting;
+    - evidence packaging;
+    - anomaly detection.
 
-    The goal is not to replace farmers or contributors. The goal is to make verification, reporting, and coordination cheaper and more scalable.
+    Agents should not independently:
 
-    Read [Kokonut × AI Agents](/kokonut-x-ai-agents).
+    - approve treasury spending;
+    - create governance authority for themselves;
+    - certify scientific claims;
+    - replace farm operators;
+    - silently change schemas;
+    - publish high-impact claims without review.
+  </Accordion>
+
+  <Accordion title="Is the Agentic Marketplace live?">
+    It is currently documented as **in development**.
+
+    Builders can work against the current repository and development architecture, but production behavior should not be claimed until deployment details are explicitly published.
+  </Accordion>
+
+  <Accordion title="Can AI agents move DAO funds?">
+    An AI workflow should not be treated as an autonomous treasury authority.
+
+    Kokonut's current direction emphasizes bounded, reviewable execution.
+
+    Governance authorization, transaction preparation/proposal, human confirmation where required, and final execution are different steps.
+
+    High-impact treasury actions should remain accountable to the applicable governance and wallet security model.
   </Accordion>
 
   <Accordion title="Can developers build on Kokonut?">
     Yes.
 
-    Developers can work on documentation, MRV schemas, Farm Registry APIs, dashboards, AI agents, EAS attestations, automation, data tooling, and integrations with Kokonut's open-source knowledge base.
+    Current builder areas include:
+
+    - public documentation;
+    - Framework schemas;
+    - DAO tooling;
+    - farm-data tooling;
+    - MRV;
+    - Kokonut Intelligence;
+    - dashboards;
+    - attestations;
+    - forecasting;
+    - agent workflows.
 
     Start with [Build with Kokonut](/build-with-kokonut).
   </Accordion>
 
-  <Accordion title="Is the documentation open source?">
-    Yes. The public site and documentation are maintained through the Kokonut public repository.
+  <Accordion title="Is Kokonut open source?">
+    The public documentation and multiple core software repositories are open source.
 
-    Contributors can improve docs, propose corrections, submit pull requests, and help turn field knowledge into reusable open-source infrastructure.
+    The public Knowledge Base is maintained in:
 
-    [View the GitHub repository →](https://github.com/wasalo/Kokonut-Public-Site)
+    [Kokonut-Public-Site on GitHub →](https://github.com/wasalo/Kokonut-Public-Site)
+
+    Contributions should follow the repository's contribution and compatibility rules.
   </Accordion>
 </AccordionGroup>
 
 ---
 
-## Risks, limitations, and trust checks
+## Risks, limits, and trust checks
 
 <AccordionGroup>
-  <Accordion title="Is this financial advice or an investment guarantee?">
+  <Accordion title="Is Kokonut financial or investment advice?">
     No.
 
-    Kokonut documentation explains a cooperative model, farm operations, governance mechanics, and impact reporting. It is not financial, legal, tax, or investment advice.
+    Kokonut documentation explains:
 
-    Forecasts, revenue models, crop assumptions, DAO proposals, and impact projections are planning tools. Actual outcomes depend on farm execution, markets, climate, governance, operational quality, data quality, and many other factors.
+    - governance;
+    - farm methods;
+    - data infrastructure;
+    - forecasts;
+    - contribution paths;
+    - public records.
+
+    It is not legal, tax, investment, securities, or financial advice.
+
+    Forecasts and scenarios are planning tools, not guaranteed outcomes.
+  </Accordion>
+
+  <Accordion title="Does Kokonut guarantee returns?">
+    No.
+
+    Farm outcomes depend on real-world variables including:
+
+    - weather;
+    - pests;
+    - disease;
+    - crop survival;
+    - labor;
+    - irrigation;
+    - prices;
+    - buyers;
+    - transport;
+    - operating costs;
+    - governance;
+    - execution quality.
+
+    Token participation also does not create a guaranteed economic return.
   </Accordion>
 
   <Accordion title="What are the main risks?">
-    Kokonut reduces some coordination risks, but it does not eliminate all risk.
-
-    Key risks include:
-
-    | Risk | What it means |
+    | Risk | Example |
     | --- | --- |
-    | Farm risk | Crops can underperform due to weather, pests, disease, labor, irrigation, or management |
-    | Market risk | Prices, buyers, transport, certification, and demand can change |
-    | Governance risk | DAO members may reject proposals or disagree on priorities |
-    | Smart contract risk | Contracts, bridges, wallets, or integrations can fail or contain bugs |
-    | Data risk | MRV records can be incomplete, delayed, or require correction |
-    | Regulatory risk | Token, DAO, land, tax, and agricultural rules vary by jurisdiction |
+    | Farm risk | Weather, pests, disease, irrigation, labor, crop loss |
+    | Market risk | Buyer demand, prices, transport, certification |
+    | Governance risk | Proposals can fail or priorities can change |
+    | Treasury / asset risk | Stablecoins, wallets, smart contracts, custody |
+    | Execution risk | Approved work can still fail operationally |
+    | Data risk | Records can be incomplete, delayed, incorrect, or require revision |
+    | Model risk | Forecast assumptions can diverge from actuals |
+    | Regulatory risk | Land, token, DAO, tax, agricultural, employment, and data rules vary |
+    | Methodology risk | Impact methods may be incomplete or unsuitable for a specific claim |
 
-    This is why Kokonut emphasizes transparent proposals, public records, rage-quit protections, and MRV.
-  </Accordion>
+    Transparency reduces some coordination risk.
 
-  <Accordion title="Are tokens transferable?">
-    No. Kokonut's \$vKKN and Loot are soulbound in the current design.
-
-    That means they are not purchased on the open market and are not designed for speculation. \$vKKN is minted through DAO-approved stablecoin tribute. Loot can be awarded by a DAO proposal to recognize value contributed to the ecosystem.
-  </Accordion>
-
-  <Accordion title="Are carbon and environmental claims guaranteed?">
-    No.
-
-    Environmental outcomes should be treated as claims that require measurement and verification. Kokonut uses MRV, field data, vegetation indices, soil observations, biodiversity records, and annual reporting to make ecological claims reviewable.
-
-    Avoid treating carbon, biodiversity, or soil claims as guaranteed until they are backed by the relevant methodology and public evidence.
+    It does not eliminate real-world uncertainty.
   </Accordion>
 
   <Accordion title="How should I evaluate Kokonut's credibility?">
-    Use this trust checklist:
+    Check primary evidence rather than relying on one narrative page.
 
-    - Can I inspect a live farm page?
-    - Can I see the DAO contracts and treasury path?
-    - Can I understand how \$vKKN and Loot work?
-    - Can I verify whether farm data exists in the Kokonut Hub?
-    - Can I trace impact claims to MRV evidence?
-    - Can contributors participate without buying tokens?
-    - Can capital contributors exit through rage-quit where applicable?
-    - Can I find clear proposal templates and governance rules?
+    Useful questions include:
 
-    The purpose of the documentation is to make those answers visible.
+    - Can I inspect Adelphi's public records?
+    - Can I see what is documented versus forecast?
+    - Can I inspect DAO contracts and current governance state?
+    - Are \$vKKN, Loot, and Guild Points described at their actual maturity?
+    - Can I trace an impact claim to evidence?
+    - Does an attestation have a source record behind it?
+    - Are local operators clearly distinguished from token holders?
+    - Are developing agent systems labeled as developing?
+    - Are material risks and assumptions visible?
+  </Accordion>
+
+  <Accordion title="What should I treat as the source of truth?">
+    Different questions have different best sources.
+
+    | Question | Best source |
+    | --- | --- |
+    | Current Adelphi published data | [Kokonut Hub](https://hub.kokonut.network/projects/41) |
+    | Farm context and documented reference values | [Adelphi Overview](/ecosystem-wiki/kokonut-farms/adelphi/summary) |
+    | Forecast assumptions | [Adelphi Forecast](/ecosystem-wiki/kokonut-farms/adelphi/crops-and-harvest-forecast) |
+    | MRV methodology | [MRV](/ecosystem-wiki/kokonut-farms/measurement-reporting-and-verification) |
+    | Live DAO state | [DAOHaus](https://link.kokonut.network/dao) |
+    | Capital-governance mechanics | [Moloch DAO](/ecosystem-wiki/the-kokonut-dao/kokonut-moloch-dao) |
+    | Contribution model | [Kokonut Guilds](/ecosystem-wiki/the-kokonut-dao/kokonut-guilds-dao) |
+    | Shared farm methodology | [Kokonut Framework](/kokonut-framework/Introduction) |
+    | Data/analytics infrastructure | [Kokonut Intelligence](/kokonut-intelligence) |
+    | Current public code | GitHub repositories |
+
+    Static documentation should not override newer live records where the underlying state can change.
   </Accordion>
 </AccordionGroup>
 
@@ -573,29 +1038,29 @@ Use this FAQ to answer the practical questions first: what Kokonut is, what is a
 ## Still have questions?
 
 <CardGroup cols={2}>
-  <Card title="Read the Executive Summary" icon="newspaper" href="/ecosystem-wiki/kokonut-101/executive-summary">
-    The fastest complete orientation to the Kokonut model, live farm proof, DAO, Framework, and participation paths.
+  <Card title="Read Kokonut 101" icon="newspaper" href="/ecosystem-wiki/kokonut-101/executive-summary">
+    Get the shortest complete orientation to the model and current maturity.
   </Card>
 
   <Card title="Explore Adelphi" icon="seedling" href="/ecosystem-wiki/kokonut-farms/adelphi/summary">
-    See the first live farm, including its story, infrastructure, harvest forecast, MRV, and SDG alignment.
+    Review the first live reference farm and its evidence boundaries.
   </Card>
 
-  <Card title="Understand DAO Architecture" icon="layer-group" href="/ecosystem-wiki/the-kokonut-dao/dao-layers">
-    Learn how Kokonut separates capital governance, contribution, execution, farm operations, and verification.
+  <Card title="Understand the DAO" icon="layer-group" href="/ecosystem-wiki/the-kokonut-dao/dao-layers">
+    See which decisions belong to capital governance, Guilds, farms, methodology, evidence, and technical systems.
   </Card>
 
-  <Card title="Join Open Collaboration" icon="people-group" href="/ecosystem-wiki/open-collaboration-invitation">
-    Find your entry point as a builder, agronomist, researcher, funder, farmer, or community organizer.
+  <Card title="Contribute" icon="telescope" href="/ecosystem-wiki/open-collaboration-invitation">
+    Start with one useful, bounded, reviewable contribution.
+  </Card>
+
+  <Card title="Build" icon="code" href="/build-with-kokonut">
+    Find repositories, schemas, contracts, MRV primitives, data infrastructure, and agent development paths.
+  </Card>
+
+  <Card title="Read the Glossary" icon="book-open" href="/ecosystem-wiki/glossary">
+    Look up Kokonut-specific governance, farm, MRV, data, and agent terminology.
   </Card>
 </CardGroup>
 
-<div style={{ display: "flex", gap: "12px", justifyContent: "center", flexWrap: "wrap", margin: "2rem 0 0.75rem" }}>
-  <a href="https://link.kokonut.network/meeting" style={{ display: "inline-flex", alignItems: "center", gap: "6px", background: "#009F4D", color: "#fff", padding: "10px 20px", borderRadius: "8px", fontWeight: "600", fontSize: "14px", textDecoration: "none" }}>
-    Book a Call →
-  </a>
-
-  <a href="/ecosystem-wiki/open-collaboration-invitation" style={{ display: "inline-flex", alignItems: "center", gap: "6px", border: "1.5px solid #009F4D", color: "#009F4D", padding: "10px 20px", borderRadius: "8px", fontWeight: "600", fontSize: "14px", textDecoration: "none", background: "transparent" }}>
-    Find Your Contribution Path
-  </a>
-</div>
+> **When in doubt, separate the claim into its parts: what exists, what was measured, what was forecast, what was reviewed, what was attested, what was interpreted, and what is still being built.**
