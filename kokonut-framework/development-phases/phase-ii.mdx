@@ -1,31 +1,50 @@
 ---
 title: "PHASE II: Production and Regeneration"
 icon: "recycle"
-description: "How Kokonut farms move from planning into production, harvest records, soil regeneration, milestone attestations, and continuous MRV."
+description: "How a Kokonut farm moves from planning into sustained operations, replacing forecasts with actuals, documenting regenerative practice, reviewing milestones, and building the evidence needed for adaptation and later consolidation."
 ---
 
-# Phase II turns a prepared farm into verified production.
+# Phase II is where the farm plan meets reality.
 
-Phase II begins when Phase I planning, training, infrastructure readiness, soil preparation, and DAO milestone conditions are complete. It is the stage where seeds go into the ground, production starts across short-, medium-, and long-cycle crops, and the farm begins generating the records that prove whether the Kokonut Framework is working.
+**Phase II — Production & Regeneration** begins when the farm-specific Phase II trigger defined in Phase I has been accepted.
 
-Phase II is not only a planting stage. It is the evidence-building stage: harvest records, soil readings, vegetation signals, pest observations, water data, and milestone attestations start compounding into a public operating history.
+This is the operating phase where the farm starts producing the records that can answer:
 
-<div style={{ display: "flex", gap: "12px", justifyContent: "center", flexWrap: "wrap", margin: "1.5rem 0 0.75rem" }}>
-  <a href="#phase-ii-at-a-glance" style={{ display: "inline-flex", alignItems: "center", gap: "6px", background: "#009F4D", color: "#fff", padding: "10px 20px", borderRadius: "8px", fontWeight: "600", fontSize: "14px", textDecoration: "none" }}>
-    See Phase II Outputs →
-  </a>
+- What was actually planted?
+- What survived?
+- What was harvested?
+- What was lost?
+- What was sold or distributed?
+- At what realized price?
+- What did operations actually cost?
+- Which regenerative practices were implemented?
+- What changed in soil, vegetation, biodiversity, water, work, or resource use?
+- Which assumptions were wrong?
+- Which risks materialized?
+- What should the operators change next?
 
-  <a href="/ecosystem-wiki/kokonut-farms/measurement-reporting-and-verification" style={{ display: "inline-flex", alignItems: "center", gap: "6px", border: "1.5px solid #009F4D", color: "#009F4D", padding: "10px 20px", borderRadius: "8px", fontWeight: "600", fontSize: "14px", textDecoration: "none", background: "transparent" }}>
-    Read MRV Methodology
-  </a>
-</div>
+> **Phase II is not “the plan being proven correct.” It is the period in which the plan is tested against field reality.**
 
-<p style={{ textAlign: "center", fontSize: "13px", color: "#6b7280", marginTop: "0.25rem" }}>
-  Use this page to understand what must happen after a farm is funded and prepared, but before it can be considered consolidated, certified, or expansion-ready.
-</p>
+<CardGroup cols={2}>
+  <Card title="Start from the Phase I trigger" icon="chalkboard-user" href="/kokonut-framework/development-phases/phase-i">
+    Phase II should begin from explicit readiness conditions rather than a universal calendar date or mandatory DAO disbursement.
+  </Card>
+
+  <Card title="Compare forecasts with actuals" icon="calculator" href="/ecosystem-wiki/kokonut-farms/adelphi/crops-and-harvest-forecast">
+    Replace planning assumptions with farm-specific planting, harvest, loss, price, sale, and cost records over time.
+  </Card>
+
+  <Card title="Keep practice separate from outcome" icon="hand-holding-seedling" href="/kokonut-framework/framework-components/framework-features/5-principles-of-regeneration">
+    Regenerative practices can be documented immediately; soil, biodiversity, resilience, and climate outcomes require their own evidence.
+  </Card>
+
+  <Card title="Use the evidence lifecycle" icon="magnifying-glass-chart" href="/ecosystem-wiki/kokonut-farms/measurement-reporting-and-verification">
+    Follow observe → structure → review → publish → attest when useful → interpret.
+  </Card>
+</CardGroup>
 
 <Warning>
-  Phase II is a live operating phase, not a guaranteed return phase. Harvests, revenue, soil improvement, and certification readiness depend on execution quality, weather, water, labor, market pricing, data quality, and DAO-verified milestones.
+  **Phase II does not mean “verified regeneration.”** Production, revenue, soil improvement, biodiversity recovery, decent work, public-goods delivery, or climate benefit must each be supported by evidence appropriate to the claim.
 </Warning>
 
 ---
@@ -34,295 +53,901 @@ Phase II is not only a planting stage. It is the evidence-building stage: harves
 
 | Question | Phase II answer |
 | --- | --- |
-| When it begins | After Phase I completion, the criteria are met, and the first approved DAO milestone disbursement is released |
-| Main purpose | Activate production, regeneration practices, and continuous MRV evidence |
-| Typical duration | Usually 2–4 years, depending on crop mix, soil conditions, and long-cycle crop establishment |
-| What it produces | First harvests, soil readings, MRV payloads, EAS attestations, revenue actuals, and annual impact reports |
-| Primary risk | Production assumptions are tested against field reality |
-| Completion signal | Sustained multi-cycle production with verified MRV data, not simply the passage of time |
+| **Main purpose** | Operate the farm, produce actual records, test assumptions, and adapt |
+| **When it begins** | When the farm-specific Phase II trigger from Phase I is accepted |
+| **Fixed duration?** | **No.** Timing depends on crop mix, seasons, maturity, evidence needs, market conditions, and operating performance |
+| **Does every farm need Moloch milestones?** | **No.** Moloch milestones apply only when shared treasury funding or another Moloch-scoped authorization is involved |
+| **Does every farm need three crop cycles?** | **No.** Short/medium/long-cycle planning is useful where relevant, but production design is farm-specific |
+| **Does every record need EAS/IPFS?** | **No.** Use public provenance tools when they materially improve the record |
+| **What replaces forecasts?** | Actual planting, harvest, loss, price, expense, sale, distribution, labor, and field records |
+| **What is the transition signal?** | Enough operating evidence exists to justify consolidation/expansion decisions under a farm-specific Phase III trigger |
+| **Does Phase IV run here?** | **Yes.** Continuous evidence and learning operate throughout Phase II |
 
-<CardGroup cols={3}>
-  <Card title="Production begins" icon="seedling">
-    Short-cycle, medium-cycle, and long-cycle crops are planted together so the farm can generate near-term harvests while longer-term perennial systems establish.
+---
+
+## The Phase II operating loop
+
+```mermaid
+flowchart TD
+    A["Accepted Phase II scope"] --> B["Operate farm / implement practice"]
+    B --> C["Record actual activity"]
+    C --> D["Review + publish relevant evidence"]
+    D --> E["Compare forecast vs. actual"]
+    E --> F["Interpret outcome + risk"]
+    F --> G{"Change needed?"}
+
+    G -->|Yes| H["Adjust crop · input · water · market · budget · evidence plan"]
+    H --> B
+
+    G -->|No| I["Continue operating"]
+    I --> B
+
+    D --> J["Optional provenance attestation"]
+    J --> F
+
+    F --> K["Phase II maturity record"]
+    K --> L["Phase III readiness review"]
+```
+
+The loop matters more than any one harvest.
+
+A mature Phase II farm should become **more specific and less assumption-heavy** over time.
+
+---
+
+## What Phase II should produce
+
+| Output | What it tells the farm | Boundary |
+| --- | --- | --- |
+| **Planting / establishment records** | What was actually implemented | Planting does not prove yield |
+| **Harvest actuals** | What was actually produced | Harvest quantity does not equal sale or profit |
+| **Loss / rejection records** | Where production assumptions failed | A loss rate needs a consistent denominator |
+| **Sales / distribution actuals** | What moved, to whom, at what price | Revenue does not equal profit |
+| **Expense / procurement actuals** | What operations actually cost | One receipt does not equal full cost accounting |
+| **Labor / operator records** | Who performed the work and under what arrangement | Job count does not equal decent work |
+| **Regenerative-practice records** | Which practices actually happened | Practice does not equal ecological outcome |
+| **Soil / vegetation / water / biodiversity evidence** | What measured conditions changed | Change does not automatically prove causality |
+| **Infrastructure / maintenance records** | What capacity exists and remains functional | Installation does not equal utilization |
+| **Risk / incident / variance records** | Which assumptions failed or changed | Identifying a risk does not eliminate it |
+| **Milestone acceptance records** | Whether a funded or governed deliverable was accepted | Acceptance of a deliverable is not proof of later impact |
+| **Updated forecast** | How the model should change based on actuals | Revised forecast remains a forecast |
+| **Phase II maturity record** | Why the farm may be ready for consolidation | Maturity is farm-specific, not a universal score |
+
+<Info>
+  The purpose of Phase II evidence is not to make the farm look consistently successful. Failed assumptions, crop loss, missed milestones, maintenance problems, poor prices, and weak measurements are useful information when recorded honestly.
+</Info>
+
+---
+
+# Phase II workstreams
+
+## 1. Execute the locally approved production plan
+
+Phase II puts the Phase I operating plan into sustained use.
+
+Depending on the farm, that can include:
+
+- annual vegetables;
+- root crops;
+- vines;
+- fruit;
+- coconut or other perennial trees;
+- agroforestry;
+- nursery production;
+- poultry or animals where appropriate;
+- biological-input production;
+- community/training activity;
+- other locally relevant production systems.
+
+### Short, medium, and long cycles are planning categories — not a mandatory template
+
+Kokonut often uses multiple time horizons because they help distinguish:
+
+- early production;
+- establishment periods;
+- long-lived assets;
+- replacement cycles;
+- delayed cash flow.
+
+But a future farm does not need to reproduce Adelphi's exact mix.
+
+| Planning horizon | Useful question |
+| --- | --- |
+| **Short cycle** | What can produce useful operational feedback quickly? |
+| **Medium cycle** | What requires establishment before recurring production? |
+| **Long cycle** | What matures over multiple years and requires continuity planning? |
+| **Continuous / recurring** | What produces or operates outside discrete crop cycles? |
+
+The correct mix depends on the farm.
+
+---
+
+## 2. Record planting and establishment actuals
+
+For material crops / production systems, record what actually happened.
+
+Possible fields include:
+
+- farm / plot / bed;
+- crop / variety;
+- planting date;
+- planted quantity;
+- planted area;
+- source of seed/planting material;
+- density;
+- operator;
+- establishment notes;
+- irrigation/water context;
+- inputs;
+- weather/context;
+- survival / establishment rate where relevant.
+
+### Why this matters
+
+A forecast may assume:
+
+- a planting density;
+- a number of plants;
+- an establishment date;
+- a survival rate;
+- a cycle length.
+
+Phase II creates the first opportunity to replace those assumptions with actual farm-specific values.
+
+---
+
+## 3. Record harvest, loss, sale, and distribution actuals
+
+Each material harvest should preserve enough information to reconcile the production model.
+
+| Record | Why it matters |
+| --- | --- |
+| Harvest date | Actual crop-cycle timing |
+| Plot / crop | Source of output |
+| Planted quantity / area | Forecast denominator |
+| Harvested quantity | Gross production actual |
+| Saleable quantity | Commercial output |
+| Loss / rejection quantity | Actual loss context |
+| Unit / measurement basis | Comparability |
+| Realized price | Replaces planning price |
+| Buyer / channel | Explains price and market performance |
+| Sold quantity | Realized commercial volume |
+| Donated / distributed quantity | Public-benefit / non-sale output where relevant |
+| Evidence pointer | Source record / receipt / field log |
+| Reviewer / lifecycle status | How the record becomes usable downstream |
+
+### Revenue states should remain separate
+
+Do not collapse:
+
+- harvested;
+- invoiced;
+- sold;
+- paid;
+- cash received.
+
+Likewise, do not collapse:
+
+- gross revenue;
+- net revenue;
+- operating surplus;
+- profit;
+- distributable cash.
+
+<Warning>
+  **A successful harvest is not the same as a profitable harvest.**
+</Warning>
+
+---
+
+## 4. Reconcile forecast vs. actual
+
+This is one of Phase II's most important functions.
+
+```mermaid
+flowchart LR
+    A["Phase I assumptions"] --> B["Forecast"]
+    B --> C["Phase II actuals"]
+    C --> D["Variance"]
+    D --> E["Explanation"]
+    E --> F["Revised forecast"]
+    F --> G["Next operating decision"]
+```
+
+Useful variance categories include:
+
+- planting quantity;
+- establishment/survival;
+- days to harvest;
+- yield;
+- loss/rejection;
+- realized price;
+- buyer/channel;
+- labor;
+- input cost;
+- water cost;
+- transport;
+- packaging;
+- maintenance;
+- public-goods transfer where applicable.
+
+### Variance is not failure by definition
+
+A model is useful when reality can change it.
+
+> **A forecast that is never revised after actual farm data arrives is documentation debt.**
+
+---
+
+## 5. Implement regenerative practices — without assuming the outcome
+
+Phase II is where the [5 Principles of Regeneration](/kokonut-framework/framework-components/framework-features/5-principles-of-regeneration) become observable farm activity.
+
+Examples can include:
+
+- reduced avoidable soil disturbance;
+- living or biomass cover;
+- functional biodiversity;
+- animal integration where appropriate;
+- living roots / perennial continuity;
+- compost;
+- biochar;
+- biological inputs;
+- agroforestry;
+- biomass cycling;
+- irrigation / water management;
+- erosion controls.
+
+### Record the intervention
+
+For a material practice, preserve:
+
+- where;
+- when;
+- what;
+- quantity / rate where relevant;
+- operator;
+- method;
+- source material;
+- related crop/plot;
+- photo / field observation where useful;
+- intended hypothesis.
+
+Then measure the outcome separately.
+
+### Example
+
+> **Activity:** biochar was applied to Plot A at a recorded rate.
+
+Possible later outcome questions:
+
+- Did soil moisture change?
+- Did input dependency change?
+- Did crop performance change?
+- Did soil carbon change under an appropriate method?
+
+The practice record is useful even if the expected outcome does not appear.
+
+---
+
+## 6. Build ecological evidence over comparable periods
+
+Phase II should compare conditions only when the methods and context support comparison.
+
+Possible domains include:
+
+- soil;
+- vegetation;
+- water;
+- biodiversity;
+- survival;
+- land cover;
+- input use;
+- resource cycling.
+
+### Soil
+
+Possible evidence can include:
+
+- EC;
+- volumetric water content;
+- temperature;
+- lab indicators where useful;
+- ground cover;
+- input/application records;
+- soil organic matter/carbon under fit-for-purpose methods.
+
+### Vegetation / remote sensing
+
+Indices such as:
+
+- NDVI;
+- NDRE;
+- ReCI;
+- MSAVI;
+
+can provide derived vegetation signals.
+
+They do not directly prove:
+
+- yield;
+- biodiversity;
+- soil carbon;
+- ecological restoration;
+- credit eligibility.
+
+### Biodiversity
+
+Useful evidence can progress through:
+
+> **inventory → implementation → survival/continuity → repeated survey → bounded interpretation**
+
+### Method consistency matters
+
+Record:
+
+- measurement method;
+- units;
+- location;
+- timing;
+- instrument/sensor;
+- calibration/context where relevant;
+- reviewer;
+- limitations.
+
+<Info>
+  **A change is not automatically an improvement, and an improvement is not automatically caused by one intervention.**
+</Info>
+
+---
+
+## 7. Track operator, labor, and capability actuals
+
+Phase II tests whether the human operating system works.
+
+Useful records can include:
+
+- operator responsibility;
+- worker role;
+- dates;
+- full-time / part-time / seasonal status;
+- compensation where appropriate;
+- safety / incidents;
+- training;
+- competency;
+- labor hours where material;
+- turnover;
+- dependency on one person;
+- escalation / backup roles.
+
+### Why this matters
+
+Phase III should not depend on the assumption that a farm can scale if:
+
+- one founder holds all operational knowledge;
+- data entry depends on one external contributor;
+- maintenance has no owner;
+- harvest work cannot be staffed;
+- financial reporting is incomplete.
+
+Operational maturity includes people, not only crops.
+
+---
+
+## 8. Track expenses and operational finance
+
+Production evidence should include cost evidence.
+
+Useful financial actuals include:
+
+- inputs;
+- seed / seedlings;
+- feed;
+- labor;
+- water;
+- power/fuel;
+- packaging;
+- transport;
+- tools;
+- maintenance;
+- repairs;
+- certification/compliance costs;
+- external services.
+
+### Budget vs. actual
+
+For funded work:
+
+| State | Meaning |
+| --- | --- |
+| Budgeted | Planned amount |
+| Approved | Authorized amount |
+| Committed | Purchase/obligation made |
+| Spent | Payment completed |
+| Accepted | Deliverable/payment evidence accepted |
+| Closed | Variance and follow-up documented |
+
+This is especially important when shared treasury capital is involved.
+
+---
+
+## 9. Review milestones where the funding model requires them
+
+Not every farm needs DAO milestones.
+
+When a funder, grant, Moloch proposal, or partner agreement uses milestone-based releases, Phase II should keep:
+
+- **authorization**;
+- **payment/execution**;
+- **physical delivery**;
+- **evidence review**;
+- **acceptance**;
+- **closeout**
+
+as separate states.
+
+### Example milestone record
+
+| Field | Question |
+| --- | --- |
+| Milestone | What deliverable was authorized? |
+| Release condition | What must happen before payment/release? |
+| Operator / vendor | Who executes? |
+| Evidence | What proves delivery? |
+| Reviewer | Who checks it? |
+| Status | Authorized / executed / delivered / reviewed / accepted / closed |
+| Variance | What differs from the original scope? |
+| Change control | Does the variance require renewed approval? |
+
+<Warning>
+  **Moloch can authorize shared treasury capital. It does not become the agronomy reviewer or local farm operator.**
+</Warning>
+
+---
+
+## 10. Record incidents, failed assumptions, and change control
+
+Phase II should create a record when reality materially departs from the plan.
+
+Examples:
+
+- crop failure;
+- mortality;
+- disease;
+- storm/flood/drought damage;
+- irrigation failure;
+- failed buyer;
+- major price change;
+- input shortage;
+- labor gap;
+- equipment failure;
+- unexpected cost;
+- data loss;
+- invalid measurement;
+- operator change;
+- land/access change;
+- scope change.
+
+### A useful variance record should identify
+
+- what changed;
+- why it matters;
+- immediate response;
+- owner;
+- budget effect;
+- production effect;
+- evidence effect;
+- risk update;
+- whether re-authorization is needed;
+- next review date.
+
+> **The farm should be allowed to change. The record should make the change legible.**
+
+---
+
+## 11. Publish and attest selectively
+
+The MRV sequence remains:
+
+> **observe → structure → review → publish → attest when useful → interpret**
+
+### Publish when appropriate
+
+Useful published records can include:
+
+- farm status;
+- planting/harvest records;
+- milestone records;
+- selected MRV events;
+- public reports;
+- impact evidence where appropriate.
+
+Sensitive evidence can remain restricted.
+
+### EAS
+
+Use EAS when durable public provenance adds value.
+
+An EAS attestation can preserve:
+
+- signer;
+- timestamp;
+- schema;
+- evidence pointer;
+- claim/provenance context.
+
+It does not establish:
+
+- scientific truth;
+- causal attribution;
+- certification;
+- carbon-credit eligibility;
+- biodiversity restoration;
+- farm profitability.
+
+### IPFS / Filecoin
+
+Use content-addressed storage when durable evidence artifacts benefit from it.
+
+It is not required for every Phase II record.
+
+---
+
+# Phase II and the Positive Impact claim ladder
+
+Phase II is where many claims can move from **alignment** to **activity**, and some can move to **measured outcome**.
+
+```mermaid
+flowchart LR
+    A["Alignment<br/>Phase I design"] --> B["Activity<br/>Phase II implementation"]
+    B --> C["Measured outcome<br/>Phase II evidence"]
+    C --> D["Impact interpretation<br/>only when method supports it"]
+```
+
+Examples:
+
+| Statement | Claim level |
+| --- | --- |
+| “The farm plans to maintain soil cover.” | Alignment |
+| “Ground cover was established on the documented plot.” | Activity |
+| “Ground-cover percentage increased from X to Y during the reporting period.” | Measured outcome |
+| “The evidence supports a bounded conclusion about reduced surface exposure under the defined conditions.” | Impact interpretation |
+
+Phase II does **not** require every claim to reach the final level.
+
+A farm can be operationally successful while some ecological or social outcomes remain uncertain.
+
+---
+
+# Adelphi — current Phase II reference
+
+Current Kokonut documentation places **Adelphi in Phase II — Production & Regeneration**.
+
+It is the strongest current example of how Phase II should be read:
+
+> **real infrastructure and farm activity exist, while many production/economic/ecological values still require current actual records before stronger conclusions are made.**
+
+### Documented / current reference facts
+
+Repository documentation currently includes:
+
+- two syntropic plots;
+- 110 hens;
+- nursery + biofactory;
+- bamboo-derived biochar practice;
+- ground-cover / beard-grass practice;
+- crop beds and mixed production systems;
+- training/community infrastructure;
+- GPS / remote-sensing / farm-record capability;
+- Phase II status.
+
+### Current forecast model — not actual performance
+
+The Adelphi forecast currently models:
+
+| Stream | Current model |
+| --- | --- |
+| **Lettuce** | 5 harvests/year planning assumption; 15% model loss rate |
+| **Passion fruit** | Medium-cycle production assumption |
+| **Coconut** | 96 trees; mature-yield model; first-harvest window currently modeled at 3–5 years |
+| **Poultry** | 110 hens documented; ~100 eggs/day remains a planning estimate |
+| **Combined crop gross revenue** | **$149,110.87/year** planning snapshot; poultry excluded |
+| **Public-goods share** | **10%** current farm-model assumption; unresolved against historical 40/40/20 documentation |
+
+<Warning>
+  **Do not use the Adelphi forecast as evidence that these harvests, prices, revenue, egg output, public-goods transfers, or profit have been realized.** Use current Kokonut Hub records and underlying farm evidence when actual performance matters.
+</Warning>
+
+### The Phase II job at Adelphi
+
+The key task is to replace assumptions such as:
+
+- 15% crop loss;
+- 5 lettuce harvests/year;
+- planning prices;
+- passion-fruit yield;
+- coconut maturity yield;
+- ~100 eggs/day;
+
+with farm-specific actuals.
+
+That is the purpose of Phase II.
+
+<CardGroup cols={2}>
+  <Card title="Inspect current published records" icon="chart-line" href="https://hub.kokonut.network/projects/41">
+    Use the Kokonut Hub for changeable farm state rather than relying only on static methodology pages.
   </Card>
 
-  <Card title="Regeneration becomes practice" icon="leaf">
-    Crop rotation, ground cover, beneficial plant associations, poultry integration, biochar, organic inputs, and soil monitoring move from plan to daily operations.
+  <Card title="Read the forecast model" icon="calculator" href="/ecosystem-wiki/kokonut-farms/adelphi/crops-and-harvest-forecast">
+    See the current assumptions, formulas, sensitivity, and minimum actuals needed to improve the model.
   </Card>
 
-  <Card title="Evidence starts compounding" icon="database">
-    Each planting, harvest, soil reading, and verified milestone becomes part of the farm's public operating record.
+  <Card title="Inspect physical systems" icon="puzzle" href="/ecosystem-wiki/kokonut-farms/adelphi/crops-biodiversity-and-infrastructure">
+    See documented crops, poultry, nursery, biofactory, soil practices, infrastructure, and evidence needs.
+  </Card>
+
+  <Card title="Review the evidence standard" icon="magnifying-glass-chart" href="/ecosystem-wiki/kokonut-farms/measurement-reporting-and-verification">
+    See how observations and actual records become reviewed evidence without being overstated.
   </Card>
 </CardGroup>
 
 ---
 
-## How Phase II fits the development lifecycle
+## Phase II reporting cadence is farm- and claim-specific
 
-```mermaid
-flowchart LR
-    A["Phase I\nPlanning + preparation"] --> B["Phase II\nProduction + regeneration"]
-    B --> C["Phase III\nConsolidation + expansion"]
+The old page assumed a fixed six-month review and annual impact report.
 
-    B --> D["Planting records"]
-    B --> E["Harvest records"]
-    B --> F["Soil + water readings"]
-    B --> G["Vegetation signals"]
-    B --> H["Milestone attestations"]
+Those can be useful reporting intervals.
 
-    D --> I["MRV pipeline"]
-    E --> I
-    F --> I
-    G --> I
-    H --> I
+They should not be universal requirements.
 
-    I --> J["Data Hub + annual reports"]
-    J --> C
-```
+| Record / review | Example cadence |
+| --- | --- |
+| Planting / treatment | Per event |
+| Harvest / sale / loss | Per event |
+| Expense / procurement | Per transaction / accounting cycle |
+| Poultry / recurring production | Daily/weekly summary as operationally useful |
+| Soil / water measurement | Method-dependent |
+| Vegetation remote sensing | Comparable periodic scenes |
+| Biodiversity / survival | Seasonal / method-dependent |
+| Risk review | Incident / major change / reporting period |
+| Funding milestone | Defined by the actual authorization |
+| Full farm synthesis | Periodic when enough reviewed evidence exists |
 
-Phase I makes the farm legible. Phase II tests the plan in the field. Phase III begins only after the farm has enough verified operating history to support consolidation, certification, and expansion decisions.
-
-[Read Phase I →](/kokonut-framework/development-phases/phase-i)
+> **Choose the reporting period because it makes the claim comparable—not because the Framework requires a universal calendar.**
 
 ---
 
-## What Phase II produces
+## Phase II risk register
 
-| Output | Why it matters | Evidence to collect |
-| --- | --- | --- |
-| First plantings | Confirms the farm has moved from planning to production | Plot records, crop type, planting date, density, operator notes |
-| First harvests | Tests whether production assumptions are realistic | Harvest records, yield, loss rate, sale price, buyer/channel |
-| Continuous soil readings | Shows whether regeneration practices are improving the growing environment | EC, volumetric water content, soil temperature, lab results where available |
-| Agro-ecological practice records | Documents how regeneration is implemented, not just claimed | Rotation logs, cover crop logs, input records, pest observations |
-| MRV events | Turns operations into structured data | Farm Registry payloads, IPFS records, EAS attestations |
-| Milestone evidence | Determines whether DAO disbursements should proceed | Verified milestone completion records and reviewer notes |
-| Annual impact report | Summarizes environmental, economic, social, and risk evidence | EBF report, CRISP review, Data Hub records |
+Phase I identifies risks.
 
-<Note>
-  Phase II is where the farm's forecast becomes testable. Forecasts should be compared against actual harvests, prices, losses, soil readings, and market conditions before being used for stronger claims.
-</Note>
+Phase II shows which ones actually matter.
 
----
+| Risk area | Phase II evidence |
+| --- | --- |
+| Crop / agronomy | Establishment, pest, disease, mortality, yield, loss |
+| Water / climate | Irrigation, weather context, drought/storm impacts |
+| Labor / operator | Staffing, capability, continuity, safety |
+| Market | Buyer availability, realized price, rejected volume, payment |
+| Financial | Actual cost, cash flow, maintenance, variance |
+| Infrastructure | Uptime, breakdown, repair, capacity |
+| Data quality | Missing/stale/inconsistent records, instrument issues |
+| Ecological claim | Baseline comparability, method, attribution, reversal |
+| Public goods | Actual transfer/delivery/use vs. modeled share |
+| Governance / funding | Milestone/re-authorization/change-control requirements |
 
-## Phase II workstreams
+A good Phase II risk record should update:
 
-<Steps>
-  <Step title="Implement agro-ecological practices" icon="hand-holding-seedling" iconType="regular">
-    Phase II activates the regenerative practices designed during Phase I.
-
-    **Core practices include:**
-
-    - Crop rotation to reduce pest and disease pressure
-    - Beneficial plant associations and companion planting
-    - Living ground cover between and around production beds
-    - Biological pest management through biodiversity and animal integration
-    - Organic fertility from compost, biochar, humic acids, manure processing, and crop residues
-    - Reduced synthetic-input dependency
-
-    **At Adelphi:** the farm applies closed-loop fertility through poultry manure, humic acids, crop beds, forage, and poultry integration. The 110-hen flock contributes eggs, manure, pest pressure management, and nutrient cycling.
-
-    **Evidence to collect:** crop cycle stage, plant health observations, pest and disease flags, input logs, water observations, field photos, and operator notes.
-  </Step>
-  <Step title="Build soil regeneration evidence" icon="farm" iconType="regular">
-    Phase II must show whether soil regeneration practices are improving the farm over time.
-
-    **Soil practices include:**
-
-    - Remineralization through mineral-rich amendments, where appropriate
-    - Biochar application and organic matter incorporation
-    - Humic acid and biological input application
-    - Reduced disturbance between crop cycles
-    - Continuous living cover to reduce erosion and heat stress
-
-    **At Adelphi:** biochar-mineral incorporation, humic acids, beard grass, and organic matter cycling are used to improve water retention, soil biology, and nutrient availability.
-
-    **Evidence to collect:** EC, volumetric water content, soil temperature, soil organic matter where available, photos of ground cover, input quantities, and pre/post application notes.
-  </Step>
-  <Step title="Plant across three crop cycles" icon="seedling" iconType="regular">
-    Phase II activates the Framework's three-cycle production strategy.
-
-    | Cycle | Role | Example crops | Evidence |
-    | --- | --- | --- | --- |
-    | Short cycle | Near-term harvest and cash flow | Lettuce, spinach, arugula, tomatoes, broccoli | Planting and harvest records |
-    | Medium cycle | Seasonal production and mid-canopy structure | Passion fruit, Indian yam, plantain, banana | Establishment and yield records |
-    | Long cycle | Perennial structure and long-term value | Coconut, cacao, hardwood, agroforestry trees | Tree health, survival, growth records |
-
-    **At Adelphi:** lettuce drives short-cycle production, passion fruit and Indian yam support medium-cycle output, and coconut anchors the long-cycle agroforestry system.
-
-    **Evidence to collect:** crop type, plot, planting density, cycle length, yield, loss rate, pricing, buyer/channel, and survival rates for perennial species.
-  </Step>
-  <Step title="Record harvests and revenue actuals" icon="scale-balanced" iconType="regular">
-    Phase II is where forecasted production meets actual field performance.
-
-    Each harvest should record:
-
-    - Crop and variety
-    - Plot or bed
-    - Harvest date
-    - Units harvested
-    - Loss rate
-    - Units sold or distributed
-    - Sale price
-    - Buyer or distribution channel
-    - Public goods allocation, if applicable
-
-    **At Adelphi:** lettuce, passion fruit, coconut, and eggs should be tracked separately so the farm can distinguish short-cycle cash flow, medium-cycle production, long-cycle maturity, and continuous poultry output.
-
-    **Evidence to collect:** harvest payloads, receipts where available, field logs, buyer records, and Data Hub updates.
-  </Step>
-  <Step title="Trigger milestone reviews" icon="circle-check" iconType="regular">
-    DAO milestone disbursements should be tied to verified events, not calendar promises.
-
-    | Milestone type | Example trigger | Reviewer question |
-    | --- | --- | --- |
-    | Planting milestone | Crop beds are planted across approved zones | Was planting completed according to the approved plan? |
-    | MRV milestone | First data payload accepted | Is the evidence structured, complete, and inspectable? |
-    | Harvest milestone | First harvest submitted and reviewed | Does the record match the farm's forecast assumptions? |
-    | Soil milestone | Soil readings compared against baseline | Is improvement observed, uncertain, or not yet visible? |
-    | Impact milestone | Interim or annual report published | Are claims supported by evidence? |
-
-    **Evidence to collect:** milestone record, reviewer notes, related MRV event, attestation link, and DAO decision reference.
-  </Step>
-</Steps>
-
----
-
-## Adelphi Phase II reference
-
-At Adelphi, Phase II is the live proof stage. The farm is actively testing whether the Kokonut Framework can combine food production, regenerative practices, community income, MRV, and public goods allocation on real land.
-
-| Adelphi element | Phase II role | Verification path |
-| --- | --- | --- |
-| Lettuce and fast-cycle crops | Early production and cash-flow test | Harvest records and loss-rate comparison |
-| Passion fruit and Indian yam | Medium-cycle production bridge | Establishment logs and first harvest records |
-| Coconut trees | Long-cycle agroforestry anchor | Tree health, GPS records, satellite vegetation indicators |
-| Poultry system | Eggs, pest pressure management, manure, fertility loop | Poultry logs, manure/input records, egg production records |
-| Biofactory and nursery | Organic inputs and biodiversity propagation | Input logs, nursery inventory, species records |
-| Ground cover and syntropic plots | Soil protection and ecological resilience | Field observations, soil readings, vegetation indices |
-| Public Data Hub | Public progress visibility | MRV events, harvest records, impact metrics |
-
-[Explore Adelphi live farm data →](https://hub.kokonut.network/projects/41)
-
----
-
-## Phase II MRV milestones
-
-Phase II evidence should move through the Kokonut MRV pipeline:
-
-```text
-Farm activity → structured payload → IPFS record → Farm Registry event → EAS attestation → public Data Hub → annual impact report
-```
-
-| Milestone | Trigger | Evidence standard |
-| --- | --- | --- |
-| First planting complete | Approved crop beds planted across cycle lengths | Planting record, field notes, plot references |
-| First MRV data submitted | First accepted MRV payload | Structured record, timestamp, source, reviewer notes |
-| First harvest recorded | First confirmed crop harvest | Crop type, yield, loss, sale/distribution record |
-| Soil baseline comparison | Soil readings after regeneration practices begin | EC, VWC, temperature, lab data where available |
-| Six-month production review | Interim operational report | Harvest, soil, water, pest, labor, and market notes |
-| Annual impact report | Full reporting period completed | EBF report, CRISP review, public records, DAO summary |
-
-<Warning>
-  Do not treat every Phase II observation as proof of regeneration. Some changes may be seasonal, weather-driven, or caused by measurement error. Strong claims require repeated measurements, clear baselines, and transparent methodology.
-</Warning>
+- likelihood / uncertainty;
+- consequence;
+- owner;
+- mitigation;
+- trigger;
+- residual risk;
+- next review.
 
 ---
 
 ## What Phase II does not guarantee
 
-Phase II reduces uncertainty by producing evidence, but it does not eliminate risk.
-
-| Risk | Why it still matters |
+| Phase II can produce | It cannot guarantee |
 | --- | --- |
-| Weather risk | Rainfall, drought, storms, and heat can affect yields and soil readings |
-| Execution risk | Planting, pruning, harvesting, and input timing determine outcomes |
-| Labor risk | Regenerative systems require consistent, skilled fieldwork |
-| Market risk | Prices, buyers, and demand can change after planting |
-| Data risk | Missing, inconsistent, or low-quality records weaken verification |
-| Soil risk | Soil improvement can take multiple cycles and may not be linear |
-| Governance risk | Milestones still require DAO review, documentation, and approval |
+| Planting actuals | Successful establishment |
+| Harvest actuals | Profitability |
+| Sales records | Stable future buyers/prices |
+| Regenerative-practice records | Soil/biodiversity restoration |
+| Soil/vegetation measurements | Causal proof |
+| Jobs / labor records | Decent-work outcomes |
+| Public-goods records | Broader social impact |
+| EAS attestations | Scientific certification |
+| Multiple crop cycles | Long-term resilience |
+| Forecast variance | Future forecast accuracy |
+| Funding milestone acceptance | Later farm success |
+| Risk updates | Risk elimination |
+| Longer operating history | Automatic certification or financing |
 
-<Tip>
-  The safest way to read Phase II is as a validation period: the farm is proving what works, what needs adjustment, and what evidence should guide future funding.
-</Tip>
+> **Phase II reduces uncertainty by replacing assumptions with actual operating evidence. It does not remove uncertainty.**
 
 ---
 
-## Phase II completion criteria
+# Phase II maturity and the transition to Phase III
 
-Phase II is complete when the farm demonstrates sustained production with verified evidence.
+There should not be one universal Phase II completion formula.
 
-| Criterion | How to verify it |
+The old page required:
+
+- three short-cycle harvests;
+- productive medium-cycle crops;
+- healthy long-cycle crops;
+- soil improvement;
+- annual impact report;
+- scored CRISP review;
+- enough DAO evidence.
+
+Those can be useful signals in some contexts.
+
+They are **not universal Framework requirements**.
+
+A future farm might:
+
+- have no short-cycle crops;
+- have no livestock;
+- use a different market model;
+- need more than one year before meaningful ecological comparison;
+- be privately/grant funded rather than Moloch funded;
+- use a different evidence cadence.
+
+### A stronger Phase II maturity review asks
+
+| Question | Evidence |
 | --- | --- |
-| At least three complete short-cycle harvest records | Harvest records submitted, reviewed, and compared against forecast assumptions |
-| Medium-cycle crops established and productive | First medium-cycle harvest recorded and verified |
-| Long-cycle crops established and healthy | Tree health records, survival checks, GPS/geospatial records, and vegetation signals |
-| Soil improvement evidence collected | Readings compared against the Phase I baseline across multiple cycles |
-| Annual impact report published | Environmental, economic, social, and risk evidence summarized and linked |
-| CRISP or equivalent risk review completed | Risk factors were scored and included in the annual impact review |
-| DAO has enough evidence to evaluate consolidation | Milestones, actuals, risks, and next-step budget are visible |
+| **Can the farm operate repeatedly?** | Repeated operating/production records appropriate to its system |
+| **Are actuals replacing assumptions?** | Harvest, price, cost, loss, timing, labor, market records |
+| **Can operators maintain the system?** | Role/capability/maintenance evidence |
+| **Are records sufficiently reliable?** | Reviewed lifecycle, provenance, comparable semantics |
+| **Are regenerative practices actually implemented?** | Practice records |
+| **Are outcome claims properly bounded?** | Baselines, methods, repeated evidence where required |
+| **Are risks visible and managed?** | Updated risk register / incidents / mitigation |
+| **Are major forecast errors understood?** | Variance analysis |
+| **Is the market path clearer?** | Actual buyers/channels/prices or documented changes |
+| **Are funded milestones closed correctly?** | Acceptance / variance / closeout where applicable |
+| **Is there a credible reason to consolidate or expand?** | Farm-specific Phase III scope and evidence |
+
+### Phase III trigger
+
+[Phase III — Consolidation & Expansion](/kokonut-framework/development-phases/phase-iii) should begin when the farm has enough operating history to justify a defined consolidation step.
+
+Possible Phase III triggers include:
+
+- standardizing successful operating procedures;
+- strengthening traceability;
+- pursuing certification;
+- formalizing market channels;
+- expanding infrastructure;
+- reducing founder dependency;
+- developing training systems;
+- strengthening replacement/replanting plans;
+- expanding evidence quality;
+- testing replication.
+
+The trigger should identify:
+
+- what is being consolidated/expanded;
+- why current evidence supports it;
+- unresolved risks;
+- budget/funding if needed;
+- operator acceptance;
+- reviewer/authority;
+- acceptance criteria.
+
+<Note>
+  Phase III readiness is not a declaration that “Phase II succeeded.” It is a decision that the current operating evidence is strong enough to justify the next bounded consolidation or expansion step.
+</Note>
 
 ---
 
-## Advancing to Phase III
+## Phase II reviewer checklist
 
-Phase III begins when the evidence from Phase II shows that the farm is ready to consolidate, certify, and expand.
+Use the applicable questions — not a universal pass/fail score.
 
-Phase III should not begin because a calendar says enough time has passed. It should begin because the farm has:
-
-- A verified production record
-- Clear harvest actuals
-- Documented soil and operational evidence
-- Healthy long-cycle crop establishment
-- A public impact report
-- A risk review
-- A credible path toward certification, market expansion, or replication
-
-[Read Phase III →](/kokonut-framework/development-phases/phase-iii)
-
----
-
-## Reviewer checklist
-
-Use this checklist before approving Phase II milestone disbursements or advancing to Phase III.
-
-- Are planting and harvest records complete?
-- Are actual yields separated from forecasts?
-- Are loss rates documented instead of assumed?
-- Are sale prices and distribution channels recorded?
-- Are soil readings compared against the Phase I baseline?
-- Are MRV payloads structured and inspectable?
-- Are EAS attestations linked where applicable?
-- Are claims about carbon, biodiversity, soil, or income supported by evidence?
-- Are risks and failed assumptions documented?
-- Is the next milestone clearly defined?
+- [ ] Is the current Phase II scope clear?
+- [ ] Are local operators still the named owners of routine field execution?
+- [ ] Are planting/establishment actuals recorded?
+- [ ] Are harvest quantities recorded where harvests occurred?
+- [ ] Are losses/rejections measured consistently?
+- [ ] Are realized prices separated from planning prices?
+- [ ] Are buyer/distribution records available where relevant?
+- [ ] Are expenses/cost actuals being captured?
+- [ ] Are forecasts being revised from actual performance?
+- [ ] Are regenerative practices documented separately from outcome claims?
+- [ ] Are ecological measurements comparable to the relevant baseline?
+- [ ] Are derived indicators labeled as derived indicators?
+- [ ] Are failed assumptions and incidents visible?
+- [ ] Are risk owners and mitigations current?
+- [ ] Are funded milestones distinguished from farm outcomes?
+- [ ] Are change-control / re-authorization requirements visible?
+- [ ] Are EAS/IPFS used only where useful rather than assumed mandatory?
+- [ ] Are sensitive records kept appropriately restricted?
+- [ ] Is current farm state routed to the Hub / live records?
+- [ ] Is the proposed Phase III trigger evidence-based and farm-specific?
 
 ---
 
-## Next steps
+## How different readers should use Phase II
 
 <CardGroup cols={2}>
-  <Card title="Phase I — Planning and Preparation" icon="chalkboard-user" href="/kokonut-framework/development-phases/phase-i">
-    The readiness work that must happen before Phase II production begins.
+  <Card title="Farm operators" icon="tractor">
+    Use actual field, harvest, cost, market, maintenance, and risk records to adjust operations rather than following the Phase I plan blindly.
   </Card>
 
-  <Card title="Phase III — Consolidation and Expansion" icon="chart-line-up" href="/kokonut-framework/development-phases/phase-iii">
-    The certification, market, and expansion phase that Phase II evidence makes possible.
+  <Card title="Capital reviewers" icon="file-signature">
+    Compare funded milestones, budget actuals, acceptance, variance, and closeout without turning treasury authority into farm-management authority.
   </Card>
 
-  <Card title="Crops & Harvest Forecast" icon="dragon" href="/ecosystem-wiki/kokonut-farms/adelphi/crops-and-harvest-forecast">
-    The Adelphi forecast is used to compare expected production against actual harvest data.
+  <Card title="Agronomy & impact reviewers" icon="microscope">
+    Separate implemented practice from measured outcome and check baseline, method, comparability, contribution, and uncertainty.
   </Card>
 
-  <Card title="Measurement, Reporting & Verification" icon="magnifying-glass-chart" href="/ecosystem-wiki/kokonut-farms/measurement-reporting-and-verification">
-    How Phase II farm activity becomes public, verifiable evidence.
+  <Card title="Guilds & contributors" icon="people-group">
+    Convert operational gaps into bounded agronomy, data, market, research, finance, documentation, maintenance, or evidence work.
   </Card>
 
-  <Card title="5 Principles of Regeneration" icon="hand-holding-seedling" href="/kokonut-framework/framework-components/framework-features/5-principles-of-regeneration">
-    The regenerative practices of Phase II are put into operation.
+  <Card title="Partners & buyers" icon="store">
+    Use traceable production, quality, timing, price, and delivery records rather than planning narratives alone.
   </Card>
 
-  <Card title="Ecological Impact Frameworks" icon="leaf" href="/kokonut-framework/framework-add-ons/ecological-impact-frameworks">
-    How EBF and CRISP interpret Phase II evidence for impact and risk reporting.
+  <Card title="Developers & agents" icon="database">
+    Preserve actual-vs-forecast status, lifecycle state, provenance, reviewer, variance, authority, privacy, and evidence pointers in software.
   </Card>
 </CardGroup>
+
+---
+
+## Current maturity
+
+| Surface | Status | Interpretation |
+| --- | --- | --- |
+| **Phase II methodology** | **Active Framework methodology** | Sustained operations + actuals + adaptation |
+| **Phase II duration** | **Not fixed** | Farm/crop/evidence dependent |
+| **Short/medium/long-cycle model** | **Useful planning pattern** | Not mandatory for every farm |
+| **Regenerative practices** | **Operational activity** | Do not equal measured regenerative outcomes |
+| **Forecast-vs-actual loop** | **Core Phase II function** | Models should become more farm-specific over time |
+| **Moloch milestones** | **Conditional** | Apply only when Moloch/funded authorization requires them |
+| **EAS / IPFS** | **Optional evidence infrastructure** | Provenance/storage, not automatic proof |
+| **Full impact reporting cadence** | **Farm / method-specific** | Annual can be useful but is not universal |
+| **Adelphi Phase II** | **Current live reference** | Strongest operating example; use Hub for current changeable records |
+| **Phase III transition** | **Evidence-based / farm-specific** | No universal harvest-count or time threshold |
+| **Phase IV evidence** | **Ongoing throughout Phase II** | Continuous longitudinal records and learning |
+
+---
+
+## Continue through the Framework
+
+<CardGroup cols={2}>
+  <Card title="Phase I — Planning & Preparation" icon="chalkboard-user" href="/kokonut-framework/development-phases/phase-i">
+    See how the baseline, risk, authority, evidence plan, and Phase II trigger should be established before sustained operations begin.
+  </Card>
+
+  <Card title="Phase III — Consolidation & Expansion" icon="chart-line-up" href="/kokonut-framework/development-phases/phase-iii">
+    Move from operating evidence into bounded consolidation, market, certification, training, infrastructure, or expansion decisions.
+  </Card>
+
+  <Card title="Crops & Harvest Forecast" icon="calculator" href="/ecosystem-wiki/kokonut-farms/adelphi/crops-and-harvest-forecast">
+    Compare Adelphi's planning assumptions with the actual dataset Phase II is meant to create.
+  </Card>
+
+  <Card title="MRV Methodology" icon="magnifying-glass-chart" href="/ecosystem-wiki/kokonut-farms/measurement-reporting-and-verification">
+    See how Phase II observations and actuals become reviewed evidence.
+  </Card>
+
+  <Card title="Positive Impact Methodology" icon="recycle" href="/kokonut-framework/framework-components/framework-features/methodology-positive-impact">
+    Keep alignment, activity, measured outcome, and impact interpretation distinct.
+  </Card>
+
+  <Card title="Adelphi Physical Systems" icon="puzzle" href="/ecosystem-wiki/kokonut-farms/adelphi/crops-biodiversity-and-infrastructure">
+    Review the physical production system currently serving as the Phase II reference implementation.
+  </Card>
+</CardGroup>
+
+> **Phase II succeeds when the farm becomes less dependent on assumptions and more capable of learning from its own operating evidence.**

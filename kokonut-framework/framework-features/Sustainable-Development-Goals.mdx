@@ -1,303 +1,754 @@
 ---
 title: "Sustainable Development Goals"
 icon: "chart-network"
-description: "How the Kokonut Framework maps regenerative farm activity to SDGs through evidence, MRV, 8 Forms of Capital, and annual reporting."
+description: "How Kokonut uses the 17 UN Sustainable Development Goals as an evidence-mapping and reporting lens without turning alignment, activities, forecasts, attestations, or governance decisions into verified development impact."
 ---
 
-# Kokonut uses the SDGs as an evidence map, not a marketing label.
+# The SDGs help Kokonut organize development claims — they do not create the evidence.
 
-The Kokonut Framework maps community-owned regenerative farms to the United Nations Sustainable Development Goals so DAO members, grant reviewers, partners, researchers, and local communities can understand what a farm is trying to improve — and what evidence is needed to support each claim.
+The Sustainable Development Goals give Kokonut a shared language for asking how farm activity may relate to:
 
-Kokonut does **not** treat every SDG claim as equally mature. Some outcomes are directly produced by every Kokonut Framework farm and can be tracked through farm records, MRV workflows, and annual reporting. Others are real potential co-benefits, but depend on location, scale, maturity, methodology, and data quality.
+- livelihoods;
+- food;
+- gender;
+- work;
+- land;
+- education;
+- water;
+- climate;
+- infrastructure;
+- partnerships;
+- other development priorities.
 
-<div style={{ display: "flex", gap: "12px", justifyContent: "center", flexWrap: "wrap", margin: "1.5rem 0 0.75rem" }}>
-  <a href="#sdg-map" style={{ display: "inline-flex", alignItems: "center", gap: "6px", background: "#009F4D", color: "#fff", padding: "10px 20px", borderRadius: "8px", fontWeight: "600", fontSize: "14px", textDecoration: "none" }}>
-    See the SDG Map →
-  </a>
+That makes the SDGs useful for:
 
-  <a href="/ecosystem-wiki/kokonut-farms/adelphi/sustainable-development-goals" style={{ display: "inline-flex", alignItems: "center", gap: "6px", border: "1.5px solid #009F4D", color: "#009F4D", padding: "10px 20px", borderRadius: "8px", fontWeight: "600", fontSize: "14px", textDecoration: "none", background: "transparent" }}>
-    See Adelphi Evidence
-  </a>
-</div>
+- farm planning;
+- grant applications;
+- partner reporting;
+- MRV design;
+- annual review;
+- research;
+- public communication.
 
-<p style={{ textAlign: "center", fontSize: "13px", color: "#6b7280", marginTop: "0.25rem" }}>
-  Use this page when writing proposals, preparing grant reports, evaluating farm impact, or deciding which claims need MRV evidence.
-</p>
+But an SDG label is **not** an outcome.
 
----
+> **Use the SDGs to organize the claim. Use farm evidence to determine how strong the claim can be.**
 
-## SDG contribution at a glance
+<CardGroup cols={2}>
+  <Card title="See Adelphi's SDG evidence" icon="seedling" href="/ecosystem-wiki/kokonut-farms/adelphi/sustainable-development-goals">
+    Inspect the current five-goal reference set and the evidence boundaries behind each Adelphi claim.
+  </Card>
 
-| Tier | SDGs | Evidence maturity | How to report it |
-| --- | --- | --- | --- |
-| **Primary SDGs** | 1, 2, 5, 8, 15 | Directly connected to Kokonut's farm model and measurable through farm operations | Report with farm records, MRV events, annual impact reporting, and Data Hub references |
-| **Secondary SDGs** | 3, 4, 6, 7, 9, 10, 11, 12, 13, 14, 16, 17 | Conditional or indirect; it depends on farm maturity, location, partners, and methodology | Report as co-benefits unless evidence is strong enough for direct claims |
+  <Card title="Use the Positive Impact claim ladder" icon="recycle" href="/kokonut-framework/framework-components/framework-features/methodology-positive-impact">
+    Separate alignment, activity, measured outcome, and impact interpretation before reporting SDG contribution.
+  </Card>
+
+  <Card title="Plan the evidence" icon="magnifying-glass-chart" href="/ecosystem-wiki/kokonut-farms/measurement-reporting-and-verification">
+    Connect SDG claims to source records, methods, reporting periods, review, publication, and limitations.
+  </Card>
+
+  <Card title="Model a scenario" icon="calculator" href="/kokonut-framework/impact-calculator">
+    Explore SDG relevance and evidence readiness without generating a verified impact score.
+  </Card>
+</CardGroup>
 
 <Warning>
-  SDG alignment is not the same as verified impact. A farm can align with an SDG through its design, but it should only claim verified contribution when the activity, metric, evidence source, and reporting period are clear.
+  **SDG alignment does not mean UN endorsement, certification, verified contribution, or achievement of a Goal.** A farm should report only the level of claim its evidence supports.
 </Warning>
 
 ---
 
-## How SDG claims become evidence
+## The SDG claim ladder
+
+Kokonut uses the same four-level claim ladder across SDG reporting.
 
 ```mermaid
-flowchart TD
-    A["Farm activity"] --> B["Framework category"]
-    B --> C["SDG outcome"]
-    C --> D["Evidence source"]
-    D --> E["MRV payload"]
-    E --> F["IPFS / Filecoin record"]
-    F --> G["Farm Registry event"]
-    G --> H["EAS attestation"]
-    H --> I["Data Hub + annual report"]
-    I --> J["DAO members, grant reviewers, partners, communities"]
+flowchart LR
+    A["1. Alignment<br/>the farm design is relevant to the Goal"] --> B["2. Activity<br/>a relevant intervention happened"]
+    B --> C["3. Measured outcome<br/>a defined change was recorded"]
+    C --> D["4. Impact interpretation<br/>evidence supports a bounded SDG contribution"]
 ```
 
-The evidence standard is simple: every SDG claim should answer **what happened, where it happened, who benefited, how it was measured, and where the record can be inspected**.
+| Level | What it means | Example | What it does not prove |
+| --- | --- | --- | --- |
+| **Alignment** | The farm design relates to an SDG | A farm plans diversified food production | Food security improved |
+| **Activity** | A relevant intervention occurred | Crops were planted or a training was delivered | The development outcome changed |
+| **Measured outcome** | A defined result was recorded | A harvest, job, skill assessment, or ecological indicator was measured | The farm caused the broader SDG outcome |
+| **Impact interpretation** | Evidence and context support a bounded conclusion | Food access improved for a defined group during a defined period | Universal or permanent achievement of the Goal |
 
-[Read the MRV methodology →](/ecosystem-wiki/kokonut-farms/measurement-reporting-and-verification)
+<Info>
+  Most SDG overclaiming happens when documentation jumps from **alignment or activity** directly to **impact interpretation**.
+</Info>
 
 ---
 
-## Where SDGs fit inside the Kokonut Framework
+## The current five-goal reference set
 
-<CardGroup cols={3}>
-  <Card title="Framework" icon="diagram-project">
-    Defines the farm model, baseline data, development phases, regeneration principles, and value categories.
-  </Card>
+Kokonut's current documentation and calculator emphasize five SDGs because they are the strongest recurring fit with **Adelphi**, the first live reference farm:
 
-  <Card title="8 Forms of Capital" icon="water">
-    Translates farm activity into natural, financial, social, human, material, intellectual, cultural, and health value.
-  </Card>
+- **SDG 1 — No Poverty**
+- **SDG 2 — Zero Hunger**
+- **SDG 5 — Gender Equality**
+- **SDG 8 — Decent Work and Economic Growth**
+- **SDG 15 — Life on Land**
 
-  <Card title="MRV" icon="magnifying-glass-chart">
-    Turns farm activity into structured evidence, public records, attestations, and annual impact reports.
-  </Card>
-</CardGroup>
+These five are useful as a **reference reporting set**.
 
-| Framework layer | Role in SDG reporting |
+They are not mandatory outcomes for every future farm.
+
+A future farm may:
+
+- have strong evidence for only some of the five;
+- add a different SDG because its local intervention genuinely supports it;
+- omit a Goal when the relationship is weak;
+- strengthen or downgrade a Goal as actual evidence changes.
+
+> **The Framework standard is evidence relevance, not checkbox coverage.**
+
+### SDG 13 remains a climate co-benefit in the current reference model
+
+Biochar, agroforestry, perennial vegetation, soil-management practices, and reduced bare soil can all be climate-relevant.
+
+That does not create a quantified climate result.
+
+Until an appropriate carbon/climate methodology is operationalized with:
+
+- baseline;
+- boundary;
+- reporting period;
+- measurements;
+- uncertainty;
+- permanence/reversal treatment where relevant;
+- qualified review;
+
+**SDG 13 — Climate Action** should remain a secondary climate co-benefit rather than a verified carbon claim.
+
+---
+
+## Primary, contextual, and inactive are reporting states — not permanent labels
+
+The old page divided all 17 Goals into permanent “primary” and “secondary” tiers.
+
+A more useful approach is to classify SDGs **per farm and reporting period**.
+
+| Reporting state | Meaning |
 | --- | --- |
-| **Common Data Schema** | Captures the baseline farm record: land, location, crops, governance, funding, market, and public goods commitments |
-| **Pillars of Value** | Helps DAO reviewers evaluate what the farm is trying to create, who benefits, how much, and what risks exist |
-| **8 Forms of Capital** | Categorizes value beyond revenue, so SDG claims are not reduced to money alone |
-| **5 Principles of Regeneration** | Grounds environmental SDG claims in practical farm methods |
-| **MRV workflow** | Converts farm activity into evidence that can be inspected and reported |
+| **Reference priority** | Part of the current Kokonut/Adelphi reporting set and materially relevant to the project |
+| **Contextual / conditional** | Relevant only if the farm has the corresponding intervention and evidence |
+| **Inactive / not claimed** | The farm should not claim this Goal in the current period |
+| **Under review** | Relationship appears plausible but the boundary, method, or evidence is not yet strong enough |
+
+This avoids treating every Goal as something every farm must “cover.”
 
 ---
 
-## SDG map
+## The 17-SDG Framework map
 
-| SDG | Kokonut relationship | Evidence maturity |
+The full map remains useful as a **screening and interpretation tool**.
+
+It should not be read as a statement that every Kokonut farm contributes to all 17 Goals.
+
+| SDG | Possible Kokonut relevance | Evidence boundary |
 | --- | --- | --- |
-| **SDG 1 — No Poverty** | Jobs, income resilience, public goods allocation, farm revenue circulation | Primary |
-| **SDG 2 — Zero Hunger** | Diversified local food production, harvests, eggs, resilient crop cycles | Primary |
-| **SDG 3 — Good Health and Well-being** | Access to fresh food, nature, community programming, reduced synthetic input exposure | Secondary |
-| **SDG 4 — Quality Education** | Farm workshops, open-source documentation, regenerative agriculture training | Secondary |
-| **SDG 5 — Gender Equality** | Women-led ownership and governance participation where implemented | Primary |
-| **SDG 6 — Clean Water and Sanitation** | Soil cover, erosion control, runoff reduction, watershed health | Secondary |
-| **SDG 7 — Affordable and Clean Energy** | Reduced synthetic-input dependence and potential future renewable systems | Secondary |
-| **SDG 8 — Decent Work and Economic Growth** | Farm jobs, skills, local enterprise, regenerative work pathways | Primary |
-| **SDG 9 — Industry, Innovation and Infrastructure** | Farm Registry, Data Hub, AI agents, open MRV infrastructure | Secondary |
-| **SDG 10 — Reduced Inequalities** | Contribution paths, Guilds, local participation, public goods allocation | Secondary |
-| **SDG 11 — Sustainable Cities and Communities** | Community hubs, food access, educational spaces, resilient local systems | Secondary |
-| **SDG 12 — Responsible Consumption and Production** | Organic inputs, closed-loop fertility, local markets, waste reduction | Secondary |
-| **SDG 13 — Climate Action** | Biochar, agroforestry, vegetation health, soil regeneration, resilience | Secondary / climate co-benefit |
-| **SDG 14 — Life Below Water** | Reduced runoff and possible watershed-to-coast benefits where relevant | Secondary |
-| **SDG 15 — Life on Land** | Biodiversity, agroforestry, living roots, erosion control, nursery propagation | Primary |
-| **SDG 16 — Peace, Justice and Strong Institutions** | Transparent DAO governance, proposal processes, public records | Secondary |
-| **SDG 17 — Partnerships for the Goals** | Public goods funders, MRV partners, open-source collaborators, local partnerships | Secondary |
+| **1 — No Poverty** | Work, productive assets, realized income, public-benefit flows | Jobs/revenue alone do not prove poverty reduction |
+| **2 — Zero Hunger** | Food production, harvest, distribution, affordability/access | Crop plans do not prove improved food security |
+| **3 — Good Health and Well-being** | Worker safety, food access, health-related programming | Regenerative production does not prove nutrition or medical outcomes |
+| **4 — Quality Education** | Training, demonstrations, open learning resources | Attendance does not prove learning |
+| **5 — Gender Equality** | Women-led ownership/management, participation, opportunity, benefit sharing | Women-led status alone does not prove reduced gender inequality |
+| **6 — Clean Water and Sanitation** | Water-management, runoff, erosion, water quality where relevant | Soil cover alone does not prove watershed improvement |
+| **7 — Affordable and Clean Energy** | Renewable-energy systems or documented energy transition where implemented | Reduced fertilizer/input use is not itself a clean-energy outcome |
+| **8 — Decent Work and Economic Growth** | Jobs, work quality, skills, realized economic activity | Job count alone does not prove decent work |
+| **9 — Industry, Innovation and Infrastructure** | Farm infrastructure, data systems, open technical infrastructure | Technology deployment alone does not prove broad industrial development |
+| **10 — Reduced Inequalities** | Access, participation, distribution, contribution pathways | Open participation does not prove inequality decreased |
+| **11 — Sustainable Cities and Communities** | Local food systems, community spaces, resilience where applicable | Rural farm activity is not automatically an SDG 11 outcome |
+| **12 — Responsible Consumption and Production** | Input/resource records, waste reduction, reuse, procurement, production practices | “Closed loop” language requires material-flow evidence |
+| **13 — Climate Action** | Climate-relevant practices, carbon/soil/biomass evidence where methodology exists | No quantified climate claim without a fit-for-purpose methodology |
+| **14 — Life Below Water** | Watershed-to-coast effects where a relevant hydrological connection exists | A terrestrial farm should not claim SDG 14 without water/coastal evidence |
+| **15 — Life on Land** | Soil, vegetation, habitat, biodiversity, agroforestry, nursery work | Practices do not automatically prove ecological recovery |
+| **16 — Peace, Justice and Strong Institutions** | Transparent governance, dispute handling, auditability where the claim is relevant | On-chain records alone do not prove institutional quality |
+| **17 — Partnerships for the Goals** | Formal collaboration, shared delivery, funding, research, open-source coordination | A partner logo or informal relationship does not prove partnership outcomes |
 
 <Note>
-  The five primary SDGs are the baseline for Kokonut Framework farms. Secondary SDGs can become stronger over time, but only when the farm collects the right evidence and reports it consistently.
+  The Framework can screen all 17 Goals. A farm report should activate only the Goals for which the project can define a credible relationship and evidence plan.
 </Note>
 
 ---
 
-## Primary SDGs
+## Where SDGs sit inside the Kokonut Framework
 
-### SDG 1 — No Poverty
+```mermaid
+flowchart TD
+    A["Common Data Schema<br/>baseline context"] --> B["Pillars of Value<br/>WHAT · WHO · HOW MUCH · CONTRIBUTION · RISK · PUBLIC GOODS"]
+    B --> C["8 Forms of Capital<br/>value categories"]
+    C --> D["Farm intervention + evidence plan"]
+    D --> E["Real operations"]
+    E --> F["MRV + actual records"]
+    F --> G["SDG interpretation"]
+    G --> H["Report / partner / research / governance use"]
+    H --> I["Updated plan + evidence needs"]
+```
 
-Kokonut farms contribute to poverty reduction by creating productive local assets: jobs, skills, farm revenue, public goods funding, and community-owned infrastructure.
-
-| What to measure | Evidence source |
+| Framework layer | Role in SDG work |
 | --- | --- |
-| Jobs created or supported | Employment records, role descriptions, payroll, or compensation records |
-| Farm revenue | Sales records, harvest reports, Data Hub entries |
-| Public goods allocation | DAO proposal, treasury record, farm revenue report |
-| Local income resilience | Annual impact report, community interviews, and household income assessments where available |
+| **Common Data Schema** | Establishes the farm baseline and planning context |
+| **Pillars of Value** | Defines what, who, scale, contribution, risk, and public benefit |
+| **8 Forms of Capital** | Categorizes the type of value under discussion |
+| **5 Principles of Regeneration** | Describes regenerative design/practice |
+| **Positive Impact Methodology** | Defines the claim ladder and interpretation boundary |
+| **MRV** | Connects claims to observations, measurements, actuals, review, and publication |
+| **SDGs** | Map reviewed evidence into a recognized development-goal lens |
+| **Kokonut Intelligence** | Supports data lifecycle, analytics, reporting, and optional provenance infrastructure |
 
-**Claim standard:** Do not claim poverty reduction only because a farm exists. Show the job records, revenue activity, public goods allocation, and who benefited.
+The SDG layer sits **after the evidence**, not before it.
 
 ---
 
-### SDG 2 — Zero Hunger
+## How SDG evidence should flow
 
-Kokonut farms contribute to food security by producing a variety of crops across short, medium, long, and continuous cycles.
+The durable evidence sequence is:
 
-| What to measure | Evidence source |
-| --- | --- |
-| Crop production | Harvest records, crop cycle logs, yield reports |
-| Food diversity | Species lists, crop plans, harvest categories |
-| Local distribution | Sales records, distribution records, buyer/community records |
-| Resilience of production | Crop cycle performance across seasons, losses, and actuals vs. forecast |
+> **claim hypothesis → source record → observation / measurement / actual → review → publication when appropriate → optional attestation → SDG interpretation**
 
-**Claim standard:** Report food production through actual harvests and distribution records, not only crop plans.
+```mermaid
+flowchart LR
+    A["SDG hypothesis"] --> B["Relevant farm activity"]
+    B --> C["Source record"]
+    C --> D["Measurement / actual"]
+    D --> E["Review lifecycle"]
+    E --> F["Published evidence"]
+    F --> G["SDG interpretation"]
 
----
+    F --> H["Optional EAS / provenance"]
+    H --> G
+```
 
-### SDG 5 — Gender Equality
+Not every SDG record requires:
 
-Kokonut farms contribute to gender equality when ownership, leadership, training, decision-making, and work opportunities are accessible and documented.
+- IPFS;
+- Filecoin;
+- EAS;
+- an on-chain event.
 
-| What to measure | Evidence source |
-| --- | --- |
-| Ownership and leadership | Operator records, governance records, founder/team documentation |
-| Decision-making participation | Meeting notes, DAO proposals, and role assignments |
-| Training access | Workshop attendance, training logs, participant records |
-| Economic participation | Employment records, compensation records, and contribution records |
+Those technologies can help with provenance and durable evidence references.
 
-**Claim standard:** Gender equality claims should be tied to real leadership, participation, and benefit-sharing data.
-
----
-
-### SDG 8 — Decent Work and Economic Growth
-
-Kokonut farms contribute to decent work by creating regenerative agriculture roles, skill-building pathways, and locally rooted economic activity.
-
-| What to measure | Evidence source |
-| --- | --- |
-| Number of jobs | Employment records and role descriptions |
-| Quality of work | Compensation, safety practices, training, continuity, and role progression |
-| Skills developed | Training logs, workshop records, and certifications were available |
-| Local economic activity | Farm revenue, supplier records, market records, and public goods allocation |
-
-**Claim standard:** Count jobs carefully, distinguish full-time, part-time, seasonal, and bounty-based work, and do not treat projected work as actual employment.
+They do not establish the development outcome by themselves.
 
 ---
 
-### SDG 15 — Life on Land
+# The current five reference SDGs
 
-Kokonut farms contribute to terrestrial ecosystem health through agroforestry, biodiversity, living roots, soil protection, erosion control, nursery propagation, and ecological monitoring.
+## SDG 1 — No Poverty
 
-| What to measure | Evidence source |
+### Relevant Kokonut pathways
+
+A farm may connect to SDG 1 through:
+
+- paid work;
+- productive assets;
+- realized farm income;
+- operator income;
+- public-benefit transfers;
+- livelihood capacity.
+
+### Claim progression
+
+| Level | Example |
 | --- | --- |
-| Biodiversity | Species inventory, nursery logs, field observations |
-| Vegetation health | Satellite indices such as NDVI, NDRE, and MSAVI, where available |
-| Soil condition | Soil observations, soil tests, organic matter, moisture, and EC readings were available |
-| Erosion and land cover | Ground cover records, drone imagery, field logs, photos |
-| Regenerative practices | Biochar records, syntropic plot logs, crop rotation, and planting records |
+| **Alignment** | The farm is intended to create local economic opportunity |
+| **Activity** | Worker roles exist; production infrastructure is operating |
+| **Measured outcome** | Compensation, realized revenue, transfers, or beneficiary income changes are recorded |
+| **Impact interpretation** | Evidence supports a bounded livelihood/poverty conclusion for a defined group and period |
 
-**Claim standard:** Life-on-land claims should be connected to species records, soil/vegetation evidence, and observable land-management practices.
+### Evidence can include
 
----
-
-## Secondary SDGs and co-benefits
-
-Secondary SDGs are not less important. They are simply more dependent on farm maturity, implementation depth, and verification quality.
-
-| SDG | How Kokonut may contribute | What would make the claim stronger |
-| --- | --- | --- |
-| **3 — Good Health and Well-being** | Fresh food access, community gathering, nature exposure | Distribution records, health partner data, program attendance, nutrition methodology |
-| **4 — Quality Education** | Farm workshops, open documentation, training programs | Attendance logs, curriculum, learning outcomes, participant feedback |
-| **6 — Clean Water and Sanitation** | Erosion control, runoff reduction, soil cover | Water testing, runoff monitoring, watershed data |
-| **7 — Affordable and Clean Energy** | Reduced synthetic-input dependence, possible renewable systems | Energy baseline, renewable system deployment records, fuel/input reduction data |
-| **9 — Industry, Innovation and Infrastructure** | Farm Registry, Data Hub, AI agents, open-source MRV | API usage, uptime, integrations, developer documentation, third-party use |
-| **10 — Reduced Inequalities** | Contribution paths, Guild Points, local access, public goods allocation | Participation records, contribution records, benefit distribution data |
-| **11 — Sustainable Cities and Communities** | Community hub, education space, local resilience | Event records, local service records, community feedback |
-| **12 — Responsible Consumption and Production** | Organic inputs, closed-loop fertility, waste reduction | Input logs, waste records, certification status, buyer/distribution records |
-| **13 — Climate Action** | Biochar, agroforestry, soil building, vegetation resilience | Carbon methodology, soil data, biomass data, reporting period, third-party review |
-| **14 — Life Below Water** | Reduced runoff and land-sea awareness where watersheds connect to coast | Water quality, watershed mapping, coastal partner records |
-| **16 — Peace, Justice and Strong Institutions** | Transparent DAO governance, proposal records, on-chain attestations | Governance records, proposal outcomes, dispute logs, auditability |
-| **17 — Partnerships for the Goals** | Public goods funders, MRV partners, local partners, open-source collaborators | Partnership agreements, deliverables, joint reports, contribution records |
+- role/employment records;
+- compensation/payroll;
+- realized sales/revenue;
+- operator income where appropriate;
+- public-goods transfers/use;
+- beneficiary/household evidence when making poverty claims.
 
 <Warning>
-  Climate and carbon claims require a higher evidence standard. Biochar, agroforestry, and syntropic farming can provide climate co-benefits, but carbon outcomes should not be treated as verified carbon credits without a methodology, measurement, a reporting period, and verification.
+  **Jobs, forecast revenue, productive assets, or a public-goods percentage do not by themselves prove poverty reduction.**
 </Warning>
 
 ---
 
-## In practice: Adelphi
+## SDG 2 — Zero Hunger
 
-Adelphi is Kokonut's current reference farm for SDG evidence. It focuses on five primary SDGs:
+### Relevant Kokonut pathways
 
-| SDG | Adelphi evidence direction |
+A farm may connect to SDG 2 through:
+
+- food production;
+- harvest;
+- distribution;
+- affordability/access;
+- production continuity;
+- diversified crop/food systems.
+
+### Claim progression
+
+| Level | Example |
 | --- | --- |
-| **SDG 1 — No Poverty** | Jobs, farm revenue forecast and actuals, public goods allocation |
-| **SDG 2 — Zero Hunger** | Crop cycles, harvest records, egg production, and local food distribution |
-| **SDG 5 — Gender Equality** | Women-led ownership, management, and community leadership |
-| **SDG 8 — Decent Work** | Seven documented roles, training, farm operations, and regenerative skills |
-| **SDG 15 — Life on Land** | Biodiversity nursery, syntropic plots, vegetation monitoring, and soil practices |
+| **Alignment** | Food production is part of the farm design |
+| **Activity** | Crops were planted; poultry/food-production systems operate |
+| **Measured outcome** | Harvest, losses, sales, distribution, and/or access are recorded |
+| **Impact interpretation** | Evidence supports a bounded food-access or food-security conclusion |
 
-[See Adelphi's SDG evidence page →](/ecosystem-wiki/kokonut-farms/adelphi/sustainable-development-goals)
+### Evidence can include
+
+- harvest actuals;
+- crop/product records;
+- egg/animal-production records;
+- losses;
+- sales;
+- distribution;
+- affordability/access;
+- target-population evidence where making food-security claims.
+
+> **Production capacity is not the same as improved food security.**
 
 ---
 
-## How to use this page
+## SDG 5 — Gender Equality
+
+### Relevant Kokonut pathways
+
+A farm may connect to SDG 5 through:
+
+- ownership;
+- management;
+- decision-making;
+- paid work;
+- training;
+- contributor access;
+- income and benefit sharing.
+
+### Claim progression
+
+| Level | Example |
+| --- | --- |
+| **Alignment** | The project intends to expand women's participation or leadership |
+| **Activity / documented state** | Women hold documented founder, owner, operator, management, or contributor roles |
+| **Measured outcome** | Participation, compensation, income, opportunity, or decision-power changes are recorded |
+| **Impact interpretation** | Evidence supports a bounded gender-equity conclusion |
+
+### Adelphi boundary
+
+Adelphi has one of the clearest **documented-state** relationships:
+
+> **Adelphi is founded, owned, and operated by Yanny and Neury Hernández.**
+
+That is meaningful evidence of women-led ownership/operation.
+
+It is not by itself evidence that:
+
+- local gender inequality declined;
+- women across the community gained income;
+- decision power changed beyond the founders;
+- broader structural inequality was reduced.
+
+---
+
+## SDG 8 — Decent Work and Economic Growth
+
+### Relevant Kokonut pathways
+
+A farm may connect to SDG 8 through:
+
+- employment;
+- work quality;
+- safety;
+- skills;
+- continuity;
+- local enterprise;
+- realized economic activity.
+
+### Claim progression
+
+| Level | Example |
+| --- | --- |
+| **Alignment** | The farm intends to create locally rooted work |
+| **Activity / documented state** | Worker roles exist; training and operations occur |
+| **Measured outcome** | Compensation, duration, safety, retention, skill, and realized economic records exist |
+| **Impact interpretation** | Evidence supports a bounded decent-work or economic-development conclusion |
+
+### Evidence can include
+
+- role type;
+- start/end dates;
+- full-time / part-time / seasonal status;
+- compensation;
+- safety records;
+- training;
+- retention;
+- skill progression;
+- realized revenue;
+- local supplier/market records where relevant.
+
+<Info>
+  **A job count is not a decent-work assessment.** The quality, conditions, duration, safety, and compensation of work matter.
+</Info>
+
+---
+
+## SDG 15 — Life on Land
+
+### Relevant Kokonut pathways
+
+A farm may connect to SDG 15 through:
+
+- agroforestry;
+- vegetation;
+- soil protection;
+- habitat;
+- biodiversity;
+- nursery propagation;
+- native/at-risk species work;
+- erosion/land-cover management.
+
+### Claim progression
+
+| Level | Example |
+| --- | --- |
+| **Alignment** | The farm is designed around regenerative land management |
+| **Activity** | Syntropic plots, nursery work, biochar, ground cover, or agroforestry are implemented |
+| **Measured outcome** | Soil, vegetation, survival, habitat, species, or land-condition indicators are recorded |
+| **Impact interpretation** | Evidence supports a bounded terrestrial-ecosystem conclusion |
+
+### Evidence can include
+
+- species inventory;
+- nursery records;
+- planting/survival;
+- field observations;
+- soil measurements;
+- ground-cover records;
+- erosion observations;
+- remote-sensing indices;
+- repeat biodiversity/habitat surveys.
+
+<Warning>
+  **NDVI, NDRE, ReCI, MSAVI, species counts, biochar, or syntropic practices do not by themselves prove biodiversity restoration, soil recovery, or reduced land degradation.**
+</Warning>
+
+---
+
+## Contextual SDGs: activate them only when the intervention is real
+
+The remaining SDGs can be relevant, but the relationship should be earned project by project.
+
+| SDG | Potential pathway | Evidence that strengthens the relationship |
+| --- | --- | --- |
+| **3 — Good Health and Well-being** | Worker safety, food access, wellbeing program | Safety/incident records, distribution/access evidence, appropriate health methodology |
+| **4 — Quality Education** | Training, demonstrations, open learning | Curriculum, attendance, learning assessment, applied capability |
+| **6 — Clean Water and Sanitation** | Water quality, runoff, watershed management | Water sampling, runoff/erosion monitoring, water-use/watershed records |
+| **7 — Affordable and Clean Energy** | Solar/renewable energy, fuel/electricity transition | Energy baseline, generation, consumption, avoided fossil energy where methodologically justified |
+| **9 — Industry, Innovation and Infrastructure** | Farm/data infrastructure, open technology, APIs | Operational assets, uptime, use, integrations, external reuse |
+| **10 — Reduced Inequalities** | Access, distribution, participation, opportunity | Participant/beneficiary distribution, compensation/access and outcome evidence |
+| **11 — Sustainable Cities and Communities** | Food/community/resilience systems where urban/community context supports the claim | Local-service, food-access, resilience, community-use evidence |
+| **12 — Responsible Consumption and Production** | Input substitution, reuse, material flows, waste reduction | Procurement, input, waste, reuse, production, certification records |
+| **13 — Climate Action** | Carbon/soil/biomass/resilience practices where methodology exists | Climate methodology, baseline, measurements, uncertainty, reporting period, review |
+| **14 — Life Below Water** | Watershed/coastal effects where the farm has a relevant hydrological pathway | Water-quality, watershed, downstream/coastal evidence |
+| **16 — Peace, Justice and Strong Institutions** | Transparency, governance process, grievance/dispute mechanisms where relevant | Decision records, participation, dispute/audit evidence |
+| **17 — Partnerships for the Goals** | Formal delivery partnerships, research, funding, open-source collaboration | Agreements, responsibilities, deliverables, contribution records, joint outputs |
+
+### Do not force a relationship
+
+Examples:
+
+- A farm without renewable-energy infrastructure should not claim SDG 7 because it uses less synthetic fertilizer.
+- A terrestrial inland farm should not claim SDG 14 merely because runoff exists in theory.
+- A public GitHub repository does not automatically establish SDG 9.
+- An on-chain governance process does not automatically establish SDG 16.
+- Listing a funder or collaborator does not by itself establish SDG 17 outcomes.
+
+---
+
+## Goal-level alignment and target-level claims are different
+
+An SDG is broad.
+
+Individual SDG **targets and indicators** are more specific.
+
+A report should not cite a specific target merely because the project is generally aligned with the Goal.
+
+Before using target-level language, document:
+
+1. the exact target being referenced;
+2. why the intervention is relevant to that target;
+3. the farm/project boundary;
+4. the metric or evidence;
+5. reporting period;
+6. limitations;
+7. whether the statement is alignment, activity, measured outcome, or impact interpretation.
+
+> **Goal-level relevance is not automatic target-level evidence.**
+
+---
+
+## How the Pillars and 8 Forms strengthen an SDG claim
+
+The SDGs tell the reader **which development lens** is being used.
+
+The Pillars and 8 Forms help prevent that lens from becoming vague.
+
+### Pillars
+
+For any SDG claim, ask:
+
+- **WHAT** changed?
+- **WHO** experienced it?
+- **HOW MUCH** changed and for how long?
+- What did the intervention **CONTRIBUTE**?
+- What **RISK** or uncertainty remains?
+- What **PUBLIC GOODS** were actually delivered, if relevant?
+
+### 8 Forms of Capital
+
+Use the 8 Forms to categorize the underlying value without treating them as interchangeable units.
+
+Examples:
+
+| SDG | Likely capital forms |
+| --- | --- |
+| SDG 1 | Financial, Human, Social |
+| SDG 2 | Natural, Financial, Material, Health |
+| SDG 5 | Social, Human, Financial, Cultural |
+| SDG 8 | Human, Financial, Social, Health |
+| SDG 15 | Natural, Material, Intellectual |
+
+A single record can be relevant to multiple lenses.
+
+That does not make it multiple independent impacts.
+
+---
+
+## A reusable SDG-claim record
+
+For any material SDG statement, capture:
+
+| Field | Question |
+| --- | --- |
+| **SDG** | Which Goal is being referenced? |
+| **Target, if used** | Which exact target? |
+| **Claim** | What exactly is being asserted? |
+| **Claim level** | Alignment, activity, measured outcome, or impact interpretation? |
+| **Farm / boundary** | Which farm, plot, group, community, or system? |
+| **WHO** | Who or what is affected? |
+| **Baseline** | What was the starting condition, where relevant? |
+| **Intervention** | What action is relevant to the Goal? |
+| **Metric / evidence** | What is observed, counted, or measured? |
+| **Method** | How was the metric produced? |
+| **Reporting period** | What dates does the claim cover? |
+| **Actual vs. forecast** | Is it observed performance or modeled? |
+| **Source** | Which record/dataset supports it? |
+| **Review status** | Draft, submitted, reviewed/verified, published? |
+| **Reviewer** | Who performed the applicable review? |
+| **Contribution context** | What other actors or conditions may explain the outcome? |
+| **Risk / uncertainty** | What can weaken or reverse the claim? |
+| **Evidence pointer** | Hub record, file, dataset, CID, attestation, report? |
+| **Next evidence** | What would strengthen or falsify the claim? |
+
+This record is more useful than attaching an SDG icon to a proposal.
+
+---
+
+## Adelphi: the current reference map
+
+Adelphi currently uses five primary SDGs as its **reference reporting set**.
+
+| SDG | Strong current Adelphi claim | Current evidence class | Stronger claim still needs |
+| --- | --- | --- | --- |
+| **1 — No Poverty** | Seven jobs are documented; farm revenue/public-goods flows are modeled | Documented state + forecast | Compensation/income, realized revenue, actual allocations, beneficiary/household evidence |
+| **2 — Zero Hunger** | Diversified food-production capacity across crops and poultry is documented | Implemented system + forecast | Harvest actuals, sales/distribution, affordability/access evidence |
+| **5 — Gender Equality** | The farm is founded, owned, and operated by Yanny and Neury Hernández | Documented state | Broader participation, opportunity, compensation, income, decision-power and benefit-sharing evidence |
+| **8 — Decent Work** | Seven jobs are documented and multiple skill/work domains exist | Documented state + program intent | Role type, duration, compensation, safety, retention, skill evidence |
+| **15 — Life on Land** | Syntropic plots, nursery, biochar, ground cover, agroforestry and monitoring are documented | Implemented practice + measurement capability | Repeated soil, vegetation, biodiversity, survival, habitat and land-condition evidence |
+
+### Secondary/contextual Adelphi relationships
+
+Current documentation also identifies plausible contextual relationships including:
+
+- **SDG 4 — Quality Education**
+- **SDG 12 — Responsible Consumption and Production**
+- **SDG 13 — Climate Action**
+- **SDG 17 — Partnerships for the Goals**
+
+Those should remain contextual until the corresponding evidence matures.
+
+[Read the detailed Adelphi SDG evidence map →](/ecosystem-wiki/kokonut-farms/adelphi/sustainable-development-goals)
+
+---
+
+## What the calculator can and cannot do
+
+The [Impact Calculator](/kokonut-framework/impact-calculator) uses the five current reference SDGs to help a user:
+
+- screen relevance;
+- identify scenario activities;
+- identify evidence gaps;
+- plan records.
+
+It can reach:
+
+- alignment;
+- planning/activity signal;
+- evidence readiness.
+
+It cannot generate:
+
+- measured outcomes;
+- verified SDG contribution;
+- poverty reduction;
+- food-security improvement;
+- gender-equity improvement;
+- decent-work certification;
+- biodiversity restoration;
+- quantified carbon impact.
+
+Its statuses are planning tools.
+
+---
+
+## SDG reporting over time
+
+An SDG report should be a **periodic evidence reconciliation**, not a permanent badge.
+
+For each reporting period, review:
+
+1. which SDGs are active;
+2. which moved from alignment to activity;
+3. which have measured outcomes;
+4. which support an impact interpretation;
+5. which forecasts were replaced with actuals;
+6. which claims weakened or failed;
+7. which evidence is missing;
+8. which risks materialized;
+9. which stakeholders received benefits or costs;
+10. which Goals should be added, downgraded, or removed in the next period.
+
+<Info>
+  **An SDG can move backward in reporting maturity.** Stale data, failed interventions, changing conditions, weak evidence, or a revised methodology can require a claim to be narrowed.
+</Info>
+
+---
+
+## Example: stronger SDG wording
+
+### Too broad
+
+> “The farm advances SDG 2 by improving food security.”
+
+### Better at activity level
+
+> “The farm operates a diversified food-production system relevant to SDG 2. Harvest and distribution outcomes are reported separately.”
+
+### Better with measured outcome
+
+> “During **[reporting period]**, the farm recorded **[actual harvest quantity]** of **[product]**, with **[quantity]** sold or distributed through **[channel]**.”
+
+### Stronger interpretation only when supported
+
+> “For **[defined population]** during **[reporting period]**, **[defined food-access indicator]** changed from **[baseline]** to **[outcome]** alongside the documented farm intervention. The interpretation is limited by **[material limitations / other contributing factors]**.”
+
+The language should become stronger only as the evidence becomes stronger.
+
+---
+
+## Common failure modes
+
+| Failure mode | Better practice |
+| --- | --- |
+| “This farm contributes to all 17 SDGs.” | Activate only Goals with a credible intervention/evidence relationship |
+| “The five reference SDGs apply automatically to every farm.” | Treat them as the current Adelphi/reference set; assess each future farm independently |
+| “SDG alignment means verified contribution.” | Use the four-level claim ladder |
+| “Seven jobs means SDG 1 was achieved.” | Report jobs; measure livelihood/poverty outcomes separately |
+| “Food production means hunger decreased.” | Measure harvest, distribution, access, affordability, and target population |
+| “Women-led means gender inequality decreased.” | Preserve women-led evidence; measure broader gender outcomes separately |
+| “A job count proves decent work.” | Measure work quality, compensation, safety, continuity, and worker evidence |
+| “Syntropic/biochar/nursery means SDG 15 impact.” | Measure soil, vegetation, biodiversity, habitat, and land condition |
+| “Biochar/agroforestry means SDG 13 carbon impact.” | Use an appropriate climate/carbon methodology |
+| “Reduced inputs means SDG 7.” | Require an actual energy pathway for clean-energy claims |
+| “DAO transparency proves SDG 16.” | Use institutional/governance outcome evidence appropriate to the claim |
+| “A partnership logo proves SDG 17.” | Document responsibilities, delivery, contributions, and joint outputs |
+| “EAS verifies the SDG outcome.” | Use EAS for provenance; evidence/methodology support the outcome |
+| “A dashboard value is current by definition.” | Check source, lifecycle state, reporting period, and freshness |
+
+---
+
+## How different readers should use the SDG layer
 
 <CardGroup cols={2}>
-  <Card title="For proposal authors" icon="file-pen">
-    Use the primary SDGs to define your farm's core impact claims, then list which evidence will be collected during operations.
+  <Card title="Farm operators" icon="tractor">
+    Choose only the Goals that match the farm's real intervention and collect evidence as part of operations rather than after-the-fact marketing.
   </Card>
 
-  <Card title="For DAO reviewers" icon="scale-balanced">
-    Ask whether each SDG claim has a metric, baseline, evidence source, responsible reporter, and reporting period.
+  <Card title="Impact & research reviewers" icon="microscope">
+    Check claim level, baseline, method, reporting period, stakeholder boundary, contribution context, uncertainty, and whether the SDG language exceeds the evidence.
   </Card>
 
-  <Card title="For grant reviewers" icon="hand-holding-dollar">
-    Treat the primary SDG map as the baseline due diligence structure and inspect the farm's Data Hub, proposal, and annual reports.
+  <Card title="Capital governance participants" icon="building-columns">
+    Use SDG relevance as one decision input without treating an SDG label as proof of impact or as a substitute for budget, risk, authority, and execution review.
   </Card>
 
-  <Card title="For farm operators" icon="tractor">
-    Use this page as a reporting checklist: activities only become impact claims when they are documented and reviewed.
+  <Card title="Guilds & contributors" icon="users">
+    Turn missing SDG evidence into bounded work across research, data, agronomy, documentation, community, finance, and review.
+  </Card>
+
+  <Card title="Partners & grant reviewers" icon="file-signature">
+    Trace each development claim to a defined intervention, actual evidence, reporting period, limitations, and responsible reviewer.
+  </Card>
+
+  <Card title="Developers & agents" icon="code">
+    Treat SDG mappings as structured interpretations with evidence pointers and maturity states—not as autonomous impact scores.
   </Card>
 </CardGroup>
 
 ---
 
-## SDG claim checklist
+## Current maturity
 
-Before publishing an SDG claim, make sure it answers:
-
-| Question | Why it matters |
-| --- | --- |
-| What activity created the outcome? | Prevents vague sustainability language |
-| Which SDG and target does it support? | Keeps the claim specific |
-| Is it primary or secondary? | Prevents overstating co-benefits |
-| What metric will be tracked? | Makes progress measurable |
-| What is the baseline? | Shows what changed |
-| What evidence source supports it? | Makes the claim inspectable |
-| Who is responsible for reporting? | Creates accountability |
-| How often is it updated? | Keeps the record alive |
-| Is it a forecast or an actual? | Prevents projections from being treated as results |
-| What could invalidate the claim? | Makes risks visible |
+| Surface | Status | Interpretation |
+| --- | --- | --- |
+| **17-SDG screening map** | **Active Framework methodology** | All Goals can be screened for relevance |
+| **Five-goal reference set** | **Active for Adelphi/current calculator** | SDG 1, 2, 5, 8, 15; not mandatory verified outcomes for every farm |
+| **SDG 13 climate treatment** | **Secondary co-benefit** | Stronger climate/carbon claims remain methodology-dependent |
+| **Adelphi SDG mapping** | **Active reference implementation** | Evidence maturity differs by Goal |
+| **Target-level reporting** | **Evidence-dependent** | Specific targets require explicit mapping and supporting evidence |
+| **SDG outcome verification** | **Methodology/evidence-dependent** | SDG labels themselves do not verify outcomes |
+| **Cross-farm SDG comparison** | **Developing** | Requires consistent boundaries, metrics, periods, semantics, and evidence |
+| **Automated SDG classification** | **Decision support / developing** | Agents/software may screen and draft; appropriate review remains required |
 
 ---
 
-## Next steps
+## Continue through the Framework
 
 <CardGroup cols={2}>
   <Card title="Adelphi SDG Evidence" icon="recycle" href="/ecosystem-wiki/kokonut-farms/adelphi/sustainable-development-goals">
-    See how the five primary SDGs are mapped to live farm activity, evidence sources, and annual reporting.
+    See the current five-goal reference set mapped to documented state, activity, evidence requirements, and claims that remain unverified.
   </Card>
 
-  <Card title="MRV Methodology" icon="magnifying-glass-chart" href="/ecosystem-wiki/kokonut-farms/measurement-reporting-and-verification">
-    Learn how farm records become public evidence through MRV payloads, IPFS/Filecoin, Farm Registry events, and EAS attestations.
+  <Card title="Positive Impact Methodology" icon="chart-line" href="/kokonut-framework/framework-components/framework-features/methodology-positive-impact">
+    Apply alignment → activity → measured outcome → impact interpretation consistently across SDG claims.
+  </Card>
+
+  <Card title="Pillars of Value" icon="square-poll-vertical" href="/kokonut-framework/framework-components/pillars-of-value">
+    Add WHAT, WHO, HOW MUCH, CONTRIBUTION, RISK, and PUBLIC GOODS to each development claim.
   </Card>
 
   <Card title="8 Forms of Capital" icon="water" href="/kokonut-framework/framework-components/framework-features/8-forms-of-capital">
-    Understand how Kokonut measures value beyond revenue across natural, financial, social, human, material, intellectual, cultural, and health capital.
+    Categorize the underlying value without reducing unlike outcomes to one score.
   </Card>
 
-  <Card title="Positive Impact Methodology" icon="leaf-heart" href="/kokonut-framework/framework-components/framework-features/methodology-positive-impact">
-    See how regenerative practices create reinforcing impact loops and what evidence is needed before making strong claims.
+  <Card title="MRV Methodology" icon="magnifying-glass-chart" href="/ecosystem-wiki/kokonut-farms/measurement-reporting-and-verification">
+    Connect SDG interpretations to governed source records and the evidence lifecycle.
   </Card>
 
   <Card title="Impact Calculator" icon="calculator" href="/kokonut-framework/impact-calculator">
-    Estimate potential SDG contribution before converting assumptions into proposal requirements and MRV evidence.
-  </Card>
-
-  <Card title="Proposal Templates" icon="file-lines" href="/ecosystem-wiki/the-kokonut-dao/proposal-templates">
-    Use the SDG map to write stronger farm funding proposals with clear evidence commitments.
+    Use the current five-goal reference set for scenario planning and evidence readiness—not verified impact scoring.
   </Card>
 </CardGroup>
+
+> **The SDGs are most useful when they tell Kokonut what evidence to collect, what language is justified, and what still cannot be claimed.**
