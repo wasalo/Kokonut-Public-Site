@@ -1,342 +1,611 @@
 ---
 title: "Governance Framework"
 icon: "scale-balanced"
-description: "The operating rules for Kokonut decision-making: who can propose, who can vote, how proposals move from draft to execution, and what protections keep the DAO accountable."
+description: "How Kokonut routes decisions from problem definition and domain review into the correct authority: Guild coordination, farm operations, Framework stewardship, evidence review, or binding Moloch governance."
 ---
 
-# Kokonut governance turns community decisions into enforceable action.
+# Governance starts by asking who should decide.
 
-The Governance Framework is Kokonut Network's operating manual for collective decision-making. It defines who can propose, who can vote, where proposals are drafted, how long decisions take, what every proposal must include, and how treasury-affecting decisions become executable on-chain.
+Kokonut's Governance Framework is the process for moving a decision from **problem → review → authorization → execution → evidence → learning**.
 
-Kokonut uses this framework so farm funding, Guild bounties, Framework upgrades, partnerships, and ecosystem decisions can move through a clear process instead of informal approval.
+The first question is not:
 
-<div style={{ display: "flex", gap: "12px", justifyContent: "center", flexWrap: "wrap", margin: "1.5rem 0 0.75rem" }}>
-  <a href="#proposal-lifecycle" style={{ display: "inline-flex", alignItems: "center", gap: "6px", background: "#009F4D", color: "#fff", padding: "10px 20px", borderRadius: "8px", fontWeight: "600", fontSize: "14px", textDecoration: "none" }}>
-    See the Proposal Lifecycle →
-  </a>
+> “How do we put this to a DAO vote?”
 
-  <a href="/ecosystem-wiki/the-kokonut-dao/proposal-templates" style={{ display: "inline-flex", alignItems: "center", gap: "6px", border: "1.5px solid #009F4D", color: "#009F4D", padding: "10px 20px", borderRadius: "8px", fontWeight: "600", fontSize: "14px", textDecoration: "none", background: "transparent" }}>
-    Use a Proposal Template
-  </a>
-</div>
+It is:
+
+> **“Which authority actually owns this decision?”**
+
+A treasury allocation belongs in Moloch governance.
+
+A routine irrigation decision belongs with farm operators.
+
+An MRV claim belongs with the relevant evidence reviewers.
+
+A shared schema change belongs with Framework and affected domain reviewers.
+
+A Guild bounty may begin with contributors and only move into Moloch when shared treasury capital is required.
+
+<CardGroup cols={2}>
+  <Card title="Understand the authority map" icon="layer-group" href="/ecosystem-wiki/the-kokonut-dao/dao-layers">
+    See how capital governance, contribution, farm operations, shared methodology, evidence, and technical execution remain separate.
+  </Card>
+
+  <Card title="Use a proposal template" icon="file-signature" href="/ecosystem-wiki/the-kokonut-dao/proposal-templates">
+    Start from a structured template when the decision actually requires a formal proposal.
+  </Card>
+
+  <Card title="Inspect live DAO state" icon="building-columns" href="https://link.kokonut.network/dao">
+    Verify current Moloch membership, proposals, parameters, and execution state before relying on static documentation.
+  </Card>
+
+  <Card title="Draft and discuss" icon="comments" href="https://link.kokonut.network/charmverse">
+    Use the current Kokonut collaboration space for proposal drafting, review, and discussion.
+  </Card>
+</CardGroup>
 
 <Warning>
-  This framework is a governance operating manual, not a comprehensive legal document. It is the baseline for Kokonut Network decision-making and can be amended through the same proposal process it describes.
+  **This framework documents Kokonut's current governance process; it is not an immutable constitution or comprehensive legal agreement.** Live Moloch parameters, sponsorship rights, voting rules, and execution conditions should be verified before a binding action.
 </Warning>
 
 ---
 
 ## Governance at a glance
 
-| Question | Answer |
+| Question | Current answer |
 | --- | --- |
-| What does this framework govern? | Farm funding, Guild bounties, Framework upgrades, partnerships, DAO amendments, and treasury-affecting decisions. |
-| Where are drafts written? | Kokonut Forum is the designated platform for drafting and feedback. |
-| Where are votes held? | [DAOHaus](https://link.kokonut.network/dao) for on-chain treasury-affecting proposals. |
-| Who can sponsor proposals? | Team Members and Guild Stewards who route-validated work from the Guild layer. |
-| Who can vote on-chain? | DAO Members holding at least one `$vKKN` token on the Gnosis Chain. |
-| How long does a proposal take? | Minimum 5-day drafting window \+ minimum 5-day voting window, before grace period and execution. |
-| What protects dissenting members? | Rage-quit during the grace period, plus a 66% token retention threshold for on-chain proposals. |
-| What must every proposal include? | Ten required fields: name, authors, team, draft start date, description, mission alignment, brand usage, financial implications, success metrics, and next steps. |
+| **What is this framework for?** | Routing material decisions to the correct authority and making authorization, execution, and accountability inspectable |
+| **Where are proposals drafted?** | Current documentation uses Kokonut's Forum / Charmverse collaboration surface for drafts and feedback |
+| **Where do binding Moloch votes happen?** | [DAOHaus](https://link.kokonut.network/dao) on Gnosis Chain |
+| **Who can author a draft?** | Contributors can help prepare proposals; activation/sponsorship follows the current governance rules |
+| **Who votes in Moloch?** | Eligible \$vKKN holders under the live DAO rules |
+| **Current documented draft baseline** | Minimum **5 days** before moving a material proposal into active voting |
+| **Current documented Moloch voting baseline** | **5 days** |
+| **Current documented retention protection** | **66%** token-retention threshold before execution |
+| **Current documented membership quorum** | **0%** for onboarding proposals under the current framework |
+| **What happens after approval?** | Authorization still has to become correct execution, reporting, evidence, and closeout |
 
-<Note>
-  The Governance Framework is the process layer. The [Kokonut Moloch DAO](/ecosystem-wiki/the-kokonut-dao/kokonut-moloch-dao) is the on-chain execution layer. The [Kokonut Guilds DAO](/ecosystem-wiki/the-kokonut-dao/kokonut-guilds-dao) is the contribution and domain-expertise layer.
-</Note>
-
----
-
-## Why this framework exists
-
-Kokonut Network coordinates real farms, real capital, real contributors, real community commitments, and real public-goods outcomes. That requires more than a chat vote or informal agreement.
-
-The Governance Framework exists to make sure every important decision has:
-
-<CardGroup cols={3}>
-  <Card title="Time to review" icon="clock">
-    Every proposal must remain in draft for at least 5 days before it can move to an active vote. This gives members time to ask questions, request edits, and surface risks.
-  </Card>
-
-  <Card title="Clear authorization" icon="signature">
-    Proposal-authorized people and Guild Stewards move proposals from draft to vote, making sponsorship visible and accountable.
-  </Card>
-
-  <Card title="Defined voting rules" icon="check-to-slot">
-    The framework separates off-chain coordination from on-chain treasury voting, so lightweight decisions and capital decisions use the right venue.
-  </Card>
-
-  <Card title="Treasury protection" icon="shield-check">
-    On-chain proposals include a grace period, rage-quit protection, and a 66% retention threshold before execution.
-  </Card>
-
-  <Card title="Measurable execution" icon="list-check">
-    Every proposal must define success metrics and next steps so the DAO can evaluate whether the work was completed.
-  </Card>
-
-  <Card title="Upgradeability" icon="arrows-rotate">
-    The framework itself can evolve, but only through the same proposal process it governs.
-  </Card>
-</CardGroup>
+<Info>
+  **Passing a proposal is not the same as completing the work.** Governance authorizes. Operators, contributors, contracts, SAFEs, or other responsible actors still have to execute the approved scope correctly.
+</Info>
 
 ---
 
-## Who can propose and who can vote
+## Step 1 — classify the decision before drafting a proposal
 
-Kokonut separates proposal sponsorship, domain contribution, and voting power so the system can recognize both capital and useful work.
+Not every decision needs the same governance path.
 
-| Role | What they can do | Where they act |
+| Decision class | Primary authority | Formal Moloch vote? |
 | --- | --- | --- |
-| Proposal-authorized person | Draft and sponsor proposals into the active stage | Kokonut Forum → DAOHaus / Kokonut Forum |
-| Team Member | Sponsor proposals and steward early ecosystem direction | Governance and operations |
-| Guild Steward | Co-sign and route proposals that originate in a Guild | Guilds → Governance process |
-| DAO Member | Vote on on-chain proposals with `$vKKN` | DAOHaus |
-| Guild Contributor | Contribute useful work and earn Guild Points | Guilds and contribution records |
-| Wider community | Review, comment, join Discord, contribute to docs, and help improve proposal quality | Discord, Kokonut Forum, GitHub, Kokonut Hub |
+| **DAO treasury allocation** | Moloch DAO | **Yes** |
+| **Membership / \$vKKN / Loot** | Moloch DAO | **Yes** |
+| **DAO governance parameters** | Moloch DAO | **Yes** when changing binding DAO rules |
+| **Guild contribution / domain work** | Relevant Guild contributors / reviewers | Usually **no**, unless treasury or DAO authority is required |
+| **Routine farm operations** | Local farm operators | **No** |
+| **Framework / Common Data Schema change** | Framework + affected domain reviewers | Not automatically; Moloch only when DAO-level funding or authority is implicated |
+| **MRV / scientific claim review** | Qualified evidence / Impact reviewers | **No** merely to establish scientific validity |
+| **Coordination / signaling** | Relevant community or working group | Usually **no binding Moloch action** |
+| **Treasury-backed partnership** | Domain reviewers + Moloch for shared capital | **Yes** for the Moloch-scoped commitment |
+
+> **A decision can require multiple reviews without giving one reviewer authority over every part of the decision.**
+
+---
+
+## Step 2 — define the problem and the authority being requested
+
+Before a formal draft, the author should be able to answer:
+
+- What problem are we trying to solve?
+- Who is affected?
+- Which authority is being requested?
+- Is the proposal asking for money, token issuance, policy, recognition, technical work, or coordination?
+- Which parts are within Moloch scope?
+- Which parts remain with farm operators, Guilds, Framework reviewers, or evidence reviewers?
+- What evidence supports the need?
+- What happens if the proposal is not approved?
+
+This prevents a common governance failure: using a treasury vote to smuggle in authority that the treasury does not actually possess.
+
+### Example
+
+A farm-funding proposal can authorize:
+
+- a treasury budget;
+- payment milestones;
+- reporting obligations.
+
+It should not automatically authorize:
+
+- day-to-day crop decisions;
+- scientific conclusions;
+- control of locally owned land;
+- publication of unsupported impact claims.
+
+---
+
+## Step 3 — use the right review path
+
+A proposal should be reviewed by the people affected by its content before a binding vote.
+
+| Proposal content | Review that should happen before binding authorization |
+| --- | --- |
+| Farm infrastructure | Farm operators + finance + relevant technical reviewers |
+| MRV methodology | Impact / evidence reviewers + technical reviewers where schemas are affected |
+| Software / contracts | Technology review + affected domain review |
+| Framework primitive | Framework stewardship + every materially affected domain |
+| Guild bounty | Relevant Guild / reviewer + Finance when budgeted |
+| Partnership | Community & Partnerships + Finance + legal/technical review as needed |
+| Token / governance change | Governance review + Moloch participants |
+| Public impact claim | Evidence / Impact review before public interpretation |
 
 <Note>
-  Capital gives voting power through `$vKKN`. Contribution gives operational standing through Guild Points. Significant contribution can later be recognized through Loot, but only if approved through the Moloch DAO proposal process.
+  **Review is not voting.** A domain reviewer can say whether a proposal is technically or methodologically ready without having Moloch voting power. A Moloch voter can decide whether to authorize shared capital without becoming the domain expert.
 </Note>
 
 ---
 
-## Proposal lifecycle
+## Step 4 — draft the proposal
 
-Every Kokonut DAO proposal passes through three mandatory stages. No stage can be skipped.
+The current [Proposal Templates](/ecosystem-wiki/the-kokonut-dao/proposal-templates) use a common ten-field base structure.
+
+That is a **documentation and review standard**, not a claim that every community conversation is a ten-field constitutional motion.
+
+### Current ten-field base
+
+| Field | Purpose |
+| --- | --- |
+| **Proposal Name** | Stable reference for discussion and archival |
+| **Proposal Author(s)** | Who prepared the proposal |
+| **Proposal Team** | Who is responsible for delivery / review |
+| **Draft Start Date** | Starts the documented review window |
+| **Proposal Description** | Exact decision being requested |
+| **Mission Alignment** | Why the proposal belongs in Kokonut |
+| **Brand Usage** | Whether Kokonut identity or marks are implicated |
+| **Financial Implications** | Budget, treasury impact, disbursement conditions, timing |
+| **Success Metrics** | Evidence that will show whether the approved work happened |
+| **Next Steps** | Owners and immediate actions after authorization |
+
+Proposal-specific templates can add stronger requirements.
+
+For example, farm funding should include farm context and evidence; a Framework change should include compatibility and migration implications.
+
+---
+
+## Step 5 — drafting and feedback
+
+Current Kokonut documentation uses a **minimum 5-day drafting window** for material proposals.
+
+During that window, contributors should be able to challenge:
+
+- the problem statement;
+- scope;
+- budget;
+- assumptions;
+- evidence;
+- authority boundaries;
+- risks;
+- success metrics;
+- execution plan.
 
 ```mermaid
-flowchart TD
-    A["Draft posted in Kokonut Forum"] --> B["5-day minimum drafting window"]
-    B --> C["Feedback, edits, risk review"]
-    C --> D["Proposal-authorized sponsor advances proposal"]
-    D --> E{"Proposal type"}
-    E -->|"Off-chain coordination"| F["Kokonut Forum vote"]
-    E -->|"Treasury / token / on-chain action"| G["DAOHaus vote"]
-    F --> H["Vote closes"]
-    G --> H
-    H --> I{"Passed?"}
-    I -->|"No"| J["Revise and resubmit if useful"]
-    I -->|"Yes"| K["Grace period opens"]
-    K --> L{"Retention threshold met?"}
-    L -->|"No — below 66%"| M["Proposal does not execute"]
-    L -->|"Yes"| N["Proposal executes"]
-    N --> O["Team executes next steps"]
-    O --> P["Success metrics reported"]
+flowchart LR
+    A["Draft posted"] --> B["Minimum review window"]
+    B --> C["Domain feedback"]
+    C --> D["Financial / governance review"]
+    D --> E["Edits + clarified scope"]
+    E --> F{"Ready for formal authorization?"}
+    F -->|"No"| G["Remain in draft"]
+    F -->|"Yes"| H["Sponsor / activate under current rules"]
 ```
 
-<Steps>
-  <Step title="Drafting Stage" icon="pen-to-square" iconType="regular">
-    The proposal is written in Kokonut Forum using the required ten-field structure. Vote-authorized members are notified when the draft is posted.
-
-    The proposal must remain open for a **minimum of 5 days**. During this window, members and contributors can request clarification, challenge assumptions, suggest edits, and surface risks before a binding vote begins.
-  </Step>
-  <Step title="Active Stage" icon="check-to-slot" iconType="regular">
-    A proposal-authorized person sponsors the proposal into the active stage after the drafting window closes.
-
-    - Off-chain coordination proposals can be voted on in Kokonut Forum.
-    - Treasury, token, or on-chain execution proposals move to [DAOHaus](https://link.kokonut.network/dao).
-
-    Active votes remain open for **5 days** and use the voting method assigned to the proposal type.
-  </Step>
-  <Step title="Grace Period" icon="hourglass-half" iconType="regular">
-    After an on-chain proposal passes, a grace period opens before execution. DAO members who disagree with the result can rage-quit before the proposal executes.
-
-    If rage-quits reduce `$vKKN` token retention below **66%**, the proposal does not execute and must be resubmitted.
-  </Step>
-  <Step title="Execution Stage" icon="rocket" iconType="regular">
-    Once the vote passes and the grace period closes without breaching the retention threshold, the proposal executes through the DAO.
-
-    The proposal team then becomes responsible for the stated next steps, success metrics, reporting, and any follow-up documentation.
-  </Step>
-</Steps>
+<Info>
+  The 5-day period is the **current documented baseline**, not an argument for rushing complex proposals on day six. Higher-risk proposals may need more review.
+</Info>
 
 ---
 
-## Minimum timeline
+## Step 6 — sponsorship / activation
 
-A proposal that affects the treasury cannot be rushed through in one meeting or private conversation.
+A draft does not become a binding Moloch vote merely because the author wants it to.
 
-```text
-Day 0:    Proposal posted to Kokonut Forum
-Day 1-5:  Drafting and feedback window
-Day 5:    Proposal can be sponsored to active voting
-Day 5-10: Active voting window
-Day 10:   Vote closes; grace period opens for on-chain proposals
-Day 10+:  Execution only if the proposal passed and retention protections hold
-```
+The current process requires an **authorized sponsorship / activation step** before the binding on-chain stage.
 
-| Timeline rule | Why it matters |
-| --- | --- |
-| 5-day draft minimum | Prevents surprise proposals and gives members time to review. |
-| 5-day active vote | Gives vote-authorized members enough time to participate. |
-| Grace period | Gives dissenting members an exit path before execution. |
-| 66% retention threshold | Prevents a proposal from executing if too much capital exits during the grace period. |
+This page intentionally does not hard-code a permanent list of sponsor roles.
+
+Why?
+
+Because sponsorship permissions and operating roles can change, while the durable principle is:
+
+> **Someone with the current authority to activate the proposal must take responsibility for moving it into the formal voting process.**
+
+Guild Stewards or domain coordinators can help mature and route proposals, but the Guild role system itself is still evolving and should not be treated as an immutable source of on-chain sponsorship rights.
 
 ---
 
-## Voting methods and proposal venues
+## Step 7 — choose the right decision venue
 
-| Decision type | Drafting venue | Voting venue | Voting method | Notes |
-| --- | --- | --- | --- | --- |
-| Community coordination | Kokonut Forum | Kokonut Forum | 1 person = 1 vote | Useful for non-treasury, social, operational, or signaling decisions. |
-| Treasury disbursement | Kokonut Forum | DAOHaus | 1 `$vKKN` = 1 vote | Used when funds move from the DAO treasury. |
-| Membership onboarding | Kokonut Forum / DAOHaus proposal flow | DAOHaus | 1 `$vKKN` = 1 vote | Onboarding quorum is 0% by design; any participation produces a valid outcome. |
-| Token minting / Loot recognition | Kokonut Forum | DAOHaus | 1 `$vKKN` = 1 vote | Requires explicit proposal and DAO approval. |
-| Governance framework amendment | Kokonut Forum | DAOHaus if on-chain impact; Kokonut Forum if coordination-only | Depends on proposal scope | Must include the edited framework or exact amendment language. |
+### Binding Moloch actions
+
+Use Moloch / DAOHaus when the proposal requires actions such as:
+
+- moving DAO treasury funds;
+- onboarding a Moloch member;
+- minting \$vKKN;
+- awarding Loot;
+- changing DAO-level governance parameters;
+- another binding action enforced through Moloch contracts.
+
+### Coordination and signaling
+
+A working group, Guild, Forum, or community process can be sufficient for:
+
+- non-binding feedback;
+- signaling;
+- work prioritization;
+- domain discussion;
+- routine coordination within an already authorized scope.
 
 <Warning>
-  If a proposal moves treasury funds, mints tokens, awards Loot, changes DAO parameters, or affects on-chain execution, it should be treated as an on-chain governance proposal.
+  **Do not infer “1 person = 1 vote” as a universal Kokonut rule for off-chain decisions.** The appropriate decision method should be defined by the relevant process and scope.
 </Warning>
 
 ---
 
-## Required proposal fields
+## Step 8 — Moloch voting, grace, and retention
 
-Every proposal must include the same ten base fields, regardless of proposal type.
+For binding Moloch actions, the current documentation describes:
 
-| Field | What to include | Why it matters |
-| --- | --- | --- |
-| Proposal Name | Short descriptive name, ideally with the correct proposal code | Makes the proposal easy to reference and archive |
-| Proposal Author(s) | Name, alias, and wallet address of the author(s) | Creates accountability |
-| Proposal Team | People responsible for execution if the proposal passes | Separates authorship from delivery responsibility |
-| Draft Start Date | Date the draft was first posted in Kokonut Forum | Starts the 5-day drafting window |
-| Proposal Description | What the proposal asks for, what it will produce, and why now | Gives voters the core decision context |
-| Mission Alignment | How the proposal advances Kokonut Network's mission | Filters proposals that are not strategically aligned |
-| Brand Usage | Whether the proposal uses Kokonut name, logo, or marks | Protects ecosystem reputation |
-| Financial Implications | Exact costs, amounts, treasury impact, disbursement conditions, and timeline | Required for responsible treasury governance |
-| Success Metrics | How the DAO will know if the proposal worked | Enables accountability after execution |
-| Next Steps | Who does what after approval | Reduces ambiguity after the vote passes |
+| Stage | Current documented baseline |
+| --- | --- |
+| Active voting | **5 days** |
+| Voting primitive | 1 \$vKKN = 1 vote |
+| Grace | Opens after a passing on-chain proposal |
+| Rage-quit | Eligible members may exit under the applicable rules |
+| Retention | **66%** of tokens must remain under the current documented model |
+| Membership quorum | **0%** for onboarding proposals under the current framework |
 
-[Use a ready-made proposal template →](/ecosystem-wiki/the-kokonut-dao/proposal-templates)
+These values should be treated as **current governance parameters**, not permanent natural laws.
+
+Verify the live DAO before acting.
+
+### Binding proposal flow
+
+```mermaid
+flowchart TD
+    A["Reviewed draft"] --> B["Authorized activation"]
+    B --> C["DAOHaus vote"]
+    C --> D{"Passes under live rules?"}
+
+    D -->|"No"| E["Ends / revise if useful"]
+    D -->|"Yes"| F["Grace period"]
+
+    F --> G["Eligible rage-quit"]
+    G --> H{"Retention condition still satisfied?"}
+
+    H -->|"No"| I["Does not proceed under current rule"]
+    H -->|"Yes"| J["Authorized for execution"]
+```
 
 ---
 
-## Proposal types
+## Step 9 — distinguish authorization from execution
+
+A passed vote creates authority.
+
+It does not guarantee correct implementation.
+
+There are at least three execution layers to distinguish.
+
+| Layer | Meaning |
+| --- | --- |
+| **Governance authorization** | The DAO approved a specific action |
+| **Transaction execution** | The approved on-chain / SAFE / treasury action is actually submitted, confirmed, and executed through the applicable system |
+| **Operational execution** | The funded team, Guild, operator, or partner actually performs the work |
+
+For example:
+
+> The DAO can authorize irrigation infrastructure funding.
+
+That does not mean:
+
+> The infrastructure has been purchased, installed, tested, and is operating correctly.
+
+<Warning>
+  **“Passed,” “executed on-chain,” and “completed in the real world” are three different statuses.** Governance reporting should preserve that distinction.
+</Warning>
+
+---
+
+## Step 10 — report evidence after execution
+
+Every funded or material proposal should produce a closeout trail.
+
+Useful evidence can include:
+
+- transaction references;
+- payment records;
+- receipts;
+- GitHub commits;
+- deployed contracts;
+- farm records;
+- MRV evidence;
+- photos;
+- datasets;
+- signed agreements;
+- milestone reviews;
+- acceptance records;
+- variance explanations.
+
+### Proposal status model
+
+A more useful governance lifecycle is:
+
+```mermaid
+flowchart LR
+    A["Draft"] --> B["Reviewed"]
+    B --> C["Authorized"]
+    C --> D["Executed on-chain / initiated"]
+    D --> E["Operational delivery"]
+    E --> F["Evidence + acceptance"]
+    F --> G["Closed / learned"]
+```
+
+A proposal should not be considered fully successful merely because its transaction executed.
+
+---
+
+## Current minimum timeline
+
+For a binding proposal that follows the current documented baseline:
+
+```text
+Day 0:     Draft posted
+Day 1–5:   Minimum feedback / review window
+Day 5+:    Eligible for activation if ready
+Next 5d:   Current documented Moloch voting window
+After pass:Grace / rage-quit / retention checks
+Then:      Authorized transaction and/or operational execution
+Afterward: Evidence, reporting, acceptance, closeout
+```
+
+<Note>
+  This is a **minimum-process illustration**, not a guaranteed calendar. Complex proposals can require more drafting, reviews, revisions, signatures, dependencies, or implementation time.
+</Note>
+
+---
+
+## Proposal quality standard
+
+A strong proposal makes both the decision and the later audit easier.
+
+| Dimension | Strong proposal | Weak proposal |
+| --- | --- | --- |
+| **Authority** | States exactly what approval is being requested | Implies broad authority from a narrow vote |
+| **Scope** | Defines deliverables and boundaries | Uses “support the project” language |
+| **Evidence** | Links records, research, budgets, issues, prior work | Relies on reputation alone |
+| **Budget** | Exact amounts, assets, recipients, milestones | “Funds as needed” |
+| **Dependencies** | Names other reviews / approvals required | Pretends the DAO can authorize everything |
+| **Success metrics** | Measurable outputs and acceptance criteria | Vague outcomes |
+| **Execution owner** | Named people / roles | “Community will execute” |
+| **Reporting** | Defines updates and closeout evidence | Stops at the vote |
+| **Risk** | Identifies failure modes and mitigation | No downside analysis |
+| **Change control** | Defines what requires re-approval | Allows silent scope drift |
+
+---
+
+## Material changes after approval
+
+Execution sometimes reveals that the approved plan cannot be followed exactly.
+
+Minor implementation details can be handled within the approved scope.
+
+Material changes should be surfaced.
+
+Examples include:
+
+- substantial budget changes;
+- new recipient wallets;
+- major scope changes;
+- different contractual obligations;
+- changes to token issuance;
+- changes to farm ownership / operator commitments;
+- altered success criteria;
+- materially different timelines where the timing was part of the approval.
+
+The correct response can include:
+
+1. publish the variance;
+2. explain why the original plan no longer works;
+3. identify the new risk;
+4. determine whether the existing authorization still covers the change;
+5. submit an amendment or new proposal when it does not.
+
+> **Governance approval should not become a blank check for execution drift.**
+
+---
+
+## Rejected and withdrawn proposals
+
+A rejected proposal is not automatically a failed idea.
+
+It means the proposal did not receive the required authorization in that form.
+
+A useful resubmission should explain:
+
+- what was rejected or contested;
+- what changed;
+- which evidence improved;
+- whether the budget changed;
+- whether the authority request narrowed;
+- what reviewer feedback was addressed.
+
+This framework does **not** establish a universal cooling-off period for every resubmission.
+
+If a live rule or proposal type requires one, that specific rule should control.
+
+A proposal can also be withdrawn during drafting when the author concludes it is not ready or no longer necessary.
+
+---
+
+## Governance protections — and their limits
+
+| Protection | What it helps with | What it does not guarantee |
+| --- | --- | --- |
+| **Public drafting** | Visible review and challenge | Good decisions |
+| **Minimum review window** | Time for scrutiny | Every stakeholder will participate |
+| **Sponsorship / activation** | Accountability before binding vote | The proposal is technically correct |
+| **Moloch voting** | Explicit capital-governance authorization | Subject-matter expertise |
+| **Grace period** | Time between pass and execution | Recovery of original contribution value |
+| **Rage-quit** | Exit under applicable rules | Zero financial loss |
+| **66% retention rule** | Current capital-retention protection | Universal veto over all ecosystem decisions |
+| **Required success metrics** | Post-approval accountability | Successful execution |
+| **Evidence / closeout** | Inspectability after delivery | Automatic impact verification |
+
+---
+
+## Conflict of interest
+
+Proposal authors, reviewers, recipients, and voters can have overlapping interests.
+
+A strong proposal should disclose material conflicts such as:
+
+- author is also the proposed payee;
+- reviewer has a financial interest in the vendor;
+- Guild coordinator is selecting their own bounty;
+- partner negotiator is financially connected to the counterparty;
+- farm reviewer is also responsible for the metric being evaluated.
+
+A conflict does not automatically disqualify a participant.
+
+It should be visible so the appropriate reviewers or voters can account for it.
+
+---
+
+## Governance should preserve domain review
+
+A Moloch vote can authorize capital.
+
+It should not overwrite a failed technical, scientific, legal, or farm-operating review.
+
+Examples:
 
 <CardGroup cols={2}>
-  <Card title="Farm Funding Proposal" icon="seedling" href="/ecosystem-wiki/the-kokonut-dao/proposal-templates#farm-funding-proposal">
-    Request treasury funding for a new syntropic farm or a material expansion of an existing farm. Requires the strongest documentation: farm overview, crops, revenue model, public-goods allocation, local problem, solution, and MRV plan.
+  <Card title="Impact claims" icon="magnifying-glass-chart">
+    Token holders should not vote an unsupported ecological claim into being scientifically valid.
   </Card>
 
-  <Card title="Guild Bounty Proposal" icon="trophy" href="/ecosystem-wiki/the-kokonut-dao/proposal-templates#guild-bounty-proposal">
-    Commission scoped work from contributors through a Guild Steward. Useful for development, MRV, documentation, governance, finance, partnerships, and other operational work.
+  <Card title="Farm operations" icon="tractor">
+    A budget approval does not convert token holders into the farm's daily operating authority.
   </Card>
 
-  <Card title="Framework Upgrade Proposal" icon="puzzle" href="/ecosystem-wiki/the-kokonut-dao/proposal-templates#framework-upgrade-proposal">
-    Propose changes to the Kokonut Framework, Common Data Schema, MRV methodology, agent architecture, or documentation standards.
+  <Card title="Shared schemas" icon="database">
+    A funded implementation should still preserve compatibility and affected-domain review.
   </Card>
 
-  <Card title="Partnership Proposal" icon="handshake" href="/ecosystem-wiki/the-kokonut-dao/proposal-templates#partnership-proposal">
-    Establish a formal relationship with an external organization, funder, farm operator, research partner, tool provider, or ecosystem collaborator.
+  <Card title="Partnership obligations" icon="handshake">
+    DAO enthusiasm does not remove legal, operational, or counterparty diligence requirements.
   </Card>
 </CardGroup>
 
 ---
 
-## What makes a proposal strong
+## AI and automation in governance
 
-A strong Kokonut proposal should be easy to inspect, hard to misunderstand, and possible to measure after execution.
+AI agents can support governance by:
 
-| Proposal quality | Strong version | Weak version |
-| --- | --- | --- |
-| Specific ask | Requests a defined amount, deliverable, team, and timeline | Asks for general support or vague approval |
-| Mission alignment | Explains how the work advances farms, Framework, DAO, MRV, Guilds, or public goods | Uses generic sustainability language |
-| Financial clarity | Includes exact amounts, wallet addresses, release conditions, and budget line items | Says funds will be used “as needed” |
-| Evidence | References data, prior work, farm records, GitHub issues, MRV outputs, or community feedback | Relies on trust or reputation alone |
-| Success metrics | Defines measurable outputs and reporting deadlines | Does not explain how success will be evaluated |
-| Next steps | Names owners and immediate actions after approval | Leaves execution unclear |
+- drafting proposal sections;
+- checking required fields;
+- summarizing feedback;
+- comparing budgets;
+- surfacing missing evidence;
+- preparing execution payloads;
+- generating draft status reports.
 
-<Note>
-  For farm funding proposals, the standard should be especially high. New farm proposals should include location, coordinates, land area, operator wallet, Framework phase, Data Hub link or plan, crop model, revenue streams, target markets, public-goods allocation, and local problem/solution context.
-</Note>
+They should not independently:
 
----
+- sponsor themselves;
+- vote with autonomous political discretion;
+- approve treasury spending;
+- fabricate evidence;
+- declare domain review complete;
+- change governance rules silently.
 
-## Governance protections
-
-Kokonut governance is designed to reduce the need for personal trust.
-
-| Protection | What it prevents |
-| --- | --- |
-| Public drafting | Prevents decisions from being prepared privately without member awareness. |
-| Minimum review period | Prevents rushed votes. |
-| Proposal sponsorship | Prevents unvetted drafts from becoming active votes without accountability. |
-| On-chain execution | Prevents private wallet control over treasury actions. |
-| Rage-quit | Gives dissenting members an exit before execution. |
-| 66% retention threshold | Prevents proposals from executing if too much capital exits in protest. |
-| Required success metrics | Prevents proposals from passing without a way to judge completion. |
-| Amendment process | Prevents unilateral edits to governance rules. |
+<Info>
+  Governance automation should reduce clerical work while preserving accountable human authorization for high-impact decisions.
+</Info>
 
 ---
 
-## Amendments and rejected proposals
-
-### Amendments
-
-This Governance Framework can evolve. Any amendment must include the exact proposed change and pass through the full proposal lifecycle.
-
-A strong amendment proposal should include:
-
-- the current text,
-- the proposed replacement text,
-- why the change is needed,
-- who is affected,
-- whether it changes treasury risk,
-- whether it changes rights or responsibilities,
-- and when the amendment becomes active.
-
-### Rejected proposals
-
-Rejected proposals may be revised and resubmitted. There is no required cooling-off period, but resubmissions should address the reasons the original proposal failed.
-
-A useful resubmission should include a short changelog explaining what changed since the previous version.
-
----
-
-## Before you submit a proposal
+## Before moving a proposal to a binding vote
 
 <Steps>
-  <Step title="Choose the right proposal type" icon="route" iconType="regular">
-    Farm Funding, Guild Bounty, Framework Upgrade, and Partnership proposals each need different supporting evidence. Start with the relevant template.
+  <Step title="1. Confirm the authority" icon="layer-group" iconType="regular">
+    Make sure the proposal is asking Moloch to decide something Moloch actually controls.
   </Step>
-  <Step title="Write the ten required fields" icon="list-check" iconType="regular">
-    Do not skip mission alignment, financial implications, success metrics, or next steps. Those fields are what turn an idea into an accountable proposal.
+
+  <Step title="2. Complete the relevant domain reviews" icon="clipboard-check" iconType="regular">
+    Farm, Impact, Technology, Finance, Framework, Governance, partnership, or other affected reviewers should review the proposal as appropriate.
   </Step>
-  <Step title="Share the draft in Kokonut Forum" icon="comments" iconType="regular">
-    Open the proposal for the required 5-day drafting window. Treat feedback as part of the proposal process, not as a delay.
+
+  <Step title="3. Verify the evidence and budget" icon="magnifying-glass-chart" iconType="regular">
+    Link the source records, assumptions, recipients, amounts, milestones, and acceptance criteria.
   </Step>
-  <Step title="Route through the right steward" icon="people-arrows" iconType="regular">
-    Guild-originating work should involve the relevant Guild Steward. Treasury-affecting work should be prepared for on-chain voting.
+
+  <Step title="4. Complete the draft window" icon="clock" iconType="regular">
+    Follow the current minimum review period and allow more time when the risk or complexity justifies it.
   </Step>
-  <Step title="Prepare for execution and reporting" icon="clipboard-check" iconType="regular">
-    Know who will execute the work, how funds will be used, when updates will be posted, and how success will be measured after approval.
+
+  <Step title="5. Confirm current live governance rules" icon="building-columns" iconType="regular">
+    Check DAOHaus and the current governance documentation for sponsorship, voting, quorum, grace, retention, and execution conditions.
+  </Step>
+
+  <Step title="6. Define execution and closeout" icon="list-check" iconType="regular">
+    Name who executes, what evidence will be produced, how material changes are handled, and what closes the proposal.
   </Step>
 </Steps>
 
 ---
 
-## Next steps
+## Use the right page for the right governance question
+
+| Question | Best page |
+| --- | --- |
+| Who has authority over which type of decision? | [DAO Architecture](/ecosystem-wiki/the-kokonut-dao/dao-layers) |
+| How does Moloch capital governance work? | [Kokonut Moloch DAO](/ecosystem-wiki/the-kokonut-dao/kokonut-moloch-dao) |
+| How do contributors and Guilds review work? | [Kokonut Guilds](/ecosystem-wiki/the-kokonut-dao/kokonut-guilds-dao) |
+| What fields should I put in a proposal? | [Proposal Templates](/ecosystem-wiki/the-kokonut-dao/proposal-templates) |
+| How do farm claims become evidence? | [MRV Methodology](/ecosystem-wiki/kokonut-farms/measurement-reporting-and-verification) |
+| What live proposal state should I verify? | [DAOHaus](https://link.kokonut.network/dao) |
+| Where do I draft / discuss? | [Kokonut Forum / Charmverse](https://link.kokonut.network/charmverse) |
+
+---
+
+## Continue through The Kokonut DAO
 
 <CardGroup cols={2}>
-  <Card title="Proposal Templates" icon="scroll" href="/ecosystem-wiki/the-kokonut-dao/proposal-templates">
-    Copy ready-to-use templates for Farm Funding, Guild Bounty, Framework Upgrade, and Partnership proposals.
+  <Card title="Proposal Templates" icon="file-signature" href="/ecosystem-wiki/the-kokonut-dao/proposal-templates">
+    Turn a correctly routed decision into a structured, reviewable proposal.
   </Card>
 
-  <Card title="Kokonut Moloch DAO" icon="dragon" href="/ecosystem-wiki/the-kokonut-dao/kokonut-moloch-dao">
-    Understand the on-chain system that enforces treasury execution, `$vKKN`, Loot, rage-quit, and the 66% retention threshold.
+  <Card title="Kokonut Moloch DAO" icon="building-columns" href="/ecosystem-wiki/the-kokonut-dao/kokonut-moloch-dao">
+    Review the live capital-governance mechanics behind voting, grace, retention, rage-quit, and treasury execution.
   </Card>
 
-  <Card title="Kokonut Guilds" icon="hydra" href="/ecosystem-wiki/the-kokonut-dao/kokonut-guilds-dao">
-    Learn how contributors earn Guild Points, gain standing, and route domain work into the DAO proposal process.
+  <Card title="Kokonut Guilds" icon="users" href="/ecosystem-wiki/the-kokonut-dao/kokonut-guilds-dao">
+    Understand contribution records, domain review, developing Guild Points, stewardship, and proposal preparation.
   </Card>
 
-  <Card title="DAO Layers" icon="layer-group" href="/ecosystem-wiki/the-kokonut-dao/dao-layers">
-    See how governance, logic, execution, production, and infrastructure layers work together across the full Kokonut DAO architecture.
+  <Card title="DAO Architecture" icon="layer-group" href="/ecosystem-wiki/the-kokonut-dao/dao-layers">
+    See why governance authority is separated across capital, contribution, farms, methodology, evidence, and technical execution.
   </Card>
 
-  <Card title="Kokonut Forum" icon="pen-to-square" href="https://link.kokonut.network/charmverse">
-    Draft proposals, collect feedback, and run the required governance review window.
+  <Card title="Kokonut Forum" icon="comments" href="https://link.kokonut.network/charmverse">
+    Draft proposals, collect feedback, and make review visible before binding action.
   </Card>
 
   <Card title="DAOHaus" icon="check-to-slot" href="https://link.kokonut.network/dao">
-    View the on-chain DAO where treasury-affecting proposals are voted on and executed.
+    Inspect current Moloch proposals, voting, membership, and live DAO state.
   </Card>
 </CardGroup>
+
+> **Good governance is not the process of voting on everything. It is the process of making authority, evidence, authorization, execution, and accountability clear enough that the right people can make the right kind of decision.**
