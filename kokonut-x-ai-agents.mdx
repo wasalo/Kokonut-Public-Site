@@ -1,448 +1,866 @@
 ---
 title: "Kokonut × AI Agents"
-description: "How agent builders can automate MRV, harvest forecasting, impact scoring, grant drafting, and farm operations with Kokonut's data, payments, identity, and verification stack."
+description: "How Kokonut uses bounded AI agents for governed analysis, evidence preparation, and coordination — and how those agents connect safely to the Kokonut Marketplace."
 icon: "robot"
 ---
 
-# AI agents turn Kokonut farm data into faster coordination.
+# AI agents should compress coordination without bypassing governance.
 
-Farms produce information constantly: satellite images, field logs, soil readings, drone surveys, crop cycles, harvest records, MRV payloads, and DAO reporting requirements.
+Kokonut produces more information than any one person should have to manually reconcile: field observations, harvests, expenses, sensor streams, satellite imagery, forecasts, evidence, governance records, reports, and partner requirements.
 
-Today, much of that work still depends on manual handoffs. An operator collects data, someone processes it, someone else reviews it, another person formats it for a report, and the result may only become useful after long delays.
+AI agents can help turn that information into:
 
-Kokonut's agent layer is designed to reduce those handoffs. Agents can ingest farm data, calculate metrics, prepare structured records, route outputs for review, trigger payments, and help convert farm activity into evidence that DAO members, Guilds, farm operators, and public goods funders can actually use.
+- drafts;
+- summaries;
+- structured records;
+- evidence-gap analysis;
+- forecasts;
+- alerts;
+- proposed actions;
+- review-ready reports.
+
+But an agent output is not automatically a trusted Kokonut record.
+
+The durable rule is:
+
+> **Agents can assist the evidence and decision process. They do not inherit the authority of reviewers, farm operators, governance bodies, attestors, or treasury signers.**
 
 <CardGroup cols={2}>
-  <Card title="See what agents can do" icon="robot" href="#agent-use-cases">
-    Explore MRV automation, harvest forecasting, impact scoring, grant drafting, proposal drafting, and farm monitoring.
+  <Card title="Understand the two agent layers" icon="layer-group" href="#two-agent-systems-one-boundary">
+    Separate governed Intelligence agents from marketplace identity, commerce, escrow, and reputation.
   </Card>
 
-  <Card title="Build your first agent" icon="code" href="#builder-start-path">
-    Follow the safe builder path: choose a task, define inputs and outputs, connect to Kokonut data, test, and request review.
+  <Card title="See the safety model" icon="shield-halved" href="#agent-safety-boundaries">
+    Keep agent outputs draft-first, permission-scoped, reviewable, and auditable.
+  </Card>
+
+  <Card title="Build an internal agent" icon="brain" href="#building-on-kokonut-intelligence">
+    Use Kokonut Intelligence as the governed data, task, and review environment.
+  </Card>
+
+  <Card title="Build in the marketplace" icon="handshake" href="#the-kokonut-marketplace-layer">
+    Use the current Kokonut Marketplace for identity, services, jobs, commerce, and coordination.
   </Card>
 </CardGroup>
 
 <Warning>
-  The Agentic Marketplace is still in development. Treat contract addresses, service registry flows, marketplace listings, escrow flows, and autonomous payments as developing infrastructure until testnet or mainnet deployments are published. Do not describe planned agent capabilities as live farm guarantees.
+  **Do not collapse capability into authority.** An agent may be technically able to calculate, draft, query, or propose something while still being intentionally unable to verify, publish, attest, execute a treasury action, or make a human-governed decision.
 </Warning>
 
 ---
 
-## What this page is for
+## Two agent systems, one boundary
 
-| Reader | What you should get from this page | Best next step |
+Kokonut currently has two related but distinct agent surfaces.
+
+| Surface | Primary responsibility | Authority boundary |
 | --- | --- | --- |
-| Agent builder | Understand safe first agent opportunities and integration requirements | Start with the MRV Reporter or Harvest Forecaster path |
-| Data / MRV engineer | Understand how agents interact with Farm Registry records, IPFS payloads, EAS attestations, and the Kokonut Hub | Review the MRV workflow |
-| Farm operator | Understand which farm tasks agents can help automate | Identify repeatable tasks worth automating |
-| DAO or Guild reviewer | Understand what needs human review before agent outputs become trusted | Use the review checklist |
-| Partner or funder | Understand how automation supports evidence, not hype | Compare estimates, measurements, attestations, and reports |
+| **Kokonut Intelligence agents** | Governed analysis, synthesis, evidence preparation, draft records, task execution, audit logs | Operate inside Kokonut Intelligence permissions and review workflows |
+| **Kokonut Marketplace** | Agent identity, services, jobs, commerce, payment coordination, evaluation, disputes, and reputation | Coordinates economic/service relationships; does not automatically validate Kokonut evidence or Framework claims |
 
-<Note>
-  Agents are not a replacement for agronomists, farm operators, DAO governance, or human review. They are coordination tools that help standardize repeatable work and move evidence through the Kokonut system faster.
-</Note>
-
----
-
-## AI agents at a glance
-
-| Layer | What it does | Status |
-| --- | --- | --- |
-| Farm data | Reads farm records, crop cycles, harvest events, MRV payloads, and public Data Hub entries | Live data exists for Adelphi; integrations expanding |
-| Intelligence layer | Structures, operational, environmental, financial, governance, and Web3 records for analysis | Active infrastructure |
-| Agent runtime | Runs task-specific services such as MRV reporters, harvest forecasters, and impact scorers | Developing |
-| Identity | Registers agents with names, operators, capabilities, and service metadata | Developing |
-| Payments | Uses USDC and x402-style flows for paid service calls | Developing |
-| Verification | Connects outputs to IPFS/Filecoin records, Farm Registry events, EAS attestations, and reviewer approval | MRV pipeline active; agent automation developing |
-| Reputation | Tracks completed work, quality, disputes, and longer-term contribution history | Developing |
-
----
-
-## The core idea
-
-```mermaid
-flowchart TD
-    A["Farm activity\nsoil · satellite · drone · harvest · field log"] --> B["Structured Kokonut data\nCommon Data Schema + MRV payloads"]
-    B --> C["AI agent task\ncalculate · format · validate · draft · alert"]
-    C --> D["Human / Guild review\nquality control + context"]
-    D --> E["Farm Registry record\nqueryable structured event"]
-    E --> F["IPFS / Filecoin artifact\ncontent-addressed evidence"]
-    F --> G["EAS attestation\ntamper-resistant public anchor"]
-    G --> H["Kokonut Hub + reports\nDAO, grants, operators, funders"]
-    H --> I["Better decisions\nfunding · operations · replication"]
-```
-
-The goal is not to let agents invent impact claims. The goal is to help agents move real farm events through a structured evidence pathway.
-
----
-
-## What agents should automate first?
-
-Agents should begin with repeatable, bounded tasks where the input, output, review rule, and evidence requirement are clear.
-
-<CardGroup cols={2}>
-  <Card title="MRV Reporter" icon="satellite-dish">
-    Ingests satellite, drone, soil, or field observations and prepares structured MRV payloads for review and attestation.
-  </Card>
-
-  <Card title="Harvest Forecaster" icon="chart-line">
-    Applies registered crop assumptions to estimate expected harvests, loss rates, revenue scenarios, and actual-vs-forecast differences.
-  </Card>
-
-  <Card title="Impact Scorer" icon="star">
-    Aggregates verified farm records across a reporting period and prepares draft EBF, SDG, or public-goods reporting summaries.
-  </Card>
-
-  <Card title="Grant Drafter" icon="file-pen">
-    Pulls structured farm data, MRV records, SDG alignment, and proof points into draft grant applications for human editing.
-  </Card>
-
-  <Card title="Proposal Drafter" icon="scroll">
-    Converts farm records, budgets, milestones, and evidence into DAO proposal drafts for sponsor review.
-  </Card>
-
-  <Card title="Cross-Farm Monitor" icon="binoculars">
-    Compares vegetation, harvest, soil, and operations data across farms to flag anomalies, missing records, or possible intervention needs.
-  </Card>
-</CardGroup>
-
----
-
-## Live vs. developing
-
-| Area | How to describe it |
-| --- | --- |
-| Adelphi farm data | Live reference project with public records and MRV workflows |
-| MRV methodology | Active trust pipeline for turning farm activity into structured evidence |
-| Common Data Schema | Live Framework primitive for standard farm records |
-| Kokonut Intelligence | Active data backbone for farm, governance, environmental, financial, and Web3 activity |
-| Agentic Marketplace | In development, use the development branch and avoid claiming deployed marketplace behavior until addresses are published |
-| x402 payments | Design direction for autonomous service payment; implementation should be tested before production claims |
-| Agent reputation | Developing should distinguish task history, review outcomes, Guild recognition, and DAO-approved rewards |
-| Carbon or credit-related automation | Research / methodology-dependent; agents can support evidence collection, but cannot create certified climate claims by themselves |
-
-<Warning>
-  A useful agent can produce a draft, a calculation, an alert, or a structured payload. A trustworthy Kokonut claim still needs source data, review, evidence storage, attestation, and public reporting.
-</Warning>
-
----
-
-## Agent system architecture
+The relationship is:
 
 ```mermaid
 flowchart LR
-    subgraph Farm["Farm evidence"]
-      A["Field logs"]
-      B["Soil sensors"]
-      C["Satellite / drone imagery"]
-      D["Harvest records"]
-    end
+    DATA["Kokonut Intelligence\ngoverned records + analytics"]
+    INTAGENT["Internal agent\nread · analyze · draft · submit"]
+    REVIEW["Human / authorized review"]
+    PUBLISHED["Verified / published Kokonut record"]
 
-    subgraph Data["Kokonut data layer"]
-      E["Common Data Schema"]
-      F["Farm Registry API"]
-      G["Kokonut Intelligence"]
-      H["Kokonut Hub"]
-    end
+    MARKET["Kokonut Marketplace\nidentity · services · jobs · commerce"]
+    PROVIDER["Marketplace agent / provider"]
+    DELIVERY["Deliverable + marketplace outcome"]
 
-    subgraph Agents["Agent layer"]
-      I["MRV Agent"]
-      J["Harvest Agent"]
-      K["Impact Agent"]
-      L["Grant / proposal Agent"]
-    end
+    DATA --> INTAGENT
+    INTAGENT --> REVIEW
+    REVIEW --> PUBLISHED
 
-    subgraph Trust["Trust layer"]
-      M["IPFS / Filecoin CID"]
-      N["EAS attestation"]
-      O["Guild / human review"]
-      P["DAO decision"]
-    end
+    MARKET --> PROVIDER
+    PROVIDER --> DELIVERY
+    DELIVERY --> MARKET
 
-    A --> F
-    B --> F
-    C --> I
-    D --> J
-    E --> F
-    F --> G
-    G --> H
-    F --> I
-    F --> J
-    F --> K
-    G --> L
-    I --> O
-    J --> O
-    K --> O
-    L --> O
-    O --> M
-    M --> N
-    N --> H
-    H --> P
+    DATA --> PROVIDER
+    DELIVERY -. "may become review input" .-> REVIEW
 ```
 
+A marketplace job can produce a useful artifact.
+
+That artifact still enters Kokonut's governed review process if it is going to become:
+
+- an MRV claim;
+- an impact claim;
+- a published report;
+- an attestation;
+- a financial record;
+- a governance record;
+- a certified or externally verified conclusion.
+
+> **Marketplace acceptance is not the same thing as evidence verification.**
+
 ---
 
-## The four builder primitives
+## Why Kokonut uses agents
 
-| Primitive | Plain English | In Kokonut |
+Agentic workflows are useful when work is:
+
+- repetitive;
+- structured;
+- bounded;
+- evidence-rich;
+- reviewable;
+- expensive to coordinate manually.
+
+Examples include:
+
+| Work | Why an agent helps | Human / governed boundary |
 | --- | --- | --- |
-| Identity | Who is the agent and who operates it? | Agent name, operator wallet, capability manifest, status, and service metadata |
-| Capability | What can the agent do? | Inputs, outputs, pricing, SLA, review rules, and artifact format |
-| Payment | How does the agent get paid? | USDC / x402-style calls, escrow for longer tasks, and completion proof requirements |
-| Evidence | Why should anyone trust the output? | Source data, IPFS/Filecoin CID, Farm Registry event, EAS attestation, reviewer approval, and public Data Hub record |
+| Evidence-gap review | Checks many records consistently | Reviewer decides whether evidence is sufficient |
+| Forecast reconciliation | Compares assumptions vs. actuals repeatedly | Operator/analyst interprets causes and actions |
+| Draft reporting | Reuses governed data across report formats | Authorized reviewer approves publication |
+| Data QA | Finds missing, stale, inconsistent, or implausible values | Record owner/reviewer corrects or rejects |
+| Proposal drafting | Structures budgets, milestones, evidence, and context | Sponsor/governance process authorizes proposal |
+| Monitoring | Surfaces anomalies and threshold breaches | Operator decides intervention |
+| Synthesis | Summarizes large governed datasets | Reader/reviewer evaluates conclusions |
+
+Agents reduce coordination cost.
+
+They should not reduce accountability.
 
 ---
 
-## Capability manifest
+## Kokonut Intelligence is the governed agent environment
 
-Every agent should declare what it accepts, what it returns, and what review evidence is required.
+The active Kokonut Intelligence platform includes an agent ecosystem with:
+
+- agent identities;
+- capability manifests;
+- tasks;
+- action logs;
+- AI summaries;
+- scoped MCP / Directus access;
+- analytics and reporting services;
+- governed source records.
+
+The current platform rule is explicit:
+
+> **Agents can draft and submit governed records but cannot verify, publish, attest, or score them on their own.**
+
+That is one of the most important constraints in the Kokonut architecture.
+
+### Execution and review are different
+
+An agent can successfully finish a task while its output remains untrusted.
+
+For example:
+
+```mermaid
+flowchart LR
+    A["Task created"] --> B["Agent executes"]
+    B --> C["Draft output"]
+    C --> D["Submitted for review"]
+    D --> E["Verified by authorized reviewer"]
+    E --> F["Published if appropriate"]
+
+    D --> G["Rejected / rework"]
+    G --> B
+```
+
+A completed execution can mean:
+
+- the model returned an answer;
+- a calculation ran;
+- a file was generated;
+- a record draft was created.
+
+It does **not** mean:
+
+- the conclusion is correct;
+- the record is verified;
+- the claim is publishable;
+- the evidence is externally validated.
+
+---
+
+## What internal agents should do
+
+Useful bounded internal-agent work includes:
+
+<CardGroup cols={2}>
+  <Card title="Evidence-gap analysis" icon="magnifying-glass-chart">
+    Identify missing sources, weak evidence, inconsistent records, or review requirements without inventing the missing proof.
+  </Card>
+
+  <Card title="Draft synthesis" icon="file-pen">
+    Prepare operational, ecological, financial, stakeholder, or public-interest summaries from governed data.
+  </Card>
+
+  <Card title="Forecast support" icon="chart-line">
+    Produce scenarios and compare forecast assumptions against governed actual records.
+  </Card>
+
+  <Card title="Framework preparation" icon="leaf">
+    Prepare draft EBF, SDG, CRISP, or other Framework workspaces for human review.
+  </Card>
+
+  <Card title="Proposal support" icon="file-lines">
+    Structure farm, Guild, governance, or partner proposals from existing governed information.
+  </Card>
+
+  <Card title="Coordination support" icon="diagram-project">
+    Summarize options, dependencies, risks, or work queues without becoming the final decision-maker.
+  </Card>
+
+  <Card title="Export support" icon="file-export">
+    Generate structured compatibility exports and reporting context from approved records.
+  </Card>
+
+  <Card title="Monitoring" icon="bell">
+    Surface anomalies, evidence gaps, or operational signals for human investigation.
+  </Card>
+</CardGroup>
+
+---
+
+## What internal agents should not do
+
+Agents should not independently:
+
+- verify governed records;
+- publish governed records;
+- publish attestations as final authority;
+- claim scientific certification;
+- raise evidence maturity by assertion;
+- approve financial records;
+- release treasury or reserve assets;
+- override farm operators;
+- change governance outcomes;
+- perform unrestricted deletes or bulk updates;
+- turn a simulation into an autonomous intervention;
+- convert a Marketplace reputation score into evidence quality.
+
+<Info>
+  An agent may calculate a score or prepare a scorecard draft. That does **not** mean the agent can approve the score, certify its methodology, or publish it as an authoritative Framework conclusion.
+</Info>
+
+---
+
+## Agent safety boundaries
+
+Kokonut's agent safety should be implemented as infrastructure, not as a polite prompt.
+
+At minimum, the architecture should preserve:
+
+1. **scoped authentication** — agents use credentials with only the permissions they need;
+2. **policy-aware APIs** — the API or gateway enforces allowed resources and actions;
+3. **workflow controls** — lifecycle transitions remain permissioned;
+4. **data constraints** — prohibited states should fail even when an upper layer makes a mistake;
+5. **auditability** — agent actions should leave inspectable logs;
+6. **human approval** — high-risk outputs remain review-gated.
+
+```mermaid
+flowchart TD
+    A["Agent"]
+    B["Scoped credential"]
+    C["Policy-aware API / MCP"]
+    D["Workflow + data constraints"]
+    E["Draft / allowed action"]
+    F["Audit log"]
+    G["Human / authorized review"]
+
+    A --> B
+    B --> C
+    C --> D
+    D --> E
+    E --> F
+    F --> G
+```
+
+### High-risk actions deserve stronger controls
+
+Examples include:
+
+- publishing;
+- attesting;
+- contract execution;
+- treasury actions;
+- deleting records;
+- bulk updates;
+- sensitive financial writes;
+- changing governance state;
+- exposing private stakeholder evidence;
+- changing a record to externally verified.
+
+The correct pattern is usually:
+
+> **prepare → review → authorize → execute**
+
+not:
+
+> **agent decides → agent executes → humans discover it later**
+
+---
+
+## Proposal is not execution
+
+This distinction applies especially strongly to blockchain and treasury workflows.
+
+An agent may be allowed to:
+
+- prepare calldata;
+- draft a proposal;
+- construct a SAFE transaction;
+- prepare an attestation request;
+- assemble an evidence package;
+- produce a deployment checklist.
+
+That is different from being allowed to:
+
+- sign as an owner;
+- execute the SAFE transaction;
+- move treasury funds;
+- publish an attestation;
+- upgrade a contract;
+- bypass a timelock.
+
+> **Automation can prepare the action. Authorization remains with the authority that owns the decision.**
+
+---
+
+## Evidence maturity and agents
+
+Agent outputs should not become stronger merely because an LLM rewrote them.
+
+Evidence maturity depends on what supports the claim.
+
+An agent cannot upgrade evidence quality by:
+
+- making prose sound more confident;
+- adding a confidence score;
+- creating a prettier report;
+- storing the same unsupported claim on-chain;
+- assigning a numeric score.
+
+Kokonut's evidence model still progresses through materially different states such as:
+
+> **narrative / self-report → structured → reviewed → evidence-linked → attested → externally verified**
+
+The agent can help:
+
+- structure;
+- compare;
+- find gaps;
+- package;
+- summarize.
+
+The agent does not get to declare itself externally verified.
+
+---
+
+## Capability manifests
+
+Reusable agents should publish a versioned capability contract.
+
+A useful manifest can look like:
 
 ```json
 {
-  "agent_name": "kokonut-mrv-reporter",
-  "version": "0.1.0",
-  "status": "development",
-  "description": "Prepares structured MRV payloads from remote sensing or field data for review and attestation.",
+  "agent_name": "kokonut-evidence-gap",
+  "version": "1.0.0",
+  "description": "Identifies missing evidence and review requirements for a governed subject.",
   "inputs": {
-    "farm_id": {
+    "location_id": {
       "type": "string",
-      "required": true,
-      "description": "Farm Registry identifier, such as adelphi"
-    },
-    "period_start": {
-      "type": "string",
-      "format": "ISO8601",
+      "format": "uuid",
       "required": true
     },
-    "period_end": {
+    "subject_type": {
       "type": "string",
-      "format": "ISO8601",
-      "required": true
-    },
-    "imagery_source": {
-      "type": "string",
-      "enum": ["sentinel", "landsat_8", "drone", "field_upload"],
       "required": true
     }
   },
   "outputs": {
-    "mrv_event_draft_id": {
-      "type": "string",
-      "description": "Draft event created before final review"
+    "gaps": {
+      "type": "array"
     },
-    "vegetation_indices": {
-      "type": "object",
-      "properties": {
-        "ndvi": { "type": "number" },
-        "ndre": { "type": "number" },
-        "reci": { "type": "number" },
-        "msavi": { "type": "number" }
-      }
-    },
-    "artifact_cid": {
-      "type": "string",
-      "description": "IPFS/Filecoin CID for the source artifact or generated report"
-    },
-    "review_status": {
-      "type": "string",
-      "enum": ["draft", "needs_review", "approved", "rejected"]
+    "review_notes": {
+      "type": "string"
     }
   },
-  "review_required": true,
-  "reviewer_role": "Impact Guild or authorized MRV reviewer"
+  "writes": [],
+  "review_required": true
 }
 ```
 
-<Note>
-  Keep manifests versioned. If an agent changes input fields, output fields, pricing, or review rules, publish a new version and document the migration impact.
-</Note>
+A production capability definition should make it possible to determine:
+
+- what the agent can read;
+- what it can write;
+- which record states it can create;
+- whether it touches sensitive data;
+- whether human review is required;
+- what artifacts it emits;
+- which agent/version produced the output;
+- how actions are audited.
 
 ---
 
-## MRV automation workflow
+## Authentication should be scoped
 
-Agents should compress manual work without bypassing verification.
+Internal agents should use the narrowest suitable access method.
+
+Depending on the integration, this can include:
+
+- scoped Directus access;
+- gateway API keys;
+- time-bounded capability tokens;
+- MCP access under the same data policy;
+- approved SDK clients.
+
+<Warning>
+  Do not use an administrator credential as an ordinary agent credential. If an agent can bypass every permission boundary, the model's behavior is no longer the primary safety problem — the credential design is.
+</Warning>
+
+### MCP is a transport, not a new authority model
+
+Connecting an agent through MCP should not let it escape:
+
+- authentication;
+- role policy;
+- record lifecycle;
+- privacy restrictions;
+- review requirements;
+- audit logging.
+
+The tool interface can change.
+
+The authority boundary should not.
+
+---
+
+## Auditability
+
+Agent actions should be reviewable after execution.
+
+Useful audit metadata includes:
+
+- agent identity;
+- task identity;
+- requested action;
+- target resource;
+- subject/record ID;
+- payload or artifact hash;
+- success/failure/skipped state;
+- error context;
+- risk classification;
+- human-approval requirement;
+- timestamps.
+
+This lets a reviewer ask:
+
+- What did the agent do?
+- Which data did it use?
+- Which task caused the action?
+- Was the action allowed?
+- Did it create a draft or a final state?
+- Was a human required afterward?
+- Which model/agent version generated the artifact?
+
+> **Agent accountability requires action history, not just a chat transcript.**
+
+---
+
+## The Kokonut Marketplace layer
+
+The separate **Kokonut Marketplace** is the canonical repository for the agent-economy / service-coordination layer.
+
+Its responsibility is different from Kokonut Intelligence.
+
+At a durable architectural level, the marketplace can coordinate concepts such as:
+
+- agent identity;
+- capabilities / services;
+- job requests;
+- provider discovery;
+- payment coordination;
+- escrow;
+- milestone work;
+- evaluation;
+- disputes;
+- reputation;
+- market activity;
+- agent-to-agent service relationships.
+
+<Card title="Open the current Marketplace repository" icon="code-branch" href="https://git.kokonut.network/Kokonut-Marketplace/~files">
+  Verify the current implementation, protocols, deployments, branches, contract addresses, payment rails, and developer commands in the live OneDev repository.
+</Card>
+
+<Warning>
+  The Marketplace evolves independently. Do not copy a testnet address, registry version, payment token, contract count, evaluator rule, or branch name into this Knowledge Base and assume it will remain canonical.
+</Warning>
+
+### Marketplace state is not evidence state
+
+A marketplace can legitimately track states such as:
+
+- open;
+- funded;
+- submitted;
+- accepted;
+- rejected;
+- disputed;
+- completed;
+- refunded.
+
+Those states answer economic/service questions.
+
+They do not answer whether a Kokonut claim is:
+
+- evidence-linked;
+- internally verified;
+- externally verified;
+- scientifically supported;
+- ready for publication.
+
+---
+
+## Marketplace roles are not evidence roles
+
+The Marketplace may define roles around the commercial relationship.
+
+Conceptually:
+
+| Marketplace role | Responsibility | Does not automatically imply |
+| --- | --- | --- |
+| **Requester / client** | Requests and funds work | Framework reviewer authority |
+| **Provider / agent** | Performs the service | Authority to verify its own Kokonut output |
+| **Evaluator / reviewer** | Judges whether the marketplace deliverable satisfies job rules | Scientific or MRV verifier status |
+| **Arbiter / dispute role** | Resolves marketplace disputes | Farm operator or DAO governance authority |
+
+A marketplace evaluator can decide whether a paid deliverable meets a commercial task specification.
+
+That does not automatically make the deliverable:
+
+- scientifically verified;
+- regulator-approved;
+- Framework-approved;
+- published in Kokonut Intelligence;
+- eligible for an ecological or financial claim.
+
+---
+
+## Reputation is not evidence maturity
+
+Marketplace reputation is useful.
+
+It can help answer questions such as:
+
+- Is this the same registered agent?
+- What services does it offer?
+- Has it completed work?
+- How did clients/evaluators rate it?
+- Has it been involved in disputes?
+- Does it have a reliable service history?
+
+Evidence maturity answers a different class of questions:
+
+- What source supports this claim?
+- Was it reviewed?
+- Is evidence linked?
+- Was it attested?
+- Was it independently verified?
+
+> **Marketplace reputation measures service history. Evidence maturity measures support for a claim. Keep them separate.**
+
+---
+
+## Payments do not create truth
+
+The marketplace may coordinate compensation through one or more payment and escrow mechanisms.
+
+A payment state can tell us whether work was:
+
+- funded;
+- delivered;
+- accepted;
+- rejected;
+- refunded;
+- disputed.
+
+It cannot tell us whether the underlying farm, ecological, financial, or impact claim is correct.
+
+```mermaid
+flowchart LR
+    A["Marketplace job"] --> B["Deliverable accepted"]
+    B --> C["Payment / settlement"]
+
+    B --> D["Kokonut governed review"]
+    D --> E["Verified / published if approved"]
+
+    C -. "does not imply" .-> E
+```
+
+This distinction also protects agent providers.
+
+An agent can complete the commercial task correctly even when:
+
+- source data is incomplete;
+- the requested claim cannot be verified;
+- a reviewer later rejects the conclusion;
+- the correct output is “insufficient evidence.”
+
+A good marketplace should be able to reward accurate refusal and evidence-gap detection, not only confident conclusions.
+
+---
+
+## Building on Kokonut Intelligence
+
+A strong first internal agent is:
+
+- narrow;
+- read-heavy;
+- reversible;
+- draft-first;
+- easy to review;
+- explicit about evidence.
+
+Good starting patterns include:
+
+| Agent | Input | Output | Reviewer |
+| --- | --- | --- | --- |
+| Evidence Gap Assistant | Subject + governed records | Missing evidence / review checklist | Domain reviewer |
+| Forecast Reconciler | Forecast + actuals | Variance analysis | Operator / analyst |
+| Data QA Agent | Canonical records | Missing/stale/inconsistent fields | Data reviewer |
+| MRV Draft Assistant | Field/remote records | Draft MRV package | MRV reviewer |
+| Proposal Assistant | Farm/budget/milestones/evidence | Draft proposal | Sponsor / governance reviewer |
+| Reporting Assistant | Published governed records | Draft report | Authorized publisher |
+| Stakeholder Summary Assistant | Consent-safe summaries | Draft synthesis | Human reviewer |
+
+### Builder path
 
 <Steps>
-  <Step title="Ingest source data" icon="satellite-dish" iconType="regular">
-    Pull satellite imagery, drone uploads, soil readings, harvest logs, or field observations. Record the source, timestamp, farm identifier, and collection method.
+  <Step title="1. Pick one bounded task" icon="bullseye" iconType="regular">
+    Avoid “general autonomous farm manager.” Start with one repeatable job whose inputs, outputs, and review authority are clear.
   </Step>
-  <Step title="Calculate structured metrics" icon="calculator" iconType="regular">
-    Calculate vegetation indices, crop estimates, loss-rate scenarios, soil trends, or reporting summaries using documented formulas and farm boundaries.
+
+  <Step title="2. Define the capability" icon="diagram-project" iconType="regular">
+    Specify input schema, output schema, readable resources, writable resources, risk level, and review requirement.
   </Step>
-  <Step title="Create a draft payload" icon="file-code" iconType="regular">
-    Format results into a Farm Registry-compatible draft. Mark it as a draft until a reviewer approves it.
+
+  <Step title="3. Use governed sources" icon="database" iconType="regular">
+    Query Kokonut Intelligence or another documented source of truth rather than silently inferring operational facts from old prose.
   </Step>
-  <Step title="Attach evidence" icon="link" iconType="regular">
-    Store source files or generated reports with IPFS/Filecoin CIDs so reviewers can inspect the evidence behind the output.
+
+  <Step title="4. Default to draft" icon="pen-to-square" iconType="regular">
+    Material MRV, finance, governance, impact, certification, and partner outputs should enter review as drafts.
   </Step>
-  <Step title="Request review" icon="user-check" iconType="regular">
-    Route the draft to the relevant Guild, farm operator, or authorized reviewer. Agents should not self-certify high-impact claims.
+
+  <Step title="5. Preserve provenance" icon="link" iconType="regular">
+    Keep source IDs, periods, model/method versions, evidence references, and artifact hashes where applicable.
   </Step>
-  <Step title="Publish and attest" icon="stamp" iconType="regular">
-    After approval, submit the final event to the Farm Registry and create the EAS attestation that links the public claim to its evidence.
+
+  <Step title="6. Log the action" icon="list-check" iconType="regular">
+    Make the agent's task, target, result, and risk inspectable.
+  </Step>
+
+  <Step title="7. Route to the correct reviewer" icon="user-check" iconType="regular">
+    A Technology Guild reviewer cannot silently substitute for agronomic, financial, legal, farm-operator, or governance authority.
   </Step>
 </Steps>
 
 ---
 
-## Vegetation indices agents may compute
+## Building on Kokonut Marketplace
 
-| Index | Use case | Review note |
-| --- | --- | --- |
-| NDVI | General vegetation health across a farm period | Useful, but should be interpreted alongside crop stage and ground context |
-| NDRE | Canopy maturity and chlorophyll stress in later growth stages | Works best when crop canopy is developed |
-| ReCI | Chlorophyll and nitrogen-related stress signal | Requires agronomic context before recommendations |
-| MSAVI | Early growth, sparse canopy, and exposed soil conditions | Better for early-stage plots than NDVI alone |
+Marketplace builders should treat the live Marketplace repository as canonical for:
+
+- supported identity standards;
+- service/capability registration;
+- payment rails;
+- contract interfaces;
+- deployment networks;
+- escrow behavior;
+- evaluation/dispute rules;
+- reputation;
+- indexing;
+- frontend/API architecture.
+
+The integration contract with Kokonut Intelligence should remain clear:
+
+```mermaid
+flowchart LR
+    MARKET["Marketplace"]
+    TASK["Service / job"]
+    AGENT["Provider agent"]
+    ARTIFACT["Deliverable"]
+    KI["Kokonut Intelligence"]
+    REVIEW["Governed review"]
+
+    MARKET --> TASK
+    TASK --> AGENT
+    AGENT --> ARTIFACT
+    ARTIFACT --> REVIEW
+    KI --> AGENT
+    REVIEW --> KI
+```
+
+Recommended boundary:
+
+- Marketplace owns **service commerce**.
+- Kokonut Intelligence owns **governed farm/evidence state**.
+- Framework docs own **methodology semantics**.
+- Human/domain authorities own **approval decisions**.
+
+---
+
+## Privacy and agent access
+
+Agents should not receive all data merely because it exists.
+
+Apply:
+
+- least-privilege access;
+- farm/location scoping;
+- partner scoping;
+- consent restrictions;
+- public/private classifications;
+- sensitive-field redaction;
+- public-safe summaries;
+- controlled evidence access.
+
+This is especially important for:
+
+- stakeholder feedback;
+- personal data;
+- exact farm locations;
+- financial records;
+- credentials;
+- partner contracts;
+- private evidence;
+- security-sensitive infrastructure.
 
 <Warning>
-  Vegetation indices are signals, not final conclusions. Agents should flag potential conditions and route them for review by a farm operator or agronomist before making operational recommendations.
+  A model's context window is a disclosure surface. Do not send private evidence to an agent or model unless that access is authorized for the task and the integration is designed for that data class.
 </Warning>
 
 ---
 
-## Payments and escrow
+## Forecasts, recommendations, and actuation
 
-Payment automation should match task complexity.
+Agents can support decisions without owning the decision.
 
-| Task type | Suggested payment pattern | Why |
+For forecasts:
+
+> **assumption → forecast → actual → variance → updated assumption**
+
+For recommendations:
+
+> **signal → analysis → proposed action → authorized decision**
+
+For physical or financial actuation:
+
+> **detected condition → proposed command → approval gate → execution → audit**
+
+High-consequence automation should preserve explicit human/operator authorization unless a narrowly bounded policy has been intentionally approved for autonomous execution.
+
+---
+
+## Current maturity
+
+| Surface | Status | Builder interpretation |
 | --- | --- | --- |
-| Fast API call | x402-style pay-per-request | Good for small forecasts, metadata lookups, or simple calculations |
-| Long-running analysis | Escrow with completion proof | Better for drone processing, multi-farm reports, or large grant drafts |
-| Recurring monitoring | Milestone or subscription-style budget | Useful for weekly or monthly farm monitoring tasks |
-| High-risk claims | Payment after review | Avoids rewarding outputs that fail evidence or quality checks |
-
-<Note>
-  Keep payment flows separate from evidence quality. A paid output is not automatically a verified output.
-</Note>
-
----
-
-## Reputation and quality control
-
-Agent reputation should be based on useful work, not just task volume.
-
-| Signal | What it means | Who uses it |
-| --- | --- | --- |
-| Task completion | The agent returned an output before the deadline | Builders, marketplaces, reviewers |
-| Review outcome | A human or Guild reviewer accepted, requested changes, or rejected the output | Guilds, DAO members, operators |
-| Evidence quality | Source data, formulas, CIDs, and assumptions were inspectable | MRV reviewers, grant reviewers, researchers |
-| Dispute history | Outputs were challenged or escalated | Marketplace users and DAO reviewers |
-| Long-term contribution | The agent's work consistently supported farm reporting or operations over time | Guilds and DAO proposal reviewers |
-
-Agents that consistently produce useful, reviewable, and evidence-backed outputs can support Guild contribution records. Larger recognition or rewards should still follow the relevant Guild or DAO proposal process.
+| Kokonut Intelligence agent identities / tasks / logs / summaries | **Active implementation** | Governed internal-agent infrastructure |
+| Scoped MCP / Directus agent access | **Active implementation** | Agent access inherits data permissions and workflow rules |
+| Draft/submit agent workflow | **Active implementation** | Agents assist without self-verifying or self-publishing |
+| Evidence maturity | **Active implementation / methodology** | Separate from agent or marketplace reputation |
+| Human review gates | **Core architecture** | High-trust states remain authorized transitions |
+| Kokonut Marketplace | **Active evolving repository** | Verify current deployment/protocol details in OneDev |
+| Marketplace-to-Intelligence integration | **Integration surface** | Commercial deliverables may feed governed review |
+| Fully autonomous farm governance | **Not the model** | Agents do not replace farm or governance authority |
+| Autonomous scientific certification | **Not supported** | External verification remains external/human-governed |
+| Autonomous treasury control | **Not the default** | Proposal/preparation and execution authority remain distinct |
 
 ---
 
-## Builder starts path
+## Builder quality checklist
 
-<Steps>
-  <Step title="Pick one bounded task" icon="bullseye" iconType="regular">
-    Start with one repeatable job, such as preparing an MRV draft, calculating a harvest forecast, or formatting a proposal draft.
-  </Step>
-  <Step title="Define the input and output schema" icon="diagram-project" iconType="regular">
-    Write the capability manifest before writing complex code. Reviewers should know exactly what the agent accepts and returns.
-  </Step>
-  <Step title="Connect to one Kokonut data source" icon="database" iconType="regular">
-    Use the Common Data Schema, Farm Registry API, Kokonut Hub, or Kokonut Intelligence as the source of truth. Do not scrape or reinterpret records without documenting the source.
-  </Step>
-  <Step title="Mark outputs as a draft by default" icon="pen-to-square" iconType="regular">
-    Agent outputs should be treated as drafts until a reviewer approves them, especially for MRV, impact, finance, carbon, governance, or grant claims.
-  </Step>
-  <Step title="Add evidence artifacts" icon="folder-tree" iconType="regular">
-    Store source files, generated reports, formulas, and assumptions with CIDs or stable references so outputs are reviewable.
-  </Step>
-  <Step title="Open an issue or Guild review request" icon="code-pull-request" iconType="regular">
-    For non-trivial integrations, open an issue before a pull request. Schema, MRV, attestation, and payment changes need compatibility review.
-  </Step>
-</Steps>
+Before shipping an agent or marketplace integration, confirm:
+
+- [ ] The agent's task is bounded.
+- [ ] Read and write permissions are explicit.
+- [ ] Draft and final states are distinct.
+- [ ] Execution success is not confused with verification.
+- [ ] Marketplace acceptance is not confused with evidence verification.
+- [ ] Marketplace reputation is not confused with evidence maturity.
+- [ ] Forecasts and recommendations expose assumptions.
+- [ ] Material claims preserve source/evidence references.
+- [ ] Private data is scoped appropriately.
+- [ ] Human/domain review remains where required.
+- [ ] Agents cannot silently publish, attest, or execute privileged actions.
+- [ ] Treasury/SAFE proposal authority is distinct from execution authority.
+- [ ] Current Marketplace implementation details were verified in the live OneDev repository.
+- [ ] Current Kokonut Intelligence interfaces were verified in the live OneDev repository.
+- [ ] High-risk actions are auditable and reversible where possible.
 
 ---
 
-## Safe first agent ideas
+## What agents should never be allowed to imply
 
-| Agent | Input | Output | Reviewer |
-| --- | --- | --- | --- |
-| MRV Draft Reporter | Farm ID, period, imagery, or field record | Draft MRV payload and evidence CID | Impact Guild / MRV reviewer |
-| Harvest Actuals Checker | Crop cycle, planted area, harvest log | Actual-vs-forecast report | Farm operator / Finance Guild |
-| Proposal Formatter | Farm record, budget, milestones, evidence | Draft proposal in Kokonut template format | Governance Guild |
-| Data Quality Monitor | Farm Registry records and Data Hub entries | Missing fields, stale data, or inconsistency alerts | Technology Guild |
-| SDG Evidence Assistant | MRV records, harvests, jobs, and public goods allocation | Draft SDG evidence map | Impact Guild |
-| Grant Proof Assistant | Farm summary, MRV records, SDG map, photos | Draft proof package for grant submission | Communications Guild |
+<Warning>
+  Agent outputs should not imply, without the required evidence and authority:
+
+  - “The agent verified this farm.”
+  - “The marketplace approved this impact claim.”
+  - “Payment proves the deliverable is scientifically correct.”
+  - “An EAS attestation certifies the outcome.”
+  - “A high reputation score means the evidence is strong.”
+  - “A forecast is an achieved result.”
+  - “A proposed SAFE transaction moved funds.”
+  - “A simulation is an authorized farm intervention.”
+  - “A complete schema means the record is true.”
+  - “An AI score replaces reviewer judgment.”
+</Warning>
 
 ---
 
-## What agents should not do
+## Canonical builder sources
 
-| Do not let agents... | Safer alternative |
+| Need | Use |
 | --- | --- |
-| Certify carbon credits | Collect evidence that could support future methodology review |
-| Claim guaranteed yields or revenue | Compare forecasts against actual records and show assumptions |
-| Publish impact claims without evidence | Route drafts through MRV, reviewer approval, and EAS attestation |
-| Move DAO funds autonomously | Draft proposals for human sponsorship and DAO vote |
-| Change the Common Data Schema silently | Open a Framework Upgrade Proposal with a migration plan |
-| Treat planned contracts as deployed | Label infrastructure as live, developing, planned, or deprecated |
-| Replace farm operators | Assist operators with alerts, summaries, and structured reports |
+| Governed data, agent tasks, evidence, analytics, APIs | [Kokonut Intelligence](https://git.kokonut.network/Kokonut-Intelligence/~files) |
+| Marketplace identity, services, commerce, deployments | [Kokonut Marketplace](https://git.kokonut.network/Kokonut-Marketplace/~files) |
+| Ecosystem-wide builder contract | [Build with Kokonut](/build-with-kokonut) |
+| Evidence lifecycle | [MRV Methodology](/ecosystem-wiki/kokonut-farms/measurement-reporting-and-verification) |
+| Baseline compatibility | [Common Data Schema](/kokonut-framework/framework-components/common-data-schema) |
+| Framework methodology | [Framework Introduction](/kokonut-framework/Introduction) |
 
 ---
 
-## How this connects to Kokonut Intelligence
-
-Kokonut Intelligence is the data backbone that can make agents useful. It gives agents access to structured context instead of forcing them to infer from scattered documents.
-
-| Intelligence function | Agent benefit |
-| --- | --- |
-| Farm operations records | Agents can reference actual activity instead of inventing assumptions |
-| Environmental measurements | Agents can calculate trends and flag anomalies |
-| Financial and harvest records | Agents can compare forecasts against actuals |
-| Web3 and DAO records | Agents can draft proposals and reporting summaries with governance context |
-| Queryable analytics layer | Agents can answer structured questions for builders, reviewers, and operators |
-
-[Read Kokonut Intelligence →](/kokonut-intelligence)
-
----
-
-## Review the checklist before using an agent output
-
-- Does the output cite or reference the source farm record?
-- Does it distinguish between forecast, estimate, measurement, attestation, and verified report?
-- Does it include timestamps, farm ID, source type, and reviewer status?
-- Is the formula or model documented?
-- Are source artifacts linked through stable storage or CIDs?
-- Has a human or Guild reviewer approved high-impact claims?
-- Does the output avoid unsupported financial, carbon, health, or climate claims?
-- Does it avoid describing development infrastructure as live?
-
----
-
-## Developer resources
-
-| Resource | Purpose |
-| --- | --- |
-| [Build with Kokonut](/build-with-kokonut) | Repositories, deployed contracts, data primitives, and contribution workflow |
-| [Farm Registry API](/api-reference/openapi) | API reference for farm records, MRV events, harvests, attestations, and impact endpoints |
-| [MRV methodology](/ecosystem-wiki/kokonut-farms/measurement-reporting-and-verification) | Evidence pipeline for farm activity, payloads, IPFS records, EAS attestations, and reports |
-| [Common Data Schema](/kokonut-framework/framework-components/common-data-schema) | Baseline farm record consumed by DAO members, developers, agents, and dashboards |
-| [Kokonut Intelligence](/kokonut-intelligence) | Canonical data backbone for farm, environmental, financial, governance, and Web3 activity |
-| [Kokonut Guilds DAO](/ecosystem-wiki/the-kokonut-dao/kokonut-guilds-dao) | Contribution path for builders who want Guild recognition and possible DAO rewards |
-| [Glossary](/ecosystem-wiki/glossary) | Definitions for MRV, EAS, x402, ERC-8004, Guilds, and related terms |
-
----
+## Continue through the builder system
 
 <CardGroup cols={2}>
+  <Card title="Kokonut Intelligence" icon="brain" href="/kokonut-intelligence">
+    See the governed data, evidence, API, analytics, privacy, and agent infrastructure.
+  </Card>
+
   <Card title="Build with Kokonut" icon="code" href="/build-with-kokonut">
-    Start with repos, contribution workflow, data primitives, and live vs. developing infrastructure.
+    Return to canonical sources, maturity states, compatibility rules, and contribution workflow.
   </Card>
 
-  <Card title="Read the MRV Methodology" icon="magnifying-glass-chart" href="/ecosystem-wiki/kokonut-farms/measurement-reporting-and-verification">
-    Understand how agent outputs should become structured evidence instead of unsupported claims.
+  <Card title="MRV Methodology" icon="magnifying-glass-chart" href="/ecosystem-wiki/kokonut-farms/measurement-reporting-and-verification">
+    Understand how agent-produced drafts can enter the evidence lifecycle safely.
   </Card>
 
-  <Card title="Open the Agentic Marketplace repo" icon="github" href="https://github.com/wasalo/Kokonut-Agentic-Marketplace">
-    Review the marketplace codebase, contracts, frontend, and OpenServ integration work.
+  <Card title="Common Data Schema" icon="database" href="/kokonut-framework/framework-components/common-data-schema">
+    Keep the farm baseline compatible without confusing it with operational evidence.
   </Card>
 
-  <Card title="Join the Technology Guild" icon="hydra" href="/ecosystem-wiki/the-kokonut-dao/kokonut-guilds-dao">
-    Contribute useful agent tooling, earn standing through work, and route larger contributions through DAO governance.
+  <Card title="Kokonut Marketplace" icon="store" href="https://git.kokonut.network/Kokonut-Marketplace/~files">
+    Verify the current agent-economy implementation directly in the live repository.
+  </Card>
+
+  <Card title="Framework Introduction" icon="scroll" href="/kokonut-framework/Introduction">
+    Reconnect agent automation to interoperability, local authority, and evidence boundaries.
   </Card>
 </CardGroup>
+
+> **The strongest Kokonut agent is not the one with the most autonomy. It is the one whose capability, evidence, permissions, and authority boundaries are easiest to inspect.**
