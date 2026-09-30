@@ -1,278 +1,546 @@
 ---
 title: "DAO Architecture"
 icon: "layer-group"
-description: "How Kokonut separates capital, contribution, execution, production, and verification into a resilient community-governed cooperative."
+description: "How Kokonut separates capital governance, contribution coordination, farm operations, shared methodology, evidence, and technical execution without turning one DAO into the authority over everything."
 ---
 
-# Kokonut is not one DAO. It is a layered cooperative architecture.
+# Kokonut is not governed by one DAO.
 
-The Kokonut DAO is designed to coordinate two things that usually conflict: **capital protection** and **contribution-based participation**.
+Kokonut uses **different coordination systems for different kinds of responsibility**.
 
-Capital contributors need treasury transparency, enforceable governance rights, and a clean exit if they disagree with the DAO. Contributors without capital need a way to earn influence through useful work. Farmers need funding, execution support, and verification infrastructure. The DAO architecture separates those needs into layers so that no single mechanism has to solve every coordination problem at once.
+The Moloch DAO governs capital and treasury-level decisions.
 
-<div style={{ display: "flex", gap: "12px", justifyContent: "center", flexWrap: "wrap", margin: "1.5rem 0 0.75rem" }}>
-  <a href="#the-five-layer-stack" style={{ display: "inline-flex", alignItems: "center", gap: "6px", background: "#009F4D", color: "#fff", padding: "10px 20px", borderRadius: "8px", fontWeight: "600", fontSize: "14px", textDecoration: "none" }}>
-    Understand the DAO Stack →
-  </a>
+Guilds coordinate useful work and domain expertise.
 
-  <a href="#choose-your-entry-path" style={{ display: "inline-flex", alignItems: "center", gap: "6px", border: "1.5px solid #009F4D", color: "#009F4D", padding: "10px 20px", borderRadius: "8px", fontWeight: "600", fontSize: "14px", textDecoration: "none", background: "transparent" }}>
-    Choose Your Entry Path
-  </a>
-</div>
+Farm operators remain responsible for day-to-day agricultural execution.
 
-<p style={{ textAlign: "center", fontSize: "13px", color: "#6b7280", marginTop: "0.25rem" }}>
-  Capital path: stablecoin tribute → $vKKN. Contribution path: verified work → Guild Points → potential Loot.
-</p>
+The Kokonut Framework provides shared methods and data structures.
 
-<Frame>
-  ![Kokonut Network DAO architecture — showing the five layers from governance through production and how they interrelate](/images/KKN_info.png)
-</Frame>
+MRV, the Kokonut Hub, and Kokonut Intelligence make claims easier to inspect.
 
-<sup>The Kokonut DAO stack separates governance, smart contract logic, execution, farm production, and verification infrastructure.</sup>
+Contracts and automation execute or support authorized workflows without becoming independent governance authorities.
+
+> **The design principle is simple: give each responsibility the narrowest authority it needs, then connect the layers through evidence, proposals, shared standards, and review.**
+
+<CardGroup cols={2}>
+  <Card title="Capital governance" icon="building-columns" href="/ecosystem-wiki/the-kokonut-dao/kokonut-moloch-dao">
+    The live Moloch DAO on Gnosis Chain coordinates membership, treasury proposals, voting, execution, and rage-quit protections.
+  </Card>
+
+  <Card title="Contribution coordination" icon="users" href="/ecosystem-wiki/the-kokonut-dao/kokonut-guilds-dao">
+    Guilds provide a path for useful work, contribution records, domain review, and proposal preparation without requiring capital.
+  </Card>
+
+  <Card title="Local farm authority" icon="tractor" href="/ecosystem-wiki/kokonut-farms/adelphi/summary">
+    Farm operators make real-world decisions about crops, water, timing, labor, maintenance, and field conditions.
+  </Card>
+
+  <Card title="Evidence and review" icon="magnifying-glass-chart" href="/ecosystem-wiki/kokonut-farms/measurement-reporting-and-verification">
+    MRV and Kokonut Intelligence structure records so governance, contributors, operators, and partners can make decisions from evidence.
+  </Card>
+</CardGroup>
+
+<Info>
+  **“DAO” does not mean every decision belongs to token holders.** Treasury authority, domain expertise, agricultural judgment, methodology stewardship, evidence review, and software execution are intentionally separated.
+</Info>
 
 ---
 
-## Architecture at a glance
+## Six scopes of responsibility
 
-| Layer | Primary actors | What it governs | Main mechanism |
+The architecture is easier to understand as six **scopes of authority**, not a top-down chain of command.
+
+| Scope | Primary actors | Main responsibility | Current maturity |
 | --- | --- | --- | --- |
-| Governance | \$vKKN holders | Network-level decisions, treasury direction, member votes | 1 \$vKKN = 1 vote through DAOHaus |
-| Logic | Smart contracts, treasury, tokens | Proposal execution, token minting/burning, rage-quit, fund movement | Verified contracts on Gnosis Chain |
-| Execution | Guilds, contributors, Core Team, partners | Work coordination, bounties, deliverables, and farm deployment | Contribution-weighted Guild work |
-| Production | Farmers, operators, and local communities | Farm operations, harvests, ecological work, community programs | Kokonut Framework and farm-level operations |
-| Infrastructure | MRV stack, Farm Registry API, EAS, AI agents | Data flows, attestations, indexing, verification | Structured MRV and on-chain evidence |
+| **Capital governance** | Moloch DAO members | Membership, treasury allocation, funded proposals, token recognition, governance changes | **Live on Gnosis Chain** |
+| **Contribution coordination** | Guild contributors and reviewers | Domain work, contribution records, review, prioritization, proposal preparation | **Active and evolving** |
+| **Farm operations** | Local farm operators and collaborators | Agronomy, labor, crop timing, irrigation, maintenance, field execution | **Live at Adelphi** |
+| **Shared methodology** | Framework maintainers + relevant domain reviewers | Common Data Schema, development phases, MRV expectations, shared methods | **Live and evolving** |
+| **Evidence and analysis** | MRV reviewers, Kokonut Intelligence, Hub users | Record lifecycle, publication, provenance, analysis, reporting | **Active infrastructure** |
+| **Technical execution** | Contracts, SAFEs, APIs, integrations, agents | Execute approved rules, move authorized transactions, route data, automate bounded workflows | **Mixed: live + developing** |
+
+This architecture is designed around **interoperability without sovereignty by one layer**.
+
+---
+
+## Who decides what
+
+A governance system becomes fragile when authority is ambiguous.
+
+This matrix defines the intended boundaries.
+
+| Scope | Can decide / coordinate | Does **not** automatically control |
+| --- | --- | --- |
+| **Moloch DAO** | Treasury proposals, membership, funded commitments, DAO-level token recognition, governance parameters | Daily farm operations, scientific truth, Guild expertise, every Framework edit |
+| **Guilds** | Domain priorities, contribution review, working groups, draft proposals, standards recommendations | Unilateral treasury spending, token minting, farm management, automatic DAO voting rights |
+| **Farm operators** | Crops, irrigation, planting, harvest timing, maintenance, labor coordination, field response | DAO treasury, network-wide governance rules, shared schema changes |
+| **Framework stewardship** | Shared schemas, phases, methodological baselines, interoperability rules | Local crop choices, field timing, operator judgment, farm ownership |
+| **MRV / evidence reviewers** | Record review, evidence quality, publication readiness, provenance, claim boundaries | Treasury allocation, agronomic command, automatic certification of high-impact claims |
+| **Technical systems** | Execute approved instructions, validate payloads, store records, publish data, prepare automation outputs | Independent political authority, autonomous treasury discretion, replacing accountable human review |
 
 <Note>
-  The architecture is designed to avoid a single point of failure. Capital governance, operational expertise, farm production, and verification are connected — but not collapsed into one voting mechanism.
+  A single decision can touch more than one scope. The correct response is not to collapse authority into one body—it is to route each part of the decision to the people or system responsible for it.
 </Note>
 
 ---
 
-## Why the DAO is layered
+## How to route a decision
 
-A regenerative agriculture network has to coordinate many kinds of value:
-
-- stablecoin capital entering the treasury;
-- farm proposals and infrastructure budgets;
-- contributor work across technology, impact, finance, governance, communications, and partnerships;
-- harvest records, MRV data, and impact attestations;
-- farmers and local communities producing value on the land;
-- DAO members who need enforceable rights and protection.
-
-A single token-weighted DAO would overrepresent capital and underrepresent the people doing the operational work. A purely contribution-weighted DAO would struggle to protect capital contributors and treasury exits.
-
-Kokonut uses both.
-
-<CardGroup cols={2}>
-  <Card title="Moloch DAO protects capital" icon="shield-check" href="/ecosystem-wiki/the-kokonut-dao/kokonut-moloch-dao">
-    Stablecoin contributors receive soulbound governance tokens, vote on treasury decisions, and can rage-quit with their proportional treasury share.
-  </Card>
-
-  <Card title="Guilds recognize contribution" icon="hydra" href="/ecosystem-wiki/the-kokonut-dao/kokonut-guilds-dao">
-    Builders, researchers, organizers, and operators earn Guild Points through verified work and can become eligible for Loot without contributing capital.
-  </Card>
-</CardGroup>
+| Decision | Primary path | Why |
+| --- | --- | --- |
+| Fund new farm infrastructure | Farm/operator scope → evidence/review → Moloch proposal | Operators define the need; treasury members decide capital allocation |
+| Change an irrigation schedule | Farm operators | It is a field decision, not a treasury vote |
+| Create a Technology Guild bounty | Technology Guild → Moloch if treasury funding is required | Guild defines the work; Moloch authorizes shared capital |
+| Recognize a major contributor with Loot | Contribution evidence → relevant review → Moloch proposal | Recognition needs evidence and DAO approval |
+| Change the Common Data Schema | Framework + affected domain reviewers | Shared interoperability requires technical/methodological review |
+| Publish a high-impact ecological claim | MRV / Impact review | Evidence quality is not determined by token vote |
+| Change a DAO governance parameter | Moloch governance process | It changes the rules governing capital coordination |
+| Deploy an AI workflow for MRV drafts | Technology + Impact review; human approval remains | Automation can prepare work but should not become verification authority |
 
 ---
 
-## The five-layer stack
-
-The five layers describe how value, authority, and information move through the network — from token holders and contracts to contributors, farms, and public evidence.
-
-<Steps>
-  <Step title="Governance Layer — DAO members decide" icon="check-to-slot" iconType="regular">
-    **Who:** Kokonut DAO token holders with at least one \$vKKN governance token.
-
-    **What it does:** Votes on proposals that benefit the Kokonut ecosystem: farm funding, governance parameter changes, Guild bounty approvals, partnership ratifications, and token minting or burning.
-
-    **How it works:** 1 \$vKKN = 1 vote through [DAOHaus](https://link.kokonut.network/dao). Proposals move through the governance process, and the DAO retains final authority over treasury-level decisions.
-  </Step>
-  <Step title="Logic Layer — contracts enforce the rules" icon="gears" iconType="regular">
-    **Who:** The smart contracts and data structures that encode the DAO's rules.
-
-    **What it does:** Holds the treasury, membership records, token contracts, proposal execution logic, and rage-quit mechanics.
-
-    **How it works:** Verified contracts on Gnosis Chain manage the \$vKKN voting token, Loot token, Vault Manager, and rage-quit-enabled SAFE treasury. No individual can move funds, mint tokens, or change parameters without a passed proposal.
-  </Step>
-  <Step title="Execution Layer — contributors do the work" icon="hammer" iconType="regular">
-    **Who:** Kokonut Guilds, Core Team members, contributors, farm partners, and local or global collaborators.
-
-    **What it does:** Turns approved proposals into completed work: farm deployment, MRV reporting, software builds, documentation, governance operations, partnerships, and community programs.
-
-    **How it works:** Six Guilds coordinate domain-specific work using contribution-weighted Guild Points instead of token-weighted voting.
-  </Step>
-  <Step title="Production Layer — farms make the mission real" icon="seedling" iconType="regular">
-    **Who:** Farmers, farm operators, and communities running Kokonut Network farms.
-
-    **What it does:** Produces food, coconuts, eggs, biodiversity, soil regeneration, jobs, training, and local community value.
-
-    **How it works:** Farms operate under the [Kokonut Framework](/kokonut-framework/Introduction). [Adelphi](/ecosystem-wiki/kokonut-farms/adelphi/summary) is the first operational farm: 15,725 m² in Monte Plata, Dominican Republic, with live farm data published through the Kokonut Hub.
-  </Step>
-  <Step title="Infrastructure Layer — data becomes evidence" icon="satellite" iconType="regular">
-    **Who:** MRV systems, Farm Registry API, EAS attestations, indexers, and AI agents.
-
-    **What it does:** Turns farm activity into structured records that DAO members, contributors, funders, and communities can inspect.
-
-    **How it works:** Farm events, harvest records, and impact data move through the MRV pipeline into public records. The Agentic Marketplace is the emerging automation layer for scaling this work across more farms.
-  </Step>
-</Steps>
-
----
-
-## How the layers flow together
+## The architecture as a coordination loop
 
 ```mermaid
 flowchart TD
-    A["Governance Layer\n$vKKN holders vote"] --> B["Logic Layer\ncontracts execute proposals"]
-    B --> C["Execution Layer\nGuilds and partners do the work"]
-    C --> D["Production Layer\nfarms produce food, data, and impact"]
-    D --> E["Infrastructure Layer\nMRV, EAS, APIs, indexers, agents"]
-    E --> B
-    E --> A
+    COMMUNITY["Community + Contributors"]
 
-    A -->|"capital direction"| B
-    B -->|"funding + mandates"| C
-    C -->|"implementation"| D
-    D -->|"field records"| E
-    E -->|"evidence for execution"| B
-    E -->|"evidence for governance"| A
+    MOLOCH["Moloch DAO<br/>Capital Governance"]
+    GUILDS["Guilds<br/>Contribution Coordination"]
+    FRAMEWORK["Kokonut Framework<br/>Shared Methodology"]
 
-    style A fill:#ede9fe,stroke:#8b5cf6,color:#4c1d95
-    style B fill:#dbeafe,stroke:#3b82f6,color:#1e40af
-    style C fill:#fef3c7,stroke:#f59e0b,color:#92400e
-    style D fill:#d1fae5,stroke:#10b981,color:#065f46
-    style E fill:#e0f2fe,stroke:#0284c7,color:#075985
+    OPERATORS["Local Farm Operators<br/>Agricultural Execution"]
+
+    MRV["MRV + Review<br/>Evidence Lifecycle"]
+    HUB["Kokonut Hub<br/>Published Records"]
+    KI["Kokonut Intelligence<br/>Analysis + Synthesis"]
+
+    TECH["Contracts + SAFEs + APIs<br/>Authorized Technical Execution"]
+
+    COMMUNITY --> GUILDS
+    COMMUNITY --> MOLOCH
+
+    GUILDS -->|"work + proposals"| MOLOCH
+    MOLOCH -->|"approved resources"| TECH
+    TECH -->|"authorized execution"| OPERATORS
+
+    GUILDS -->|"specialized work"| OPERATORS
+    FRAMEWORK -->|"shared baseline"| OPERATORS
+
+    OPERATORS -->|"records"| MRV
+    MRV --> HUB
+    MRV --> KI
+
+    HUB --> COMMUNITY
+    KI --> GUILDS
+    KI --> MOLOCH
+    KI --> FRAMEWORK
+    KI --> OPERATORS
+
+    FRAMEWORK -->|"schemas + methods"| MRV
 ```
 
-Capital and governance decisions move downward. Farm work and verification data move upward. The Infrastructure Layer makes the loop legible: it provides the Governance and Logic Layers with evidence rather than forcing members to trust claims.
+The important flow is not “token holders command the network.”
+
+It is:
+
+**capital can authorize resources → contributors and operators execute work → evidence records what happened → evidence improves the next decision.**
 
 ---
 
-## Two governance instances, two entry paths
+## 1. Capital governance — Kokonut Moloch DAO
 
-Kokonut uses two complementary governance systems because capital and contributions require different protections.
+The [Kokonut Moloch DAO](/ecosystem-wiki/the-kokonut-dao/kokonut-moloch-dao) is the live capital-governance system.
 
-|  | Kokonut Moloch DAO | Kokonut Guilds DAO |
-| --- | --- | --- |
-| Primary role | Treasury governance and capital allocation | Operational execution and contribution tracking |
-| Membership basis | Token-weighted | Contribution-weighted |
-| Entry path | Tribute stablecoins → proposal → \$vKKN minted | Complete useful work → earn Guild Points |
-| Capital required | Yes | No |
-| Main rights | Vote on treasury proposals; sponsor proposals; rage-quit | Influence Guild decisions; coordinate work; earn reputation |
-| Exit/risk profile | Rage-quit returns proportional treasury share | No locked capital; points are reputation |
-| Best for | DAO members, funders, capital allocators | Builders, researchers, agronomists, organizers, contributors |
-| On-chain maturity | Live on Gnosis Chain | Reputation tracking in development |
+The current documentation describes it as deployed on **Gnosis Chain** and responsible for:
 
-<Note>
-  The split is intentional: Moloch protects treasury contributors, while Guilds prevent capital from becoming the only path to influence.
-</Note>
+- stablecoin-based membership proposals;
+- treasury allocation;
+- proposal voting and execution;
+- \$vKKN issuance through approved membership proposals;
+- Loot recognition through approved proposals;
+- rage-quit protections under the applicable Moloch rules;
+- governance-parameter changes.
 
----
+### Current token roles
 
-## What each path gives you
-
-### Capital path: Kokonut Moloch DAO
-
-The Kokonut Moloch DAO is the live capital and governance engine of the network. It holds the treasury, governs farm funding, mints membership tokens, and protects members through rage-quit.
-
-| Feature | What it means |
+| Primitive | Current documented role |
 | --- | --- |
-| Stablecoin tribute | Members enter by contributing stablecoins to the treasury through a proposal process. |
-| \$vKKN voting token | Soulbound governance token. 1 \$vKKN = 1 vote. Each token is backed 1:1 by a real coconut tree in a Kokonut Network farm. |
-| Treasury voting | Members vote on farm funding, partnerships, Guild bounties, token minting, and governance changes. |
-| Rage-quit | Members can exit with their proportional treasury share, including during grace periods before disliked proposals execute. |
-| No admin override | Funds, tokens, and governance parameters cannot be moved or changed by the Core Team alone. |
+| **\$vKKN** | Non-transferable voting token; 1 \$vKKN = 1 vote |
+| **Loot** | Non-voting, non-transferable economic-rights / recognition token under the current docs |
+| **Stablecoin tribute** | Capital contribution used in the Moloch membership process |
 
-[Read the Kokonut Moloch DAO page →](/ecosystem-wiki/the-kokonut-dao/kokonut-moloch-dao)
+The current Kokonut model also relates \$vKKN issuance to coconut trees.
 
-### Contribution path: Kokonut Guilds DAO
-
-The Kokonut Guilds DAO is the operational layer of the network. It gives contributors a path to influence and economic recognition through verified work rather than stablecoin tribute.
-
-| Guild path | What it means |
-| --- | --- |
-| Contribute | Complete an open task, bounty, report, MRV submission, proposal, technical contribution, or partnership deliverable. |
-| Earn Guild Points | Completed work becomes a non-transferable reputation scoped to the relevant Guild. |
-| Gain standing | Contributors can become members or stewards inside a Guild after reaching the required contribution threshold. |
-| Route work to Moloch | Guilds can propose budgets, bounties, standards, and deliverables to the Moloch DAO for treasury-level approval. |
-| Earn Loot eligibility | Significant contributions can be recognized through Loot token awards via the Moloch DAO proposal. |
-
-[Read the Kokonut Guilds DAO page →](/ecosystem-wiki/the-kokonut-dao/kokonut-guilds-dao)
-
----
-
-## Why this architecture matters
-
-<CardGroup cols={2}>
-  <Card title="It protects capital without making capital supreme" icon="scale-balanced">
-    Capital contributors get governance rights, treasury transparency, and rage-quit protection. But contributors can still earn influence through Guild work.
-  </Card>
-
-  <Card title="It gives farmers and builders a real path in" icon="hand-holding-seedling">
-    Useful work — MRV, documentation, agronomy, software, community coordination, governance support — can generate Guild Points and potential Loot.
-  </Card>
-
-  <Card title="It makes farm data part of governance" icon="satellite">
-    Production does not sit outside the DAO. Farm outputs, harvest records, and MRV evidence flow back into the decision-making layer.
-  </Card>
-
-  <Card title="It lets the network scale without centralizing" icon="network-wired">
-    The DAO can add more farms, contributors, agents, and Guilds without forcing every operational decision to go through a single token vote.
-  </Card>
-</CardGroup>
-
----
-
-## What is live vs. what is developing
-
-| Component | Status | Notes |
-| --- | --- | --- |
-| Kokonut Moloch DAO | Live | Deployed on Gnosis Chain with verified contracts, stablecoin treasury, \$vKKN, Loot, and rage-quit mechanics. |
-| Adelphi Production Layer | Live | First operational farm in Monte Plata, Dominican Republic, with live Data Hub records. |
-| Kokonut Framework | Live and evolving | Common Data Schema, farm phases, MRV methodology, and impact framework are documented publicly. |
-| Guilds | Operational design / active contribution pathway | Contribution-weighted coordination layer; on-chain reputation tracking is still developing. |
-| Agentic Marketplace | In development | Intended to automate MRV ingestion, data validation, Farm Registry submissions, and EAS attestations. |
+That relationship belongs to the Moloch/token model; it should not be interpreted as meaning the token controls the underlying farm, tree, land title, or agricultural decisions.
 
 <Warning>
-  This page explains the architecture and participation paths. It is not financial advice, an investment offer, or a guarantee of returns. Verify live contracts, treasury state, proposal terms, and current membership parameters before contributing capital.
+  Governance documentation can become stale as contracts, membership, balances, and parameters change. Capital participants should verify the current DAO, treasury, contract state, proposal terms, and applicable governance rules before acting.
 </Warning>
 
 ---
 
-## Choose your entry path
+## 2. Contribution coordination — Kokonut Guilds
+
+The [Kokonut Guilds](/ecosystem-wiki/the-kokonut-dao/kokonut-guilds-dao) provide the contribution path.
+
+They exist because useful work and capital contribution are different forms of participation.
+
+The current Guild domains are:
+
+- Technology;
+- Impact;
+- Communications;
+- Governance;
+- Finance;
+- Community & Partnerships.
+
+A contributor can begin with useful work such as:
+
+- code;
+- documentation;
+- MRV review;
+- farm research;
+- financial modeling;
+- governance work;
+- partnerships;
+- field or community coordination.
+
+### Contribution lifecycle
+
+```mermaid
+flowchart LR
+    A["Useful work"] --> B["Contribution record"]
+    B --> C["Domain review"]
+    C --> D["Guild standing / recognition"]
+    D --> E{"Treasury or DAO-level action needed?"}
+    E -->|"No"| F["Continue within Guild scope"]
+    E -->|"Yes"| G["Prepare Moloch proposal"]
+```
+
+<Info>
+  **Guild Points are still developing.** The Guild model is active, but point thresholds, review rules, standing, and on-chain reputation details remain evolving. A contribution should not be assumed to create points, payment, Loot, or governance rights automatically.
+</Info>
+
+Significant contributions can become eligible for Loot recognition, but Loot awards still require the applicable Moloch DAO proposal and approval process.
+
+---
+
+## 3. Farm operations — local authority stays close to the land
+
+Farm operations are not a DAO subcommittee.
+
+They are real-world agricultural responsibilities.
+
+At a Kokonut farm, local operators can be responsible for decisions such as:
+
+- what and when to plant;
+- irrigation timing;
+- crop rotation and succession;
+- soil and nutrient management;
+- pest and disease response;
+- harvesting;
+- labor coordination;
+- maintenance;
+- local supplier and buyer relationships;
+- adaptation to weather and field conditions.
+
+A treasury proposal can approve capital for irrigation.
+
+It should not tell an operator **when to irrigate**.
+
+A Framework can define a harvest-record structure.
+
+It should not decide **which crop is locally appropriate**.
+
+> **Shared governance should increase local operating capacity, not convert agricultural judgment into token voting.**
+
+---
+
+## 4. Shared methodology — Kokonut Framework
+
+The [Kokonut Framework](/kokonut-framework/Introduction) is the interoperability layer.
+
+It provides reusable structures such as:
+
+- the Common Data Schema;
+- development phases;
+- regenerative principles;
+- MRV expectations;
+- value-accounting methods;
+- impact-reporting logic;
+- shared terminology and documentation.
+
+The Framework helps multiple farms use compatible records without requiring identical implementation.
+
+### Framework authority is narrow
+
+The Framework can define:
+
+- what a baseline record should contain;
+- what evidence a claim should provide;
+- how a development phase is documented;
+- how shared schemas remain compatible.
+
+It should not define:
+
+- every farm's crop mix;
+- local ownership;
+- local labor arrangements;
+- day-to-day agronomy;
+- local cultural priorities.
+
+<Note>
+  Material changes to shared schemas, MRV primitives, or interoperability rules should involve the affected domain reviewers before implementation. Treasury funding for that work may require a separate Moloch proposal.
+</Note>
+
+---
+
+## 5. Evidence — MRV, Hub, and Kokonut Intelligence
+
+Evidence is a coordination layer, not a governance constituency.
+
+The [MRV methodology](/ecosystem-wiki/kokonut-farms/measurement-reporting-and-verification) separates:
+
+**observation → structured record → review → publication → optional attestation → interpretation**
+
+[Kokonut Intelligence](/kokonut-intelligence) provides the active data and analytical infrastructure around those records.
+
+The [Kokonut Hub](https://hub.kokonut.network/projects/41) provides a public surface for published project and farm information.
+
+Evidence can inform:
+
+- funding review;
+- farm operations;
+- forecast updates;
+- Guild work;
+- grant reporting;
+- governance decisions;
+- Framework improvements.
+
+Evidence does **not** become true because the DAO voted for it.
+
+And an on-chain attestation does **not** become scientifically correct simply because it is timestamped.
+
+---
+
+## 6. Technical execution — authorized systems, not autonomous rulers
+
+Contracts, SAFEs, APIs, and agent workflows are execution infrastructure.
+
+Their job is to make authorized processes more reliable.
+
+### Gnosis Chain
+
+Current Kokonut documentation uses Gnosis Chain for:
+
+- Moloch governance;
+- membership;
+- treasury execution;
+- \$vKKN and Loot;
+- proposal-related contract logic.
+
+### Celo
+
+Current Kokonut Intelligence documentation uses Celo for:
+
+- EAS farm-data attestations;
+- MRV evidence references;
+- harvest and impact records;
+- other evidence-oriented schemas.
+
+> **Governance capital and farm evidence are connected, but they are not the same system and they do not need to live on the same chain.**
+
+### AI agents
+
+AI-agent workflows are a developing support layer for tasks such as:
+
+- MRV draft preparation;
+- data-quality checks;
+- forecast-vs-actual analysis;
+- proposal formatting;
+- evidence packaging;
+- recurring reporting.
+
+Agents should not independently:
+
+- approve treasury spending;
+- certify scientific claims;
+- replace farm operators;
+- grant themselves governance authority;
+- silently change shared schemas.
+
+---
+
+## Two participation paths — plus local operating roles
+
+The original architecture page described two entry paths.
+
+Those remain useful, but the broader ecosystem has more than two forms of participation.
+
+| Path | How it starts | What it can lead to | What it does not automatically grant |
+| --- | --- | --- | --- |
+| **Capital path** | Stablecoin tribute + approved Moloch membership proposal | \$vKKN voting rights and applicable Moloch protections | Agricultural authority or domain expertise |
+| **Contribution path** | Useful work + contribution record + review | Guild standing, recognition, possible Loot proposal | Automatic payment, Loot, or Moloch voting |
+| **Farm-operator path** | Real-world farm role or local operating agreement | Agricultural authority within the farm's operating scope | DAO treasury authority |
+| **Framework / review path** | Methodology, evidence, data, or technical expertise | Stewardship over shared methods or review processes | Ownership of local farm decisions |
+
+This is **plural participation**, not one ladder where every participant eventually becomes the same kind of governor.
+
+---
+
+## What requires Moloch approval — and what usually does not
+
+### Typically Moloch-level
+
+- treasury spending;
+- membership;
+- \$vKKN issuance;
+- Loot awards;
+- DAO governance changes;
+- network-level funded commitments;
+- funded Guild bounties when treasury capital is required.
+
+### Typically outside direct Moloch control
+
+- routine farm operations;
+- scientific or methodological review;
+- ordinary documentation edits;
+- Guild-internal work that does not require treasury authority;
+- data-quality review;
+- agronomic decisions;
+- routine software development within an already approved scope.
+
+A decision can move **into** Moloch when it requires shared capital or changes DAO-level rules.
+
+That does not mean Moloch becomes the subject-matter authority over the entire underlying domain.
+
+---
+
+## Why this separation matters
 
 <CardGroup cols={2}>
-  <Card title="I want to become a DAO member" icon="dragon" href="/ecosystem-wiki/the-kokonut-dao/kokonut-moloch-dao">
-    Learn how stablecoin tribute, \$vKKN, voting, rage-quit, and DAO membership work.
+  <Card title="Capital gets protection without becoming sovereign" icon="shield-check">
+    Moloch members can govern shared treasury capital without automatically controlling agronomy, science, contribution reputation, or every ecosystem decision.
   </Card>
 
-  <Card title="I want to contribute without capital" icon="hydra" href="/ecosystem-wiki/the-kokonut-dao/kokonut-guilds-dao">
-    Learn how Guild Points, contribution records, Guild membership, stewardship, and Loot eligibility work.
+  <Card title="Expertise can matter without requiring capital" icon="brain-circuit">
+    Guilds and domain review create pathways for people doing the work to influence the work.
   </Card>
 
-  <Card title="I want to understand proposals" icon="scale-balanced" href="/ecosystem-wiki/the-kokonut-dao/governance-framework">
-    Read the proposal process: drafting, voting, grace period, execution, and governance review.
+  <Card title="Farm operators keep operational authority" icon="tractor">
+    Local agricultural judgment remains close to the land instead of being converted into remote token votes.
   </Card>
 
-  <Card title="I want to inspect contracts" icon="file-contract" href="/ecosystem-wiki/the-kokonut-dao/kokonut-moloch-dao">
-    Review token contracts, Vault Manager, SAFE treasury, Gnosis Chain deployment, and voting power distribution.
+  <Card title="Evidence can challenge assumptions" icon="magnifying-glass-chart">
+    Published records and review workflows can inform governance without becoming subordinate to whichever proposal received the most votes.
   </Card>
 
-  <Card title="I want to build the infrastructure" icon="code" href="/build-with-kokonut">
-    Explore the Farm Registry API, EAS schema, data primitives, and agent-ready infrastructure.
+  <Card title="Shared methods do not require identical farms" icon="puzzle">
+    The Framework creates interoperability while preserving local implementation.
   </Card>
 
-  <Card title="I want to see the farm layer" icon="seedling" href="/ecosystem-wiki/kokonut-farms/adelphi/summary">
-    See Adelphi, the first operational farm that makes the DAO architecture tangible on real land.
+  <Card title="Automation remains bounded" icon="robot">
+    Contracts and agents can make workflows more reliable without becoming independent decision-makers.
   </Card>
 </CardGroup>
 
-<div style={{ display: "flex", gap: "12px", justifyContent: "center", flexWrap: "wrap", margin: "2rem 0 0.75rem" }}>
-  <a href="https://link.kokonut.network/discord" style={{ display: "inline-flex", alignItems: "center", gap: "6px", background: "#009F4D", color: "#fff", padding: "10px 20px", borderRadius: "8px", fontWeight: "600", fontSize: "14px", textDecoration: "none" }}>
-    Join the Community →
-  </a>
+---
 
-  <a href="https://link.kokonut.network/meeting" style={{ display: "inline-flex", alignItems: "center", gap: "6px", border: "1.5px solid #009F4D", color: "#009F4D", padding: "10px 20px", borderRadius: "8px", fontWeight: "600", fontSize: "14px", textDecoration: "none", background: "transparent" }}>
-    Book a DAO Walkthrough
-  </a>
-</div>
+## What this architecture is not
+
+<CardGroup cols={2}>
+  <Card title="Not one super-DAO" icon="layer-group">
+    No single voting system is intended to govern capital, farms, science, contributors, methodology, and technology simultaneously.
+  </Card>
+
+  <Card title="Not token-weighted agronomy" icon="seedling">
+    More \$vKKN does not make someone more qualified to decide crop timing, soil treatment, or farm maintenance.
+  </Card>
+
+  <Card title="Not contribution without review" icon="clipboard-check">
+    Useful work should be documented and reviewed before recognition; Guild participation is not automatic reputation issuance.
+  </Card>
+
+  <Card title="Not attestations as truth" icon="stamp">
+    EAS improves provenance. It does not replace evidence quality, methodology, or professional review.
+  </Card>
+
+  <Card title="Not a rigid farm franchise" icon="map">
+    Shared records and methods do not require farms to copy Adelphi's crops, operators, market, or local context.
+  </Card>
+
+  <Card title="Not AI governance" icon="robot">
+    Agents can prepare and analyze work, but accountable humans remain responsible for high-impact decisions.
+  </Card>
+</CardGroup>
+
+---
+
+## What is live and what is still evolving
+
+| Component | Status | Current role |
+| --- | --- | --- |
+| **Kokonut Moloch DAO** | **Live** | Capital membership, treasury governance, proposals, token logic, rage-quit |
+| **\$vKKN and Loot** | **Live under current docs** | Non-transferable voting and non-voting token primitives |
+| **Adelphi farm operations** | **Live** | First locally operated reference farm |
+| **Kokonut Framework** | **Live and evolving** | Shared schemas, phases, methods, MRV and value-accounting structure |
+| **MRV methodology** | **Live and evolving** | Evidence lifecycle and claim standards |
+| **Kokonut Hub** | **Live** | Public farm/project data surface |
+| **Kokonut Intelligence** | **Active infrastructure** | Canonical data, analytics, review, reporting, Celo EAS integration |
+| **Guild model** | **Active and evolving** | Contribution coordination and domain work |
+| **Guild Points** | **Developing** | Thresholds, review rules, and on-chain reputation details still maturing |
+| **AI-agent automation** | **Developing / expanding** | Review-gated automation for data, reporting, forecasting, and coordination |
+| **Agentic Marketplace** | **In development** | Agent identity, services, payments, reputation, and market coordination |
+
+Transparency about maturity is part of the governance model.
+
+A developing mechanism should not be described as if it already carries the same authority as a live contract or operating farm.
+
+---
+
+## Use the right page for the right question
+
+| Question | Best page |
+| --- | --- |
+| How does capital governance work? | [Kokonut Moloch DAO](/ecosystem-wiki/the-kokonut-dao/kokonut-moloch-dao) |
+| How do contributors coordinate? | [Kokonut Guilds](/ecosystem-wiki/the-kokonut-dao/kokonut-guilds-dao) |
+| How does a proposal move from idea to execution? | [Governance Framework](/ecosystem-wiki/the-kokonut-dao/governance-framework) |
+| How should I structure a proposal? | [Proposal Templates](/ecosystem-wiki/the-kokonut-dao/proposal-templates) |
+| How do farm claims become evidence? | [MRV Methodology](/ecosystem-wiki/kokonut-farms/measurement-reporting-and-verification) |
+| What remains under local farm authority? | [Adelphi Overview](/ecosystem-wiki/kokonut-farms/adelphi/summary) |
+| What shared methods connect farms? | [Kokonut Framework](/kokonut-framework/Introduction) |
+| How does the data/attestation layer work? | [Kokonut Intelligence](/kokonut-intelligence) |
+| How can I contribute without capital? | [Open Collaboration](/ecosystem-wiki/open-collaboration-invitation) |
+
+---
+
+## Continue through The Kokonut DAO
+
+<CardGroup cols={2}>
+  <Card title="Kokonut Moloch DAO" icon="building-columns" href="/ecosystem-wiki/the-kokonut-dao/kokonut-moloch-dao">
+    Go deeper into treasury governance, membership, \$vKKN, Loot, rage-quit, contracts, and live Gnosis deployment.
+  </Card>
+
+  <Card title="Kokonut Guilds" icon="users" href="/ecosystem-wiki/the-kokonut-dao/kokonut-guilds-dao">
+    Understand contribution records, Guild domains, developing Guild Points, stewardship, and the route from useful work to DAO proposals.
+  </Card>
+
+  <Card title="Governance Framework" icon="scale-balanced" href="/ecosystem-wiki/the-kokonut-dao/governance-framework">
+    Follow the decision process from problem definition and review through voting, execution, reporting, and learning.
+  </Card>
+
+  <Card title="Proposal Templates" icon="file-pen" href="/ecosystem-wiki/the-kokonut-dao/proposal-templates">
+    Use structured templates for membership, farm funding, Guild work, Framework changes, partnerships, and other governance actions.
+  </Card>
+
+  <Card title="Build with Kokonut" icon="code" href="/build-with-kokonut">
+    Inspect governance contracts, data primitives, MRV schemas, developer infrastructure, and agent-ready systems.
+  </Card>
+
+  <Card title="Kokonut Manifesto" icon="scroll-old" href="/ecosystem-wiki/kokonut-101/manifesto">
+    Read the values that constrain how authority, capital, technology, evidence, land, and participation should interact.
+  </Card>
+</CardGroup>
+
+> **Kokonut's governance architecture is strongest when no layer has to pretend it is qualified to govern everything.**
