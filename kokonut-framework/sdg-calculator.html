@@ -3,143 +3,232 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Kokonut SDG Impact Calculator</title>
+  <meta name="color-scheme" content="light dark" />
+  <title>Kokonut Scenario & SDG Evidence Calculator</title>
   <style>
     *, *::before, *::after { box-sizing: border-box; }
+
     :root {
-      --green-50: #ecfdf5;
-      --green-100: #d1fae5;
-      --green-400: #34d399;
-      --green-600: #059669;
-      --green-700: #047857;
-      --green-900: #064e3b;
-      --amber-50: #fffbeb;
-      --amber-700: #b45309;
-      --blue-50: #eff6ff;
-      --blue-700: #1d4ed8;
-      --bg: #ffffff;
-      --bg-soft: #f9fafb;
-      --bg-muted: #f3f4f6;
-      --border: #e5e7eb;
-      --border-strong: #d1d5db;
-      --text: #111827;
-      --muted: #6b7280;
-      --subtle: #9ca3af;
-      --radius: 14px;
-      --radius-sm: 10px;
-      --shadow: 0 12px 30px rgba(17, 24, 39, 0.08);
+      --k-green: #009F4D;
+      --k-green-dark: #007A3C;
+      --k-green-soft: #E9F7F0;
+      --k-yellow: #FFCD00;
+      --k-yellow-soft: #FFF8D8;
+      --k-ink: #171717;
+      --k-white: #FFFFFF;
+      --bg: #F7F8F6;
+      --surface: #FFFFFF;
+      --surface-2: #F1F4F1;
+      --text: #171717;
+      --muted: #626A65;
+      --subtle: #8A918D;
+      --border: #DDE3DF;
+      --border-strong: #C9D1CC;
+      --danger: #9A3412;
+      --danger-soft: #FFF1EA;
+      --radius: 18px;
+      --radius-sm: 12px;
+      --shadow: 0 18px 48px rgba(23, 23, 23, 0.08);
     }
 
     @media (prefers-color-scheme: dark) {
       :root {
-        --bg: #111827;
-        --bg-soft: #172033;
-        --bg-muted: #1f2937;
-        --border: #334155;
-        --border-strong: #475569;
-        --text: #f9fafb;
-        --muted: #cbd5e1;
-        --subtle: #94a3b8;
-        --green-50: #052e24;
-        --green-100: #064e3b;
-        --amber-50: #3b2a06;
-        --blue-50: #10213f;
-        --shadow: 0 12px 30px rgba(0, 0, 0, 0.24);
+        --bg: #101311;
+        --surface: #171B18;
+        --surface-2: #1E2420;
+        --text: #F7FAF8;
+        --muted: #C0C8C3;
+        --subtle: #929D96;
+        --border: #313A34;
+        --border-strong: #465149;
+        --k-green-soft: #0D3320;
+        --k-yellow-soft: #3A3107;
+        --danger-soft: #3A1B12;
+        --shadow: 0 18px 48px rgba(0, 0, 0, 0.28);
       }
     }
 
+    html { scroll-behavior: smooth; }
+
     body {
       margin: 0;
-      padding: 20px;
+      padding: 18px;
       font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
       color: var(--text);
-      background: var(--bg);
+      background:
+        radial-gradient(circle at 10% 0%, rgba(0,159,77,0.10), transparent 28%),
+        radial-gradient(circle at 95% 4%, rgba(255,205,0,0.13), transparent 24%),
+        var(--bg);
       line-height: 1.5;
     }
 
     main {
-      max-width: 1080px;
+      max-width: 1160px;
       margin: 0 auto;
     }
 
     .hero {
+      position: relative;
+      overflow: hidden;
       border: 1px solid var(--border);
-      border-radius: 22px;
-      background: linear-gradient(135deg, var(--green-50), var(--bg));
-      padding: 28px;
+      border-radius: 24px;
+      background: var(--surface);
       box-shadow: var(--shadow);
+      padding: 30px;
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      inset: 0 auto 0 0;
+      width: 8px;
+      background: linear-gradient(180deg, var(--k-green), var(--k-yellow));
+    }
+
+    .brand-row {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 14px;
+    }
+
+    .brand-mark {
+      width: 34px;
+      height: 34px;
+      border-radius: 50%;
+      background: var(--k-green);
+      position: relative;
+      flex: 0 0 auto;
+      box-shadow: inset 0 -8px 0 rgba(0,0,0,0.08);
+    }
+
+    .brand-mark::after {
+      content: "";
+      position: absolute;
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: var(--k-yellow);
+      right: 5px;
+      top: 5px;
     }
 
     .eyebrow {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
       font-size: 12px;
-      font-weight: 700;
-      color: var(--green-700);
+      font-weight: 850;
+      color: var(--k-green);
       text-transform: uppercase;
-      letter-spacing: 0.08em;
-      margin-bottom: 10px;
+      letter-spacing: 0.09em;
     }
 
     h1 {
       margin: 0;
-      font-size: clamp(28px, 5vw, 48px);
-      line-height: 1.05;
-      letter-spacing: -0.04em;
+      max-width: 850px;
+      font-size: clamp(30px, 5vw, 52px);
+      line-height: 1.02;
+      letter-spacing: -0.045em;
     }
 
     .subtitle {
-      max-width: 780px;
+      max-width: 820px;
       margin: 14px 0 0;
       color: var(--muted);
       font-size: 16px;
     }
 
-    .actions {
-      display: flex;
-      gap: 12px;
-      flex-wrap: wrap;
-      margin-top: 22px;
+    .status-chip {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      margin-top: 18px;
+      border: 1px solid rgba(0,159,77,0.24);
+      background: var(--k-green-soft);
+      color: var(--k-green-dark);
+      border-radius: 999px;
+      padding: 7px 11px;
+      font-size: 12px;
+      font-weight: 800;
     }
 
-    button, .button-link {
+    .status-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--k-green);
+    }
+
+    .actions {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin-top: 20px;
+    }
+
+    button {
       appearance: none;
       border: 0;
       cursor: pointer;
       border-radius: 999px;
-      padding: 10px 16px;
-      font-size: 14px;
-      font-weight: 700;
-      text-decoration: none;
+      padding: 11px 17px;
+      font-size: 13px;
+      font-weight: 800;
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      gap: 8px;
       transition: transform 0.15s ease, background 0.15s ease, border-color 0.15s ease;
     }
 
-    button:hover, .button-link:hover { transform: translateY(-1px); }
-    button:focus-visible, a:focus-visible, input:focus-visible { outline: 3px solid var(--green-400); outline-offset: 2px; }
+    button:hover { transform: translateY(-1px); }
+    button:focus-visible,
+    input:focus-visible {
+      outline: 3px solid rgba(255,205,0,0.75);
+      outline-offset: 2px;
+    }
 
-    .primary { background: var(--green-600); color: white; }
-    .secondary { background: var(--bg); border: 1px solid var(--border-strong); color: var(--green-700); }
-    .ghost { background: var(--bg-muted); color: var(--muted); }
+    .primary {
+      background: var(--k-green);
+      color: var(--k-white);
+    }
+
+    .secondary {
+      background: var(--k-yellow);
+      color: var(--k-ink);
+    }
+
+    .ghost {
+      background: var(--surface-2);
+      color: var(--text);
+      border: 1px solid var(--border);
+    }
 
     .notice {
       margin-top: 18px;
-      padding: 12px 14px;
-      border: 1px solid var(--border);
-      border-left: 4px solid var(--amber-700);
+      display: grid;
+      grid-template-columns: auto 1fr;
+      gap: 10px;
+      align-items: start;
+      padding: 13px 14px;
+      border: 1px solid rgba(255,205,0,0.45);
       border-radius: var(--radius-sm);
-      background: var(--amber-50);
+      background: var(--k-yellow-soft);
       color: var(--muted);
       font-size: 13px;
     }
 
+    .notice-badge {
+      width: 26px;
+      height: 26px;
+      border-radius: 8px;
+      display: grid;
+      place-items: center;
+      background: var(--k-yellow);
+      color: var(--k-ink);
+      font-weight: 900;
+    }
+
     .layout {
       display: grid;
-      grid-template-columns: minmax(280px, 0.9fr) minmax(320px, 1.1fr);
+      grid-template-columns: minmax(300px, 0.9fr) minmax(420px, 1.25fr);
       gap: 18px;
       margin-top: 18px;
       align-items: start;
@@ -147,56 +236,138 @@
 
     .panel {
       border: 1px solid var(--border);
-      background: var(--bg-soft);
+      background: var(--surface);
       border-radius: var(--radius);
       padding: 18px;
+      box-shadow: 0 8px 24px rgba(23,23,23,0.035);
     }
 
-    .panel h2 {
-      margin: 0 0 6px;
-      font-size: 18px;
-      letter-spacing: -0.02em;
+    .panel + .panel { margin-top: 12px; }
+
+    .panel-heading {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 12px;
+      margin-bottom: 4px;
     }
 
-    .panel p {
-      margin: 0 0 16px;
-      font-size: 13px;
+    .panel h2,
+    .panel h3 {
+      margin: 0;
+      letter-spacing: -0.025em;
+    }
+
+    .panel h2 { font-size: 19px; }
+    .panel h3 { font-size: 15px; }
+
+    .panel-intro {
+      margin: 5px 0 16px;
       color: var(--muted);
+      font-size: 13px;
     }
+
+    .reference-label {
+      display: none;
+      color: var(--k-green-dark);
+      background: var(--k-green-soft);
+      border: 1px solid rgba(0,159,77,0.20);
+      border-radius: 999px;
+      padding: 4px 8px;
+      font-size: 10px;
+      font-weight: 850;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      white-space: nowrap;
+    }
+
+    .reference-label.visible { display: inline-flex; }
 
     .field {
       margin: 16px 0;
     }
 
-    label.field-label {
+    label.field-label,
+    .field-label-static {
       display: flex;
       justify-content: space-between;
       align-items: baseline;
       gap: 10px;
-      font-size: 12px;
-      font-weight: 800;
+      font-size: 11px;
+      font-weight: 850;
       color: var(--muted);
       text-transform: uppercase;
-      letter-spacing: 0.06em;
-      margin-bottom: 9px;
+      letter-spacing: 0.065em;
+      margin-bottom: 8px;
+    }
+
+    .field-help {
+      display: block;
+      margin-top: 6px;
+      color: var(--subtle);
+      font-size: 11px;
     }
 
     .value-pill {
-      color: var(--green-700);
-      background: var(--green-50);
-      border: 1px solid var(--green-100);
+      color: var(--k-green-dark);
+      background: var(--k-green-soft);
+      border: 1px solid rgba(0,159,77,0.18);
       border-radius: 999px;
       padding: 2px 8px;
       text-transform: none;
       letter-spacing: 0;
-      font-size: 12px;
+      font-size: 11px;
+      white-space: nowrap;
     }
 
     input[type="range"] {
       width: 100%;
-      accent-color: var(--green-600);
+      accent-color: var(--k-green);
       cursor: pointer;
     }
+
+    input[type="number"] {
+      width: 100%;
+      border: 1px solid var(--border-strong);
+      border-radius: 10px;
+      background: var(--surface-2);
+      color: var(--text);
+      padding: 11px 12px;
+      font: inherit;
+      font-size: 14px;
+      font-weight: 700;
+    }
+
+    .money-input,
+    .percent-input {
+      position: relative;
+    }
+
+    .money-input::before {
+      content: "$";
+      position: absolute;
+      left: 12px;
+      top: 50%;
+      transform: translateY(-50%);
+      color: var(--subtle);
+      font-weight: 800;
+      pointer-events: none;
+    }
+
+    .money-input input { padding-left: 28px; }
+
+    .percent-input::after {
+      content: "%";
+      position: absolute;
+      right: 12px;
+      top: 50%;
+      transform: translateY(-50%);
+      color: var(--subtle);
+      font-weight: 800;
+      pointer-events: none;
+    }
+
+    .percent-input input { padding-right: 28px; }
 
     .segmented {
       display: grid;
@@ -204,32 +375,32 @@
       gap: 8px;
     }
 
-    .segmented.two { grid-template-columns: repeat(2, 1fr); }
-
     .option {
-      padding: 10px;
+      appearance: none;
       border: 1px solid var(--border-strong);
-      border-radius: var(--radius-sm);
-      background: var(--bg);
+      border-radius: 10px;
+      background: var(--surface);
       color: var(--muted);
-      font-size: 12px;
-      font-weight: 700;
+      padding: 10px 7px;
       text-align: center;
       cursor: pointer;
-      user-select: none;
+      font-size: 12px;
+      font-weight: 800;
     }
 
     .option small {
       display: block;
-      margin-top: 2px;
-      font-weight: 500;
       color: var(--subtle);
+      font-size: 10px;
+      font-weight: 600;
+      margin-top: 2px;
     }
 
     .option.active {
-      border-color: var(--green-600);
-      background: var(--green-50);
-      color: var(--green-900);
+      border-color: var(--k-green);
+      background: var(--k-green-soft);
+      color: var(--k-green-dark);
+      box-shadow: inset 0 -3px 0 var(--k-green);
     }
 
     .checks {
@@ -242,329 +413,564 @@
       display: flex;
       align-items: flex-start;
       gap: 8px;
+      min-height: 64px;
       padding: 10px;
-      background: var(--bg);
+      background: var(--surface-2);
       border: 1px solid var(--border);
-      border-radius: var(--radius-sm);
+      border-radius: 10px;
       color: var(--muted);
-      font-size: 13px;
+      font-size: 12px;
       cursor: pointer;
     }
 
-    .check input { margin-top: 2px; accent-color: var(--green-600); }
-    .check span strong { display: block; color: var(--text); font-size: 13px; }
-    .check span small { display: block; color: var(--subtle); margin-top: 2px; }
+    .check input {
+      margin-top: 2px;
+      accent-color: var(--k-green);
+    }
+
+    .check strong {
+      display: block;
+      color: var(--text);
+      font-size: 12px;
+    }
+
+    .check small {
+      display: block;
+      color: var(--subtle);
+      margin-top: 2px;
+      line-height: 1.3;
+    }
+
+    .divider {
+      height: 1px;
+      background: var(--border);
+      margin: 20px 0;
+    }
+
+    .evidence-title {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .yellow-dot {
+      width: 9px;
+      height: 9px;
+      border-radius: 3px;
+      background: var(--k-yellow);
+      flex: 0 0 auto;
+    }
 
     .metrics {
       display: grid;
       grid-template-columns: repeat(4, 1fr);
       gap: 10px;
-      margin-bottom: 14px;
+      margin-bottom: 18px;
     }
 
     .metric {
-      background: var(--bg);
+      min-height: 112px;
+      background: var(--surface-2);
       border: 1px solid var(--border);
-      border-radius: var(--radius-sm);
-      padding: 14px;
+      border-radius: 12px;
+      padding: 13px;
     }
 
     .metric-label {
       color: var(--muted);
-      font-size: 12px;
-      margin-bottom: 5px;
+      font-size: 11px;
+      font-weight: 700;
+      min-height: 32px;
     }
 
     .metric-value {
-      font-size: 24px;
-      font-weight: 800;
-      letter-spacing: -0.03em;
+      margin-top: 5px;
+      font-size: clamp(21px, 3vw, 28px);
+      font-weight: 900;
+      letter-spacing: -0.04em;
       line-height: 1;
     }
 
     .metric-unit {
       color: var(--subtle);
-      font-size: 11px;
-      margin-top: 6px;
+      font-size: 10px;
+      margin-top: 7px;
+    }
+
+    .method-note {
+      padding: 12px 13px;
+      border: 1px dashed var(--border-strong);
+      border-radius: 10px;
+      color: var(--muted);
+      font-size: 12px;
+      background: var(--surface-2);
+      margin-bottom: 18px;
     }
 
     .sdg-grid {
       display: grid;
       grid-template-columns: repeat(5, 1fr);
-      gap: 10px;
+      gap: 9px;
+      margin-top: 10px;
     }
 
     .sdg-card {
       position: relative;
       overflow: hidden;
-      min-height: 132px;
-      background: var(--bg);
+      min-height: 172px;
+      background: var(--surface);
       border: 1px solid var(--border);
-      border-radius: var(--radius-sm);
-      padding: 14px;
+      border-radius: 12px;
+      padding: 13px;
     }
 
-    .sdg-num { font-size: 12px; font-weight: 800; color: var(--subtle); }
-    .sdg-name { min-height: 34px; margin-top: 3px; font-size: 13px; font-weight: 800; }
-    .sdg-score { margin-top: 14px; font-size: 28px; font-weight: 900; letter-spacing: -0.04em; }
-    .sdg-caption { font-size: 11px; color: var(--subtle); }
-    .bar-bg { position: absolute; left: 0; right: 0; bottom: 0; height: 5px; background: var(--border); }
-    .bar { height: 100%; width: 0; transition: width 0.35s ease; }
+    .sdg-card::after {
+      content: "";
+      position: absolute;
+      inset: auto 0 0;
+      height: 5px;
+      background: var(--k-green);
+      opacity: 0.18;
+    }
 
-    .co-benefit {
-      margin-top: 12px;
-      padding: 14px;
-      border: 1px solid #bfdbfe;
-      border-radius: var(--radius-sm);
-      background: var(--blue-50);
-      color: var(--muted);
+    .sdg-card.level-2::after { opacity: 0.55; }
+    .sdg-card.level-3::after { opacity: 1; }
+
+    .sdg-num {
+      color: var(--subtle);
+      font-size: 10px;
+      font-weight: 900;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    .sdg-name {
+      margin-top: 2px;
+      min-height: 34px;
       font-size: 13px;
+      font-weight: 850;
+      line-height: 1.25;
     }
 
-    .co-benefit strong { color: var(--blue-700); }
+    .status-label {
+      display: inline-flex;
+      margin-top: 11px;
+      border-radius: 999px;
+      padding: 5px 7px;
+      background: var(--surface-2);
+      color: var(--muted);
+      font-size: 10px;
+      font-weight: 850;
+    }
 
-    .assumptions {
+    .level-2 .status-label {
+      background: var(--k-yellow-soft);
+      color: var(--text);
+    }
+
+    .level-3 .status-label {
+      background: var(--k-green-soft);
+      color: var(--k-green-dark);
+    }
+
+    .sdg-detail {
+      margin-top: 10px;
+      color: var(--subtle);
+      font-size: 10px;
+      line-height: 1.35;
+    }
+
+    .climate {
+      margin-top: 14px;
+      padding: 14px;
+      border: 1px solid rgba(255,205,0,0.45);
+      border-left: 5px solid var(--k-yellow);
+      border-radius: 12px;
+      background: var(--k-yellow-soft);
+      color: var(--muted);
+      font-size: 12px;
+    }
+
+    .climate strong { color: var(--text); }
+
+    .summary {
+      margin-top: 14px;
+      padding: 14px;
+      border-radius: 12px;
+      background: var(--k-green-soft);
+      border: 1px solid rgba(0,159,77,0.18);
+      color: var(--muted);
+      font-size: 12px;
+    }
+
+    .summary strong { color: var(--k-green-dark); }
+
+    .gaps {
+      margin-top: 18px;
+    }
+
+    .gap-list {
+      display: grid;
+      gap: 8px;
+      margin-top: 10px;
+    }
+
+    .gap {
+      display: grid;
+      grid-template-columns: 26px 1fr;
+      gap: 9px;
+      align-items: start;
+      padding: 10px;
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      background: var(--surface-2);
+      color: var(--muted);
+      font-size: 11px;
+    }
+
+    .gap-index {
+      width: 26px;
+      height: 26px;
+      border-radius: 8px;
+      display: grid;
+      place-items: center;
+      background: var(--k-yellow);
+      color: var(--k-ink);
+      font-weight: 900;
+      font-size: 11px;
+    }
+
+    .gap strong {
+      display: block;
+      color: var(--text);
+      font-size: 11px;
+      margin-bottom: 1px;
+    }
+
+    .methodology {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 12px;
+      gap: 14px;
       margin-top: 18px;
     }
 
     table {
       width: 100%;
       border-collapse: collapse;
-      font-size: 13px;
-      overflow: hidden;
-      border-radius: var(--radius-sm);
+      font-size: 12px;
     }
 
     th, td {
       text-align: left;
-      border-bottom: 1px solid var(--border);
-      padding: 10px;
       vertical-align: top;
+      border-bottom: 1px solid var(--border);
+      padding: 9px 8px;
     }
 
     th {
+      background: var(--surface-2);
       color: var(--muted);
-      font-size: 11px;
+      font-size: 10px;
       text-transform: uppercase;
-      letter-spacing: 0.06em;
-      background: var(--bg-muted);
+      letter-spacing: 0.05em;
     }
 
     tr:last-child td { border-bottom: 0; }
 
-    .summary {
-      margin-top: 14px;
-      padding: 14px;
-      border-radius: var(--radius-sm);
-      background: var(--green-50);
-      border: 1px solid var(--green-100);
-      color: var(--muted);
-      font-size: 13px;
-    }
-
-    .summary strong { color: var(--green-900); }
-
     footer {
-      margin-top: 18px;
+      margin: 18px 0 4px;
       color: var(--subtle);
-      font-size: 12px;
+      font-size: 11px;
       text-align: center;
     }
 
-    @media (max-width: 880px) {
-      body { padding: 14px; }
-      .layout, .assumptions { grid-template-columns: 1fr; }
-      .metrics { grid-template-columns: repeat(2, 1fr); }
-      .sdg-grid { grid-template-columns: repeat(2, 1fr); }
-      .sdg-card:last-child { grid-column: span 2; }
+    @media (max-width: 940px) {
+      .layout,
+      .methodology {
+        grid-template-columns: 1fr;
+      }
+      .metrics {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      .sdg-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      .sdg-card:last-child {
+        grid-column: span 2;
+      }
     }
 
-    @media (max-width: 560px) {
-      .hero { padding: 20px; }
-      .metrics, .checks, .segmented, .segmented.two, .sdg-grid { grid-template-columns: 1fr; }
-      .sdg-card:last-child { grid-column: span 1; }
+    @media (max-width: 580px) {
+      body { padding: 10px; }
+      .hero { padding: 22px 18px; }
       .actions { flex-direction: column; }
-      button, .button-link { width: 100%; }
+      button { width: 100%; }
+      .metrics,
+      .checks,
+      .segmented,
+      .sdg-grid {
+        grid-template-columns: 1fr;
+      }
+      .sdg-card:last-child { grid-column: span 1; }
     }
   </style>
 </head>
 <body>
   <main>
     <section class="hero" aria-labelledby="page-title">
-      <div class="eyebrow">Kokonut Framework Tool</div>
-      <h1 id="page-title">Estimate how a regenerative farm maps to SDG impact.</h1>
+      <div class="brand-row">
+        <div class="brand-mark" aria-hidden="true"></div>
+        <div class="eyebrow">Kokonut Framework · Scenario & Evidence Tool</div>
+      </div>
+
+      <h1 id="page-title">Model the farm. Plan the evidence.</h1>
       <p class="subtitle">
-        Use this calculator to model how farm size, labor, crop diversity, certification, biodiversity work, and MRV readiness can influence indicative SDG contribution scores.
+        Build a regenerative-farm scenario, see which primary SDGs are relevant, and identify the records needed before planning assumptions can become stronger outcome claims.
       </p>
 
+      <div class="status-chip"><span class="status-dot"></span> Planning model · not impact certification</div>
+
       <div class="actions" aria-label="Calculator actions">
-        <button class="primary" type="button" id="load-adelphi">Load Adelphi baseline</button>
+        <button class="primary" type="button" id="load-adelphi">Load Adelphi reference</button>
         <button class="secondary" type="button" id="copy-summary">Copy scenario summary</button>
         <button class="ghost" type="button" id="reset-scenario">Reset scenario</button>
       </div>
 
       <div class="notice" role="note">
-        <strong>Use as a planning tool, not a certified assessment.</strong> Scores are indicative. Impact claims should be verified through farm records, MRV payloads, public Data Hub entries, and annual reports before they are used in proposals or public reporting.
+        <div class="notice-badge">!</div>
+        <div>
+          <strong>Transparent assumptions over false precision.</strong>
+          This calculator does not estimate carbon tonnes or verified SDG impact. Revenue and public-goods figures come from explicit scenario inputs; SDG cards show planning/evidence status only.
+        </div>
       </div>
     </section>
 
     <section class="layout" aria-label="Calculator inputs and results">
-      <form class="panel" id="calculator-form">
-        <h2>Scenario inputs</h2>
-        <p>Start with your own farm scenario or load Adelphi's baseline values.</p>
-
-        <div class="field">
-          <label class="field-label" for="land">Agricultural area <span class="value-pill" id="land-value">5,000 m²</span></label>
-          <input type="range" id="land" min="500" max="50000" step="100" value="5000" />
-        </div>
-
-        <div class="field">
-          <label class="field-label" for="workers">Workers supported <span class="value-pill" id="workers-value">3</span></label>
-          <input type="range" id="workers" min="0" max="30" step="1" value="3" />
-        </div>
-
-        <div class="field">
-          <label class="field-label">Crop system</label>
-          <div class="segmented" data-group="crop">
-            <div class="option active" data-value="short" role="button" tabindex="0">Short cycle<small>vegetables</small></div>
-            <div class="option" data-value="mixed" role="button" tabindex="0">Mixed cycle<small>veg + fruit</small></div>
-            <div class="option" data-value="syntropic" role="button" tabindex="0">Syntropic mix<small>veg + fruit + trees</small></div>
+      <div>
+        <form class="panel" id="calculator-form">
+          <div class="panel-heading">
+            <div>
+              <h2>Scenario assumptions</h2>
+              <p class="panel-intro">Describe the farm plan without pretending the plan is already an outcome.</p>
+            </div>
+            <span class="reference-label" id="reference-label">Adelphi reference</span>
           </div>
-        </div>
 
-        <div class="field">
-          <label class="field-label">Location context</label>
-          <div class="segmented" data-group="location">
-            <div class="option active" data-value="rural" role="button" tabindex="0">Rural<small>farm community</small></div>
-            <div class="option" data-value="periurban" role="button" tabindex="0">Peri-urban<small>near market</small></div>
-            <div class="option" data-value="urban" role="button" tabindex="0">Urban<small>limited land</small></div>
+          <div class="field">
+            <label class="field-label" for="land">
+              Agricultural area
+              <span class="value-pill" id="land-value">5,000 m²</span>
+            </label>
+            <input type="range" id="land" min="500" max="60000" step="100" value="5000" />
+            <span class="field-help">Planning area only; does not establish title, usable area, or productive capacity.</span>
           </div>
-        </div>
 
-        <div class="field">
-          <label class="field-label">Impact factors</label>
+          <div class="field">
+            <label class="field-label" for="workers">
+              Planned / documented worker roles
+              <span class="value-pill" id="workers-value">3</span>
+            </label>
+            <input type="range" id="workers" min="0" max="40" step="1" value="3" />
+            <span class="field-help">Not automatically full-time jobs or evidence of decent-work quality.</span>
+          </div>
+
+          <div class="field">
+            <label class="field-label" for="revenue">Gross annual revenue forecast</label>
+            <div class="money-input">
+              <input type="number" id="revenue" min="0" step="100" value="0" inputmode="decimal" />
+            </div>
+            <span class="field-help">User-supplied forecast. The calculator no longer invents revenue from crop type or land area.</span>
+          </div>
+
+          <div class="field">
+            <label class="field-label" for="public-goods">Proposed public-goods share</label>
+            <div class="percent-input">
+              <input type="number" id="public-goods" min="0" max="100" step="0.5" value="0" inputmode="decimal" />
+            </div>
+            <span class="field-help">Scenario-specific. Kokonut does not apply one universal allocation percentage to every farm.</span>
+          </div>
+
+          <div class="field">
+            <div class="field-label-static">Crop system</div>
+            <div class="segmented" data-group="crop">
+              <button class="option active" type="button" data-value="short">Short cycle<small>vegetables / fast turnover</small></button>
+              <button class="option" type="button" data-value="mixed">Mixed cycle<small>vegetables + fruit</small></button>
+              <button class="option" type="button" data-value="syntropic">Syntropic mix<small>multi-strata + perennials</small></button>
+            </div>
+          </div>
+
+          <div class="field">
+            <div class="field-label-static">Farm context</div>
+            <div class="segmented" data-group="location">
+              <button class="option active" type="button" data-value="rural">Rural<small>farm community</small></button>
+              <button class="option" type="button" data-value="periurban">Peri-urban<small>near population center</small></button>
+              <button class="option" type="button" data-value="urban">Urban<small>limited-land context</small></button>
+            </div>
+          </div>
+
+          <div class="field">
+            <div class="field-label-static">Scenario activities / characteristics</div>
+            <div class="checks">
+              <label class="check"><input type="checkbox" id="women" /><span><strong>Women-led</strong><small>ownership / management characteristic</small></span></label>
+              <label class="check"><input type="checkbox" id="organic" /><span><strong>Organic pathway</strong><small>practice or certification pathway</small></span></label>
+              <label class="check"><input type="checkbox" id="biochar" /><span><strong>Biochar / soil practices</strong><small>documented or planned intervention</small></span></label>
+              <label class="check"><input type="checkbox" id="nursery" /><span><strong>Nursery / biodiversity</strong><small>propagation or habitat activity</small></span></label>
+              <label class="check"><input type="checkbox" id="training" /><span><strong>Training activity</strong><small>workshops / skills program</small></span></label>
+              <label class="check"><input type="checkbox" id="mrv" /><span><strong>MRV-ready</strong><small>structured records + review plan</small></span></label>
+            </div>
+          </div>
+
+          <div class="divider"></div>
+
+          <div class="evidence-title">
+            <span class="yellow-dot"></span>
+            <h3>Evidence readiness</h3>
+          </div>
+          <p class="panel-intro">Check only records that exist or are explicitly part of the evidence plan.</p>
+
           <div class="checks">
-            <label class="check"><input type="checkbox" id="women" /><span><strong>Women-led</strong><small>ownership or management</small></span></label>
-            <label class="check"><input type="checkbox" id="organic" /><span><strong>Organic pathway</strong><small>certification or transition</small></span></label>
-            <label class="check"><input type="checkbox" id="biochar" /><span><strong>Biochar / soil inputs</strong><small>documented soil practice</small></span></label>
-            <label class="check"><input type="checkbox" id="nursery" /><span><strong>Native nursery</strong><small>biodiversity propagation</small></span></label>
-            <label class="check"><input type="checkbox" id="training" /><span><strong>Training program</strong><small>workshops or education</small></span></label>
-            <label class="check"><input type="checkbox" id="mrv" /><span><strong>MRV-ready</strong><small>records, Data Hub, reports</small></span></label>
+            <label class="check"><input type="checkbox" id="ev-land" /><span><strong>Land / site record</strong><small>polygon, land use, operating right</small></span></label>
+            <label class="check"><input type="checkbox" id="ev-jobs" /><span><strong>Job / role records</strong><small>roles, dates, status</small></span></label>
+            <label class="check"><input type="checkbox" id="ev-work" /><span><strong>Work-quality records</strong><small>compensation, safety, continuity</small></span></label>
+            <label class="check"><input type="checkbox" id="ev-harvest" /><span><strong>Harvest / distribution actuals</strong><small>volumes, sales, recipients</small></span></label>
+            <label class="check"><input type="checkbox" id="ev-leadership" /><span><strong>Leadership / ownership record</strong><small>documented decision role</small></span></label>
+            <label class="check"><input type="checkbox" id="ev-ecology" /><span><strong>Ecological baseline</strong><small>soil, vegetation, biodiversity context</small></span></label>
+            <label class="check"><input type="checkbox" id="ev-public-goods" /><span><strong>Public-goods records</strong><small>approved terms + actual transfers</small></span></label>
           </div>
-        </div>
-      </form>
+        </form>
+      </div>
 
       <section class="panel" aria-live="polite">
-        <h2>Estimated outputs</h2>
-        <p>These outputs help compare scenarios before field evidence is collected.</p>
+        <h2>Scenario outputs</h2>
+        <p class="panel-intro">Planning values are shown separately from evidence status.</p>
 
         <div class="metrics">
           <div class="metric">
-            <div class="metric-label">Indicative annual revenue</div>
-            <div class="metric-value" id="out-revenue">—</div>
-            <div class="metric-unit">gross USD estimate</div>
+            <div class="metric-label">Gross revenue scenario</div>
+            <div class="metric-value" id="out-revenue">$0</div>
+            <div class="metric-unit">user-entered annual forecast</div>
           </div>
           <div class="metric">
-            <div class="metric-label">Public goods allocation</div>
-            <div class="metric-value" id="out-public-goods">—</div>
-            <div class="metric-unit">10% of gross revenue</div>
+            <div class="metric-label">Public-goods scenario</div>
+            <div class="metric-value" id="out-public-goods">$0</div>
+            <div class="metric-unit" id="out-public-goods-unit">0% of forecast gross revenue</div>
           </div>
           <div class="metric">
-            <div class="metric-label">Jobs supported</div>
-            <div class="metric-value" id="out-jobs">—</div>
-            <div class="metric-unit">full-time equivalent</div>
+            <div class="metric-label">Worker roles</div>
+            <div class="metric-value" id="out-jobs">3</div>
+            <div class="metric-unit">planned / documented count</div>
           </div>
           <div class="metric">
-            <div class="metric-label">Carbon co-benefit</div>
-            <div class="metric-value" id="out-carbon">—</div>
-            <div class="metric-unit">t CO₂e / yr, indicative</div>
+            <div class="metric-label">Evidence readiness</div>
+            <div class="metric-value" id="out-evidence">0/7</div>
+            <div class="metric-unit">record categories checked</div>
           </div>
         </div>
 
-        <h2>Primary SDG contribution scores</h2>
-        <p>Adelphi tracks five primary SDGs. SDG 13 is shown separately as a climate co-benefit until carbon methodology is fully operationalized.</p>
+        <div class="method-note">
+          <strong>Method:</strong> revenue is not calculated by the tool. Public goods = revenue forecast × selected share. SDG cards use transparent scenario/evidence rules, not weighted impact scores.
+        </div>
+
+        <h2>Primary SDG planning status</h2>
+        <p class="panel-intro">These cards show whether a relevant activity is represented and whether supporting evidence is planned. They do not show achieved impact.</p>
+
         <div class="sdg-grid" id="sdg-grid"></div>
 
-        <div class="co-benefit" id="climate-note"></div>
+        <div class="climate" id="climate-note"></div>
         <div class="summary" id="scenario-summary"></div>
+
+        <div class="gaps">
+          <h3>Priority evidence gaps</h3>
+          <div class="gap-list" id="gap-list"></div>
+        </div>
       </section>
     </section>
 
-    <section class="assumptions" aria-label="Methodology notes">
+    <section class="methodology" aria-label="Calculator methodology notes">
       <div class="panel">
-        <h2>Assumptions</h2>
+        <h2>Status ladder</h2>
         <table>
           <thead>
-            <tr><th>Input</th><th>How it affects the model</th></tr>
+            <tr><th>Status</th><th>Meaning inside this calculator</th></tr>
           </thead>
           <tbody>
-            <tr><td>Crop system</td><td>More diverse systems increase food, biodiversity, and resilience scores, but can reduce simple revenue-per-m² assumptions.</td></tr>
-            <tr><td>Workers</td><td>Employment affects SDG 1 and SDG 8, especially when paired with training and stable farm operations.</td></tr>
-            <tr><td>Women-led</td><td>Women-led ownership or management increases SDG 5 and reinforces household and community resilience.</td></tr>
-            <tr><td>MRV-ready</td><td>MRV readiness improves confidence because claims can be checked against records, attestations, and reports.</td></tr>
+            <tr><td><strong>Not represented</strong></td><td>No relevant scenario activity is selected.</td></tr>
+            <tr><td><strong>Relevant</strong></td><td>The scenario has a connection to the SDG, but the intervention is not clearly specified.</td></tr>
+            <tr><td><strong>Activity planned</strong></td><td>A relevant farm activity or characteristic is represented.</td></tr>
+            <tr><td><strong>Evidence planned</strong></td><td>The activity is represented and at least one material supporting record is identified.</td></tr>
           </tbody>
         </table>
       </div>
 
       <div class="panel">
-        <h2>Verification checklist</h2>
+        <h2>What still requires real operations</h2>
         <table>
           <thead>
-            <tr><th>Claim</th><th>Evidence to collect</th></tr>
+            <tr><th>Claim</th><th>Cannot come from this calculator</th></tr>
           </thead>
           <tbody>
-            <tr><td>Food production</td><td>Crop cycles, harvest logs, egg records, and distribution records.</td></tr>
-            <tr><td>Jobs and training</td><td>Role descriptions, payment records, workshop attendance, and contributor logs.</td></tr>
-            <tr><td>Biodiversity</td><td>Species inventory, nursery records, geospatial data, and field observations.</td></tr>
-            <tr><td>Climate co-benefit</td><td>Soil data, vegetation indices, methodology notes, and annual MRV reporting.</td></tr>
+            <tr><td>Revenue</td><td>Realized sales, costs, profit, or operator income.</td></tr>
+            <tr><td>Jobs</td><td>Full-time status, decent-work quality, poverty reduction, or livelihood outcomes.</td></tr>
+            <tr><td>Food security</td><td>Actual harvest, distribution, affordability, or improved access.</td></tr>
+            <tr><td>Gender equality</td><td>Community-level opportunity, income, agency, or benefit-sharing outcomes.</td></tr>
+            <tr><td>Ecology / climate</td><td>Biodiversity restoration, soil improvement, carbon tonnes, or environmental credits.</td></tr>
           </tbody>
         </table>
       </div>
     </section>
 
     <footer>
-      Built for scenario planning inside the Kokonut Framework. Verify outputs through MRV before using them as formal impact claims.
+      Kokonut palette: #009F4D · #FFCD00 · #171717 · #FFFFFF — scenario planning only; replace assumptions with actual records as farm operations mature.
     </footer>
   </main>
 
   <script>
     const state = {
       crop: 'short',
-      location: 'rural'
+      location: 'rural',
+      adelphiReference: false
     };
 
     const SDGS = [
-      { num: 1, name: 'No Poverty', color: '#639922', key: 'sdg1' },
-      { num: 2, name: 'Zero Hunger', color: '#97C459', key: 'sdg2' },
-      { num: 5, name: 'Gender Equality', color: '#D4537E', key: 'sdg5' },
-      { num: 8, name: 'Decent Work', color: '#0F6E56', key: 'sdg8' },
-      { num: 15, name: 'Life on Land', color: '#3B6D11', key: 'sdg15' }
+      { num: 1, name: 'No Poverty', key: 'sdg1' },
+      { num: 2, name: 'Zero Hunger', key: 'sdg2' },
+      { num: 5, name: 'Gender Equality', key: 'sdg5' },
+      { num: 8, name: 'Decent Work', key: 'sdg8' },
+      { num: 15, name: 'Life on Land', key: 'sdg15' }
     ];
 
-    const CROP = {
-      short: { diversity: 1, revenue: 18.5, carbon: 0.35, label: 'short-cycle vegetables' },
-      mixed: { diversity: 2, revenue: 14.3, carbon: 0.65, label: 'mixed vegetables and fruit' },
-      syntropic: { diversity: 3, revenue: 11.2, carbon: 1.05, label: 'syntropic multi-strata mix' }
+    const CROP_LABELS = {
+      short: 'short-cycle production',
+      mixed: 'mixed-cycle production',
+      syntropic: 'syntropic multi-strata production'
     };
 
-    const LOCATION = {
-      rural: { multiplier: 1.0, communityBonus: 20, label: 'rural' },
-      periurban: { multiplier: 0.85, communityBonus: 10, label: 'peri-urban' },
-      urban: { multiplier: 0.65, communityBonus: 4, label: 'urban' }
+    const LOCATION_LABELS = {
+      rural: 'rural',
+      periurban: 'peri-urban',
+      urban: 'urban'
     };
 
-    const ACRE_M2 = 4046.86;
+    const EVIDENCE_IDS = [
+      'ev-land',
+      'ev-jobs',
+      'ev-work',
+      'ev-harvest',
+      'ev-leadership',
+      'ev-ecology',
+      'ev-public-goods'
+    ];
+
     const qs = (id) => document.getElementById(id);
-    const fmt = (n) => Number(n).toLocaleString('en-US', { maximumFractionDigits: 0 });
-    const score = (n) => Math.max(0, Math.min(100, Math.round(n)));
+    const fmt = (n) => Number(n || 0).toLocaleString('en-US', { maximumFractionDigits: 0 });
+    const money = (n) => '$' + fmt(Math.max(0, Number(n || 0)));
 
     function getInputs() {
       return {
         land: Number(qs('land').value),
         workers: Number(qs('workers').value),
+        revenue: Math.max(0, Number(qs('revenue').value || 0)),
+        publicGoodsPct: Math.min(100, Math.max(0, Number(qs('public-goods').value || 0))),
         crop: state.crop,
         location: state.location,
         women: qs('women').checked,
@@ -572,104 +978,225 @@
         biochar: qs('biochar').checked,
         nursery: qs('nursery').checked,
         training: qs('training').checked,
-        mrv: qs('mrv').checked
+        mrv: qs('mrv').checked,
+        evLand: qs('ev-land').checked,
+        evJobs: qs('ev-jobs').checked,
+        evWork: qs('ev-work').checked,
+        evHarvest: qs('ev-harvest').checked,
+        evLeadership: qs('ev-leadership').checked,
+        evEcology: qs('ev-ecology').checked,
+        evPublicGoods: qs('ev-public-goods').checked
       };
     }
 
-    function calculate(input) {
-      const crop = CROP[input.crop];
-      const loc = LOCATION[input.location];
-      const acres = input.land / ACRE_M2;
-      const biocharBoost = input.biochar ? 1.15 : 1.0;
-      const mrvConfidence = input.mrv ? 8 : 0;
+    function evidenceCount(input) {
+      return [
+        input.evLand,
+        input.evJobs,
+        input.evWork,
+        input.evHarvest,
+        input.evLeadership,
+        input.evEcology,
+        input.evPublicGoods
+      ].filter(Boolean).length;
+    }
 
-      const revenue = Math.round(input.land * crop.revenue * loc.multiplier);
-      const publicGoods = Math.round(revenue * 0.10);
-      const landJobs = (input.land / 10000) * (input.crop === 'syntropic' ? 2.8 : input.crop === 'mixed' ? 2.2 : 1.6) * loc.multiplier;
-      const jobs = Math.max(input.workers, Math.round(landJobs * 10) / 10);
-      const carbonMid = Number((acres * crop.carbon * biocharBoost).toFixed(2));
-      const carbonLow = Number((carbonMid * 0.7).toFixed(2));
-      const carbonHigh = Number((carbonMid * 1.2).toFixed(2));
-      const revenueScore = Math.min(100, (revenue / 150000) * 100);
-      const landScale = Math.min(40, (input.land / 30000) * 40);
+    function status(level, detail) {
+      const labels = ['Not represented', 'Relevant', 'Activity planned', 'Evidence planned'];
+      return { level, label: labels[level], detail };
+    }
+
+    function calculate(input) {
+      const publicGoodsAmount = input.revenue * (input.publicGoodsPct / 100);
+      const climateRelevant = input.biochar || input.crop === 'syntropic';
+
+      let sdg1Level = 0;
+      if (input.revenue > 0 || input.workers > 0 || input.publicGoodsPct > 0) sdg1Level = 1;
+      if (input.workers > 0 || publicGoodsAmount > 0) sdg1Level = 2;
+      if (sdg1Level >= 2 && (input.evJobs || input.evWork || input.evPublicGoods)) sdg1Level = 3;
+
+      let sdg2Level = 1;
+      if (input.crop) sdg2Level = 2;
+      if (input.evHarvest) sdg2Level = 3;
+
+      let sdg5Level = 0;
+      if (input.women) sdg5Level = 2;
+      if (input.women && input.evLeadership) sdg5Level = 3;
+
+      let sdg8Level = 0;
+      if (input.workers > 0 || input.training || input.revenue > 0) sdg8Level = 1;
+      if (input.workers > 0 || input.training) sdg8Level = 2;
+      if (sdg8Level >= 2 && (input.evJobs || input.evWork)) sdg8Level = 3;
+
+      let sdg15Level = 0;
+      if (input.crop === 'mixed' || input.crop === 'syntropic' || input.biochar || input.nursery) sdg15Level = 1;
+      if (input.crop === 'syntropic' || input.biochar || input.nursery) sdg15Level = 2;
+      if (sdg15Level >= 2 && input.evEcology) sdg15Level = 3;
 
       return {
-        revenue,
-        publicGoods,
-        jobs,
-        carbonMid,
-        carbonLow,
-        carbonHigh,
-        sdg1: score((jobs / 10) * 45 + revenueScore * 0.45 + (input.mrv ? 8 : 0)),
-        sdg2: score((crop.diversity / 3) * 55 + landScale + (input.organic ? 8 : 0) + mrvConfidence),
-        sdg5: score(input.women ? 85 + (input.training ? 5 : 0) : 25 + (input.training ? 10 : 0)),
-        sdg8: score((Math.min(jobs, 15) / 15) * 55 + loc.communityBonus + (input.training ? 15 : 0) + (input.organic ? 6 : 0) + (input.mrv ? 4 : 0)),
-        sdg15: score((crop.diversity / 3) * 38 + (input.nursery ? 28 : 0) + (input.biochar ? 18 : 0) + Math.min(10, input.land / 3000) + (input.mrv ? 6 : 0)),
-        sdg13: score((carbonMid / 10) * 80 + (input.biochar ? 10 : 0) + (input.mrv ? 10 : 0))
+        publicGoodsAmount,
+        evidence: evidenceCount(input),
+        climateRelevant,
+        sdg1: status(sdg1Level, sdg1Level === 3 ? 'Economic/work activity plus supporting work or allocation records are identified.' : 'Stronger SDG 1 claims need realized income, compensation, allocation, and beneficiary evidence.'),
+        sdg2: status(sdg2Level, sdg2Level === 3 ? 'Food-production activity plus harvest/distribution records are identified.' : 'Production design is relevant; actual harvest and distribution records are still needed.'),
+        sdg5: status(sdg5Level, sdg5Level === 3 ? 'Women-led activity plus leadership/ownership evidence is identified.' : input.women ? 'Women-led activity is represented; broader gender outcomes still need evidence.' : 'No women-led activity is currently represented in the scenario.'),
+        sdg8: status(sdg8Level, sdg8Level === 3 ? 'Work/training activity plus role or work-quality records are identified.' : 'Jobs or training can support SDG 8 planning; decent-work quality still requires role, compensation, safety, and continuity evidence.'),
+        sdg15: status(sdg15Level, sdg15Level === 3 ? 'Regenerative/ecological activity plus an ecological baseline is identified.' : 'Regenerative practices may be relevant; outcome claims require baseline and repeated ecological evidence.')
       };
+    }
+
+    function evidenceGaps(input) {
+      const gaps = [];
+      if (!input.evLand) gaps.push(['Land / site record', 'Add a polygon, land-use record, or operating-right reference for the scenario area.']);
+      if (input.workers > 0 && !input.evJobs) gaps.push(['Job / role records', 'Document role type, dates, status, and who is actually engaged.']);
+      if ((input.workers > 0 || input.training) && !input.evWork) gaps.push(['Work-quality evidence', 'Add compensation, safety, training, continuity, or other decent-work evidence.']);
+      if (!input.evHarvest) gaps.push(['Harvest / distribution actuals', 'Replace production assumptions with harvested quantities, sales, losses, and distribution records.']);
+      if (input.women && !input.evLeadership) gaps.push(['Leadership / ownership evidence', 'Document the governance, ownership, or management role behind the women-led claim.']);
+      if ((input.crop === 'syntropic' || input.biochar || input.nursery) && !input.evEcology) gaps.push(['Ecological baseline', 'Collect baseline and repeated soil, vegetation, biodiversity, or land-condition evidence.']);
+      if (input.publicGoodsPct > 0 && !input.evPublicGoods) gaps.push(['Public-goods records', 'Link the approved allocation terms and, later, actual transfer/use records.']);
+      if (!input.mrv) gaps.push(['MRV plan', 'Define record ownership, review state, publication path, and evidence provenance.']);
+      return gaps;
     }
 
     function render() {
       const input = getInputs();
       const result = calculate(input);
 
-      qs('land-value').textContent = `${fmt(input.land)} m²`;
-      qs('workers-value').textContent = `${input.workers}`;
-      qs('out-revenue').textContent = `$${fmt(result.revenue)}`;
-      qs('out-public-goods').textContent = `$${fmt(result.publicGoods)}`;
-      qs('out-jobs').textContent = result.jobs.toFixed(1);
-      qs('out-carbon').textContent = result.carbonMid.toFixed(1);
+      qs('land-value').textContent = fmt(input.land) + ' m²';
+      qs('workers-value').textContent = String(input.workers);
+      qs('out-revenue').textContent = money(input.revenue);
+      qs('out-public-goods').textContent = money(result.publicGoodsAmount);
+      qs('out-public-goods-unit').textContent = input.publicGoodsPct + '% of forecast gross revenue';
+      qs('out-jobs').textContent = String(input.workers);
+      qs('out-evidence').textContent = result.evidence + '/7';
+      qs('reference-label').classList.toggle('visible', state.adelphiReference);
 
       const grid = qs('sdg-grid');
       grid.replaceChildren();
+
       SDGS.forEach((def) => {
-        const value = result[def.key];
+        const item = result[def.key];
         const card = document.createElement('article');
-        card.className = 'sdg-card';
-        card.innerHTML = `
-          <div class="sdg-num">SDG ${def.num}</div>
-          <div class="sdg-name">${def.name}</div>
-          <div class="sdg-score">${value}<span class="sdg-caption">/100</span></div>
-          <div class="sdg-caption">Indicative contribution</div>
-          <div class="bar-bg"><div class="bar" style="width:${value}%; background:${def.color};"></div></div>
-        `;
+        card.className = 'sdg-card level-' + item.level;
+
+        const num = document.createElement('div');
+        num.className = 'sdg-num';
+        num.textContent = 'SDG ' + def.num;
+
+        const name = document.createElement('div');
+        name.className = 'sdg-name';
+        name.textContent = def.name;
+
+        const badge = document.createElement('div');
+        badge.className = 'status-label';
+        badge.textContent = item.label;
+
+        const detail = document.createElement('div');
+        detail.className = 'sdg-detail';
+        detail.textContent = item.detail;
+
+        card.appendChild(num);
+        card.appendChild(name);
+        card.appendChild(badge);
+        card.appendChild(detail);
         grid.appendChild(card);
       });
 
-      qs('climate-note').innerHTML = `<strong>SDG 13 climate co-benefit:</strong> ${result.sdg13}/100. Estimated carbon range: ${result.carbonLow.toFixed(1)}–${result.carbonHigh.toFixed(1)} t CO₂e/yr. Treat this as a planning signal until carbon methodology, soil data, vegetation data, and annual MRV reporting support a formal claim.`;
+      if (result.climateRelevant) {
+        qs('climate-note').innerHTML = '<strong>SDG 13 · Climate Action:</strong> this scenario includes climate-relevant practices. Treat climate benefit as a secondary co-benefit hypothesis until a carbon/soil methodology, baseline, monitoring period, measurements, uncertainty treatment, and review support a quantified claim.';
+      } else {
+        qs('climate-note').innerHTML = '<strong>SDG 13 · Climate Action:</strong> no explicit climate-oriented practice is selected. The calculator does not infer carbon impact from land area alone.';
+      }
 
-      const avg = Math.round((result.sdg1 + result.sdg2 + result.sdg5 + result.sdg8 + result.sdg15) / 5);
-      qs('scenario-summary').innerHTML = `<strong>Scenario summary:</strong> A ${fmt(input.land)} m² ${CROP[input.crop].label} farm in a ${LOCATION[input.location].label} context supports ${result.jobs.toFixed(1)} jobs, estimates $${fmt(result.revenue)} gross annual revenue, allocates $${fmt(result.publicGoods)} to public goods, and produces an average primary SDG score of ${avg}/100.`;
+      const pgText = input.publicGoodsPct > 0
+        ? ', with a ' + input.publicGoodsPct + '% public-goods scenario equal to ' + money(result.publicGoodsAmount)
+        : ', with no public-goods allocation assumed';
+
+      qs('scenario-summary').innerHTML =
+        '<strong>Scenario summary:</strong> ' +
+        fmt(input.land) + ' m² of ' + CROP_LABELS[input.crop] +
+        ' in a ' + LOCATION_LABELS[input.location] + ' context, ' +
+        input.workers + ' planned/documented worker roles, ' +
+        money(input.revenue) + ' gross annual revenue forecast' +
+        pgText + '. Evidence readiness: ' + result.evidence + '/7 categories.';
+
+      const gapList = qs('gap-list');
+      gapList.replaceChildren();
+      const gaps = evidenceGaps(input);
+
+      if (gaps.length === 0) {
+        const item = document.createElement('div');
+        item.className = 'gap';
+        item.innerHTML = '<div class="gap-index">✓</div><div><strong>No checklist gaps selected</strong>All listed evidence categories are checked. This still does not mean the underlying records are complete, high-quality, or externally verified.</div>';
+        gapList.appendChild(item);
+      } else {
+        gaps.slice(0, 6).forEach((gap, index) => {
+          const item = document.createElement('div');
+          item.className = 'gap';
+          item.innerHTML = '<div class="gap-index">' + (index + 1) + '</div><div><strong>' + gap[0] + '</strong>' + gap[1] + '</div>';
+          gapList.appendChild(item);
+        });
+      }
     }
 
     function setOption(group, value) {
       state[group] = value;
-      document.querySelectorAll(`[data-group="${group}"] .option`).forEach((option) => {
+      state.adelphiReference = false;
+      document.querySelectorAll('[data-group="' + group + '"] .option').forEach((option) => {
         option.classList.toggle('active', option.dataset.value === value);
       });
       render();
     }
 
+    function setOptionSilent(group, value) {
+      state[group] = value;
+      document.querySelectorAll('[data-group="' + group + '"] .option').forEach((option) => {
+        option.classList.toggle('active', option.dataset.value === value);
+      });
+    }
+
     function loadAdelphi() {
+      state.adelphiReference = true;
       qs('land').value = 13838;
       qs('workers').value = 7;
-      setOption('crop', 'syntropic');
-      setOption('location', 'rural');
+      qs('revenue').value = 149111;
+      qs('public-goods').value = 10;
+      setOptionSilent('crop', 'syntropic');
+      setOptionSilent('location', 'rural');
+
       qs('women').checked = true;
       qs('organic').checked = true;
       qs('biochar').checked = true;
       qs('nursery').checked = true;
       qs('training').checked = true;
       qs('mrv').checked = true;
+
+      qs('ev-land').checked = true;
+      qs('ev-jobs').checked = true;
+      qs('ev-work').checked = false;
+      qs('ev-harvest').checked = false;
+      qs('ev-leadership').checked = true;
+      qs('ev-ecology').checked = false;
+      qs('ev-public-goods').checked = false;
+
       render();
     }
 
     function resetScenario() {
+      state.adelphiReference = false;
       qs('land').value = 5000;
       qs('workers').value = 3;
-      setOption('crop', 'short');
-      setOption('location', 'rural');
-      ['women', 'organic', 'biochar', 'nursery', 'training', 'mrv'].forEach((id) => { qs(id).checked = false; });
+      qs('revenue').value = 0;
+      qs('public-goods').value = 0;
+      setOptionSilent('crop', 'short');
+      setOptionSilent('location', 'rural');
+
+      [
+        'women', 'organic', 'biochar', 'nursery', 'training', 'mrv',
+        'ev-land', 'ev-jobs', 'ev-work', 'ev-harvest',
+        'ev-leadership', 'ev-ecology', 'ev-public-goods'
+      ].forEach((id) => { qs(id).checked = false; });
+
       render();
     }
 
@@ -677,29 +1204,33 @@
       const text = qs('scenario-summary').textContent.trim();
       try {
         await navigator.clipboard.writeText(text);
-        qs('copy-summary').textContent = 'Copied summary';
-        window.setTimeout(() => { qs('copy-summary').textContent = 'Copy scenario summary'; }, 1600);
+        qs('copy-summary').textContent = 'Copied';
+        window.setTimeout(() => { qs('copy-summary').textContent = 'Copy scenario summary'; }, 1500);
       } catch (error) {
         qs('copy-summary').textContent = 'Copy unavailable';
-        window.setTimeout(() => { qs('copy-summary').textContent = 'Copy scenario summary'; }, 1600);
+        window.setTimeout(() => { qs('copy-summary').textContent = 'Copy scenario summary'; }, 1500);
       }
     }
 
     document.querySelectorAll('.option').forEach((option) => {
       const group = option.parentElement.dataset.group;
-      const activate = () => setOption(group, option.dataset.value);
-      option.addEventListener('click', activate);
-      option.addEventListener('keydown', (event) => {
-        if (event.key === 'Enter' || event.key === ' ') {
-          event.preventDefault();
-          activate();
-        }
-      });
+      option.addEventListener('click', () => setOption(group, option.dataset.value));
     });
 
-    ['land', 'workers', 'women', 'organic', 'biochar', 'nursery', 'training', 'mrv'].forEach((id) => {
-      qs(id).addEventListener('input', render);
-      qs(id).addEventListener('change', render);
+    [
+      'land', 'workers', 'revenue', 'public-goods',
+      'women', 'organic', 'biochar', 'nursery', 'training', 'mrv',
+      'ev-land', 'ev-jobs', 'ev-work', 'ev-harvest',
+      'ev-leadership', 'ev-ecology', 'ev-public-goods'
+    ].forEach((id) => {
+      qs(id).addEventListener('input', () => {
+        state.adelphiReference = false;
+        render();
+      });
+      qs(id).addEventListener('change', () => {
+        state.adelphiReference = false;
+        render();
+      });
     });
 
     qs('load-adelphi').addEventListener('click', loadAdelphi);
