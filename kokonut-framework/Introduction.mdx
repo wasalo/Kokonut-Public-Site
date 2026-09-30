@@ -1,301 +1,519 @@
 ---
 title: "Introduction"
 icon: "scroll"
-description: "The operating system Kokonut uses to make regenerative farms comparable, fundable, governable, and verifiable across land, communities, data, and capital."
+description: "The shared methodology Kokonut uses to make regenerative farms easier to understand, coordinate, compare, evidence, and improve — without turning local farms into copies of one another."
 ---
 
-# The Kokonut Framework turns regenerative farms into verifiable community assets.
+# The Kokonut Framework is the shared methodology behind Kokonut farms.
 
-The Kokonut Framework is the operating system behind Kokonut Network. It gives every farm a shared structure for onboarding, governance, operations, MRV, impact reporting, and capital allocation.
+The Kokonut Framework gives farms a common baseline for:
 
-Without the Framework, every new farm has to invent its own coordination logic. DAO members cannot compare funding proposals. Impact claims stay self-reported. Farm data cannot be aggregated across sites. Contributors do not know where their work fits.
+- describing the farm and its context;
+- planning development;
+- applying regenerative principles;
+- structuring value and impact questions;
+- recording operational activity;
+- producing reviewable evidence;
+- learning across farms over time.
 
-The Framework solves this by making farms **comparable, fundable, governable, and verifiable** under one shared system — while still allowing each farm to adapt to its own land, crops, community, and market.
+Its purpose is **not** to make every farm identical.
 
-<div style={{ display: "flex", gap: "12px", justifyContent: "center", flexWrap: "wrap", margin: "1.5rem 0 0.75rem" }}>
-  <a href="#how-the-framework-works" style={{ display: "inline-flex", alignItems: "center", gap: "6px", background: "#009F4D", color: "#fff", padding: "10px 20px", borderRadius: "8px", fontWeight: "600", fontSize: "14px", textDecoration: "none" }}>
-    See How It Works →
-  </a>
+Its purpose is to make farms interoperable enough that local operators, contributors, reviewers, capital participants, researchers, and software systems can work from compatible information.
 
-  <a href="/ecosystem-wiki/kokonut-farms/adelphi/summary" style={{ display: "inline-flex", alignItems: "center", gap: "6px", border: "1.5px solid #009F4D", color: "#009F4D", padding: "10px 20px", borderRadius: "8px", fontWeight: "600", fontSize: "14px", textDecoration: "none", background: "transparent" }}>
-    See It at Adelphi
-  </a>
-</div>
+> **The goal is interoperability, not uniformity: shared structure where coordination benefits from it, local adaptation where land, people, markets, and regulation differ.**
 
-<p style={{ textAlign: "center", fontSize: "13px", color: "#6b7280", marginTop: "0.25rem" }}>
-  Built for farm founders, DAO members, contributors, researchers, grant reviewers, capital allocators, and builders who need regenerative agriculture to be measurable and repeatable.
-</p>
+<CardGroup cols={2}>
+  <Card title="Start with the Common Data Schema" icon="database" href="/kokonut-framework/framework-components/common-data-schema">
+    See the current 13-field baseline record used to describe a farm before deeper review, tooling, or comparison.
+  </Card>
 
-<div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(130px, 1fr))", gap: "1px", background: "#e5e7eb", border: "1px solid #e5e7eb", borderRadius: "12px", overflow: "hidden", margin: "1.5rem 0" }}>
-  <div style={{ background: "white", padding: "1rem", textAlign: "center" }}>
-    <div style={{ fontSize: "1.4rem", fontWeight: "700", color: "#009F4D", lineHeight: 1 }}>13</div>
-    <div style={{ fontSize: "0.72rem", color: "#6b7280", marginTop: "4px", fontWeight: "500" }}>Common Data Schema fields</div>
-  </div>
+  <Card title="Follow the four development phases" icon="timeline" href="/kokonut-framework/development-phases/phase-i">
+    Move from planning and preparation into production, consolidation, and continuous evidence-driven improvement.
+  </Card>
 
-  <div style={{ background: "white", padding: "1rem", textAlign: "center" }}>
-    <div style={{ fontSize: "1.4rem", fontWeight: "700", color: "#009F4D", lineHeight: 1 }}>4</div>
-    <div style={{ fontSize: "0.72rem", color: "#6b7280", marginTop: "4px", fontWeight: "500" }}>farm development phases</div>
-  </div>
+  <Card title="See the Framework at Adelphi" icon="seedling" href="/ecosystem-wiki/kokonut-farms/adelphi/summary">
+    Review Kokonut's first live reference farm and distinguish documented state, forecasts, operations, and evidence.
+  </Card>
 
-  <div style={{ background: "white", padding: "1rem", textAlign: "center" }}>
-    <div style={{ fontSize: "1.4rem", fontWeight: "700", color: "#009F4D", lineHeight: 1 }}>5</div>
-    <div style={{ fontSize: "0.72rem", color: "#6b7280", marginTop: "4px", fontWeight: "500" }}>regeneration principles</div>
-  </div>
+  <Card title="Understand the evidence layer" icon="magnifying-glass-chart" href="/ecosystem-wiki/kokonut-farms/measurement-reporting-and-verification">
+    See how observations become structured records, review, publication, optional attestations, and interpretation.
+  </Card>
+</CardGroup>
 
-  <div style={{ background: "white", padding: "1rem", textAlign: "center" }}>
-    <div style={{ fontSize: "1.4rem", fontWeight: "700", color: "#009F4D", lineHeight: 1 }}>8</div>
-    <div style={{ fontSize: "0.72rem", color: "#6b7280", marginTop: "4px", fontWeight: "500" }}>forms of capital</div>
-  </div>
+<Info>
+  **The Framework is methodology, not ownership or command authority.** It can define shared fields, phases, evidence expectations, and reusable methods without deciding every farm's crops, labor, land rights, operating choices, or local relationships.
+</Info>
 
-  <div style={{ background: "white", padding: "1rem", textAlign: "center" }}>
-    <div style={{ fontSize: "1.4rem", fontWeight: "700", color: "#009F4D", lineHeight: 1 }}>MRV</div>
-    <div style={{ fontSize: "0.72rem", color: "#6b7280", marginTop: "4px", fontWeight: "500" }}>public impact evidence</div>
-  </div>
+---
 
-  <div style={{ background: "white", padding: "1rem", textAlign: "center" }}>
-    <div style={{ fontSize: "1.4rem", fontWeight: "700", color: "#009F4D", lineHeight: 1 }}>EAS</div>
-    <div style={{ fontSize: "0.72rem", color: "#6b7280", marginTop: "4px", fontWeight: "500" }}>on-chain attestations</div>
-  </div>
-</div>
+## The Framework in one sentence
+
+> **Describe the farm consistently → plan through shared phases → operate locally → record what happened → review the evidence → learn and improve.**
+
+That sequence is more durable than any particular tool, chain, dashboard, or governance mechanism.
+
+```mermaid
+flowchart LR
+    A["Local farm context"] --> B["Shared baseline record"]
+    B --> C["Development phase + plan"]
+    C --> D["Local agricultural execution"]
+    D --> E["Operational records + observations"]
+    E --> F["Review + publication"]
+    F --> G["Interpretation + reporting"]
+    G --> H["Farm / governance / partner decisions"]
+    H --> I["Updated plan + shared learning"]
+    I --> C
+```
+
+The Framework connects those steps.
+
+It does not collapse them into one authority.
+
+---
+
+## What the Framework standardizes — and what it does not
+
+| The Framework can standardize | The Framework should not automatically standardize |
+| --- | --- |
+| Baseline farm fields and terminology | Land ownership or legal title |
+| Development phases | Crop mix across every farm |
+| Regenerative principles | Daily agronomic decisions |
+| Evidence and reporting expectations | Local labor arrangements |
+| Value-accounting categories | One universal revenue-sharing model |
+| Shared claim vocabulary | Community priorities in every location |
+| Compatibility across records and tools | One governance mechanism for every farm |
+| Review and learning structures | One technology stack for every operator |
+
+This boundary is central to the Framework.
+
+A shared schema can make records compatible.
+
+It does not make the farm a franchise.
+
+A shared development phase can organize work.
+
+It does not make every landscape move at the same speed.
+
+A shared evidence standard can make a claim easier to inspect.
+
+It does not make the claim automatically true.
+
+---
+
+## The current Framework building blocks
+
+The Framework is easier to navigate through the components that are actually documented across this section.
+
+| Building block | Current role | Go deeper |
+| --- | --- | --- |
+| **Common Data Schema** | 13-field baseline farm record | [Common Data Schema](/kokonut-framework/framework-components/common-data-schema) |
+| **Development Phases** | Four-stage lifecycle for planning, production, consolidation, and continuous evidence/learning | [Phase I](/kokonut-framework/development-phases/phase-i) |
+| **5 Principles of Regeneration** | Shared regenerative practice principles | [5 Principles](/kokonut-framework/framework-components/framework-features/5-principles-of-regeneration) |
+| **Pillars of Value** | Six questions for understanding value, contribution, risk, and public goods | [Pillars of Value](/kokonut-framework/framework-components/pillars-of-value) |
+| **8 Forms of Capital** | Broader value categories beyond financial capital | [8 Forms of Capital](/kokonut-framework/framework-components/framework-features/8-forms-of-capital) |
+| **Positive-impact methodology** | Method for connecting activities, evidence, value categories, and claims | [Positive Impact](/kokonut-framework/framework-components/framework-features/methodology-positive-impact) |
+| **SDG methodology** | Maps supported evidence to primary and secondary Sustainable Development Goals | [SDGs](/kokonut-framework/framework-features/Sustainable-Development-Goals) |
+| **Ecological impact add-ons** | Additional ecological-benefit and risk interpretation tools | [Ecological Impact Frameworks](/kokonut-framework/framework-add-ons/ecological-impact-frameworks) |
+| **MRV** | Evidence lifecycle shared with the farm and data layers | [MRV](/ecosystem-wiki/kokonut-farms/measurement-reporting-and-verification) |
+| **Impact calculators** | Scenario and planning tools; outputs are not achieved impact | [Impact Calculator](/kokonut-framework/impact-calculator) |
 
 <Note>
-  The Framework is open source at [wasalo/kokonut-framework](https://github.com/wasalo/kokonut-framework) and is already deployed through [Adelphi](/ecosystem-wiki/kokonut-farms/adelphi/summary), Kokonut Network's first live syntropic farm in Monte Plata, Dominican Republic.
+  The earlier standalone [`wasalo/kokonut-framework`](https://github.com/wasalo/kokonut-framework) repository is public but currently archived. Treat it as historical reference unless it is reactivated. This Knowledge Base is the current documentation surface for the Framework.
 </Note>
 
 ---
 
-## What the Framework does
+## Four development phases organize the farm lifecycle
 
-The Framework is not a single document, scorecard, token, or smart contract. It is a coordination system that connects farm reality to governance decisions and verifiable records.
+The Framework currently uses four development phases.
 
-| What it standardizes | Why it matters | Where to go deeper |
+| Phase | Primary purpose | Typical evidence |
 | --- | --- | --- |
-| Farm onboarding | Every farm enters the network with comparable baseline data | [Common Data Schema](/kokonut-framework/framework-components/common-data-schema) |
-| Farm development | Farms move through shared phases instead of ad hoc milestones | [Development Phases](/kokonut-framework/development-phases/phase-i) |
-| Regenerative practice | Operators have clear ecological principles to follow | [5 Principles of Regeneration](/kokonut-framework/framework-components/framework-features/5-principles-of-regeneration) |
-| Impact measurement | Farm claims become evidence instead of marketing | [MRV Methodology](/ecosystem-wiki/kokonut-farms/measurement-reporting-and-verification) |
-| Value accounting | Natural, social, financial, and cultural values can be tracked together | [8 Forms of Capital](/kokonut-framework/framework-components/framework-features/8-forms-of-capital) |
-| Governance decisions | DAO members can evaluate farms using shared information | [DAO Architecture](/ecosystem-wiki/the-kokonut-dao/dao-layers) |
+| **I — Planning & Preparation** | Understand the site, operators, baseline, design, infrastructure needs, risks, and funding requirements | Site records, schema, plans, budgets, baseline evidence |
+| **II — Production & Regeneration** | Put the farm system into operation | Planting, infrastructure, field activity, production records, MRV |
+| **III — Consolidation & Expansion** | Improve operational reliability, markets, recurring systems, and farm capacity | Multi-cycle records, financial actuals, training, quality controls, expanded evidence |
+| **IV — Continuous MRV & Improvement** | Maintain longitudinal evidence, compare plans with actuals, report, adapt, and learn | Repeated measurements, reports, variance analysis, review records |
 
-<Warning>
-  The Framework makes farms more legible and comparable. It does not eliminate agricultural, market, governance, weather, or execution risk. Those risks must be measured, reported, and improved through MRV and governance review.
-</Warning>
+Phase IV is not a finish line after which measurement stops.
 
----
+Evidence and learning should continue throughout farm operations.
 
-## Who the Framework is for
-
-<CardGroup cols={3}>
-  <Card title="Farm founders" icon="seedling">
-    Use the Framework to document land, crop plans, governance needs, revenue assumptions, public goods allocation, and MRV commitments before requesting support.
+<CardGroup cols={2}>
+  <Card title="Phase I" icon="map" href="/kokonut-framework/development-phases/phase-i">
+    Planning & Preparation.
   </Card>
 
-  <Card title="DAO members" icon="check-to-slot">
-    Use the Framework to compare farm proposals, evaluate milestones, review risks, and decide whether treasury support is justified.
+  <Card title="Phase II" icon="seedling" href="/kokonut-framework/development-phases/phase-ii">
+    Production & Regeneration.
   </Card>
 
-  <Card title="Contributors and Guilds" icon="people-group">
-    Use the Framework to understand what work is needed across technology, impact, finance, governance, communications, and partnerships.
+  <Card title="Phase III" icon="chart-line" href="/kokonut-framework/development-phases/phase-iii">
+    Consolidation & Expansion.
   </Card>
 
-  <Card title="Researchers and reviewers" icon="microscope">
-    Use the Framework to inspect how farm activity maps to impact evidence, SDGs, ecological benefits, and risk scoring.
-  </Card>
-
-  <Card title="Developers and agents" icon="code">
-    Use the Framework to build tools around common data fields, Farm Registry events, MRV payloads, EAS attestations, and dashboards.
-  </Card>
-
-  <Card title="Capital allocators" icon="coins">
-    Use the Framework to understand how productive land, impact evidence, and governance reporting can become institutionally legible over time.
+  <Card title="Phase IV" icon="arrows-rotate" href="/kokonut-framework/development-phases/phase-iv">
+    Continuous MRV, reporting, learning, and improvement.
   </Card>
 </CardGroup>
 
 ---
 
-## How the Framework works
+## The Common Data Schema is the baseline — not the approval
 
-```mermaid
-flowchart TD
-    A["Farm enters the network"] --> B["Common Data Schema"]
-    B --> C["Stakeholder sense-making"]
-    C --> D["Development phases"]
-    D --> E["On-ground regenerative operations"]
-    E --> F["MRV workflow"]
-    F --> G["IPFS records + EAS attestations"]
-    G --> H["Kokonut Hub + annual reports"]
-    H --> I["DAO funding and governance decisions"]
-    I --> J["New farms and improved operations"]
-    J --> B
-```
+The current Common Data Schema defines **13 required fields**.
 
-The loop matters because regeneration is not a one-time funding event. A farm needs ongoing feedback between land, people, data, capital, and governance.
+Its purpose is to make a farm record structured enough for multiple actors and systems to work with it.
 
-The Framework gives Kokonut a shared way to ask:
+That can support:
 
-- What is this farm trying to do?
-- Who benefits from it?
-- What evidence proves progress?
-- What risks remain?
-- What capital or support is needed next?
-- What should the DAO learn before funding the next farm?
+- farm intake;
+- proposal preparation;
+- data ingestion;
+- comparison;
+- MRV linking;
+- reporting;
+- analysis;
+- agent workflows.
 
----
+It should not be interpreted as:
 
-## The three Framework pillars
+> “13 fields completed = farm approved, funded, verified, or investment-ready.”
 
-The Framework is organized into three operational pillars. Each pillar answers a different trust question.
+Those are separate decisions.
 
-| Pillar | Core question | Primary output |
-| --- | --- | --- |
-| Stakeholder Sense-Making | Can this farm be understood, compared, and governed? | Shared baseline data and legitimacy |
-| On-Ground Solution Variables | Can this farm implement regenerative operations in its own context? | Farm-specific execution under shared standards |
-| Operational Variables | Can farm activity become useful evidence for capital, governance, and institutional review? | MRV records, risk profiles, reports, and attestations |
+A complete record can still contain:
 
-### 1. Stakeholder Sense-Making
+- weak assumptions;
+- unresolved legal questions;
+- poor economics;
+- insufficient evidence;
+- operating risks;
+- missing reviewer approval.
 
-This is the entry point. Before capital moves, the network needs shared context.
-
-Every farm begins with the [Common Data Schema](/kokonut-framework/framework-components/common-data-schema): 13 fields covering project date, land size, location, governance mechanism, revenue streams, token allocation, public goods allocation, and narrative context.
-
-This schema acts as the minimum viable onboarding contract between a farm and the network. Once populated, a farm can be evaluated by DAO members, queried by the Data Hub, and prepared for on-chain attestation.
-
-The pillar also maps the farm's needs and wants into the [Pillars of Value](/kokonut-framework/framework-components/pillars-of-value), helping the network understand what the project creates, who benefits, how much value is produced, what contribution is additional, what risk remains, and what public goods are funded.
-
-<Tip>
-  This pillar protects the network from vague proposals. It requires clarity early, before funding, operations, or impact claims begin.
-</Tip>
-
-### 2. On-Ground Solution Variables
-
-This is where the Framework becomes site-specific without becoming chaotic.
-
-Every farm has different land, crops, founders, water conditions, community needs, and market access. The Framework does not erase those differences. It gives them a shared reporting structure.
-
-The same logic can govern:
-
-- Adelphi in Monte Plata;
-- a future Kokonut farm on another chain;
-- a partner farm with a different crop mix;
-- a community project with different governance needs.
-
-Each farm can remain unique while still producing comparable outputs: land data, crop cycles, milestones, MRV records, governance reports, public goods allocation, and impact evidence.
-
-<Tip>
-  This is how Kokonut avoids one-off projects. The farm can adapt locally, while the network can still learn globally.
-</Tip>
-
-### 3. Operational Variables
-
-This is where farm activity becomes capital-relevant evidence.
-
-The Framework connects operations to the [MRV stack](/ecosystem-wiki/kokonut-farms/measurement-reporting-and-verification), the Farm Registry API, IPFS/Filecoin records, EAS attestations, annual reports, and public dashboards.
-
-Operational data can include:
-
-| Data type | Example evidence | Why it matters |
-| --- | --- | --- |
-| Farm events | Planting, harvest, infrastructure, training, field logs | Shows whether the farm is active |
-| Ecological indicators | NDVI, NDRE, MSAVI, soil moisture, soil temperature, and electrical conductivity | Shows whether land conditions are changing |
-| Harvest records | Crop cycle actuals, losses, sales, and forecast updates | Shows whether revenue assumptions are improving or failing |
-| Community records | jobs, training sessions, local participation, public goods allocation | Shows whether community value is real |
-| Attestations | EAS records tied to structured payloads | Makes evidence public, timestamped, and harder to alter |
-
-<Tip>
-  This pillar is what turns regenerative agriculture from a narrative into a reviewable evidence system.
-</Tip>
+> **Structure makes a farm easier to inspect. It does not substitute for judgment.**
 
 ---
 
-## In practice: Adelphi
+## Regenerative principles guide practice without becoming a recipe
 
-Adelphi is the first live proof of the Kokonut Framework.
+The Framework documents five regenerative principles as the shared agricultural baseline.
 
-It shows the full stack working on real land:
+They help organize practice around areas such as:
 
-| Framework component | Adelphi implementation |
+- soil cover and soil protection;
+- biodiversity and diversity;
+- perennial and multi-layer systems;
+- animal integration where appropriate;
+- on-site or biologically oriented inputs and nutrient cycling.
+
+Those principles should guide design and review.
+
+They should not be interpreted as evidence that a desired ecological outcome already occurred.
+
+For example:
+
+| Evidence level | Example |
 | --- | --- |
-| Farm onboarding | Registered farm with land, founders, location, governance, crop, and public goods data |
-| Development phases | Planning, production, regeneration, and continuous MRV operating as one farm lifecycle |
-| Regenerative principles | Syntropic plots, biodiversity restoration, poultry integration, biochar, cover crops, and native species propagation |
-| MRV workflow | Satellite monitoring, soil probes, field records, harvest data, and per-plant geospatial records |
-| Public evidence | Data visible through the Kokonut Hub and tied to MRV reporting workflows |
-| DAO coordination | Public goods funding, governance visibility, contributor routing, and future replication learning |
+| **Principle** | Maintain soil cover |
+| **Implemented practice** | Mulch / living cover applied |
+| **Measurement** | Repeated cover or soil observation |
+| **Interpretation** | Evidence supports a claim about erosion or soil improvement |
 
-Adelphi matters because it makes the Framework inspectable. It is not only a theory about how regenerative farms could be coordinated. It is a working case where land, people, data, funding, and impact reporting are connected.
+The last step requires more than documenting the intention.
+
+---
+
+## Value frameworks help ask better questions
+
+The Framework does not reduce farm value to revenue alone.
+
+### Pillars of Value
+
+The six Pillars of Value ask:
+
+1. **WHAT** value is being created?
+2. **WHO** experiences the value?
+3. **HOW MUCH** changes?
+4. **CONTRIBUTION** — what changed because of this intervention?
+5. **RISK** — what may not happen or may not persist?
+6. **PUBLIC GOODS** — what value extends beyond the immediate transaction?
+
+These are analytical questions.
+
+They do not automatically calculate or certify impact.
+
+### 8 Forms of Capital
+
+The Framework also uses eight capital categories:
+
+- Natural;
+- Financial;
+- Social;
+- Human;
+- Material;
+- Intellectual;
+- Cultural;
+- Health.
+
+The purpose is to make different forms of value visible without pretending they are interchangeable.
+
+A stronger financial result does not automatically compensate for ecological damage.
+
+A biodiversity intervention does not automatically prove social benefit.
+
+> **The Framework can hold multiple forms of value in the same analysis without declaring one form sovereign over all the others.**
+
+---
+
+## MRV supplies the evidence layer
+
+The Framework and MRV are related but different.
+
+**The Framework** defines shared structures, methods, phases, and interpretation tools.
+
+**MRV** defines how operational observations become reviewable evidence.
+
+The current MRV sequence is:
+
+> **observe → structure → review → publish → attest when useful → interpret**
+
+That means the Framework should not assume a fixed pipeline where every record must move through IPFS and EAS.
+
+Different evidence may use different storage and publication paths.
+
+EAS can add public provenance for significant records.
+
+It does not turn a weak source record into scientific truth.
+
+<Card title="Read the MRV evidence model" icon="magnifying-glass-chart" href="/ecosystem-wiki/kokonut-farms/measurement-reporting-and-verification">
+  Review evidence classes, record lifecycle, forecast boundaries, attestation limits, remote sensing, and current maturity.
+</Card>
+
+---
+
+## Kokonut Intelligence implements data infrastructure around the Framework
+
+[Kokonut Intelligence](/kokonut-intelligence) is not the Framework itself.
+
+It provides infrastructure that can operationalize Framework concepts through:
+
+- canonical farm records;
+- operational events;
+- review states;
+- analytics;
+- forecasting;
+- reports;
+- scoring;
+- EAS integration on Celo;
+- agent-access workflows.
+
+The distinction matters.
+
+A methodology can remain valid even if a software implementation changes.
+
+And a software score should not become a new methodology merely because it can be calculated.
+
+| Layer | Question |
+| --- | --- |
+| **Framework** | What structures and methods should farms share? |
+| **MRV** | How should evidence and claims be handled? |
+| **Kokonut Intelligence** | How do we store, review, analyze, publish, and automate around those records? |
+| **Kokonut Hub** | What published farm/project information can people inspect? |
+
+---
+
+## Governance uses the Framework — it does not own the Framework's subject matter
+
+The Framework can make a farm proposal easier to evaluate.
+
+That does not mean every Framework question belongs to the Moloch DAO.
+
+Different decisions have different authorities.
+
+| Decision | Primary responsibility |
+| --- | --- |
+| Shared DAO treasury capital | Moloch DAO |
+| Routine farm operations | Local farm operators |
+| Contribution work / domain review | Guilds and relevant reviewers |
+| Shared Framework schema / methodology | Framework stewards + affected domain reviewers |
+| Scientific / ecological claim review | Qualified evidence reviewers |
+| Technical implementation | Technical contributors within approved scope |
+
+A Moloch proposal may fund a Framework improvement.
+
+That vote does not make token holders the scientific, agronomic, or technical authority over the content of the method.
+
+[Read the DAO Architecture →](/ecosystem-wiki/the-kokonut-dao/dao-layers)
+
+---
+
+## Who uses the Framework
+
+<CardGroup cols={2}>
+  <Card title="Farm operators" icon="tractor">
+    Use shared records and phases while preserving local judgment over crops, timing, water, labor, maintenance, and field response.
+  </Card>
+
+  <Card title="Contributors & Guilds" icon="users">
+    Use the Framework to identify bounded work, domain dependencies, evidence needs, and reusable improvements.
+  </Card>
+
+  <Card title="Capital governance participants" icon="building-columns">
+    Use compatible farm information to evaluate Moloch-scoped funding decisions without treating treasury voting as farm management.
+  </Card>
+
+  <Card title="Impact & research reviewers" icon="microscope">
+    Use shared terminology, baselines, evidence classes, value frameworks, and reporting periods to evaluate claims.
+  </Card>
+
+  <Card title="Developers" icon="code">
+    Use schemas and documented interfaces to build compatible data, MRV, analytics, and reporting tools.
+  </Card>
+
+  <Card title="Partners & grant reviewers" icon="handshake">
+    Use structured records and evidence to understand what is documented, modeled, delivered, and still uncertain.
+  </Card>
+</CardGroup>
+
+---
+
+## Adelphi is the first live reference implementation
+
+Adelphi is where the Framework has its clearest real-world reference.
+
+It combines:
+
+- locally operated land;
+- farm-development phases;
+- regenerative practice;
+- crop and infrastructure systems;
+- public-goods funding history;
+- forecasts and actual records;
+- MRV;
+- Kokonut Hub publication;
+- governance and contributor coordination.
+
+That makes Adelphi useful for learning.
+
+It does **not** make Adelphi a universal template.
+
+<Warning>
+  **Adelphi is a reference implementation, not proof of universal scalability.** Its crops, economics, community context, operators, biodiversity, infrastructure, and market conditions should not be copied blindly to another site.
+</Warning>
 
 [Explore Adelphi →](/ecosystem-wiki/kokonut-farms/adelphi/summary)
 
 ---
 
-## What the Framework helps prevent
+## Terra Viva is the next replication test
 
-The Framework exists because regenerative agriculture often fails at the coordination layer, not only the land layer.
+The current documentation identifies **Terra Viva** as the next major test of Framework portability.
 
-| Failure mode | How the Framework responds |
+Terra Viva is described as roughly **50,000 m² of adjacent land under agreement** entering:
+
+**Phase I — Planning & Preparation**
+
+That status matters.
+
+Terra Viva is useful because it can help answer questions that Adelphi alone cannot:
+
+- Which Framework fields transfer cleanly?
+- Which methods need local adaptation?
+- Which assumptions were specific to Adelphi?
+- How should multi-farm comparison work?
+- Which evidence can be normalized?
+- Where does governance need to remain farm-specific?
+
+It is **not yet evidence of successful multi-farm replication**.
+
+---
+
+## What the Framework can support — and what it cannot guarantee
+
+| The Framework can support | It cannot guarantee |
 | --- | --- |
-| Every farm invents its own proposal format | Common Data Schema and proposal templates |
-| Funders cannot compare projects | Shared fields, phases, risks, and milestones |
-| Impact claims are vague | MRV workflow and public evidence records |
-| Governance decisions depend on trust alone | DAO review, funding milestones, and verifiable reporting |
-| Ecological work is disconnected from finance | Harvest actuals, risk profiles, and public goods allocation |
-| Knowledge is trapped in one farm | Standardized documentation that future farms can reuse |
+| More comparable baseline records | Comparable farm outcomes |
+| Better-structured funding requests | Funding approval |
+| Clearer development milestones | Successful farm execution |
+| Shared regenerative principles | Measured ecological improvement |
+| More consistent evidence requirements | Scientific certification |
+| Stronger forecast-vs-actual learning | Forecast accuracy |
+| Reusable reporting structures | Impact |
+| Cross-farm analysis | Identical local conditions |
+| Better governance inputs | Good governance decisions |
+| Agent-readable records | Correct autonomous decisions |
 
 <Note>
-  The Framework does not guarantee success. It creates the conditions for better decisions, better evidence, and better iteration.
+  **The Framework reduces ambiguity. It does not remove uncertainty.**
 </Note>
 
 ---
 
-## What the Framework makes possible
+## Current maturity of the Framework
 
-<CardGroup cols={2}>
-  <Card title="Comparable farms" icon="scale-balanced">
-    DAO members can compare farms by using shared fields, phases, risks, metrics, and evidence, rather than relying on narrative alone.
-  </Card>
-
-  <Card title="Fundable proposals" icon="file-invoice-dollar">
-    Farm proposals can include clear budgets, milestone gates, public goods allocation, MRV requirements, and reporting duties.
-  </Card>
-
-  <Card title="Governable operations" icon="check-to-slot">
-    Farm progress can be evaluated against approved plans, contributor work, DAO proposals, and Framework standards.
-  </Card>
-
-  <Card title="Verifiable impact" icon="stamp">
-    MRV records, IPFS/Filecoin storage, EAS attestations, and public dashboards make the impact easier to inspect.
-  </Card>
-
-  <Card title="Reusable intelligence" icon="brain-circuit">
-    Standardized data provides a cleaner foundation for analysis, recommendations, alerts, and reporting for humans and AI agents.
-  </Card>
-
-  <Card title="Replication without copy-paste farming" icon="seedling">
-    Future farms can reuse the coordination system while adapting to their own land, climate, crops, and community.
-  </Card>
-</CardGroup>
+| Component | Current status | Interpretation |
+| --- | --- | --- |
+| **Framework documentation** | **Live and evolving** | Shared methods are documented and actively refined |
+| **Common Data Schema** | **Active baseline** | Current 13-field structure; subject to compatibility-aware revision |
+| **Four development phases** | **Active methodology** | Shared lifecycle model used across Framework documentation |
+| **5 Principles of Regeneration** | **Active methodology** | Shared practice principles, not outcome guarantees |
+| **Pillars of Value** | **Active analytical framework** | Helps structure value questions |
+| **8 Forms of Capital** | **Active value taxonomy** | Organizes forms of value beyond finance |
+| **Positive-impact methodology** | **Active and evolving** | Interpretation depends on evidence quality |
+| **SDG methodology** | **Active and evolving** | Alignment and outcomes must remain distinct |
+| **Ecological impact add-ons** | **Analytical / decision-support tooling** | Not external certification by themselves |
+| **Impact calculators** | **Planning / scenario tools** | Outputs are modeled, not achieved impact |
+| **Adelphi** | **Live reference implementation** | Strongest current real-world Framework example |
+| **Terra Viva** | **Phase I / planning** | Next replication test, not an operating proof of scale |
 
 ---
 
-## How to use this section
+## Framework principles for this documentation sprint
 
-If you are new to the Framework, start here:
+As the Framework pages are improved, they should preserve these rules.
+
+1. **Interoperability, not uniformity.**
+2. **Local operators retain local operating authority.**
+3. **Shared structure does not equal automatic approval.**
+4. **Implemented practice does not equal measured outcome.**
+5. **Forecast does not equal actual.**
+6. **Attestation does not equal scientific certification.**
+7. **Framework methodology and software implementation remain distinguishable.**
+8. **Governance authority stays scoped to the decision being made.**
+9. **Public-goods and economic arrangements should follow the approved farm-specific arrangement rather than an unsupported universal rule.**
+10. **Replication claims should grow only as multi-farm evidence grows.**
+
+---
+
+## Read the Framework in this order
 
 <Steps>
-  <Step title="Understand the farm onboarding standard" icon="database" iconType="regular">
-    Read the [Common Data Schema](/kokonut-framework/framework-components/common-data-schema) to understand the 13 fields every farm must provide.
+  <Step title="1. Establish the baseline record" icon="database" iconType="regular">
+    Read the [Common Data Schema](/kokonut-framework/framework-components/common-data-schema) to understand the current 13-field farm record and where its assumptions need evidence.
   </Step>
-  <Step title="Understand the farm lifecycle" icon="timeline" iconType="regular">
-    Read the [Development Phases](/kokonut-framework/development-phases/phase-i) to see how farms move from planning to production, consolidation, and continuous MRV.
+
+  <Step title="2. Understand value before scoring it" icon="square-poll-vertical" iconType="regular">
+    Read the [Pillars of Value](/kokonut-framework/framework-components/pillars-of-value) to understand WHAT, WHO, HOW MUCH, CONTRIBUTION, RISK, and PUBLIC GOODS.
   </Step>
-  <Step title="Understand the regenerative practice layer" icon="hand-holding-seedling" iconType="regular">
-    Read the [5 Principles of Regeneration](/kokonut-framework/framework-components/framework-features/5-principles-of-regeneration) to see the agronomic principles behind Kokonut farms.
+
+  <Step title="3. Understand regenerative practice" icon="hand-holding-seedling" iconType="regular">
+    Read the [5 Principles of Regeneration](/kokonut-framework/framework-components/framework-features/5-principles-of-regeneration) and [Why Syntropic Farming](/kokonut-framework/why-syntropic-farming).
   </Step>
-  <Step title="Understand how value is measured" icon="chart-simple" iconType="regular">
-    Read the [Pillars of Value](/kokonut-framework/framework-components/pillars-of-value) and [8 Forms of Capital](/kokonut-framework/framework-components/framework-features/8-forms-of-capital) to understand how Kokonut tracks more than financial returns.
+
+  <Step title="4. Expand the value model" icon="water" iconType="regular">
+    Read the [8 Forms of Capital](/kokonut-framework/framework-components/framework-features/8-forms-of-capital).
   </Step>
-  <Step title="Understand verification" icon="magnifying-glass-chart" iconType="regular">
-    Read [Measurement, Reporting & Verification](/ecosystem-wiki/kokonut-farms/measurement-reporting-and-verification) to see how farm activity becomes public evidence.
+
+  <Step title="5. Follow the farm lifecycle" icon="timeline" iconType="regular">
+    Move through [Phase I](/kokonut-framework/development-phases/phase-i), Phase II, Phase III, and Phase IV.
+  </Step>
+
+  <Step title="6. Add impact interpretation carefully" icon="chart-network" iconType="regular">
+    Read the [Positive-impact methodology](/kokonut-framework/framework-components/framework-features/methodology-positive-impact), [SDGs](/kokonut-framework/framework-features/Sustainable-Development-Goals), and [Ecological Impact Frameworks](/kokonut-framework/framework-add-ons/ecological-impact-frameworks).
+  </Step>
+
+  <Step title="7. Connect methodology to evidence and data" icon="magnifying-glass-chart" iconType="regular">
+    Read [MRV](/ecosystem-wiki/kokonut-farms/measurement-reporting-and-verification), [Kokonut Intelligence](/kokonut-intelligence), and [Build with Kokonut](/build-with-kokonut).
   </Step>
 </Steps>
 
@@ -305,44 +523,52 @@ If you are new to the Framework, start here:
 
 <CardGroup cols={2}>
   <Card title="Common Data Schema" icon="database" href="/kokonut-framework/framework-components/common-data-schema">
-    The 13 fields every farm must populate before it can be evaluated, compared, and tracked.
+    The current 13-field baseline farm record.
   </Card>
 
   <Card title="Pillars of Value" icon="square-poll-vertical" href="/kokonut-framework/framework-components/pillars-of-value">
-    The value model behind Kokonut: What, Who, How Much, Contribution, Risk, and Public Goods.
+    Six questions for value, contribution, risk, and public goods.
   </Card>
 
   <Card title="5 Principles of Regeneration" icon="hand-holding-seedling" href="/kokonut-framework/framework-components/framework-features/5-principles-of-regeneration">
-    The agronomic principles behind cover crops, biodiversity, animal integration, soil health, and perennial systems.
+    Shared regenerative practice principles.
   </Card>
 
   <Card title="8 Forms of Capital" icon="water" href="/kokonut-framework/framework-components/framework-features/8-forms-of-capital">
-    The broader capital model: Natural, Financial, Social, Human, Material, Intellectual, Cultural, and Health capital.
+    Natural, Financial, Social, Human, Material, Intellectual, Cultural, and Health capital.
   </Card>
 
-  <Card title="Development Phases" icon="hammer-brush" href="/kokonut-framework/development-phases/phase-i">
-    The four-phase lifecycle follows from planning to production, consolidation, and continuous MRV.
+  <Card title="Development Phases" icon="timeline" href="/kokonut-framework/development-phases/phase-i">
+    The four-stage farm-development lifecycle.
+  </Card>
+
+  <Card title="Positive-impact Methodology" icon="chart-line" href="/kokonut-framework/framework-components/framework-features/methodology-positive-impact">
+    Connect activities and evidence to impact interpretation without skipping the evidence boundary.
+  </Card>
+
+  <Card title="Sustainable Development Goals" icon="chart-network" href="/kokonut-framework/framework-features/Sustainable-Development-Goals">
+    Primary and secondary SDG mapping with evidence-aware claim levels.
+  </Card>
+
+  <Card title="Ecological Impact Frameworks" icon="leaf" href="/kokonut-framework/framework-add-ons/ecological-impact-frameworks">
+    Additional ecological-benefit and risk interpretation tools.
+  </Card>
+
+  <Card title="Why Syntropic Farming" icon="seedling" href="/kokonut-framework/why-syntropic-farming">
+    The agricultural logic behind Kokonut's syntropic and regenerative approach.
+  </Card>
+
+  <Card title="Impact Calculator" icon="calculator" href="/kokonut-framework/impact-calculator">
+    Scenario planning for finance and impact; model outputs remain forecasts until actual evidence exists.
   </Card>
 
   <Card title="MRV Methodology" icon="magnifying-glass-chart" href="/ecosystem-wiki/kokonut-farms/measurement-reporting-and-verification">
-    How farm activity becomes structured payloads, public records, EAS attestations, and impact reports.
+    The evidence model that sits beside the Framework.
   </Card>
 
-  <Card title="Adelphi Farm" icon="seedling" href="/ecosystem-wiki/kokonut-farms/adelphi/summary">
-    The first live farm where the Framework is being applied, tested, measured, and improved.
-  </Card>
-
-  <Card title="Build With Kokonut" icon="code" href="/build-with-kokonut">
-    Developer primitives for Farm Registry data, MRV events, attestations, and agent-ready infrastructure.
+  <Card title="Adelphi" icon="seedling" href="/ecosystem-wiki/kokonut-farms/adelphi/summary">
+    The first live reference implementation.
   </Card>
 </CardGroup>
 
-<div style={{ display: "flex", gap: "12px", justifyContent: "center", flexWrap: "wrap", margin: "2rem 0 0.75rem" }}>
-  <a href="/kokonut-framework/framework-components/common-data-schema" style={{ display: "inline-flex", alignItems: "center", gap: "6px", background: "#009F4D", color: "#fff", padding: "10px 20px", borderRadius: "8px", fontWeight: "600", fontSize: "14px", textDecoration: "none" }}>
-    Start With the Common Data Schema →
-  </a>
-
-  <a href="/ecosystem-wiki/open-collaboration-invitation" style={{ display: "inline-flex", alignItems: "center", gap: "6px", border: "1.5px solid #009F4D", color: "#009F4D", padding: "10px 20px", borderRadius: "8px", fontWeight: "600", fontSize: "14px", textDecoration: "none", background: "transparent" }}>
-    Help Improve the Framework
-  </a>
-</div>
+> **The Framework succeeds when the next farm can start with more shared knowledge and better coordination than the first one—without losing the local judgment that makes a farm real.**
