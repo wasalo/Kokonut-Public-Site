@@ -1,377 +1,743 @@
 ---
 title: "Glossary"
-description: "Plain-English definitions for Kokonut's DAO, regenerative agriculture, MRV, AI agent, and farm-specific terms."
+description: "Plain-English definitions for Kokonut's farms, governance, contribution model, MRV, data infrastructure, impact methods, and developing AI-agent systems."
 icon: "book-open"
 ---
 
 # Glossary: the language of Kokonut
 
-Kokonut sits at the intersection of regenerative agriculture, DAO governance, impact verification, and AI agent infrastructure. This glossary explains the terms used throughout the Knowledge Base in plain English and points you to the page where each concept is used in practice.
+Kokonut sits at the intersection of regenerative agriculture, capital governance, contributor coordination, evidence, open data infrastructure, and developing automation.
 
-Use this page when you encounter an unfamiliar word or need to understand how a concept works, specifically within Kokonut.
+That makes terminology important.
 
-<div style={{ display: "flex", gap: "12px", justifyContent: "center", flexWrap: "wrap", margin: "1.5rem 0 0.75rem" }}>
-  <a href="#start-with-these-terms" style={{ display: "inline-flex", alignItems: "center", gap: "6px", background: "#009F4D", color: "#fff", padding: "10px 20px", borderRadius: "8px", fontWeight: "600", fontSize: "14px", textDecoration: "none" }}>
-    Start With These Terms →
-  </a>
+A word such as **verified**, **attested**, **forecast**, **member**, or **live** can imply much more than the underlying record actually supports if it is used carelessly.
 
-  <a href="#terms-by-category" style={{ display: "inline-flex", alignItems: "center", gap: "6px", border: "1.5px solid #009F4D", color: "#009F4D", padding: "10px 20px", borderRadius: "8px", fontWeight: "600", fontSize: "14px", textDecoration: "none", background: "transparent" }}>
-    Browse by Category
-  </a>
-</div>
+This glossary defines terms as they are used **inside Kokonut's current documentation**.
 
-<p style={{ textAlign: "center", fontSize: "13px", color: "#6b7280", marginTop: "0.25rem" }}>
-  New to Kokonut? Start with DAO, Framework, MRV, Adelphi, Guilds, vKKN, Loot, rage-quit, and Data Hub.
-</p>
+> **The most important distinction is not technical vocabulary. It is knowing whether something is documented, measured, forecast, reviewed, attested, interpreted, live, or still developing.**
+
+<CardGroup cols={2}>
+  <Card title="New to Kokonut" icon="compass" href="/ecosystem-wiki/kokonut-101/executive-summary">
+    Start with the Executive Summary before going deep into governance, farm, MRV, or technical terms.
+  </Card>
+
+  <Card title="Check the FAQ" icon="circle-question" href="/ecosystem-wiki/faq">
+    Use the FAQ for practical questions; use this glossary when a specific term needs a precise definition.
+  </Card>
+
+  <Card title="Verify farm records" icon="seedling" href="https://hub.kokonut.network/projects/41">
+    Use the Kokonut Hub for current published Adelphi records rather than treating static documentation as a live dashboard.
+  </Card>
+
+  <Card title="Inspect governance" icon="layer-group" href="/ecosystem-wiki/the-kokonut-dao/dao-layers">
+    Review the authority boundaries behind Moloch, Guilds, farm operators, the Framework, evidence, and technical execution.
+  </Card>
+</CardGroup>
+
+<Note>
+  These definitions are written for comprehension. For live contract state, legal rights, scientific certification, regulatory status, or financial decisions, use the relevant primary records and qualified professional review.
+</Note>
 
 ---
 
 ## Start with these terms
 
-These are the terms that unlock most of the documentation.
-
-| Term | Plain-English meaning | Go deeper |
+| Term | Current Kokonut meaning | Go deeper |
 | --- | --- | --- |
-| Kokonut Network | The cooperative that connects Web3 communities to real, syntropic farms. | [Executive Summary](/ecosystem-wiki/kokonut-101/executive-summary) |
-| Kokonut DAO | The governance and treasury system coordinates capital, proposals, and member rights. | [DAO Layers](/ecosystem-wiki/the-kokonut-dao/dao-layers) |
-| Kokonut Framework | The repeatable operating system for funding, running, measuring, and governing farms. | [Framework Introduction](/kokonut-framework/Introduction) |
-| Adelphi | Kokonut's first live syntropic farm in Monte Plata, Dominican Republic. | [Adelphi Summary](/ecosystem-wiki/kokonut-farms/adelphi/summary) |
-| MRV | Measurement, Reporting, and Verification — the pipeline that turns farm work into evidence. | [MRV](/ecosystem-wiki/kokonut-farms/measurement-reporting-and-verification) |
-| Data Hub | The public farm-data interface for harvests, MRV events, impact metrics, and geospatial records. | [Adelphi Data](https://hub.kokonut.network/projects/41) |
-| Moloch DAO | The on-chain treasury DAO, where capital contributors vote and treasury actions are executed. | [Kokonut Moloch DAO](/ecosystem-wiki/the-kokonut-dao/kokonut-moloch-dao) |
-| Guilds DAO | The contribution layer, where useful work becomes Guild Points and operational standing. | [Kokonut Guilds DAO](/ecosystem-wiki/the-kokonut-dao/kokonut-guilds-dao) |
-| vKKN | Kokonut's soulbound governance token for DAO voting. | [Kokonut Moloch DAO](/ecosystem-wiki/the-kokonut-dao/kokonut-moloch-dao) |
-| Loot | Kokonut's non-voting economic participation token for recognized contribution. | [Kokonut Moloch DAO](/ecosystem-wiki/the-kokonut-dao/kokonut-moloch-dao) |
-| Rage-quit | The DAO exit mechanism allows eligible members to exit with their proportional share of the treasury. | [Governance Framework](/ecosystem-wiki/the-kokonut-dao/governance-framework) |
-| EAS | Ethereum Attestation Service is used to anchor verifiable claims as public records. | [Build with Kokonut](/build-with-kokonut) |
-
-<Note>
-  Terms in this glossary are written for comprehension first. For legal, financial, smart contract, or methodology decisions, always follow the linked source page and current DAO documentation.
-</Note>
+| **Kokonut Network** | Open coordination infrastructure for regenerative agriculture | [Executive Summary](/ecosystem-wiki/kokonut-101/executive-summary) |
+| **Adelphi** | Kokonut's first live reference farm | [Adelphi Overview](/ecosystem-wiki/kokonut-farms/adelphi/summary) |
+| **Kokonut Framework** | Shared farm-development methodology and interoperability layer | [Framework](/kokonut-framework/Introduction) |
+| **Moloch DAO** | Live capital-governance and treasury layer on Gnosis Chain | [Moloch DAO](/ecosystem-wiki/the-kokonut-dao/kokonut-moloch-dao) |
+| **Guilds** | Contribution-coordination and domain-review layer | [Kokonut Guilds](/ecosystem-wiki/the-kokonut-dao/kokonut-guilds-dao) |
+| **Local farm operators** | People responsible for day-to-day agricultural execution | [DAO Architecture](/ecosystem-wiki/the-kokonut-dao/dao-layers) |
+| **MRV** | Evidence methodology for observations, records, review, publication, attestations, and interpretation | [MRV](/ecosystem-wiki/kokonut-farms/measurement-reporting-and-verification) |
+| **Kokonut Hub** | Public farm/project data surface | [Adelphi Hub](https://hub.kokonut.network/projects/41) |
+| **Kokonut Intelligence** | Active data, analytics, review, reporting, and attestation infrastructure | [Kokonut Intelligence](/kokonut-intelligence) |
+| **\$vKKN** | Non-transferable Moloch voting token under the current docs | [Moloch DAO](/ecosystem-wiki/the-kokonut-dao/kokonut-moloch-dao) |
+| **Loot** | Non-voting, non-transferable Moloch token primitive for recognized participation under the current docs | [Moloch DAO](/ecosystem-wiki/the-kokonut-dao/kokonut-moloch-dao) |
+| **Guild Points** | Developing contribution-reputation mechanism | [Kokonut Guilds](/ecosystem-wiki/the-kokonut-dao/kokonut-guilds-dao) |
+| **EAS attestation** | Signed provenance record; not scientific certification by itself | [MRV](/ecosystem-wiki/kokonut-farms/measurement-reporting-and-verification) |
+| **Forecast** | Modeled future scenario based on assumptions | [Adelphi Forecast](/ecosystem-wiki/kokonut-farms/adelphi/crops-and-harvest-forecast) |
+| **Actual** | Recorded result from real operations | [Kokonut Hub](https://hub.kokonut.network/projects/41) |
 
 ---
 
 ## Choose by reader path
 
 <CardGroup cols={2}>
-  <Card title="I am new to Kokonut" icon="compass" href="/ecosystem-wiki/kokonut-101/executive-summary">
-    Start with Kokonut Network, Adelphi, Kokonut Framework, DAO, MRV, and Data Hub.
+  <Card title="Governance & capital" icon="building-columns" href="/ecosystem-wiki/the-kokonut-dao/kokonut-moloch-dao">
+    Start with Moloch DAO, \$vKKN, Loot, tribute, proposal, grace, rage-quit, retention, and SAFE.
   </Card>
 
-  <Card title="I want to join governance" icon="landmark-dome" href="/ecosystem-wiki/the-kokonut-dao/kokonut-moloch-dao">
-    Start with Moloch DAO, vKKN, tribute, proposal, grace period, quorum, rage-quit, and SAFE wallet.
+  <Card title="Contribution & Guilds" icon="users" href="/ecosystem-wiki/the-kokonut-dao/kokonut-guilds-dao">
+    Start with contribution record, domain review, Guild Points, Steward, bounty, and Loot recognition.
   </Card>
 
-  <Card title="I want to contribute work" icon="people-group" href="/ecosystem-wiki/the-kokonut-dao/kokonut-guilds-dao">
-    Start with Guilds DAO, Guild Points, Steward, Loot, bounty, proposal, and contribution record.
+  <Card title="Farms & regeneration" icon="seedling" href="/ecosystem-wiki/kokonut-farms/adelphi/summary">
+    Start with Adelphi, syntropic farming, agroforestry, nursery, biochar, poultry, forecast, and actual.
   </Card>
 
-  <Card title="I want to verify the impact" icon="magnifying-glass-chart" href="/ecosystem-wiki/kokonut-farms/measurement-reporting-and-verification">
-    Start with MRV, EAS, IPFS, Data Hub, NDVI, NDRE, MSAVI, ReCI, EBF, CRISP, and SDGs.
+  <Card title="Evidence & impact" icon="magnifying-glass-chart" href="/ecosystem-wiki/kokonut-farms/measurement-reporting-and-verification">
+    Start with MRV, observation, measurement, derived indicator, attestation, EAS, SDG, EBF, and CRISP.
   </Card>
 
-  <Card title="I want to understand the farm" icon="seedling" href="/ecosystem-wiki/kokonut-farms/adelphi/summary">
-    Start with Adelphi, syntropic farming, agroforestry, biochar, nursery, poultry loop, and organic certification.
+  <Card title="Data & analytics" icon="database" href="/kokonut-intelligence">
+    Start with Kokonut Intelligence, record lifecycle, Published, Farm Registry, Common Data Schema, and Celo EAS.
   </Card>
 
-  <Card title="I want to build tools" icon="code" href="/build-with-kokonut">
-    Start with Farm Registry, Common Data Schema, EAS, ERC-8004, x402, Agentic Marketplace, and Data Hub.
+  <Card title="Builders & agents" icon="code" href="/build-with-kokonut">
+    Start with Gnosis, Celo, Base, ERC-8004, x402, Agentic Marketplace, schemas, and APIs.
   </Card>
 </CardGroup>
 
 ---
 
-## Terms by category
+## Evidence and claim vocabulary
 
-### Web3 and governance primitives
+These terms should be used consistently across farm, governance, impact, and technical documentation.
+
+<AccordionGroup>
+  <Accordion title="Documented state">
+    **Plain English:** A condition or fact recorded in the documentation or data system at a defined point in time.
+
+    **In Kokonut:** Examples include Adelphi's documented mapped area, number of hens, jobs, installed infrastructure, or named operators.
+
+    A documented state is not automatically a live value forever. Current farm state should be checked through the relevant current record.
+  </Accordion>
+
+  <Accordion title="Observation">
+    **Plain English:** Something seen, logged, reported, or captured directly from a source.
+
+    **In Kokonut:** Examples include field notes, crop-stage observations, photos, operator records, or a satellite scene.
+
+    An observation can be useful evidence without being a complete impact conclusion.
+  </Accordion>
+
+  <Accordion title="Measurement">
+    **Plain English:** A quantified observation produced through a defined instrument, unit, method, or sampling process.
+
+    **In Kokonut:** Soil moisture, electrical conductivity, temperature, crop quantity, or geospatial measurements can be measurements when their source and context are documented.
+  </Accordion>
+
+  <Accordion title="Derived indicator">
+    **Plain English:** A value calculated from one or more observations or measurements.
+
+    **In Kokonut:** NDVI, NDRE, ReCI, MSAVI, scores, ratios, and trend calculations are derived indicators.
+
+    They are not direct measurements of yield, carbon, biodiversity, or social impact unless a valid methodology supports that interpretation.
+  </Accordion>
+
+  <Accordion title="Forecast">
+    **Plain English:** A modeled estimate of what may happen in the future.
+
+    **In Kokonut:** Harvest quantities, revenue scenarios, loss assumptions, and maturity-stage production can be forecasts.
+
+    Forecasts should expose their assumptions and later be compared against actuals.
+  </Accordion>
+
+  <Accordion title="Actual">
+    **Plain English:** A result recorded from real operations after it happens.
+
+    **In Kokonut:** Actual harvest quantity, realized selling price, expense, payment, job record, or farm event should come from operational evidence rather than a planning model.
+  </Accordion>
+
+  <Accordion title="Attestation">
+    **Plain English:** A signed claim or record asserting that something was stated, reviewed, or associated with particular evidence.
+
+    **In Kokonut:** EAS attestations can anchor provenance for important MRV, harvest, impact, financial, or compliance records.
+
+    **Attested does not mean scientifically certified.**
+  </Accordion>
+
+  <Accordion title="Interpretation">
+    **Plain English:** A conclusion drawn from evidence using a method, framework, or professional judgment.
+
+    **In Kokonut:** SDG contribution, ecological benefit, risk classification, or impact conclusions are interpretations built on underlying records.
+
+    Stronger interpretations require stronger evidence and clearer methodology.
+  </Accordion>
+
+  <Accordion title="Verified — Kokonut Intelligence workflow state">
+    **Plain English:** A record has passed an authorized internal review step.
+
+    **In Kokonut Intelligence:** `Verified` means an authorized reviewer or process approved the record.
+
+    It does **not** automatically mean:
+
+    - independent scientific certification;
+    - regulatory approval;
+    - third-party assurance;
+    - external audit;
+    - carbon-credit eligibility.
+  </Accordion>
+
+  <Accordion title="Published — Kokonut Intelligence workflow state">
+    **Plain English:** A reviewed record is allowed to be used in downstream public or governed surfaces.
+
+    **In Kokonut Intelligence:** A Published record can be used by dashboards, APIs, reports, or attestation workflows as permitted by the system.
+  </Accordion>
+
+  <Accordion title="Record lifecycle">
+    **Plain English:** The states a record moves through before it is trusted for wider use.
+
+    **In Kokonut Intelligence:**
+
+    **draft → submitted → verified / rejected → published**
+
+    Rejected records can return for correction and resubmission.
+  </Accordion>
+
+  <Accordion title="Live">
+    **Plain English:** Operational now, with a current deployed or operating surface.
+
+    **In Kokonut:** Examples include Adelphi, the Moloch DAO on Gnosis Chain, the Kokonut Hub, and active Kokonut Intelligence infrastructure.
+
+    “Live” should not be used merely because code exists in a repository.
+  </Accordion>
+
+  <Accordion title="Active and evolving">
+    **Plain English:** Already used in practice, but still changing materially.
+
+    **In Kokonut:** The Framework, MRV methodology, and Guild coordination are examples of systems that are active while their methods or operating processes continue to mature.
+  </Accordion>
+
+  <Accordion title="Developing / in development">
+    **Plain English:** Being built or tested but not yet equivalent to a mature production system.
+
+    **In Kokonut:** Guild Points, advanced AI-agent automation, and the Agentic Marketplace contain developing components.
+
+    Documentation should not assign developing systems production authority they do not yet have.
+  </Accordion>
+</AccordionGroup>
+
+---
+
+## Governance and coordination terms
 
 <AccordionGroup>
   <Accordion title="DAO — Decentralized Autonomous Organization">
-    **Plain English:** A community-governed organization that makes decisions through proposals instead of a traditional executive team.
+    **Plain English:** A governance structure that uses explicit proposals, rules, and often smart contracts to coordinate shared decisions or assets.
 
-    **In Kokonut: **The DAO coordinates treasury decisions, membership, funding proposals, farm support, contributor recognition, and governance rights. Kokonut separates the capital path through the Moloch DAO from the contribution path through Guilds.
-  </Accordion>
+    **In Kokonut:** The term should not be used to imply that one token vote governs the entire ecosystem.
 
-  <Accordion title="Moloch DAO">
-    **Plain English:** A minimalist DAO framework built around a shared treasury, proposal-based execution, soulbound membership tokens, and the right to exit through rage-quit.
-
-    **In Kokonut:** The Moloch DAO is the on-chain treasury and governance layer. It manages vKKN, Loot, treasury proposals, funding decisions, and member exits on Gnosis Chain.
-  </Accordion>
-
-  <Accordion title="Proposal">
-    **Plain English:** A formal request for the DAO to approve an action.
-
-    **In Kokonut:** Proposals can onboard members, fund farms, approve Guild bounties, recognize contributions, modify governance parameters, or authorize partnerships. Drafts are reviewed before moving to an on-chain vote.
-  </Accordion>
-
-  <Accordion title="Tribute">
-    **Plain English:** Assets contributed to a Moloch DAO treasury in exchange for membership or governance tokens.
-
-    **In Kokonut:** Capital contributors submit stablecoin tribute proposals. If approved, they receive soulbound vKKN governance tokens. Tribute is not a public token sale, and vKKN cannot be transferred or traded.
-  </Accordion>
-
-  <Accordion title="vKKN — Kokonut Voting Token">
-    **Plain English:** Kokonut's governance token.
-
-    **In Kokonut:** vKKN is soulbound, non-transferable, and used for Moloch DAO voting. One vKKN equals one vote. It is minted only through approved DAO proposals.
-  </Accordion>
-
-  <Accordion title="Loot — Kokonut Loot Token">
-    **Plain English:** A non-voting economic participation token.
-
-    **In Kokonut:** Loot can recognize contributors, partners, landowners, or core builders who add verifiable value. Loot gives economic rights without governance voting power, separating contribution recognition from treasury control.
-  </Accordion>
-
-  <Accordion title="Soulbound token">
-    **Plain English:** A token that cannot be transferred, sold, delegated, or moved to another wallet.
-
-    **In Kokonut:** Both vKKN and Loot are soulbound. This prevents governance power from being bought on a secondary market and keeps membership tied to direct participation or verified contribution.
-  </Accordion>
-
-  <Accordion title="Rage-quit">
-    **Plain English:** A DAO exit mechanism that allows a member to leave and receive their proportional share of eligible treasury assets.
-
-    **In Kokonut:** rage-quitting protects capital-contributing members from being trapped by a governance decision they disagree with. If a proposal passes, members can exit during the grace period before execution.
-  </Accordion>
-
-  <Accordion title="Grace period">
-    **Plain English:** The time window after a proposal passes and before it is executed.
-
-    **In Kokonut:** The grace period gives members time to review a passed proposal and rage-quit before treasury funds move or a decision becomes final.
-  </Accordion>
-
-  <Accordion title="Quorum">
-    **Plain English:** The minimum voting participation needed for a proposal result to count.
-
-    **In Kokonut:** Quorum rules are governance parameters and may differ by proposal type. Always check the current Governance Framework before submitting or evaluating a proposal.
-  </Accordion>
-
-  <Accordion title="SAFE wallet">
-    **Plain English:** A smart contract wallet used by DAOs and organizations to hold and move assets safely.
-
-    **In Kokonut:** The main treasury is a SAFE wallet controlled by DAO-approved execution, not by an individual signer. It is structured to support proposal execution and member exits.
-  </Accordion>
-
-  <Accordion title="EAS — Ethereum Attestation Service">
-    **Plain English:** A protocol for creating signed public claims that can be verified later.
-
-    **In Kokonut:** EAS is used to anchor important records such as MRV submissions, harvest events, funding approvals, and impact reports. It helps turn farm data into auditable public evidence.
-  </Accordion>
-
-  <Accordion title="IPFS and Filecoin">
-    **Plain English:** Decentralized storage systems are used to preserve files and data outside a single private server.
-
-    **In Kokonut:** MRV payloads and supporting records can be pinned to IPFS or Filecoin before being referenced by attestations and displayed through public data tools.
-  </Accordion>
-
-  <Accordion title="ENS — Ethereum Name Service">
-    **Plain English:** A naming system that maps readable names to blockchain addresses, records, or content.
-
-    **In Kokonut:** ENS-style names can help identify farms, agents, tools, and contributors without relying only on raw wallet addresses.
-  </Accordion>
-
-  <Accordion title="ERC-8004">
-    **Plain English:** An Ethereum standard for registering AI agents and their capabilities on-chain.
-
-    **In Kokonut:** ERC-8004 is part of the Agentic Marketplace design, allowing farm-related AI agents to have identities, capability manifests, operators, and reputation records.
-  </Accordion>
-
-  <Accordion title="x402 protocol">
-    **Plain English:** A payment flow based on the HTTP `402 Payment Required` response.
-
-    **In Kokonut:** x402 can let agents or services request payment, settle in USDC, and continue the request without a manual checkout flow. It is part of the planned agent-to-agent service layer.
-  </Accordion>
-</AccordionGroup>
-
----
-
-### ReFi and regenerative agriculture
-
-<AccordionGroup>
-  <Accordion title="ReFi — Regenerative Finance">
-    **Plain English:** Finance is designed to restore ecological and social systems rather than only extract returns.
-
-    **In Kokonut:** ReFi means capital is coordinated toward real farms, public goods, land restoration, verifiable impact, and community-owned production systems.
-  </Accordion>
-
-  <Accordion title="Regenerative agriculture">
-    **Plain English:** Farming practices that rebuild soil, biodiversity, water retention, and ecosystem health over time.
-
-    **In Kokonut:** Regeneration is operationalized through syntropic farming, biodiversity, cover crops, on-site organic inputs, animal integration, MRV, and community education.
-  </Accordion>
-
-  <Accordion title="Syntropic farming">
-    **Plain English:** A farming method that designs farms to behave more like productive natural ecosystems.
-
-    **In Kokonut:** Syntropic farms combine short-cycle crops, medium-cycle fruits, long-cycle trees, ground cover, biomass management, and biodiversity so production and regeneration reinforce each other.
-  </Accordion>
-
-  <Accordion title="Agroforestry">
-    **Plain English:** Growing trees, shrubs, crops, and sometimes animals together in one managed system.
-
-    **In Kokonut:** Agroforestry supports biodiversity, canopy layering, perennial production, habitat, erosion control, and long-term farm resilience.
-  </Accordion>
-
-  <Accordion title="Silvo-pasture">
-    **Plain English:** A system that integrates trees, pasture, and grazing animals.
-
-    **In Kokonut:** Silvo-pasture is part of the broader regenerative toolkit, especially where animals can support soil fertility, ground-cover management, shade systems, and nutrient cycling.
-  </Accordion>
-
-  <Accordion title="Biochar">
-    **Plain English:** Charcoal-like material made by heating biomass in a low-oxygen environment.
-
-    **In Kokonut:** Biochar is used as a soil amendment to support water retention, microbial habitat, nutrient availability, and longer-term soil carbon storage. Claims about carbon impact should be verified through MRV and methodology-specific reporting.
-  </Accordion>
-
-  <Accordion title="Carbon sequestration">
-    **Plain English:** The process of storing carbon in soil, plants, trees, or other stable forms.
-
-    **In Kokonut:** Carbon sequestration is treated as an impact category that must be measured and verified. Avoid treating carbon claims as guaranteed outcomes unless the relevant methodology, data, and verification are available.
-  </Accordion>
-
-  <Accordion title="MRV — Measurement, Reporting, and Verification">
-    **Plain English:** The process of measuring what happened, reporting it in a structured format, and verifying that the claim is credible.
-
-    **In Kokonut:** MRV is the trust layer. Farm activity becomes structured data, storage records, attestations, Data Hub entries, and annual impact reporting.
-  </Accordion>
-
-  <Accordion title="NDVI — Normalized Difference Vegetation Index">
-    **Plain English:** A satellite vegetation-health index based on the difference between near-infrared and red light.
-
-    **In Kokonut:** NDVI is used as a baseline remote-sensing indicator for vegetation health across growing seasons.
-
-    **Formula:** `NDVI = (NIR - RED) / (NIR + RED)`
-  </Accordion>
-
-  <Accordion title="NDRE — Normalized Difference Red-Edge Index">
-    **Plain English:** A vegetation index that can be more useful for mature or dense crops where NDVI may saturate.
-
-    **In Kokonut:** NDRE helps refine crop-health analysis when plants are more developed and red-edge bands provide better chlorophyll sensitivity.
-
-    **Formula:** `NDRE = (NIR - RED_EDGE) / (NIR + RED_EDGE)`
-  </Accordion>
-
-  <Accordion title="MSAVI — Modified Soil-Adjusted Vegetation Index">
-    **Plain English:** A vegetation index designed to reduce noise from exposed soil.
-
-    **In Kokonut:** MSAVI is especially useful in early crop stages, sparse vegetation, or exposed-soil conditions where NDVI may be less reliable.
-  </Accordion>
-
-  <Accordion title="ReCI — Red-Edge Chlorophyll Index">
-    **Plain English:** A vegetation index focused on chlorophyll concentration and plant physiological health.
-
-    **In Kokonut:** ReCI can help detect nutrient or chlorophyll stress before problems are obvious to the naked eye.
-
-    **Formula:** `ReCI = (NIR / RED_EDGE) - 1`
-  </Accordion>
-
-  <Accordion title="EBF — Ecological Benefits Framework">
-    **Plain English:** A framework for reporting ecological benefits beyond carbon alone.
-
-    **In Kokonut:** EBF helps categorize impact across environmental, social, economic, and sustainability dimensions such as soil, water, biodiversity, community benefit, and multiple forms of capital.
-  </Accordion>
-
-  <Accordion title="CRISP — Carbon Risk Identification and Scoring Principles">
-    **Plain English:** A framework for evaluating risk in carbon-credit or ecological-benefit projects.
-
-    **In Kokonut:** CRISP-style thinking helps avoid overclaiming by considering delivery risk, climate risk, legal risk, financial risk, and project developer risk.
-  </Accordion>
-
-  <Accordion title="SDGs — Sustainable Development Goals">
-    **Plain English:** The 17 United Nations goals are used globally to describe social, environmental, and development outcomes.
-
-    **In Kokonut:** Adelphi primarily maps to SDG 1, SDG 2, SDG 5, SDG 8, and SDG 15. SDG alignment should be supported by farm records, MRV, and evidence from the Data Hub.
-  </Accordion>
-</AccordionGroup>
-
----
-
-### Kokonut-specific terms
-
-<AccordionGroup>
-  <Accordion title="Kokonut Network">
-    **Plain English:** The cooperative network connecting Web3 communities, contributors, capital allocators, and regenerative farms.
-
-    **In practice:** Kokonut coordinates three layers: the DAO for governance and treasury, the Framework for farm operations and measurement, and the technology layer for MRV, attestations, data, and agents.
-  </Accordion>
-
-  <Accordion title="Kokonut DAO">
-    **Plain English:** The governance system of the Kokonut Network.
-
-    **In practice:** The DAO includes the Moloch DAO for capital governance and the Guilds DAO for contribution-weighted execution. Together, they coordinate funding, work, proposals, and accountability.
-  </Accordion>
-
-  <Accordion title="Kokonut Framework">
-    **Plain English:** Kokonut's repeatable farm operating model.
-
-    **In practice:** The Framework standardizes data, development phases, regeneration principles, impact measurement, SDG alignment, MRV, and DAO-governed farm replication.
-  </Accordion>
-
-  <Accordion title="Adelphi">
-    **Plain English:** Kokonut's first live farm.
-
-    **In practice:** Adelphi is a women-led syntropic farm in Monte Plata, Dominican Republic. It documents crops, biodiversity, infrastructure, poultry, training, SDG alignment, MRV, and live Data Hub records.
-  </Accordion>
-
-  <Accordion title="Data Hub">
-    **Plain English:** Kokonut's public interface for farm records.
-
-    **In practice:** The Data Hub is where users inspect harvest records, MRV events, geospatial data, impact metrics, and farm status. Documentation pages may contain projections; the Hub is where actual recorded data should be checked.
+    Kokonut separates capital governance, contribution coordination, farm operations, methodology, evidence review, and technical execution.
   </Accordion>
 
   <Accordion title="Kokonut Moloch DAO">
-    **Plain English:** Kokonut's on-chain treasury and capital governance layer.
+    **Plain English:** Kokonut's live on-chain capital-governance system.
 
-    **In practice:** It runs on Gnosis Chain through DAOHaus, manages the treasury, controls vKKN and Loot minting or burning, processes funding proposals, and protects members through rage-quit.
+    **In Kokonut:** It runs on Gnosis Chain and governs membership, shared treasury actions, \$vKKN, Loot, funded commitments, governance parameters, and applicable rage-quit protections.
+
+    It does not automatically govern farm operations or scientific truth.
   </Accordion>
 
-  <Accordion title="Kokonut Guilds DAO">
-    **Plain English:** Kokonut's contribution and execution layer.
+  <Accordion title="Guild">
+    **Plain English:** A domain-focused contribution-coordination group.
 
-    **In practice:** Guilds organize work across Technology, Impact, Communications, Governance, Finance, and Community & Partnerships. Influence is based on useful work, not capital.
+    **In Kokonut:** Current Guild domains are Technology, Impact, Communications, Governance, Finance, and Community & Partnerships.
+
+    Guilds coordinate useful work, review, working groups, proposal preparation, and domain knowledge.
+  </Accordion>
+
+  <Accordion title="Contribution record">
+    **Plain English:** A structured record showing that useful work was completed and reviewed.
+
+    **In Kokonut:** A contribution record can identify the contributor, domain, work, evidence, acceptance criteria, reviewer, status, dependencies, and follow-up.
+
+    It is more fundamental than any point score.
   </Accordion>
 
   <Accordion title="Guild Points">
-    **Plain English:** Non-transferable contribution reputation inside a Guild.
+    **Plain English:** A developing mechanism for non-transferable contribution reputation within a Guild.
 
-    **In practice:** Guild Points can come from completed bounties, proposals, MRV work, documentation, peer endorsements, or governance participation. They determine standing within a Guild, but are not the same as Loot or vKKN.
+    **In Kokonut:** The design intent is reviewed, domain-specific reputation.
+
+    Point values, thresholds, formal standing, voting weight, Steward selection, and on-chain implementation are still evolving.
+
+    Guild Points should not be described as an automatic result of completing work.
   </Accordion>
 
   <Accordion title="Steward">
-    **Plain English:** A trusted representative of a Guild.
+    **Plain English:** A coordination and review function within a Guild.
 
-    **In practice:** Stewards help coordinate Guild work, represent the Guild in cross-Guild governance, and help route mature proposals toward the Moloch DAO.
+    **In Kokonut:** A Steward can help maintain work queues, review contributions, document decisions, support contributors, and route mature work toward governance.
+
+    Exact selection, term, authority, and removal rules should be documented by the relevant Guild process rather than assumed.
   </Accordion>
 
-  <Accordion title="Framework Phases I-IV">
-    **Plain English:** The four stages a Kokonut Framework farm moves through.
+  <Accordion title="Moloch membership">
+    **Plain English:** Membership in the capital-governance DAO.
 
-    **In practice:** Phase I covers planning and preparation. Phase II covers production and regeneration. Phase III covers consolidation and expansion. Phase IV covers MRV, continuous improvement, reporting, and replication.
+    **In Kokonut:** The current capital path uses a membership proposal involving stablecoin tribute and requested \$vKKN under the live DAO rules.
+
+    Membership gives Moloch governance rights; it does not automatically grant farm, scientific, technical, or Guild authority.
   </Accordion>
 
-  <Accordion title="Farm Registry">
-    **Plain English:** A structured registry for farm data and events.
+  <Accordion title="Tribute">
+    **Plain English:** Assets offered to a Moloch treasury as part of a membership proposal.
 
-    **In practice:** Farm Registry records help connect farm activity to structured payloads, MRV events, attestations, APIs, dashboards, and future agent workflows.
+    **In Kokonut:** Stablecoin tribute is used in the current capital-membership model.
+
+    Tribute terms are live governance state and should be checked in the current proposal rather than copied from an old static ratio.
+  </Accordion>
+
+  <Accordion title="\$vKKN">
+    **Plain English:** Kokonut's current Moloch voting token.
+
+    **In Kokonut:** Under the current core governance docs:
+
+    - it is non-transferable;
+    - 1 \$vKKN = 1 Moloch vote;
+    - issuance requires an approved DAO proposal.
+
+    Kokonut documentation relates issuance to coconut trees, but the token does not by itself create land title, ownership of a specific tree, farm-management authority, or guaranteed returns.
+  </Accordion>
+
+  <Accordion title="Loot">
+    **Plain English:** Kokonut's current non-voting Moloch token primitive.
+
+    **In Kokonut:** Loot is non-transferable under the current core docs and can be used for DAO-recognized contribution or economic participation.
+
+    Loot does not carry Moloch voting power, and issuance still requires the applicable DAO proposal.
+  </Accordion>
+
+  <Accordion title="Non-transferable / soulbound">
+    **Plain English:** A token is not designed to move freely between wallets or trade on a secondary market.
+
+    **In Kokonut:** Current core governance documentation describes both \$vKKN and Loot as non-transferable.
+
+    This should not be expanded into rights or restrictions not actually defined by the live contracts and governance rules.
+  </Accordion>
+
+  <Accordion title="Proposal">
+    **Plain English:** A structured request for a defined authority to approve something.
+
+    **In Kokonut:** Not every important decision should become a Moloch proposal.
+
+    The Governance Framework first asks which authority owns the decision: Moloch, Guild/domain reviewers, farm operators, Framework stewards, evidence reviewers, or another scoped process.
+  </Accordion>
+
+  <Accordion title="Authorization">
+    **Plain English:** Formal permission for a specific action.
+
+    **In Kokonut:** A passed proposal can authorize treasury, token, governance, or other scoped action.
+
+    Authorization is not the same as transaction execution or real-world delivery.
+  </Accordion>
+
+  <Accordion title="Execution">
+    **Plain English:** Carrying out an authorized action.
+
+    **In Kokonut:** Governance distinguishes:
+
+    - authorization;
+    - on-chain / wallet transaction execution;
+    - operational delivery in the real world.
+
+    A proposal can be passed without the funded work being complete.
+  </Accordion>
+
+  <Accordion title="Grace period">
+    **Plain English:** A period after a proposal passes and before eligible execution conditions complete.
+
+    **In Kokonut:** The current Moloch model uses grace as part of the member-protection and rage-quit process.
+
+    Check the live DAO for current timing and conditions.
+  </Accordion>
+
+  <Accordion title="Quorum">
+    **Plain English:** A minimum participation requirement for a decision, where the applicable governance rules define one.
+
+    **In Kokonut:** Quorum can differ by proposal type or governance configuration. The current Governance Framework documents 0% quorum for membership onboarding, but that should not be generalized to every decision.
+  </Accordion>
+
+  <Accordion title="Retention threshold">
+    **Plain English:** A requirement that a defined amount of governance-token participation remain after exits before a proposal can proceed.
+
+    **In Kokonut:** Current governance documentation describes a **66% token-retention threshold** in the Moloch execution model.
+
+    Treat it as current governance state, not a universal law.
+  </Accordion>
+
+  <Accordion title="Rage-quit">
+    **Plain English:** A Moloch exit mechanism for eligible members and eligible treasury assets.
+
+    **In Kokonut:** An eligible participant can exit under the applicable contract rules rather than remain exposed to a governance direction they reject.
+
+    Rage-quit does **not** guarantee recovery of the original contribution value.
+  </Accordion>
+
+  <Accordion title="SAFE">
+    **Plain English:** A smart-contract wallet commonly used for multi-party or governed asset control.
+
+    **In Kokonut:** The Main Treasury SAFE is part of the current DAO treasury architecture and supports DAO-authorized treasury and rage-quit-related flows.
+
+    Other operational systems should not automatically be assumed to share the same authority model.
+  </Accordion>
+
+  <Accordion title="DAOHaus">
+    **Plain English:** The interface and tooling used to interact with Moloch-style DAOs.
+
+    **In Kokonut:** DAOHaus is the live surface used to inspect and participate in the Kokonut Moloch DAO.
+  </Accordion>
+</AccordionGroup>
+
+---
+
+## Farm and regenerative-agriculture terms
+
+<AccordionGroup>
+  <Accordion title="Adelphi">
+    **Plain English:** Kokonut's first live reference farm.
+
+    **In Kokonut:** Adelphi is a women-led farm founded and operated by Yanny and Neury Hernández in Gonzalo, Monte Plata, Dominican Republic.
+
+    It provides a real context for testing farm operations, funding, the Framework, MRV, public records, governance, and contributor coordination.
+
+    Adelphi is not proof that every future farm will achieve the same results.
+  </Accordion>
+
+  <Accordion title="Terra Viva">
+    **Plain English:** Kokonut's next documented replication test.
+
+    **In Kokonut:** Current documentation describes roughly 50,000 m² of adjacent land under agreement entering **Phase I — Planning & Preparation**.
+
+    Terra Viva should not be described as an already operating farm until operating records support that status.
+  </Accordion>
+
+  <Accordion title="Local farm operator">
+    **Plain English:** A person or organization responsible for real-world farm execution.
+
+    **In Kokonut:** Local operators retain authority over routine agronomic decisions such as planting, irrigation, harvest timing, maintenance, labor coordination, and field response within their operating arrangement.
+
+    A DAO funding vote does not turn token holders into farm managers.
+  </Accordion>
+
+  <Accordion title="Regenerative agriculture">
+    **Plain English:** Agricultural practice intended to improve ecological function while maintaining productive use of land.
+
+    **In Kokonut:** The Framework combines regenerative principles with records and MRV so implemented practices can be distinguished from measured ecological outcomes.
+  </Accordion>
+
+  <Accordion title="Syntropic farming">
+    **Plain English:** A succession-oriented farming approach that uses diversity, biomass, multiple vegetation layers, and ecological relationships.
+
+    **In Kokonut:** Syntropic methods are part of Adelphi and the broader regenerative toolkit.
+
+    They do not remove the need to measure actual soil, biodiversity, water, or production outcomes.
+  </Accordion>
+
+  <Accordion title="Agroforestry">
+    **Plain English:** Managing trees and agricultural production together.
+
+    **In Kokonut:** Agroforestry can support perennial production, habitat, shade, biomass, soil cover, and diversified farm structure.
+
+    Outcome claims still require measurement.
+  </Accordion>
+
+  <Accordion title="Silvopasture">
+    **Plain English:** Integrating trees, forage or ground cover, and grazing animals in one managed system.
+
+    **In Kokonut:** It is one possible regenerative design pattern, not a requirement for every farm.
+  </Accordion>
+
+  <Accordion title="Biochar">
+    **Plain English:** Carbon-rich material produced by heating biomass under limited oxygen and used in applications such as soil amendment.
+
+    **In Kokonut:** Adelphi documentation includes bamboo-derived biochar as an implemented practice.
+
+    A biochar application is evidence of an intervention; a carbon or soil-health outcome requires additional measurement and methodology.
+  </Accordion>
+
+  <Accordion title="Nursery">
+    **Plain English:** A managed area for propagating seedlings and young plants.
+
+    **In Kokonut:** Adelphi's nursery supports propagation, farm planting, biodiversity work, and potential distribution.
+
+    Claims about survival, conservation impact, or community distribution require their own records.
+  </Accordion>
+
+  <Accordion title="Framework Phases I–IV">
+    **Plain English:** The four development phases used by the Kokonut Framework.
+
+    **In Kokonut:**
+
+    - **Phase I:** Planning & Preparation
+    - **Phase II:** Production & Regeneration
+    - **Phase III:** Consolidation & Expansion
+    - **Phase IV:** MRV, continuous improvement, reporting, and replication-oriented learning
+
+    Phase IV is not “the end” of measurement; evidence collection continues.
+  </Accordion>
+
+  <Accordion title="Interoperability, not uniformity">
+    **Plain English:** Farms share enough structure to coordinate and compare without becoming identical.
+
+    **In Kokonut:** The Framework can standardize schemas, phases, evidence expectations, and shared terminology while local operators adapt crops, practices, markets, infrastructure, and implementation to local conditions.
+  </Accordion>
+</AccordionGroup>
+
+---
+
+## MRV, ecology, and impact terms
+
+<AccordionGroup>
+  <Accordion title="MRV — Measurement, Reporting, and Verification">
+    **Plain English:** A methodology for turning real-world activity into structured, reviewable evidence.
+
+    **In Kokonut:** The durable MRV sequence is:
+
+    **observe → structure → review → publish → attest when useful → interpret**
+
+    MRV is not a magic proof mechanism.
+  </Accordion>
+
+  <Accordion title="EAS — Ethereum Attestation Service">
+    **Plain English:** A protocol for creating signed attestations against defined schemas.
+
+    **In Kokonut:** Kokonut Intelligence uses EAS on **Celo** for farm-data attestations.
+
+    EAS can improve authorship, timing, schema, and evidence provenance.
+
+    It does not automatically certify that the underlying claim is scientifically correct.
+  </Accordion>
+
+  <Accordion title="IPFS / Filecoin">
+    **Plain English:** Content-addressed and decentralized storage technologies that can preserve or reference evidence artifacts outside a normal database.
+
+    **In Kokonut:** IPFS/Filecoin can be used for durable evidence packages or source artifacts.
+
+    They are **supported evidence infrastructure**, not a requirement that every farm record be stored there.
+  </Accordion>
+
+  <Accordion title="NDVI">
+    **Plain English:** A vegetation index derived from remote-sensing bands and commonly used to examine vegetation patterns.
+
+    **In Kokonut:** NDVI can support vegetation monitoring when sensor, cloud, season, resolution, baseline, and field context are considered.
+
+    It is not a direct measure of yield, carbon, or biodiversity.
+  </Accordion>
+
+  <Accordion title="NDRE">
+    **Plain English:** A red-edge vegetation index often used where denser or more mature vegetation requires different spectral sensitivity.
+
+    **In Kokonut:** NDRE is treated as a derived remote-sensing indicator whose interpretation depends on sensor and crop context.
+  </Accordion>
+
+  <Accordion title="ReCI">
+    **Plain English:** A red-edge chlorophyll-related vegetation indicator.
+
+    **In Kokonut:** ReCI can contribute to plant-condition analysis but should not be treated as a standalone agronomic diagnosis.
+  </Accordion>
+
+  <Accordion title="MSAVI">
+    **Plain English:** A soil-adjusted vegetation index intended to reduce some exposed-soil effects.
+
+    **In Kokonut:** MSAVI can be useful where vegetation is sparse or soil background materially affects other indices.
+  </Accordion>
+
+  <Accordion title="Baseline">
+    **Plain English:** The starting condition used for comparison.
+
+    **In Kokonut:** Strong claims about improvement usually need a defined baseline, reporting period, and comparable follow-up evidence.
+  </Accordion>
+
+  <Accordion title="EBF — Ecological Benefits Framework">
+    **Plain English:** An interpretation framework for ecological and broader regenerative benefits beyond a single carbon metric.
+
+    **In Kokonut:** EBF can help organize evidence across areas such as soil, biodiversity, water, equity, carbon, and related benefits.
+
+    EBF interpretation is not external certification by itself.
+  </Accordion>
+
+  <Accordion title="CRISP">
+    **Plain English:** A risk-oriented framework used to examine risks around carbon or ecological-benefit projects.
+
+    **In Kokonut:** CRISP-style analysis supports decision-making and risk review.
+
+    It does not make a project eligible for a regulated environmental credit.
+  </Accordion>
+
+  <Accordion title="SDGs — Sustainable Development Goals">
+    **Plain English:** The United Nations Sustainable Development Goals provide a shared vocabulary for social and environmental development priorities.
+
+    **In Kokonut:** Adelphi currently focuses on five primary SDGs:
+
+    - SDG 1 — No Poverty
+    - SDG 2 — Zero Hunger
+    - SDG 5 — Gender Equality
+    - SDG 8 — Decent Work and Economic Growth
+    - SDG 15 — Life on Land
+
+    SDG reporting should distinguish:
+
+    **alignment → activity → measured outcome → impact interpretation**
+  </Accordion>
+
+  <Accordion title="SDG 13 — Climate Action">
+    **Plain English:** The SDG focused on climate action.
+
+    **In Kokonut:** Adelphi's current documentation treats SDG 13 as a **secondary climate co-benefit**, not a primary verified carbon claim.
+
+    Stronger climate claims require appropriate methodology and evidence.
+  </Accordion>
+
+  <Accordion title="Carbon sequestration">
+    **Plain English:** The storage of carbon in biomass, soils, or other pools over time.
+
+    **In Kokonut:** Carbon sequestration should be treated as methodology-dependent.
+
+    A regenerative practice or vegetation index does not automatically establish a verified carbon quantity.
+  </Accordion>
+
+  <Accordion title="Carbon credit / ecological credit">
+    **Plain English:** A unit or claim issued under a defined environmental-credit methodology, program, or market.
+
+    **In Kokonut:** Evidence collection and ecological analysis may support future methodology review, but no farm record, score, agent output, or EAS attestation should be treated as creating a certified credit automatically.
+  </Accordion>
+</AccordionGroup>
+
+---
+
+## Data and technical infrastructure terms
+
+<AccordionGroup>
+  <Accordion title="Kokonut Hub">
+    **Plain English:** The public-facing project and farm-data surface.
+
+    **In Kokonut:** The Adelphi Hub exposes published farm/project information such as harvest, MRV, milestone, and impact-related records.
+
+    Use it for current published data; use methodology pages to understand what those records mean.
+  </Accordion>
+
+  <Accordion title="Kokonut Intelligence">
+    **Plain English:** Kokonut's active data, analytics, review, reporting, and agent-access infrastructure.
+
+    **In Kokonut:** It structures farm operations, environmental measurements, finance, Web3 activity, MRV, attestations, analytics, forecasts, reports, and agent logs.
+
+    Kokonut Intelligence implements data infrastructure around MRV; it does not replace MRV methodology.
   </Accordion>
 
   <Accordion title="Common Data Schema">
-    **Plain English:** The standard set of fields every farm should report.
+    **Plain English:** Shared fields and structures used to make farm records more interoperable.
 
-    **In practice:** It keeps farms comparable by standardizing important data such as location, farm area, crop systems, operators, development phase, and measurement records.
+    **In Kokonut:** The schema helps farm operators, reviewers, dashboards, APIs, governance participants, and agents use compatible records.
+
+    Changes to shared schema primitives should consider migration and backward compatibility.
   </Accordion>
 
-  <Accordion title="Kokonut Agentic Marketplace">
-    **Plain English:** A planned AI-agent service layer for farm and DAO work.
+  <Accordion title="Farm Registry">
+    **Plain English:** The structured farm-record and event surface used by Kokonut tooling.
 
-    **In practice:** Agents may support MRV reporting, harvest forecasting, impact scoring, grant drafting, registry updates, and coordination tasks. This layer is under development and should be described separately from live farm operations.
+    **In Kokonut:** Farm Registry concepts connect farm identity, records, MRV events, APIs, attestations, dashboards, and developer workflows.
+
+    The canonical data backend is broader than one on-chain registry.
   </Accordion>
 
+  <Accordion title="Gnosis Chain">
+    **Plain English:** An EVM-compatible blockchain.
+
+    **In Kokonut:** Gnosis Chain currently hosts the live Moloch governance and treasury architecture, including \$vKKN, Loot, and proposal-related execution.
+  </Accordion>
+
+  <Accordion title="Celo">
+    **Plain English:** An EVM-compatible blockchain used by Kokonut's farm-evidence infrastructure.
+
+    **In Kokonut:** Kokonut Intelligence uses Celo EAS for farm-data attestations.
+
+    Celo evidence attestations and Gnosis governance are separate but connected layers.
+  </Accordion>
+
+  <Accordion title="Base">
+    **Plain English:** An EVM-compatible blockchain used in Kokonut's developing agent architecture.
+
+    **In Kokonut:** The Agentic Marketplace is being developed around Base.
+
+    Do not describe Base marketplace contracts as production deployments unless current addresses are explicitly published.
+  </Accordion>
+
+  <Accordion title="Agentic Marketplace">
+    **Plain English:** A developing marketplace architecture for AI-agent services, payments, identity, reputation, escrow, and related coordination.
+
+    **In Kokonut:** It is **in development**.
+
+    It should not be treated as a live autonomous labor market until production deployment evidence is published.
+  </Accordion>
+
+  <Accordion title="AI agent">
+    **Plain English:** Software that can perform a bounded task using tools, data, rules, or models.
+
+    **In Kokonut:** Agents can support MRV drafts, forecasting, QA, reporting, proposal preparation, and analysis.
+
+    They should not independently grant themselves governance authority, certify high-impact claims, or replace accountable farm operators and reviewers.
+  </Accordion>
+
+  <Accordion title="ERC-8004">
+    **Plain English:** An agent identity/registry primitive used in Kokonut's developing agent-marketplace architecture.
+
+    **In Kokonut:** It is associated with agent identity, capability metadata, operators, and reputation-oriented workflows.
+
+    Its use belongs to the developing agent layer, not the live farm or Moloch governance core.
+  </Accordion>
+
+  <Accordion title="x402">
+    **Plain English:** A payment pattern based on HTTP's `402 Payment Required` semantics.
+
+    **In Kokonut:** x402-style flows are part of developing paid-agent and service-call architecture.
+
+    A paid response is not automatically a verified or high-quality response.
+  </Accordion>
+
+  <Accordion title="API">
+    **Plain English:** A structured interface that lets software read or write data.
+
+    **In Kokonut:** APIs connect farm records, MRV, dashboards, analytics, governance tooling, and agents.
+
+    API access does not remove record-lifecycle, permissions, or evidence requirements.
+  </Accordion>
+</AccordionGroup>
+
+---
+
+## Participation terms
+
+<AccordionGroup>
   <Accordion title="Open Collaboration">
-    **Plain English:** Kokonut's invitation for people to contribute without needing to be capital contributors first.
+    **Plain English:** Kokonut's contribution path for people who want to be useful without starting with capital.
 
-    **In practice:** Builders, agronomists, designers, grant writers, researchers, DAO operators, and community organizers can enter through Guild work and earn reputation through verified contributions.
+    **In Kokonut:** Contributors can work on agriculture, research, MRV, documentation, software, governance, finance, partnerships, design, or community coordination.
+
+    Work becomes part of the ecosystem through evidence and review, not automatically through submission.
+  </Accordion>
+
+  <Accordion title="Capital path">
+    **Plain English:** Participation through the Moloch membership and treasury-governance process.
+
+    **In Kokonut:** The current capital path uses stablecoin tribute and an approved membership proposal to create applicable \$vKKN governance rights.
+  </Accordion>
+
+  <Accordion title="Contribution path">
+    **Plain English:** Participation through useful work rather than capital.
+
+    **In Kokonut:** The durable sequence is:
+
+    **useful work → contribution record → domain review → accepted contribution history → recognition**
+
+    Formal DAO actions are added only when needed.
+  </Accordion>
+
+  <Accordion title="Bounty">
+    **Plain English:** A defined piece of work with a deliverable, acceptance criteria, reviewer, and often a budget.
+
+    **In Kokonut:** A Guild can help define and review a bounty. If DAO treasury capital funds it, Moloch authorization is required for the treasury action.
+
+    Completion does not automatically create Guild Points or Loot.
+  </Accordion>
+
+  <Accordion title="Domain review">
+    **Plain English:** Review by people responsible for or qualified in the relevant subject area.
+
+    **In Kokonut:** Technical, Impact, Finance, farm, Framework, Governance, and other reviews can inform a proposal or contribution without requiring those reviewers to hold Moloch voting power.
   </Accordion>
 </AccordionGroup>
 
@@ -379,29 +745,70 @@ These are the terms that unlock most of the documentation.
 
 ## Important distinctions
 
-| Do not confuse | With | Difference |
+| Do not confuse | With | Why they differ |
 | --- | --- | --- |
-| vKKN | Loot | vKKN votes. Loot has economic rights but no governance vote. |
-| Guild Points | Loot | Guild Points are an internal contribution to reputation. Loot is a DAO-recognized economic participation token. |
-| Forecast | Actuals | Forecasts are planning assumptions. Actuals should be checked in the Data Hub. |
-| SDG alignment | Verified impact | SDGs describe intended impact categories. MRV and records provide evidence. |
-| Moloch DAO | Guilds DAO | Moloch governs the treasury and voting. Guilds coordinate contribution and execution. |
-| Carbon potential | Carbon credit | Carbon benefits require methodology, measurement, and verification before being treated as credits. |
-| Framework | Farm | The Framework is a repeatable model. Adelphi is the first live implementation. |
+| **Kokonut Network** | **Moloch DAO** | The Moloch DAO is one capital-governance layer inside a broader coordination ecosystem |
+| **Moloch authority** | **Farm authority** | Treasury voting does not make token holders farm operators |
+| **Guild review** | **Moloch vote** | Domain competence and treasury authorization are different functions |
+| **Guild Points** | **Loot** | Guild Points are developing contribution reputation; Loot is a live Moloch token primitive |
+| **\$vKKN** | **Loot** | \$vKKN votes; Loot does not carry Moloch voting power |
+| **Token right** | **Land title** | Governance tokens do not automatically create legal ownership of land or individual trees |
+| **Forecast** | **Actual** | Forecasts are modeled assumptions; actuals are recorded results |
+| **Gross revenue** | **Profit** | Revenue does not include all operating costs and other economic obligations |
+| **Observation** | **Impact conclusion** | A source record can support a claim without proving the higher-level interpretation |
+| **Verified record** | **External certification** | Kokonut Intelligence workflow approval is not automatically independent scientific or regulatory assurance |
+| **Attestation** | **Scientific truth** | EAS proves a signed provenance event, not the correctness of the underlying claim |
+| **SDG alignment** | **Verified impact** | Alignment describes relevance; stronger outcome claims need evidence |
+| **Implemented practice** | **Measured ecological outcome** | Biochar, agroforestry, or ground cover are interventions; their effects still require measurement |
+| **Carbon potential** | **Carbon credit** | A regulated/market credit needs the relevant methodology and validation |
+| **Live** | **Developing** | Repository code or a roadmap does not equal a production deployment |
+| **Framework** | **Farm** | The Framework provides shared methods; local farms remain distinct real-world operations |
+| **Kokonut Intelligence** | **MRV methodology** | Intelligence implements data infrastructure; MRV defines evidence handling and claim standards |
+| **Gnosis Chain** | **Celo** | Gnosis hosts governance/treasury; Celo hosts current farm-data EAS attestations |
+| **Agent assistance** | **Autonomous authority** | Agents can prepare and analyze work without independently governing, certifying, or operating the farm |
+
+---
+
+## Source-of-truth guide
+
+| If you need to know... | Use |
+| --- | --- |
+| Current Adelphi published records | [Kokonut Hub](https://hub.kokonut.network/projects/41) |
+| Adelphi context and documented reference values | [Adelphi Overview](/ecosystem-wiki/kokonut-farms/adelphi/summary) |
+| Crop/revenue assumptions | [Adelphi Forecast](/ecosystem-wiki/kokonut-farms/adelphi/crops-and-harvest-forecast) |
+| How evidence should be handled | [MRV](/ecosystem-wiki/kokonut-farms/measurement-reporting-and-verification) |
+| Current Moloch state | [DAOHaus](https://link.kokonut.network/dao) |
+| Token and rage-quit mechanics | [Moloch DAO](/ecosystem-wiki/the-kokonut-dao/kokonut-moloch-dao) |
+| Guild maturity and contribution model | [Kokonut Guilds](/ecosystem-wiki/the-kokonut-dao/kokonut-guilds-dao) |
+| Governance routing and current documented parameters | [Governance Framework](/ecosystem-wiki/the-kokonut-dao/governance-framework) |
+| Proposal formats | [Proposal Templates](/ecosystem-wiki/the-kokonut-dao/proposal-templates) |
+| Shared farm methodology | [Kokonut Framework](/kokonut-framework/Introduction) |
+| Data lifecycle, analytics, and attestations | [Kokonut Intelligence](/kokonut-intelligence) |
+| Current developer surfaces | [Build with Kokonut](/build-with-kokonut) |
+| Practical ecosystem questions | [FAQ](/ecosystem-wiki/faq) |
 
 ---
 
 ## How to keep this glossary accurate
 
-A glossary can become stale if its definitions do not align with the live DAO, farm, and MRV systems. When updating this page:
+A glossary becomes dangerous when a short definition silently outlives the system it describes.
 
-- keep definitions short and plain-English first;
-- link each term to the page where it is used in practice;
-- avoid unsupported impact, carbon, legal, or financial claims;
-- separate live systems from systems still in development;
-- update contract addresses only from the current DAO source page;
-- Keep forecast language separate from recorded actuals.
+When updating this page:
 
-<Note>
-  **Missing a term?** Propose a glossary update through the Communications Guild or open an issue in the public site repository. Glossary contributions can be treated as documentation work and may qualify for Guild Points when verified by the relevant Guild.
-</Note>
+- use the current canonical high-level framing;
+- keep plain-English meaning separate from Kokonut-specific implementation;
+- preserve authority boundaries;
+- distinguish documented state, measurement, forecast, attestation, and interpretation;
+- distinguish live, active/evolving, and developing systems;
+- avoid turning internal workflow states into external certification;
+- do not present forecast values as actuals;
+- do not infer token rights beyond the current governance docs;
+- do not make Guild Points or agent authority sound more mature than they are;
+- route changeable state to the Hub, DAOHaus, current contracts, or active data systems;
+- explain migration/compatibility when shared technical terms change.
+
+<Info>
+  **Missing or outdated term?** Open an issue or submit a documentation contribution through [Open Collaboration](/ecosystem-wiki/open-collaboration-invitation). Acceptance, recognition, Guild Points, payment, or token rewards are separate processes and are not automatic.
+</Info>
+
+> **A good glossary reduces ambiguity. A trustworthy glossary also makes the limits of each term visible.**
