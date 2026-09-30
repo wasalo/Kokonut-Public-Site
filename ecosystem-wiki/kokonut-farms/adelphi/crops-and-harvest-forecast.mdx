@@ -1,425 +1,586 @@
 ---
 title: "Crops & Harvest Forecast"
-icon: "dragon"
-description: "Adelphi's crop mix, harvest assumptions, revenue model, public goods allocation, and live-data feedback loop."
+icon: "calculator"
+description: "Adelphi's production and gross-revenue planning model: assumptions, formulas, crop timelines, sensitivity, forecast-vs-actual reconciliation, and known economic-model limitations."
 ---
 
-# Adelphi's harvest forecast shows how regeneration can become a recurring revenue stream.
+# This page is a forecast model — not a record of achieved harvests or revenue.
 
-Adelphi's production model is designed around one practical question:
+Adelphi's crop model estimates how short-, medium-, long-cycle, and continuous production **could perform under a defined set of assumptions**.
 
-> Can a regenerative farm produce short-term cash flow, long-term perennial value, public goods funding, and verifiable impact at the same time?
+It is useful for:
 
-This page explains the forecast behind Adelphi's crop system: what is planted, how production is calculated, which assumptions are used, how revenue is projected, and how actual harvest records refine the model over time.
+- planting and production planning;
+- comparing crop timelines;
+- estimating gross-revenue scenarios;
+- testing loss and price assumptions;
+- planning data collection;
+- comparing forecasts with actual harvest records over time.
 
-<div style={{ display: "flex", gap: "12px", justifyContent: "center", flexWrap: "wrap", margin: "1.5rem 0 0.75rem" }}>
-  <a href="#revenue-summary-at-a-glance" style={{ display: "inline-flex", alignItems: "center", gap: "6px", background: "#009F4D", color: "#fff", padding: "10px 20px", borderRadius: "8px", fontWeight: "600", fontSize: "14px", textDecoration: "none" }}>
-    See the Forecast →
-  </a>
-
-  <a href="https://hub.kokonut.network/projects/41" style={{ display: "inline-flex", alignItems: "center", gap: "6px", border: "1.5px solid #009F4D", color: "#009F4D", padding: "10px 20px", borderRadius: "8px", fontWeight: "600", fontSize: "14px", textDecoration: "none", background: "transparent" }}>
-    Compare Against Live Data
-  </a>
-</div>
-
-<p style={{ textAlign: "center", fontSize: "13px", color: "#6b7280", marginTop: "0.25rem" }}>
-  Forecasts are planning assumptions, not guaranteed outcomes. Actuals are tracked through the Kokonut Hub and refined through MRV.
-</p>
-
-<Note>
-  This page is an operational forecast for farm planning and impact modeling. It is not financial advice, an investment guarantee, or a promise of future returns. Weather, pests, soil conditions, labor, market access, and pricing can materially change actual results.
-</Note>
-
----
-
-## Revenue summary at a glance
-
-| Crop/product | Cycle | Scale | Annual production forecast | Annual revenue forecast |
-| --- | --- | --- | --- | --- |
-| Lettuce | Short cycle · 5 harvests/yr | 10 plots | 48,450 units per harvest · 242,250 units/yr | **\$133,237.50** |
-| Passion fruit | Medium cycle · annual | 8 plots · 560 plants | 47,600 fruits · 3,661 nets | **\$11,019.61** |
-| Coconut | Long cycle · perennial | 8 plots · 96 trees | 6,144 coconuts at maturity | **\$4,853.76** |
-| Poultry eggs | Continuous | 110 hens | ~36,500 eggs/yr | Additional revenue stream |
-| **Total projected gross revenue** |  |  | Crop forecast only; eggs excluded until pricing is finalized | **~\$149,110.87 / yr** |
-
-<sup>10% of gross crop revenue — approximately \$14,911.09/yr — is allocated to public goods activities per the Kokonut Common Data Schema. Actual harvests, prices, losses, and revenue records should be checked against hub.kokonut.network/projects/41.</sup>
-
----
-
-## What this forecast helps prove
+It is **not** a live farm ledger, profit-and-loss statement, guaranteed return, or record of realized revenue.
 
 <CardGroup cols={2}>
-  <Card title="Regeneration can create near-term cash flow" icon="seedling">
-    Short-cycle crops like lettuce create recurring harvests while slower perennial systems mature.
+  <Card title="Compare with published farm records" icon="chart-line" href="https://hub.kokonut.network/projects/41">
+    Use the Kokonut Hub for current published harvest, MRV, milestone, and farm records.
   </Card>
 
-  <Card title="Perennials create long-term cooperative value" icon="tree-palm">
-    Coconut trees become the long-cycle anchor of the farm and the real-world backing logic behind Kokonut's tree-linked governance model.
-  </Card>
-
-  <Card title="Public goods can be budgeted into production" icon="hand-holding-heart">
-    A 10% allocation to public goods funds workshops, seedling distribution, nursery operations, and education.
-  </Card>
-
-  <Card title="Forecasts can become verifiable records" icon="badge-check">
-    The forecast becomes credible only when actual harvests are measured through MRV and published to the live Data Hub.
+  <Card title="Understand the evidence standard" icon="magnifying-glass-chart" href="/ecosystem-wiki/kokonut-farms/measurement-reporting-and-verification">
+    See why a forecast remains a model until actual farm records are collected, reviewed, and published.
   </Card>
 </CardGroup>
 
+<Warning>
+  **Forecast ≠ actual. Gross revenue ≠ profit.** This model does not include the full cost structure for labor, water, inputs, packaging, transport, certification, maintenance, taxes, losses after harvest, or other operating expenses.
+</Warning>
+
 ---
 
-## Forecasting model
+## How to read this model
 
-All crop forecasts derive from the same base formula:
+The forecast combines crops that operate on different timelines.
 
-```text
-Total Production = (Planting Density per m²)
-                 × (Bed Area in m²)
-                 × (Number of Beds per Plot)
-                 × (Number of Plots)
-                 × (1 − Loss Rate)
-```
+That means the headline annual total is best understood as a **steady-state planning snapshot**, not a guaranteed single-calendar-year result.
 
-The **loss rate** accounts for crop management variability, climate conditions, irrigation reliability, soil health, pest pressure, and harvest handling. The figures below use a **15% loss rate** as the baseline planning assumption.
+| Stream | Forecast maturity |
+| --- | --- |
+| **Lettuce** | Short-cycle annualized model |
+| **Passion fruit** | Medium-cycle annual production assumption after establishment |
+| **Coconut** | Long-cycle annual production assumption at productive maturity |
+| **Poultry eggs** | Continuous production estimate; revenue excluded because the pricing model is incomplete |
 
-```text
-15% loss rate = 0.85 production multiplier
-```
+<Info>
+  Coconut revenue should not be added to an early-year cash-flow expectation before the trees reach productive maturity. Likewise, passion-fruit and poultry performance should be reconciled against establishment and production records rather than assumed from the model.
+</Info>
+
+---
+
+## Current documented assumptions
+
+These are the assumptions currently encoded in the Adelphi forecast documentation.
+
+| Variable | Current model assumption | Evidence status |
+| --- | ---: | --- |
+| General crop-loss rate | **15%** | Planning assumption |
+| Lettuce planting density | **12 plants/m²** | Planning assumption |
+| Lettuce bed area | **25 m²** | Planning assumption |
+| Lettuce beds per plot | **19** | Planning assumption |
+| Lettuce plots | **10** | Planning assumption |
+| Lettuce harvests/year | **5** | Annual planning assumption |
+| Lettuce baseline price | **\$0.55/unit** | Planning price |
+| Lettuce upside price | **\$0.63/unit** | Scenario price |
+| Passion-fruit plots | **8** | Planning layout |
+| Passion-fruit plants | **560** | Planning count |
+| Passion-fruit gross yield | **100 fruits/plant/year** | Planning assumption |
+| Passion-fruit pack size | **13 fruits/net** | Planning assumption |
+| Passion-fruit price | **\$3.01/net** | Planning price |
+| Coconut trees | **96** | Planning/documented count used by model |
+| Coconut gross yield | **75 coconuts/tree/year at maturity** | Planning assumption |
+| Coconut price | **\$0.79/unit** | Planning price |
+| Poultry | **110 hens** | Documented state |
+| Poultry output | **~100 eggs/day** | Planning estimate |
+| Public-goods allocation | **10% of gross farm revenue in the current farm model** | Documentation assumption; see inconsistency note below |
+
+> **The model should become less assumption-heavy over time.** Every harvest, sale, loss, and operating record can replace a planning value with a farm-specific actual.
+
+---
+
+## Documentation inconsistency: public-goods allocation
+
+The repository currently contains **two conflicting Adelphi allocation models**.
+
+### Farm / Framework documentation
+
+The current:
+
+- Common Data Schema;
+- 8 Forms of Capital page;
+- Adelphi SDG page;
+- Adelphi forecast page
+
+model **10% of gross farm revenue** for public goods once revenue is realized.
+
+### Regenerative Finance Playbook
+
+Some ReFi Playbook pages describe a different Adelphi-specific split:
+
+- **40%** to the Hernández family as farm operators;
+- **40%** to a public-goods fund;
+- **20%** to Kokonut Network.
+
+<Warning>
+  These two models are not equivalent. Until the repository is reconciled against the approved economic arrangement, this page uses **10% only as the current farm-model assumption**. It should not be presented as a legally binding, governance-approved, or already-realized distribution.
+</Warning>
+
+The strongest future source of truth should be the approved farm economic agreement or governance record, with the documentation updated to match it.
+
+---
+
+## Forecast summary
+
+| Crop / product | Cycle | Scale | Modeled annual production | Modeled gross revenue |
+| --- | --- | --- | ---: | ---: |
+| **Lettuce** | Short cycle · 5 harvests/year | 10 plots | 48,450 units/harvest · 242,250 units/year | **\$133,237.50** |
+| **Passion fruit** | Medium cycle | 8 plots · 560 plants | 47,600 fruits · 3,661 complete nets + 7 loose fruits | **\$11,019.61** from complete nets |
+| **Coconut** | Long cycle · productive maturity | 96 trees | 6,144 coconuts/year | **\$4,853.76** |
+| **Poultry eggs** | Continuous | 110 hens | ~36,500 eggs/year estimate | **Not modeled** |
+| **Combined crop model** | Mixed maturity | Eggs excluded | — | **\$149,110.87/year** |
 
 <Note>
-  The most important number on this page is not the projected revenue total. It is the difference between the forecast and the actual. Actual harvest records should be used to improve the next planting cycle, refine the loss rate, and make future forecasts more accurate.
+  The **\$149,110.87** figure is a combined gross-revenue planning snapshot using the assumptions above. It is not net income, EBITDA, distributable cash, or a guaranteed annual result.
 </Note>
 
 ---
 
-## Crop mix overview
+## Core calculation logic
 
-Adelphi uses a three-cycle production model, so revenue arrives across different time horizons.
-
-| Cycle | Crops/products | First harvest | Revenue role |
-| --- | --- | --- | --- |
-| **Short cycle** | Lettuce, broccoli, spinach, tomatoes, arugula, and minor vegetables | 30–75 days after planting | High-frequency, recurring cash flow |
-| **Medium cycle** | [Indian Yam](https://www.gbif.org/species/2755239), [Passion Fruit](https://www.gbif.org/species/2874190) | 6–12 months | Seasonal compounding as the plantation matures |
-| **Long cycle** | Coconut | 3–5 years, then multi-year production | Perennial anchor income and tree-backed governance logic |
-| **Continuous** | Free-range eggs | Daily once hens are laying | Recurring food and revenue stream; not included in the crop revenue total until pricing is finalized |
-
-This staggered structure is central to [syntropic farming](/kokonut-framework/why-syntropic-farming): species at different successional stages occupy the same land simultaneously, support each other's growth, and generate independent value at different times.
-
----
-
-## How the forecast becomes a feedback loop
-
-```mermaid
-flowchart TD
-    A["Planting plan"] --> B["Forecast assumptions"]
-    B --> C["Expected production + revenue"]
-    C --> D["Farm operations"]
-    D --> E["Harvest records"]
-    E --> F["MRV payloads"]
-    F --> G["Kokonut Hub + public records"]
-    G --> H["Forecast refinement"]
-    H --> B
-
-    C --> I["Public goods allocation"]
-    I --> J["Workshops, seedlings, nursery, education"]
-    J --> K["Community value"]
-    K --> H
-```
-
-The forecast should not stay static. As Adelphi collects actual harvest data, the model can improve:
-
-- planting density assumptions can be adjusted;
-- Loss rates can be updated by crop and season;
-- local selling prices can be refined;
-- Public goods allocations can be calculated from actual gross revenue;
-- Future farms can reuse the improved model.
-
----
-
-## Short cycle — Lettuce
-
-Lettuce is the short-cycle cash-flow engine of Adelphi's forecast.
-
-### Production variables
+The crop model starts from a simple production relationship:
 
 ```text
-Planting Density:            12 lettuces / m²
-Bed Area:                    25 m²
-Number of Beds per Plot:     19
-Number of Plots:             10
-Loss Rate:                   15% (multiplier: 0.85)
-Forecast harvests per year:  5
-Theoretical maximum:         8–10 cycles/yr for fast-growing loose-leaf varieties
+Gross Production
+= Planting Density
+× Planting Area
+× Number of Production Units
+
+Modeled Saleable Production
+= Gross Production
+× (1 − Loss Rate)
+
+Modeled Gross Revenue
+= Saleable Production
+× Planning Price
 ```
 
-<Note>
-  The annual projection uses **5 harvests per year** as the conservative planning figure. Fast-growing loose-leaf varieties can theoretically achieve 8–10 cycles per year, but the revenue forecast uses 5 to account for preparation, soil recovery, operational variability, and seasonal conditions.
-</Note>
+For packaging-based crops such as passion fruit, an additional packaging step is required.
 
-### Applied example
+```text
+Complete Sale Units
+= floor(Saleable Individual Units ÷ Units per Package)
+
+Modeled Gross Revenue
+= Complete Sale Units × Price per Package
+```
+
+The **15% loss rate** is a model-wide planning assumption.
+
+It should eventually be replaced by crop- and season-specific actual loss rates.
+
+---
+
+## Short cycle — lettuce
+
+Lettuce is the largest modeled gross-revenue stream in the current forecast.
+
+### Current variables
+
+```text
+Planting density:           12 lettuces/m²
+Bed area:                   25 m²
+Beds per plot:              19
+Plots:                      10
+Loss rate:                  15%
+Production multiplier:      0.85
+Modeled harvests per year:  5
+Baseline planning price:    \$0.55/unit
+Upside scenario price:      \$0.63/unit
+```
+
+### Production calculation
 
 | Step | Calculation | Result |
-| --- | --- | --- |
-| Lettuce per bed | `12 lettuces/m² × 25 m²` | 300 lettuces/bed |
-| Lettuce per plot | `300 lettuces/bed × 19 beds/plot` | 5,700 lettuces/plot |
-| Lettuce across 10 plots | `5,700 × 10` | 57,000 lettuces before loss |
-| Effective production | `57,000 × 0.85` | **48,450 lettuces per harvest** |
+| --- | --- | ---: |
+| Plants per bed | `12 × 25` | 300 |
+| Plants per plot | `300 × 19` | 5,700 |
+| Gross plants across 10 plots | `5,700 × 10` | 57,000 |
+| Modeled saleable units | `57,000 × 0.85` | **48,450/harvest** |
+| Annual modeled units | `48,450 × 5` | **242,250/year** |
 
-### Production time by variety
+### Revenue calculation
 
-| Variety | Days to harvest |
-| --- | --- |
-| Loose-leaf lettuce | 30–45 days |
-| Head lettuce — Iceberg, Romaine, etc. | 60–75 days |
-
-### Selling price and revenue
-
-The lettuce model uses a conservative wholesale planning price of **\$0.55 per unit**. A higher price of **\$0.63 per unit** is treated as upside, not the baseline forecast.
-
-| Scenario | Calculation | Result |
-| --- | --- | --- |
+| Scenario | Calculation | Modeled gross revenue |
+| --- | --- | ---: |
 | Baseline per harvest | `48,450 × \$0.55` | **\$26,647.50** |
 | Upside per harvest | `48,450 × \$0.63` | **\$30,523.50** |
-| Baseline annual revenue | `\$26,647.50 × 5 harvests` | **\$133,237.50 / yr** |
+| Baseline annualized | `242,250 × \$0.55` | **\$133,237.50** |
+| Upside annualized | `242,250 × \$0.63` | **\$152,617.50** |
 
-### What to verify in the Data Hub
+### What is still an assumption
 
-- actual units harvested per cycle;
-- actual loss rate by harvest;
-- actual selling price per unit;
-- rejected, donated, consumed, or unsold units;
-- seasonal differences across planting windows.
+The repository currently describes:
+
+- 30–45 days for loose-leaf lettuce;
+- 60–75 days for head lettuce;
+- 5 modeled harvests per year.
+
+Those timing values belong to the current planning model and should be replaced or refined with Adelphi-specific crop-cycle actuals as records accumulate.
+
+### What actuals should replace
+
+- planted units;
+- germination / establishment loss;
+- field loss;
+- harvest quantity;
+- quality grade;
+- rejected units;
+- donated or consumed units;
+- sold units;
+- sale price;
+- buyer/channel;
+- harvest date;
+- days from planting to harvest.
 
 ---
 
-## Medium cycle — Passion fruit
+## Lettuce sensitivity
 
-Passion fruit is Adelphi's medium-cycle compounding crop. It does not reset as quickly as lettuce; productive capacity builds as vines mature.
+The baseline forecast is highly sensitive to both losses and price.
 
-### Production variables
+### Loss-rate sensitivity at \$0.55/unit
+
+| Loss rate | Units/harvest | Annual units at 5 harvests | Modeled gross revenue |
+| ---: | ---: | ---: | ---: |
+| **10%** | 51,300 | 256,500 | **\$141,075.00** |
+| **15% baseline** | 48,450 | 242,250 | **\$133,237.50** |
+| **20%** | 45,600 | 228,000 | **\$125,400.00** |
+| **25%** | 42,750 | 213,750 | **\$117,562.50** |
+
+### Price sensitivity at the 15% loss baseline
+
+| Price/unit | Modeled annual gross revenue |
+| ---: | ---: |
+| **\$0.45** | **\$109,012.50** |
+| **\$0.55 baseline** | **\$133,237.50** |
+| **\$0.63 upside** | **\$152,617.50** |
+
+<Info>
+  These sensitivity tables are **derived directly from the existing Adelphi model assumptions**. They are scenarios, not new price or yield forecasts.
+</Info>
+
+---
+
+## Medium cycle — passion fruit
+
+### Current variables
 
 ```text
-Area per plot:               629 m²
-Planting spacing:            3 × 3 meters (9 m²/plant)
-Plants per plot:             70
-Total plants (8 plots):      560
-Annual production per plant: 100 passion fruits
-Loss Rate:                   15% (multiplier: 0.85)
-Net annual production/plant: 85 passion fruits
-Selling price per net:       $3.01
-Average net size:            13 passion fruits
+Area per plot:                629 m²
+Spacing:                      3 m × 3 m
+Plants per plot:              70
+Plots:                        8
+Total plants:                 560
+Gross yield assumption:       100 fruits/plant/year
+Loss rate:                    15%
+Modeled net yield:            85 fruits/plant/year
+Package size:                 13 fruits/net
+Planning price:               \$3.01/net
 ```
 
-### Applied example
+### Production calculation
 
 | Step | Calculation | Result |
-| --- | --- | --- |
-| Net annual production | `85 passion fruits/plant × 560 plants` | 47,600 passion fruits |
-| Nets produced | `47,600 ÷ 13 fruits/net` | 3,661 nets |
-| Annual revenue | `3,661 nets × \$3.01/net` | **\$11,019.61 / yr** |
+| --- | --- | ---: |
+| Modeled saleable fruit | `85 × 560` | **47,600 fruits** |
+| Complete 13-fruit nets | `floor(47,600 ÷ 13)` | **3,661 nets** |
+| Loose remainder | `47,600 − (3,661 × 13)` | **7 fruits** |
+| Revenue from complete nets | `3,661 × \$3.01` | **\$11,019.61** |
 
-### Revenue characteristics
+The existing forecast monetizes only complete nets.
 
-The net-based selling format of **\$3.01 per net of 13 fruits** is the planning baseline used for wholesale-style distribution. Direct community sales, organic market channels, or certification-supported distribution may create upside, but those should be tracked separately from the baseline forecast.
+It does not assign revenue to the seven-fruit remainder, nor does it model packaging cost, damaged fruit, direct-sale pricing, or different buyer channels.
 
-### What to verify in the Data Hub
+### Actuals needed
 
-- actual fruit count per plant;
-- actual net size and packaging losses;
-- wholesale vs direct-sale prices;
-- vine establishment period;
-- pest and disease pressure;
-- seasonality of demand.
+- surviving vines;
+- establishment date;
+- fruit count per vine;
+- harvest periods;
+- grade/rejection rate;
+- package size;
+- packaging loss;
+- realized sale price;
+- buyer/channel;
+- unsold or donated fruit.
 
 ---
 
-## Long cycle — Coconut
+## Long cycle — coconut
 
-Coconut is the long-cycle anchor of the farm and the crop most directly connected to Kokonut Network's cooperative identity.
+Coconut is the long-duration crop in the current planning model.
 
-### Production variables
+### Current variables
 
 ```text
-Area per plot:               629 m²
-Planting spacing:            7 × 7 meters (49 m²/plant)
-Plants per plot:             12
-Total plants (8 plots):      96
-Annual production per plant: 75 coconuts at full maturity
-Loss Rate:                   15% (multiplier: 0.85)
-Net annual production/plant: 64 coconuts
-Selling price per coconut:   $0.79
-First harvest timeline:      3–5 years from planting
-Production life:             Up to 20 years under optimal conditions
+Trees:                        96
+Gross mature-yield assumption:75 coconuts/tree/year
+Loss rate:                    15%
+Modeled net yield:            64 coconuts/tree/year
+Planning price:               \$0.79/coconut
+Modeled first-harvest window: 3–5 years after planting
 ```
 
-### Applied example
+### Production calculation
 
 | Step | Calculation | Result |
-| --- | --- | --- |
-| Net annual production | `64 coconuts/tree × 96 trees` | 6,144 coconuts |
-| Annual revenue | `6,144 × \$0.79/coconut` | **\$4,853.76 / yr** |
+| --- | --- | ---: |
+| Modeled annual units at maturity | `64 × 96` | **6,144 coconuts** |
+| Modeled gross revenue | `6,144 × \$0.79` | **\$4,853.76/year** |
 
-### Revenue characteristics and timeline
+<Warning>
+  This is a **maturity-stage annual model**. It should not be treated as year-one or near-term revenue. The 3–5 year first-harvest window and 75-coconut gross-yield assumption are current planning assumptions in the repository and should be reconciled against actual Adelphi tree records over time.
+</Warning>
 
-Coconuts do not generate revenue immediately. The first harvest typically occurs **3–5 years after planting**, with full yield developing over subsequent seasons.
+Potential derivative products—oil, milk, water, husk, fiber, or timber—are **not included** in the baseline revenue total.
 
-This delayed payback is why Adelphi uses short and medium-cycle crops. Lettuce and passion fruit bridge the establishment period while the coconut system matures.
+If those become real commercial streams, they should have separate:
 
-Once established, coconut trees can produce for up to **20 years** under optimal conditions. When a tree ends its productive life, it is replanted, restarting the production cycle and continuing the cooperative model.
-
-### Additional value streams beyond fresh coconut
-
-- Coconut oil, milk, and water;
-- coconut husks for on-site fertility and soil inputs;
-- harvested wood for furniture and construction materials;
-- long-term tree-backed cooperative legitimacy.
-
-### What to verify in the Data Hub
-
-- number of surviving trees;
-- tree health and age class;
-- first harvest date;
-- coconuts per tree;
-- actual price per coconut;
-- derivative-product revenue if processing is added.
+- processing assumptions;
+- yield conversions;
+- costs;
+- prices;
+- market evidence;
+- actual sales records.
 
 ---
 
-## Continuous production — Poultry eggs
+## Continuous production — poultry
 
-The farm integrates **110 free-range laying hens**, with an estimated production of **~100 eggs per day** or **~36,500 eggs per year**.
+Adelphi documents **110 free-range laying hens**.
 
-Egg revenue is intentionally listed as an **additional revenue stream** rather than included in the crop revenue total until pricing, distribution, and loss assumptions are finalized.
-
-| Variable | Planning value |
-| --- | --- |
-| Hens | 110 |
-| Estimated daily eggs | ~100 |
-| Estimated annual eggs | ~36,500 |
-| Revenue status | Additional stream; excluded from crop total until pricing model is finalized |
-
-The poultry system also supports the regenerative fertility loop. Hens produce manure that can be processed into humic acids and organic urea, reducing dependence on external synthetic inputs.
-
-[Read the infrastructure page →](/ecosystem-wiki/kokonut-farms/adelphi/crops-biodiversity-and-infrastructure)
-
----
-
-## Combined revenue and public goods allocation
+The current model estimates:
 
 ```text
-Lettuce (short cycle):        $133,237.50 / yr
-Passion fruit (medium cycle):  $11,019.61 / yr
-Coconut (long cycle):           $4,853.76 / yr
-─────────────────────────────────────────────
-Total projected gross revenue: $149,110.87 / yr
-
-Public goods allocation (10%):  $14,911.09 / yr
-  → Community workshops
-  → Free seedling distribution for neighbors
-  → Endangered species nursery operations
-  → Educational programming at the farm gazebo
-
-Net operating revenue (90%):   $134,199.78 / yr
+Estimated daily eggs:   ~100
+Estimated annual eggs:  ~36,500
+Revenue in this model:   Not included
 ```
 
-<Tip>
-  The [SDG Impact Calculator](/kokonut-framework/impact-calculator) can use Adelphi's parameters — 15,725 m², full crop mix, rural location, women in leadership, biochar, and native species nursery — to estimate SDG scores and ecological outputs for this forecast.
-</Tip>
+The output figure remains a **planning estimate** until reconciled against poultry production records.
+
+A complete poultry revenue model would need:
+
+- laying rate by period;
+- flock size changes;
+- mortality;
+- feed and forage inputs;
+- egg loss/breakage;
+- eggs consumed or donated;
+- eggs sold;
+- packaging;
+- sale price;
+- buyer/channel;
+- poultry operating costs.
+
+[Read the physical poultry and nutrient system →](/ecosystem-wiki/kokonut-farms/adelphi/crops-biodiversity-and-infrastructure)
 
 ---
 
-## Forecast risk and sensitivity
+## Combined gross-revenue model
 
-Every forecast depends on assumptions. Adelphi's planning model should be read with these variables in mind:
+Using the current crop assumptions:
 
-| Variable | Why it matters |
+```text
+Lettuce:        \$133,237.50
+Passion fruit:   \$11,019.61
+Coconut:          \$4,853.76
+────────────────────────────
+Crop total:     \$149,110.87
+
+Poultry:        excluded from revenue total
+```
+
+This number should be described as **modeled gross crop revenue**.
+
+It should not be called:
+
+- net revenue;
+- profit;
+- cash available for distribution;
+- household income;
+- DAO income;
+- guaranteed annual revenue.
+
+Those require additional accounting data.
+
+---
+
+## Public-goods scenario under the 10% farm assumption
+
+If the current **10% gross-revenue allocation assumption** is applied to the full modeled crop total:
+
+```text
+Modeled gross crop revenue:      \$149,110.87
+10% public-goods scenario:        \$14,911.09
+Gross revenue remaining:         \$134,199.78
+                                 before operating costs,
+                                 taxes, reserves, debt,
+                                 distributions, or other expenses
+```
+
+Possible public-good uses documented elsewhere in the farm model include:
+
+- workshops;
+- education;
+- nursery operations;
+- seedling distribution;
+- community programming.
+
+<Warning>
+  **\$134,199.78 is not “net operating revenue.”** It is only the modeled gross crop revenue remaining after subtracting the 10% scenario allocation. No cost model has been applied.
+</Warning>
+
+And because the repository contains the separate 40/40/20 ReFi Playbook model described earlier, no allocation should be presented as final until the authoritative economic arrangement is reconciled.
+
+---
+
+## Forecast → actual → revised forecast
+
+The model should behave as a learning system.
+
+```mermaid
+flowchart LR
+    A["Planning assumptions"] --> B["Forecast"]
+    B --> C["Planting + farm operations"]
+    C --> D["Harvest + sales actuals"]
+    D --> E["Variance analysis"]
+    E --> F["Updated crop-specific assumptions"]
+    F --> G["Revised forecast"]
+    G --> C
+
+    D --> H["Kokonut Hub + MRV"]
+    H --> E
+```
+
+For each cycle, the farm should be able to calculate:
+
+```text
+Production Variance
+= Actual Production − Forecast Production
+
+Price Variance
+= Actual Price − Forecast Price
+
+Gross Revenue Variance
+= Actual Gross Revenue − Forecast Gross Revenue
+
+Actual Loss Rate
+= 1 − (Actual Saleable Production ÷ Gross Planted / Expected Production Basis)
+```
+
+The exact denominator for loss rate should be defined consistently by crop so different periods remain comparable.
+
+---
+
+## Minimum actuals dataset
+
+To make this forecast genuinely operational, each harvest should preserve enough information to answer:
+
+| Field | Why it matters |
 | --- | --- |
-| Loss rate | A 15% loss baseline is used, but actual losses can increase due to drought, pests, disease, or operational disruptions. |
-| Market price | Wholesale and retail prices can change by season, buyer, certification status, and distribution channel. |
-| Labor availability | Harvest quality, planting cadence, and post-harvest handling depend on reliable labor and training. |
-| Irrigation and water | Lettuce and other short-cycle crops are sensitive to water consistency and drainage. |
-| Soil health | Biochar, organic inputs, and syntropic management can improve yields over time, but soil recovery is gradual. |
-| Certification | Organic certification may improve market access, but timing and price effects should not be assumed until confirmed. |
-| Data quality | Better farm records reduce uncertainty and improve the next forecast cycle. |
-
-<Note>
-  Forecasts should become more accurate over time. The goal is not to defend the first projection forever; the goal is to use live harvest data to improve the model.
-</Note>
-
----
-
-## How actuals are verified
-
-Adelphi's harvest forecast becomes credible only when actual farm activity is measured.
-
-| Evidence layer | What it verifies |
-| --- | --- |
-| Harvest records | Crop type, quantity, date, quality, loss rate, sale status |
-| Kokonut Hub | Public view of farm milestones, MRV events, and impact metrics |
-| Field observations | Soil condition, crop condition, pests, irrigation, and operational notes |
-| Satellite and remote sensing | Vegetation health, land-use change, and ecological trends |
-| EAS attestations | Public records that connect structured evidence to the broader Kokonut data layer |
-
-[Read the MRV methodology →](/ecosystem-wiki/kokonut-farms/measurement-reporting-and-verification)
+| Farm / plot | Connects outcome to place |
+| Crop / variety | Prevents unlike crops from being aggregated |
+| Planting date | Establishes cycle timing |
+| Harvest date | Measures actual days to harvest |
+| Planted quantity / area | Provides forecast denominator |
+| Harvested quantity | Core production actual |
+| Saleable quantity | Separates production from marketable output |
+| Loss / rejection quantity | Produces actual loss rate |
+| Unit / package definition | Prevents unit ambiguity |
+| Realized selling price | Replaces planning price |
+| Buyer / channel | Explains price differences |
+| Gross sales | Reconciles physical and financial records |
+| Evidence / reviewer | Supports MRV and public reporting |
 
 ---
 
-## What this page supports
+## Risk and uncertainty register
+
+| Variable | Current assumption | Why it can change |
+| --- | --- | --- |
+| **Crop loss** | 15% baseline | Weather, pests, disease, establishment, handling, irrigation, labor |
+| **Lettuce cycles** | 5/year | Variety, weather, bed turnaround, labor, soil management |
+| **Market price** | Fixed planning prices | Season, quality, buyer, channel, certification, supply/demand |
+| **Passion-fruit yield** | 100 gross fruits/plant/year | Establishment, disease, vine health, season |
+| **Coconut yield** | 75 gross units/tree/year at maturity | Tree age, health, climate, management |
+| **Poultry output** | ~100 eggs/day | Flock age, nutrition, health, season, mortality |
+| **Certification** | In progress | Review timeline and compliance requirements |
+| **Market access** | Target channels documented | Buyer relationships and commercial agreements are not guaranteed |
+| **Operating costs** | Not modeled here | Labor, water, transport, packaging, maintenance, certification and more |
+| **Public-goods allocation** | 10% farm-model assumption | Conflicts with 40/40/20 ReFi Playbook documentation and needs reconciliation |
+
+---
+
+## What this forecast can support today
 
 <CardGroup cols={2}>
-  <Card title="Farm operators" icon="tractor">
-    Use the forecast as a planning model for planting schedules, crop mix, harvest tracking, and expected cash flow.
+  <Card title="Production planning" icon="tractor">
+    The model defines the crop counts, cycle assumptions, loss rate, and expected output used for planning.
   </Card>
 
-  <Card title="DAO members" icon="hydra">
-    Inspect the assumptions underlying the farm's revenue model before evaluating proposals, reports, and public-goods allocations.
+  <Card title="Scenario analysis" icon="calculator">
+    Assumptions can be changed to understand how loss, price, harvest frequency, and maturity affect modeled outcomes.
   </Card>
 
-  <Card title="Impact reviewers" icon="magnifying-glass-chart">
-    Compare projected revenue, jobs, public goods allocation, and SDG impacts against actual farm records.
+  <Card title="MRV design" icon="magnifying-glass-chart">
+    The forecast identifies which actual records must be collected to test each assumption.
   </Card>
 
-  <Card title="Builders and data contributors" icon="code">
-    Improve the calculator, forecast models, MRV schemas, dashboards, and Data Hub integrations.
+  <Card title="Variance learning" icon="arrows-rotate">
+    Forecast-vs-actual comparison can make future farm planning increasingly farm-specific.
   </Card>
 </CardGroup>
 
+### What it does not support yet
+
+- guaranteed annual revenue;
+- farm profitability;
+- operator income;
+- distributable DAO revenue;
+- proven public-goods funding;
+- realized household economic impact;
+- verified food-security impact;
+- mature coconut revenue before maturity;
+- poultry revenue without a pricing and sales model.
+
 ---
 
-## Next steps
+## Sources of truth by question
+
+| Question | Best source |
+| --- | --- |
+| What does the current model assume? | **This forecast page** |
+| What is physically installed or operating? | [Crops, Biodiversity & Infrastructure](/ecosystem-wiki/kokonut-farms/adelphi/crops-biodiversity-and-infrastructure) |
+| What has actually been recorded? | [Kokonut Hub](https://hub.kokonut.network/projects/41) |
+| How should records become evidence? | [MRV methodology](/ecosystem-wiki/kokonut-farms/measurement-reporting-and-verification) |
+| How are farm-level claims summarized? | [Adelphi Overview](/ecosystem-wiki/kokonut-farms/adelphi/summary) |
+| How do forecasts connect to SDGs? | [Sustainable Development Goals](/ecosystem-wiki/kokonut-farms/adelphi/sustainable-development-goals) |
+
+---
+
+## Continue through Adelphi
 
 <CardGroup cols={2}>
+  <Card title="Compare with live farm data" icon="chart-line" href="https://hub.kokonut.network/projects/41">
+    Use published farm records to replace planning assumptions with actual performance where available.
+  </Card>
+
   <Card title="Crops, Biodiversity & Infrastructure" icon="puzzle" href="/ecosystem-wiki/kokonut-farms/adelphi/crops-biodiversity-and-infrastructure">
-    The physical production system behind these numbers — beds, plots, poultry, nursery, biofactory, and soil regeneration.
+    See the physical systems behind the production assumptions.
   </Card>
 
-  <Card title="MRV — Measurement & Verification" icon="magnifying-glass-chart" href="/ecosystem-wiki/kokonut-farms/measurement-reporting-and-verification">
-    How every harvest cycle becomes structured data, public evidence, and verifiable impact records.
-  </Card>
-
-  <Card title="SDG Impact Calculator" icon="calculator" href="/kokonut-framework/impact-calculator">
-    Use Adelphi's parameters to estimate SDG scores, carbon outputs, employment effects, and impact alignment.
-  </Card>
-
-  <Card title="Adelphi Data Hub" icon="chart-line" href="https://hub.kokonut.network/projects/41">
-    The live source of truth for actual harvest records, MRV events, milestones, and farm data.
+  <Card title="MRV — Evidence Standard" icon="magnifying-glass-chart" href="/ecosystem-wiki/kokonut-farms/measurement-reporting-and-verification">
+    Understand how harvest and sales records should move from observations into reviewed evidence.
   </Card>
 
   <Card title="Sustainable Development Goals" icon="recycle" href="/ecosystem-wiki/kokonut-farms/adelphi/sustainable-development-goals">
-    How this revenue model supports No Poverty, Zero Hunger, Gender Equality, Decent Work, and Life on Land.
+    See which economic and food-production SDG claims remain forecasts and which require actual records.
   </Card>
 
-  <Card title="Adelphi Executive Summary" icon="note" href="/ecosystem-wiki/kokonut-farms/adelphi/summary">
-    The full farm overview — project context, founders, Framework phase status, proof metrics, and live data links.
+  <Card title="Adelphi Overview" icon="seedling" href="/ecosystem-wiki/kokonut-farms/adelphi/summary">
+    Return to the canonical farm overview and documented state.
+  </Card>
+
+  <Card title="Open Collaboration" icon="telescope" href="/ecosystem-wiki/open-collaboration-invitation">
+    Help improve forecast assumptions, crop economics, record quality, variance analysis, or farm-data tooling.
   </Card>
 </CardGroup>
 
-<div style={{ display: "flex", gap: "12px", justifyContent: "center", flexWrap: "wrap", margin: "2rem 0 0.75rem" }}>
-  <a href="https://hub.kokonut.network/projects/41" style={{ display: "inline-flex", alignItems: "center", gap: "6px", background: "#009F4D", color: "#fff", padding: "10px 20px", borderRadius: "8px", fontWeight: "600", fontSize: "14px", textDecoration: "none" }}>
-    Compare Forecast to Live Data →
-  </a>
-
-  <a href="/ecosystem-wiki/open-collaboration-invitation" style={{ display: "inline-flex", alignItems: "center", gap: "6px", border: "1.5px solid #009F4D", color: "#009F4D", padding: "10px 20px", borderRadius: "8px", fontWeight: "600", fontSize: "14px", textDecoration: "none", background: "transparent" }}>
-    Help Improve the Model
-  </a>
-</div>
+> **A good forecast is not one that stays correct forever. It is one that becomes more accurate because reality is allowed to update it.**
