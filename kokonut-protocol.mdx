@@ -1,0 +1,109 @@
+---
+title: "Kokonut Protocol"
+description: "The planned NEAR-based Web3 interoperability control plane for Kokonut projects: policy, chain abstraction, governed execution, revenue containers, and verifiable outcomes."
+icon: "network-wired"
+---
+
+# Interoperability for real-world regenerative projects.
+
+**Kokonut Protocol** is Kokonut Network's approved architectural direction for a **chain-agnostic Web3 policy and execution layer with NEAR as its interoperability hub**.
+
+Instead of moving every system onto a single blockchain, it aims to coordinate approved actions across the chains where Kokonut's communities, treasuries, identity systems, attestations, and markets already operate.
+
+<Warning>
+  **Design status:** the Protocol implementation PRD is approved as a specification. This page does not imply that its NEAR Hub smart contracts, relayers, cross-chain adapters, or revenue containers are production-deployed or audited. Confirm releases in the [Protocol repository](https://github.com/wasalo/Kokonut-Protocol).
+</Warning>
+
+## Four systems, four responsibilities
+
+| Layer | Owns |
+| --- | --- |
+| **Kokonut Intelligence** | Canonical operational data, project evidence, financial records, review, and audit |
+| **Kokonut Protocol** | Chain-neutral project manifests, policy rules, approved execution requests, adapters, and reconciliation |
+| **NEAR Hub** | Policy-controlled signature orchestration and coordination across approved networks |
+| **Destination chains** | Native contract state, token settlement, local governance rights, and attestations |
+
+> **Intelligence owns truth. Protocol owns execution policy. NEAR coordinates signing. Destination chains enforce their own settlement and rights.**
+
+~~~mermaid
+flowchart TD
+    AGENT["People · Apps · Syntropic Agent"]
+    KI["Kokonut Intelligence — records and approvals"]
+    KP["Kokonut Protocol — policies and execution"]
+    NEAR["NEAR Hub — Chain Signatures"]
+    BASE["Base — agent commerce"]
+    GNOSIS["Gnosis — DAO / Safe"]
+    CELO["Celo — EAS"]
+    OTHER["Approved other chains"]
+    AGENT --> KI
+    KI <--> KP
+    KP --> NEAR
+    NEAR --> BASE
+    NEAR --> GNOSIS
+    NEAR --> CELO
+    NEAR --> OTHER
+    BASE -.->|"receipts"| KI
+    GNOSIS -.->|"governance state"| KI
+    CELO -.->|"attestations"| KI
+~~~
+
+## The cross-chain execution contract
+
+NEAR Chain Signatures can help a governed NEAR account obtain a signature for a destination-chain payload. **Signing does not itself build the transaction, fund destination gas, broadcast, guarantee finality, or prove a real-world outcome.**
+
+A safe Protocol workflow is:
+
+1. Prepare a structured, chain-specific request and simulate the exact intended effect.
+2. Validate project scope, policy, budget, destination, expiry, and human or DAO approvals.
+3. Bind the approval to the exact action hash.
+4. Request an authorized Chain Signature on NEAR.
+5. Assemble and broadcast through the destination adapter.
+6. Wait for applicable finality, verify the intended effect, and reconcile the result into Kokonut Intelligence.
+7. Route failed, stalled, or ambiguous actions to independent manual review.
+
+The **Syntropic Agent** can propose, analyze, and monitor these operations; it does not approve its own protected financial actions.
+
+<Card title="Meet the first planned Protocol orchestrator" icon="seedling" href="/syntropic-agent">
+  The Kokonut Syntropic Agent is designed to give farmers, builders, and ecosystem members a more approachable interface to these cross-chain capabilities.
+</Card>
+
+## How the existing chains fit
+
+| Network | Current or intended role |
+| --- | --- |
+| Gnosis | Existing Kokonut DAO/Baal, governance, and Safe infrastructure; remain native |
+| Celo | Existing EAS evidence and attestation infrastructure; retain provenance |
+| Base | Virtuals-based Syntropic Agent presence, ACP commerce, and potential agent economy |
+| NEAR | Protocol control-plane orchestration, optional asset settlement integrations, and NEAR-native agent presence |
+| Other chains | Explicit adapter onboarding after capability, security, and policy testing |
+
+**NEAR Intents and Chain Signatures solve different problems.** Chain Signatures provide governed signing capability for destination transactions. Intents can provide an optional asset exchange or settlement pathway. Neither changes the canonical farm record or overrides local governance.
+
+## Revenue Containers and economic boundaries
+
+Revenue Containers are proposed project-specific accounting and treasury arrangements. They should isolate each project's liabilities, receipts, distribution policy, and any explicitly agreed economic rights.
+
+A new project token, agent token, or Revenue Container **does not automatically give a holder rights to the existing Kokonut DAO treasury, Moloch Shares/Loot, Ragequit mechanism, farmland, or another project's cash flows**.
+
+## Build with the Protocol
+
+Development focuses on NEAR policy/controller contracts, typed chain adapters, execution-state tracking, destination reconciliation, and security tests. NEAR Intents settlement, experimental Revenue Containers, and additional chain families can follow as independent workstreams.
+
+<CardGroup cols={2}>
+  <Card title="Protocol code and releases" icon="github" href="https://github.com/wasalo/Kokonut-Protocol">
+    Check the canonical repository for real contracts, tests, deployments, and status.
+  </Card>
+  <Card title="Canonical data and workflows" icon="brain" href="/kokonut-intelligence">
+    Understand the governed evidence and approval system.
+  </Card>
+  <Card title="AI agents and safe actions" icon="robot" href="/kokonut-x-ai-agents">
+    See the rules for drafts, human review, and financial authority.
+  </Card>
+  <Card title="Builder orientation" icon="code" href="/build-with-kokonut">
+    Follow compatibility rules and contribution guidelines.
+  </Card>
+</CardGroup>
+
+<Note>
+  This is a public architectural overview, not an executable SDK reference. Implementation contracts, deployment information, security findings, and current integration support should be verified in the owning repository.
+</Note>

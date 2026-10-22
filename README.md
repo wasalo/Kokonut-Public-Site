@@ -24,6 +24,8 @@ This repository powers the public Kokonut Knowledge Base at [kokonut.network](ht
 | Build software or agents | [Build with Kokonut](build-with-kokonut.mdx) |
 | Explore Kokonut Intelligence | [Kokonut Intelligence](kokonut-intelligence.mdx) |
 | Explore AI-agent architecture | [Kokonut × AI Agents](kokonut-x-ai-agents.mdx) |
+| Meet the Syntropic Agent | [Kokonut Syntropic Agent](syntropic-agent.mdx) |
+| Explore the NEAR Web3 hub design | [Kokonut Protocol](kokonut-protocol.mdx) |
 | Use the regenerative-finance playbook | [ReFi Playbook](playbooks/regenerative-finance/summary.mdx) |
 | Find a definition quickly | [Glossary](ecosystem-wiki/glossary.mdx) |
 
@@ -138,6 +140,8 @@ Kokonut-Public-Site/
 ├── build-with-kokonut.mdx
 ├── kokonut-intelligence.mdx
 ├── kokonut-x-ai-agents.mdx
+├── syntropic-agent.mdx
+├── kokonut-protocol.mdx
 │
 ├── snippets/
 ├── images/
