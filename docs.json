@@ -147,6 +147,14 @@
             ]
           }
         ]
+      },
+      {
+        "tab": "Traction",
+        "icon": "radio",
+        "pages": [
+          "traction/as-seen-on",
+          "traction/source-library"
+        ]
       }
     ]
   },
