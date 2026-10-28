@@ -151,8 +151,8 @@
     ]
   },
   "logo": {
-    "light": "/logo/light.svg",
-    "dark": "/logo/dark.svg"
+    "light": "/logo/kkn_logo.svg",
+    "dark": "/logo/kkn_logo_white.svg"
   },
   "navbar": {
     "links": [],
