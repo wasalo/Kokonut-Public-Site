@@ -752,3 +752,154 @@
 @media(max-width:790px){.kt-hero-grid,.kt-thesis-grid,.kt-context-grid{grid-template-columns:1fr}.kt-hero{padding-top:72px}.kt-hero-art{min-height:490px;max-width:590px;margin:0 auto;width:100%}.kt-thesis,.kt-videos,.kt-podcasts,.kt-features,.kt-research,.kt-community,.kt-context{padding:75px 0}.kt-heading{display:block}.kt-heading>p{max-width:650px;margin-top:15px}.kt-space-card{grid-template-columns:65px 1fr}.kt-space-card>a{grid-column:1/3;justify-self:start}.kt-cta-grid{align-items:start;flex-direction:column}.kt-feature-grid{grid-template-columns:repeat(2,1fr)}}
 @media(max-width:550px){.kt-hero h1{font-size:44px}.kt-buttons .kok-btn{width:100%}.kt-hero-art{min-height:375px}.kt-signal-center{width:107px;height:107px}.kt-signal-center span{font-size:36px}.kt-signal-center strong{font-size:10px}.kt-signal-center small{font-size:7px}.kt-ring-one{width:220px;height:220px}.kt-ring-two{width:300px;height:300px}.kt-signal-tag{font-size:8px;padding:9px;gap:6px}.kt-tag-a{left:1%}.kt-tag-b{right:1%}.kt-tag-c{left:1%}.kt-tag-d{right:1%}.kt-hero-art-top,.kt-hero-art-bottom{left:14px;right:14px;font-size:8px}.kt-jump{gap:0}.kt-jump a{font-size:11px;padding:9px}.kt-video-grid,.kt-audio-grid,.kt-feature-grid,.kt-story-grid{grid-template-columns:1fr}.kt-media-details{padding:21px}.kt-video-card .kt-inline-links{padding:0 21px 23px}.kt-audio-card iframe{width:calc(100% - 40px);margin:0 20px}.kt-space-card{grid-template-columns:1fr;gap:18px}.kt-space-card>a{grid-column:1}.kt-story{min-height:230px}.kt-cta-links{width:100%}}
 @media(prefers-reduced-motion:reduce){.kok-traction *{scroll-behavior:auto}}
+
+/* ---------------------------------------------------------------------------
+   KOKONUT NETWORK · OFFICIAL BRAND ALIGNMENT · v2.0 / July 2024
+
+   Authoritative hexadecimal colors from Kokonut Network Brand Guidelines p. 9:
+      green   #009F4D       yellow  #FFCD00
+      ink     #171717       white   #FFFFFF
+
+   The guidelines' RGB line for yellow is inconsistent with its hex code;
+   hexadecimal swatches are used here as the authoritative color values.
+
+   Green/charcoal gradients and light tints are supporting UI tones, not
+   replacements for the four brand colors. Do not apply gradients, shadows,
+   animations, recoloring or effects to Kokonut logo assets (guidelines pp.4,8).
+
+   Scope: five visual-first custom entry pages + shared custom-page footer.
+   Mintlify's native docs theme already has brand green in docs.json.
+   Keep layout, content, illustrations and all logos intact.
+   --------------------------------------------------------------------------- */
+:root {
+  --kok-brand-green: #009F4D;
+  --kok-brand-yellow: #FFCD00;
+  --kok-brand-ink: #171717;
+  --kok-brand-white: #FFFFFF;
+  --kok-brand-green-readable: #08733D; /* small green-on-white text */
+  --kok-brand-soft-green: #E8F7EA; /* derived background tint */
+}
+.kok-home {
+  --green: var(--kok-brand-green);
+  --ink: var(--kok-brand-ink);
+}
+
+/* Make editorial highlights unmistakably Kokonut yellow, with the existing
+   dimensional dark-green hero gradients preserved behind them. */
+.kok-home .kok-hero h1 em,
+.kok-home .k101-hero h1 em,
+.kok-home .kf-hero h1 em,
+.kok-home .kb-hero h1 em,
+.kok-home .kt-hero h1 em,
+.kok-home .kok-deep h2 em,
+.kok-home .k101-flow h2 em,
+.kok-home .k101-cta h2 em,
+.kok-home .kf-evidence h2 em,
+.kok-home .kf-cta h2 em,
+.kok-home .kb-agents h2 em,
+.kok-home .kb-details h2 em,
+.kok-home .kt-context h2 em {
+  color: var(--kok-brand-yellow);
+}
+/* Large section headings on light backgrounds use a darker green tint for
+   legibility rather than low-contrast unmodified primary green text. */
+.kok-home h2 em { color: var(--kok-brand-green-readable); }
+/* Dark-section overrides follow the common light-section rule above. */
+.kok-home .kok-deep h2 em,
+.kok-home .k101-flow h2 em,
+.kok-home .k101-cta h2 em,
+.kok-home .kf-evidence h2 em,
+.kok-home .kf-cta h2 em,
+.kok-home .kb-agents h2 em,
+.kok-home .kb-details h2 em,
+.kok-home .kt-context h2 em { color: var(--kok-brand-yellow); }
+
+/* Primary actions: official yellow with charcoal labels. Editorial outlines
+   remain light on dark sections and dark on the bright conversion sections. */
+.kok-home .kok-btn-primary {
+  background: var(--kok-brand-yellow);
+  color: var(--kok-brand-ink) !important;
+}
+.kok-home .kok-btn-primary:hover { background: #F1C000; }
+.kok-home .kok-hero .kok-btn-outline,
+.kok-home .k101-hero .kok-btn-outline,
+.kok-home .kf-hero .kok-btn-outline,
+.kok-home .kb-hero .kok-btn-outline,
+.kok-home .kt-hero .kok-btn-outline {
+  border-color: var(--kok-brand-yellow);
+  color: var(--kok-brand-white) !important;
+}
+.kok-home .kok-join-actions .kok-btn-primary,
+.kok-home .kb-cta-actions .kok-btn-primary,
+.kok-home .kt-cta-links .kok-btn-primary {
+  background: var(--kok-brand-ink);
+  color: var(--kok-brand-white) !important;
+}
+.kok-home .kok-join-actions .kok-btn-primary:hover,
+.kok-home .kb-cta-actions .kok-btn-primary:hover,
+.kok-home .kt-cta-links .kok-btn-primary:hover { background: #303030; }
+.kok-home .kok-join-actions .kok-btn-outline,
+.kok-home .kb-cta-actions .kok-btn-outline,
+.kok-home .kt-cta-links .kok-btn-outline {
+  border-color: var(--kok-brand-ink);
+  color: var(--kok-brand-ink) !important;
+}
+
+/* Brand-colored transitions, not flat replacements: retain soft green,
+   ecological tonality, and the existing large-section silhouettes. */
+.kok-home .kok-ticker {
+  background: linear-gradient(100deg,#FFCD00 0%,#FCE47D 33%,#E8F7EA 100%);
+  color: var(--kok-brand-ink);
+}
+.kok-home .kok-join,
+.kok-home .kb-cta,
+.kok-home .kt-cta {
+  background: linear-gradient(112deg,#E8F7EA 0%,#FFFAE3 48%,#FFCD00 100%);
+  color: var(--kok-brand-ink);
+}
+.kok-home .kok-join h2 em,
+.kok-home .kb-cta h2 em,
+.kok-home .kt-cta h2 em { color: var(--kok-brand-green-readable); }
+
+/* Small signals reinforce the palette without changing structural diagrams. */
+.kok-home .kok-core,
+.kok-home .kt-signal-center,
+.kok-home .k101-evidence-mark,
+.kok-home .kf-claim-list li:last-child > span,
+.kok-home .kb-permission.yes > span,
+.kok-home .kt-space-card > a {
+  background: var(--kok-brand-yellow);
+  color: var(--kok-brand-ink) !important;
+}
+.kok-home .kok-pulse,
+.kok-home .k101-hero-meta span::before,
+.kok-home .kb-hero-meta span::before,
+.kok-home .kt-hero-meta span::before {
+  background: var(--kok-brand-yellow);
+}
+.kok-home .kf-tool-feature,
+.kok-home .kb-repo-main,
+.kok-home .kb-contract-feature {
+  border-top: 3px solid var(--kok-brand-yellow);
+}
+.kok-home .kok-card:hover,
+.kok-home .k101-system-card:hover,
+.kok-home .kf-tool:hover,
+.kok-home .kf-phase:hover,
+.kok-home .kb-contract:hover,
+.kok-home .kt-feature-card:hover {
+  border-color: var(--kok-brand-green);
+}
+
+/* The shared footer keeps its established dark styling and white wordmark.
+   Only graphic highlights and focus/hover accents change. */
+.kok-site-footer {
+  --ksf-accent: var(--kok-brand-yellow);
+}
+.kok-site-footer-accent {
+  background: linear-gradient(90deg,#009F4D 0%,#009F4D 52%,#FFCD00 100%);
+}
+.kok-site-footer-nav h2,
+.kok-site-footer-connect h2 { color: var(--kok-brand-yellow); }
+.kok-site-footer-dot { background: var(--kok-brand-yellow); }
+.kok-site-footer-social:hover { border-color: var(--kok-brand-yellow); }
