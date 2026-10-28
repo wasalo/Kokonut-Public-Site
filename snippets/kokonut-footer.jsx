@@ -11,7 +11,7 @@ export const KokonutSiteFooter = () => (
       <div className="kok-site-footer-content">
         <div className="kok-site-footer-about">
           <a className="kok-site-footer-logo" href="/home/landing" aria-label="Kokonut Network home">
-            <img src="/logo/dark.svg" alt="Kokonut Network" width="183" height="61" />
+            <img src="/logo/kkn_logo_white.svg" alt="Kokonut Network" width="183" height="61" />
           </a>
           <p className="kok-site-footer-tagline">A distributed network powered by biodiversity, trees &amp; people.</p>
           <span className="kok-site-footer-motto"><span className="kok-site-footer-dot" aria-hidden="true"></span> Rooted in the Caribbean. Growing in the open.</span>
