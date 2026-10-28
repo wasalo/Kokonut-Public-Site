@@ -602,3 +602,37 @@
  .kok-builders .kb-contract,.kok-builders .kb-pathway-grid>a{transition:none}
  .kok-builders .kb-contract:hover,.kok-builders .kb-pathway-grid>a:hover{transform:none}
 }
+
+/* Shared social footer for the four Mintlify custom-mode entry pages.
+   Custom mode omits Mintlify's native footer, so this footer is page-rendered.
+   Styles are isolated to .kok-site-footer and do not affect documentation pages. */
+.kok-site-footer{--ksf-bg:#071d15;--ksf-ink:#edf6ed;--ksf-muted:#b6d0be;--ksf-accent:#b9ec85;position:relative;background:var(--ksf-bg);color:var(--ksf-ink);width:100%;font-family:Inter,system-ui,sans-serif;line-height:1.5}
+.kok-site-footer *{box-sizing:border-box}
+.kok-site-footer a{text-decoration:none}
+.kok-site-footer a:focus-visible{outline:3px solid #ffcd00;outline-offset:4px;border-radius:5px}
+.kok-site-footer-accent{height:3px;background:linear-gradient(90deg,#009f4d 0%,#b9ec85 55%,#ffcd00 100%)}
+.kok-site-footer-wrap{width:min(1200px,calc(100% - 48px));margin:0 auto}
+.kok-site-footer-content{padding:78px 0 72px;display:grid;grid-template-columns:1.5fr .8fr .9fr 1.15fr;gap:54px}
+.kok-site-footer-logo{display:inline-flex;align-items:center;max-width:194px}
+.kok-site-footer-logo img{width:183px;max-width:100%;height:auto;display:block}
+.kok-site-footer-tagline{font-size:17px;line-height:1.7;font-weight:500;max-width:290px;color:#e1efe2;margin:23px 0 18px}
+.kok-site-footer-motto{display:flex;align-items:center;gap:11px;font-size:11px;line-height:1.6;letter-spacing:.04em;color:#aac6b0}
+.kok-site-footer-dot{flex-shrink:0;width:7px;height:7px;border-radius:50%;background:#b9ec85;box-shadow:0 0 0 4px #b9ec851a}
+.kok-site-footer-nav{display:flex;flex-direction:column;align-items:flex-start;gap:15px}
+.kok-site-footer-nav h2,.kok-site-footer-connect h2{font-size:12px;font-weight:800;letter-spacing:.13em;text-transform:uppercase;color:#b9ec85;margin:6px 0 11px;line-height:1.4}
+.kok-site-footer-nav a{font-size:13px;color:#c8dfce!important;line-height:1.5;transition:color .15s ease}
+.kok-site-footer-nav a:hover{color:white!important}
+.kok-site-footer-connect p{color:#b6d0be;font-size:13px;line-height:1.75;max-width:235px;margin:0 0 26px}
+.kok-site-footer-socials{display:flex;gap:10px;flex-wrap:wrap}
+.kok-site-footer-social{display:inline-flex;align-items:center;justify-content:center;width:45px;height:45px;border:1px solid #6a907778;border-radius:11px;background:#123b28;color:#eaf9ee!important;transition:transform .18s ease,border-color .18s ease,background .18s ease}
+.kok-site-footer-social svg{display:block;width:19px;height:19px;fill:currentColor}
+.kok-site-footer-social:hover{background:#21623e;color:#fff!important;border-color:#b9ec85;transform:translateY(-3px)}
+.kok-site-footer-bottom{border-top:1px solid #65866b60;display:flex;justify-content:space-between;align-items:center;gap:20px;padding:24px 0 29px}
+.kok-site-footer-bottom>span{color:#edf7ee;font-weight:650;font-size:12px;letter-spacing:.02em}
+.kok-site-footer-meta{display:flex;align-items:center;justify-content:flex-end;gap:22px;flex-wrap:wrap}
+.kok-site-footer-meta span,.kok-site-footer-meta a{font-size:11px;color:#aecbb8!important;line-height:1.65}
+.kok-site-footer-meta a:hover{color:white!important}
+@media(max-width:1090px){.kok-site-footer-content{grid-template-columns:1.35fr 1fr 1fr;gap:42px 30px}.kok-site-footer-about{grid-column:1/4}.kok-site-footer-tagline{max-width:510px}.kok-site-footer-connect p{max-width:275px}}
+@media(max-width:680px){.kok-site-footer-wrap{width:min(100% - 32px,1200px)}.kok-site-footer-content{padding:57px 0 48px;grid-template-columns:1fr 1fr;gap:40px 26px}.kok-site-footer-about{grid-column:1/3}.kok-site-footer-connect{grid-column:1/3}.kok-site-footer-connect p{max-width:440px;margin-bottom:18px}.kok-site-footer-bottom{align-items:flex-start;flex-direction:column;gap:12px;padding-bottom:34px}.kok-site-footer-meta{justify-content:flex-start;gap:10px 20px}}
+@media(max-width:370px){.kok-site-footer-content{grid-template-columns:1fr;gap:34px}.kok-site-footer-about,.kok-site-footer-connect{grid-column:1}.kok-site-footer-nav{gap:12px}.kok-site-footer-nav h2{margin-bottom:2px}}
+@media(prefers-reduced-motion:reduce){.kok-site-footer-social,.kok-site-footer-nav a{transition:none}.kok-site-footer-social:hover{transform:none}}
