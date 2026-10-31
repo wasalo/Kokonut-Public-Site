@@ -78,6 +78,13 @@ export const KokonutExecutiveSummaryExperience = () => (
       <p className="k101-status-note">Status descriptions reflect the documented ecosystem overview, not a real-time availability monitor. See the <a href="/ecosystem-wiki/kokonut-101/executive-summary-detailed">detailed component-by-component reference</a> for additional context.</p>
     </div></section>
 
+    <section className="k101-map-cta" aria-label="Explore the RWA and ReFi challenge map">
+      <div className="kok-wrap k101-map-cta-row">
+        <div><span className="k101-map-cta-kicker">PUT THE ECOSYSTEM MODEL TO THE TEST</span><h2>29 real-asset challenges. <em>Six connected systems.</em></h2><p>See how land, capital, operations, evidence, governance and technology become concrete design questions for Kokonut Intelligence—not promises of verified outcomes.</p></div>
+        <a className="kok-btn kok-btn-primary" href="/rwa-refi-challenge-map">Explore the challenge map <span aria-hidden="true">↗</span></a>
+      </div>
+    </section>
+
     <section className="k101-identity" aria-labelledby="k101-identity-title"><div className="kok-wrap k101-identity-grid"><div><p className="kok-kicker">06 / ROOTED IN NATURE</p><h2 id="k101-identity-title">Why <em>coconuts?</em></h2><p>Coconut trees are a long-cycle anchor in diversified syntropic systems—not a plan to replace biodiversity with monoculture. They can support multiple product streams while shorter-cycle crops, poultry, and ecological regeneration sustain the wider system.</p><p>Kokonut's documented governance model also connects $vKKN to coconut trees through a 1:1 relationship. The full explanation and limitations are kept in the detailed summary.</p><a className="kok-textlink" href="/ecosystem-wiki/kokonut-101/executive-summary-detailed">Read the coconut and governance rationale ↗</a></div><div className="k101-identity-art" aria-hidden="true"><div className="k101-tree-crown"><i></i><i></i><i></i><i></i><i></i></div><div className="k101-tree-fruit"><span></span><span></span><span></span></div><div className="k101-tree-trunk"></div><div className="k101-tree-ground"></div><span className="k101-identity-caption">LONG-CYCLE ROOTS · DIVERSE SYSTEMS</span></div></div></section>
 
     <section className="k101-audience" id="k101-participate" aria-labelledby="k101-audience-title"><div className="kok-wrap"><div className="k101-heading"><div><p className="kok-kicker">07 / PARTICIPATION</p><h2 id="k101-audience-title">Different people. <em>Many ways to contribute.</em></h2></div><p>You do not need to contribute capital to be part of Kokonut. Start with evidence, expertise, collaboration, or infrastructure.</p></div><div className="k101-audience-grid">
