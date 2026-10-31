@@ -48,6 +48,25 @@ export const KokonutBuildersExperience = () => (
       </div>
     </section>
 
+    <section className="kb-map-feature" aria-labelledby="kb-map-feature-title">
+      <div className="kok-wrap kb-map-feature-grid">
+        <div className="kb-map-feature-copy">
+          <p className="kok-kicker">FEATURED BUILDER RESOURCE / INTERACTIVE</p>
+          <h2 id="kb-map-feature-title">Find the challenge. <em>Trace the system response.</em></h2>
+          <p>Explore 29 real-asset and ReFi challenges across six connected systems. Search land stewardship, liquidity, methodology, governance, privacy or adoption—and inspect the proposed Kokonut Intelligence workflows and controls.</p>
+          <div className="kb-map-feature-meta"><span>29 challenges</span><span>6 systems</span><span>Searchable explorer</span></div>
+          <a className="kok-btn kok-btn-primary" href="/rwa-refi-challenge-map">Open the RWA × ReFi challenge map <span aria-hidden="true">↗</span></a>
+        </div>
+        <div className="kb-map-feature-console" aria-label="Visual preview of the RWA and ReFi challenge explorer">
+          <div className="kb-map-feature-console-top"><span>CHALLENGE MAP / EXAMPLE QUERY</span><span>KI × RWA</span></div>
+          <div className="kb-map-feature-search" aria-hidden="true">⌕ &nbsp; land · evidence · governance</div>
+          <div className="kb-map-feature-result"><span>03 / PLACE &amp; RIGHTS</span><strong>Turn tenure into a governed stewardship commitment</strong><small>Land Stewardship Trust · PostGIS · Farm registry</small></div>
+          <div className="kb-map-feature-result"><span>05 / EVIDENCE &amp; FIELDWORK</span><strong>Connect every claim to method and evidence</strong><small>Field data · Versioned metrics · Evidence maturity</small></div>
+          <div className="kb-map-feature-console-foot">ILLUSTRATIVE PREVIEW · OPEN THE FULL INTERACTIVE MAP ↗</div>
+        </div>
+      </div>
+    </section>
+
     <section className="kb-surfaces" id="kb-surfaces" aria-labelledby="kb-surfaces-title">
       <div className="kok-wrap">
         <div className="kb-heading"><div><p className="kok-kicker">02 / CHOOSE YOUR SURFACE</p><h2 id="kb-surfaces-title">Find the system <em>that owns your work.</em></h2></div><p>Three core open-source entry points, with distinct responsibilities. Check their current README, deployment and branch state before implementing integrations.</p></div>
