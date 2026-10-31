@@ -33,6 +33,27 @@ export const KokonutHomeExperience = () => (
     <a href="/kokonut-intelligence" className="kok-card"><span className="kok-card-id">05 / INTELLIGENCE</span><span className="kok-card-icon">⌘</span><h3>Turn data into learning</h3><p>Open analytics, synthesis, research, and decision support.</p><span className="kok-card-next">Explore Intelligence ↗</span></a>
     <a href="/build-with-kokonut" className="kok-card"><span className="kok-card-id">06 / BUILDERS</span><span className="kok-card-icon">↗</span><h3>Build in the open</h3><p>Software, agents, technical standards, and contribution paths.</p><span className="kok-card-next">Build with Kokonut ↗</span></a>
     </div></div></section>
+    <section className="kok-section kok-map-spotlight" aria-labelledby="kok-map-title">
+      <div className="kok-wrap kok-map-spotlight-shell">
+        <div className="kok-map-spotlight-copy">
+          <p className="kok-map-overline"><span className="kok-pulse" aria-hidden="true"></span> FEATURED INTERACTIVE EXPLORER / KOKONUT INTELLIGENCE</p>
+          <h2 id="kok-map-title">One real-world project. <em>29 questions worth asking.</em></h2>
+          <p>Land rights, regenerative economics, evidence, capital, governance and technology don't live in separate worlds. Explore 29 RWA × ReFi challenges—and the Kokonut Intelligence mechanisms proposed to address them.</p>
+          <div className="kok-map-feature-stats"><span><strong>29</strong> real-asset challenges</span><span><strong>6</strong> connected systems</span><span><strong>1</strong> project-centered view</span></div>
+          <a className="kok-btn kok-btn-primary" href="/rwa-refi-challenge-map">Explore the interactive challenge map <span aria-hidden="true">↗</span></a>
+        </div>
+        <div className="kok-map-spotlight-visual" aria-label="Preview of six categories in the RWA and ReFi challenge map">
+          <div className="kok-map-preview-head"><span>RWA × REFI / SYSTEM EXPLORER</span><span>29 CHALLENGES</span></div>
+          <div className="kok-map-preview-core"><span>ONE GOVERNED PROJECT RECORD</span><strong>Farm / Location</strong><small>Land · People · Finance · Evidence</small></div>
+          <div className="kok-map-preview-grid">
+            <div><b>04</b><span>Place &amp; rights</span></div><div><b>05</b><span>Enterprise &amp; finance</span></div>
+            <div><b>03</b><span>Evidence &amp; fieldwork</span></div><div><b>04</b><span>Capital &amp; regulation</span></div>
+            <div><b>06</b><span>People &amp; governance</span></div><div><b>07</b><span>Technology &amp; adoption</span></div>
+          </div>
+          <p className="kok-map-preview-foot">DISCOVER CHALLENGES · INSPECT PROPOSED KI RESPONSES</p>
+        </div>
+      </div>
+    </section>
     <section className="kok-section kok-deep" aria-labelledby="kok-deep-title"><div className="kok-wrap kok-deep-layout"><div><div className="kok-kicker">04 / GO DEEPER</div><h2 id="kok-deep-title">A compelling introduction.<br/><em>None of the context lost.</em></h2><p>This is the front door—not a replacement for the research, methodology, governance records, and technical documentation that make Kokonut useful.</p></div><div className="kok-deep-links"><a href="/home/ecosystem-overview">Read the complete ecosystem overview <span>↗</span></a><a href="/playbooks/regenerative-finance/summary">Regenerative Finance Playbook <span>↗</span></a><a href="/kokonut-x-ai-agents">AI agents and automation architecture <span>↗</span></a><a href="/ecosystem-wiki/open-collaboration-invitation">Open collaboration invitation <span>↗</span></a></div></div></section>
     <section className="kok-join"><div className="kok-wrap kok-join-layout"><div><div className="kok-kicker">05 / GROW WITH US</div><h2>Regeneration takes<br/><em>all of us.</em></h2><p>Whether you grow food, build software, fund public goods, study impact, or coordinate communities—there is a place to contribute.</p></div><div className="kok-join-actions"><a className="kok-btn kok-btn-primary" href="https://link.kokonut.network/discord">Join our community ↗</a><a className="kok-btn kok-btn-outline" href="https://link.kokonut.network/meeting">Talk with the team ↗</a></div></div></section>
   </main>
