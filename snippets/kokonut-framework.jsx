@@ -81,6 +81,14 @@ export const KokonutFrameworkExperience = () => (
       </div>
     </section>
 
+    <section className="kf-map-card-section" aria-labelledby="kf-map-feature-title">
+      <div className="kok-wrap"><div className="kf-map-card">
+        <div className="kf-map-card-marker" aria-hidden="true"><span>29</span><small>RWA × REFI</small></div>
+        <div className="kf-map-card-copy"><span>THE FRAMEWORK IN A WIDER SYSTEM</span><h2 id="kf-map-feature-title">Regenerative practice meets <em>real-asset complexity.</em></h2><p>The Framework describes how farms plan and measure. Explore the 29-question challenge map to see how KI proposes to connect those methods with land rights, financing, evidence, governance and adoption.</p></div>
+        <a className="kok-btn kok-btn-primary" href="/rwa-refi-challenge-map">Explore the challenges <span aria-hidden="true">↗</span></a>
+      </div></div>
+    </section>
+
     <section className="kf-value" aria-labelledby="kf-value-title">
       <div className="kok-wrap"><div className="kf-section-heading"><div><p className="kok-kicker">05 / INTERPRET IMPACT RESPONSIBLY</p><h2 id="kf-value-title">Value is multidimensional. <em>Evidence decides the claim.</em></h2></div><p>These analytical lenses support planning, reporting, and reflection without reducing diverse outcomes to one unsupported score.</p></div>
         <div className="kf-value-grid">
