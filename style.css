@@ -1609,3 +1609,37 @@
   .ksa-page .ksa-avatar-chip img{width:46px;height:46px}
   .ksa-page .ksa-kicker-with-avatar img{width:36px;height:36px}
 }
+
+
+/* Syntropic Agent render repair: keep Mermaid as a native, top-level
+   Mintlify MDX code fence rather than passing it as JSX children.
+   These two standalone components visually frame that native block. */
+.ksa-page.ksa-diagram-intro {
+  padding:88px 0 0;
+  background:#edf6eb;
+}
+.ksa-page.ksa-diagram-intro .ksa-diagram-heading {
+  margin-bottom:32px;
+}
+.ksa-page.ksa-diagram-intro .ksa-mermaid-toolbar {
+  border:1px solid #b5d4bd;
+  border-bottom:0;
+  border-radius:15px 15px 0 0;
+}
+.ksa-page.ksa-diagram-outro {
+  padding:0 0 93px;
+  background:#edf6eb;
+}
+.ksa-page.ksa-diagram-outro .ksa-mermaid-legend {
+  border:1px solid #d1e4d5;
+  border-radius:0 0 15px 15px;
+}
+.ksa-page.ksa-diagram-outro .ksa-mermaid-caption {
+  margin-top:22px;
+}
+@media(max-width:790px) {
+  .ksa-page.ksa-diagram-intro {padding-top:70px}
+  .ksa-page.ksa-diagram-outro {padding-bottom:70px}
+}
+/* The native Mermaid block may be given its own Mintlify container.
+   Don't hard-code renderer internals or CSS that could hide its controls. */
