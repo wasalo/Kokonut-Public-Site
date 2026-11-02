@@ -22,6 +22,7 @@ export const KokonutSiteFooter = () => (
           <a href="/home/landing">Home</a>
           <a href="/ecosystem-wiki/kokonut-101/executive-summary">Ecosystem Wiki</a>
           <a href="/kokonut-framework/Introduction">Kokonut Framework</a>
+          <a href="/syntropic-agent">Syntropic Agent</a>
           <a href="/build-with-kokonut">Builders</a>
         </nav>
 
