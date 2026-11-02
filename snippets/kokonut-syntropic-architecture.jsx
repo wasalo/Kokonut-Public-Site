@@ -26,7 +26,7 @@ const atlasNodes = [
   {id:"PROTOCOL", label:"Kokonut Protocol", short:"Policy & authorized execution", stage:"CORE", x:356,y:515,
    status:"Planned control plane",summary:"The proposed policy boundary for interpreting approved execution requests and coordinating downstream actions. Agent-generated proposals do not bypass independent authorization.",
    source:"Kokonut Protocol / policy & execution"},
-  {id:"HUB", label:"NEAR Hub", short:"Chain Signatures orchestration", stage:"ORCHESTRATION", x:716,y:282,
+  {id:"NEAR", label:"NEAR Hub", short:"Chain Signatures orchestration", stage:"ORCHESTRATION", x:716,y:282,
    status:"Planned, not deployed",summary:"Intended to coordinate explicitly approved requests using NEAR Chain Signatures. Signing, broadcasting, finality, verification and reconciliation are separate steps.",
    source:"NEAR Hub / Chain Signatures"},
   {id:"BASE", label:"Base", short:"Virtuals agent commerce", stage:"DESTINATION", x:974,y:113,
@@ -38,7 +38,7 @@ const atlasNodes = [
   {id:"CELO", label:"Celo", short:"EAS evidence provenance", stage:"DESTINATION", x:974,y:386,
    status:"Existing provenance · adapter planned",summary:"Selected evidence and attestations may be anchored for provenance, but a chain receipt never independently proves ecological impact or certifies a claim.",
    source:"Celo / EAS provenance"},
-  {id:"EXTRA", label:"Other approved chains", short:"Scoped integrations only", stage:"DESTINATION", x:974,y:520,
+  {id:"FUTURE", label:"Other approved chains", short:"Scoped integrations only", stage:"DESTINATION", x:974,y:520,
    status:"Future / approval-dependent",summary:"Additional networks are considered only with justified utility, defined permissions, secure adapters and appropriate approvals. New integrations do not imply new tokens.",
    source:"Additional approved chains"}
 ];
@@ -50,11 +50,11 @@ const atlasEdges = [
  {from:"AGENT",to:"PROTOCOL",label:"Proposals, not self-approval",d:"M573 162 C650 162 654 572 573 572"},
  {from:"PEOPLE",to:"PROTOCOL",label:"Independent authorization",d:"M218 205 C289 205 267 574 356 574"},
  {from:"KI",to:"PROTOCOL",label:"Governed exchange",both:true,d:"M464 425 L464 511"},
- {from:"PROTOCOL",to:"HUB",label:"Approved requests",d:"M573 582 C684 580 654 350 716 350"},
- {from:"HUB",to:"BASE",label:"Network action",d:"M922 334 C960 334 944 159 974 159"},
- {from:"HUB",to:"GNOSIS",label:"Network action",d:"M922 338 C952 338 946 276 974 276"},
- {from:"HUB",to:"CELO",label:"Network action",d:"M922 348 C951 348 951 425 974 425"},
- {from:"HUB",to:"EXTRA",label:"Approved integrations",d:"M922 353 C958 353 949 557 974 557"},
+ {from:"PROTOCOL",to:"NEAR",label:"Approved requests",d:"M573 582 C684 580 654 350 716 350"},
+ {from:"NEAR",to:"BASE",label:"Network action",d:"M922 334 C960 334 944 159 974 159"},
+ {from:"NEAR",to:"GNOSIS",label:"Network action",d:"M922 338 C952 338 946 276 974 276"},
+ {from:"NEAR",to:"CELO",label:"Network action",d:"M922 348 C951 348 951 425 974 425"},
+ {from:"NEAR",to:"FUTURE",label:"Approved integrations",d:"M922 353 C958 353 949 557 974 557"},
  {from:"KI",to:"FARMS",label:"Reviewable feedback",d:"M356 406 C294 406 280 500 218 500"}
 ];
 
@@ -131,7 +131,7 @@ export const KokonutSyntropicArchitecture = () => {
                 >
                   {node.id==="AGENT"
                     ? <img src="/images/syntropic-agent-avatar.png" alt="" width="53" height="53" className="ksa-atlas-avatar"/>
-                    : <span className="ksa-atlas-glyph" aria-hidden="true">{({PEOPLE:"◎",FARMS:"✳",KI:"▤",PROTOCOL:"◇",HUB:"⟡",BASE:"B",GNOSIS:"G",CELO:"C",EXTRA:"+"})[node.id]}</span>}
+                    : <span className="ksa-atlas-glyph" aria-hidden="true">{({PEOPLE:"◎",FARMS:"✳",KI:"▤",PROTOCOL:"◇",NEAR:"⟡",BASE:"B",GNOSIS:"G",CELO:"C",FUTURE:"+"})[node.id]}</span>}
                   <span className="ksa-atlas-node-copy">
                     <strong>{node.label}</strong>
                     <small>{node.short}</small>
