@@ -12,7 +12,7 @@ export const KokonutHomeExperience = () => (
         <div className="kok-visual" role="img" aria-label="A regenerative loop linking people, governance, farms, field evidence, and intelligence.">
           <div className="kok-visual-heading"><span>THE REGENERATION LOOP</span><span>01 / 05</span></div>
           <div className="kok-ring kok-ring-one"/><div className="kok-ring kok-ring-two"/>
-          <div className="kok-core"><span className="kok-core-mark">K</span><strong>KOKONUT</strong><small>NETWORK</small></div>
+          <div className="kok-core"><img className="kok-hero-brand-icon" src="/logo/kkn_icon.svg" alt="" aria-hidden="true" width="138" height="138" /></div>
           <div className="kok-node kok-node-people"><small>01</small><strong>People</strong><span>Participation</span></div>
           <div className="kok-node kok-node-gov"><small>02</small><strong>Governance</strong><span>Coordination</span></div>
           <div className="kok-node kok-node-farm"><small>03</small><strong>Farms</strong><span>Regeneration</span></div>

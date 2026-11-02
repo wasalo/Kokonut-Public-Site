@@ -1765,3 +1765,23 @@
  .ksa-atlas .ksa-atlas-wire,.ksa-atlas .ksa-atlas-node{transition:none}
  .ksa-atlas .ksa-atlas-node:hover{transform:none}
 }
+
+
+/* Official Kokonut brand icon in Home and Traction hero centerpieces.
+   Keep the original icon's full color and proportions; remove the text-era
+   yellow fill/glow while leaving the surrounding rings and gradients intact.
+   The SVG itself is not modified, recolored, filtered or animated. */
+.kok-home .kok-visual .kok-core,
+.kok-home .kt-hero-art .kt-signal-center {
+  background: transparent;
+  box-shadow: none;
+}
+.kok-home .kok-visual .kok-hero-brand-icon,
+.kok-home .kt-hero-art .kt-hero-brand-icon {
+  display: block;
+  width: 100%;
+  height: 100%;
+  max-width: none;
+  object-fit: contain;
+  flex-shrink: 0;
+}
