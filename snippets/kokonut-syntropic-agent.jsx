@@ -27,7 +27,7 @@ const milestones=[
  {name:"Reviewed farm operating proof",status:"Planned",level:"planned"}
 ];
 export const KokonutSyntropicHero = () => (
- <main className="kok-home ksa-page">
+ <div className="kok-home ksa-page">
    <section className="ksa-hero" aria-labelledby="ksa-title">
     <div className="kok-wrap ksa-hero-grid">
       <div className="ksa-hero-copy">
@@ -58,7 +58,7 @@ export const KokonutSyntropicHero = () => (
       <a href="#ksa-mermaid-map">Architecture</a><a href="#ksa-workflow">From field to action</a><a href="#ksa-capabilities">Capabilities</a><a href="#ksa-chains">Chains</a><a href="#ksa-safety">Authority</a><a href="#ksa-maturity">Roadmap</a>
     </nav>
    </section>
- </main>
+ </div>
 );
 export const KokonutSyntropicDiagramFrame = ({children}) => (
  <section className="kok-home ksa-page ksa-diagram" id="ksa-mermaid-map" aria-labelledby="ksa-diagram-title">
@@ -77,7 +77,7 @@ export const KokonutSyntropicDiagramFrame = ({children}) => (
  </section>
 );
 export const KokonutSyntropicExperience = () => (
- <main className="kok-home ksa-page ksa-story">
+ <div className="kok-home ksa-page ksa-story">
   <section className="ksa-philosophy" id="ksa-workflow" aria-labelledby="ksa-workflow-title">
    <div className="kok-wrap">
     <div className="ksa-section-head"><div><p className="ksa-kicker">02 / FROM FIELD TO DECISION</p><h2 id="ksa-workflow-title">Data becomes useful <em>when people can act on it.</em></h2></div><p>Syntropic farming connects ecological succession with daily decisions. The agent is designed to reduce the work of connecting records, identifying gaps and preparing the next step—without displacing operators.</p></div>
@@ -143,5 +143,5 @@ export const KokonutSyntropicExperience = () => (
     </div></div>
   </section>
   <section className="ksa-cta" aria-labelledby="ksa-cta-title"><div className="kok-wrap ksa-cta-grid"><div><p className="ksa-kicker">THE NEXT FARM CYCLE STARTS WITH PEOPLE</p><h2 id="ksa-cta-title">Better farm decisions. <em>Accountable work.</em></h2><p>Bring your expertise in agronomy, data, AI, governance or regenerative finance to help make these tools practical and trustworthy.</p></div><div className="ksa-cta-actions"><a className="kok-btn kok-btn-primary" href="/ecosystem-wiki/open-collaboration-invitation">Explore collaboration ↗</a><a className="kok-btn kok-btn-outline" href="https://link.kokonut.network/discord">Join the community ↗</a></div></div></section>
- </main>
+ </div>
 );
