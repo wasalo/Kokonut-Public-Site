@@ -49,7 +49,12 @@ export const KokonutSyntropicHero = () => (
           <div className="ksa-orbit-node ksa-orbit-data"><small>02 / SOURCE OF TRUTH</small><strong>Intelligence</strong></div>
           <div className="ksa-orbit-node ksa-orbit-review"><small>03 / AUTHORIZATION</small><strong>Human review</strong></div>
           <div className="ksa-orbit-node ksa-orbit-chains"><small>04 / PLANNED ROUTE</small><strong>Protocol + chains</strong></div>
-          <div className="ksa-orbit-core"><div className="ksa-core-symbol" aria-hidden="true">✳</div><strong>SYNTROPIC</strong><span>AGENT / HERMES</span><small>Draft · Analyze · Coordinate</small></div>
+          <div className="ksa-orbit-core">
+            <div className="ksa-core-avatar-wrap">
+              <img src="/images/syntropic-agent-avatar.png" alt="Kokonut Syntropic Agent avatar" className="ksa-core-avatar" width="108" height="108" />
+            </div>
+            <span>AGENT / HERMES</span><small>Draft · Analyze · Coordinate</small>
+          </div>
         </div>
         <div className="ksa-orbit-foot"><span><i aria-hidden="true"></i> REVIEWABLE BY DESIGN</span><span>NO UNRESTRICTED EXECUTION</span></div>
       </div>
@@ -93,7 +98,7 @@ export const KokonutSyntropicExperience = () => (
   </section>
   <section className="ksa-capabilities" id="ksa-capabilities" aria-labelledby="ksa-capabilities-title">
    <div className="kok-wrap">
-    <div className="ksa-section-head"><div><p className="ksa-kicker">03 / WHAT IT CAN BE BUILT TO DO</p><h2 id="ksa-capabilities-title">Six useful capabilities. <em>One accountable teammate.</em></h2></div><p>These are intended product surfaces, not a list of verified features in production. Availability depends on implementation, tested permissions and release maturity.</p></div>
+    <div className="ksa-section-head"><div><p className="ksa-kicker ksa-kicker-with-avatar"><img src="/images/syntropic-agent-avatar.png" alt="" aria-hidden="true" width="42" height="42" loading="lazy" />03 / WHAT IT CAN BE BUILT TO DO</p><h2 id="ksa-capabilities-title">Six useful capabilities. <em>One accountable teammate.</em></h2></div><p>These are intended product surfaces, not a list of verified features in production. Availability depends on implementation, tested permissions and release maturity.</p></div>
     <div className="ksa-capability-grid">{agentCapabilities.map(c=><article className="ksa-capability" key={c.num}><span className="ksa-cap-number">{c.num} / {c.tag}</span><span className="ksa-cap-icon" aria-hidden="true">{c.icon}</span><h3>{c.label}</h3><p>{c.desc}</p></article>)}</div>
    </div>
   </section>
@@ -142,6 +147,6 @@ export const KokonutSyntropicExperience = () => (
       <a href="/build-with-kokonut"><span>CONTRIBUTE</span><strong>Build with Kokonut <b>↗</b></strong></a>
     </div></div>
   </section>
-  <section className="ksa-cta" aria-labelledby="ksa-cta-title"><div className="kok-wrap ksa-cta-grid"><div><p className="ksa-kicker">THE NEXT FARM CYCLE STARTS WITH PEOPLE</p><h2 id="ksa-cta-title">Better farm decisions. <em>Accountable work.</em></h2><p>Bring your expertise in agronomy, data, AI, governance or regenerative finance to help make these tools practical and trustworthy.</p></div><div className="ksa-cta-actions"><a className="kok-btn kok-btn-primary" href="/ecosystem-wiki/open-collaboration-invitation">Explore collaboration ↗</a><a className="kok-btn kok-btn-outline" href="https://link.kokonut.network/discord">Join the community ↗</a></div></div></section>
+  <section className="ksa-cta" aria-labelledby="ksa-cta-title"><div className="kok-wrap ksa-cta-grid"><div><div className="ksa-avatar-chip"><img src="/images/syntropic-agent-avatar.png" alt="" aria-hidden="true" width="52" height="52" loading="lazy" /><span>Kokonut Syntropic Agent</span></div><p className="ksa-kicker">THE NEXT FARM CYCLE STARTS WITH PEOPLE</p><h2 id="ksa-cta-title">Better farm decisions. <em>Accountable work.</em></h2><p>Bring your expertise in agronomy, data, AI, governance or regenerative finance to help make these tools practical and trustworthy.</p></div><div className="ksa-cta-actions"><a className="kok-btn kok-btn-primary" href="/ecosystem-wiki/open-collaboration-invitation">Explore collaboration ↗</a><a className="kok-btn kok-btn-outline" href="https://link.kokonut.network/discord">Join the community ↗</a></div></div></section>
  </div>
 );
