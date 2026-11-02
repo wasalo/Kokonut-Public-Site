@@ -31,7 +31,7 @@ export const KokonutSyntropicHero = () => (
    <section className="ksa-hero" aria-labelledby="ksa-title">
     <div className="kok-wrap ksa-hero-grid">
       <div className="ksa-hero-copy">
-        <p className="ksa-eyebrow"><span className="ksa-pulse" aria-hidden="true"></span> KOKONUT SYN TROPIC AGENT / AI × REAL-WORLD REGENERATION</p>
+        <p className="ksa-eyebrow"><span className="ksa-pulse" aria-hidden="true"></span> KOKONUT SYNTROPIC AGENT / AI × REAL-WORLD REGENERATION</p>
         <h1 id="ksa-title">One agent. <em>Many systems.</em> Real-world regeneration.</h1>
         <p className="ksa-lead">Meet Kokonut's proposed human-supervised AI teammate. It connects farm activity, governed intelligence, community coordination and multichain infrastructure—turning field records into better plans for people to review and act on.</p>
         <p className="ksa-hero-note">The agent prepares and coordinates. Farmers, domain reviewers, organizations and DAO signers make the decisions.</p>
