@@ -115,6 +115,14 @@
         ]
       },
       {
+        "tab": "Syntropic Agent",
+        "icon": "seedling",
+        "pages": [
+          "syntropic-agent",
+          "syntropic-agent-detailed"
+        ]
+      },
+      {
         "tab": "Builders",
         "icon": "hammer-brush",
         "versions": [
@@ -127,8 +135,6 @@
               "rwa-refi-challenge-map",
               "kokonut-protocol",
               "kokonut-x-ai-agents",
-              "syntropic-agent",
-              "syntropic-agent-detailed",
               {
                 "group": "Playbooks",
                 "pages": [

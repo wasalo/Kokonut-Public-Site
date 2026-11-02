@@ -1,63 +1,20 @@
 ---
 title: "Syntropic Agent — AI for Regenerative Coordination"
 sidebarTitle: "Syntropic Agent"
-description: "Meet Kokonut's planned human-supervised AI teammate. Explore the farm-to-decision workflow, governed Intelligence, multichain architecture, Mermaid system map, and evidence-aware roadmap."
+description: "Meet Kokonut's planned human-supervised AI teammate. Explore the farm-to-decision workflow, governed Intelligence, multichain architecture, interactive system architecture, and evidence-aware roadmap."
 icon: "seedling"
 mode: "custom"
 hideFooterPagination: true
 keywords: ["Kokonut Syntropic Agent", "Hermes", "human supervised AI", "syntropic farming", "Kokonut Intelligence", "Kokonut Protocol", "NEAR Chain Signatures", "Virtuals", "regenerative finance", "MRV"]
 ---
 
-import { KokonutSyntropicHero, KokonutSyntropicDiagramIntro, KokonutSyntropicDiagramOutro, KokonutSyntropicExperience } from '/snippets/kokonut-syntropic-agent.jsx';
+import { KokonutSyntropicHero, KokonutSyntropicExperience } from '/snippets/kokonut-syntropic-agent.jsx';
+import { KokonutSyntropicArchitecture } from '/snippets/kokonut-syntropic-architecture.jsx';
 import { KokonutSiteFooter } from '/snippets/kokonut-footer.jsx';
 
 <KokonutSyntropicHero />
 
-<KokonutSyntropicDiagramIntro />
-
-```mermaid
-flowchart LR
-    subgraph FIELD["01 · FARM & COMMUNITY"]
-      PEOPLE["Farm operators, Core Team & community"]
-      FARMS["Adelphi + Terra Viva (planned)"]
-    end
-    subgraph CORE["02 · GOVERNED COORDINATION"]
-      AGENT["SYNTROPIC AGENT / Hermes"]
-      KI["Kokonut Intelligence / governed records"]
-      PROTOCOL["Kokonut Protocol / policy & execution"]
-    end
-    subgraph MULTI["03 · PLANNED CHAIN ORCHESTRATION"]
-      HUB["NEAR Hub / Chain Signatures"]
-      BASE["Base / Virtuals commerce"]
-      GNOSIS["Gnosis / existing DAO & Safe"]
-      CELO["Celo / EAS provenance"]
-      EXTRA["Additional approved chains"]
-    end
-
-    PEOPLE -->|"Direction and review"| AGENT
-    FARMS -->|"Field evidence"| KI
-    AGENT <-->|"Scoped reads and drafts"| KI
-    AGENT -->|"Proposals, not self-approval"| PROTOCOL
-    PEOPLE -->|"Independent authorization"| PROTOCOL
-    KI <--> PROTOCOL
-    PROTOCOL -->|"Approved requests"| HUB
-    HUB --> BASE
-    HUB --> GNOSIS
-    HUB --> CELO
-    HUB --> EXTRA
-    KI -->|"Reviewable feedback"| FARMS
-
-    classDef agent fill:#FFCD00,color:#171717,stroke:#B88600,stroke-width:3px
-    classDef core fill:#0D653B,color:#FFFFFF,stroke:#009F4D,stroke-width:2px
-    classDef land fill:#E7F5E6,color:#164328,stroke:#5B9A69,stroke-width:2px
-    classDef network fill:#174631,color:#FFFFFF,stroke:#67A57D,stroke-width:2px
-    class AGENT agent
-    class KI,PROTOCOL,HUB core
-    class PEOPLE,FARMS land
-    class BASE,GNOSIS,CELO,EXTRA network
-```
-
-<KokonutSyntropicDiagramOutro />
+<KokonutSyntropicArchitecture />
 
 <KokonutSyntropicExperience />
 
