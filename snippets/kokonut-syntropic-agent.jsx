@@ -3,7 +3,8 @@
  * public Syntropic Agent PRD at /syntropic-agent-detailed.
  *
  * No simulated live metrics, deployed-token claims, or automatic approvals.
- * The native Mermaid graph is composed in the parent MDX page.
+ * The architecture atlas is a standalone, interactive system visualization.
+ * The complete native Mermaid source remains in the detailed technical reference.
  */
 const agentCapabilities = [
  {num:"01",icon:"✳",label:"Farm intelligence",desc:"Organize crops, soil, water, nurseries, harvests and operator follow-ups into useful plans.",tag:"FIELD OPERATIONS"},
@@ -36,7 +37,7 @@ export const KokonutSyntropicHero = () => (
         <p className="ksa-lead">Meet Kokonut's proposed human-supervised AI teammate. It connects farm activity, governed intelligence, community coordination and multichain infrastructure—turning field records into better plans for people to review and act on.</p>
         <p className="ksa-hero-note">The agent prepares and coordinates. Farmers, domain reviewers, organizations and DAO signers make the decisions.</p>
         <div className="ksa-actions">
-          <a className="kok-btn kok-btn-primary" href="#ksa-mermaid-map">Explore the system map <span aria-hidden="true">↗</span></a>
+          <a className="kok-btn kok-btn-primary" href="#ksa-mermaid-map">Explore the architecture <span aria-hidden="true">↗</span></a>
           <a className="kok-btn kok-btn-outline" href="/syntropic-agent-detailed">Read full architecture <span aria-hidden="true">↗</span></a>
         </div>
         <div className="ksa-hero-status"><span className="ksa-status-dot" aria-hidden="true"></span> PRODUCT DIRECTION / ROADMAP — NOT A CLAIM OF DEPLOYMENT</div>
@@ -64,40 +65,6 @@ export const KokonutSyntropicHero = () => (
     </nav>
    </section>
  </div>
-);
-/**
- * Diagram heading and diagram follow-up are deliberately separate components.
- * Native Mermaid code fences live at MDX top level between them, not as
- * children of an imported React snippet or an MDX <main> wrapper.
- */
-export const KokonutSyntropicDiagramIntro = () => (
-  <section className="kok-home ksa-page ksa-diagram-intro" id="ksa-mermaid-map" aria-labelledby="ksa-diagram-title">
-    <div className="kok-wrap">
-      <div className="ksa-diagram-heading">
-        <div>
-          <p className="ksa-kicker">01 / THE ARCHITECTURE</p>
-          <h2 id="ksa-diagram-title">See the connections. <em>Keep the boundaries.</em></h2>
-        </div>
-        <p>The Mermaid graph maps the intended orchestration design. It shows which systems own records, which coordinate approvals, and where destination chains fit—not a claim that the whole architecture is deployed.</p>
-      </div>
-      <div className="ksa-mermaid-toolbar" aria-label="Architecture diagram title">
-        <span><i aria-hidden="true"></i> SYSTEM MAP / MERMAID</span>
-        <span>PLANNED ORCHESTRATION</span>
-      </div>
-    </div>
-  </section>
-);
-export const KokonutSyntropicDiagramOutro = () => (
-  <div className="kok-home ksa-page ksa-diagram-outro">
-    <div className="kok-wrap">
-      <div className="ksa-mermaid-legend" aria-label="Architecture diagram legend">
-        <span><i className="ksa-legend-yellow"></i> Agent coordination</span>
-        <span><i className="ksa-legend-green"></i> Governed systems</span>
-        <span><i className="ksa-legend-muted"></i> Destination networks</span>
-      </div>
-      <p className="ksa-mermaid-caption">A Chain Signature is not a completed transaction. Execution still requires authorization, broadcast, confirmation, verification and reconciliation. <a href="/syntropic-agent-detailed">Inspect the original architecture and its complete boundary table ↗</a></p>
-    </div>
-  </div>
 );
 export const KokonutSyntropicExperience = () => (
  <div className="kok-home ksa-page ksa-story">
