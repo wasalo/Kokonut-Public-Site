@@ -1643,3 +1643,125 @@
 }
 /* The native Mermaid block may be given its own Mintlify container.
    Don't hard-code renderer internals or CSS that could hide its controls. */
+
+
+/* ---------------------------------------------------------------------------
+   SYNTROPIC AGENT — INTERACTIVE ARCHITECTURE ATLAS
+   Source of truth: original ten-node / twelve-relationship Mermaid diagram,
+   preserved verbatim at /syntropic-agent-detailed.
+   A scoped, interactive landing-page visualization—not a production monitor.
+   Kokonut official green #009F4D, yellow #FFCD00, charcoal #171717.
+   --------------------------------------------------------------------------- */
+.ksa-page.ksa-atlas{background:radial-gradient(ellipse at 80% 19%,#194a35 0%,transparent 38%),linear-gradient(180deg,#081e16 0%,#103c2a 64%,#103522 100%);color:#fff;padding:108px 0 100px;overflow:hidden}
+.ksa-atlas .ksa-atlas-heading{display:flex;justify-content:space-between;align-items:end;gap:50px;margin-bottom:35px}
+.ksa-atlas .ksa-atlas-heading-copy{max-width:855px}
+.ksa-atlas .ksa-kicker{color:#FFCD00}
+.ksa-atlas .ksa-atlas-heading h2{font-size:clamp(36px,4.6vw,64px);letter-spacing:-.06em;max-width:750px;margin:0 0 19px;color:#fff;line-height:1.08}
+.ksa-atlas .ksa-atlas-heading h2 em{color:#FFCD00}
+.ksa-atlas .ksa-atlas-heading-copy>p:not(.ksa-kicker){max-width:800px;font-size:16px;line-height:1.8;color:#c6decd;margin:0}
+.ksa-atlas .ksa-atlas-counter{display:flex;flex-direction:column;align-items:flex-start;gap:5px;min-width:175px;padding:23px;border:1px solid #608e6b88;border-radius:14px;background:#113827}
+.ksa-atlas .ksa-atlas-counter>strong{font-size:50px;line-height:1;letter-spacing:-.06em;color:#FFCD00}
+.ksa-atlas .ksa-atlas-counter>strong span{font-size:14px;letter-spacing:0;font-weight:600;color:#e0f2de}
+.ksa-atlas .ksa-atlas-counter small{font-size:12px;color:#c7ddcd}
+.ksa-atlas .ksa-atlas-counter-dot{font-size:9px;letter-spacing:.09em;font-weight:850;color:#FFCD00;margin-top:10px}
+.ksa-atlas .ksa-atlas-frame{border:1px solid #5e957265;border-radius:20px;background:radial-gradient(ellipse at 48% 48%,#174732 0%,#0b281c 78%);overflow:hidden;box-shadow:0 25px 65px #0004}
+.ksa-atlas .ksa-atlas-topbar{display:flex;justify-content:space-between;align-items:center;gap:20px;padding:19px 25px;background:#071f15;border-bottom:1px solid #4c825a83;color:#e8f2e8}
+.ksa-atlas .ksa-atlas-topbar>div{display:flex;gap:11px;align-items:center;font-size:10px;letter-spacing:.14em;font-weight:850}
+.ksa-atlas .ksa-atlas-topbar strong{font-size:10px;color:#FFCD00;letter-spacing:.09em;margin-left:7px}
+.ksa-atlas .ksa-atlas-live-dot{width:8px;height:8px;border-radius:50%;background:#FFCD00;display:inline-block}
+.ksa-atlas .ksa-atlas-topbar-status{font-size:9px;letter-spacing:.1em;color:#c0d9c4;font-weight:800;text-align:right}
+.ksa-atlas .ksa-atlas-desktop-tip{padding:13px 25px;border-bottom:1px solid #61916a3b;background:#153a29;color:#c4e2c7;font-size:12px}
+.ksa-atlas .ksa-atlas-viewport{overflow-x:auto;overflow-y:hidden;scrollbar-color:#608e6d #0b291c;scrollbar-width:thin;outline-offset:-3px;overscroll-behavior-x:contain}
+.ksa-atlas .ksa-atlas-viewport:focus-visible{outline:3px solid #FFCD00}
+.ksa-atlas .ksa-atlas-canvas{width:1180px;height:665px;position:relative;margin:0 auto;background-image:linear-gradient(#8fc59a0a 1px,transparent 1px),linear-gradient(90deg,#8fc59a0a 1px,transparent 1px);background-size:36px 36px}
+.ksa-atlas .ksa-atlas-column{position:absolute;z-index:1;top:23px;display:flex;flex-direction:column;gap:5px;font-size:10px;letter-spacing:.11em;font-weight:850;color:#c6e9c3}
+.ksa-atlas .ksa-atlas-column small{font-size:10px;letter-spacing:0;font-weight:500;color:#87b497}
+.ksa-atlas .ksa-atlas-col-field{left:30px}.ksa-atlas .ksa-atlas-col-core{left:356px}.ksa-atlas .ksa-atlas-col-hub{left:716px}.ksa-atlas .ksa-atlas-col-chains{left:974px}
+.ksa-atlas .ksa-atlas-wires{position:absolute;z-index:1;inset:0;width:1180px;height:665px;pointer-events:none;overflow:visible}
+.ksa-atlas .ksa-atlas-wire{stroke:#93c19a77;stroke-width:2.4;fill:none;stroke-linejoin:round;stroke-linecap:round;transition:stroke .2s ease,stroke-width .2s ease,opacity .2s ease;opacity:.64}
+.ksa-atlas .ksa-atlas-wire.is-related{stroke:#FFCD00;stroke-width:3.8;opacity:1;filter:drop-shadow(0 0 4px #FFCD0066)}
+.ksa-atlas .ksa-atlas-node{z-index:2;position:absolute;width:200px;min-height:101px;display:flex;gap:10px;align-items:center;text-align:left;color:#fff;cursor:pointer;border:1px solid #629772a3;border-radius:12px;background:linear-gradient(145deg,#163d2b,#0f2e20);padding:13px 12px;font-family:inherit;box-shadow:0 9px 21px #001b0e38;transition:transform .16s ease,border-color .16s ease,box-shadow .16s ease}
+.ksa-atlas .ksa-atlas-node:hover{border-color:#FFCD00;transform:translateY(-3px)}
+.ksa-atlas .ksa-atlas-node.is-selected{border:2px solid #FFCD00;background:linear-gradient(130deg,#2c6440,#16432d);box-shadow:0 0 0 5px #FFCD0018,0 14px 36px #0005}
+.ksa-atlas .ksa-atlas-node:focus-visible,.ksa-atlas .ksa-atlas-mobile-node:focus-visible{outline:3px solid #FFCD00;outline-offset:4px}
+.ksa-atlas .ksa-atlas-node-copy{min-width:0;display:flex;flex-direction:column;gap:6px}
+.ksa-atlas .ksa-atlas-node strong{font-size:13px;line-height:1.3;font-weight:850;letter-spacing:-.01em}
+.ksa-atlas .ksa-atlas-node small{font-size:10px;line-height:1.4;color:#badcc2}
+.ksa-atlas .ksa-atlas-glyph{flex-shrink:0;width:34px;height:34px;border:1px solid #77b58a7d;border-radius:9px;background:#205c39;color:#FFCD00;font-size:19px;display:flex;align-items:center;justify-content:center;font-weight:850}
+.ksa-atlas .ksa-atlas-core{width:224px}
+.ksa-atlas .ksa-atlas-agent{min-height:149px;width:224px;background:linear-gradient(140deg,#265d3b,#15402d);border-color:#FFCD008c}
+.ksa-atlas .ksa-atlas-avatar{width:56px;height:56px;object-fit:contain;border-radius:13px;background:#000;flex-shrink:0;border:2px solid #FFCD00}
+.ksa-atlas .ksa-atlas-agent strong{font-size:17px;color:#FFCD00}
+.ksa-atlas .ksa-atlas-agent small{font-size:11px}
+.ksa-atlas .ksa-atlas-orchestration{width:208px;min-height:137px;background:linear-gradient(135deg,#205b3c,#15422d);border-color:#FFCD006e}
+.ksa-atlas .ksa-atlas-destination{width:180px;min-height:88px}
+.ksa-atlas .ksa-atlas-destination .ksa-atlas-glyph{width:31px;height:31px;font-size:16px}
+.ksa-atlas .ksa-atlas-flow-annotation{position:absolute;bottom:17px;left:360px;color:#FFCD00;letter-spacing:.12em;font-size:10px;font-weight:850}
+.ksa-atlas .ksa-atlas-mobile{display:none}
+.ksa-atlas .ksa-atlas-inspector{display:grid;grid-template-columns:.9fr 1.1fr;gap:34px;padding:32px;border-top:1px solid #63947081;background:linear-gradient(108deg,#123a28,#174833);min-height:300px}
+.ksa-atlas .ksa-atlas-inspector-main{border-right:1px solid #7cb08a4c;padding-right:25px}
+.ksa-atlas .ksa-atlas-inspector-kicker{color:#FFCD00;font-size:10px;letter-spacing:.12em;font-weight:850;margin:0 0 13px}
+.ksa-atlas .ksa-atlas-inspector h3{font-size:29px;letter-spacing:-.035em;line-height:1.2;margin:0 0 13px;color:#fff}
+.ksa-atlas .ksa-atlas-inspector-main>p:not(.ksa-atlas-inspector-kicker){color:#d2e4d6;font-size:14px;line-height:1.75;margin:0}
+.ksa-atlas .ksa-atlas-status{display:inline-flex;align-items:center;gap:9px;border:1px solid #91bc9368;background:#20553a;padding:10px 12px;border-radius:20px;font-size:10px;font-weight:850;letter-spacing:.04em;color:#f1e9b3;margin-top:21px;line-height:1.5}
+.ksa-atlas .ksa-atlas-status span{display:block;flex-shrink:0;background:#FFCD00;border-radius:50%;width:7px;height:7px}
+.ksa-atlas .ksa-atlas-connections h4{font-size:16px;margin:0 0 15px;display:flex;justify-content:space-between;gap:10px;align-items:center;color:#fff}
+.ksa-atlas .ksa-atlas-connections h4 span{color:#c0d8c5;font-size:11px;font-weight:500}
+.ksa-atlas .ksa-atlas-connection-list{max-height:300px;overflow-y:auto;scrollbar-color:#5b976f #16402d;padding-right:10px}
+.ksa-atlas .ksa-atlas-connection{display:grid;grid-template-columns:47px 1fr;gap:3px 10px;padding:10px 0;border-bottom:1px solid #78a8863d}
+.ksa-atlas .ksa-atlas-connection>span{grid-row:1/3;font-size:10px;letter-spacing:.07em;color:#FFCD00;font-weight:850;align-self:center}
+.ksa-atlas .ksa-atlas-connection strong{font-size:12px;color:#edf6ea}
+.ksa-atlas .ksa-atlas-connection small{font-size:11px;color:#b9d7c2;line-height:1.5}
+.ksa-atlas .ksa-atlas-bottomline{display:flex;align-items:center;justify-content:space-between;gap:15px 25px;flex-wrap:wrap;padding:20px 31px;border-top:1px solid #59836466;background:#0a281a}
+.ksa-atlas .ksa-atlas-bottomline>span{font-size:10px;letter-spacing:.11em;color:#c0d4c3;font-weight:750;display:flex;align-items:center;gap:10px}
+.ksa-atlas .ksa-atlas-bottomline i{display:inline-block;width:7px;height:7px;border-radius:50%;background:#FFCD00}
+.ksa-atlas .ksa-atlas-bottomline a{font-size:12px;color:#FFCD00!important;font-weight:850}
+.ksa-atlas .ksa-atlas-guardrails{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:15px;margin-top:25px}
+.ksa-atlas .ksa-atlas-guardrails>div{padding:26px 24px;background:#17452d;border:1px solid #6c9b7770;border-radius:13px}
+.ksa-atlas .ksa-atlas-guardrails span{color:#FFCD00;letter-spacing:.09em;font-size:10px;font-weight:850}
+.ksa-atlas .ksa-atlas-guardrails strong{display:block;margin:15px 0 9px;color:#fff;line-height:1.3;font-size:17px}
+.ksa-atlas .ksa-atlas-guardrails p{font-size:12px;line-height:1.7;color:#c5dccb;margin:0}
+@media(max-width:1130px){
+ .ksa-atlas .ksa-atlas-canvas{margin:0}
+ .ksa-atlas .ksa-atlas-viewport{scroll-padding-left:24px}
+}
+@media(max-width:820px){
+ .ksa-page.ksa-atlas{padding:78px 0 73px}
+ .ksa-atlas .ksa-atlas-heading{display:block}
+ .ksa-atlas .ksa-atlas-counter{margin-top:25px;max-width:250px}
+ .ksa-atlas .ksa-atlas-topbar{padding:16px}
+ .ksa-atlas .ksa-atlas-desktop-tip{padding:12px 16px}
+ .ksa-atlas .ksa-atlas-inspector{grid-template-columns:1fr;gap:20px;padding:25px}
+ .ksa-atlas .ksa-atlas-inspector-main{border-right:0;border-bottom:1px solid #7cb08a4c;padding:0 0 22px}
+ .ksa-atlas .ksa-atlas-guardrails{grid-template-columns:1fr}
+}
+@media(max-width:680px){
+ .ksa-atlas .ksa-atlas-heading h2{font-size:39px}
+ .ksa-atlas .ksa-atlas-viewport,.ksa-atlas .ksa-atlas-desktop-tip{display:none}
+ .ksa-atlas .ksa-atlas-topbar>div strong{display:none}
+ .ksa-atlas .ksa-atlas-topbar-status{font-size:8px}
+ .ksa-atlas .ksa-atlas-mobile{display:block;padding:18px;background:radial-gradient(circle at 50% 25%,#1c5335,#0a291b 75%)}
+ .ksa-atlas .ksa-atlas-mobile-stage{position:relative;padding:16px 0 20px}
+ .ksa-atlas .ksa-atlas-mobile-stage:not(:last-child):after{content:"↓";position:absolute;bottom:-8px;left:50%;transform:translateX(-50%);font-size:22px;color:#FFCD00;z-index:1}
+ .ksa-atlas .ksa-atlas-stage-label{display:flex;flex-wrap:wrap;justify-content:space-between;gap:8px;margin-bottom:13px}
+ .ksa-atlas .ksa-atlas-stage-label>span{color:#FFCD00;font-size:10px;letter-spacing:.1em;font-weight:850}
+ .ksa-atlas .ksa-atlas-stage-label small{color:#b9d9c0;font-size:10px}
+ .ksa-atlas .ksa-atlas-mobile-nodes{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:9px}
+ .ksa-atlas .ksa-atlas-mobile-node{display:flex;flex-direction:column;align-items:flex-start;gap:8px;text-align:left;min-height:96px;background:#194830;border:1px solid #679e777a;color:white;border-radius:10px;padding:14px;cursor:pointer;font-family:inherit}
+ .ksa-atlas .ksa-atlas-mobile-node.is-selected{border:2px solid #FFCD00;background:#24603c}
+ .ksa-atlas .ksa-atlas-mobile-node img{height:36px;width:36px;border-radius:8px;object-fit:contain;background:#000}
+ .ksa-atlas .ksa-atlas-mobile-node>span{color:#FFCD00;font-size:23px;line-height:1}
+ .ksa-atlas .ksa-atlas-mobile-node strong{font-size:12px;line-height:1.3}
+ .ksa-atlas .ksa-atlas-mobile-node small{color:#b4ddbb;font-size:10px}
+ .ksa-atlas .ksa-atlas-connection-list{max-height:none}
+ .ksa-atlas .ksa-atlas-bottomline{padding:18px}
+}
+@media(max-width:365px){
+ .ksa-atlas .ksa-atlas-mobile-nodes{grid-template-columns:1fr}
+ .ksa-atlas .ksa-atlas-mobile-node{min-height:70px}
+ .ksa-atlas .ksa-atlas-topbar-status{max-width:115px}
+}
+@media(prefers-reduced-motion:reduce){
+ .ksa-atlas .ksa-atlas-wire,.ksa-atlas .ksa-atlas-node{transition:none}
+ .ksa-atlas .ksa-atlas-node:hover{transform:none}
+}
