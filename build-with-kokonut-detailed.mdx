@@ -101,6 +101,9 @@ The important boundaries are:
 | Improve the Knowledge Base, Framework docs, navigation, diagrams, or public builder guidance | [`wasalo/Kokonut-Public-Site`](https://github.com/wasalo/Kokonut-Public-Site) | This repository is the active public documentation surface |
 | Build farm data, governed workflows, analytics, reports, evidence tooling, APIs, or internal agent workflows | [`wasalo/Kokonut-Intelligence`](https://github.com/wasalo/Kokonut-Intelligence) | PostgreSQL + Directus are the canonical schema/API layer; analytics and governed workflows live here |
 | Build agent identity, agent commerce, escrow, service discovery, bidding, marketplace UX, or marketplace integrations | [`wasalo/Kokonut-Agentic-Marketplace`](https://github.com/wasalo/Kokonut-Agentic-Marketplace) | This repository owns the agent-economy / marketplace implementation |
+| Build Syntropic Agent/Hermes integrations, skills, and agent workflows | [`wasalo/Kokonut-Syntropic-Agent`](https://github.com/wasalo/Kokonut-Syntropic-Agent) | Agent-specific official repo; verify implementation availability before using it as a code API |
+| Build cross-chain execution policy and the proposed NEAR hub | [`wasalo/Kokonut-Protocol`](https://github.com/wasalo/Kokonut-Protocol) | Owning repo for Protocol work; proposed deployments must be verified separately |
+| Build Kokonut Foundation publishing, reports, and nonprofit website integrations | [`wasalo/Kokonut-Foundation`](https://github.com/wasalo/Kokonut-Foundation) | Cloudflare-native Foundation platform and public reporting integrations |
 | Build DAO readers, proposal tooling, treasury views, or governance analysis | Start with the documented Gnosis DAO state and Kokonut Intelligence governance metadata | Governance data should be read from the deployed system or canonical indexed records, not duplicated prose |
 | Build against the farm baseline | [Common Data Schema](/kokonut-framework/framework-components/common-data-schema) | The current 13 field names are compatibility-sensitive |
 | Build MRV or evidence tooling | [Measurement, Reporting & Verification](/ecosystem-wiki/kokonut-farms/measurement-reporting-and-verification) | MRV defines the evidence lifecycle and claim boundaries |
@@ -112,7 +115,10 @@ The important boundaries are:
 | --- | --- | --- |
 | [`Kokonut-Public-Site`](https://github.com/wasalo/Kokonut-Public-Site) | Public Knowledge Base and Framework documentation | Active |
 | [`Kokonut-Intelligence`](https://github.com/wasalo/Kokonut-Intelligence) | Governed data, APIs, analytics, reporting, evidence, attestations, internal agent workflows | Active |
-| [`Kokonut-Agentic-Marketplace`](https://github.com/wasalo/Kokonut-Agentic-Marketplace) | Agent identity, services, commerce, escrow, reputation, bidding, marketplace UX, Intelligence integration | Active development |
+| [`Kokonut-Syntropic-Agent`](https://github.com/wasalo/Kokonut-Syntropic-Agent) | Agent-specific orchestration, Hermes integrations and workflow development | README on `main`; verify implementation before use |
+| [`Kokonut-Protocol`](https://github.com/wasalo/Kokonut-Protocol) | Cross-chain policy, signing controls and proposed NEAR hub work | README on `main`; release and deployment unverified |
+| [`Kokonut-Foundation`](https://github.com/wasalo/Kokonut-Foundation) | Nonprofit public platform, publishing, multilingual pages and reporting | Implementation documented in repository |
+| [`Kokonut-Agentic-Marketplace`](https://github.com/wasalo/Kokonut-Agentic-Marketplace) | Agent identity, services, commerce, escrow, reputation, bidding, marketplace UX, Intelligence integration | Implementation on [`develop`](https://github.com/wasalo/Kokonut-Agentic-Marketplace/tree/develop); `main` has no published files |
 
 <Warning>
   Do not assume that an example branch name, contract address, API path, test count, agent count, dashboard count, or deployment target copied into this Knowledge Base will remain current forever. For implementation work, verify those details in the repository that owns them.
@@ -585,10 +591,19 @@ For `Kokonut-Intelligence`:
 - update API/data documentation when a shared interface changes;
 - follow current CI, code-owner, migration, and seed-idempotency rules.
 
+#### Syntropic Agent and Kokonut Protocol
+
+The official [Syntropic Agent](https://github.com/wasalo/Kokonut-Syntropic-Agent) and [Kokonut Protocol](https://github.com/wasalo/Kokonut-Protocol) GitHub repositories are the named project entry points. Their current `main` branches contain only introductory README content. Treat their implementation plans as specifications, and verify actual code, contract addresses, reviewed releases and environment configuration before integration.
+
+#### Kokonut Foundation
+
+The [Kokonut Foundation](https://github.com/wasalo/Kokonut-Foundation) repository contains the separately developed Cloudflare-native public/nonprofit platform. Its reporting and publishing features do not automatically certify Kokonut Intelligence MRV claims.
+
 #### Agentic Marketplace
 
 For `Kokonut-Agentic-Marketplace`:
 
+- start with the [implementation on `develop`](https://github.com/wasalo/Kokonut-Agentic-Marketplace/tree/develop); the GitHub `main` branch currently has no published files;
 - verify the current active branch and deployment configuration in the repository;
 - use the repository's current contract manifests and chain configuration;
 - distinguish testnet from production deployments;
