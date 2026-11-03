@@ -1,22 +1,22 @@
 /**
  * Syntropic Agent: unified public narrative, derived from the latest
  * Base/Virtuals (2026-10-21), NEAR (2026-10-21) and Robinhood/MetaLeX
- * (2026-11-03) PRDs. Public descriptions are product directions,
- * not claims of launched tokens or currently withdrawable farm capital.
+ * (2026-11-03) PRDs. The Virtuals project is now public; proposed services and financial terms
+ * remain subject to separate verification, approval and settlement.
  *
  * This snippet is self-contained: no MDX children, no <main>, no raw Mermaid.
  */
 const syntropicRails = [
   {
     id:"base",count:"01",name:"Base",network:"VIRTUALS · ECONOMYOS · ACP",
-    status:"Token and 60 Days + ACF launch planned",
+    status:"Virtuals project live · service and funding status unverified",
     headline:"Turn intelligence into useful services.",
-    description:"The proposed Base presence connects one Kokonut Syntropic Agent identity with customers and other agents through Virtuals. Its first paid services would help farms assess readiness and understand evidence gaps.",
+    description:"Kokonut Syntropic Agent now has a public Virtuals project page. The intended next step is to build and validate paid services that help farms assess readiness and identify evidence gaps, with independent review for sensitive claims.",
     verbs:["Farm Readiness Snapshot","Regenerative MRV Evidence Gap Report","ACP job delivery and review"],
     journey:"Customer request → Authorized data → Human-reviewed output → Accepted job → Reconciled payment",
     outcome:"Real service demand and recurring commercial value—not an assumed token valuation.",
-    warning:"Virtuals token issuance, 60 Days and ACF terms require launch authorization. Locked proceeds and market capitalization are not operating cash.",
-    link:"https://whitepaper.virtuals.io/"
+    warning:"The live project page does not independently verify ACP availability, ACF configuration, token rights or released funding. Locked proceeds and market capitalization are not spendable farm cash.",
+    link:"https://app.virtuals.io/project/146212"
   },
   {
     id:"near",count:"02",name:"NEAR",network:"KOKONUT PROTOCOL · CHAIN SIGNATURES",
@@ -101,7 +101,7 @@ export const KokonutSyntropicEcosystem = () => {
               <div className="ksa-multi-detail-bottom">
                 <p><strong>Value proposition:</strong> {rail.outcome}</p>
                 <p><strong>Release boundary:</strong> {rail.warning}</p>
-                <a href={rail.link}>Explore the technical context ↗</a>
+                <a href={rail.link} target={rail.id==="base"?"_blank":undefined} rel={rail.id==="base"?"noopener noreferrer":undefined}>{rail.id==="base"?"Open the live Virtuals project ↗":"Explore the technical context ↗"}</a>
               </div>
             </div>
           </div>
