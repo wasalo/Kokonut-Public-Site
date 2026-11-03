@@ -1923,3 +1923,21 @@
 @media(prefers-reduced-motion:reduce){
  .ksa-multichain-story *{scroll-behavior:auto!important}
 }
+
+
+/* Syntropic Agent — official-source cards, scoped to the custom landing. */
+.ksa-page .ksa-sources{background:linear-gradient(145deg,#f0f8ed,#e2f1dd);padding:92px 0 98px}
+.ksa-page .ksa-sources .ksa-section-head h2{color:#173a25}
+.ksa-page .ksa-source-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+.ksa-page .ksa-source-card{display:flex;flex-direction:column;gap:13px;border-radius:16px;padding:26px;border:1px solid #bfd8c0;background:#fff;color:#173a25!important;text-decoration:none!important;min-height:246px;box-shadow:0 12px 35px #0e451114;transition:border-color .2s ease,transform .2s ease,box-shadow .2s ease}
+.ksa-page .ksa-source-card:hover{border-color:#009F4D;transform:translateY(-3px);box-shadow:0 15px 37px #0e451126}
+.ksa-page .ksa-source-card:focus-visible{outline:3px solid #009F4D;outline-offset:3px}
+.ksa-page .ksa-source-card>span{font-size:10px;font-weight:850;color:#127a3b;letter-spacing:.12em}
+.ksa-page .ksa-source-card strong{font-size:23px;line-height:1.25;letter-spacing:-.035em;color:#153b26}
+.ksa-page .ksa-source-card p{color:#496b55;font-size:13px;line-height:1.75;margin:0}
+.ksa-page .ksa-source-card small{color:#08783d;font-size:12px;font-weight:850;margin-top:auto}
+.ksa-page .ksa-sources-more{margin:24px 0 0;color:#415d47;font-size:13px;line-height:1.7}
+.ksa-page .ksa-sources-more a{color:#08783d!important;font-weight:800;text-decoration:underline}
+@media(max-width:850px){.ksa-page .ksa-source-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:570px){.ksa-page .ksa-sources{padding:70px 0}.ksa-page .ksa-source-grid{grid-template-columns:1fr}.ksa-page .ksa-source-card{min-height:200px}}
+@media(prefers-reduced-motion:reduce){.ksa-page .ksa-source-card{transition:none}.ksa-page .ksa-source-card:hover{transform:none}}
