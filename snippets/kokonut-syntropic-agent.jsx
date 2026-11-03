@@ -15,7 +15,7 @@ const agentCapabilities = [
  {num:"06",icon:"↻",label:"Shared learning",desc:"Help teams compare approved results and adapt practices to the next local context.",tag:"REPLICATION SUPPORT"}
 ];
 const chainRoles=[
- {network:"Base",label:"Virtuals agent commerce",details:"Planned token-first Virtuals 60 Days + ACF launch and ACP farm services; subject to approvals. Base token rights remain separate from NEAR and Robinhood.",status:"PROPOSED",glyph:"B"},
+ {network:"Base",label:"Virtuals agent presence",details:"Syntropic Agent's Virtuals project page is now public. ACP services, platform capital-formation settings and released proceeds require separate confirmation; token rights remain chain-specific.",status:"PROJECT LIVE",glyph:"B"},
  {network:"NEAR",label:"Cross-chain policy hub",details:"Proposed Kokonut Protocol coordination through authorized Chain Signatures, destination execution and reconciliation; a distinct Nearly-native economy is separately planned.",status:"PROPOSED",glyph:"N"},
  {network:"Robinhood",label:"Regenerative asset finance",details:"Proposed PONS creator-fee accounting, project Revenue Containers and legally gated MetaLeX issuer/agreements. Deployment and launch eligibility require independent verification.",status:"PROPOSED",glyph:"R"},
  {network:"Gnosis",label:"Existing DAO + Safe",details:"DAO and Safe infrastructure exists independently of the agent; owner approvals remain required.",status:"EXISTING INFRASTRUCTURE",glyph:"G"},
@@ -23,9 +23,10 @@ const chainRoles=[
 ];
 const milestones=[
  {name:"Strategic design",status:"Specification prepared",level:"specified"},
+ {name:"Virtuals project launch",status:"Live · Official project listing",level:"live"},
  {name:"Hermes + Intelligence integrations",status:"Planned / integration-dependent",level:"planned"},
  {name:"NEAR Hub + approved cross-chain demonstration",status:"Proposed / not deployed",level:"planned"},
- {name:"Base / Virtuals service and capital trial",status:"Launch and ACP validation pending",level:"planned"},
+ {name:"Base / Virtuals services and capital trial",status:"Project live · ACP/ACF release status unverified",level:"planned"},
  {name:"Robinhood creator-fee and Revenue Container pilot",status:"PONS + issuer gates pending",level:"planned"},
  {name:"Reviewed farm operating proof",status:"Planned",level:"planned"}
 ];
@@ -38,11 +39,16 @@ export const KokonutSyntropicHero = () => (
         <h1 id="ksa-title">One agent. <em>Many systems.</em> Real-world regeneration.</h1>
         <p className="ksa-lead">Meet Kokonut's human-supervised AI teammate, designed to connect farm operations, governed intelligence, useful services and accountable onchain coordination. Its mission is to turn real field records into better decisions—and help direct available resources toward regenerative outcomes.</p>
         <p className="ksa-hero-note">The agent prepares and coordinates. Farmers, domain reviewers, organizations and DAO signers make the decisions.</p>
+        <a className="ksa-virtuals-live" href="https://app.virtuals.io/project/146212" target="_blank" rel="noopener noreferrer" aria-label="Explore Kokonut Syntropic Agent's live Virtuals project, opens in a new tab">
+          <span className="ksa-virtuals-live-dot" aria-hidden="true"></span>
+          <span className="ksa-virtuals-live-copy"><strong>NOW LIVE ON VIRTUALS</strong><small>Explore the official Syntropic Agent project page</small></span>
+          <span className="ksa-virtuals-live-arrow" aria-hidden="true">↗</span>
+        </a>
         <div className="ksa-actions">
           <a className="kok-btn kok-btn-primary" href="#ksa-mermaid-map">Explore the architecture <span aria-hidden="true">↗</span></a>
           <a className="kok-btn kok-btn-outline" href="/syntropic-agent-detailed">Read full architecture <span aria-hidden="true">↗</span></a>
         </div>
-        <div className="ksa-hero-status"><span className="ksa-status-dot" aria-hidden="true"></span> PRODUCT DIRECTION / ROADMAP — NOT A CLAIM OF DEPLOYMENT</div>
+        <div className="ksa-hero-status"><span className="ksa-status-dot" aria-hidden="true"></span> VIRTUALS PROJECT LIVE · ACP SERVICES &amp; CROSS-CHAIN INTEGRATIONS HAVE SEPARATE RELEASE GATES</div>
       </div>
       <div className="ksa-orbit-card" role="img" aria-label="Illustrative orchestration loop with Syntropic Agent in the center, connecting farm records, governed intelligence, human review and planned multichain execution.">
         <div className="ksa-orbit-card-top"><span>THE COORDINATION LAYER</span><span>CONCEPT / 01</span></div>
@@ -121,7 +127,7 @@ export const KokonutSyntropicExperience = () => (
   <section className="ksa-maturity" id="ksa-maturity" aria-labelledby="ksa-maturity-title">
    <div className="kok-wrap">
     <div className="ksa-section-head"><div><p className="ksa-kicker">10 / MILESTONES &amp; PROOF</p><h2 id="ksa-maturity-title">Plans are visible. <em>Proof must be earned.</em></h2></div><p>We distinguish specifications, integration targets, released services, and evidence-backed real-world outcomes. No fabricated live counters or unverified revenue totals are displayed.</p></div>
-    <div className="ksa-roadmap">{milestones.map((m,i)=><div className="ksa-roadmap-row" key={m.name}><span className="ksa-roadmap-index">{String(i+1).padStart(2,"0")}</span><strong>{m.name}</strong><span className={m.level==="specified"?"ksa-roadmap-status is-specified":"ksa-roadmap-status"}>{m.status}</span></div>)}</div>
+    <div className="ksa-roadmap">{milestones.map((m,i)=><div className="ksa-roadmap-row" key={m.name}><span className="ksa-roadmap-index">{String(i+1).padStart(2,"0")}</span><strong>{m.name}</strong><span className={m.level==="live"?"ksa-roadmap-status is-live":m.level==="specified"?"ksa-roadmap-status is-specified":"ksa-roadmap-status"}>{m.status}</span></div>)}</div>
     <div className="ksa-proof-cta"><div><span>PUBLIC EVIDENCE IS THE STARTING POINT</span><strong>Explore Adelphi's existing records—not simulated agent metrics.</strong></div><a className="kok-btn kok-btn-primary" href="https://hub.kokonut.network/projects/41">View Adelphi Data Hub ↗</a></div>
    </div>
   </section>
