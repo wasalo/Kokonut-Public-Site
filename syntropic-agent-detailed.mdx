@@ -236,13 +236,17 @@ The practical builder entry points are:
 | Resource | Use it for |
 | --- | --- |
 | [Build with Kokonut](/build-with-kokonut) | Contribution rules, data contracts, and repo orientation |
+| [Syntropic Agent repository](https://github.com/wasalo/Kokonut-Syntropic-Agent) | Official agent-specific codebase; check the default branch for published implementation before relying on features |
 | [Kokonut Intelligence repository](https://github.com/wasalo/Kokonut-Intelligence) | Governed data, existing agent tasks, safety controls, and APIs |
 | [Kokonut Protocol repository](https://github.com/wasalo/Kokonut-Protocol) | NEAR Hub contracts and chain adapter implementation when published |
+| [Agentic Marketplace repository](https://github.com/wasalo/Kokonut-Agentic-Marketplace) | Agent-to-agent services, escrow, marketplace development; implementation files currently on the [`develop` branch](https://github.com/wasalo/Kokonut-Agentic-Marketplace/tree/develop) |
 | [Kokonut × AI Agents](/kokonut-x-ai-agents) | Identity, permissions, provenance, and human-review rules |
 | [Kokonut Framework](/kokonut-framework/Introduction) | Agricultural methodology and impact interpretation |
 | [NEAR Chain Abstraction](https://docs.near.org/chain-abstraction/what-is) | Underlying cross-chain signing concepts |
 | [Nearly launch documentation](https://nearly.trade/docs) | Planned NEAR token launch configuration |
 | [Virtuals documentation](https://whitepaper.virtuals.io/) | Planned Base capital formation and agent economy |
+
+**Repository precedence:** These are the official GitHub project entry points. The agent and Protocol default branches currently contain introductory README files; their described future work is not a deployment record. Verify branch history, release tags, contracts and current operating environments rather than assuming that a linked repository proves a feature is running.
 
 For integrations, start with an allowlisted **read or draft-only capability**, an explicit data policy, test fixtures, and a human-review path. Do not build against a presumed live API, contract address, token ticker, or signer permission that has not been published.
 
