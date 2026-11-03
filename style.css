@@ -1941,3 +1941,17 @@
 @media(max-width:850px){.ksa-page .ksa-source-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media(max-width:570px){.ksa-page .ksa-sources{padding:70px 0}.ksa-page .ksa-source-grid{grid-template-columns:1fr}.ksa-page .ksa-source-card{min-height:200px}}
 @media(prefers-reduced-motion:reduce){.ksa-page .ksa-source-card{transition:none}.ksa-page .ksa-source-card:hover{transform:none}}
+
+
+/* Syntropic Agent public Virtuals launch: scoped hero milestone, no token-price claims. */
+.ksa-hero .ksa-virtuals-live{display:inline-flex;align-items:center;gap:14px;max-width:100%;padding:13px 17px;margin:10px 0 4px;border:1px solid #FFCD00a8;border-radius:12px;background:linear-gradient(115deg,#214a30,#143624);text-decoration:none!important;color:#f9fff7!important;box-shadow:0 8px 24px #05170f48;transition:background .2s ease,border-color .2s ease}
+.ksa-hero .ksa-virtuals-live:hover{background:linear-gradient(115deg,#2b6841,#183d2c);border-color:#FFCD00}
+.ksa-hero .ksa-virtuals-live:focus-visible{outline:3px solid #FFCD00;outline-offset:4px}
+.ksa-hero .ksa-virtuals-live-dot{display:block;flex:0 0 auto;width:10px;height:10px;background:#FFCD00;border-radius:50%;box-shadow:0 0 0 5px #FFCD0022}
+.ksa-hero .ksa-virtuals-live-copy{display:flex;flex-direction:column;gap:4px;min-width:0}
+.ksa-hero .ksa-virtuals-live-copy strong{font-size:12px;letter-spacing:.12em;font-weight:850;color:#FFCD00}
+.ksa-hero .ksa-virtuals-live-copy small{font-size:12px;color:#d3e6d5;line-height:1.5}
+.ksa-hero .ksa-virtuals-live-arrow{color:#FFCD00;font-size:19px;line-height:1;align-self:center;margin-left:10px}
+.ksa-roadmap-status.is-live{background:#d6f3dc;color:#0b7132;border:1px solid #73b887}
+@media(max-width:570px){.ksa-hero .ksa-virtuals-live{width:100%;padding:13px 14px}.ksa-hero .ksa-virtuals-live-arrow{margin-left:auto}.ksa-hero .ksa-virtuals-live-copy strong{font-size:11px}}
+@media(prefers-reduced-motion:reduce){.ksa-hero .ksa-virtuals-live{transition:none}}
