@@ -2,10 +2,10 @@
  * SYNTROPIC AGENT — ARCHITECTURE ATLAS
  *
  * An accessible, interactive visual interpretation of the canonical Mermaid
- * flowchart in syntropic-agent-detailed.mdx (10 nodes, 12 labeled links).
+ * flowchart in syntropic-agent-detailed.mdx (original 10 nodes / 12 links).
  *
  * The source diagram is preserved unchanged in the technical reference.
- * Every link below corresponds to one source relationship; reversible
+ * Original relationships are preserved, with one newly proposed Robinhood adapter. Reversible
  * relations are shown as one connection with a bidirectional indicator.
  * Operational maturity must not be inferred from the diagram's visual state.
  */
@@ -29,16 +29,19 @@ const atlasNodes = [
   {id:"NEAR", label:"NEAR Hub", short:"Chain Signatures orchestration", stage:"ORCHESTRATION", x:716,y:282,
    status:"Planned, not deployed",summary:"Intended to coordinate explicitly approved requests using NEAR Chain Signatures. Signing, broadcasting, finality, verification and reconciliation are separate steps.",
    source:"NEAR Hub / Chain Signatures"},
-  {id:"BASE", label:"Base", short:"Virtuals agent commerce", stage:"DESTINATION", x:974,y:113,
+  {id:"BASE", label:"Base", short:"Virtuals agent commerce", stage:"DESTINATION", x:974,y:98,
    status:"Proposed agent economy",summary:"A proposed agent services and capital-formation surface in Virtuals. Its economics and token rights are distinct from NEAR and do not convey farmland ownership.",
    source:"Base / Virtuals commerce"},
-  {id:"GNOSIS", label:"Gnosis", short:"DAO & Safe infrastructure", stage:"DESTINATION", x:974,y:237,
+  {id:"GNOSIS", label:"Gnosis", short:"DAO & Safe infrastructure", stage:"DESTINATION", x:974,y:207,
    status:"Existing DAO/Safe · adapter planned",summary:"Kokonut's existing governance and Safe infrastructure retains its own owner thresholds and approval rules. An agent cannot use it to self-authorize treasury actions.",
    source:"Gnosis / existing DAO & Safe"},
-  {id:"CELO", label:"Celo", short:"EAS evidence provenance", stage:"DESTINATION", x:974,y:386,
+  {id:"CELO", label:"Celo", short:"EAS evidence provenance", stage:"DESTINATION", x:974,y:316,
    status:"Existing provenance · adapter planned",summary:"Selected evidence and attestations may be anchored for provenance, but a chain receipt never independently proves ecological impact or certifies a claim.",
    source:"Celo / EAS provenance"},
-  {id:"FUTURE", label:"Other approved chains", short:"Scoped integrations only", stage:"DESTINATION", x:974,y:520,
+  {id:"ROBINHOOD", label:"Robinhood Chain", short:"PONS · KRAF · MetaLeX (proposed)", stage:"DESTINATION", x:974,y:425,
+   status:"New finance direction · verification gated",summary:"Proposed finance expansion: PONS creator fees into reconciled treasury receipts, project-specific Revenue Containers, and—only with verified legal rights—MetaLeX-enabled agreements or financing. PONS and MetaLeX chain deployments, permissions and launch terms require independent verification.",
+   source:"Robinhood PRD v2.1 (November 2026); additional proposed adapter"},
+  {id:"FUTURE", label:"Other approved chains", short:"Scoped integrations only", stage:"DESTINATION", x:974,y:534,
    status:"Future / approval-dependent",summary:"Additional networks are considered only with justified utility, defined permissions, secure adapters and appropriate approvals. New integrations do not imply new tokens.",
    source:"Additional approved chains"}
 ];
@@ -51,10 +54,11 @@ const atlasEdges = [
  {from:"PEOPLE",to:"PROTOCOL",label:"Independent authorization",d:"M218 205 C289 205 267 574 356 574"},
  {from:"KI",to:"PROTOCOL",label:"Governed exchange",both:true,d:"M464 425 L464 511"},
  {from:"PROTOCOL",to:"NEAR",label:"Approved requests",d:"M573 582 C684 580 654 350 716 350"},
- {from:"NEAR",to:"BASE",label:"Network action",d:"M922 334 C960 334 944 159 974 159"},
- {from:"NEAR",to:"GNOSIS",label:"Network action",d:"M922 338 C952 338 946 276 974 276"},
- {from:"NEAR",to:"CELO",label:"Network action",d:"M922 348 C951 348 951 425 974 425"},
- {from:"NEAR",to:"FUTURE",label:"Approved integrations",d:"M922 353 C958 353 949 557 974 557"},
+ {from:"NEAR",to:"BASE",label:"Network action",d:"M922 325 C955 325 943 136 974 136"},
+ {from:"NEAR",to:"GNOSIS",label:"Network action",d:"M922 337 C953 337 946 247 974 247"},
+ {from:"NEAR",to:"CELO",label:"Network action",d:"M922 347 C951 347 953 359 974 359"},
+ {from:"NEAR",to:"ROBINHOOD",label:"Future authorized finance adapter",d:"M922 351 C952 351 951 467 974 467"},
+ {from:"NEAR",to:"FUTURE",label:"Approved integrations",d:"M922 358 C958 358 949 577 974 577"},
  {from:"KI",to:"FARMS",label:"Reviewable feedback",d:"M356 406 C294 406 280 500 218 500"}
 ];
 
@@ -79,11 +83,11 @@ export const KokonutSyntropicArchitecture = () => {
           <div className="ksa-atlas-heading-copy">
             <p className="ksa-kicker">01 / SYNTROPIC AGENT — SYSTEM ARCHITECTURE</p>
             <h2 id="ksa-atlas-heading">One living ecosystem. <em>Clear lines of responsibility.</em></h2>
-            <p>This is the original Mermaid architecture reimagined as an explorable system. Follow how field evidence, a supervised agent, human approvals, and proposed chain execution relate—without confusing planned integrations with deployed infrastructure.</p>
+            <p>This explorable system preserves the original Mermaid relationships and adds Robinhood as a proposed future destination. Select a node to understand where evidence, human approval, and chain-specific execution meet—without confusing planned integrations with deployed infrastructure.</p>
           </div>
           <div className="ksa-atlas-counter" aria-label="Architecture scale">
-            <strong>10<span> nodes</span></strong>
-            <small>12 documented relationships</small>
+            <strong>11<span> nodes</span></strong>
+            <small>13 proposed relationships</small>
             <span className="ksa-atlas-counter-dot">SELECT A SYSTEM TO EXPLORE</span>
           </div>
         </div>
@@ -131,7 +135,7 @@ export const KokonutSyntropicArchitecture = () => {
                 >
                   {node.id==="AGENT"
                     ? <img src="/images/syntropic-agent-avatar.png" alt="" width="53" height="53" className="ksa-atlas-avatar"/>
-                    : <span className="ksa-atlas-glyph" aria-hidden="true">{({PEOPLE:"◎",FARMS:"✳",KI:"▤",PROTOCOL:"◇",NEAR:"⟡",BASE:"B",GNOSIS:"G",CELO:"C",FUTURE:"+"})[node.id]}</span>}
+                    : <span className="ksa-atlas-glyph" aria-hidden="true">{({PEOPLE:"◎",FARMS:"✳",KI:"▤",PROTOCOL:"◇",NEAR:"⟡",BASE:"B",GNOSIS:"G",CELO:"C",ROBINHOOD:"R",FUTURE:"+"})[node.id]}</span>}
                   <span className="ksa-atlas-node-copy">
                     <strong>{node.label}</strong>
                     <small>{node.short}</small>
@@ -179,7 +183,7 @@ export const KokonutSyntropicArchitecture = () => {
             </div>
           </div>
           <div className="ksa-atlas-bottomline">
-            <span><i></i> SOURCE GRAPH: 10 NODES / 12 LINKS · NO SELF-APPROVAL</span>
+            <span><i></i> EXPANDED VIEW: 11 NODES / 13 LINKS · ORIGINAL MERMAID PRESERVED</span>
             <a href="/syntropic-agent-detailed">Explore original Mermaid + architecture reference ↗</a>
           </div>
         </div>
