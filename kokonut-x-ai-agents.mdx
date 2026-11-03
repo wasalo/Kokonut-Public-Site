@@ -107,6 +107,8 @@ That artifact still enters Kokonut's governed review process if it is going to b
 
 The Syntropic Agent is a **particular application across these layers**, not a third canonical source of truth or an exception to agent safety.
 
+Its official project entry point is the [Kokonut Syntropic Agent GitHub repository](https://github.com/wasalo/Kokonut-Syntropic-Agent). The currently published `main` branch contains an introductory README; verify subsequent releases before treating the proposed integrations as live.
+
 ---
 
 ## Why Kokonut uses agents
@@ -836,8 +838,11 @@ Before shipping an agent or marketplace integration, confirm:
 
 | Need | Use |
 | --- | --- |
-| Governed data, agent tasks, evidence, analytics, APIs | [Kokonut Intelligence](https://git.kokonut.network/Kokonut-Intelligence/~files) |
-| Marketplace identity, services, commerce, deployments | [Kokonut Marketplace](https://git.kokonut.network/Kokonut-Marketplace/~files) |
+| Governed data, agent tasks, evidence, analytics, APIs | [Kokonut Intelligence GitHub](https://github.com/wasalo/Kokonut-Intelligence) |
+| Syntropic Agent-specific code and future Hermes integrations | [Kokonut Syntropic Agent GitHub](https://github.com/wasalo/Kokonut-Syntropic-Agent) |
+| Cross-chain policy and proposed signing coordination | [Kokonut Protocol GitHub](https://github.com/wasalo/Kokonut-Protocol) |
+| Agent services, escrow, and marketplace contracts | [Kokonut Agentic Marketplace GitHub](https://github.com/wasalo/Kokonut-Agentic-Marketplace) — [implementation branch](https://github.com/wasalo/Kokonut-Agentic-Marketplace/tree/develop) |
+| Separately documented OneDev project hosts | [Intelligence](https://git.kokonut.network/Kokonut-Intelligence/~files) and [Marketplace](https://git.kokonut.network/Kokonut-Marketplace/~files); compare version and deployment state rather than assuming they match GitHub |
 | Ecosystem-wide builder contract | [Build with Kokonut](/build-with-kokonut) |
 | Evidence lifecycle | [MRV Methodology](/ecosystem-wiki/kokonut-farms/measurement-reporting-and-verification) |
 | Baseline compatibility | [Common Data Schema](/kokonut-framework/framework-components/common-data-schema) |
@@ -864,8 +869,8 @@ Before shipping an agent or marketplace integration, confirm:
     Keep the farm baseline compatible without confusing it with operational evidence.
   </Card>
 
-  <Card title="Kokonut Marketplace" icon="store" href="https://git.kokonut.network/Kokonut-Marketplace/~files">
-    Verify the current agent-economy implementation directly in the live repository.
+  <Card title="Kokonut Agentic Marketplace code" icon="store" href="https://github.com/wasalo/Kokonut-Agentic-Marketplace/tree/develop">
+    Inspect the current published GitHub development branch and verify deployments independently.
   </Card>
 
   <Card title="Framework Introduction" icon="scroll" href="/kokonut-framework/Introduction">

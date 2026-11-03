@@ -167,6 +167,21 @@ The existing [Adelphi Data Hub](https://hub.kokonut.network/projects/41) is a re
 
 **Do not substitute one release gate for another.** An existing farm does not prove a live agent; a live token does not prove an asset-backed right; and a verified onchain receipt does not certify an ecological outcome.
 
+## Official implementation repositories
+
+Kokonut publishes the relevant development work in separate GitHub repositories. **Start with the repository that owns the responsibility**, then verify its published branch, release, deployment manifest and contract addresses before claiming a feature is live.
+
+| Responsibility | Official source | What to verify |
+|---|---|---|
+| Human-supervised agent and Hermes integrations | [Kokonut Syntropic Agent](https://github.com/wasalo/Kokonut-Syntropic-Agent) | Agent source and release maturity; the default branch currently contains an introductory README |
+| Governed farm data, finance and evidence | [Kokonut Intelligence](https://github.com/wasalo/Kokonut-Intelligence) | Canonical schemas, access controls, agent interfaces and deployment status |
+| Authorization and cross-chain execution policy | [Kokonut Protocol](https://github.com/wasalo/Kokonut-Protocol) | Implementation progress, signing policy and actual deployments; default branch currently contains an introductory README |
+| Separate agent-to-agent marketplace | [Kokonut Agentic Marketplace](https://github.com/wasalo/Kokonut-Agentic-Marketplace) | Marketplace contracts, services, escrow and onchain configuration; implementation is on [`develop`](https://github.com/wasalo/Kokonut-Agentic-Marketplace/tree/develop) rather than the currently empty `main` branch |
+
+These repositories complement the implementation PRDs. **Code is the source for what is built; verified deployment records and chain state determine what is operating; Kokonut Intelligence governs the farm evidence.** Separate Base, NEAR and Robinhood platform integrations still require their own verification.
+
+---
+
 ## Source provenance and specification boundaries
 
 This public overview was synthesized from three provided implementation specifications:

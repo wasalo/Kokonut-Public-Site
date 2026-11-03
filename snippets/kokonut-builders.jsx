@@ -69,7 +69,7 @@ export const KokonutBuildersExperience = () => (
 
     <section className="kb-surfaces" id="kb-surfaces" aria-labelledby="kb-surfaces-title">
       <div className="kok-wrap">
-        <div className="kb-heading"><div><p className="kok-kicker">02 / CHOOSE YOUR SURFACE</p><h2 id="kb-surfaces-title">Find the system <em>that owns your work.</em></h2></div><p>Three core open-source entry points, with distinct responsibilities. Check their current README, deployment and branch state before implementing integrations.</p></div>
+        <div className="kb-heading"><div><p className="kok-kicker">02 / CHOOSE YOUR SURFACE</p><h2 id="kb-surfaces-title">Find the system <em>that owns your work.</em></h2></div><p>Six official open-source entry points, each with a distinct responsibility. Check their current README, deployment and branch state before implementing integrations.</p></div>
         <div className="kb-repo-grid">
           <article className="kb-repo kb-repo-main">
             <div className="kb-repo-meta"><span>01 / KNOWLEDGE &amp; METHODS</span><span className="kb-repo-state">PUBLIC REPO</span></div>
@@ -95,9 +95,37 @@ export const KokonutBuildersExperience = () => (
             <p>Explore agent identity, services, job coordination, commerce, escrow, reputation, and integration with governed Intelligence.</p>
             <div className="kb-repo-tags"><span>Agents</span><span>Contracts</span><span>Commerce</span></div>
             <a className="kb-repo-link" href="https://github.com/wasalo/Kokonut-Agentic-Marketplace">Inspect the marketplace repo ↗</a>
+            <a className="kb-repo-link kb-repo-link-secondary" href="https://github.com/wasalo/Kokonut-Agentic-Marketplace/tree/develop">View implementation on develop ↗</a>
+          </article>
+          <article className="kb-repo">
+            <div className="kb-repo-meta"><span>04 / SYNTROPIC AI AGENT</span><span className="kb-repo-state kb-repo-state-build">EARLY SOURCE</span></div>
+            <div className="kb-repo-graphic kb-repo-graphic-agents" aria-hidden="true"><span>FARM</span><b>→</b><span>AI</span><b>→</b><span>REVIEW</span></div>
+            <h3>Syntropic Agent</h3>
+            <p>Follow the human-supervised agent's Hermes integrations, farm-analysis workflows and service implementation as code is published.</p>
+            <div className="kb-repo-tags"><span>Hermes</span><span>Agents</span><span>Review</span></div>
+            <a className="kb-repo-link" href="/syntropic-agent">Explore the agent ↗</a>
+            <a className="kb-repo-link kb-repo-link-secondary" href="https://github.com/wasalo/Kokonut-Syntropic-Agent">Official GitHub repository ↗</a>
+          </article>
+          <article className="kb-repo">
+            <div className="kb-repo-meta"><span>05 / CROSS-CHAIN POLICY</span><span className="kb-repo-state kb-repo-state-build">EARLY SOURCE</span></div>
+            <div className="kb-repo-graphic kb-repo-graphic-data" aria-hidden="true"><span>POLICY</span><b>→</b><span>APPROVE</span><b>→</b><span>CHAIN</span></div>
+            <h3>Kokonut Protocol</h3>
+            <p>Explore proposed chain-neutral authorization, NEAR coordination, safe execution and reconciliation architecture.</p>
+            <div className="kb-repo-tags"><span>NEAR</span><span>Policy</span><span>Web3</span></div>
+            <a className="kb-repo-link" href="/kokonut-protocol">Explore the architecture ↗</a>
+            <a className="kb-repo-link kb-repo-link-secondary" href="https://github.com/wasalo/Kokonut-Protocol">Official GitHub repository ↗</a>
+          </article>
+          <article className="kb-repo">
+            <div className="kb-repo-meta"><span>06 / PUBLIC IMPACT PLATFORM</span><span className="kb-repo-state">PUBLIC REPO</span></div>
+            <div className="kb-repo-graphic" aria-hidden="true"><span>FIELD</span><b>→</b><span>REPORT</span><b>→</b><span>PUBLIC</span></div>
+            <h3>Kokonut Foundation</h3>
+            <p>Contribute to the nonprofit's Cloudflare-native website, impact publishing, multilingual content and reporting workflows.</p>
+            <div className="kb-repo-tags"><span>Cloudflare</span><span>Astro</span><span>Reporting</span></div>
+            <a className="kb-repo-link" href="https://kokonut.foundation">Explore the Foundation ↗</a>
+            <a className="kb-repo-link kb-repo-link-secondary" href="https://github.com/wasalo/Kokonut-Foundation">Official GitHub repository ↗</a>
           </article>
         </div>
-        <p className="kb-source-note">Repository status labels describe documented roles, not verification of a particular release, contract deployment, API path, or production environment. Check the owning repositories before shipping.</p>
+        <p className="kb-source-note">These official repositories identify development ownership—not a claim that every implementation or deployment is live. Syntropic Agent and Protocol currently have introductory README content on main; the Marketplace implementation is on develop. Check branches, releases and onchain records before shipping.</p>
       </div>
     </section>
 

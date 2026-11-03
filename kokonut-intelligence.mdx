@@ -668,7 +668,7 @@ Use the live repository's README and `AGENTS.md` as the command source.
 The current high-level local flow is:
 
 ```bash
-git clone https://git.kokonut.network/Kokonut-Intelligence
+git clone https://github.com/wasalo/Kokonut-Intelligence.git
 cd Kokonut-Intelligence
 
 cp .env.example .env
@@ -773,9 +773,16 @@ The active repository contains deeper technical material for:
 | Deployment | Docker / production / sandbox docs |
 | Changes | `CHANGELOG.md` + current commits |
 
-<Card title="Open the live repository" icon="code-branch" href="https://git.kokonut.network/Kokonut-Intelligence/~files">
-  Use the current OneDev repository for implementation details rather than the older GitHub mirror.
-</Card>
+<CardGroup cols={2}>
+  <Card title="Official GitHub source" icon="code-branch" href="https://github.com/wasalo/Kokonut-Intelligence">
+    Inspect the public source repository, README, development history and current implementation documentation.
+  </Card>
+  <Card title="Additional OneDev project" icon="code" href="https://git.kokonut.network/Kokonut-Intelligence/~files">
+    The separately documented OneDev host may contain additional work. Compare branches and release records before treating either host as an authoritative deployment snapshot.
+  </Card>
+</CardGroup>
+
+**Source-of-truth rule:** The owning repository documents code and APIs; confirmed deployments, current chain state, authenticated reviewers and governed farm records determine operational truth. A documentation link does not certify that every feature is live.
 
 ---
 

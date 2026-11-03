@@ -63,7 +63,7 @@ export const KokonutSyntropicHero = () => (
       </div>
     </div>
     <nav className="kok-wrap ksa-jump" aria-label="On this page">
-      <a href="#ksa-mermaid-map">Architecture</a><a href="#ksa-ecosystems">Ecosystems</a><a href="#ksa-economy">Flywheel</a><a href="#ksa-containers">Revenue Containers</a><a href="#ksa-workflow">From field to action</a><a href="#ksa-chains">Chains</a><a href="#ksa-safety">Authority</a><a href="#ksa-maturity">Roadmap</a>
+      <a href="#ksa-mermaid-map">Architecture</a><a href="#ksa-ecosystems">Ecosystems</a><a href="#ksa-economy">Flywheel</a><a href="#ksa-containers">Revenue Containers</a><a href="#ksa-workflow">From field to action</a><a href="#ksa-chains">Chains</a><a href="#ksa-safety">Authority</a><a href="#ksa-maturity">Roadmap</a><a href="#ksa-source-code">Source code</a>
     </nav>
    </section>
  </div>
@@ -134,6 +134,26 @@ export const KokonutSyntropicExperience = () => (
       <a href="/kokonut-protocol"><span>CROSS-CHAIN POLICY</span><strong>Kokonut Protocol <b>↗</b></strong></a>
       <a href="/build-with-kokonut"><span>CONTRIBUTE</span><strong>Build with Kokonut <b>↗</b></strong></a>
     </div></div>
+  </section>
+  <section className="ksa-sources" id="ksa-source-code" aria-labelledby="ksa-source-code-title">
+    <div className="kok-wrap">
+      <div className="ksa-section-head">
+        <div><p className="ksa-kicker">12 / OFFICIAL SOURCE CODE</p><h2 id="ksa-source-code-title">Follow the work. <em>Inspect the source.</em></h2></div>
+        <p>These are Kokonut's official GitHub entry points for the agent and its shared infrastructure. Repository code and roadmaps should be checked for branch, release and deployment status; a link is not a claim that every feature is live.</p>
+      </div>
+      <div className="ksa-source-grid">
+        <a className="ksa-source-card" href="https://github.com/wasalo/Kokonut-Syntropic-Agent" target="_blank" rel="noopener noreferrer">
+          <span>01 / AGENT PROJECT</span><strong>Kokonut Syntropic Agent</strong><p>The agent's own repository, for its implementation and future development.</p><small>View official GitHub ↗</small>
+        </a>
+        <a className="ksa-source-card" href="https://github.com/wasalo/Kokonut-Intelligence" target="_blank" rel="noopener noreferrer">
+          <span>02 / GOVERNED DATA</span><strong>Kokonut Intelligence</strong><p>The operational records, analysis, evidence and permission systems behind the mission.</p><small>View official GitHub ↗</small>
+        </a>
+        <a className="ksa-source-card" href="https://github.com/wasalo/Kokonut-Protocol" target="_blank" rel="noopener noreferrer">
+          <span>03 / PROPOSED ORCHESTRATION</span><strong>Kokonut Protocol</strong><p>The separate policy and cross-chain execution development workstream.</p><small>View official GitHub ↗</small>
+        </a>
+      </div>
+      <p className="ksa-sources-more">Building agentic commerce, evidence tools, or public impact reporting? <a href="/build-with-kokonut-detailed">See the wider repository guide ↗</a></p>
+    </div>
   </section>
   <section className="ksa-cta" aria-labelledby="ksa-cta-title"><div className="kok-wrap ksa-cta-grid"><div><div className="ksa-avatar-chip"><img src="/images/syntropic-agent-avatar.png" alt="" aria-hidden="true" width="52" height="52" loading="lazy" /><span>Kokonut Syntropic Agent</span></div><p className="ksa-kicker">THE NEXT FARM CYCLE STARTS WITH PEOPLE</p><h2 id="ksa-cta-title">Better farm decisions. <em>Accountable work.</em></h2><p>Bring your expertise in agronomy, data, AI, governance or regenerative finance to help make these tools practical and trustworthy.</p></div><div className="ksa-cta-actions"><a className="kok-btn kok-btn-primary" href="/ecosystem-wiki/open-collaboration-invitation">Explore collaboration ↗</a><a className="kok-btn kok-btn-outline" href="https://link.kokonut.network/discord">Join the community ↗</a></div></div></section>
  </div>
