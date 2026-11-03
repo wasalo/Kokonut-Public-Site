@@ -119,6 +119,7 @@
         "icon": "seedling",
         "pages": [
           "syntropic-agent",
+          "syntropic-agent-ecosystem",
           "syntropic-agent-detailed"
         ]
       },
