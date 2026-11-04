@@ -17,17 +17,18 @@ const agentCapabilities = [
 const chainRoles=[
  {network:"Base",label:"Virtuals agent presence",details:"Syntropic Agent's Virtuals project page is now public. ACP services, platform capital-formation settings and released proceeds require separate confirmation; token rights remain chain-specific.",status:"PROJECT LIVE",glyph:"B"},
  {network:"NEAR",label:"Cross-chain policy hub",details:"Proposed Kokonut Protocol coordination through authorized Chain Signatures, destination execution and reconciliation; a distinct Nearly-native economy is separately planned.",status:"PROPOSED",glyph:"N"},
- {network:"Robinhood",label:"Regenerative asset finance",details:"Proposed PONS creator-fee accounting, project Revenue Containers and legally gated MetaLeX issuer/agreements. Deployment and launch eligibility require independent verification.",status:"PROPOSED",glyph:"R"},
+ {network:"Robinhood",label:"PONS project live · finance planned",details:"Kokonut Syntropic Agent's PONS launchpad page is public on Robinhood Chain. Creator-fee accrual, claimed proceeds, project Revenue Containers, and MetaLeX financial instruments each require separate verification and approvals.",status:"PONS PROJECT LIVE",glyph:"R"},
  {network:"Gnosis",label:"Existing DAO + Safe",details:"DAO and Safe infrastructure exists independently of the agent; owner approvals remain required.",status:"EXISTING INFRASTRUCTURE",glyph:"G"},
  {network:"Celo",label:"Evidence provenance",details:"Existing EAS provenance workflows support selected public records; attestations are not scientific proof.",status:"EXISTING INFRASTRUCTURE",glyph:"C"}
 ];
 const milestones=[
  {name:"Strategic design",status:"Specification prepared",level:"specified"},
  {name:"Virtuals project launch",status:"Live · Official project listing",level:"live"},
+ {name:"PONS launchpad presence on Robinhood Chain",status:"Live · Project link published",level:"live"},
  {name:"Hermes + Intelligence integrations",status:"Planned / integration-dependent",level:"planned"},
  {name:"NEAR Hub + approved cross-chain demonstration",status:"Proposed / not deployed",level:"planned"},
  {name:"Base / Virtuals services and capital trial",status:"Project live · ACP/ACF release status unverified",level:"planned"},
- {name:"Robinhood creator-fee and Revenue Container pilot",status:"PONS + issuer gates pending",level:"planned"},
+ {name:"Robinhood creator-fee and Revenue Container pilot",status:"Fee claims, treasury and financial controls pending",level:"planned"},
  {name:"Reviewed farm operating proof",status:"Planned",level:"planned"}
 ];
 export const KokonutSyntropicHero = () => (
@@ -39,16 +40,23 @@ export const KokonutSyntropicHero = () => (
         <h1 id="ksa-title">One agent. <em>Many systems.</em> Real-world regeneration.</h1>
         <p className="ksa-lead">Meet Kokonut's human-supervised AI teammate, designed to connect farm operations, governed intelligence, useful services and accountable onchain coordination. Its mission is to turn real field records into better decisions—and help direct available resources toward regenerative outcomes.</p>
         <p className="ksa-hero-note">The agent prepares and coordinates. Farmers, domain reviewers, organizations and DAO signers make the decisions.</p>
-        <a className="ksa-virtuals-live" href="https://app.virtuals.io/project/146212" target="_blank" rel="noopener noreferrer" aria-label="Explore Kokonut Syntropic Agent's live Virtuals project, opens in a new tab">
-          <span className="ksa-virtuals-live-dot" aria-hidden="true"></span>
-          <span className="ksa-virtuals-live-copy"><strong>NOW LIVE ON VIRTUALS</strong><small>Explore the official Syntropic Agent project page</small></span>
-          <span className="ksa-virtuals-live-arrow" aria-hidden="true">↗</span>
-        </a>
+        <div className="ksa-launch-links" aria-label="Official Syntropic Agent launch pages">
+          <a className="ksa-virtuals-live" href="https://app.virtuals.io/project/146212" target="_blank" rel="noopener noreferrer" aria-label="Explore Kokonut Syntropic Agent on Virtuals, opens in a new tab">
+            <span className="ksa-virtuals-live-dot" aria-hidden="true"></span>
+            <span className="ksa-virtuals-live-copy"><strong>LIVE ON VIRTUALS</strong><small>Official Virtuals project ↗</small></span>
+            <span className="ksa-virtuals-live-arrow" aria-hidden="true">↗</span>
+          </a>
+          <a className="ksa-virtuals-live ksa-pons-live" href="https://ponsfamily.com/launchpad/0xfcf7d1d8880b5b01f8a3578e920992d66de8250c" target="_blank" rel="noopener noreferrer" aria-label="Explore Kokonut Syntropic Agent's PONS launchpad page on Robinhood Chain, opens in a new tab">
+            <span className="ksa-virtuals-live-dot" aria-hidden="true"></span>
+            <span className="ksa-virtuals-live-copy"><strong>LIVE ON PONS</strong><small>Robinhood Chain launchpad ↗</small></span>
+            <span className="ksa-virtuals-live-arrow" aria-hidden="true">↗</span>
+          </a>
+        </div>
         <div className="ksa-actions">
           <a className="kok-btn kok-btn-primary" href="#ksa-mermaid-map">Explore the architecture <span aria-hidden="true">↗</span></a>
           <a className="kok-btn kok-btn-outline" href="/syntropic-agent-detailed">Read full architecture <span aria-hidden="true">↗</span></a>
         </div>
-        <div className="ksa-hero-status"><span className="ksa-status-dot" aria-hidden="true"></span> VIRTUALS PROJECT LIVE · ACP SERVICES &amp; CROSS-CHAIN INTEGRATIONS HAVE SEPARATE RELEASE GATES</div>
+        <div className="ksa-hero-status"><span className="ksa-status-dot" aria-hidden="true"></span> VIRTUALS &amp; PONS PROJECTS LIVE · AGENT SERVICES, CREATOR-FEE PROCEEDS &amp; FINANCIAL INTEGRATIONS REMAIN SEPARATELY GATED</div>
       </div>
       <div className="ksa-orbit-card" role="img" aria-label="Illustrative orchestration loop with Syntropic Agent in the center, connecting farm records, governed intelligence, human review and planned multichain execution.">
         <div className="ksa-orbit-card-top"><span>THE COORDINATION LAYER</span><span>CONCEPT / 01</span></div>
