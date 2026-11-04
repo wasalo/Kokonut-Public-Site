@@ -1955,3 +1955,19 @@
 .ksa-roadmap-status.is-live{background:#d6f3dc;color:#0b7132;border:1px solid #73b887}
 @media(max-width:570px){.ksa-hero .ksa-virtuals-live{width:100%;padding:13px 14px}.ksa-hero .ksa-virtuals-live-arrow{margin-left:auto}.ksa-hero .ksa-virtuals-live-copy strong{font-size:11px}}
 @media(prefers-reduced-motion:reduce){.ksa-hero .ksa-virtuals-live{transition:none}}
+
+
+/* Two verified-by-operator public launch destinations: Virtuals and PONS.
+   Shared visual language, separate economic and operational release gates. */
+.ksa-hero .ksa-launch-links{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:11px;margin:16px 0 5px;max-width:670px}
+.ksa-hero .ksa-launch-links .ksa-virtuals-live{display:flex;width:100%;min-width:0;margin:0;padding:13px 12px;gap:10px}
+.ksa-hero .ksa-launch-links .ksa-virtuals-live-arrow{margin-left:auto}
+.ksa-hero .ksa-launch-links .ksa-virtuals-live-copy strong{font-size:11px;letter-spacing:.065em;line-height:1.35}
+.ksa-hero .ksa-launch-links .ksa-virtuals-live-copy small{font-size:11px}
+.ksa-hero .ksa-pons-live{border-color:#009F4D;background:linear-gradient(115deg,#17543b,#123d2a)}
+.ksa-hero .ksa-pons-live:hover{border-color:#42ca77;background:linear-gradient(115deg,#1c6545,#154631)}
+.ksa-hero .ksa-pons-live .ksa-virtuals-live-dot{background:#42d77f;box-shadow:0 0 0 5px #42d77f22}
+@media(max-width:1190px){.ksa-hero .ksa-launch-links{grid-template-columns:1fr}.ksa-hero .ksa-launch-links .ksa-virtuals-live{max-width:390px}}
+@media(min-width:900px) and (max-width:1190px){.ksa-hero .ksa-launch-links .ksa-virtuals-live{max-width:none}}
+@media(min-width:650px) and (max-width:899px){.ksa-hero .ksa-launch-links{grid-template-columns:repeat(2,minmax(0,1fr))}.ksa-hero .ksa-launch-links .ksa-virtuals-live{max-width:none}}
+@media(max-width:570px){.ksa-hero .ksa-launch-links{grid-template-columns:1fr}.ksa-hero .ksa-launch-links .ksa-virtuals-live{max-width:none}}
