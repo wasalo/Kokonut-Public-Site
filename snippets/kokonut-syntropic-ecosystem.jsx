@@ -1,8 +1,8 @@
 /**
  * Syntropic Agent: unified public narrative, derived from the latest
  * Base/Virtuals (2026-10-21), NEAR (2026-10-21) and Robinhood/MetaLeX
- * (2026-11-03) PRDs. The Virtuals project is now public; proposed services and financial terms
- * remain subject to separate verification, approval and settlement.
+ * (2026-11-03) PRDs. Virtuals and PONS project pages are now public; creator-fee proceeds,
+ * ACP services and farm finance remain subject to separate approvals.
  *
  * This snippet is self-contained: no MDX children, no <main>, no raw Mermaid.
  */
@@ -31,14 +31,14 @@ const syntropicRails = [
   },
   {
     id:"robinhood",count:"03",name:"Robinhood Chain",network:"PONS · REVENUE CONTAINERS · METALEX",
-    status:"Financial expansion proposed; integration gates pending",
+    status:"PONS project listing live · finance workstreams remain proposed",
     headline:"Bring accountable capital closer to productive farms.",
-    description:"The Robinhood strategy would explore PONS creator-fee income, project-specific Revenue Containers and, later, properly authorized agricultural financing. MetaLeX offers a candidate issuer-and-agreement layer, subject to supported-chain and legal verification.",
-    verbs:["Actual PONS creator-fee receipts","Controlled project accounting and budgets","Future legally structured RWA financing"],
+    description:"Kokonut Syntropic Agent's PONS launchpad page is now public on Robinhood Chain. The next phase is to verify creator-fee receipts, reconcile controlled treasury accounts and design project-specific Revenue Containers. MetaLeX-supported issuance and agricultural finance are longer-term, separately gated proposals.",
+    verbs:["PONS launchpad presence (public)","Creator-fee tracking and approved farm budgets (planned)","Future legally structured RWA financing (proposed)"],
     journey:"Claimed funds → Reconciled treasury → Approved Container → Documented farm work → Reviewed outcomes",
     outcome:"Finance based on real receipts, enforceable rights and operating evidence—not tokenized claims invented by code.",
-    warning:"PONS eligibility, security and fee terms need verification. MetaLeX Robinhood support was newly announced in the Nov 2026 PRD; exact deployments and instruments remain unverified.",
-    link:"/syntropic-agent-ecosystem"
+    warning:"A public PONS listing does not establish realized or claimable fees, graduation, withdrawable funding, approved Revenue Containers or MetaLeX issuer eligibility. Verify actual onchain contracts, custody, fees and rights separately.",
+    link:"https://ponsfamily.com/launchpad/0xfcf7d1d8880b5b01f8a3578e920992d66de8250c"
   }
 ];
 
@@ -101,7 +101,7 @@ export const KokonutSyntropicEcosystem = () => {
               <div className="ksa-multi-detail-bottom">
                 <p><strong>Value proposition:</strong> {rail.outcome}</p>
                 <p><strong>Release boundary:</strong> {rail.warning}</p>
-                <a href={rail.link} target={rail.id==="base"?"_blank":undefined} rel={rail.id==="base"?"noopener noreferrer":undefined}>{rail.id==="base"?"Open the live Virtuals project ↗":"Explore the technical context ↗"}</a>
+                <a href={rail.link} target={rail.id==="base"||rail.id==="robinhood"?"_blank":undefined} rel={rail.id==="base"||rail.id==="robinhood"?"noopener noreferrer":undefined}>{rail.id==="base"?"Open the live Virtuals project ↗":rail.id==="robinhood"?"Open the PONS launchpad project ↗":"Explore the technical context ↗"}</a>
               </div>
             </div>
           </div>
