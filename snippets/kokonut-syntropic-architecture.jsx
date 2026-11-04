@@ -38,9 +38,9 @@ const atlasNodes = [
   {id:"CELO", label:"Celo", short:"EAS evidence provenance", stage:"DESTINATION", x:974,y:316,
    status:"Existing provenance · adapter planned",summary:"Selected evidence and attestations may be anchored for provenance, but a chain receipt never independently proves ecological impact or certifies a claim.",
    source:"Celo / EAS provenance"},
-  {id:"ROBINHOOD", label:"Robinhood Chain", short:"PONS · KRAF · MetaLeX (proposed)", stage:"DESTINATION", x:974,y:425,
-   status:"New finance direction · verification gated",summary:"Proposed finance expansion: PONS creator fees into reconciled treasury receipts, project-specific Revenue Containers, and—only with verified legal rights—MetaLeX-enabled agreements or financing. PONS and MetaLeX chain deployments, permissions and launch terms require independent verification.",
-   source:"Robinhood PRD v2.1 (November 2026); additional proposed adapter"},
+  {id:"ROBINHOOD", label:"Robinhood Chain", short:"PONS live · KRAF and MetaLeX proposed", stage:"DESTINATION", x:974,y:425,
+   status:"PONS launchpad page live · advanced finance planned",summary:"Kokonut Syntropic Agent has a public PONS launchpad page on Robinhood Chain. Creator-fee income, treasury settlement, project-specific Revenue Containers and MetaLeX-enabled financing are separate engineering and legal workstreams—not automatically live with the listing.",
+   source:"Operator-confirmed PONS project listing; Robinhood PRD v2.1 for proposed finance"},
   {id:"FUTURE", label:"Other approved chains", short:"Scoped integrations only", stage:"DESTINATION", x:974,y:534,
    status:"Future / approval-dependent",summary:"Additional networks are considered only with justified utility, defined permissions, secure adapters and appropriate approvals. New integrations do not imply new tokens.",
    source:"Additional approved chains"}
