@@ -58,6 +58,7 @@ The Positive Impact Methodology exists to keep those stages separate.
 The methodology uses four levels.
 
 ```mermaid
+%%{init: {"theme":"base","themeVariables":{"primaryColor":"#e8f5ec","primaryTextColor":"#171717","primaryBorderColor":"#009F4D","secondaryColor":"#fff3c4","tertiaryColor":"#ffffff","lineColor":"#277445","fontFamily":"Inter, Arial, sans-serif"}}}%%
 flowchart LR
     A["1. Alignment<br/>the design targets a value"] --> B["2. Activity<br/>the intervention happened"]
     B --> C["3. Measured outcome<br/>a change was recorded"]
@@ -105,6 +106,7 @@ If those questions cannot yet be answered, use a narrower claim.
 ## The methodology in one flow
 
 ```mermaid
+%%{init: {"theme":"base","themeVariables":{"primaryColor":"#e8f5ec","primaryTextColor":"#171717","primaryBorderColor":"#009F4D","secondaryColor":"#fff3c4","tertiaryColor":"#ffffff","lineColor":"#277445","fontFamily":"Inter, Arial, sans-serif"}}}%%
 flowchart TD
     A["Farm baseline + Pillars of Value"] --> B["Outcome hypothesis"]
     B --> C["Regenerative / operational practice"]
@@ -117,8 +119,8 @@ flowchart TD
     I --> J["Farm · partner · research · governance decision"]
     J --> K["Updated plan / hypothesis"]
 
-    G --> L["Optional public attestation"]
-    L --> I
+    G -.->|"optional provenance only"| L["Optional public attestation"]
+    %% Attestation alone does not establish positive impact.
 ```
 
 The public attestation is intentionally **not** placed between the record and scientific truth.
@@ -263,6 +265,7 @@ Positive-impact methodology should therefore include:
 For example:
 
 ```mermaid
+%%{init: {"theme":"base","themeVariables":{"primaryColor":"#e8f5ec","primaryTextColor":"#171717","primaryBorderColor":"#009F4D","secondaryColor":"#fff3c4","tertiaryColor":"#ffffff","lineColor":"#277445","fontFamily":"Inter, Arial, sans-serif"}}}%%
 flowchart LR
     A["Crop / poultry activity"] --> B["Biomass · manure · residues"]
     B --> C["Processing / reuse"]

@@ -41,6 +41,7 @@ They do not automatically prove that poverty was reduced, food security improved
 Adelphi's SDG reporting should distinguish four levels.
 
 ```mermaid
+%%{init: {"theme":"base","themeVariables":{"primaryColor":"#e8f5ec","primaryTextColor":"#171717","primaryBorderColor":"#009F4D","secondaryColor":"#fff3c4","tertiaryColor":"#ffffff","lineColor":"#277445","fontFamily":"Inter, Arial, sans-serif"}}}%%
 flowchart LR
     A["1. Alignment<br/>the farm is designed around the goal"] --> B["2. Activity<br/>the intervention was implemented"]
     B --> C["3. Outcome<br/>a measured change occurred"]
@@ -79,6 +80,7 @@ Most overclaiming happens when a page jumps directly from **alignment or activit
 The SDG layer sits **after** farm evidence, not before it.
 
 ```mermaid
+%%{init: {"theme":"base","themeVariables":{"primaryColor":"#e8f5ec","primaryTextColor":"#171717","primaryBorderColor":"#009F4D","secondaryColor":"#fff3c4","tertiaryColor":"#ffffff","lineColor":"#277445","fontFamily":"Inter, Arial, sans-serif"}}}%%
 flowchart TD
     A["Farm activity<br/>job · planting · harvest · nursery · training"] --> B["Source record"]
     B --> C["Review state<br/>draft · submitted · verified/rejected"]
@@ -87,8 +89,8 @@ flowchart TD
     E --> F["Outcome interpretation"]
     F --> G["Report / grant review / governance / research"]
 
-    D --> H["Optional EAS attestation"]
-    H --> F
+    D -.->|"optional provenance only"| H["Optional EAS attestation"]
+    %% The attestation does not independently prove SDG outcomes.
 ```
 
 An SDG label should never create evidence retroactively.
@@ -415,6 +417,7 @@ It should not be reported as demonstrated causality without evidence.
 A safer systems view is:
 
 ```mermaid
+%%{init: {"theme":"base","themeVariables":{"primaryColor":"#e8f5ec","primaryTextColor":"#171717","primaryBorderColor":"#009F4D","secondaryColor":"#fff3c4","tertiaryColor":"#ffffff","lineColor":"#277445","fontFamily":"Inter, Arial, sans-serif"}}}%%
 flowchart LR
     S15["SDG 15<br/>Land practices + biodiversity systems"]
     S2["SDG 2<br/>Food-production capacity"]

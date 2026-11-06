@@ -63,6 +63,7 @@ But an SDG label is **not** an outcome.
 Kokonut uses the same four-level claim ladder across SDG reporting.
 
 ```mermaid
+%%{init: {"theme":"base","themeVariables":{"primaryColor":"#e8f5ec","primaryTextColor":"#171717","primaryBorderColor":"#009F4D","secondaryColor":"#fff3c4","tertiaryColor":"#ffffff","lineColor":"#277445","fontFamily":"Inter, Arial, sans-serif"}}}%%
 flowchart LR
     A["1. Alignment<br/>the farm design is relevant to the Goal"] --> B["2. Activity<br/>a relevant intervention happened"]
     B --> C["3. Measured outcome<br/>a defined change was recorded"]
@@ -177,6 +178,7 @@ It should not be read as a statement that every Kokonut farm contributes to all 
 ## Where SDGs sit inside the Kokonut Framework
 
 ```mermaid
+%%{init: {"theme":"base","themeVariables":{"primaryColor":"#e8f5ec","primaryTextColor":"#171717","primaryBorderColor":"#009F4D","secondaryColor":"#fff3c4","tertiaryColor":"#ffffff","lineColor":"#277445","fontFamily":"Inter, Arial, sans-serif"}}}%%
 flowchart TD
     A["Common Data Schema<br/>baseline context"] --> B["Pillars of Value<br/>WHAT · WHO · HOW MUCH · CONTRIBUTION · RISK · PUBLIC GOODS"]
     B --> C["8 Forms of Capital<br/>value categories"]
@@ -210,6 +212,7 @@ The durable evidence sequence is:
 > **claim hypothesis → source record → observation / measurement / actual → review → publication when appropriate → optional attestation → SDG interpretation**
 
 ```mermaid
+%%{init: {"theme":"base","themeVariables":{"primaryColor":"#e8f5ec","primaryTextColor":"#171717","primaryBorderColor":"#009F4D","secondaryColor":"#fff3c4","tertiaryColor":"#ffffff","lineColor":"#277445","fontFamily":"Inter, Arial, sans-serif"}}}%%
 flowchart LR
     A["SDG hypothesis"] --> B["Relevant farm activity"]
     B --> C["Source record"]
@@ -218,8 +221,8 @@ flowchart LR
     E --> F["Published evidence"]
     F --> G["SDG interpretation"]
 
-    F --> H["Optional EAS / provenance"]
-    H --> G
+    F -.->|"optional provenance only"| H["Optional EAS reference"]
+    %% SDG attribution requires method and human review.
 ```
 
 Not every SDG record requires:
