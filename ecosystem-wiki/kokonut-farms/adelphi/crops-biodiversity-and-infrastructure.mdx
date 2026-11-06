@@ -70,13 +70,14 @@ It is to show:
 ## The farm system
 
 ```mermaid
+%%{init: {"theme":"base","themeVariables":{"primaryColor":"#e8f5ec","primaryTextColor":"#171717","primaryBorderColor":"#009F4D","secondaryColor":"#fff3c4","tertiaryColor":"#ffffff","lineColor":"#277445","fontFamily":"Inter, Arial, sans-serif"}}}%%
 flowchart TD
     LAND["15,725 m² mapped site"] --> AG["13,838 m² agricultural area"]
 
     AG --> CROPS["Short + medium + long-cycle crops"]
     AG --> SYNTROPIC["2 syntropic plots"]
     AG --> AGRO["Agroforestry + perennial species"]
-    AG --> POULTRY["110 laying hens"]
+    AG --> POULTRY["110 hens · documented reference component"]
     AG --> NURSERY["Nursery + biofactory"]
     AG --> GAZEBO["Training + community gazebo"]
 
@@ -325,6 +326,7 @@ That can support a reduced-external-feed strategy, but the actual degree of feed
 ### Documented nutrient loop
 
 ```mermaid
+%%{init: {"theme":"base","themeVariables":{"primaryColor":"#e8f5ec","primaryTextColor":"#171717","primaryBorderColor":"#009F4D","secondaryColor":"#fff3c4","tertiaryColor":"#ffffff","lineColor":"#277445","fontFamily":"Inter, Arial, sans-serif"}}}%%
 flowchart LR
     FORAGE["On-farm forage<br/>including Pangola grass"] --> HENS["110 hens"]
     HENS --> EGGS["Egg output"]

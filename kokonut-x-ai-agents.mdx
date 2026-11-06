@@ -61,6 +61,7 @@ Kokonut currently has two related but distinct agent surfaces.
 The relationship is:
 
 ```mermaid
+%%{init: {"theme":"base","themeVariables":{"primaryColor":"#e8f5ec","primaryTextColor":"#171717","primaryBorderColor":"#009F4D","secondaryColor":"#fff3c4","tertiaryColor":"#ffffff","lineColor":"#277445","fontFamily":"Inter, Arial, sans-serif"}}}%%
 flowchart LR
     DATA["Kokonut Intelligence\ngoverned records + analytics"]
     INTAGENT["Internal agent\nread · analyze · draft · submit"]
@@ -166,6 +167,7 @@ An agent can successfully finish a task while its output remains untrusted.
 For example:
 
 ```mermaid
+%%{init: {"theme":"base","themeVariables":{"primaryColor":"#e8f5ec","primaryTextColor":"#171717","primaryBorderColor":"#009F4D","secondaryColor":"#fff3c4","tertiaryColor":"#ffffff","lineColor":"#277445","fontFamily":"Inter, Arial, sans-serif"}}}%%
 flowchart LR
     A["Task created"] --> B["Agent executes"]
     B --> C["Draft output"]
@@ -270,6 +272,7 @@ At minimum, the architecture should preserve:
 6. **human approval** — high-risk outputs remain review-gated.
 
 ```mermaid
+%%{init: {"theme":"base","themeVariables":{"primaryColor":"#e8f5ec","primaryTextColor":"#171717","primaryBorderColor":"#009F4D","secondaryColor":"#fff3c4","tertiaryColor":"#ffffff","lineColor":"#277445","fontFamily":"Inter, Arial, sans-serif"}}}%%
 flowchart TD
     A["Agent"]
     B["Scoped credential"]
@@ -601,6 +604,7 @@ A payment state can tell us whether work was:
 It cannot tell us whether the underlying farm, ecological, financial, or impact claim is correct.
 
 ```mermaid
+%%{init: {"theme":"base","themeVariables":{"primaryColor":"#e8f5ec","primaryTextColor":"#171717","primaryBorderColor":"#009F4D","secondaryColor":"#fff3c4","tertiaryColor":"#ffffff","lineColor":"#277445","fontFamily":"Inter, Arial, sans-serif"}}}%%
 flowchart LR
     A["Marketplace job"] --> B["Deliverable accepted"]
     B --> C["Payment / settlement"]
@@ -699,6 +703,7 @@ Marketplace builders should treat the live Marketplace repository as canonical f
 The integration contract with Kokonut Intelligence should remain clear:
 
 ```mermaid
+%%{init: {"theme":"base","themeVariables":{"primaryColor":"#e8f5ec","primaryTextColor":"#171717","primaryBorderColor":"#009F4D","secondaryColor":"#fff3c4","tertiaryColor":"#ffffff","lineColor":"#277445","fontFamily":"Inter, Arial, sans-serif"}}}%%
 flowchart LR
     MARKET["Marketplace"]
     TASK["Service / job"]

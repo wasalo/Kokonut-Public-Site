@@ -70,6 +70,7 @@ It does **not** make a farm automatically:
 > **Describe the farm consistently enough that different people and systems can refer to the same baseline without pretending the baseline is the whole farm.**
 
 ```mermaid
+%%{init: {"theme":"base","themeVariables":{"primaryColor":"#e8f5ec","primaryTextColor":"#171717","primaryBorderColor":"#009F4D","secondaryColor":"#fff3c4","tertiaryColor":"#ffffff","lineColor":"#277445","fontFamily":"Inter, Arial, sans-serif"}}}%%
 flowchart LR
     A["Local farm context"] --> B["13-field baseline record"]
     B --> C["Proposal / planning"]
@@ -571,6 +572,7 @@ The Common Data Schema defines a shared farm baseline.
 The relationship is:
 
 ```mermaid
+%%{init: {"theme":"base","themeVariables":{"primaryColor":"#e8f5ec","primaryTextColor":"#171717","primaryBorderColor":"#009F4D","secondaryColor":"#fff3c4","tertiaryColor":"#ffffff","lineColor":"#277445","fontFamily":"Inter, Arial, sans-serif"}}}%%
 flowchart TD
     A["13-field Framework baseline"] --> B["Canonical farm/project identity"]
     B --> C["Operational farm records"]
@@ -585,7 +587,7 @@ flowchart TD
 
     G --> H["Published records / APIs"]
     H --> I["Hub / reports / analytics / agents"]
-    H --> J["Optional EAS attestation for significant claims"]
+    H -.->|"record provenance; not certification"| J["Optional EAS evidence reference"]
 ```
 
 The schema helps systems refer to the same farm.

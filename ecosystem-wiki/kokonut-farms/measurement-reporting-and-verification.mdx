@@ -66,12 +66,13 @@ A common MRV failure is to jump directly from **“a record exists”** to **“
 Kokonut instead separates the evidence lifecycle into distinct layers.
 
 ```mermaid
+%%{init: {"theme":"base","themeVariables":{"primaryColor":"#e8f5ec","primaryTextColor":"#171717","primaryBorderColor":"#009F4D","secondaryColor":"#fff3c4","tertiaryColor":"#ffffff","lineColor":"#277445","fontFamily":"Inter, Arial, sans-serif"}}}%%
 flowchart LR
     A["Source observation<br/>field · sensor · satellite · harvest · GPS"] --> B["Structured record<br/>farm ID · time · source · payload"]
     B --> C["Review workflow<br/>draft → submitted → verified/rejected"]
     C -->|verified| D["Published record<br/>Hub · API · governed snapshot"]
     D --> E["Evidence package<br/>files · photos · CID · provenance"]
-    E --> F["Optional attestation<br/>EAS on Celo"]
+    E --> F["Optional provenance anchor<br/>EAS on Celo; not certification"]
     D --> G["Analysis + interpretation<br/>trends · forecasts · EBF · CRISP"]
     F --> G
     G --> H["Decision support<br/>farm · governance · partners · reports"]
@@ -159,6 +160,7 @@ For example:
 Kokonut Intelligence defines a review lifecycle before operational records become trusted enough for public use.
 
 ```mermaid
+%%{init: {"theme":"base","themeVariables":{"primaryColor":"#e8f5ec","primaryTextColor":"#171717","primaryBorderColor":"#009F4D","secondaryColor":"#fff3c4","tertiaryColor":"#ffffff","lineColor":"#277445","fontFamily":"Inter, Arial, sans-serif"}}}%%
 flowchart LR
     A["draft"] --> B["submitted"]
     B --> C["verified"]
@@ -446,6 +448,7 @@ MRV closes the loop by comparing those projections against:
 - field conditions.
 
 ```mermaid
+%%{init: {"theme":"base","themeVariables":{"primaryColor":"#e8f5ec","primaryTextColor":"#171717","primaryBorderColor":"#009F4D","secondaryColor":"#fff3c4","tertiaryColor":"#ffffff","lineColor":"#277445","fontFamily":"Inter, Arial, sans-serif"}}}%%
 flowchart LR
     A["Planning assumptions"] --> B["Forecast"]
     B --> C["Farm operations"]

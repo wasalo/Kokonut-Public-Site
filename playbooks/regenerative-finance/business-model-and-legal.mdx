@@ -53,17 +53,38 @@ The legal model should be read the same way:
 A useful farm model separates five layers.
 
 ```mermaid
-flowchart LR
-    A["Production assumptions\nyield · cycles · loss · price"] --> B["Gross revenue forecast"]
-    B --> C["Operating costs\nlabor · water · inputs · logistics · maintenance"]
-    C --> D["Operating cash flow"]
-    D --> E["Reserves + obligations\ntax · debt · capex · working capital"]
-    E --> F["Distributable amount"]
-    F --> G["Operator / partner / public-goods distributions\nonly under approved agreement"]
-
-    H["Actual farm records"] --> I["Variance analysis"]
-    I --> A
-    H --> C
+%%{init: {"theme":"base","themeVariables":{"primaryColor":"#e8f5ec","primaryTextColor":"#171717","primaryBorderColor":"#009F4D","secondaryColor":"#fff3c4","tertiaryColor":"#ffffff","lineColor":"#277445","fontFamily":"Inter, Arial, sans-serif"}}}%%
+flowchart TD
+    ASSUME["Yield · price · loss · cost assumptions"]
+    FORECAST["Projected gross revenue · forecast only"]
+    FARM["Real farm operations"]
+    RECEIPTS["Actually collected sales and service receipts"]
+    EXPENSES["Actual operating costs and payables"]
+    BOOKS["Reconciled financial records"]
+    VARIANCE["Forecast versus actual variance"]
+    OBLIG["Taxes · repayment · maintenance and restrictions"]
+    AVAILABLE{"Unrestricted surplus after obligations?"}
+    HOLD["No distribution · re-budget or retain funds"]
+    TERMS["Executed agreements · authorized allocation decision"]
+    ALLOC["Permitted reinvestment or distribution"]
+    ASSUME --> FORECAST
+    FORECAST -.->|"planning comparison"| VARIANCE
+    FARM --> RECEIPTS
+    FARM --> EXPENSES
+    RECEIPTS --> BOOKS
+    EXPENSES --> BOOKS
+    BOOKS --> VARIANCE
+    BOOKS --> OBLIG
+    OBLIG --> AVAILABLE
+    AVAILABLE -->|"No"| HOLD
+    AVAILABLE -->|"Yes"| TERMS
+    TERMS --> ALLOC
+    classDef forecast fill:#f2f3f2,stroke:#75847a,color:#171717,stroke-dasharray:5 4;
+    classDef verified fill:#e5f5e8,stroke:#009F4D,color:#171717,stroke-width:2px;
+    classDef approval fill:#fff3c4,stroke:#b98100,color:#171717,stroke-width:2px;
+    class ASSUME,FORECAST,VARIANCE forecast;
+    class RECEIPTS,EXPENSES,BOOKS verified;
+    class AVAILABLE,TERMS,ALLOC,HOLD approval;
 ```
 
 The old playbook jumped too quickly from **gross crop forecast** to **stakeholder distribution**.
@@ -224,6 +245,7 @@ Each reporting period should make assumptions testable.
 | Distribution assumption | Actual authorized distribution |
 
 ```mermaid
+%%{init: {"theme":"base","themeVariables":{"primaryColor":"#e8f5ec","primaryTextColor":"#171717","primaryBorderColor":"#009F4D","secondaryColor":"#fff3c4","tertiaryColor":"#ffffff","lineColor":"#277445","fontFamily":"Inter, Arial, sans-serif"}}}%%
 flowchart LR
     A["Forecast"] --> B["Farm activity"]
     B --> C["Harvest + sales + expense actuals"]
@@ -286,14 +308,31 @@ Before any distribution, the governing agreement should define the order of oper
 A possible structure to document — **not a Kokonut universal rule** — is:
 
 ```mermaid
+%%{init: {"theme":"base","themeVariables":{"primaryColor":"#e8f5ec","primaryTextColor":"#171717","primaryBorderColor":"#009F4D","secondaryColor":"#fff3c4","tertiaryColor":"#ffffff","lineColor":"#277445","fontFamily":"Inter, Arial, sans-serif"}}}%%
 flowchart TD
-    A["Collected farm revenue"] --> B["Taxes / statutory obligations"]
-    B --> C["Operating expenses"]
-    C --> D["Debt / repayment obligations"]
-    D --> E["Working-capital + maintenance reserves"]
-    E --> F["Approved public-goods commitment"]
-    F --> G["Remaining distributable amount"]
-    G --> H["Operator / land / network / capital participants\nper executed agreement"]
+    RECEIPTS["Collected and reconciled farm receipts"]
+    SOURCE["Identify restricted sources and contract obligations"]
+    COSTS["Settle documented costs and statutory obligations"]
+    DEBT["Service due debt and other enforceable liabilities"]
+    RESERVE["Fund maintenance, working capital and approved reserves"]
+    DECIDE{"Unrestricted balance actually available?"}
+    RETAIN["Retain funds · revise operating budget"]
+    REVIEW["Review executed rights, distribution priorities and approvals"]
+    TRANSFER["Authorized reinvestment or participant payment"]
+    RECORD["Receipt · execution and reconciliation records"]
+    RECEIPTS --> SOURCE
+    SOURCE --> COSTS
+    COSTS --> DEBT
+    DEBT --> RESERVE
+    RESERVE --> DECIDE
+    DECIDE -->|"No"| RETAIN
+    DECIDE -->|"Yes"| REVIEW
+    REVIEW --> TRANSFER
+    TRANSFER --> RECORD
+    classDef finance fill:#e5f5e8,stroke:#009F4D,color:#171717,stroke-width:2px;
+    classDef authority fill:#fff3c4,stroke:#b98100,color:#171717,stroke-width:2px;
+    class RECEIPTS,SOURCE,COSTS,DEBT,RESERVE,RECORD finance;
+    class DECIDE,RETAIN,REVIEW,TRANSFER authority;
 ```
 
 The actual ordering and percentages belong in the farm's approved legal/economic documents.
@@ -394,6 +433,7 @@ They should not be described as independently establishing:
 A real-world farm can involve several separate legal relationships.
 
 ```mermaid
+%%{init: {"theme":"base","themeVariables":{"primaryColor":"#e8f5ec","primaryTextColor":"#171717","primaryBorderColor":"#009F4D","secondaryColor":"#fff3c4","tertiaryColor":"#ffffff","lineColor":"#277445","fontFamily":"Inter, Arial, sans-serif"}}}%%
 flowchart TD
     LAND["Land owner / holder"]
     OP["Farm operator"]
@@ -634,6 +674,7 @@ The Dominican Republic's **Law 32-23** established mandatory electronic invoicin
 That matters for Kokonut because a serious farm-finance stack should eventually reconcile:
 
 ```mermaid
+%%{init: {"theme":"base","themeVariables":{"primaryColor":"#e8f5ec","primaryTextColor":"#171717","primaryBorderColor":"#009F4D","secondaryColor":"#fff3c4","tertiaryColor":"#ffffff","lineColor":"#277445","fontFamily":"Inter, Arial, sans-serif"}}}%%
 flowchart LR
     A["Sale / service"] --> B["Invoice / e-CF where required"]
     B --> C["Payment"]
@@ -732,6 +773,7 @@ For material transactions, obtain current Dominican legal, tax, accounting, AML,
 A useful integration pattern is:
 
 ```mermaid
+%%{init: {"theme":"base","themeVariables":{"primaryColor":"#e8f5ec","primaryTextColor":"#171717","primaryBorderColor":"#009F4D","secondaryColor":"#fff3c4","tertiaryColor":"#ffffff","lineColor":"#277445","fontFamily":"Inter, Arial, sans-serif"}}}%%
 flowchart LR
     A["Legal / economic agreement"] --> B["Governance authority"]
     B --> C["Approved proposal / instruction"]
