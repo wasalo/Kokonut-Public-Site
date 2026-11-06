@@ -99,34 +99,38 @@ Kokonut treats regenerative agriculture as a coordination problem with several d
 The ecosystem does **not** depend on one DAO making every decision.
 
 ```mermaid
+%%{init: {"theme":"base","themeVariables":{"primaryColor":"#e8f5ec","primaryTextColor":"#171717","primaryBorderColor":"#009F4D","secondaryColor":"#fff3c4","tertiaryColor":"#ffffff","lineColor":"#277445","fontFamily":"Inter, Arial, sans-serif"}}}%%
 flowchart TD
-    PEOPLE["Community + Contributors"]
-
-    subgraph COORDINATION["Coordination Systems"]
-        CAPITAL["Moloch DAO<br/>Capital + Treasury"]
-        GUILDS["Guilds<br/>Contribution + Domains"]
-        FRAMEWORK["Kokonut Framework<br/>Shared Methodology"]
-    end
-
-    FARM["Local Farm Operators<br/>Real-world execution"]
-    MRV["MRV<br/>Evidence + Records"]
-    HUB["Kokonut Hub<br/>Public Data"]
-    KI["Kokonut Intelligence<br/>Analysis + Automation"]
-
-    PEOPLE --> CAPITAL
-    PEOPLE --> GUILDS
-
-    CAPITAL --> FARM
-    GUILDS --> FRAMEWORK
-    FRAMEWORK --> FARM
-
-    FARM --> MRV
-    MRV --> HUB
-    MRV --> KI
-
-    KI --> CAPITAL
-    KI --> GUILDS
-    KI --> FARM
+    COMMUNITY["Community · contributors"]
+    GUILDS["Guilds · contributions and domain review"]
+    FRAMEWORK["Framework · reusable methods"]
+    DAO["Gnosis Moloch DAO · treasury governance"]
+    SIGNERS["Safe / authorized signers"]
+    FARM["Local farm operators · site decisions"]
+    FIELD["Farm activity · source observations"]
+    KI["Kokonut Intelligence · governed records"]
+    REVIEW["Qualified human / domain review"]
+    HUB["Kokonut Hub · approved public views"]
+    AGENT["Syntropic Agent · human-supervised drafts"]
+    COMMUNITY --> GUILDS
+    COMMUNITY --> DAO
+    GUILDS -->|"scoped expertise"| FARM
+    FRAMEWORK -->|"methods, not farm commands"| FARM
+    DAO -->|"approved treasury scope"| SIGNERS
+    SIGNERS -->|"authorized funds or instructions"| FARM
+    FARM --> FIELD
+    FIELD --> KI
+    KI --> REVIEW
+    REVIEW -->|"appropriate publication"| HUB
+    KI --> AGENT
+    AGENT -->|"review-ready recommendations"| REVIEW
+    REVIEW -->|"findings, not automatic orders"| FARM
+    classDef source fill:#e5f5e8,stroke:#009F4D,color:#171717,stroke-width:2px;
+    classDef authority fill:#fff3c4,stroke:#b98100,color:#171717,stroke-width:2px;
+    classDef planned fill:#f2f3f2,stroke:#75847a,color:#171717,stroke-dasharray:5 4;
+    class COMMUNITY,GUILDS,FRAMEWORK,FIELD,KI,HUB source;
+    class FARM,DAO,SIGNERS,REVIEW authority;
+    class AGENT planned;
 ```
 
 | Layer | Primary role |
@@ -196,14 +200,30 @@ Transparency about maturity matters.
 The core loop is designed to move **capital, work, evidence, and learning** through different parts of the ecosystem.
 
 ```mermaid
+%%{init: {"theme":"base","themeVariables":{"primaryColor":"#e8f5ec","primaryTextColor":"#171717","primaryBorderColor":"#009F4D","secondaryColor":"#fff3c4","tertiaryColor":"#ffffff","lineColor":"#277445","fontFamily":"Inter, Arial, sans-serif"}}}%%
 flowchart TD
-    A["Capital governance<br/>approves funding"] --> B["Local farm operators<br/>execute"]
-    B --> C["MRV records<br/>farm activity"]
-    C --> D["Hub + Intelligence<br/>structure evidence"]
-    D --> E["Governance + contributors<br/>review what happened"]
-    E --> F["Framework + Guilds<br/>improve methods and tools"]
-    F --> G["Next farm or next cycle<br/>starts with better infrastructure"]
-    G --> B
+    NEED["Local farm need and operating plan"]
+    APPROVAL["Applicable entity, DAO or partner authorization"]
+    OPERATOR["Operator-led implementation"]
+    ACTUAL["Recorded farm work and actual costs"]
+    REVIEW["Governed review · scope and evidence"]
+    KI["Kokonut Intelligence · analysis and provenance"]
+    HUB["Hub · publish only when approved"]
+    LEARN["Framework and local learning"]
+    NEXT["Next cycle or another locally adapted farm"]
+    NEED --> APPROVAL
+    APPROVAL --> OPERATOR
+    OPERATOR --> ACTUAL
+    ACTUAL --> REVIEW
+    REVIEW --> KI
+    REVIEW -.->|"approved public records"| HUB
+    KI --> LEARN
+    LEARN --> NEXT
+    NEXT --> NEED
+    classDef human fill:#fff3c4,stroke:#b98100,color:#171717,stroke-width:2px;
+    classDef records fill:#e5f5e8,stroke:#009F4D,color:#171717,stroke-width:2px;
+    class APPROVAL,OPERATOR,REVIEW human;
+    class ACTUAL,KI,HUB records;
 ```
 
 This is different from promising that one token, treasury, or automation system solves every problem.
