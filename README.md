@@ -43,29 +43,43 @@ This repository powers the public Kokonut Knowledge Base at [kokonut.network](ht
 Kokonut combines several coordination layers that are designed to work together without collapsing the whole ecosystem into a single system.
 
 ```mermaid
+%%{init: {"theme":"base","themeVariables":{"primaryColor":"#e8f5ec","primaryTextColor":"#171717","primaryBorderColor":"#009F4D","secondaryColor":"#fff3c4","tertiaryColor":"#ffffff","lineColor":"#277445","fontFamily":"Inter, Arial, sans-serif"}}}%%
 flowchart TD
-    COMMUNITY["Community + Contributors"]
-    DAO["Governance + Treasury"]
-    FRAMEWORK["Kokonut Framework"]
-    FARMS["Regenerative Farms"]
-    MRV["MRV + Public Evidence"]
-    HUB["Kokonut Hub"]
-    KI["Kokonut Intelligence"]
-    AGENTS["AI Agents + Automation"]
-    BUILDERS["Builders + Open Infrastructure"]
-
-    COMMUNITY --> DAO
-    COMMUNITY --> FRAMEWORK
-    DAO --> FARMS
-    FRAMEWORK --> FARMS
-    FARMS --> MRV
-    MRV --> HUB
-    MRV --> KI
-    HUB --> KI
-    KI --> AGENTS
-    AGENTS --> BUILDERS
-    BUILDERS --> FRAMEWORK
-    BUILDERS --> COMMUNITY
+    LOCAL["Locally operated regenerative farms"]
+    PEOPLE["Communities · domain contributors"]
+    FRAMEWORK["Kokonut Framework · reusable methods"]
+    GUILDS["Guilds · expertise and review"]
+    DAO["Gnosis Moloch DAO · capital proposals"]
+    SAFE["Authorized entity / Safe signers"]
+    RECORDS["Farm observations · finance · evidence"]
+    KI["Kokonut Intelligence · governed records"]
+    VERIFY["Qualified review"]
+    HUB["Kokonut Hub · permitted public evidence"]
+    AGENT["Syntropic Agent · draft-only assistance"]
+    POLICY["Kokonut Protocol · proposed cross-chain policy"]
+    VIRT["Virtuals · public project live"]
+    PONS["PONS · Robinhood project live"]
+    PEOPLE --> GUILDS
+    PEOPLE --> DAO
+    GUILDS -->|"scoped contributions"| LOCAL
+    FRAMEWORK -->|"methods, not farm control"| LOCAL
+    DAO -->|"approved scope"| SAFE
+    SAFE -->|"authorized action"| LOCAL
+    LOCAL --> RECORDS
+    RECORDS --> KI
+    KI --> VERIFY
+    VERIFY -->|"approved release"| HUB
+    KI --> AGENT
+    AGENT -->|"human review first"| VERIFY
+    AGENT -.->|"planned integration"| POLICY
+    AGENT -.->|"project listing only"| VIRT
+    AGENT -.->|"project listing only"| PONS
+    classDef local fill:#e5f5e8,stroke:#009F4D,color:#171717,stroke-width:2px;
+    classDef gate fill:#fff3c4,stroke:#b98100,color:#171717,stroke-width:2px;
+    classDef planned fill:#f2f3f2,stroke:#75847a,color:#171717,stroke-dasharray:5 4;
+    class LOCAL,FRAMEWORK,GUILDS,RECORDS,KI,HUB local;
+    class DAO,SAFE,VERIFY gate;
+    class AGENT,POLICY planned;
 ```
 
 The core system can be understood through these layers:
@@ -178,17 +192,29 @@ Start with [Build with Kokonut](build-with-kokonut.mdx) for the technical entry 
 | [wasalo/Kokonut-Agentic-Marketplace](https://github.com/wasalo/Kokonut-Agentic-Marketplace) | develop | Onchain AI-agent labor marketplace, smart contracts, frontend, and OpenServ integration |
 
 ```mermaid
+%%{init: {"theme":"base","themeVariables":{"primaryColor":"#e8f5ec","primaryTextColor":"#171717","primaryBorderColor":"#009F4D","secondaryColor":"#fff3c4","tertiaryColor":"#ffffff","lineColor":"#277445","fontFamily":"Inter, Arial, sans-serif"}}}%%
 flowchart LR
-    FARM["Farms + MRV"]
-    DOCS["Public Site<br/>Knowledge + Framework"]
-    KI["Kokonut Intelligence<br/>Data + Intelligence"]
-    AGENTS["Agentic Marketplace<br/>Agent Coordination"]
-
-    FARM --> DOCS
+    FARM["Local farms and reviewed MRV"]
+    KI["Kokonut Intelligence · records and evidence"]
+    PUBLIC["Kokonut Public Site · open documentation"]
+    AGENT["Syntropic Agent · human-supervised planning"]
+    MARKET["Agentic Marketplace · services and jobs"]
+    PROTOCOL["Kokonut Protocol · planned execution policy"]
+    FOUNDATION["Kokonut Foundation · public-interest publishing"]
+    REVIEW["Qualified human/entity decision"]
     FARM --> KI
-    KI --> DOCS
-    KI --> AGENTS
-    AGENTS --> FARM
+    KI --> PUBLIC
+    KI --> AGENT
+    AGENT --> REVIEW
+    AGENT -.->|"separate service economy"| MARKET
+    REVIEW -.->|"approved policy only"| PROTOCOL
+    KI -.->|"permitted reporting"| FOUNDATION
+    classDef source fill:#e5f5e8,stroke:#009F4D,color:#171717,stroke-width:2px;
+    classDef approval fill:#fff3c4,stroke:#b98100,color:#171717,stroke-width:2px;
+    classDef future fill:#f2f3f2,stroke:#75847a,color:#171717,stroke-dasharray:5 4;
+    class FARM,KI,PUBLIC,FOUNDATION source;
+    class REVIEW approval;
+    class AGENT,MARKET,PROTOCOL future;
 ```
 
 ## AI-readable documentation
