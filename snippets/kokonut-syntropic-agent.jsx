@@ -38,8 +38,8 @@ export const KokonutSyntropicHero = () => (
       <div className="ksa-hero-copy">
         <p className="ksa-eyebrow"><span className="ksa-pulse" aria-hidden="true"></span> KOKONUT SYNTROPIC AGENT / AI × REAL-WORLD REGENERATION</p>
         <h1 id="ksa-title">One agent. <em>Many systems.</em> Real-world regeneration.</h1>
-        <p className="ksa-lead">Meet Kokonut's human-supervised AI teammate, designed to connect farm operations, governed intelligence, useful services and accountable onchain coordination. Its mission is to turn real field records into better decisions—and help direct available resources toward regenerative outcomes.</p>
-        <p className="ksa-hero-note">The agent prepares and coordinates. Farmers, domain reviewers, organizations and DAO signers make the decisions.</p>
+        <p className="ksa-lead">Meet Kokonut's human-supervised AI teammate, designed to support our farm-first mission: better decisions, useful services and accountable coordination around regenerative agriculture. It works with governed farm records, evidence and onchain tools while people remain responsible for real-world outcomes.</p>
+        <p className="ksa-hero-note"><strong>One tool within Kokonut's regeneration cycle.</strong> The agent prepares and coordinates; farmers, domain reviewers, organizations and DAO signers make the protected decisions. A launchpad listing is not proof of farm impact or spendable capital.</p>
         <div className="ksa-launch-links" aria-label="Official Syntropic Agent launch pages">
           <a className="ksa-virtuals-live" href="https://app.virtuals.io/project/146212" target="_blank" rel="noopener noreferrer" aria-label="Explore Kokonut Syntropic Agent on Virtuals, opens in a new tab">
             <span className="ksa-virtuals-live-dot" aria-hidden="true"></span>

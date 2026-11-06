@@ -10,8 +10,8 @@ export const KokonutExecutiveSummaryExperience = () => (
         <div className="k101-hero-content">
           <p className="k101-eyebrow"><span className="kok-pulse" aria-hidden="true"></span> KOKONUT 101 <span aria-hidden="true">/</span> EXECUTIVE SUMMARY</p>
           <h1 id="k101-title">Regeneration takes <em>more than a farm.</em></h1>
-          <p className="k101-lead">Kokonut connects locally operated regenerative farms with community participation, accountable capital, shared methods, and evidence anyone can inspect.</p>
-          <p className="k101-sublead">One real-world reference farm. Different systems for different responsibilities. Open infrastructure that gets better as communities learn.</p>
+          <p className="k101-lead">Kokonut is an open network helping communities build regenerative farms. We connect locally operated agriculture with people, shared methods, appropriate governance, resources and evidence that can be inspected.</p>
+          <p className="k101-sublead">Why? Farms need more than capital alone. How? Grow, measure, verify, govern, learn and regenerate—starting with the Adelphi reference farm and keeping local decisions with the right people.</p>
           <div className="k101-buttons">
             <a className="kok-btn kok-btn-primary" href="#k101-proof">See the real-world proof <span aria-hidden="true">↗</span></a>
             <a className="kok-btn kok-btn-outline" href="/ecosystem-wiki/kokonut-101/executive-summary-detailed">Read the full executive summary <span aria-hidden="true">↗</span></a>
@@ -24,10 +24,10 @@ export const KokonutExecutiveSummaryExperience = () => (
           <div className="k101-diagram-foot"><span className="k101-loop-symbol" aria-hidden="true">↶</span> LEARNING FLOWS BACK INTO THE NEXT CYCLE</div>
         </div>
       </div>
-      <nav className="kok-wrap k101-jump" aria-label="On this page"><a href="#k101-proof">Adelphi</a><a href="#k101-model">How it works</a><a href="#k101-maturity">What is live</a><a href="#k101-participate">Participate</a><a href="#k101-next">Keep reading</a></nav>
+      <nav className="kok-wrap k101-jump" aria-label="On this page"><a href="#k101-why">Why Kokonut</a><a href="#k101-proof">Adelphi</a><a href="#k101-model">How it works</a><a href="#k101-maturity">What is live</a><a href="#k101-participate">Participate</a><a href="#k101-next">Keep reading</a></nav>
     </section>
 
-    <section className="k101-thesis" aria-labelledby="k101-thesis-title">
+    <section className="k101-thesis" id="k101-why" aria-labelledby="k101-thesis-title">
       <div className="kok-wrap k101-thesis-grid">
         <div><p className="kok-kicker">01 / THE IDEA</p><h2 id="k101-thesis-title">The challenge is not just growing food. <em>It is connecting everything farms need.</em></h2></div>
         <div><p>Land stewardship, infrastructure, patient capital, local expertise, markets, governance, and trustworthy records are often fragmented. Kokonut is designed to help these systems work together.</p><p><strong>Different responsibilities need different mechanisms.</strong> The Moloch DAO coordinates capital; Guilds organize contribution; local farmers operate the land; the Framework provides shared methods; MRV makes activity inspectable.</p><a className="kok-textlink" href="/ecosystem-wiki/kokonut-101/problem">Understand the problem in depth ↗</a></div>
