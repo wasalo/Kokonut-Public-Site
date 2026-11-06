@@ -1127,7 +1127,7 @@
 .kok-rwa .challenge-item { display: grid; width: 100%; grid-template-columns: 34px 1fr; gap: 12px; align-items: start; padding: 13px 12px; border: 1px solid transparent; border-radius: 10px; color: var(--ink); background: transparent; text-align: left; cursor: pointer; }
 .kok-rwa .challenge-item + .challenge-item { margin-top: 3px; }
 .kok-rwa .challenge-item:hover { background: #f8faf5; }
-.kok-rwa .challenge-item[aria-current="true"] { border-color: #a8cfb0; background: white; box-shadow: 0 3px 10px rgba(9,40,27,.06); }
+.kok-rwa .challenge-item[aria-pressed="true"] { border-color: #a8cfb0; background: white; box-shadow: 0 3px 10px rgba(9,40,27,.06); }
 .kok-rwa .challenge-item[hidden] { display: none; }
 .kok-rwa .challenge-number { display: grid; width: 34px; height: 34px; place-items: center; border-radius: 9px; color: var(--forest); background: #dcefd3; font-size: 12px; font-weight: 850; }
 .kok-rwa .challenge-title { display: block; margin: 1px 0 4px; color: var(--ink); font-size: 14px; font-weight: 800; letter-spacing: -.02em; line-height: 1.4; }
