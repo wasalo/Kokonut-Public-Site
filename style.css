@@ -1127,7 +1127,7 @@
 .kok-rwa .challenge-item { display: grid; width: 100%; grid-template-columns: 34px 1fr; gap: 12px; align-items: start; padding: 13px 12px; border: 1px solid transparent; border-radius: 10px; color: var(--ink); background: transparent; text-align: left; cursor: pointer; }
 .kok-rwa .challenge-item + .challenge-item { margin-top: 3px; }
 .kok-rwa .challenge-item:hover { background: #f8faf5; }
-.kok-rwa .challenge-item[aria-current="true"] { border-color: #a8cfb0; background: white; box-shadow: 0 3px 10px rgba(9,40,27,.06); }
+.kok-rwa .challenge-item[aria-pressed="true"] { border-color: #a8cfb0; background: white; box-shadow: 0 3px 10px rgba(9,40,27,.06); }
 .kok-rwa .challenge-item[hidden] { display: none; }
 .kok-rwa .challenge-number { display: grid; width: 34px; height: 34px; place-items: center; border-radius: 9px; color: var(--forest); background: #dcefd3; font-size: 12px; font-weight: 850; }
 .kok-rwa .challenge-title { display: block; margin: 1px 0 4px; color: var(--ink); font-size: 14px; font-weight: 800; letter-spacing: -.02em; line-height: 1.4; }
@@ -2075,3 +2075,88 @@
  .kok-home .kok-audience-paths a{min-height:80px}
 }
 @media(prefers-reduced-motion:reduce){.kok-home .kok-cycle-step,.kok-home .kok-audience-paths a{transition:none}}
+
+
+/* -----------------------------------------------------------------------
+   Kokonut site-wide experience polish (PR C, November 2026)
+   Consistent keyboard focus, reliable touch targets, readable labels and
+   reduced motion across custom-mode surfaces; standard Mintlify docs chrome
+   stays owned by Mintlify. No palette, graph, or asset replacement.
+   ----------------------------------------------------------------------- */
+.kok-home :is(a,button,input,select,textarea,[tabindex]):focus-visible,
+.kok-rwa :is(a,button,input,select,textarea,[tabindex]):focus-visible,
+.kok-site-footer :is(a,button,[tabindex]):focus-visible{
+  outline:3px solid #087d40;
+  outline-offset:3px;
+}
+.kok-home :is(.kok-hero,.kok-cycle,.k101-hero,.kf-hero,.kb-hero,.ksa-hero,.kt-hero,.ksa-flywheel,.ksa-atlas,.kok-join,.kb-cta,.kt-cta,.kf-cta,.ksa-cta)
+  :is(a,button,input,[tabindex]):focus-visible,
+.kok-site-footer :is(a,button,[tabindex]):focus-visible{
+  outline-color:#FFCD00;
+}
+.kok-home :is(.kok-btn,.k101-jump a,.kf-quicknav a,.kb-jump a,.ksa-jump a,.kt-jump a),
+.kok-rwa :is(.filter-button,.challenge-item,.tool-button,.system-button),
+.kok-site-footer :is(.kok-site-footer-nav a,.kok-site-footer-social){
+  min-height:44px;
+}
+.kok-home :is(.k101-jump,.kf-quicknav,.kb-jump,.ksa-jump,.kt-jump) a,
+.kok-site-footer .kok-site-footer-nav a{
+  display:inline-flex;
+  align-items:center;
+}
+.kok-home :is(.kok-btn,.kb-repo-link,.ksa-source-card,.kok-audience-paths a),
+.kok-site-footer a,
+.kok-rwa :is(.button,.tool-button){
+  -webkit-tap-highlight-color:rgba(0,159,77,.19);
+}
+.kok-home :is(section[id],nav[id]),
+.kok-rwa :is(section[id],nav[id]){
+  scroll-margin-top:100px;
+}
+.kok-home :is(.kok-why-card,.kok-container-card,.ksa-container-card,.kb-repo),
+.kok-rwa .challenge-panel{
+  min-width:0;
+}
+.kok-home :is(.kok-why-card,.kok-capitals-grid,.ksa-container-card,.kb-repo) :is(p,strong,span,h3),
+.kok-site-footer :is(a,p),
+.kok-rwa .challenge-panel :is(p,h3){
+  overflow-wrap:break-word;
+}
+.kok-traction .kt-source-context{
+  max-width:670px;
+  margin:15px 0 0;
+  padding:13px 17px;
+  border-left:3px solid #FFCD00;
+  border-radius:0 9px 9px 0;
+  background:rgba(255,255,255,.075);
+  color:#cce5d4;
+  font-size:12px;
+  line-height:1.75;
+}
+.kok-traction .kt-source-context strong{
+  display:block;
+  margin-bottom:3px;
+  color:#FFCD00;
+  font-weight:780;
+}
+@media(max-width:640px){
+  .kok-home :is(.kok-btn,.kb-repo-link,.ksa-source-card){
+    max-width:100%;
+  }
+  .kok-traction .kt-source-context{
+    padding:12px 14px;
+  }
+  .kok-home :is(.kok-why-outro,.kok-cycle-explainer,.ksa-container-boundary) :is(p,span,strong){
+    overflow-wrap:break-word;
+  }
+}
+@media(prefers-reduced-motion:reduce){
+  .kok-home *, .kok-home *::before, .kok-home *::after,
+  .kok-rwa *, .kok-rwa *::before, .kok-rwa *::after,
+  .kok-site-footer *, .kok-site-footer *::before, .kok-site-footer *::after{
+    animation-duration:.01ms!important;
+    animation-iteration-count:1!important;
+    transition-duration:.01ms!important;
+    scroll-behavior:auto!important;
+  }
+}

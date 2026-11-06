@@ -224,7 +224,7 @@ export const KokonutRwaRefiExperience = () => {
     setActiveFilter(id);
     setQuery("");
     setSelectedNumber(challenges.find((item) => item.group === id)?.n || 1);
-    document.getElementById("rwa-challenge-map")?.scrollIntoView({behavior:"smooth",block:"start"});
+    document.getElementById("rwa-challenge-map")?.scrollIntoView({behavior:(window.matchMedia?.("(prefers-reduced-motion: reduce)")?.matches?"auto":"smooth"),block:"start"});
   };
   const selectAdjacent = (direction) => {
     const next = visibleItems[selectedIndex + direction];
@@ -280,9 +280,9 @@ export const KokonutRwaRefiExperience = () => {
           <div className="result-bar"><span aria-live="polite"><strong>{visibleItems.length}</strong> of <strong>{challenges.length}</strong> challenges shown</span><span>Select a challenge to read its full KI workflow</span></div>
           <div className="explorer-grid">
             <nav className="challenge-list" aria-label="Challenges">
-              {visibleItems.map((item) => <button type="button" className="challenge-item" key={item.n} aria-current={selectedItem?.n === item.n ? "true" : undefined} onClick={() => setSelectedNumber(item.n)}><span className="challenge-number">{String(item.n).padStart(2,"0")}</span><span><span className="challenge-title">{item.title}</span><span className="challenge-one-line">{item.challenge}</span></span></button>)}
+              {visibleItems.map((item) => <button type="button" className="challenge-item" key={item.n} aria-pressed={selectedItem?.n === item.n} aria-controls="rwa-challenge-detail" onClick={() => setSelectedNumber(item.n)}><span className="challenge-number">{String(item.n).padStart(2,"0")}</span><span><span className="challenge-title">{item.title}</span><span className="challenge-one-line">{item.challenge}</span></span></button>)}
             </nav>
-            {selectedItem && <article className="challenge-panel" aria-live="polite">
+            {selectedItem && <article id="rwa-challenge-detail" className="challenge-panel" aria-live="polite">
               <div className="panel-top"><span className="panel-system">{selectedGroup?.label || "Kokonut Intelligence"}</span><span className="panel-number">CHALLENGE {String(selectedItem.n).padStart(2,"0")}</span></div>
               <h3 className="panel-title">{selectedItem.title}</h3>
               <section className="panel-block challenge-source"><p className="detail-label">The challenge</p><p className="detail-copy">{selectedItem.challenge}</p></section>
@@ -291,7 +291,7 @@ export const KokonutRwaRefiExperience = () => {
               <div className="panel-nav"><button type="button" className="tool-button" disabled={selectedIndex <= 0} onClick={() => selectAdjacent(-1)}>← Previous</button><span className="panel-number">{selectedIndex+1} of {visibleItems.length}</span><button type="button" className="tool-button" disabled={selectedIndex >= visibleItems.length-1} onClick={() => selectAdjacent(1)}>Next →</button></div>
             </article>}
           </div>
-          {!selectedItem && <div className="empty-state visible">No challenges match that search. Try a broader term or choose “All 29”.</div>}
+          {!selectedItem && <div className="empty-state visible" role="status">No challenges match that search. Try a broader term or choose “All 29”.</div>}
           <div className="print-challenges">{challenges.map((item) => <article className="print-challenge" key={item.n}><h3>{String(item.n).padStart(2,"0")} · {item.title}</h3><p><strong>Challenge:</strong> {item.challenge}</p><p><strong>KI:</strong> {item.mechanism}</p></article>)}</div>
         </div>
       </section>

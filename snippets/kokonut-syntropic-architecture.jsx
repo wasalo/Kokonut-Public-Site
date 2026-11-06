@@ -87,7 +87,7 @@ export const KokonutSyntropicArchitecture = () => {
           </div>
           <div className="ksa-atlas-counter" aria-label="Architecture scale">
             <strong>11<span> nodes</span></strong>
-            <small>13 proposed relationships</small>
+            <small>12 documented links · 1 proposed adapter</small>
             <span className="ksa-atlas-counter-dot">SELECT A SYSTEM TO EXPLORE</span>
           </div>
         </div>
@@ -154,7 +154,7 @@ export const KokonutSyntropicArchitecture = () => {
                   <button type="button" key={node.id}
                     className={"ksa-atlas-mobile-node"+(selectedId===node.id?" is-selected":"")}
                     aria-pressed={selectedId===node.id} onClick={()=>setSelectedId(node.id)}>
-                    {node.id==="AGENT"?<img src="/images/syntropic-agent-avatar.png" alt="" width="36" height="36"/>:<span aria-hidden="true">◈</span>}
+                    {node.id==="AGENT"?<img src="/images/syntropic-agent-avatar.png" alt="" aria-hidden="true" width="36" height="36"/>:<span aria-hidden="true">◈</span>}
                     <strong>{node.label}</strong><small>Explore ↗</small>
                   </button>
                 ))}</div>
