@@ -93,34 +93,38 @@ Kokonut provides an **interoperable coordination layer** for those different res
 The ecosystem is intentionally not reduced to one DAO or one decision-making mechanism. Different forms of value and responsibility use different systems while remaining connected through shared standards and public evidence.
 
 ```mermaid
+%%{init: {"theme":"base","themeVariables":{"primaryColor":"#e8f5ec","primaryTextColor":"#171717","primaryBorderColor":"#009F4D","secondaryColor":"#fff3c4","tertiaryColor":"#ffffff","lineColor":"#277445","fontFamily":"Inter, Arial, sans-serif"}}}%%
 flowchart TD
-    PEOPLE["Community + Contributors"]
-
-    subgraph COORDINATION["Coordination Systems"]
-        CAPITAL["Moloch DAO<br/>Capital + Treasury"]
-        GUILDS["Guilds<br/>Contribution + Domains"]
-        FRAMEWORK["Kokonut Framework<br/>Shared Methodology"]
-    end
-
-    FARM["Local Farm Operators<br/>Real-world execution"]
-    MRV["MRV<br/>Evidence + Records"]
-    HUB["Kokonut Hub<br/>Public Data"]
-    KI["Kokonut Intelligence<br/>Analysis + Automation"]
-
-    PEOPLE --> CAPITAL
-    PEOPLE --> GUILDS
-
-    CAPITAL --> FARM
-    GUILDS --> FRAMEWORK
-    FRAMEWORK --> FARM
-
-    FARM --> MRV
-    MRV --> HUB
-    MRV --> KI
-
-    KI --> CAPITAL
-    KI --> GUILDS
-    KI --> FARM
+    COMMUNITY["Community · contributors"]
+    GUILDS["Guilds · contributions and domain review"]
+    FRAMEWORK["Framework · reusable methods"]
+    DAO["Gnosis Moloch DAO · treasury governance"]
+    SIGNERS["Safe / authorized signers"]
+    FARM["Local farm operators · site decisions"]
+    FIELD["Farm activity · source observations"]
+    KI["Kokonut Intelligence · governed records"]
+    REVIEW["Qualified human / domain review"]
+    HUB["Kokonut Hub · approved public views"]
+    AGENT["Syntropic Agent · human-supervised drafts"]
+    COMMUNITY --> GUILDS
+    COMMUNITY --> DAO
+    GUILDS -->|"scoped expertise"| FARM
+    FRAMEWORK -->|"methods, not farm commands"| FARM
+    DAO -->|"approved treasury scope"| SIGNERS
+    SIGNERS -->|"authorized funds or instructions"| FARM
+    FARM --> FIELD
+    FIELD --> KI
+    KI --> REVIEW
+    REVIEW -->|"appropriate publication"| HUB
+    KI --> AGENT
+    AGENT -->|"review-ready recommendations"| REVIEW
+    REVIEW -->|"findings, not automatic orders"| FARM
+    classDef source fill:#e5f5e8,stroke:#009F4D,color:#171717,stroke-width:2px;
+    classDef authority fill:#fff3c4,stroke:#b98100,color:#171717,stroke-width:2px;
+    classDef planned fill:#f2f3f2,stroke:#75847a,color:#171717,stroke-dasharray:5 4;
+    class COMMUNITY,GUILDS,FRAMEWORK,FIELD,KI,HUB source;
+    class FARM,DAO,SIGNERS,REVIEW authority;
+    class AGENT planned;
 ```
 
 | Coordination layer | Primary responsibility |
