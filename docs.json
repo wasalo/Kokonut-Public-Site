@@ -175,8 +175,8 @@
     "links": [],
     "primary": {
       "type": "button",
-      "label": "Let's Connect",
-      "href": "https://link.kokonut.network/meeting"
+      "label": "Get involved",
+      "href": "/ecosystem-wiki/open-collaboration-invitation"
     }
   },
   "contextual": {
@@ -207,7 +207,7 @@
   "seo": {
     "indexing": "all"
   },
-  "description": "Distributed Network powered by Biodiversity, Trees & People 🏕️🌳",
+  "description": "Open coordination infrastructure for regenerative agriculture: locally operated farms, shared methods, accountable governance, and reviewable evidence.",
   "appearance": {
     "default": "system"
   },
