@@ -1,5 +1,5 @@
 /**
- * Shared footer for the four custom-mode Kokonut entry pages.
+ * Shared footer for Kokonut custom-mode landing pages.
  * Mintlify custom mode omits the standard docs footer, so this component
  * intentionally lives at the MDX page level, *after* each page's <main>.
  * Social destinations mirror docs.json; update both if they change.
@@ -20,16 +20,18 @@ export const KokonutSiteFooter = () => (
         <nav className="kok-site-footer-nav" aria-label="Explore Kokonut">
           <h2>Explore</h2>
           <a href="/home/landing">Home</a>
+          <a href="/home/landing#kok-how">How Kokonut works</a>
           <a href="/ecosystem-wiki/kokonut-101/executive-summary">Ecosystem Wiki</a>
           <a href="/kokonut-framework/Introduction">Kokonut Framework</a>
           <a href="/syntropic-agent">Syntropic Agent</a>
           <a href="/build-with-kokonut">Builders</a>
+          <a href="/traction/as-seen-on">Traction &amp; conversations</a>
         </nav>
 
         <nav className="kok-site-footer-nav" aria-label="Get involved with Kokonut">
           <h2>Get involved</h2>
-          <a href="https://hub.kokonut.network/projects/41" target="_blank" rel="noopener noreferrer">Explore Adelphi ↗</a>
-          <a href="/ecosystem-wiki/open-collaboration-invitation">Contribute</a>
+          <a href="https://hub.kokonut.network/projects/41" target="_blank" rel="noopener noreferrer">View Adelphi evidence ↗</a>
+          <a href="/ecosystem-wiki/open-collaboration-invitation">Ways to participate</a>
           <a href="https://link.kokonut.network/discord" target="_blank" rel="noopener noreferrer">Join the community ↗</a>
           <a href="https://link.kokonut.network/meeting" target="_blank" rel="noopener noreferrer">Let's connect ↗</a>
         </nav>
