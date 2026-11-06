@@ -79,7 +79,52 @@ The agent's first two proposed real-world work areas are **Kokonut Adelphi** and
 
 The agent is an **orchestrator**, not another canonical database, a sovereign treasury, or a replacement for Kokonut Protocol.
 
+### Current public presence and planned integrations (November 2026)
+
+The diagram below is a **2026 planning overlay**, not proof that all onchain adapters or financial services are deployed. The [Virtuals project](https://app.virtuals.io/project/146212) and [PONS launchpad](https://ponsfamily.com/launchpad/0xfcf7d1d8880b5b01f8a3578e920992d66de8250c) have public project pages. Agent commerce availability, fee receipts, authorized spending, MetaLeX instruments and NEAR Hub execution each have separate verification gates.
+
 ~~~mermaid
+%%{init: {"theme":"base","themeVariables":{"primaryColor":"#e8f5ec","primaryTextColor":"#171717","primaryBorderColor":"#009F4D","secondaryColor":"#fff3c4","tertiaryColor":"#ffffff","lineColor":"#277445","fontFamily":"Inter, Arial, sans-serif"}}}%%
+flowchart TD
+    FARM["Adelphi · local farm operators"]
+    KI["Kokonut Intelligence · governed evidence and finance"]
+    AGENT["Syntropic Agent · human-supervised work"]
+    REVIEW["Qualified human review · authorized signers"]
+    POLICY["Kokonut Protocol · proposed cross-chain policy"]
+    NEAR["NEAR Hub · Chain Signatures planned"]
+    VIRT["Base · Virtuals public project LIVE"]
+    PONS["Robinhood Chain · PONS public project LIVE"]
+    KRAF["Revenue Containers and MetaLeX · gated research"]
+    GNOSIS["Gnosis · existing DAO and Safe controls"]
+    CELO["Celo EAS · optional evidence anchors"]
+    FARM --> KI
+    KI <--> AGENT
+    AGENT -->|"drafts and proposals only"| REVIEW
+    REVIEW -->|"legal or DAO authority required"| GNOSIS
+    REVIEW -.->|"only approved scope"| POLICY
+    POLICY -.->|"proposed"| NEAR
+    NEAR -.->|"future approved adapters"| VIRT
+    NEAR -.->|"future approved adapters"| PONS
+    PONS -.->|"fees only if received and reconciled"| KI
+    VIRT -.->|"actual settled service receipts only"| KI
+    PONS -.->|"possible later legal structure"| KRAF
+    KI -.->|"approved evidence only"| CELO
+    classDef record fill:#e5f5e8,stroke:#009F4D,color:#171717,stroke-width:2px;
+    classDef gate fill:#fff3c4,stroke:#b98100,color:#171717,stroke-width:2px;
+    classDef planned fill:#f2f3f2,stroke:#75847a,color:#171717,stroke-dasharray:5 4;
+    classDef live fill:#d5f0dd,stroke:#009F4D,color:#171717,stroke-width:2px;
+    class FARM,KI,AGENT record;
+    class REVIEW,GNOSIS gate;
+    class POLICY,NEAR,KRAF,CELO planned;
+    class VIRT,PONS live;
+~~~
+
+### Original architecture baseline — preserved for the interactive Atlas
+
+This **10-node, 12-relationship Mermaid baseline** documents the original source for the custom [Architecture Atlas](/syntropic-agent#ksa-mermaid-map). It remains here for architectural traceability rather than being mistaken for an up-to-date deployment diagram.
+
+~~~mermaid
+%%{init: {"theme":"base","themeVariables":{"primaryColor":"#e8f5ec","primaryTextColor":"#171717","primaryBorderColor":"#009F4D","secondaryColor":"#fff3c4","tertiaryColor":"#ffffff","lineColor":"#277445","fontFamily":"Inter, Arial, sans-serif"}}}%%
 flowchart TD
     PEOPLE["Farm operators · Core Team · Community"]
     AGENT["Syntropic Agent — Hermes runtime"]
