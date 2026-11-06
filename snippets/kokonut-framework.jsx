@@ -10,7 +10,7 @@ export const KokonutFrameworkExperience = () => (
         <div className="kf-hero-copy">
           <p className="kf-eyebrow"><span className="kok-pulse" aria-hidden="true"></span> KOKONUT FRAMEWORK / A SHARED METHODOLOGY</p>
           <h1 id="kf-title">A shared language for farms. <em>Not a blueprint for sameness.</em></h1>
-          <p className="kf-hero-lead">The Kokonut Framework helps communities plan, operate, measure, and improve regenerative farms with compatible methods—without taking decisions away from the people who steward the land.</p>
+          <p className="kf-hero-lead">The Kokonut Framework gives locally operated regenerative farms a shared language for growing, measuring, reviewing, learning and improving—without taking decisions away from the people who steward the land.</p>
           <div className="kf-actions"><a className="kok-btn kok-btn-primary" href="#kf-system">Explore the Framework <span aria-hidden="true">↗</span></a><a className="kok-btn kok-btn-outline" href="/kokonut-framework/introduction-detailed">Read the full methodology <span aria-hidden="true">↗</span></a></div>
           <div className="kf-hero-bottom"><span>SHARED STRUCTURE</span><span aria-hidden="true">+</span><span>LOCAL AUTHORITY</span><span aria-hidden="true">+</span><span>INSPECTABLE EVIDENCE</span></div>
         </div>
@@ -33,7 +33,7 @@ export const KokonutFrameworkExperience = () => (
     <section className="kf-philosophy" aria-labelledby="kf-why">
       <div className="kok-wrap kf-two-col">
         <div><p className="kok-kicker">01 / WHY IT EXISTS</p><h2 id="kf-why">Every farm is different. <em>Learning should be shared.</em></h2></div>
-        <div className="kf-prose"><p>Regeneration depends on real land, local people, ecology, infrastructure and time. But when farms describe their plans and results in incompatible ways, coordination and learning become unnecessarily difficult.</p><p>The Framework offers a common foundation for farm descriptions, development stages, regenerative principles, value questions, and evidence—while local operators retain authority over crops, labor, land relationships and daily management.</p><a className="kok-textlink" href="/kokonut-framework/introduction-detailed">See what the Framework standardizes—and what it does not ↗</a></div>
+        <div className="kf-prose"><p>Regeneration depends on real land, local people, ecology, infrastructure and time. But when farms describe their plans and results in incompatible ways, coordination and learning become unnecessarily difficult.</p><p>The Framework offers a common foundation for farm descriptions, development stages, regenerative principles, value questions, and evidence—while local operators retain authority over crops, labor, land relationships and daily management.</p><p>It is the methodology supporting Kokonut's <strong>Grow → Measure → Verify → Govern → Learn → Regenerate</strong> model. The Eight Forms of Capital describe kinds of value; the Pillars ask better questions; records and qualified review determine which outcomes can actually be claimed.</p><a className="kok-textlink" href="/kokonut-framework/introduction-detailed">See what the Framework standardizes—and what it does not ↗</a></div>
       </div>
       <div className="kok-wrap kf-principle-banner"><strong>THE CORE PRINCIPLE</strong><span>Standardize what needs to connect. <em>Adapt what belongs to place.</em></span></div>
     </section>
