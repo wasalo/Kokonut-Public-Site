@@ -1,7 +1,7 @@
 /**
  * Shared footer for Kokonut custom-mode landing pages.
  * Mintlify custom mode omits the standard docs footer, so this component
- * intentionally lives at the MDX page level, *after* each page's <main>.
+ * intentionally lives at the MDX page level, after each page's main content.
  * Social destinations mirror docs.json; update both if they change.
  */
 export const KokonutSiteFooter = () => (
