@@ -101,6 +101,7 @@ Without a governed implementation layer, farm information fragments across:
 Kokonut Intelligence creates a shared operating environment where those inputs can become structured and reviewable without requiring every source to become public or on-chain.
 
 ```mermaid
+%%{init: {"theme":"base","themeVariables":{"primaryColor":"#e8f5ec","primaryTextColor":"#171717","primaryBorderColor":"#009F4D","secondaryColor":"#fff3c4","tertiaryColor":"#ffffff","lineColor":"#277445","fontFamily":"Inter, Arial, sans-serif"}}}%%
 flowchart LR
     A["Real-world source\nfield · finance · sensor · imagery · governance"] --> B["Structured record"]
     B --> C["Canonical governed data"]
@@ -150,6 +151,7 @@ The current platform is broader than a database plus dashboard.
 ### Responsibility map
 
 ```mermaid
+%%{init: {"theme":"base","themeVariables":{"primaryColor":"#e8f5ec","primaryTextColor":"#171717","primaryBorderColor":"#009F4D","secondaryColor":"#fff3c4","tertiaryColor":"#ffffff","lineColor":"#277445","fontFamily":"Inter, Arial, sans-serif"}}}%%
 flowchart TD
     subgraph Capture["Capture"]
       FIELD["Field Collector"]
@@ -241,6 +243,7 @@ Governed records generally follow:
 `rejected` supports rework and exception paths.
 
 ```mermaid
+%%{init: {"theme":"base","themeVariables":{"primaryColor":"#e8f5ec","primaryTextColor":"#171717","primaryBorderColor":"#009F4D","secondaryColor":"#fff3c4","tertiaryColor":"#ffffff","lineColor":"#277445","fontFamily":"Inter, Arial, sans-serif"}}}%%
 flowchart LR
     A["draft\ncreated / editable"] --> B["submitted\nready for review"]
     B --> C["verified\nauthorized review passed"]
@@ -325,6 +328,7 @@ The [MRV methodology](/ecosystem-wiki/kokonut-farms/measurement-reporting-and-ve
 Kokonut Intelligence implements the infrastructure needed to operationalize that methodology.
 
 ```mermaid
+%%{init: {"theme":"base","themeVariables":{"primaryColor":"#e8f5ec","primaryTextColor":"#171717","primaryBorderColor":"#009F4D","secondaryColor":"#fff3c4","tertiaryColor":"#ffffff","lineColor":"#277445","fontFamily":"Inter, Arial, sans-serif"}}}%%
 flowchart LR
     A["Observation / source"] --> B["Governed MRV record"]
     B --> C["Review"]
@@ -511,6 +515,7 @@ The critical permission boundary is:
 > **Agents can draft and submit. They cannot verify, publish, attest, or score governed records on their own.**
 
 ```mermaid
+%%{init: {"theme":"base","themeVariables":{"primaryColor":"#e8f5ec","primaryTextColor":"#171717","primaryBorderColor":"#009F4D","secondaryColor":"#fff3c4","tertiaryColor":"#ffffff","lineColor":"#277445","fontFamily":"Inter, Arial, sans-serif"}}}%%
 flowchart LR
     A["Governed data"] --> B["Agent task"]
     B --> C["Draft / analysis / proposed record"]
