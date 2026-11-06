@@ -27,25 +27,43 @@ Instead of moving every system onto a single blockchain, it aims to coordinate a
 > **Intelligence owns truth. Protocol owns execution policy. NEAR coordinates signing. Destination chains enforce their own settlement and rights.**
 
 ~~~mermaid
+%%{init: {"theme":"base","themeVariables":{"primaryColor":"#e8f5ec","primaryTextColor":"#171717","primaryBorderColor":"#009F4D","secondaryColor":"#fff3c4","tertiaryColor":"#ffffff","lineColor":"#277445","fontFamily":"Inter, Arial, sans-serif"}}}%%
 flowchart TD
-    AGENT["People · Apps · Syntropic Agent"]
-    KI["Kokonut Intelligence — records and approvals"]
-    KP["Kokonut Protocol — policies and execution"]
-    NEAR["NEAR Hub — Chain Signatures"]
-    BASE["Base — agent commerce"]
-    GNOSIS["Gnosis — DAO / Safe"]
-    CELO["Celo — EAS"]
-    OTHER["Approved other chains"]
-    AGENT --> KI
-    KI <--> KP
-    KP --> NEAR
-    NEAR --> BASE
-    NEAR --> GNOSIS
-    NEAR --> CELO
-    NEAR --> OTHER
-    BASE -.->|"receipts"| KI
-    GNOSIS -.->|"governance state"| KI
-    CELO -.->|"attestations"| KI
+    FARMS["Local farms · operators and communities"]
+    KI["Kokonut Intelligence · governed source records"]
+    AGENT["Syntropic Agent · recommendations, not approvals"]
+    PEOPLE["Authorized people · entity and DAO signers"]
+    KP["Kokonut Protocol · proposed policy control plane"]
+    NEAR["NEAR Hub · proposed Chain Signatures"]
+    BASE["Base · Virtuals project page LIVE"]
+    RH["Robinhood · PONS project page LIVE"]
+    SAFE["Gnosis · existing DAO / Safe authority"]
+    CELO["Celo · optional EAS evidence provenance"]
+    OTHER["Additional approved chains · future"]
+    FARMS -->|"observations and permitted records"| KI
+    KI --> AGENT
+    AGENT -->|"review-ready proposals"| PEOPLE
+    PEOPLE -->|"approved scope only"| KP
+    KI <-->|"policies and reconciliation proposals"| KP
+    PEOPLE -->|"existing governance path"| SAFE
+    KP -.->|"planned adapter"| NEAR
+    NEAR -.->|"planned execution path"| BASE
+    NEAR -.->|"planned execution path"| RH
+    NEAR -.->|"planned integration"| SAFE
+    NEAR -.->|"planned integration"| CELO
+    NEAR -.->|"future approval"| OTHER
+    BASE -.->|"verified service/settlement records only"| KI
+    RH -.->|"actual reconciled fee receipts only"| KI
+    SAFE -->|"confirmed execution status"| KI
+    KI -.->|"approved evidence anchor only"| CELO
+    classDef source fill:#e5f5e8,stroke:#009F4D,color:#171717,stroke-width:2px;
+    classDef authority fill:#fff3c4,stroke:#b98100,color:#171717,stroke-width:2px;
+    classDef planned fill:#f2f3f2,stroke:#75847a,color:#171717,stroke-dasharray:5 4;
+    classDef live fill:#d5f0dd,stroke:#009F4D,color:#171717,stroke-width:2px;
+    class FARMS,KI,AGENT source;
+    class PEOPLE,SAFE authority;
+    class KP,NEAR,CELO,OTHER planned;
+    class BASE,RH live;
 ~~~
 
 ## The cross-chain execution contract
