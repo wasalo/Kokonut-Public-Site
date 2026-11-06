@@ -119,6 +119,7 @@ This matrix defines the intended boundaries.
 ## The architecture as a coordination loop
 
 ```mermaid
+%%{init: {"theme":"base","themeVariables":{"primaryColor":"#e8f5ec","primaryTextColor":"#171717","primaryBorderColor":"#009F4D","secondaryColor":"#fff3c4","tertiaryColor":"#ffffff","lineColor":"#277445","fontFamily":"Inter, Arial, sans-serif"}}}%%
 flowchart TD
     COMMUNITY["Community + Contributors"]
 
@@ -132,14 +133,14 @@ flowchart TD
     HUB["Kokonut Hub<br/>Published Records"]
     KI["Kokonut Intelligence<br/>Analysis + Synthesis"]
 
-    TECH["Contracts + SAFEs + APIs<br/>Authorized Technical Execution"]
+    TECH["Safe owners + scoped APIs<br/>Authorized financial execution"]
 
     COMMUNITY --> GUILDS
-    COMMUNITY --> MOLOCH
+    COMMUNITY -.->|"eligible DAO members"| MOLOCH
 
     GUILDS -->|"work + proposals"| MOLOCH
     MOLOCH -->|"approved resources"| TECH
-    TECH -->|"authorized execution"| OPERATORS
+    TECH -->|"authorized resources; farm decisions remain local"| OPERATORS
 
     GUILDS -->|"specialized work"| OPERATORS
     FRAMEWORK -->|"shared baseline"| OPERATORS
@@ -226,6 +227,7 @@ A contributor can begin with useful work such as:
 ### Contribution lifecycle
 
 ```mermaid
+%%{init: {"theme":"base","themeVariables":{"primaryColor":"#e8f5ec","primaryTextColor":"#171717","primaryBorderColor":"#009F4D","secondaryColor":"#fff3c4","tertiaryColor":"#ffffff","lineColor":"#277445","fontFamily":"Inter, Arial, sans-serif"}}}%%
 flowchart LR
     A["Useful work"] --> B["Contribution record"]
     B --> C["Domain review"]
